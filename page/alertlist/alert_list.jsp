@@ -25,43 +25,43 @@
 	<meta property="og:description" content="Aegis 홈페이지입니다.">
 	
 	<!-- TODO: favicon -->
-	<link rel="icon" href="./assets/images/favicon.png" type="image/png" />
+	<link rel="icon" href="../../assets/images/favicon.png" type="image/png" />
 	
 	<!-- TODO: import -->
 	<%@ include file="/page/layout/common.jsp"%>
-	<script src="./js/service/alertlist/alertList.js?v=${version}"></script>
-	
-	<link rel="stylesheet" href="./assets/css/lib/rickshaw/graph.css">
-	<link rel="stylesheet" href="./assets/css/lib/rickshaw/detail.css">
-	<link rel="stylesheet" href="./assets/css/lib/rickshaw/legend.css">
-	<script src="./assets/js/lib/rickshaw/d3.v3.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Class.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Compat.ClassList.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.Area.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.Line.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.Bar.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.ScatterPlot.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.Stack.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.RangeSlider.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.RangeSlider.Preview.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.HoverDetail.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Annotate.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Legend.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Axis.Time.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Behavior.Series.Toggle.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Behavior.Series.Order.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Behavior.Series.Highlight.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Smoother.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Fixtures.Time.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Fixtures.Time.Local.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Fixtures.Number.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Fixtures.RandomData.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Fixtures.Color.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Color.Palette.js"></script>
-	<script src="./assets/js/lib/rickshaw/Rickshaw.Graph.Axis.Y.js"></script>
+	<script src="../../js/service/alertlist/alertList.js?v=${version}"></script>
+
+	<link rel="stylesheet" href="../../assets/css/lib/rickshaw/graph.css">
+	<link rel="stylesheet" href="../../assets/css/lib/rickshaw/detail.css">
+	<link rel="stylesheet" href="../../assets/css/lib/rickshaw/legend.css">
+	<script src="../../assets/js/lib/rickshaw/d3.v3.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Class.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Compat.ClassList.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.Area.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.Line.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.Bar.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.ScatterPlot.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Renderer.Stack.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.RangeSlider.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.RangeSlider.Preview.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.HoverDetail.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Annotate.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Legend.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Axis.Time.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Behavior.Series.Toggle.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Behavior.Series.Order.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Behavior.Series.Highlight.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Smoother.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Fixtures.Time.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Fixtures.Time.Local.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Fixtures.Number.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Fixtures.RandomData.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Fixtures.Color.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Color.Palette.js"></script>
+	<script src="../../assets/js/lib/rickshaw/Rickshaw.Graph.Axis.Y.js"></script>
 	
 	
 	<script type="text/javascript">

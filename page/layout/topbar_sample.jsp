@@ -37,7 +37,7 @@ function checkPasswordHistory() {
 				$('.usr_password_change').trigger("click");
 			}
 			
-			swal("비밀번호 변경","초기 패스워드를 변경하시기 바랍니다.", "./assets/images/icon_alert03.png", {
+			swal("비밀번호 변경","초기 패스워드를 변경하시기 바랍니다.", "../../assets/images/icon_alert03.png", {
 				buttons: "확인"
 			});
 		} else {
@@ -96,14 +96,14 @@ function checkPasswordHistory() {
 function otpIssue() {
 	var passwd = $('#otpPasswd').val();
 	if(!passwd) {
-		swal("QR 재발급","비밀번호를 입력해주세요","./assets/images/icon_alert03.png", {
+		swal("QR 재발급","비밀번호를 입력해주세요","../../assets/images/icon_alert03.png", {
 	        icon: "error",
 	        buttons:"확인"
 	    });		
 		return;
 	}	
 	
-	swal("QR 재발급", "QR 재발급시 기존에 발행 된 OTP로 인증이 불가능해집니다. 진행하시겠습니까?", "./assets/images/icon_alert01.png", {
+	swal("QR 재발급", "QR 재발급시 기존에 발행 된 OTP로 인증이 불가능해집니다. 진행하시겠습니까?", "../../assets/images/icon_alert01.png", {
 		buttons : [ "취소", "확인" ],
 	}).then(function(will) {
 		if(will) {   	
@@ -113,7 +113,7 @@ function otpIssue() {
 	    	cf_requestServer(_TR_CURRENT_TOTPCODE_UPDATE, body, function(data) {
             	var body = data.body;
             	if(data.body['errorMsg']) {
-	            	swal("QR 재발급", data.body['errorMsg'],"./assets/images/icon_alert03.png", {
+	            	swal("QR 재발급", data.body['errorMsg'],"../../assets/images/icon_alert03.png", {
 				        icon: "error",
 				        buttons:"확인"
 				    });
@@ -122,13 +122,13 @@ function otpIssue() {
             	
             	loadOTPData();
             	            	
-				swal("QR 재발급","정상적으로 처리되었습니다.","./assets/images/icon_alert02.png", {
+				swal("QR 재발급","정상적으로 처리되었습니다.","../../assets/images/icon_alert02.png", {
 			        icon: "success",
 			        buttons:"확인"
 			    });				    
 			});
 		} else {
-	    	swal("QR 재발급", "취소하였습니다.", "./assets/images/icon_alert03.png", {
+	    	swal("QR 재발급", "취소하였습니다.", "../../assets/images/icon_alert03.png", {
 	    		buttons: "확인",
 	    	});
 	    }
@@ -188,19 +188,19 @@ function lf_onMessage(evt) {
 		var alertArray = lf_filter(jsonData, _TOPIC_ALERT);
 		$.each(alertArray, function(idx, rowData) {
 			if("EXPIRELICENSE" == rowData["kind"]) {
-				swal("라이선스 위반", "라이선스가 만료되었습니다.\n" + "관리자에게 문의해주시기 바랍니다.\n", "./assets/images/icon_alert03.png", {
+				swal("라이선스 위반", "라이선스가 만료되었습니다.\n" + "관리자에게 문의해주시기 바랍니다.\n", "../../assets/images/icon_alert03.png", {
 					buttons : "확인",
 				});
 			} else if ("NOTPROPERLICENSE" == rowData["kind"]) {
-				swal("라이선스 위반", "라이선스가 올바르지 않습니다.\n" + "관리자에게 문의해주시기 바랍니다.\n", "./assets/images/icon_alert03.png", {
+				swal("라이선스 위반", "라이선스가 올바르지 않습니다.\n" + "관리자에게 문의해주시기 바랍니다.\n", "../../assets/images/icon_alert03.png", {
 					buttons : "확인",
 				});
 			} else if ("AGENTFULLLICENSE" == rowData["kind"]) {
-				swal("라이선스 위반", "사용 가능한 Agent를 초과했습니다.\n" + "관리자에게 문의해주시기 바랍니다.\n", "./assets/images/icon_alert03.png", {
+				swal("라이선스 위반", "사용 가능한 Agent를 초과했습니다.\n" + "관리자에게 문의해주시기 바랍니다.\n", "../../assets/images/icon_alert03.png", {
 					buttons : "확인",
 				});
 			} else if("LOCATION_HREF" == rowData["kind"]) {
-    			swal("로그인 중복", "로그인이 해제됩니다.", "./assets/images/icon_alert03.png", {
+    			swal("로그인 중복", "로그인이 해제됩니다.", "../../assets/images/icon_alert03.png", {
 					buttons: "확인",
 		        });
 		        console.log(rowData);
@@ -317,7 +317,7 @@ function updateCurrentUser() {
 		}
 	}
 
-	swal("사용자 정보 변경", "사용자정보를 변경하시겠습니까?", "./assets/images/icon_alert01.png", {
+	swal("사용자 정보 변경", "사용자정보를 변경하시겠습니까?", "../../assets/images/icon_alert01.png", {
 		buttons : [ "취소", "확인" ],
 	}).then(function(will) {
 		if(will) {
@@ -325,7 +325,7 @@ function updateCurrentUser() {
 				lf_serviceCall500012CallBack(data);
 			});
 		} else {
-	    	swal("사용자 정보 변경", "취소하였습니다.", "./assets/images/icon_alert03.png", {
+	    	swal("사용자 정보 변경", "취소하였습니다.", "../../assets/images/icon_alert03.png", {
 	    		buttons: "확인",
 	    	});
 	    }
@@ -333,7 +333,7 @@ function updateCurrentUser() {
 }
 
 function lf_serviceCall500012CallBack(data) {
-	swal("사용자 정보 변경", "사용자 정보가 정상적으로 변경 되었습니다.", "./assets/images/icon_alert02.png", {
+	swal("사용자 정보 변경", "사용자 정보가 정상적으로 변경 되었습니다.", "../../assets/images/icon_alert02.png", {
 		buttons : "확인"
 	});
 

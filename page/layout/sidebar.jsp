@@ -86,7 +86,7 @@ default:
 <div class="logo_box">
 	<a href="./dashboard.do" class="logo_link">
 		<div class="logo_hidden_box">
-			<img src="./assets/images/logo.png" />
+			<img src="../../assets/images/logo.png" />
 		</div>
 	</a>
 </div>
