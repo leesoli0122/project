@@ -26,33 +26,33 @@
     <link rel="icon" href="favicon.png" type="favicon.png" />
 
     <!-- TODO: import -->
-    <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/lib/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="assets/css/lib/datatables.css">
-    <link rel="stylesheet" href="assets/css/lib/datatables.css">
-    <link rel="stylesheet" href="assets/css/lib/select.dataTables.css">
-    <link rel="stylesheet" href="assets/css/lib/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="assets/css/lib/jquery.scrollbar.css">
-    <link rel="stylesheet" href="assets/css/lib/jstree.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/lib/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../css/lib/datatables.css">
+    <link rel="stylesheet" href="../css/lib/datatables.css">
+    <link rel="stylesheet" href="../css/lib/select.dataTables.css">
+    <link rel="stylesheet" href="../css/lib/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../css/lib/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../css/lib/jstree.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/lib/moment.js"></script>
-    <script src="assets/js/lib/bootstrap.min.js"></script>
-    <script src="assets/js/lib/bootstrap-datetimepicker.js"></script>
+    <script src="../js/lib/moment.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/bootstrap-datetimepicker.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="assets/js/lib/echarts.js"></script>
-    <script src="assets/js/lib/jquery.nice-select.js"></script>
-    <script src="assets/js/lib/select.dataTables.js"></script>
-    <script src="assets/js/lib/datatables.js"></script>
-    <script src="assets/js/lib/dataTables.colReorder.js"></script>
-    <script src="assets/js/lib/dataTables.rowReorder.js"></script>
-    <script src="assets/js/lib/dataTables.buttons.min.js"></script>
-    <script src="assets/js/lib/sweetalert.js"></script>
-    <script src="assets/js/lib/jquery.mCustomScrollbar.js"></script>
-    <script src="assets/js/lib/jquery.scrollbar.js"></script>
-    <script src="assets/js/lib/jstree.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    <script src="../js/lib/echarts.js"></script>
+    <script src="../js/lib/jquery.nice-select.js"></script>
+    <script src="../js/lib/select.dataTables.js"></script>
+    <script src="../js/lib/datatables.js"></script>
+    <script src="../js/lib/dataTables.colReorder.js"></script>
+    <script src="../js/lib/dataTables.rowReorder.js"></script>
+    <script src="../js/lib/dataTables.buttons.min.js"></script>
+    <script src="../js/lib/sweetalert.js"></script>
+    <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="../js/lib/jquery.scrollbar.js"></script>
+    <script src="../js/lib/jstree.js"></script>
+    <script src="../js/scripts.js"></script>
 </head>
 <body>
 <h1>CloudVM ADMIN</h1>
@@ -70,7 +70,7 @@
     <div class="logo_box">
         <a href="/" class="logo_link">
             <div class="logo_hidden_box">
-                <img src="assets/images/logo.png"/>
+                <img src="../images/logo.png"/>
             </div>
         </a>
     </div>
@@ -337,52 +337,52 @@
         });
     }
     function alertEvt1(){
-        swal("사용자 정보 변경","사용자정보를 변경하시겠습니까?",'assets/images/icon_alert01.png',{
+        swal("사용자 정보 변경","사용자정보를 변경하시겠습니까?",'../images/icon_alert01.png',{
             buttons: ["취소", "확인"],
         }).then(function(willDelete) {
             if (willDelete) {
                 swal("사용자 정보 변경","사용자 정보가 정상적으로 변경 되었습니다.", {
-                    icon: "assets/images/icon_alert02.png",
+                    icon: "../images/icon_alert02.png",
                     buttons:"확인"
                 });
             } else {
                 swal("사용자 정보 변경","취소합니다", {
-                    icon: "assets/images/icon_alert03.png",
+                    icon: "../images/icon_alert03.png",
                     buttons:"확인"
                 });
             }
         });
     }
     function alertEvt2(){
-        swal("대시보드삭제","대시보드를 삭제하시겠습니까?","assets/images/icon_alert04.png", {
+        swal("대시보드삭제","대시보드를 삭제하시겠습니까?","../images/icon_alert04.png", {
             buttons: ["취소", "확인"],
         }).then(function(willDelete) {
             if (willDelete) {
                 swal("대시보드삭제","삭제하였습니다.", {
-                    icon: "assets/images/icon_alert02.png",
+                    icon: "../images/icon_alert02.png",
                     buttons:"확인"
                 });
             } else {
                 swal("대시보드삭제","취소합니다", {
-                    icon: "assets/images/icon_alert03.png",
+                    icon: "../images/icon_alert03.png",
                     buttons:"확인"
                 });
             }
         });
     }
     function alertEvt3(){
-        swal("접속실패", "서버로 부터 정보를 가져올 수 없습니다.", "assets/images/icon_alert03.png", {
+        swal("접속실패", "서버로 부터 정보를 가져올 수 없습니다.", "../images/icon_alert03.png", {
             buttons: "확인",
         });
     }
     function alertEvt4(){
         swal("허용시간 초과", "로그인후 시간이 경과되어 서버정보를 가져올 수 없습니다.\n" +
-            "다시 로그인하여 주십시요.\n", "assets/images/icon_alert05.png", {
+            "다시 로그인하여 주십시요.\n", "../images/icon_alert05.png", {
             buttons: "확인",
         });
     }
     function alertEvt5(){
-        swal("업데이트", "성공적으로 업데이트 했습니다.", "assets/images/icon_alert02.png", {
+        swal("업데이트", "성공적으로 업데이트 했습니다.", "../images/icon_alert02.png", {
             buttons: "확인",
         });
     }
