@@ -24,19 +24,19 @@
 	<meta property="og:description" content="Aegis 홈페이지입니다.">
 	
 	<!-- TODO: favicon -->
-	<link rel="icon" href="./assets/images/favicon.png" type="image/png" />
+	<link rel="icon" href="../../assets/images/favicon.png" type="image/png" />
 	
 	<!-- TODO: import -->
 	<%@ include file="/page/layout/common_sample.jsp"%>
 	
-	<script src="./js/common/page_common.js?v=${version}"></script>
+	<script src="../../js/common/page_common.js?v=${version}"></script>
     
-	<script src="./js/service/dashboards/dashboardChart.js?v=${version}"></script>
-	<script src="./js/service/dashboards/dashboard.js?v=${version}"></script>
+	<script src="../../js/service/dashboards/dashboardChart.js?v=${version}"></script>
+	<script src="../../js/service/dashboards/dashboard.js?v=${version}"></script>
 	
 	<!-- 230103 Image Security 추가 -->
-	<script src="./js/service/dashboards/imageSecurity/dashboardScanStatus.js?v=${version}"></script>
-	<script src="./js/service/dashboards/clusterCompliance/dashboardClusterComplianceChart.js?v=${version}"></script>
+	<script src="../../js/service/dashboards/imageSecurity/dashboardScanStatus.js?v=${version}"></script>
+	<script src="../../js/service/dashboards/clusterCompliance/dashboardClusterComplianceChart.js?v=${version}"></script>
 	
 	<script type="text/javascript">
     function createDim(){
