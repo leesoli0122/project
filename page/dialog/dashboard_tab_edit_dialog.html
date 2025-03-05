@@ -1,0 +1,29 @@
+<!--  modal :: 전체 알림 설정 팝업  -->
+
+<script src="./js/service/dialog/dashboardTabEdit.js"></script>
+
+<!--  modal :: 탭 이름 변경 팝업  -->
+<div class="modal" id="tab_edit_modal">
+	<div class="modal_header">
+		<h3>탭 이름 변경</h3>
+	</div>
+	<div class="modal_body">
+		<div class="modal_cont">
+			<div class="ipt_box">
+				<input id="currentTabName" class="no_radius" type="text" readonly="" value="해당 탭의 이름" name="required">
+			</div>
+			<div class="ipt_box">
+				<input id="updateTabName" class="no_radius" type="text" placeholder="대시보드에 변경될 탭 이름을 입력하여 주십시오. (16자 이내)" name="required">
+			</div>
+		</div>
+	</div>
+	<div class="modal_footer">
+		<div class="btn_wrap">
+			<a href="#" class="btn grey close">취소</a>
+			<a href="#" class="btn confirm">수정</a>
+		</div>
+	</div>
+	<div class="modal_controller">
+		<a href="#" class="close">close</a>
+	</div>
+</div>

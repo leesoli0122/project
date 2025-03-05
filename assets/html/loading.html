@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>DASHBOARD - Aegis</title>
+    <meta charset="UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- TODO: search engine info -->
+    <meta name="robots" content="Aegis" />
+    <meta name="keywords" content="Aegis" />
+    <meta name="title" content="Aegis" />
+    <meta name="description" content="Aegis" />
+
+    <!-- TODO: social url link image -->
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Aegis">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="cloudVM.png">
+    <meta property="og:description" content="Aegis 입니다.">
+
+    <!-- TODO: favicon -->
+    <link rel="icon" href="favicon.png" type="favicon.png" />
+
+    <!-- TODO: import -->
+    <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/lib/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="assets/css/lib/datatables.css">
+    <link rel="stylesheet" href="assets/css/lib/datatables.css">
+    <link rel="stylesheet" href="assets/css/lib/select.dataTables.css">
+    <link rel="stylesheet" href="assets/css/lib/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="assets/css/lib/jquery.scrollbar.css">
+    <link rel="stylesheet" href="assets/css/lib/jstree.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/lib/moment.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <script src="assets/js/lib/bootstrap-datetimepicker.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="assets/js/lib/echarts.js"></script>
+    <script src="assets/js/lib/jquery.nice-select.js"></script>
+    <script src="assets/js/lib/select.dataTables.js"></script>
+    <script src="assets/js/lib/datatables.js"></script>
+    <script src="assets/js/lib/dataTables.colReorder.js"></script>
+    <script src="assets/js/lib/dataTables.rowReorder.js"></script>
+    <script src="assets/js/lib/dataTables.buttons.min.js"></script>
+    <script src="assets/js/lib/sweetalert.js"></script>
+    <script src="assets/js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="assets/js/lib/jquery.scrollbar.js"></script>
+    <script src="assets/js/lib/jstree.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</head>
+<body>
+<h1>CloudVM ADMIN</h1>
+<div class="skip_navigation">
+    <ul>
+        <li>
+            <a href="#Content" class="go_content">본문 바로가기</a>
+        </li>
+        <li>
+            <a href="#Gnb">메뉴 바로가기</a>
+        </li>
+    </ul>
+</div>
+<header class="header_box">
+    <div class="logo_box">
+        <a href="/" class="logo_link">
+            <div class="logo_hidden_box">
+                <img src="assets/images/logo.png"/>
+            </div>
+        </a>
+    </div>
+    <nav>
+        <ul class="lnb">
+            <li>
+                <a href="menu01.html" class="menu01">
+                    <span>대시보드</span>
+                </a>
+            </li>
+            <li>
+                <a href="menu02.html" class="menu02">
+                    <span>경보</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu03">
+                    <span>이벤트</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu03_01.html"><span>방화벽</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_02.html"><span>IPS</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_03.html"><span>Malware</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_04.html"><span>파일 무결성</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_05.html"><span>실행 파일 통제</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_06.html"><span>서비스 제어</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu04">
+                    <span>자산</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu04_01.html"><span>자산 현황</span></a>
+                    </li>
+                    <li>
+                        <a href="menu04_02.html"><span>자산 관리</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu06">
+                    <span>탐지룰</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu06.html"><span>탐지 룰 관리</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu05">
+                    <span>설정</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu05_01.html"><span>사용자 관리</span></a>
+                    </li>
+                    <li>
+                        <a href="menu05_02.html"><span>권한 설정</span></a>
+                    </li>
+                    <li>
+                        <a href="menu05_03.html"><span>사이트 이용 설정</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+
+
+<article class="top_cont">
+    <div class="location">
+        <ul>
+            <li>Home</li>
+            <li>Dashboard</li>
+            
+        </ul>
+        <h2>DASHBOARD</h2>
+    </div>
+    <div class="user_box">
+        <div class="user_info">
+            <a href="#" class="user_info_link">
+                <p class="user">Hello, <span>redcastle</span></p>
+            </a>
+            <div class="user_info_list">
+                <ul>
+                    <li><a href="#" rel="user_modal" class="modalLoad">내정보</a></li>
+                    <li><a href="menu05_01.html">사용자관리</a></li>
+                    <li class="logout"><a href="main.html">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="top_dashboard">
+            <a href="#" class="top_dashboard_link">
+                <span class="linktext">사용자 정보 버튼</span>
+            </a>
+        </div>
+        <div class="top_dashboard_list">
+            <ul>
+                <li><a href="#" rel="dashboard_save" class="modalLoad">공용 대시 보드 등록</a></li>
+                <li><a href="#" rel="dashboard_view_modal" class="modalLoad">모든 대시보드 보기</a></li>
+                <li><a href="#" rel="dashboard_view_modal" class="modalLoad">저장된 대시보드 보기</a></li>
+                <li><a href="#" rel="dashboard_edit_save" class="modalLoad">공용 대시보드 수정</a></li>
+                <li><a href="#">대시보드 저장</a></li>
+                <li><a href="#">대시보드 삭제</a></li>
+            </ul>
+        </div>
+    </div>
+</article>
+
+<!--  modal :: 내정보 팝업  -->
+<div class="modal small" id="user_modal">
+    <div class="modal_header">
+        <h3>내정보</h3>
+    </div>
+    <div class="modal_body">
+        <div class="modal_cont">
+            <dl>
+                <dt>
+                    <span>사용자 권한</span>
+                </dt>
+                <dd>
+                    <div class="sel_box">
+                        <select class="popup_sel disabled">
+                            <option>Super Admin</option>
+                            <option>Admin</option>
+                            <option>Operator</option>
+                            <option>Viewer</option>
+                        </select>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User ID</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" readonly="" value="aptcastle" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>Password</dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="password" placeholder="기존 비밀번호를 입력해 주세요." name="required">
+                    </div>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="password" placeholder="신규 비밀번호를 입력해 주세요." name="required">
+                    </div>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="password" placeholder="신규 비밀번호를 다시한번 입력해 주세요." name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User Name</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="사용자의 이름을 입력해주세요." value="auditcastle Maker" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User Phone</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="연락처를 입력해 주세요." value="010-0000-0000" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User Email</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="이메일를 입력해 주세요." value="auditcastle@sgacorp.co.kr" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>Company</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="회사명을 입력해 주세요." name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>Address</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="주소를 입력해주세요." name="required">
+                    </div>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="상세주소를 입력하세요." name="required">
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="modal_footer">
+        <div class="btn_wrap">
+            <a href="#" class="btn grey close">취소</a>
+            <a href="#" class="btn">수정</a>
+        </div>
+    </div>
+    <div class="modal_controller">
+        <a href="#" class="close">close</a>
+    </div>
+</div>
+<div class="loading_wrap">
+    <div class="loading_box">
+        <div class="img_box">
+            <img src="assets/images/loading.gif">
+        </div>
+        <p class="loading04">
+            <span>L</span>
+            <span>o</span>
+            <span>a</span>
+            <span>d</span>
+            <span>i</span>
+            <span>n</span>
+            <span>g</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </p>
+    </div>
+</div>
+<section class="dashboard mscrollbar">
+    <div class="dashboard_main">
+        <div class="tab_box">
+            <div class="tab">
+                <ul class="tab_lst">
+                    <li value="tabMgmt_1" rel="tab_edit_modal" class="open modalLoad">
+                        <a href="#" class="tab_link" title="Tab style1Tab style1Tab style1Tab style1">
+                            Tab style1Tab style1Tab style1Tab style1
+                        </a>
+                        <a href="#" onclick="window.open('dashboard_popup_win.html','','height=' + screen.height + ',width=' + screen.width + 'fullscreen=yes');" class="full" title="새창열기">새창열기</a>
+                        <a href="#" class="tab_cls">close</a>
+                    </li>
+                    <li value="tabMgmt_2" rel="" class="">
+                        <a href="#" class="tab_link" title="Tab">Tab style2</a>
+                        <a href="#" onclick="window.open('dashboard_popup_win.html','','height=' + screen.height + ',width=' + screen.width + 'fullscreen=yes');" class="full" title="새창열기">새창열기</a>
+                        <a href="#" class="tab_cls">close</a>
+                    </li>
+                </ul>
+                <div>
+                    <a href="#" rel="tab_modal" class="tab_add modalLoad">
+                        <span>탭 추가</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="tabMgmt" class="tab_container">
+            <div class="tabMgmt_1 tab_cont open">
+                <div class="dashboard_box">
+                    <div class="dashboard_box_top">
+                        <div class="dashboard_title">
+                            <h3>Tab style1</h3>
+                        </div>
+                        <div class="dashboard_btn_box">
+                            <a href="#" rel="time_all_modal" class="btn bline modalLoad">
+                                <span>리로딩설정</span>
+                            </a>
+                            <a href="#" rel="dashboard_listadd_modal" class="btn bline modalLoad">
+                                <span>위젯설정</span>
+                            </a>
+                            <a href="#" class="btn save">
+                                <span>저장</span>
+                            </a>
+                            <a href="#" class="btn pin">고정</a>
+                        </div>
+                    </div>
+                    <div class="dashboard_box_cont">
+                        <ul class="dashboard_cont">
+                            <li class="w_50" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title">
+                                        Anti Malware 이벤트 트렌드
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="cont_btn_day fl">
+                                            <a href="#" class="on">Day</a>
+                                            <a href="#" class="">Weekly</a>
+                                        </div>
+                                        <div class="cont_btn disabled fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_chart_line_box">
+                                    <div id="chart01" class="dashboard_chart_line">
+                                        <script>
+                                            $(document).ready(function(){
+                                                var myChart = echarts.init(document.getElementById('chart01'));
+                                                option = {
+                                                    tooltip: {
+                                                        triggerOn : 'mousemove',
+                                                        backgroundColor: 'rgba(47,55,66,0.8)',
+                                                        borderColor: "#515964",
+                                                        transitionDuration: 0,
+                                                        textStyle: {
+                                                            color : '#bbbbbb',
+                                                            fontWeight: 400,
+                                                            fontSize : 11,
+                                                        },
+                                                        position: 'top',
+                                                        renderMode : 'html',
+                                                        formatter: '2020.11.05 {b}:00:00 <span style="color: #ed960a">{c}</span>',
+                                                    },
+                                                    grid : {
+                                                        height : '300',
+                                                        top : '70',
+                                                        bottom : '0',
+                                                        left : '100',
+                                                        right : '110'
+                                                    },
+                                                    xAxis: {
+                                                        type: 'category',
+                                                        name: '(시간)',
+                                                        nameTextStyle: {
+                                                            padding : [25,0,0,0],
+                                                        },
+                                                        axisLine: {
+                                                            lineStyle: {
+                                                                color: '#565d68',
+                                                            }
+                                                        },
+                                                        data: ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '23']
+                                                    },
+                                                    yAxis: {
+                                                        type: 'value',
+                                                        name: '(갯수)',
+                                                        nameTextStyle: {
+                                                            padding : [0,45,0,0],
+                                                        },
+                                                        splitLine: {show: false},
+                                                        axisLine: {
+                                                            show: true,
+                                                            lineStyle: {
+                                                                color: '#565d68'
+                                                            },
+                                                        },
+                                                    },
+                                                    series: [{
+                                                        data: [780, 790, 770, 190, 130, 100, 500, 80, 110, 120, 603, 121, 120, 116, 300, 200, 180, 980, 100, 420, 130, 140 , 110],
+                                                        type: 'line',
+                                                        showSymbol: true,
+                                                        showAllSymbol: true,
+                                                        markLine: {
+                                                            silent: true,
+                                                            data: [{
+                                                                yAxis: 250
+                                                            }],
+                                                            symbol : 'none',
+                                                            label : {
+                                                                color : '#2196f3',
+                                                            },
+                                                            lineStyle : {
+                                                                color : '#2196f3',
+                                                            },
+                                                        },
+                                                        markPoint: {
+                                                            data: [
+                                                                {
+                                                                    type: 'max',
+                                                                    symbolSize: [20, 30],
+                                                                    itemStyle : {
+                                                                        color : 'transparent',
+                                                                    },
+                                                                    label : {
+                                                                        color : '#ddd',
+                                                                    },
+                                                                }
+                                                            ],
+                                                        },
+                                                        symbol: 'circle',
+                                                        lineStyle: {
+                                                            width: 2,
+                                                            type: 'solid'
+                                                        },
+                                                    }],
+                                                    visualMap: [{
+                                                        show: false,
+                                                        seriesIndex: 0,
+                                                        min: 0,
+                                                        max: 500,
+                                                        borderWidth: 5,
+                                                        inRange: {
+                                                            color: ['#747b86', '#2195f2'],
+                                                            symbolSize: 8,
+                                                        },
+                                                    }],
+                                                    textStyle : {
+                                                        color: '#adb0bc',
+                                                        fontWeight: 100,
+                                                    },
+                                                };
+                                                myChart.setOption(option);
+                                                window.addEventListener('resize',function(){
+                                                    myChart.resize();
+                                                });
+                                                myChart.on('mouseover', 'series', function () {
+                                                    $(this).attr('rel', 'event_modal3');
+                                                });
+                                                myChart.on('click', 'series', function () {
+                                                    window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="w_25" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title">
+                                        Anti Malware 처리상태
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="cont_btn_day fl">
+                                            <a href="#" class="on">Day</a>
+                                            <a href="#" class="">Weekly</a>
+                                        </div>
+                                        <div class="cont_btn fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_chart_pie_box">
+                                    <div id="chart02" class="dashboard_chart_pie">
+                                        <script>
+                                            $(document).ready(function(){
+                                                var myChart2 = echarts.init(document.getElementById('chart02'));
+                                                option = {
+                                                    title: {
+                                                        text: 'Anti\n' + 'Malware',
+                                                        left: 'center',
+                                                        top: 'center',
+                                                        textStyle: {
+                                                            color : '#ddd',
+                                                            fontFamily: 'SpoqaHanSans',
+                                                            fontWeight: 400,
+                                                            fontSize : 18,
+                                                        },
+                                                    },
+                                                    legend: {
+                                                        left: 'center',
+                                                        bottom : '0',
+                                                        data: [
+                                                            {
+                                                                name : 'allowed',
+                                                                icon : 'circle',
+                                                                textStyle: {
+                                                                    color : '#4d67cc',
+                                                                },
+                                                            },
+                                                            {
+                                                                name : 'allowed02',
+                                                                icon : 'circle',
+                                                                textStyle: {
+                                                                    color : '#3faeb8',
+                                                                },
+                                                            },
+                                                            {
+                                                                name : 'drop',
+                                                                icon : 'circle',
+                                                                textStyle: {
+                                                                    color : '#da9527',
+                                                                },
+                                                            },
+                                                            {
+                                                                name: 'drop03',
+                                                                icon : 'circle',
+                                                                textStyle: {
+                                                                    color: '#9f9e9e',
+                                                                },
+                                                            },
+                                                            {
+                                                                name : 'drop02',
+                                                                icon : 'circle',
+                                                                textStyle: {
+                                                                    color : '#55a559',
+                                                                },
+                                                            },
+                                                        ],
+                                                    },
+                                                    tooltip: {
+                                                        triggerOn : 'mousemove',
+                                                        backgroundColor: 'rgba(47,55,66,0.8)',
+                                                        borderColor: "#515964",
+                                                        transitionDuration: 0,
+                                                        textStyle: {
+                                                            color : '#bbbbbb',
+                                                            fontWeight: 400,
+                                                            fontSize : 11,
+                                                        },
+                                                        position: 'inside',
+                                                        renderMode : 'html',
+                                                        formatter: '{b} <span style="color: #ed960a">{d}%</span>',
+                                                    },
+                                                    series: [
+                                                        {
+                                                            type: 'pie',
+                                                            radius: ['30%', '60%'],
+                                                            emphasis  :{
+                                                                itemStyle: {
+                                                                    shadowBlur: 4,
+                                                                    shadowOffsetX: 1,
+                                                                    shadowColor: 'rgba(0, 0, 0, 0.4)'
+                                                                },
+                                                            },
+
+                                                            data: [
+                                                                {
+                                                                    value: 335,
+                                                                    name: 'allowed',
+                                                                    itemStyle: {
+                                                                        color: '#4d67cc',
+                                                                        opacity : 1,
+                                                                    },
+                                                                    label : {
+                                                                        fontSize: 12,
+                                                                        color: '#4d67cc',
+                                                                    },
+                                                                    emphasis  :{
+                                                                        itemStyle:{
+                                                                            color: '#4d67cc',
+                                                                            opacity: 1,
+                                                                        },
+                                                                    },
+                                                                },
+                                                                {
+                                                                    value: 310,
+                                                                    name: 'allowed02',
+                                                                    itemStyle: {
+                                                                        color: '#3faeb8',
+                                                                    },
+                                                                    label : {
+                                                                        fontSize: 12,
+                                                                        color: '#3faeb8',
+                                                                    },
+                                                                    emphasis  :{
+                                                                        itemStyle:{
+                                                                            color: '#3faeb8',
+                                                                            opacity: 1,
+                                                                        },
+                                                                    },
+                                                                },
+                                                                {
+                                                                    value: 234,
+                                                                    name: 'drop',
+                                                                    itemStyle: {
+                                                                        color: '#da9527',
+                                                                    },
+                                                                    label : {
+                                                                        fontSize: 12,
+                                                                        color: '#da9527',
+                                                                    },
+                                                                    emphasis  :{
+                                                                        itemStyle:{
+                                                                            color: '#da9527',
+                                                                            opacity: 1,
+                                                                        },
+                                                                    },
+                                                                },
+                                                                {
+                                                                    value: 135,
+                                                                    name: 'drop03',
+                                                                    itemStyle: {
+                                                                        color: '#9f9e9e',
+                                                                    },
+                                                                    label : {
+                                                                        fontSize: 12,
+                                                                        color: '#9f9e9e',
+                                                                    },
+                                                                    emphasis  :{
+                                                                        itemStyle:{
+                                                                            color: '#9f9e9e',
+                                                                            opacity: 1,
+                                                                        },
+                                                                    },
+                                                                },
+                                                                {
+                                                                    value: 135,
+                                                                    name: 'drop02',
+                                                                    itemStyle: {
+                                                                        color: '#55a559',
+                                                                    },
+                                                                    label : {
+                                                                        fontSize: 12,
+                                                                        color: '#55a559',
+                                                                    },
+                                                                    emphasis  :{
+                                                                        itemStyle:{
+                                                                            color: '#55a559',
+                                                                            opacity: 1,
+                                                                        },
+                                                                    },
+                                                                },
+                                                            ],
+                                                        }
+                                                    ]
+                                                };
+                                                myChart2.setOption(option);
+                                                window.addEventListener('resize',function(){
+                                                    myChart2.resize();
+                                                });
+                                                myChart2.on('mouseover', 'series', function () {
+                                                    $(this).attr('rel', 'event_modal3');
+                                                });
+                                                myChart2.on('click', 'series', function () {
+                                                    window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="w_25" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title" title="Anti Malware 최근 감염된 컴퓨터">
+                                        Anti Malware 최근 감염된 컴퓨터
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="cont_btn_day fl">
+                                            <a href="#" class="on">Day</a>
+                                            <a href="#" class="">Weekly</a>
+                                        </div>
+                                        <div class="cont_btn fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_top5_box">
+                                    <div class="dashboard_top5">
+                                        <div class="top5">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                                        <div class="number fl">
+                                                            <span>01</span>
+                                                        </div>
+                                                        <div class="top5_text down fl">
+                                                            <dl>
+                                                                <dt>redhat78-96</dt>
+                                                                <dd>8477</dd>
+                                                            </dl>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                                        <div class="number fl">
+                                                            <span>02</span>
+                                                        </div>
+                                                        <div class="top5_text down fl">
+                                                            <dl>
+                                                                <dt>ET policy gnu/linux yum User-agent outABCET policy gnu/linux yum User-agent outABC-cc</dt>
+                                                                <dd>8477</dd>
+                                                            </dl>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                                        <div class="number fl">
+                                                            <span>03</span>
+                                                        </div>
+                                                        <div class="top5_text up fl">
+                                                            <dl>
+                                                                <dt>redhat79-cc</dt>
+                                                                <dd>8477</dd>
+                                                            </dl>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                                        <div class="number fl">
+                                                            <span>04</span>
+                                                        </div>
+                                                        <div class="top5_text down fl">
+                                                            <dl>
+                                                                <dt>redhat80-cc</dt>
+                                                                <dd>8477</dd>
+                                                            </dl>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                                        <div class="number fl">
+                                                            <span>05</span>
+                                                        </div>
+                                                        <div class="top5_text up fl">
+                                                            <dl>
+                                                                <dt>redhat79-cc</dt>
+                                                                <dd>8477</dd>
+                                                            </dl>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                                        <div class="number fl">
+                                                            <span>06</span>
+                                                        </div>
+                                                        <div class="top5_text up fl">
+                                                            <dl>
+                                                                <dt>redhat79-cc</dt>
+                                                                <dd>8477</dd>
+                                                            </dl>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="w_50" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title">
+                                        Anti Malware 최근 탐지된 바이러스 TOP10
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="cont_btn fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_table_box">
+                                    <div class="dashboard_table">
+                                        <script type="text/javascript">
+                                            $(document).ready(function() {
+                                                $("#testTb01").dataTable({
+                                                    "autoWidth": false,
+                                                    "paging": false,
+                                                    // "pagingType" : "full_numbers",
+                                                    "ordering": false,
+                                                    "info": false,
+                                                    "filter": false,
+                                                    "lengthChange": true,
+                                                    "dom": 'rt<"bottom"fip><"clear">',
+                                                });
+                                            } );
+                                        </script>
+                                        <div class="tbl">
+                                            <table id="testTb01" class="click">
+                                                <colgroup>
+                                                    <col width="20%">
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                    <col width="8%">
+                                                    <col width="auto">
+                                                    <col width="53px">
+                                                    <col width="20%">
+                                                </colgroup>
+                                                <thead>
+                                                <tr>
+                                                    <th>자산</th>
+                                                    <th>출발지</th>
+                                                    <th>목적지</th>
+                                                    <th>액션</th>
+                                                    <th>서명</th>
+                                                    <th>위험도</th>
+                                                    <th>탐지시간</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">localhost.localdomain</td>
+                                                    <td class="long_w">192.162.2.20</td>
+                                                    <td class="long_w">192.168.10.96</td>
+                                                    <td class="long_w">allowed</td>
+                                                    <td class="long_w">
+                                                        dummy signature Trojan012 text text text
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="long_w">2020/10/23 14:02:56</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">localhost.localdomain</td>
+                                                    <td class="long_w">192.162.2.20</td>
+                                                    <td class="long_w">192.168.10.96</td>
+                                                    <td class="long_w">allowed</td>
+                                                    <td class="long_w">
+                                                        dummy signature Trojan012 text text text
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="long_w">2020/10/23 14:02:56</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">localhost.localdomain</td>
+                                                    <td class="long_w">192.162.2.20</td>
+                                                    <td class="long_w">192.168.10.96</td>
+                                                    <td class="long_w">allowed</td>
+                                                    <td class="long_w">
+                                                        dummy signature Trojan012 text text text
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="long_w">2020/10/23 14:02:56</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">localhost.localdomain</td>
+                                                    <td class="long_w">192.162.2.20</td>
+                                                    <td class="long_w">192.168.10.96</td>
+                                                    <td class="long_w">allowed</td>
+                                                    <td class="long_w">
+                                                        dummy signature Trojan012 text text text
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="long_w">2020/10/23 14:02:56</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">localhost.localdomain</td>
+                                                    <td class="long_w">192.162.2.20</td>
+                                                    <td class="long_w">192.168.10.96</td>
+                                                    <td class="long_w">allowed</td>
+                                                    <td class="long_w">
+                                                        dummy signature Trojan012 text text text
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="long_w">2020/10/23 14:02:56</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">localhost.localdomain</td>
+                                                    <td class="long_w">192.162.2.20</td>
+                                                    <td class="long_w">192.168.10.96</td>
+                                                    <td class="long_w">allowed</td>
+                                                    <td class="long_w">
+                                                        dummy signature Trojan012 text text text
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="long_w">2020/10/23 14:02:56</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">localhost.localdomain</td>
+                                                    <td class="long_w">192.162.2.20</td>
+                                                    <td class="long_w">192.168.10.96</td>
+                                                    <td class="long_w">allowed</td>
+                                                    <td class="long_w">
+                                                        dummy signature Trojan012 text text text
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="long_w">2020/10/23 14:02:56</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">localhost.localdomain</td>
+                                                    <td class="long_w">192.162.2.20</td>
+                                                    <td class="long_w">192.168.10.96</td>
+                                                    <td class="long_w">allowed</td>
+                                                    <td class="long_w">
+                                                        dummy signature Trojan012 text text text
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="long_w">2020/10/23 14:02:56</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">localhost.localdomain</td>
+                                                    <td class="long_w">192.162.2.20</td>
+                                                    <td class="long_w">192.168.10.96</td>
+                                                    <td class="long_w">allowed</td>
+                                                    <td class="long_w">
+                                                        dummy signature Trojan012 text text text
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="long_w">2020/10/23 14:02:56</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">localhost.localdomain</td>
+                                                    <td class="long_w">192.162.2.20</td>
+                                                    <td class="long_w">192.168.10.96</td>
+                                                    <td class="long_w">allowed</td>
+                                                    <td class="long_w">
+                                                        dummy signature Trojan012 text text text
+                                                        dummy signature Trojan012 text text text
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td class="long_w">2020/10/23 14:02:56</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="w_50" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title">
+                                        Anti Malware 이벤트 트렌드
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="cont_btn_day fl">
+                                            <a href="#" class="on">Day</a>
+                                            <a href="#" class="">Weekly</a>
+                                        </div>
+                                        <div class="cont_btn fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_chart_bar_box">
+                                    <div id="chart03" class="dashboard_chart_bar">
+                                        <script>
+                                            $(document).ready(function(){
+                                                var myChart3 = echarts.init(document.getElementById('chart03'));
+                                                option = {
+                                                    tooltip: {
+                                                        triggerOn : 'mousemove',
+                                                        backgroundColor: 'rgba(47,55,66,0.8)',
+                                                        borderColor: "#515964",
+                                                        transitionDuration: 0,
+                                                        textStyle: {
+                                                            color : '#bbbbbb',
+                                                            fontWeight: 400,
+                                                            fontSize : 11,
+                                                        },
+                                                        position: 'top',
+                                                        renderMode : 'html',
+                                                        formatter: '2020.11.05 <span style="color: #ed960a">{c}</span>',
+                                                    },
+                                                    grid : {
+                                                        height : '300',
+                                                        top : '70',
+                                                        bottom : '0',
+                                                        left : '100',
+                                                        right : '110'
+                                                    },
+                                                    xAxis: {
+                                                        type: 'category',
+                                                        name: '(일)',
+                                                        nameTextStyle: {
+                                                            padding : [25,0,0,0],
+                                                        },
+                                                        axisLine: {
+                                                            lineStyle: {
+                                                                color: '#565d68'
+                                                            }
+                                                        },
+                                                        data: ['2020-10-19','2020-10-20','2020-10-21','2020-10-22','2020-10-23','2020-10-24','2020-10-25']
+                                                    },
+                                                    yAxis: {
+                                                        type: 'value',
+                                                        name: '(갯수)',
+                                                        nameTextStyle: {
+                                                            padding : [0,45,0,0],
+                                                        },
+                                                        splitLine: {
+                                                            show: true,
+                                                            lineStyle: {
+                                                                color: '#565d68'
+                                                            }
+                                                        },
+                                                        axisLine: {
+                                                            lineStyle: {
+                                                                color: '#565d68'
+                                                            }
+                                                        },
+                                                    },
+                                                    series: [{
+                                                        data: [20000, 10000, 18000, 8000, 14000, 6000, 15500],
+                                                        type: 'bar',
+                                                        showSymbol: true,
+                                                        barWidth: '45%',
+                                                        // itemStyle: {
+                                                        //     barBorderRadius: [5,5,0,0],
+                                                        // },
+                                                        markLine: {
+                                                            silent: true,
+                                                            data: [{
+                                                                yAxis: 12500
+                                                            }],
+                                                            symbol : 'none',
+                                                            label : {
+                                                                color : '#2196f3',
+                                                            },
+                                                            lineStyle : {
+                                                                color : '#2196f3',
+                                                            },
+                                                        },
+                                                    }],
+                                                    visualMap: {
+                                                        show: false,
+                                                        top: 10,
+                                                        right: 10,
+                                                        pieces: [{
+                                                            gt: 0,
+                                                            lte: 12500,
+                                                            color: '#4d5663'
+                                                        }, {
+                                                            gt: 12500,
+                                                            lte: 100000,
+                                                            color: '#2196f3'
+                                                        },],
+                                                    },
+                                                    textStyle : {
+                                                        color: '#adb0bc',
+                                                        fontWeight: 100,
+                                                    },
+                                                };
+                                                myChart3.setOption(option);
+                                                window.addEventListener('resize',function(){
+                                                    myChart3.resize();
+                                                });
+                                                myChart3.on('mouseover', 'series', function () {
+                                                    $(this).attr('rel', 'event_modal3');
+                                                });
+                                                myChart3.on('click', 'series', function () {
+                                                    window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="w_50" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title">
+                                        Anti Malware 이벤트 트렌드
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="cont_btn_day fl">
+                                            <a href="#" class="on">Day</a>
+                                            <a href="#" class="">Weekly</a>
+                                        </div>
+                                        <div class="cont_btn fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_chart_treemap_box">
+                                    <div id="chart04" class="dashboard_chart_treemap">
+                                        <script>
+                                            $(document).ready(function(){
+                                                var myChart4 = echarts.init(document.getElementById('chart04'));
+                                                option = {
+                                                    series: [{
+                                                        itemStyle: {
+                                                            borderColor: '#2f3742'
+                                                        },
+                                                        type: 'treemap',
+                                                        width: '100%',
+                                                        height: '100%',
+                                                        // height: 384,
+                                                        roam: false,
+                                                        breadcrumb: {
+                                                            show: false,
+                                                        },
+                                                        leafDepth: 10,
+                                                        nodeClick: false,
+                                                        visibleMin: 300,
+                                                        upperLabel: {
+                                                            show : true,
+                                                            position: 'inside',
+                                                            color : '#ddd',
+                                                            formatter : '{b}',
+                                                        },
+                                                        levels: [
+                                                            {
+                                                                color: ['#4d67cc', '#4e98d2', '#3faeb8', '#d8a24d', '#6ea870'],
+                                                                colorMappingBy: 'id',
+                                                                colorAlpha : [1, 1],
+                                                                itemStyle: {
+                                                                    borderWidth: 0,
+                                                                    gapWidth: 3,
+                                                                },
+                                                            },
+                                                            {
+                                                                colorMappingBy: 'value',
+                                                                colorAlpha : 1,
+                                                                colorSaturation: [0.35, 0.55],
+                                                                itemStyle: {
+                                                                    gapWidth: 2,
+                                                                    borderColorSaturation: 0.5,
+                                                                },
+                                                                emphasis: {
+                                                                    upperLabel: {
+                                                                        show : true,
+                                                                        position: 'inside',
+                                                                        color : '#ddd',
+                                                                        formatter : '{b}',
+                                                                    },
+                                                                },
+                                                            },
+                                                            {
+                                                                colorMappingBy: 'value',
+                                                                colorAlpha : [1, 1],
+                                                                colorSaturation : [0,1],
+                                                                itemStyle: {
+                                                                    gapWidth: 1,
+                                                                    borderColorSaturation: 0.45,
+                                                                },
+                                                                emphasis: {
+                                                                    upperLabel: {
+                                                                        show : true,
+                                                                        position: 'inside',
+                                                                        color : '#ddd',
+                                                                        formatter : '{b}',
+                                                                    },
+                                                                },
+                                                            },
+                                                        ],
+                                                        data: [
+                                                            {
+                                                                name: 'Meat / Pou',            // First tree
+                                                                value: 50,
+                                                                id: 'someid-1',
+                                                                children: [
+                                                                    {
+                                                                        name: 'nodeAa1',       // First leaf of first tree
+                                                                        value: 10,
+                                                                        id: 'someid-1',
+                                                                    },
+                                                                    {
+                                                                        name: 'nodeAb2',       // Second leaf of first tree
+                                                                        value: 6
+                                                                    },
+                                                                    {
+                                                                        name: 'nodeAb3',       // Second leaf of first tree
+                                                                        value: 4
+                                                                    },
+                                                                    {
+                                                                        name: 'nodeAb4',       // Second leaf of first tree
+                                                                        value: 9
+                                                                    },
+                                                                    {
+                                                                        name: 'nodeAb5',       // Second leaf of first tree
+                                                                        value: 5
+                                                                    },
+                                                                    {
+                                                                        name: 'nodeAb6',       // Second leaf of first tree
+                                                                        value: 20
+                                                                    },
+                                                                ]
+                                                            },
+                                                            {
+                                                                name: 'Beverages',            // Second tree
+                                                                value: 20,
+                                                                children: [
+                                                                    {
+                                                                        name: 'Teas',       // Son of first tree
+                                                                        value: 20,
+                                                                    },
+                                                                    {
+                                                                        name: 'Beers',       // Son of first tree
+                                                                        value: 20,
+                                                                    },
+                                                                ]
+                                                            },
+                                                            {
+                                                                name: 'Meat / Pou',            // First tree
+                                                                value: 70,
+                                                                id: 'someid-2',
+                                                                children: [
+                                                                    {
+                                                                        name: 'nodeAa1',       // First leaf of first tree
+                                                                        value: 10,
+                                                                        id: 'someid-2',
+                                                                    },
+                                                                    {
+                                                                        name: 'nodeAb2',       // Second leaf of first tree
+                                                                        value: 6
+                                                                    },
+                                                                    {
+                                                                        name: 'nodeAb3',       // Second leaf of first tree
+                                                                        value: 4
+                                                                    },
+                                                                    {
+                                                                        name: 'nodeAb4',       // Second leaf of first tree
+                                                                        value: 9
+                                                                    },
+                                                                    {
+                                                                        name: 'nodeAb5',       // Second leaf of first tree
+                                                                        value: 5
+                                                                    },
+                                                                    {
+                                                                        name: 'nodeAb6',       // Second leaf of first tree
+                                                                        value: 20
+                                                                    },
+                                                                ]
+                                                            },
+                                                            {
+                                                                name: 'Dairy Products',            // Second tree
+                                                                value: 30,
+                                                                children: [
+                                                                    {
+                                                                        name: 'Teas',       // Son of first tree
+                                                                        value: 20,
+                                                                    },
+                                                                    {
+                                                                        name: 'Beers',       // Son of first tree
+                                                                        value: 20,
+                                                                    },
+                                                                ]
+                                                            },
+                                                            {
+                                                                name: 'Condiments',            // Second tree
+                                                                value: 40,
+                                                                children: [
+                                                                    {
+                                                                        name: 'Teas',       // Son of first tree
+                                                                        value: 20,
+                                                                    },
+                                                                    {
+                                                                        name: 'Beers',       // Son of first tree
+                                                                        value: 20,
+                                                                    },
+                                                                ]
+                                                            },
+                                                            {
+                                                                name: 'Seafood',            // Second tree
+                                                                value: 50,
+                                                                children: [
+                                                                    {
+                                                                        name: 'Teas',       // Son of first tree
+                                                                        value: 20,
+                                                                    },
+                                                                    {
+                                                                        name: 'Beers',       // Son of first tree
+                                                                        value: 20,
+                                                                    },
+                                                                ]
+                                                            },
+                                                            {
+                                                                name: 'Produce',            // Second tree
+                                                                value: 60,
+                                                                children: [
+                                                                    {
+                                                                        name: 'Teas',       // Son of first tree
+                                                                        value: 20,
+                                                                    },
+                                                                    {
+                                                                        name: 'Beers',       // Son of first tree
+                                                                        value: 20,
+                                                                    },
+                                                                ]
+                                                            },
+                                                        ],
+                                                        tooltip: {
+                                                            triggerOn : 'mousemove',
+                                                            backgroundColor: 'rgba(47,55,66,0.8)',
+                                                            borderColor: "#515964",
+                                                            transitionDuration: 0,
+                                                            textStyle: {
+                                                                color : '#bbbbbb',
+                                                                fontWeight: 400,
+                                                                fontSize : 11,
+                                                            },
+                                                            position: 'top',
+                                                            renderMode : 'html',
+                                                            formatter: '2020.11.05 <span style="color: #fdfa01">{b}</span>',
+                                                        },
+                                                    }],
+                                                };
+                                                myChart4.setOption(option);
+                                                window.addEventListener('resize',function(){
+                                                    myChart4.resize();
+                                                });
+                                                myChart4.on('click', 'series', function () {
+                                                    window.open('event_popup_win3.html','','width=869,height=700,location=no,status=no,scrollbars=yes');
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="w_50" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title">
+                                        무결성 최근 이벤트 TOP10
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="cont_btn_day fl">
+                                            <a href="#" class="on">Day</a>
+                                            <a href="#" class="">Weekly</a>
+                                        </div>
+                                        <div class="cont_btn fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_table_box">
+                                    <div class="dashboard_table">
+                                        <script type="text/javascript">
+                                            $(document).ready(function() {
+                                                $("#testTb02").dataTable({
+                                                    "autoWidth": false,
+                                                    "paging": false,
+                                                    // "pagingType" : "full_numbers",
+                                                    "ordering": false,
+                                                    "info": false,
+                                                    "filter": false,
+                                                    "lengthChange": true,
+                                                    "dom": 'rt<"bottom"fip><"clear">',
+                                                });
+                                            } );
+
+                                        </script>
+                                        <div class="tbl">
+                                            <table id="testTb02" class="click">
+                                                <colgroup>
+                                                    <col width="45%">
+                                                    <col width="25%">
+                                                    <col width="30%">
+                                                </colgroup>
+                                                <thead>
+                                                <tr>
+                                                    <th>자산</th>
+                                                    <th>파일종류</th>
+                                                    <th>파일명</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">redhat76-cc</td>
+                                                    <td class="long_w">16</td>
+                                                    <td class="long_w">/etc/cron</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">redhat76-cc</td>
+                                                    <td class="long_w">16</td>
+                                                    <td class="long_w">/etc/cron</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">redhat76-cc</td>
+                                                    <td class="long_w">16</td>
+                                                    <td class="long_w">/etc/cron</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">redhat76-cc</td>
+                                                    <td class="long_w">16</td>
+                                                    <td class="long_w">/etc/cron</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">redhat76-cc</td>
+                                                    <td class="long_w">16</td>
+                                                    <td class="long_w">/etc/cron</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">redhat76-cc</td>
+                                                    <td class="long_w">16</td>
+                                                    <td class="long_w">/etc/cron</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">redhat76-cc</td>
+                                                    <td class="long_w">16</td>
+                                                    <td class="long_w">/etc/cron</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">redhat76-cc</td>
+                                                    <td class="long_w">16</td>
+                                                    <td class="long_w">/etc/cron</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">redhat76-cc</td>
+                                                    <td class="long_w">16</td>
+                                                    <td class="long_w">/etc/cron</td>
+                                                </tr>
+                                                <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                                    <td class="long_w">redhat76-cc</td>
+                                                    <td class="long_w">16</td>
+                                                    <td class="long_w">/etc/cron</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="w_25" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title" title="Anti Malware 최근 감염된 컴퓨터">
+                                        Anti Malware 최근 감염된 컴퓨터
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="cont_btn_day fl">
+                                            <a href="#" class="on">Day</a>
+                                            <a href="#" class="">Weekly</a>
+                                        </div>
+                                        <div class="cont_btn fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_top5_box">
+                                    <div class="cont_loading">
+                                        <div class="loading_box">
+                                            <div class="img_box">
+                                                <img src="assets/images/loading.gif"/>
+                                            </div>
+                                            <p class="loading04">
+                                                <span>L</span>
+                                                <span>o</span>
+                                                <span>a</span>
+                                                <span>d</span>
+                                                <span>i</span>
+                                                <span>n</span>
+                                                <span>g</span>
+                                                <span>.</span>
+                                                <span>.</span>
+                                                <span>.</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="w_50" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title">
+                                        Anti Malware 이벤트 트렌드
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="cont_btn_day fl">
+                                            <a href="#" class="on">Day</a>
+                                            <a href="#" class="">Weekly</a>
+                                        </div>
+                                        <div class="cont_btn disabled fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_chart_line_box">
+                                    <div class="no_data">
+                                        <p><span>No Data</span> 불러들일 데이터가 없습니다.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="w_25" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title">
+                                        Anti Malware 이벤트 트렌드
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="cont_btn_day fl">
+                                            <a href="#" class="on">Day</a>
+                                            <a href="#" class="">Weekly</a>
+                                        </div>
+                                        <div class="cont_btn disabled fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_chart_line_box">
+                                    <div class="cont_loading">
+                                        <div class="loading_box">
+                                            <div class="img_box">
+                                                <img src="assets/images/loading.gif"/>
+                                            </div>
+                                            <p class="loading04">
+                                                <span>L</span>
+                                                <span>o</span>
+                                                <span>a</span>
+                                                <span>d</span>
+                                                <span>i</span>
+                                                <span>n</span>
+                                                <span>g</span>
+                                                <span>.</span>
+                                                <span>.</span>
+                                                <span>.</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="no_data">
+                                        <p><span>No Data</span> 불러들일 데이터가 없습니다.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tabMgmt_2 tab_cont">
+                <div class="dashboard_box">
+                    <div class="dashboard_box_top">
+                        <div class="dashboard_title">
+                            <h3>Tab style1</h3>
+                        </div>
+                        <div class="dashboard_btn_box">
+                            <a href="#" rel="time_all_modal" class="btn bline modalLoad">
+                                <span>리로딩설정</span>
+                            </a>
+                            <a href="#" rel="dashboard_listadd_modal" class="btn bline modalLoad">
+                                <span>위젯설정</span>
+                            </a>
+                            <a href="#" class="btn save">
+                                <span>저장</span>
+                            </a>
+                            <a href="#" class="btn pin">고정</a>
+                        </div>
+                    </div>
+                    <div class="dashboard_box_cont">
+                        <ul class="dashboard_cont">
+                            <li class="w_50" >
+                                <div class="dashboard_cont_top">
+                                    <h4 class="cont_title">
+                                        Anti Malware 이벤트 트렌드
+                                    </h4>
+                                    <div class="cont_btn_box">
+                                        <div class="sel_box fl">
+                                            <select class="small">
+                                                <option>Day</option>
+                                                <option>Weekly</option>
+                                            </select>
+                                        </div>
+                                        <div class="cont_btn fl">
+                                            <a href="#" class="cont_btn_link">
+                                                <span class="linktext">메뉴</span>
+                                            </a>
+                                            <div class="cont_btn_list">
+                                                <ul>
+                                                    <li><a href="#" rel="time_modal" class="modalLoad">Configuration</a></li>
+                                                    <li><a href="#">Refresh</a></li>
+                                                    <li><a href="#" class="delete">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_chart_line_box">
+                                    <div id="chart05" class="dashboard_chart_line">
+                                        <script>
+                                            $(document).ready(function(){
+                                                var myChart = echarts.init(document.getElementById('chart05'));
+                                                opts = {
+                                                    width :1000,
+                                                    height : 390,
+                                                };
+                                                option = {
+
+                                                    tooltip: {
+                                                        triggerOn : 'mousemove',
+                                                        backgroundColor: 'rgba(120,115,108,0.8)',
+                                                        transitionDuration: 0,
+                                                        textStyle: {
+                                                            color : '#ffffff',
+                                                            fontWeight: 400,
+                                                            fontSize : 11,
+                                                        },
+                                                        position: 'top',
+                                                        renderMode : 'html',
+                                                        formatter: '2020.11.05 {b}:00:00 <span style="color: #fdfa01">{c}</span>',
+                                                    },
+                                                    grid : {
+                                                        height : '330',
+                                                        top : '40',
+                                                        bottom : '0',
+                                                        left : '60',
+                                                    },
+                                                    xAxis: {
+                                                        type: 'category',
+                                                        name: '(시간)',
+                                                        nameTextStyle: {
+                                                            padding : [25,0,0,0],
+                                                        },
+                                                        axisLine: {
+                                                            lineStyle: {
+                                                                color: '#adb0bc'
+                                                            }
+                                                        },
+                                                        data: ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '23']
+                                                    },
+                                                    yAxis: {
+                                                        type: 'value',
+                                                        name: '(갯수)',
+                                                        nameTextStyle: {
+                                                            padding : [0,45,0,0],
+                                                        },
+                                                        splitLine: {show: false},
+                                                        axisLine: {
+                                                            lineStyle: {
+                                                                color: '#adb0bc'
+                                                            }
+                                                        },
+                                                    },
+                                                    series: [{
+                                                        data: [780, 790, 770, 190, 130, 100, 500, 80, 110, 120, 603, 121, 120, 116, 300, 200, 180, 980, 100, 420, 130, 140 , 110],
+                                                        type: 'line',
+                                                        showSymbol: true,
+                                                        markLine: {
+                                                            silent: true,
+                                                            data: [{
+                                                                yAxis: 250
+                                                            }],
+                                                            symbol : 'none',
+                                                            label : {
+                                                                color : '#5978ed',
+                                                            },
+                                                            lineStyle : {
+                                                                color : '#5978ed',
+                                                            },
+                                                        },
+                                                        markPoint: {
+                                                            data: [
+                                                                {
+                                                                    type: 'max',
+                                                                    symbolSize: [20, 30],
+                                                                    itemStyle : {
+                                                                        color : 'transparent',
+                                                                    },
+                                                                    label : {
+                                                                        color : '#000000',
+                                                                    },
+                                                                }
+                                                            ],
+
+                                                        },
+                                                        lineStyle : {
+                                                            width: 2,
+                                                        },
+                                                    }],
+                                                    visualMap: [{
+                                                        show: false,
+                                                        showAllSymbol: true,
+                                                        type: 'continuous',
+                                                        seriesIndex: 0,
+                                                        min: 0,
+                                                        max: 500,
+                                                        borderWidth: 4,
+                                                        inRange: {
+                                                            color: ['#43c7d3', '#ff9f24'],
+                                                            symbolSize: [10, 10],
+                                                        },
+                                                    }],
+                                                };
+                                                myChart.setOption(option, opts);
+                                                window.addEventListener('resize',function(){
+                                                    myChart.resize();
+                                                });
+                                                myChart.on('mouseover', 'series', function () {
+                                                    $(this).attr('rel', 'event_modal3');
+                                                });
+                                                myChart.on('click', 'series', function () {
+                                                    var $self = $(this);
+                                                    var $thisrel = $self.attr('rel');
+                                                    var $target = $('#'+ $thisrel);
+
+                                                    // open and focusin
+                                                    $target.attr('tabindex', '0').fadeIn(250).focus();
+                                                    $target.css({ display: 'table' });
+                                                    $target.addClass('open');
+                                                    createDim();
+                                                    $target.find(".close").on('keydown', function(e){
+                                                        if(e.which=='9'){
+                                                            $target.attr('tabindex', '0').focus();
+                                                        }
+                                                    });
+                                                    $target.find(".close").on('click',function(e){
+                                                        e.preventDefault();
+                                                        $target.fadeOut(250);
+                                                        removeDim();
+                                                        $self.focus();
+                                                        $(this).off('click');
+                                                        $target.removeClass('open');
+                                                        var isVisible = $target.is(':visible');
+                                                        var modalLength = $('.modal:visible').length;
+
+                                                        if (isVisible) {
+                                                            if (modalLength > 1) {
+                                                                $target.fadeOut(250);
+                                                            } else {
+                                                                $('.dim').fadeOut(250);
+                                                            }
+                                                        }
+                                                    });
+                                                    $target.find(".modalLoad").on('click',function(e){
+                                                        e.preventDefault();
+                                                        $target.fadeOut(250);
+                                                        $self.focus();
+                                                        var isVisible = $target.is(':visible');
+                                                        var modalLength = $('.modal:visible').length;
+
+                                                        if (isVisible) {
+                                                            if (modalLength > 1) {
+                                                                $target.fadeOut(250);
+                                                            } else {
+                                                                $('.dim').fadeOut(250);
+                                                            }
+                                                        }
+                                                    });
+                                                    $(document).on("keyup", function(e){
+                                                        if(e.which=='27'){
+                                                            $target.fadeOut(250);
+                                                            removeDim();
+                                                            $self.focus();
+                                                            $target.attr('class', 'modal');
+                                                        }
+                                                    });
+                                                    $target.parents('html body').find(".dim").click(function (e) {
+                                                        e.preventDefault();
+                                                        if(e.which=='9'){
+                                                            $target.attr('tabindex', '0').focus();
+                                                        }
+                                                        $target.fadeOut(250);
+                                                        removeDim();
+                                                        $self.focus();
+                                                        $(this).off('click');
+                                                        $target.removeClass('open');
+                                                        var isVisible = $target.is(':visible');
+                                                        var modalLength = $('.modal:visible').length;
+
+                                                        if (isVisible) {
+                                                            if (modalLength > 1) {
+                                                                $target.fadeOut(250);
+                                                            } else {
+                                                                $('.dim').fadeOut(250);
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
