@@ -885,64 +885,7 @@ function lf_setTopCont(){
 <section class="securitypolicy_page mscrollbar">
 	<div class="sub">
 		<div class="securitypolicy_box">
-			<div id="registry_policy_title" class="securitypolicy_title cluster_policy_title">
-				<div class="securitypolicy_title_left">
-					<h3>컨테이너 워크로드 실행제어</h3>
-					<dl class="fl">
-						<dt>총개수</dt>
-						<dd id="registry_policy_cnt"></dd>
-					</dl>
-				</div>
-				<div class="securitypolicy_title_middle cluster_policy_title_middle">
-					<div class="fl">
-						<div class="event_sel">
-							<div class="sel_box">
-								<select id="selectClusterUuid" onchange="updateTableByCluster()" class="wide event cluster_selecteBox" style="display: none;">
-									<option value="53596b7c-dde6-4a04-ada6-ffa143a9728a">Cluster-61</option>
-									<option value="d6d0d94e-a8e5-410e-890d-9636b9ecad6b">Cluster-64</option>
-									<option value="2f4b443e-d0c4-455f-9664-c6f6fbe5f5d1">Cluster-67</option>
-									<option value="73f67fc0-949a-4527-9a27-ccf35ad2c527">K8S v1.19.14_Cluster</option>
-									<option value="e957fea2-1f6a-4ae2-931f-8a5ee1228c4d">Openshift-240</option>
-								</select>
-							</div>
-						</div>
-					</div>
-					<div class="fl">
-						<div class="ipt_box">
-							<input class="" type="text" placeholder="Rule Name을 입력하여 주십시오." id="searchKeyword" name="searchKeyword" />
-						</div>
-						<a id="searchBtn" href="#" class="btn serch">검색</a>
-					</div>
-				</div>
-				<div class="securitypolicy_title_right cluster_policy_title_right">
-					<div class="fl">
-						<a id="policyUpdate" href="#" class="btn line def add" rel="workLoad_policy_add" name="workLoad">정책추가</a>
-					</div>
-				</div>
-			</div>
-			<div id="containerSecurityPolicyTree">
-				<div id="registry_policy_contain">
-					<div id="workLoadTbl" class="tbl">
-						<table id="workLoad_policy_table" class="dataTable no-footer" role="grid" aria-describedby="workLoad_policy_table_info">
-								<colgroup>
-									<col width="6%">
-									<col width="10%">
-									<col width="24%">
-									<col width="10%">
-									<col width="10%">
-									<col width="10%">
-									<col width="10%">
-									<col width="10%">
-									<col width="10%">
-								</colgroup>
-								<thead>
-									<tr role="row"><th class="sorting" tabindex="0" aria-controls="workLoad_policy_table" rowspan="1" colspan="1" aria-label="No: activate to sort column ascending">No</th><th class="sorting" tabindex="0" aria-controls="workLoad_policy_table" rowspan="1" colspan="1" aria-label="Type: activate to sort column ascending">Type</th><th class="sorting" tabindex="0" aria-controls="workLoad_policy_table" rowspan="1" colspan="1" aria-label="Rule Name: activate to sort column ascending">Rule Name</th><th class="sorting" tabindex="0" aria-controls="workLoad_policy_table" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Action</th><th class="sorting" tabindex="0" aria-controls="workLoad_policy_table" rowspan="1" colspan="1" aria-label="Enabled: activate to sort column ascending">Enabled</th><th class="sorting" tabindex="0" aria-controls="workLoad_policy_table" rowspan="1" colspan="1" aria-label="Updated User: activate to sort column ascending">Updated User</th><th class="sorting" tabindex="0" aria-controls="workLoad_policy_table" rowspan="1" colspan="1" aria-label="Created Date: activate to sort column ascending">Created Date</th><th class="sorting" tabindex="0" aria-controls="workLoad_policy_table" rowspan="1" colspan="1" aria-label="Updated Date: activate to sort column ascending">Updated Date</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Operation">Operation</th></tr>
-								</thead>
-								<tbody><tr role="row" class="odd"><td>1</td><td title="CUSTOM" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">CUSTOM</td><td title="Namespace[intig2-ns] :: for TEST" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Namespace[intig2-ns] :: for TEST</td><td title="ALLOW" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ALLOW</td><td title="적용" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">적용</td><td title="jypark0125" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">jypark0125</td><td title="2023-12-07 14:33:52" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">2023-12-07 14:33:52</td><td title="2023-12-07 14:33:52" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">2023-12-07 14:33:52</td><td><input type="hidden" name="workLoadData" value="{&quot;policy_type&quot;:&quot;CUSTOM&quot;,&quot;is_activated&quot;:&quot;T&quot;,&quot;updated_at&quot;:&quot;2023-12-07 14:33:52&quot;,&quot;cluster_uuid&quot;:&quot;53596b7c-dde6-4a04-ada6-ffa143a9728a&quot;,&quot;policy_description&quot;:&quot;Namespace[intig2-ns]- for TEST&quot;,&quot;updated_by&quot;:&quot;jypark0125&quot;,&quot;policy_name&quot;:&quot;Namespace[intig2-ns] :: for TEST&quot;,&quot;created_at&quot;:&quot;2023-12-07 14:33:52&quot;,&quot;policy_action&quot;:&quot;ALLOW&quot;,&quot;uuid&quot;:&quot;dd9f59a1-636f-4233-b617-b5ae5bf86a8c&quot;}"><a href="#" class="btn icon edit" rel="workLoad_policy_edit" name="workload"> </a><a class="btn icon del" rel="workLoad_policy_del"> </a></td></tr><tr role="row" class="even"><td>2</td><td title="CUSTOM" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">CUSTOM</td><td title="Cluster policy: All Deny" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Cluster policy: All Deny</td><td title="DENY" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">DENY</td><td title="적용" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">적용</td><td title="jypark0125" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">jypark0125</td><td title="2023-12-06 15:29:49" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">2023-12-06 15:29:49</td><td title="2023-12-06 15:29:49" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">2023-12-06 15:29:49</td><td><input type="hidden" name="workLoadData" value="{&quot;policy_type&quot;:&quot;CUSTOM&quot;,&quot;is_activated&quot;:&quot;T&quot;,&quot;updated_at&quot;:&quot;2023-12-06 15:29:49&quot;,&quot;cluster_uuid&quot;:&quot;53596b7c-dde6-4a04-ada6-ffa143a9728a&quot;,&quot;policy_description&quot;:&quot;Cluster policy&quot;,&quot;updated_by&quot;:&quot;jypark0125&quot;,&quot;policy_name&quot;:&quot;Cluster policy: All Deny&quot;,&quot;created_at&quot;:&quot;2023-12-06 15:29:49&quot;,&quot;policy_action&quot;:&quot;DENY&quot;,&quot;uuid&quot;:&quot;a01e8b8d-e3fc-4e8e-955c-a95d6f134558&quot;}"><a href="#" class="btn icon edit" rel="workLoad_policy_edit" name="workload"> </a><a class="btn icon del" rel="workLoad_policy_del"> </a></td></tr><tr role="row" class="odd"><td>3</td><td title="CUSTOM" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">CUSTOM</td><td title="Namespace[monitoring]: For Prometheus" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Namespace[monitoring]: For Prometheus</td><td title="ALLOW" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ALLOW</td><td title="적용" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">적용</td><td title="jypark0125" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">jypark0125</td><td title="2023-12-06 14:01:47" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">2023-12-06 14:01:47</td><td title="2023-12-06 14:01:47" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">2023-12-06 14:01:47</td><td><input type="hidden" name="workLoadData" value="{&quot;policy_type&quot;:&quot;CUSTOM&quot;,&quot;is_activated&quot;:&quot;T&quot;,&quot;updated_at&quot;:&quot;2023-12-06 14:01:47&quot;,&quot;cluster_uuid&quot;:&quot;53596b7c-dde6-4a04-ada6-ffa143a9728a&quot;,&quot;policy_description&quot;:&quot;Promethus&quot;,&quot;updated_by&quot;:&quot;jypark0125&quot;,&quot;policy_name&quot;:&quot;Namespace[monitoring]: For Prometheus&quot;,&quot;created_at&quot;:&quot;2023-12-06 14:01:47&quot;,&quot;policy_action&quot;:&quot;ALLOW&quot;,&quot;uuid&quot;:&quot;c94a79df-2569-4cea-8071-66875ceb9e12&quot;}"><a href="#" class="btn icon edit" rel="workLoad_policy_edit" name="workload"> </a><a class="btn icon del" rel="workLoad_policy_del"> </a></td></tr><tr role="row" class="even"><td>4</td><td title="CUSTOM" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">CUSTOM</td><td title="Namespace[sga-ns] :: policy" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Namespace[sga-ns] :: policy</td><td title="ALLOW" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">ALLOW</td><td title="적용" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">적용</td><td title="jypark0125" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">jypark0125</td><td title="2023-12-06 14:00:50" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">2023-12-06 14:00:50</td><td title="2023-12-06 14:00:50" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">2023-12-06 14:00:50</td><td><input type="hidden" name="workLoadData" value="{&quot;policy_type&quot;:&quot;CUSTOM&quot;,&quot;is_activated&quot;:&quot;T&quot;,&quot;updated_at&quot;:&quot;2023-12-06 14:00:50&quot;,&quot;cluster_uuid&quot;:&quot;53596b7c-dde6-4a04-ada6-ffa143a9728a&quot;,&quot;policy_description&quot;:&quot;Namespace policy&quot;,&quot;updated_by&quot;:&quot;jypark0125&quot;,&quot;policy_name&quot;:&quot;Namespace[sga-ns] :: policy&quot;,&quot;created_at&quot;:&quot;2023-12-06 14:00:50&quot;,&quot;policy_action&quot;:&quot;ALLOW&quot;,&quot;uuid&quot;:&quot;c5128400-4c2b-4940-8119-1f158dcaadf1&quot;}"><a href="#" class="btn icon edit" rel="workLoad_policy_edit" name="workload"> </a><a class="btn icon del" rel="workLoad_policy_del"> </a></td></tr></tbody>
-							</table>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 </section>
