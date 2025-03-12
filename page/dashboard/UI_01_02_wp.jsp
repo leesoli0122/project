@@ -87,7 +87,6 @@
 							<p>Etc</p>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 			<div class="computer_box">
