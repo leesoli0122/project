@@ -1,228 +1,1085 @@
- <html lang="ko" class="chrome"><head><style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button:not([disabled]):hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel:not([disabled]):hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger:not([disabled]):hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style>
+<html lang="ko" class="chrome">
+
+<head>
+	<style type="text/css">
+		.swal-icon--error {
+			border-color: #f27474;
+			-webkit-animation: animateErrorIcon .5s;
+			animation: animateErrorIcon .5s
+		}
+
+		.swal-icon--error__x-mark {
+			position: relative;
+			display: block;
+			-webkit-animation: animateXMark .5s;
+			animation: animateXMark .5s
+		}
+
+		.swal-icon--error__line {
+			position: absolute;
+			height: 5px;
+			width: 47px;
+			background-color: #f27474;
+			display: block;
+			top: 37px;
+			border-radius: 2px
+		}
+
+		.swal-icon--error__line--left {
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+			left: 17px
+		}
+
+		.swal-icon--error__line--right {
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			right: 16px
+		}
+
+		@-webkit-keyframes animateErrorIcon {
+			0% {
+				-webkit-transform: rotateX(100deg);
+				transform: rotateX(100deg);
+				opacity: 0
+			}
+
+			to {
+				-webkit-transform: rotateX(0deg);
+				transform: rotateX(0deg);
+				opacity: 1
+			}
+		}
+
+		@keyframes animateErrorIcon {
+			0% {
+				-webkit-transform: rotateX(100deg);
+				transform: rotateX(100deg);
+				opacity: 0
+			}
+
+			to {
+				-webkit-transform: rotateX(0deg);
+				transform: rotateX(0deg);
+				opacity: 1
+			}
+		}
+
+		@-webkit-keyframes animateXMark {
+			0% {
+				-webkit-transform: scale(.4);
+				transform: scale(.4);
+				margin-top: 26px;
+				opacity: 0
+			}
+
+			50% {
+				-webkit-transform: scale(.4);
+				transform: scale(.4);
+				margin-top: 26px;
+				opacity: 0
+			}
+
+			80% {
+				-webkit-transform: scale(1.15);
+				transform: scale(1.15);
+				margin-top: -6px
+			}
+
+			to {
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				margin-top: 0;
+				opacity: 1
+			}
+		}
+
+		@keyframes animateXMark {
+			0% {
+				-webkit-transform: scale(.4);
+				transform: scale(.4);
+				margin-top: 26px;
+				opacity: 0
+			}
+
+			50% {
+				-webkit-transform: scale(.4);
+				transform: scale(.4);
+				margin-top: 26px;
+				opacity: 0
+			}
+
+			80% {
+				-webkit-transform: scale(1.15);
+				transform: scale(1.15);
+				margin-top: -6px
+			}
+
+			to {
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				margin-top: 0;
+				opacity: 1
+			}
+		}
+
+		.swal-icon--warning {
+			border-color: #f8bb86;
+			-webkit-animation: pulseWarning .75s infinite alternate;
+			animation: pulseWarning .75s infinite alternate
+		}
+
+		.swal-icon--warning__body {
+			width: 5px;
+			height: 47px;
+			top: 10px;
+			border-radius: 2px;
+			margin-left: -2px
+		}
+
+		.swal-icon--warning__body,
+		.swal-icon--warning__dot {
+			position: absolute;
+			left: 50%;
+			background-color: #f8bb86
+		}
+
+		.swal-icon--warning__dot {
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			margin-left: -4px;
+			bottom: -11px
+		}
+
+		@-webkit-keyframes pulseWarning {
+			0% {
+				border-color: #f8d486
+			}
+
+			to {
+				border-color: #f8bb86
+			}
+		}
+
+		@keyframes pulseWarning {
+			0% {
+				border-color: #f8d486
+			}
+
+			to {
+				border-color: #f8bb86
+			}
+		}
+
+		.swal-icon--success {
+			border-color: #a5dc86
+		}
+
+		.swal-icon--success:after,
+		.swal-icon--success:before {
+			content: "";
+			border-radius: 50%;
+			position: absolute;
+			width: 60px;
+			height: 120px;
+			background: #fff;
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg)
+		}
+
+		.swal-icon--success:before {
+			border-radius: 120px 0 0 120px;
+			top: -7px;
+			left: -33px;
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			-webkit-transform-origin: 60px 60px;
+			transform-origin: 60px 60px
+		}
+
+		.swal-icon--success:after {
+			border-radius: 0 120px 120px 0;
+			top: -11px;
+			left: 30px;
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			-webkit-transform-origin: 0 60px;
+			transform-origin: 0 60px;
+			-webkit-animation: rotatePlaceholder 4.25s ease-in;
+			animation: rotatePlaceholder 4.25s ease-in
+		}
+
+		.swal-icon--success__ring {
+			width: 80px;
+			height: 80px;
+			border: 4px solid hsla(98, 55%, 69%, .2);
+			border-radius: 50%;
+			box-sizing: content-box;
+			position: absolute;
+			left: -4px;
+			top: -4px;
+			z-index: 2
+		}
+
+		.swal-icon--success__hide-corners {
+			width: 5px;
+			height: 90px;
+			background-color: #fff;
+			padding: 1px;
+			position: absolute;
+			left: 28px;
+			top: 8px;
+			z-index: 1;
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg)
+		}
+
+		.swal-icon--success__line {
+			height: 5px;
+			background-color: #a5dc86;
+			display: block;
+			border-radius: 2px;
+			position: absolute;
+			z-index: 2
+		}
+
+		.swal-icon--success__line--tip {
+			width: 25px;
+			left: 14px;
+			top: 46px;
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+			-webkit-animation: animateSuccessTip .75s;
+			animation: animateSuccessTip .75s
+		}
+
+		.swal-icon--success__line--long {
+			width: 47px;
+			right: 8px;
+			top: 38px;
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			-webkit-animation: animateSuccessLong .75s;
+			animation: animateSuccessLong .75s
+		}
+
+		@-webkit-keyframes rotatePlaceholder {
+			0% {
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg)
+			}
+
+			5% {
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg)
+			}
+
+			12% {
+				-webkit-transform: rotate(-405deg);
+				transform: rotate(-405deg)
+			}
+
+			to {
+				-webkit-transform: rotate(-405deg);
+				transform: rotate(-405deg)
+			}
+		}
+
+		@keyframes rotatePlaceholder {
+			0% {
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg)
+			}
+
+			5% {
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg)
+			}
+
+			12% {
+				-webkit-transform: rotate(-405deg);
+				transform: rotate(-405deg)
+			}
+
+			to {
+				-webkit-transform: rotate(-405deg);
+				transform: rotate(-405deg)
+			}
+		}
+
+		@-webkit-keyframes animateSuccessTip {
+			0% {
+				width: 0;
+				left: 1px;
+				top: 19px
+			}
+
+			54% {
+				width: 0;
+				left: 1px;
+				top: 19px
+			}
+
+			70% {
+				width: 50px;
+				left: -8px;
+				top: 37px
+			}
+
+			84% {
+				width: 17px;
+				left: 21px;
+				top: 48px
+			}
+
+			to {
+				width: 25px;
+				left: 14px;
+				top: 45px
+			}
+		}
+
+		@keyframes animateSuccessTip {
+			0% {
+				width: 0;
+				left: 1px;
+				top: 19px
+			}
+
+			54% {
+				width: 0;
+				left: 1px;
+				top: 19px
+			}
+
+			70% {
+				width: 50px;
+				left: -8px;
+				top: 37px
+			}
+
+			84% {
+				width: 17px;
+				left: 21px;
+				top: 48px
+			}
+
+			to {
+				width: 25px;
+				left: 14px;
+				top: 45px
+			}
+		}
+
+		@-webkit-keyframes animateSuccessLong {
+			0% {
+				width: 0;
+				right: 46px;
+				top: 54px
+			}
+
+			65% {
+				width: 0;
+				right: 46px;
+				top: 54px
+			}
+
+			84% {
+				width: 55px;
+				right: 0;
+				top: 35px
+			}
+
+			to {
+				width: 47px;
+				right: 8px;
+				top: 38px
+			}
+		}
+
+		@keyframes animateSuccessLong {
+			0% {
+				width: 0;
+				right: 46px;
+				top: 54px
+			}
+
+			65% {
+				width: 0;
+				right: 46px;
+				top: 54px
+			}
+
+			84% {
+				width: 55px;
+				right: 0;
+				top: 35px
+			}
+
+			to {
+				width: 47px;
+				right: 8px;
+				top: 38px
+			}
+		}
+
+		.swal-icon--info {
+			border-color: #c9dae1
+		}
+
+		.swal-icon--info:before {
+			width: 5px;
+			height: 29px;
+			bottom: 17px;
+			border-radius: 2px;
+			margin-left: -2px
+		}
+
+		.swal-icon--info:after,
+		.swal-icon--info:before {
+			content: "";
+			position: absolute;
+			left: 50%;
+			background-color: #c9dae1
+		}
+
+		.swal-icon--info:after {
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			margin-left: -3px;
+			top: 19px
+		}
+
+		.swal-icon {
+			width: 80px;
+			height: 80px;
+			border-width: 4px;
+			border-style: solid;
+			border-radius: 50%;
+			padding: 0;
+			position: relative;
+			box-sizing: content-box;
+			margin: 20px auto
+		}
+
+		.swal-icon:first-child {
+			margin-top: 32px
+		}
+
+		.swal-icon--custom {
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			border: none;
+			border-radius: 0
+		}
+
+		.swal-icon img {
+			max-width: 100%;
+			max-height: 100%
+		}
+
+		.swal-title {
+			color: rgba(0, 0, 0, .65);
+			font-weight: 600;
+			text-transform: none;
+			position: relative;
+			display: block;
+			padding: 13px 16px;
+			font-size: 27px;
+			line-height: normal;
+			text-align: center;
+			margin-bottom: 0
+		}
+
+		.swal-title:first-child {
+			margin-top: 26px
+		}
+
+		.swal-title:not(:first-child) {
+			padding-bottom: 0
+		}
+
+		.swal-title:not(:last-child) {
+			margin-bottom: 13px
+		}
+
+		.swal-text {
+			font-size: 16px;
+			position: relative;
+			float: none;
+			line-height: normal;
+			vertical-align: top;
+			text-align: left;
+			display: inline-block;
+			margin: 0;
+			padding: 0 10px;
+			font-weight: 400;
+			color: rgba(0, 0, 0, .64);
+			max-width: calc(100% - 20px);
+			overflow-wrap: break-word;
+			box-sizing: border-box
+		}
+
+		.swal-text:first-child {
+			margin-top: 45px
+		}
+
+		.swal-text:last-child {
+			margin-bottom: 45px
+		}
+
+		.swal-footer {
+			text-align: right;
+			padding-top: 13px;
+			margin-top: 13px;
+			padding: 13px 16px;
+			border-radius: inherit;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0
+		}
+
+		.swal-button-container {
+			margin: 5px;
+			display: inline-block;
+			position: relative
+		}
+
+		.swal-button {
+			background-color: #7cd1f9;
+			color: #fff;
+			border: none;
+			box-shadow: none;
+			border-radius: 5px;
+			font-weight: 600;
+			font-size: 14px;
+			padding: 10px 24px;
+			margin: 0;
+			cursor: pointer
+		}
+
+		.swal-button:not([disabled]):hover {
+			background-color: #78cbf2
+		}
+
+		.swal-button:active {
+			background-color: #70bce0
+		}
+
+		.swal-button:focus {
+			outline: none;
+			box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(43, 114, 165, .29)
+		}
+
+		.swal-button[disabled] {
+			opacity: .5;
+			cursor: default
+		}
+
+		.swal-button::-moz-focus-inner {
+			border: 0
+		}
+
+		.swal-button--cancel {
+			color: #555;
+			background-color: #efefef
+		}
+
+		.swal-button--cancel:not([disabled]):hover {
+			background-color: #e8e8e8
+		}
+
+		.swal-button--cancel:active {
+			background-color: #d7d7d7
+		}
+
+		.swal-button--cancel:focus {
+			box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(116, 136, 150, .29)
+		}
+
+		.swal-button--danger {
+			background-color: #e64942
+		}
+
+		.swal-button--danger:not([disabled]):hover {
+			background-color: #df4740
+		}
+
+		.swal-button--danger:active {
+			background-color: #cf423b
+		}
+
+		.swal-button--danger:focus {
+			box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(165, 43, 43, .29)
+		}
+
+		.swal-content {
+			padding: 0 20px;
+			margin-top: 20px;
+			font-size: medium
+		}
+
+		.swal-content:last-child {
+			margin-bottom: 20px
+		}
+
+		.swal-content__input,
+		.swal-content__textarea {
+			-webkit-appearance: none;
+			background-color: #fff;
+			border: none;
+			font-size: 14px;
+			display: block;
+			box-sizing: border-box;
+			width: 100%;
+			border: 1px solid rgba(0, 0, 0, .14);
+			padding: 10px 13px;
+			border-radius: 2px;
+			transition: border-color .2s
+		}
+
+		.swal-content__input:focus,
+		.swal-content__textarea:focus {
+			outline: none;
+			border-color: #6db8ff
+		}
+
+		.swal-content__textarea {
+			resize: vertical
+		}
+
+		.swal-button--loading {
+			color: transparent
+		}
+
+		.swal-button--loading~.swal-button__loader {
+			opacity: 1
+		}
+
+		.swal-button__loader {
+			position: absolute;
+			height: auto;
+			width: 43px;
+			z-index: 2;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%);
+			text-align: center;
+			pointer-events: none;
+			opacity: 0
+		}
+
+		.swal-button__loader div {
+			display: inline-block;
+			float: none;
+			vertical-align: baseline;
+			width: 9px;
+			height: 9px;
+			padding: 0;
+			border: none;
+			margin: 2px;
+			opacity: .4;
+			border-radius: 7px;
+			background-color: hsla(0, 0%, 100%, .9);
+			transition: background .2s;
+			-webkit-animation: swal-loading-anim 1s infinite;
+			animation: swal-loading-anim 1s infinite
+		}
+
+		.swal-button__loader div:nth-child(3n+2) {
+			-webkit-animation-delay: .15s;
+			animation-delay: .15s
+		}
+
+		.swal-button__loader div:nth-child(3n+3) {
+			-webkit-animation-delay: .3s;
+			animation-delay: .3s
+		}
+
+		@-webkit-keyframes swal-loading-anim {
+			0% {
+				opacity: .4
+			}
+
+			20% {
+				opacity: .4
+			}
+
+			50% {
+				opacity: 1
+			}
+
+			to {
+				opacity: .4
+			}
+		}
+
+		@keyframes swal-loading-anim {
+			0% {
+				opacity: .4
+			}
+
+			20% {
+				opacity: .4
+			}
+
+			50% {
+				opacity: 1
+			}
+
+			to {
+				opacity: .4
+			}
+		}
+
+		.swal-overlay {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			text-align: center;
+			font-size: 0;
+			overflow-y: auto;
+			background-color: rgba(0, 0, 0, .4);
+			z-index: 10000;
+			pointer-events: none;
+			opacity: 0;
+			transition: opacity .3s
+		}
+
+		.swal-overlay:before {
+			content: " ";
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%
+		}
+
+		.swal-overlay--show-modal {
+			opacity: 1;
+			pointer-events: auto
+		}
+
+		.swal-overlay--show-modal .swal-modal {
+			opacity: 1;
+			pointer-events: auto;
+			box-sizing: border-box;
+			-webkit-animation: showSweetAlert .3s;
+			animation: showSweetAlert .3s;
+			will-change: transform
+		}
+
+		.swal-modal {
+			width: 478px;
+			opacity: 0;
+			pointer-events: none;
+			background-color: #fff;
+			text-align: center;
+			border-radius: 5px;
+			position: static;
+			margin: 20px auto;
+			display: inline-block;
+			vertical-align: middle;
+			-webkit-transform: scale(1);
+			transform: scale(1);
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			z-index: 10001;
+			transition: opacity .2s, -webkit-transform .3s;
+			transition: transform .3s, opacity .2s;
+			transition: transform .3s, opacity .2s, -webkit-transform .3s
+		}
+
+		@media (max-width:500px) {
+			.swal-modal {
+				width: calc(100% - 20px)
+			}
+		}
+
+		@-webkit-keyframes showSweetAlert {
+			0% {
+				-webkit-transform: scale(1);
+				transform: scale(1)
+			}
+
+			1% {
+				-webkit-transform: scale(.5);
+				transform: scale(.5)
+			}
+
+			45% {
+				-webkit-transform: scale(1.05);
+				transform: scale(1.05)
+			}
+
+			80% {
+				-webkit-transform: scale(.95);
+				transform: scale(.95)
+			}
+
+			to {
+				-webkit-transform: scale(1);
+				transform: scale(1)
+			}
+		}
+
+		@keyframes showSweetAlert {
+			0% {
+				-webkit-transform: scale(1);
+				transform: scale(1)
+			}
+
+			1% {
+				-webkit-transform: scale(.5);
+				transform: scale(.5)
+			}
+
+			45% {
+				-webkit-transform: scale(1.05);
+				transform: scale(1.05)
+			}
+
+			80% {
+				-webkit-transform: scale(.95);
+				transform: scale(.95)
+			}
+
+			to {
+				-webkit-transform: scale(1);
+				transform: scale(1)
+			}
+		}
+	</style>
 	<title>대시보드 - Aegis</title>
 	<meta charset="UTF-8" http-equiv="Content-Type">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- TODO: search engine info -->
 	<meta name="robots" content="Aegis">
 	<meta name="keywords" content="Aegis">
 	<meta name="title" content="Aegis">
 	<meta name="description" content="Aegis">
-	
+
 	<!-- TODO: social url link image -->
 	<meta property="og:url" content="">
 	<meta property="og:title" content="Aegis">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="">
 	<meta property="og:description" content="Aegis 홈페이지입니다.">
-	
+
 	<!-- TODO: favicon -->
 	<link rel="icon" href="./assets/images/favicon.png" type="image/png">
-	
+
 	<!-- TODO: import -->
 	<link rel="stylesheet" href="./assets/css/lib/bootstrap.min.css">
-<link rel="stylesheet" href="./assets/css/lib/bootstrap-datetimepicker.min.css">
-<link rel="stylesheet" href="./assets/css/lib/datatables.css?v=2023091410">
-<link rel="stylesheet" href="./assets/css/lib/select.dataTables.css?v=2023091410">
-<link rel="stylesheet" href="./assets/css/lib/jquery.mCustomScrollbar.css">
-<link rel="stylesheet" href="./assets/css/lib/jquery.scrollbar.css">
-<link rel="stylesheet" href="./assets/css/lib/jstree.css">
-<link rel="stylesheet" href="./assets/css/reset.css?v=2023091410"><!--//jung 추가-->
-<link rel="stylesheet" href="./assets/css/style.css?v=2023091410">
-<link rel="stylesheet" href="./assets/css/json-viewer.css">
-<link rel="stylesheet" href="./assets/css/common.css?v=2023091410"><!--//jung 추가-->
+	<link rel="stylesheet" href="./assets/css/lib/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="./assets/css/lib/datatables.css?v=2023091410">
+	<link rel="stylesheet" href="./assets/css/lib/select.dataTables.css?v=2023091410">
+	<link rel="stylesheet" href="./assets/css/lib/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="./assets/css/lib/jquery.scrollbar.css">
+	<link rel="stylesheet" href="./assets/css/lib/jstree.css">
+	<link rel="stylesheet" href="./assets/css/reset.css?v=2023091410"><!--//jung 추가-->
+	<link rel="stylesheet" href="./assets/css/style.css?v=2023091410">
+	<link rel="stylesheet" href="./assets/css/json-viewer.css">
+	<link rel="stylesheet" href="./assets/css/common.css?v=2023091410"><!--//jung 추가-->
 
-<script src="./assets/js/lib/jquery-1.12.4.min.js?v=2023091410"></script>
-<script src="./assets/js/lib/jquery-ui.js"></script>
-<script src="./assets/js/lib/jquery.min.js?v=2023091410"></script>
-<script src="./assets/js/lib/bootstrap.min.js"></script>
-<script src="./assets/js/lib/moment.js"></script>
-<script src="./assets/js/lib/bootstrap-datetimepicker.js"></script>
-<script src="./assets/js/lib/jquery-ui.js?v=2023091410"></script>
-<script src="./assets/js/lib/echarts.js?v=2023091410"></script>
-<script src="./assets/js/lib/jquery.nice-select.js?v=2023091410"></script>
-<script src="./assets/js/lib/select.dataTables.js?v=2023091410"></script>
-<script src="./assets/js/lib/datatables.js?v=2023091410"></script>
-<script src="./assets/js/lib/dataTables.colReorder.js?v=2023091410"></script>
-<script src="./assets/js/lib/dataTables.rowReorder.js?v=2023091410"></script>
-<script src="./assets/js/lib/dataTables.buttons.min.js?v=2023091410"></script>
-<script src="./assets/js/lib/sweetalert.js"></script>
-<script src="./assets/js/lib/jquery.mCustomScrollbar.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
-<script src="./assets/js/lib/jquery.scrollbar.js"></script>
-<script src="./assets/js/lib/jstree-3.3.11.js"></script>
-<script src="./assets/js/scripts.js?v=2023091410"></script>
+	<script src="./assets/js/lib/jquery-1.12.4.min.js?v=2023091410"></script>
+	<script src="./assets/js/lib/jquery-ui.js"></script>
+	<script src="./assets/js/lib/jquery.min.js?v=2023091410"></script>
+	<script src="./assets/js/lib/bootstrap.min.js"></script>
+	<script src="./assets/js/lib/moment.js"></script>
+	<script src="./assets/js/lib/bootstrap-datetimepicker.js"></script>
+	<script src="./assets/js/lib/jquery-ui.js?v=2023091410"></script>
+	<script src="./assets/js/lib/echarts.js?v=2023091410"></script>
+	<script src="./assets/js/lib/jquery.nice-select.js?v=2023091410"></script>
+	<script src="./assets/js/lib/select.dataTables.js?v=2023091410"></script>
+	<script src="./assets/js/lib/datatables.js?v=2023091410"></script>
+	<script src="./assets/js/lib/dataTables.colReorder.js?v=2023091410"></script>
+	<script src="./assets/js/lib/dataTables.rowReorder.js?v=2023091410"></script>
+	<script src="./assets/js/lib/dataTables.buttons.min.js?v=2023091410"></script>
+	<script src="./assets/js/lib/sweetalert.js"></script>
+	<script src="./assets/js/lib/jquery.mCustomScrollbar.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+	<script src="./assets/js/lib/jquery.scrollbar.js"></script>
+	<script src="./assets/js/lib/jstree-3.3.11.js"></script>
+	<script src="./assets/js/scripts.js?v=2023091410"></script>
 
-<script src="./js/common/define.js?v=2023091410"></script>
-<script src="./js/common/basic_common.js?v=2023091410"></script>
-<script src="./js/common/cf_common.js?v=2023091410"></script>
-<script src="./js/common/event_common.js?v=2023091410"></script>
-<script src="./js/common/json-viewer.js?v=2023091410"></script>
-<script src="./js/common/expansion_common.js?v=2023091410"></script>
+	<script src="./js/common/define.js?v=2023091410"></script>
+	<script src="./js/common/basic_common.js?v=2023091410"></script>
+	<script src="./js/common/cf_common.js?v=2023091410"></script>
+	<script src="./js/common/event_common.js?v=2023091410"></script>
+	<script src="./js/common/json-viewer.js?v=2023091410"></script>
+	<script src="./js/common/expansion_common.js?v=2023091410"></script>
 
-	
+
 	<script src="./js/common/page_common.js?v=2023091410"></script>
-    
+
 	<script src="./js/service/dashboards/dashboardChart.js?v=2023091410"></script>
 	<script src="./js/service/dashboards/dashboard.js?v=2023091410"></script>
-	
+
 	<!-- 230103 Image Security 추가 -->
 	<script src="./js/service/dashboards/imageSecurity/dashboardScanStatus.js?v=2023091410"></script>
 	<script src="./js/service/dashboards/clusterCompliance/dashboardClusterComplianceChart.js?v=2023091410"></script>
-	
+
 	<script type="text/javascript">
-    function createDim(){
-        if (!$('.dim').length) {
-            $('body').append('<div class="dim"></div>');
-        }
-        $('.dim').fadeIn(250);
-        if (window.matchMedia('(min-width: 1340px) and (max-width: 1920px)').matches){
-            $('body').css({
-                overflow : 'hidden'
-            }).bind('touchmove', function(e) {
-                e.preventDefault();
-            });
-        }
-        if (window.matchMedia('(min-width: 0) and (max-width: 1340px)').matches){
-            $('body').css({
-                overflowX : 'scroll'
-            }).bind('touchmove', function(e) {
-                e.preventDefault();
-            });
-        }
-    }
-    function removeDim(){
-        $('.dim').fadeOut(250);
-        if (window.matchMedia('(min-width: 1340px) and (max-width: 1920px)').matches){
-            $('body').css({
-                overflow : 'inherit'
-            }).bind('touchmove', function(e) {
-                e.preventDefault();
-            });
-        }
-        if (window.matchMedia('(min-width: 0) and (max-width: 1340px)').matches){
-            $('body').css({
-                overflowX : 'auto'
-            }).bind('touchmove', function(e) {
-                e.preventDefault();
-            });
-        }
-    }
-    </script>
+		function createDim() {
+			if (!$('.dim').length) {
+				$('body').append('<div class="dim"></div>');
+			}
+			$('.dim').fadeIn(250);
+			if (window.matchMedia('(min-width: 1340px) and (max-width: 1920px)').matches) {
+				$('body').css({
+					overflow: 'hidden'
+				}).bind('touchmove', function (e) {
+					e.preventDefault();
+				});
+			}
+			if (window.matchMedia('(min-width: 0) and (max-width: 1340px)').matches) {
+				$('body').css({
+					overflowX: 'scroll'
+				}).bind('touchmove', function (e) {
+					e.preventDefault();
+				});
+			}
+		}
+		function removeDim() {
+			$('.dim').fadeOut(250);
+			if (window.matchMedia('(min-width: 1340px) and (max-width: 1920px)').matches) {
+				$('body').css({
+					overflow: 'inherit'
+				}).bind('touchmove', function (e) {
+					e.preventDefault();
+				});
+			}
+			if (window.matchMedia('(min-width: 0) and (max-width: 1340px)').matches) {
+				$('body').css({
+					overflowX: 'auto'
+				}).bind('touchmove', function (e) {
+					e.preventDefault();
+				});
+			}
+		}
+	</script>
 </head>
+
 <body style="overflow: inherit;">
 
-<h1>Aegis ADMIN</h1>
-<div class="skip_navigation">
-	<ul>
-		<li>
-			<a href="#Content" class="go_content">본문 바로가기</a>
-		</li>
-		<li>
-			<a href="#Gnb">메뉴 바로가기</a>
-		</li>
-	</ul>
-</div>
+	<h1>Aegis ADMIN</h1>
+	<div class="skip_navigation">
+		<ul>
+			<li>
+				<a href="#Content" class="go_content">본문 바로가기</a>
+			</li>
+			<li>
+				<a href="#Gnb">메뉴 바로가기</a>
+			</li>
+		</ul>
+	</div>
 
 
 
-<style>
-	.header_box.on nav .lnb>li .depth2>li.has_children>a {
-		pointer-events: auto;
-		cursor: pointer;
-	}
-</style>
-<header class="header_box">
-<!--<div class="logo_box">
+	<style>
+		.header_box.on nav .lnb>li .depth2>li.has_children>a {
+			pointer-events: auto;
+			cursor: pointer;
+		}
+	</style>
+	<header class="header_box">
+		<!--<div class="logo_box">
 	<a href="./dashboard.do" class="logo_link">
 		<div class="logo_hidden_box">
 			<img src="./assets/images/logo.png">
 		</div>
 	</a>
 </div>-->
-<nav>
-	<ul class="lnb">
-		<!-- 대시보드 -->
-		<li class="active"><a href="./dashboard.do" class="menu01"><span>대시보드</span></a></li>
-		<!-- 이벤트 모니터링 -->
-		
-		<li class=""><a href="./eventMonitoring.do" class="menu02"><span>이벤트 모니터링</span></a></li>
-		<!-- 이벤트 조회 --> <!-- 230118 이벤트 모니터링(cAegis) 추가 -->
-		<li class="has_children"><a href="#" class="menu03"><span>이벤트 조회</span></a>
-			<ul class="depth2">
-				<li class="has_children"><a href="#" class="menu03_1"><span>호스트 이벤트</span></a>
-					<ul class="depth3">
-						<!-- 호스트 이벤트 -->
-						<li><a href="./eventFirewall.do" class=""><span>방화벽</span></a></li>
-						<li><a href="./eventIPS.do" class=""><span>침입방지시스템</span></a></li>
-						<li><a href="./eventMalware.do" class=""><span>멀웨어</span></a></li>
-						<li><a href="./eventFileInt.do" class=""><span>파일 무결성</span></a></li>
-						<li><a href="./eventFileCtl.do" class=""><span>실행 파일 통제</span></a></li>
-						<li><a href="./eventPamAcl.do" class=""><span>서비스 제어</span></a></li>
+		<nav>
+			<ul class="lnb">
+				<!-- 대시보드 -->
+				<li class="active"><a href="./dashboard.do" class="menu01"><span>대시보드</span></a></li>
+				<!-- 이벤트 모니터링 -->
+
+				<li class=""><a href="./eventMonitoring.do" class="menu02"><span>이벤트 모니터링</span></a></li>
+				<!-- 이벤트 조회 --> <!-- 230118 이벤트 모니터링(cAegis) 추가 -->
+				<li class="has_children"><a href="#" class="menu03"><span>이벤트 조회</span></a>
+					<ul class="depth2">
+						<li class="has_children"><a href="#" class="menu03_1"><span>호스트 이벤트</span></a>
+							<ul class="depth3">
+								<!-- 호스트 이벤트 -->
+								<li><a href="./eventFirewall.do" class=""><span>방화벽</span></a></li>
+								<li><a href="./eventIPS.do" class=""><span>침입방지시스템</span></a></li>
+								<li><a href="./eventMalware.do" class=""><span>멀웨어</span></a></li>
+								<li><a href="./eventFileInt.do" class=""><span>파일 무결성</span></a></li>
+								<li><a href="./eventFileCtl.do" class=""><span>실행 파일 통제</span></a></li>
+								<li><a href="./eventPamAcl.do" class=""><span>서비스 제어</span></a></li>
+							</ul>
+						</li>
+						<li class="has_children"><a href="#" class="menu03_2"><span>클러스터 이벤트</span></a>
+							<ul class="depth3">
+								<!-- 클러스터 아벤트 -->
+								<li><a href="./eventContainerSecurity.do" class=""><span>컨테이너 이벤트</span></a></li>
+								<li><a href="./eventWorkload.do" class=""><span>컨테이너 워크로드 실행제어</span></a></li>
+								<li><a href="./eventContainerImageControl.do" class=""><span>컨테이너 이미지 실행제어</span></a>
+								</li>
+								<li><a href="./eventImageSecurity.do" class=""><span>컨테이너 이미지 스캔</span></a></li>
+								<li><a href="./eventCompliance.do" class=""><span>클러스터 규정준수 스캔</span></a></li>
+							</ul>
+						</li>
 					</ul>
 				</li>
-				<li class="has_children"><a href="#" class="menu03_2"><span>클러스터 이벤트</span></a>
-					<ul class="depth3">
-						<!-- 클러스터 아벤트 -->
-						<li><a href="./eventContainerSecurity.do" class=""><span>컨테이너 이벤트</span></a></li>
-						<li><a href="./eventWorkload.do" class=""><span>컨테이너 워크로드 실행제어</span></a></li>
-						<li><a href="./eventContainerImageControl.do" class=""><span>컨테이너 이미지 실행제어</span></a></li>
-						<li><a href="./eventImageSecurity.do" class=""><span>컨테이너 이미지 스캔</span></a></li>
-						<li><a href="./eventCompliance.do" class=""><span>클러스터 규정준수 스캔</span></a></li> 
+				<!-- ?? -->
+
+				<!-- 스캔 --> <!-- 230220 스캔 카테고리 추가(멀웨어는 vaegis 멀웨어 통합검사로 잠시 대체) -->
+				<li class="has_children"><a href="#" class="menu04"><span>스캔</span></a>
+					<ul class="depth2">
+						<li><a href="./complianceScan.do" class=""><span>클러스터 규정 준수</span></a></li>
+						<li><a href="./imageScan.do" class=""><span>컨테이너 이미지</span></a></li>
+						<li><a href="./cloudScan.do" class=""><span>호스트 안티 멀웨어</span></a></li>
+						<li><a href="./vulnerability.do" class=""><span>호스트 취약성</span></a></li>
+					</ul>
+				</li>
+				<!-- 정책관리 -->
+				<li class="has_children"><a href="#" class="menu06"><span>정책 관리</span></a>
+					<ul class="depth2">
+						<li class="has_children"><a href="#" class="menu06_1"><span>호스트 정책</span></a>
+							<ul class="depth3">
+								<li><a href="./securityPolicy.do" class=""><span>탐지 룰 관리</span></a></li>
+							</ul>
+						</li>
+						<li class="has_children"><a href="#" class="menu06_2"><span>클러스터 정책</span></a>
+							<ul class="depth3">
+								<li><a href="./policyContainerSecurity.do" class=""><span>컨테이너 이벤트</span></a></li>
+								<li><a href="./policyWorkload.do" class=""><span>컨테이너 워크로드 실행제어</span></a></li>
+								<li><a href="./policyImageSecurity.do" class=""><span>컨테이너 이미지 스캔</span></a></li>
+								<li><a href="./policyComplianceScan.do" class=""><span>클러스터 규정준수 스캔</span></a></li>
+							</ul>
+						</li>
+						<li><a href="./cloudManager.do" class=""><span>자산 관리</span></a></li>
+						<li><a href="./userManager.do" class=""><span>사용자 관리</span></a></li>
+						<li><a href="./auditList.do" class=""><span>감사 로그</span></a></li>
+
+
+					</ul>
+				</li>
+				<!-- 환경설정 -->
+				<li class="has_children"><a href="#" class="menu05"><span>환경 설정</span></a>
+					<ul class="depth2">
+						<li><a href="./authManager.do" class=""><span>메뉴 권한 설정</span></a></li>
+						<li><a href="./siteManager.do" class=""><span>사이트 이용 설정</span></a></li>
 					</ul>
 				</li>
 			</ul>
-		</li>
-		<!-- ?? -->
-		
-		<!-- 스캔 --> <!-- 230220 스캔 카테고리 추가(멀웨어는 vaegis 멀웨어 통합검사로 잠시 대체) -->
-		<li class="has_children"><a href="#" class="menu04"><span>스캔</span></a>
-			<ul class="depth2">
-				<li><a href="./complianceScan.do" class=""><span>클러스터 규정 준수</span></a></li>
-				<li><a href="./imageScan.do" class=""><span>컨테이너 이미지</span></a></li>
-				<li><a href="./cloudScan.do" class=""><span>호스트 안티 멀웨어</span></a></li>
-				<li><a href="./vulnerability.do" class=""><span>호스트 취약성</span></a></li>
-			</ul>
-		</li>
-		<!-- 정책관리 -->
-		<li class="has_children"><a href="#" class="menu06"><span>정책 관리</span></a>
-			<ul class="depth2">
-				<li class="has_children"><a href="#" class="menu06_1"><span>호스트 정책</span></a>
-					<ul class="depth3">
-						<li><a href="./securityPolicy.do" class=""><span>탐지 룰 관리</span></a></li>
-					</ul>
-				</li>
-				<li class="has_children"><a href="#" class="menu06_2"><span>클러스터 정책</span></a>
-					<ul class="depth3">
-						<li><a href="./policyContainerSecurity.do" class=""><span>컨테이너 이벤트</span></a></li>
-						<li><a href="./policyWorkload.do" class=""><span>컨테이너 워크로드 실행제어</span></a></li>
-						<li><a href="./policyImageSecurity.do" class=""><span>컨테이너 이미지 스캔</span></a></li>
-						<li><a href="./policyComplianceScan.do" class=""><span>클러스터 규정준수 스캔</span></a></li>
-					</ul>
-				</li>
-				<li><a href="./cloudManager.do" class=""><span>자산 관리</span></a></li>
-				<li><a href="./userManager.do" class=""><span>사용자 관리</span></a></li>
-				<li><a href="./auditList.do" class=""><span>감사 로그</span></a></li>
-						
-				
-			</ul>
-		</li>
-		<!-- 환경설정 -->
-		<li class="has_children"><a href="#" class="menu05"><span>환경 설정</span></a>
-			<ul class="depth2">
-				<li><a href="./authManager.do" class=""><span>메뉴 권한 설정</span></a></li>
-				<li><a href="./siteManager.do" class=""><span>사이트 이용 설정</span></a></li>
-			</ul>
-		</li>
-	</ul>
-</nav>
-</header>
+		</nav>
+	</header>
 
 
 
-<script type="text/javaScript">
+	<script type="text/javaScript">
 $(document).ready(function() {
 	cf_userInfoSet();
 	lf_setUserInfo();
@@ -663,301 +1520,703 @@ function lf_setTopCont(){
 }
 </script>
 
-<article class="top_cont">
-	<a href="./dashboard.do" class="logo_link">
-		<div class="logo_hidden_box">
-			<img src="./assets/images/common/img_aegis.png">
+	<article class="top_cont">
+		<a href="./dashboard.do" class="logo_link">
+			<div class="logo_hidden_box">
+				<img src="./assets/images/common/img_aegis.png">
+			</div>
+		</a>
+		<div class="location">
+			<ul>
+				<li>Home</li>
+				<li>대시보드</li>
+			</ul>
 		</div>
-	</a>
-	<div class="location">
-		<ul>
-			<li>Home</li>
-			<li>대시보드</li>
-		</ul>
-	</div>
-	<h2>대시보드</h2>
-	<div class="user_box">
-		<div class="user_info">
-			<a href="#" class="user_info_link">
-				<p class="user">Hello, <span id="currentUserId" title="eunjung">윤은정</span></p>
-			</a>
-			<div class="user_info_list">
-				<ul>
-					<li><a href="#" rel="user_modal" class="modalLoad">내정보</a></li>
-					<li><a href="#" rel="tf_modal" class="modalLoad">2차인증</a></li>
-					<li class="logout"><a href="javascript:cf_serviceCall100002();">로그아웃</a></li>
+		<h2>대시보드</h2>
+		<div class="user_box">
+			<div class="user_info">
+				<a href="#" class="user_info_link">
+					<p class="user">Hello, <span id="currentUserId" title="eunjung">윤은정</span></p>
+				</a>
+				<div class="user_info_list">
+					<ul>
+						<li><a href="#" rel="user_modal" class="modalLoad">내정보</a></li>
+						<li><a href="#" rel="tf_modal" class="modalLoad">2차인증</a></li>
+						<li class="logout"><a href="javascript:cf_serviceCall100002();">로그아웃</a></li>
+					</ul>
+				</div>
+			</div><!--//user_info-->
+			<div class="top_dashboard">
+				<a href="#" class="top_dashboard_link">
+					<span class="linktext">사용자 정보 버튼</span>
+				</a>
+			</div>
+			<div class="top_dashboard_list">
+				<ul id="topContList">
+					<li><a href="#" onclick="javascript: lf_saveEventFunc();">대시보드 저장</a></li>
 				</ul>
 			</div>
-		</div><!--//user_info-->
-		<div class="top_dashboard">
-			<a href="#" class="top_dashboard_link">
-				<span class="linktext">사용자 정보 버튼</span>
-			</a>
 		</div>
-		<div class="top_dashboard_list">
-			<ul id="topContList"><li><a href="#" onclick="javascript: lf_saveEventFunc();">대시보드 저장</a></li></ul>
-		</div>
-	</div>
-</article><!--//top_cont-->
+	</article><!--//top_cont-->
 
-<!--  modal :: 내정보 팝업  -->
-<div class="modal small" id="user_modal">
-	<div class="modal_header">
-		<h3>내정보</h3>
-	</div>
-	<div class="modal_body">
-		<div class="modal_cont">
-			<dl>
-				<dt>
-					<span>사용자 권한</span>
-				</dt>
-				<dd>
-					<div class="sel_box">
-						<select class="popup_sel disabled" id="authKey" style="display: none;">
-							<option value="0000A399X999">SUPER ADMIN</option>
-							<option value="0000A499X999">ADMIN</option>
-							<option value="0000A599X999">Operator</option>
-							<option value="0000A699X999">Viewer</option>
-						</select>
-						<div class="nice-select popup_sel disabled" tabindex="0">
-							<span class="current">SUPER ADMIN</span>
-							<ul class="list">
-								<li data-value="0000A399X999" class="option selected">SUPER ADMIN</li>
-								<li data-value="0000A499X999" class="option">ADMIN</li>
-								<li data-value="0000A599X999" class="option">Operator</li>
-								<li data-value="0000A699X999" class="option">Viewer</li>
-							</ul>
-						</div>
-					</div><!--sel_box-->
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<span>User ID</span>
-				</dt>
-				<dd>
-					<div class="ipt_box">
-						<input class="no_radius" type="text" readonly="" value="aptcastle" id="currentUserId">
-					</div>
-				</dd>
-			</dl>
-			<dl>
-				<dt>Password</dt>
-				<dd>
-					<div class="ipt_box password">
-						<input class="no_radius" type="password" placeholder="기존 비밀번호를 입력해 주세요." id="userPasswd">
-						<a href="#" class="btn usr_password_change password_change" style="height: 34px; line-height: 30px; border-radius: 17px; border: 2px solid #2e6fd4; color: #fff; font-size: 13px;">비밀번호변경</a>
-					</div>
-					<div class="password_change_box">
+	<!--  modal :: 내정보 팝업  -->
+	<div class="modal small" id="user_modal">
+		<div class="modal_header">
+			<h3>내정보</h3>
+		</div>
+		<div class="modal_body">
+			<div class="modal_cont">
+				<dl>
+					<dt>
+						<span>사용자 권한</span>
+					</dt>
+					<dd>
+						<div class="sel_box">
+							<select class="popup_sel disabled" id="authKey" style="display: none;">
+								<option value="0000A399X999">SUPER ADMIN</option>
+								<option value="0000A499X999">ADMIN</option>
+								<option value="0000A599X999">Operator</option>
+								<option value="0000A699X999">Viewer</option>
+							</select>
+							<div class="nice-select popup_sel disabled" tabindex="0">
+								<span class="current">SUPER ADMIN</span>
+								<ul class="list">
+									<li data-value="0000A399X999" class="option selected">SUPER ADMIN</li>
+									<li data-value="0000A499X999" class="option">ADMIN</li>
+									<li data-value="0000A599X999" class="option">Operator</li>
+									<li data-value="0000A699X999" class="option">Viewer</li>
+								</ul>
+							</div>
+						</div><!--sel_box-->
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>User ID</span>
+					</dt>
+					<dd>
 						<div class="ipt_box">
-							<input class="no_radius" type="password" placeholder="신규 비밀번호를 입력해 주세요." id="userPasswd1">
+							<input class="no_radius" type="text" readonly="" value="aptcastle" id="currentUserId">
 						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>Password</dt>
+					<dd>
+						<div class="ipt_box password">
+							<input class="no_radius" type="password" placeholder="기존 비밀번호를 입력해 주세요." id="userPasswd">
+							<a href="#" class="btn usr_password_change password_change"
+								style="height: 34px; line-height: 30px; border-radius: 17px; border: 2px solid #2e6fd4; color: #fff; font-size: 13px;">비밀번호변경</a>
+						</div>
+						<div class="password_change_box">
+							<div class="ipt_box">
+								<input class="no_radius" type="password" placeholder="신규 비밀번호를 입력해 주세요."
+									id="userPasswd1">
+							</div>
+							<div class="ipt_box">
+								<input class="no_radius" type="password" placeholder="신규 비밀번호를 다시한번 입력해 주세요."
+									id="userPasswd2">
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>User Name</span>
+					</dt>
+					<dd>
 						<div class="ipt_box">
-							<input class="no_radius" type="password" placeholder="신규 비밀번호를 다시한번 입력해 주세요." id="userPasswd2">
+							<input class="no_radius" type="text" placeholder="사용자의 이름을 입력해주세요."
+								value="auditcastle Maker" id="currentUserName">
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>User Phone</span>
+					</dt>
+					<dd>
+						<div class="ipt_box">
+							<input class="no_radius" type="text" placeholder="연락처를 입력해 주세요." value="010-0000-0000"
+								id="currentUserPhone">
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>User Email</span>
+					</dt>
+					<dd>
+						<div class="ipt_box">
+							<input class="no_radius" type="text" placeholder="이메일를 입력해 주세요."
+								value="auditcastle@sgacorp.co.kr" id="currentUserEmail">
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div><!--//modal_body-->
+		<div class="modal_footer">
+			<div class="btn_wrap">
+				<a href="javascript:closeUserModal();" class="btn grey">취소</a>
+				<a href="javascript:updateCurrentUser();" class="btn">수정</a>
+			</div>
+		</div>
+		<div class="modal_controller">
+			<a href="#" class="close">close</a>
+		</div>
+	</div>
+
+	<div class="modal small" id="tf_modal">
+		<div class="modal_header">
+			<h3>OTP 정보</h3>
+		</div>
+		<div class="modal_body">
+			<div class="modal_cont">
+				<dl>
+					<dt>
+						<span>QR Code</span>
+					</dt>
+					<dd>
+						<div class="ipt_box">
+							<img id="otpQRImg" src="/otp/qrcode.do?1694655214251" width="120" height="120"
+								loading="lazy">
+							<span id="otpQRCode" class="qrcode super_bg">BNAQW4PKB7BJ2HI2</span>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>User ID</span>
+					</dt>
+					<dd>
+						<div class="ipt_box">
+							<input class="no_radius" type="text" readonly="" value="" id="otpUserid">
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>Password</dt>
+					<dd>
+						<div class="ipt_box password">
+							<input class="no_radius" type="password" placeholder="비밀번호를 입력해 주세요." id="otpPasswd">
+							&nbsp;<a href="javascript:otpIssue();" class="btn otp_change_box otp_change"
+								style="height: 34px; line-height: 30px; border-radius: 17px; border: 2px solid #2e6fd4; color: #fff; font-size: 13px;">QR
+								재발급</a>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>발급처</span>
+					</dt>
+					<dd>
+						<div class="ipt_box">
+							<input class="no_radius" type="text" placeholder="" value="" id="otpCompany" readonly="">
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>발급일</span>
+					</dt>
+					<dd>
+						<div class="ipt_box">
+							<input class="no_radius" type="text" placeholder="" value="" id="otpCreatetime" readonly="">
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="modal_footer">
+			<div class="btn_wrap">
+				<a href="#" class="btn grey close">닫기</a>
+			</div>
+		</div>
+		<div class="modal_controller">
+			<a href="#" class="close">close</a>
+		</div>
+	</div>
+
+
+	<section class="dashboard mscrollbar mCustomScrollbar _mCS_1">
+		<div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical_horizontal mCSB_inside"
+			style="max-height: none;" tabindex="0">
+			<div id="mCSB_1_container_wrapper" class="mCSB_container_wrapper mCS_x_hidden mCS_no_scrollbar_x">
+				<div id="mCSB_1_container" class="mCSB_container"
+					style="position: relative; top: 0px; left: 0px; width: 100%;" dir="ltr">
+					<div class="dashboard_main" style="padding-right: 7px;">
+						<div class="tab_box">
+							<a href="#" class="prev-slide disabled" style="display: none;">왼쪽으로</a>
+							<div class="tab">
+								<ul class="tab_lst" style="max-width: calc(100% - 42px);">
+									<li onclick="javascript: lf_tabEventClickLoadDashboard(1);"
+										ondblclick="javascript: lf_openTabEditDialog(this);" rel="dashboardTabMgmt_1"
+										class="open on">
+										<a href="#" class="tab_link" title="">Dashboard1</a>
+										<a href="#" onclick="javascript: lf_openDashboardFullWindow();" class="full"
+											title="새창열기">새창열기</a>
+										<a href="#" onclick="javascript: lf_removeTab(1);" class="tab_cls">close</a>
+									</li>
+
+								</ul>
+								<a href="#" class="tab_add" onclick="javascript: lf_tabadd();">
+									<span>탭 추가</span>
+								</a>
+							</div>
+							<a href="#" class="next-slide disabled" style="display: none;">오른쪽으로</a>
+
+						</div>
+						<div id="dashboardTabMgmt" class="tab_container">
+							<div class="dashboardTabMgmt_1 tab_cont open">
+								<div class="dashboard_box">
+									<div class="dashboard_box_top">
+										<div class="dashboard_title">
+											<h3>Dashboard1</h3>
+										</div>
+										<div class="dashboard_btn_box">
+											<a href="#" onclick="javascript: lf_dashboardCreateChart();"
+												class="btn bline" title="차트 &amp; 데이터 선택"><span>차트 &amp; 데이터</span></a>
+											<a href="#" onclick="javascript: lf_dashboardAllConfiguration(this);"
+												class="btn bline" title="자동 리로딩 설정"><span>리로딩설정</span></a>
+											<a href="#" onclick="javascript:lf_removeChartAll();" class="btn save"
+												title="전체 삭제"><span>삭제</span></a>
+										</div>
+									</div>
+									<div class="dashboard_option_select_box">
+
+										<div style="" class="dashboard_box_registry">
+											<div class="registry_title">
+												<p>Registry</p>
+											</div>
+											<div class="registry_select_box sel_box">
+												<select class="popup_sel registryList" onchange="registryChangeEvent()"
+													style="display: none;">
+													<option value="4d842add-ad81-4e7d-a7fb-c39c836dabe2">sga-solregistry
+													</option>
+													<option value="de71636f-7e48-4a79-914f-727dc0a8edb4">
+														sga-solregistry2</option>
+													<option value="4e1d4b15-a3ce-4358-9f34-28bdf9c8ee63">
+														sga-solregistry3</option>
+
+												</select>
+												<div class="nice-select popup_sel registryList" tabindex="0"><span
+														class="current">sga-solregistry</span>
+													<ul class="list">
+														<li data-value="4d842add-ad81-4e7d-a7fb-c39c836dabe2"
+															class="option selected">sga-solregistry</li>
+														<li data-value="de71636f-7e48-4a79-914f-727dc0a8edb4"
+															class="option">sga-solregistry2</li>
+														<li data-value="4e1d4b15-a3ce-4358-9f34-28bdf9c8ee63"
+															class="option">sga-solregistry3</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+
+										<div style="display:none" class="dashboard_box_cluster">
+											<div class="cluster_title">
+												<p>Cluster</p>
+											</div>
+											<div class="cluster_select_box sel_box">
+												<select class="popup_sel cluster_list" onchange="clusterChangeEvent()"
+													style="display: none;">
+													<option value="4b761c20-030f-4b3c-89b2-08d58ebf0d8d">Cluster-61
+													</option>
+													<option value="2f4b443e-d0c4-455f-9664-c6f6fbe5f5d1">Cluster-67
+													</option>
+													<option value="a75a5634-7d01-4eb4-9c49-8ad8259bd937">dev-k8s
+													</option>
+													<option value="ddf01bce-f79c-4dfb-b1c8-777778e04ab7">K8S
+														v1.19.14_Cluster</option>
+
+												</select>
+												<div class="nice-select popup_sel cluster_list" tabindex="0"><span
+														class="current">Cluster-61</span>
+													<ul class="list">
+														<li data-value="4b761c20-030f-4b3c-89b2-08d58ebf0d8d"
+															class="option selected">Cluster-61</li>
+														<li data-value="2f4b443e-d0c4-455f-9664-c6f6fbe5f5d1"
+															class="option">Cluster-67</li>
+														<li data-value="a75a5634-7d01-4eb4-9c49-8ad8259bd937"
+															class="option">dev-k8s</li>
+														<li data-value="ddf01bce-f79c-4dfb-b1c8-777778e04ab7"
+															class="option">K8S v1.19.14_Cluster</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="dashboard_box_cont">
+										<ul class="dashboard_cont ui-sortable">
+
+											<li class="w_100 ui-sortable-handle">
+												<div class="dashboard_cont_top">
+													<h4 class="cont_title">컨테이너 이미지 스캔 Summary</h4>
+													<div class="cont_btn_box">
+														<div class="sel_box fl" style="padding: 10px 10px 10px 10px;">
+															<select
+																onchange="javascript: lf_chartTermSelectEvent(this);"
+																class="popup_sel small" style="display: none;">
+																<option selected="selected" value="DAY">Day</option>
+																<option value="WEEK">Weekly</option>
+															</select>
+															<div class="nice-select popup_sel small" tabindex="0"><span
+																	class="current">Day</span>
+																<ul class="list">
+																	<li data-value="DAY" class="option selected">Day
+																	</li>
+																	<li data-value="WEEK" class="option">Weekly</li>
+																</ul>
+															</div>
+														</div>
+														<div class="cont_btn fl"><a href="#" class="cont_btn_link"><span
+																	class="linktext">메뉴</span></a>
+															<div class="cont_btn_list">
+																<ul>
+																	<li><a
+																			onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a>
+																	</li>
+																	<li><a
+																			onclick="javascript: lf_refreshChartEvent(this);">Refresh</a>
+																	</li>
+																	<li><a
+																			onclick="javascript: lf_removeChartEvent(this);">Delete</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="dashboard_chart_donut_box">
+													<div id="cloudvm_chart_donut_4962"
+														class="chart_box dashboard_chart_donut need_registry_select">
+														<div class="graph-section">
+															<div class="graph" id="malware_cloudvm_chart_donut_4962"
+																_echarts_instance_="ec_1694655213975"
+																style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
+																<div
+																	style="position: relative; width: 347px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+																	<canvas data-zr-dom-id="zr_0" width="347"
+																		height="400"
+																		style="position: absolute; left: 0px; top: 0px; width: 347px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+																	<div
+																		style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: 0px auto auto 0px !important;">
+																	</div>
+																	<div
+																		style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: 0px 0px auto auto !important;">
+																	</div>
+																	<div
+																		style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: auto auto 0px 0px !important;">
+																	</div>
+																	<div
+																		style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: auto 0px 0px auto !important;">
+																	</div>
+																</div>
+																<div class=""
+																	style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(54px, 334px, 0px); border-color: rgb(210, 210, 210); visibility: hidden; opacity: 0;">
+																	탐지된 멀웨어 갯수</div>
+															</div>
+															<div class="graph"
+																id="vulnerabilities_cloudvm_chart_donut_4962"
+																_echarts_instance_="ec_1694655213976"
+																style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
+																<div
+																	style="position: relative; width: 347px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+																	<canvas data-zr-dom-id="zr_0" width="347"
+																		height="400"
+																		style="position: absolute; left: 0px; top: 0px; width: 347px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+																</div>
+																<div class=""
+																	style="display: none; top: 0px; left: 0px; transform: translate3d(81px, 263px, 0px); visibility: hidden; opacity: 0;">
+																</div>
+															</div>
+															<div class="graph" id="scan_cloudvm_chart_donut_4962"
+																_echarts_instance_="ec_1694655213977"
+																style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
+																<div
+																	style="position: relative; width: 347px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+																	<canvas data-zr-dom-id="zr_0" width="347"
+																		height="400"
+																		style="position: absolute; left: 0px; top: 0px; width: 347px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+																</div>
+																<div class=""
+																	style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(97px, 152px, 0px); border-color: rgb(210, 210, 210); visibility: hidden; opacity: 0;">
+																	스캔 실패</div>
+															</div>
+															<div class="graph"
+																id="scanCompletion_cloudvm_chart_donut_4962"
+																_echarts_instance_="ec_1694655213978"
+																style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
+																<div
+																	style="position: relative; width: 347px; height: 400px; padding: 0px; margin: 0px; border-width: 0px;">
+																	<canvas data-zr-dom-id="zr_0" width="347"
+																		height="400"
+																		style="position: absolute; left: 0px; top: 0px; width: 347px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+																</div>
+																<div class=""></div>
+															</div>
+															<div class="graph"
+																id="imageAssurance_cloudvm_chart_donut_4962"
+																_echarts_instance_="ec_1694655213979"
+																style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
+																<div
+																	style="position: relative; width: 347px; height: 400px; padding: 0px; margin: 0px; border-width: 0px;">
+																	<canvas data-zr-dom-id="zr_0" width="347"
+																		height="400"
+																		style="position: absolute; left: 0px; top: 0px; width: 347px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+																</div>
+																<div class=""></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="w_25 ui-sortable-handle">
+												<div class="dashboard_cont_top">
+													<h4 class="cont_title">컨테이너 이미지 멀웨어 Top 5</h4>
+													<div class="cont_btn_box">
+														<div class="sel_box fl" style="padding: 10px 10px 10px 10px;">
+															<select
+																onchange="javascript: lf_chartTermSelectEvent(this);"
+																class="popup_sel small" style="display: none;">
+																<option selected="selected" value="DAY">Day</option>
+																<option value="WEEK">Weekly</option>
+															</select>
+															<div class="nice-select popup_sel small" tabindex="0"><span
+																	class="current">Day</span>
+																<ul class="list">
+																	<li data-value="DAY" class="option selected">Day
+																	</li>
+																	<li data-value="WEEK" class="option">Weekly</li>
+																</ul>
+															</div>
+														</div>
+														<div class="cont_btn fl"><a href="#" class="cont_btn_link"><span
+																	class="linktext">메뉴</span></a>
+															<div class="cont_btn_list">
+																<ul>
+																	<li><a
+																			onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a>
+																	</li>
+																	<li><a
+																			onclick="javascript: lf_refreshChartEvent(this);">Refresh</a>
+																	</li>
+																	<li><a
+																			onclick="javascript: lf_removeChartEvent(this);">Delete</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="dashboard_top5_box">
+													<div id="cloudvm_top5_4539"
+														class="chart_box dashboard_top5 need_registry_select">
+														<div class="no_data">
+															<p><span>No Data</span> 불러들일 데이터가 없습니다.</p>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="w_25 ui-sortable-handle">
+												<div class="dashboard_cont_top">
+													<h4 class="cont_title">컨테이너 이미지 취약성 Top 5</h4>
+													<div class="cont_btn_box">
+														<div class="sel_box fl" style="padding: 10px 10px 10px 10px;">
+															<select
+																onchange="javascript: lf_chartTermSelectEvent(this);"
+																class="popup_sel small" style="display: none;">
+																<option selected="selected" value="DAY">Day</option>
+																<option value="WEEK">Weekly</option>
+															</select>
+															<div class="nice-select popup_sel small" tabindex="0"><span
+																	class="current">Day</span>
+																<ul class="list">
+																	<li data-value="DAY" class="option selected">Day
+																	</li>
+																	<li data-value="WEEK" class="option">Weekly</li>
+																</ul>
+															</div>
+														</div>
+														<div class="cont_btn fl"><a href="#" class="cont_btn_link"><span
+																	class="linktext">메뉴</span></a>
+															<div class="cont_btn_list">
+																<ul>
+																	<li><a
+																			onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a>
+																	</li>
+																	<li><a
+																			onclick="javascript: lf_refreshChartEvent(this);">Refresh</a>
+																	</li>
+																	<li><a
+																			onclick="javascript: lf_removeChartEvent(this);">Delete</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="dashboard_top5_box">
+													<div id="cloudvm_top5_3993"
+														class="chart_box dashboard_top5 need_registry_select">
+														<div class="no_data">
+															<p><span>No Data</span> 불러들일 데이터가 없습니다.</p>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="w_50 ui-sortable-handle">
+												<div class="dashboard_cont_top">
+													<h4 class="cont_title">컨테이너 이미지 스캔 현황</h4>
+													<div class="cont_btn_box">
+														<div class="sel_box fl" style="padding: 10px 10px 10px 10px;">
+															<select
+																onchange="javascript: lf_chartTermSelectEvent(this);"
+																class="popup_sel small" style="display: none;">
+																<option selected="selected" value="DAY">Day</option>
+																<option value="WEEK">Weekly</option>
+															</select>
+															<div class="nice-select popup_sel small" tabindex="0"><span
+																	class="current">Day</span>
+																<ul class="list">
+																	<li data-value="DAY" class="option selected">Day
+																	</li>
+																	<li data-value="WEEK" class="option">Weekly</li>
+																</ul>
+															</div>
+														</div>
+														<div class="cont_btn fl"><a href="#" class="cont_btn_link"><span
+																	class="linktext">메뉴</span></a>
+															<div class="cont_btn_list">
+																<ul>
+																	<li><a
+																			onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a>
+																	</li>
+																	<li><a
+																			onclick="javascript: lf_refreshChartEvent(this);">Refresh</a>
+																	</li>
+																	<li><a
+																			onclick="javascript: lf_removeChartEvent(this);">Delete</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="dashboard_table_box">
+													<div id="cloudvm_table_2204"
+														class="chart_box dashboard_table need_registry_select">
+														<div class="no_data">
+															<p><span>No Data</span> 불러들일 데이터가 없습니다.</p>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="w_50 ui-sortable-handle">
+												<div class="dashboard_cont_top">
+													<h4 class="cont_title">컨테이너 이미지 실행 제어 현황</h4>
+													<div class="cont_btn_box">
+														<div class="sel_box fl" style="padding: 10px 10px 10px 10px;">
+															<select
+																onchange="javascript: lf_chartTermSelectEvent(this);"
+																class="popup_sel small" style="display: none;">
+																<option selected="selected" value="DAY">Day</option>
+																<option value="WEEK">Weekly</option>
+															</select>
+															<div class="nice-select popup_sel small" tabindex="0"><span
+																	class="current">Day</span>
+																<ul class="list">
+																	<li data-value="DAY" class="option selected">Day
+																	</li>
+																	<li data-value="WEEK" class="option">Weekly</li>
+																</ul>
+															</div>
+														</div>
+														<div class="cont_btn fl"><a href="#" class="cont_btn_link"><span
+																	class="linktext">메뉴</span></a>
+															<div class="cont_btn_list">
+																<ul>
+																	<li><a
+																			onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a>
+																	</li>
+																	<li><a
+																			onclick="javascript: lf_refreshChartEvent(this);">Refresh</a>
+																	</li>
+																	<li><a
+																			onclick="javascript: lf_removeChartEvent(this);">Delete</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="dashboard_table_box">
+													<div id="cloudvm_table_596"
+														class="chart_box dashboard_table need_registry_select">
+														<div class="no_data">
+															<p><span>No Data</span> 불러들일 데이터가 없습니다.</p>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<span>User Name</span>
-				</dt>
-				<dd>
-					<div class="ipt_box">
-						<input class="no_radius" type="text" placeholder="사용자의 이름을 입력해주세요." value="auditcastle Maker" id="currentUserName">
-					</div>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<span>User Phone</span>
-				</dt>
-				<dd>
-					<div class="ipt_box">
-						<input class="no_radius" type="text" placeholder="연락처를 입력해 주세요." value="010-0000-0000" id="currentUserPhone">
-					</div>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<span>User Email</span>
-				</dt>
-				<dd>
-					<div class="ipt_box">
-						<input class="no_radius" type="text" placeholder="이메일를 입력해 주세요." value="auditcastle@sgacorp.co.kr" id="currentUserEmail">
-					</div>
-				</dd>
-			</dl>
-		</div>
-	</div><!--//modal_body-->
-	<div class="modal_footer">
-		<div class="btn_wrap">
-			<a href="javascript:closeUserModal();" class="btn grey">취소</a>
-			<a href="javascript:updateCurrentUser();" class="btn">수정</a>
-		</div>
-	</div>
-	<div class="modal_controller">
-		<a href="#" class="close">close</a>
-	</div>
-</div>
-
-<div class="modal small" id="tf_modal">
-	<div class="modal_header">
-		<h3>OTP 정보</h3>
-	</div>
-	<div class="modal_body">
-		<div class="modal_cont">
-			<dl>
-				<dt>
-					<span>QR Code</span>					
-				</dt>
-				<dd>
-					<div class="ipt_box">
-						<img id="otpQRImg" src="/otp/qrcode.do?1694655214251" width="120" height="120" loading="lazy">
-						<span id="otpQRCode" class="qrcode super_bg">BNAQW4PKB7BJ2HI2</span>
-					</div>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<span>User ID</span>
-				</dt>
-				<dd>
-					<div class="ipt_box">
-						<input class="no_radius" type="text" readonly="" value="" id="otpUserid">
-					</div>
-				</dd>
-			</dl>
-			<dl>
-				<dt>Password</dt>
-				<dd>
-					<div class="ipt_box password">
-						<input class="no_radius" type="password" placeholder="비밀번호를 입력해 주세요." id="otpPasswd">
-						&nbsp;<a href="javascript:otpIssue();" class="btn otp_change_box otp_change" style="height: 34px; line-height: 30px; border-radius: 17px; border: 2px solid #2e6fd4; color: #fff; font-size: 13px;">QR 재발급</a>
-					</div>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<span>발급처</span>
-				</dt>
-				<dd>
-					<div class="ipt_box">
-						<input class="no_radius" type="text" placeholder="" value="" id="otpCompany" readonly="">
-					</div>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<span>발급일</span>
-				</dt>
-				<dd>
-					<div class="ipt_box">
-						<input class="no_radius" type="text" placeholder="" value="" id="otpCreatetime" readonly="">
-					</div>
-				</dd>
-			</dl>			
-		</div>
-	</div>
-	<div class="modal_footer">
-		<div class="btn_wrap">
-			<a href="#" class="btn grey close">닫기</a>
-		</div>
-	</div>
-	<div class="modal_controller">
-		<a href="#" class="close">close</a>
-	</div>
-</div>
-	
-
-<section class="dashboard mscrollbar mCustomScrollbar _mCS_1"><div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical_horizontal mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container_wrapper" class="mCSB_container_wrapper mCS_x_hidden mCS_no_scrollbar_x"><div id="mCSB_1_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px; width: 100%;" dir="ltr">
-	<div class="dashboard_main" style="padding-right: 7px;">
-		<div class="tab_box">
-			<a href="#" class="prev-slide disabled" style="display: none;">왼쪽으로</a>
-			<div class="tab">
-			<ul class="tab_lst" style="max-width: calc(100% - 42px);"><li onclick="javascript: lf_tabEventClickLoadDashboard(1);" ondblclick="javascript: lf_openTabEditDialog(this);" rel="dashboardTabMgmt_1" class="open on">
-<a href="#" class="tab_link" title="">Dashboard1</a>
-<a href="#" onclick="javascript: lf_openDashboardFullWindow();" class="full" title="새창열기">새창열기</a>
-<a href="#" onclick="javascript: lf_removeTab(1);" class="tab_cls">close</a>
-</li>
-				
-			</ul>
-			<a href="#" class="tab_add" onclick="javascript: lf_tabadd();">
-				<span>탭 추가</span>
-			</a>
+				</div>
 			</div>
-			<a href="#" class="next-slide disabled" style="display: none;">오른쪽으로</a>
-		
-		</div>
-		<div id="dashboardTabMgmt" class="tab_container">        <div class="dashboardTabMgmt_1 tab_cont open">
-            <div class="dashboard_box">
-                <div class="dashboard_box_top">
-                    <div class="dashboard_title">
-                        <h3>Dashboard1</h3>
-                    </div>
-                    <div class="dashboard_btn_box">
-                        <a href="#" onclick="javascript: lf_dashboardCreateChart();" class="btn bline" title="차트 &amp; 데이터 선택"><span>차트 &amp; 데이터</span></a>
-                        <a href="#" onclick="javascript: lf_dashboardAllConfiguration(this);" class="btn bline" title="자동 리로딩 설정"><span>리로딩설정</span></a>
-                        <a href="#" onclick="javascript:lf_removeChartAll();" class="btn save" title="전체 삭제"><span>삭제</span></a>
-                    </div>
-                </div>
-                <div class="dashboard_option_select_box">
-
-		<div style="" class="dashboard_box_registry">
-			<div class="registry_title">
-	   			<p>Registry</p>
+			<div id="mCSB_1_scrollbar_vertical"
+				class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical mCSB_scrollTools_onDrag_expand"
+				style="display: block;">
+				<div class="mCSB_draggerContainer">
+					<div id="mCSB_1_dragger_vertical" class="mCSB_dragger"
+						style="position: absolute; min-height: 30px; height: 421px; top: 0px; display: block; max-height: 833px;">
+						<div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+					</div>
+					<div class="mCSB_draggerRail"></div>
+				</div>
 			</div>
-	    	<div class="registry_select_box sel_box">
-				<select class="popup_sel registryList" onchange="registryChangeEvent()" style="display: none;">
-					<option value="4d842add-ad81-4e7d-a7fb-c39c836dabe2">sga-solregistry</option>
-<option value="de71636f-7e48-4a79-914f-727dc0a8edb4">sga-solregistry2</option>
-<option value="4e1d4b15-a3ce-4358-9f34-28bdf9c8ee63">sga-solregistry3</option>
-
-				</select><div class="nice-select popup_sel registryList" tabindex="0"><span class="current">sga-solregistry</span><ul class="list"><li data-value="4d842add-ad81-4e7d-a7fb-c39c836dabe2" class="option selected">sga-solregistry</li><li data-value="de71636f-7e48-4a79-914f-727dc0a8edb4" class="option">sga-solregistry2</li><li data-value="4e1d4b15-a3ce-4358-9f34-28bdf9c8ee63" class="option">sga-solregistry3</li></ul></div>
-			</div>
-     	</div>
-	
-		<div style="display:none" class="dashboard_box_cluster">
-			<div class="cluster_title">
-				<p>Cluster</p>
-			</div>
-			<div class="cluster_select_box sel_box">
-				<select class="popup_sel cluster_list" onchange="clusterChangeEvent()" style="display: none;">
-					<option value="4b761c20-030f-4b3c-89b2-08d58ebf0d8d">Cluster-61</option>
-<option value="2f4b443e-d0c4-455f-9664-c6f6fbe5f5d1">Cluster-67</option>
-<option value="a75a5634-7d01-4eb4-9c49-8ad8259bd937">dev-k8s</option>
-<option value="ddf01bce-f79c-4dfb-b1c8-777778e04ab7">K8S v1.19.14_Cluster</option>
-
-				</select><div class="nice-select popup_sel cluster_list" tabindex="0"><span class="current">Cluster-61</span><ul class="list"><li data-value="4b761c20-030f-4b3c-89b2-08d58ebf0d8d" class="option selected">Cluster-61</li><li data-value="2f4b443e-d0c4-455f-9664-c6f6fbe5f5d1" class="option">Cluster-67</li><li data-value="a75a5634-7d01-4eb4-9c49-8ad8259bd937" class="option">dev-k8s</li><li data-value="ddf01bce-f79c-4dfb-b1c8-777778e04ab7" class="option">K8S v1.19.14_Cluster</li></ul></div>
+			<div id="mCSB_1_scrollbar_horizontal"
+				class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_horizontal mCSB_scrollTools_onDrag_expand"
+				style="display: none;">
+				<div class="mCSB_draggerContainer">
+					<div id="mCSB_1_dragger_horizontal" class="mCSB_dragger"
+						style="position: absolute; min-width: 30px; width: 0px; left: 0px;">
+						<div class="mCSB_dragger_bar"></div>
+					</div>
+					<div class="mCSB_draggerRail"></div>
+				</div>
 			</div>
 		</div>
-		                 </div>
-                <div class="dashboard_box_cont">
-                    <ul class="dashboard_cont ui-sortable">
+	</section>
 
-                    <li class="w_100 ui-sortable-handle"><div class="dashboard_cont_top"><h4 class="cont_title">컨테이너 이미지 스캔 Summary</h4><div class="cont_btn_box"><div class="sel_box fl" style="padding: 10px 10px 10px 10px;"><select onchange="javascript: lf_chartTermSelectEvent(this);" class="popup_sel small" style="display: none;"><option selected="selected" value="DAY">Day</option><option value="WEEK">Weekly</option></select><div class="nice-select popup_sel small" tabindex="0"><span class="current">Day</span><ul class="list"><li data-value="DAY" class="option selected">Day</li><li data-value="WEEK" class="option">Weekly</li></ul></div></div><div class="cont_btn fl"><a href="#" class="cont_btn_link"><span class="linktext">메뉴</span></a><div class="cont_btn_list"><ul><li><a onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a></li><li><a onclick="javascript: lf_refreshChartEvent(this);">Refresh</a></li><li><a onclick="javascript: lf_removeChartEvent(this);">Delete</a></li></ul></div></div></div></div><div class="dashboard_chart_donut_box"><div id="cloudvm_chart_donut_4962" class="chart_box dashboard_chart_donut need_registry_select"><div class="graph-section"><div class="graph" id="malware_cloudvm_chart_donut_4962" _echarts_instance_="ec_1694655213975" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;"><div style="position: relative; width: 347px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="347" height="400" style="position: absolute; left: 0px; top: 0px; width: 347px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas><div style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: 0px auto auto 0px !important;"></div><div style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: 0px 0px auto auto !important;"></div><div style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: auto auto 0px 0px !important;"></div><div style="position: absolute !important; visibility: hidden !important; padding: 0px !important; margin: 0px !important; border-width: 0px !important; user-select: none !important; width: 0px !important; height: 0px !important; inset: auto 0px 0px auto !important;"></div></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(54px, 334px, 0px); border-color: rgb(210, 210, 210); visibility: hidden; opacity: 0;">탐지된 멀웨어 갯수</div></div><div class="graph" id="vulnerabilities_cloudvm_chart_donut_4962" _echarts_instance_="ec_1694655213976" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;"><div style="position: relative; width: 347px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="347" height="400" style="position: absolute; left: 0px; top: 0px; width: 347px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="display: none; top: 0px; left: 0px; transform: translate3d(81px, 263px, 0px); visibility: hidden; opacity: 0;"></div></div><div class="graph" id="scan_cloudvm_chart_donut_4962" _echarts_instance_="ec_1694655213977" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;"><div style="position: relative; width: 347px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="347" height="400" style="position: absolute; left: 0px; top: 0px; width: 347px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(97px, 152px, 0px); border-color: rgb(210, 210, 210); visibility: hidden; opacity: 0;">스캔 실패</div></div><div class="graph" id="scanCompletion_cloudvm_chart_donut_4962" _echarts_instance_="ec_1694655213978" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;"><div style="position: relative; width: 347px; height: 400px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="347" height="400" style="position: absolute; left: 0px; top: 0px; width: 347px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div><div class="graph" id="imageAssurance_cloudvm_chart_donut_4962" _echarts_instance_="ec_1694655213979" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;"><div style="position: relative; width: 347px; height: 400px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="347" height="400" style="position: absolute; left: 0px; top: 0px; width: 347px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div></div></div></div></li><li class="w_25 ui-sortable-handle"><div class="dashboard_cont_top"><h4 class="cont_title">컨테이너 이미지 멀웨어 Top 5</h4><div class="cont_btn_box"><div class="sel_box fl" style="padding: 10px 10px 10px 10px;"><select onchange="javascript: lf_chartTermSelectEvent(this);" class="popup_sel small" style="display: none;"><option selected="selected" value="DAY">Day</option><option value="WEEK">Weekly</option></select><div class="nice-select popup_sel small" tabindex="0"><span class="current">Day</span><ul class="list"><li data-value="DAY" class="option selected">Day</li><li data-value="WEEK" class="option">Weekly</li></ul></div></div><div class="cont_btn fl"><a href="#" class="cont_btn_link"><span class="linktext">메뉴</span></a><div class="cont_btn_list"><ul><li><a onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a></li><li><a onclick="javascript: lf_refreshChartEvent(this);">Refresh</a></li><li><a onclick="javascript: lf_removeChartEvent(this);">Delete</a></li></ul></div></div></div></div><div class="dashboard_top5_box"><div id="cloudvm_top5_4539" class="chart_box dashboard_top5 need_registry_select"><div class="no_data"><p><span>No Data</span> 불러들일 데이터가 없습니다.</p></div></div></div></li><li class="w_25 ui-sortable-handle"><div class="dashboard_cont_top"><h4 class="cont_title">컨테이너 이미지 취약성 Top 5</h4><div class="cont_btn_box"><div class="sel_box fl" style="padding: 10px 10px 10px 10px;"><select onchange="javascript: lf_chartTermSelectEvent(this);" class="popup_sel small" style="display: none;"><option selected="selected" value="DAY">Day</option><option value="WEEK">Weekly</option></select><div class="nice-select popup_sel small" tabindex="0"><span class="current">Day</span><ul class="list"><li data-value="DAY" class="option selected">Day</li><li data-value="WEEK" class="option">Weekly</li></ul></div></div><div class="cont_btn fl"><a href="#" class="cont_btn_link"><span class="linktext">메뉴</span></a><div class="cont_btn_list"><ul><li><a onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a></li><li><a onclick="javascript: lf_refreshChartEvent(this);">Refresh</a></li><li><a onclick="javascript: lf_removeChartEvent(this);">Delete</a></li></ul></div></div></div></div><div class="dashboard_top5_box"><div id="cloudvm_top5_3993" class="chart_box dashboard_top5 need_registry_select"><div class="no_data"><p><span>No Data</span> 불러들일 데이터가 없습니다.</p></div></div></div></li><li class="w_50 ui-sortable-handle"><div class="dashboard_cont_top"><h4 class="cont_title">컨테이너 이미지 스캔 현황</h4><div class="cont_btn_box"><div class="sel_box fl" style="padding: 10px 10px 10px 10px;"><select onchange="javascript: lf_chartTermSelectEvent(this);" class="popup_sel small" style="display: none;"><option selected="selected" value="DAY">Day</option><option value="WEEK">Weekly</option></select><div class="nice-select popup_sel small" tabindex="0"><span class="current">Day</span><ul class="list"><li data-value="DAY" class="option selected">Day</li><li data-value="WEEK" class="option">Weekly</li></ul></div></div><div class="cont_btn fl"><a href="#" class="cont_btn_link"><span class="linktext">메뉴</span></a><div class="cont_btn_list"><ul><li><a onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a></li><li><a onclick="javascript: lf_refreshChartEvent(this);">Refresh</a></li><li><a onclick="javascript: lf_removeChartEvent(this);">Delete</a></li></ul></div></div></div></div><div class="dashboard_table_box"><div id="cloudvm_table_2204" class="chart_box dashboard_table need_registry_select"><div class="no_data"><p><span>No Data</span> 불러들일 데이터가 없습니다.</p></div></div></div></li><li class="w_50 ui-sortable-handle"><div class="dashboard_cont_top"><h4 class="cont_title">컨테이너 이미지 실행 제어 현황</h4><div class="cont_btn_box"><div class="sel_box fl" style="padding: 10px 10px 10px 10px;"><select onchange="javascript: lf_chartTermSelectEvent(this);" class="popup_sel small" style="display: none;"><option selected="selected" value="DAY">Day</option><option value="WEEK">Weekly</option></select><div class="nice-select popup_sel small" tabindex="0"><span class="current">Day</span><ul class="list"><li data-value="DAY" class="option selected">Day</li><li data-value="WEEK" class="option">Weekly</li></ul></div></div><div class="cont_btn fl"><a href="#" class="cont_btn_link"><span class="linktext">메뉴</span></a><div class="cont_btn_list"><ul><li><a onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a></li><li><a onclick="javascript: lf_refreshChartEvent(this);">Refresh</a></li><li><a onclick="javascript: lf_removeChartEvent(this);">Delete</a></li></ul></div></div></div></div><div class="dashboard_table_box"><div id="cloudvm_table_596" class="chart_box dashboard_table need_registry_select"><div class="no_data"><p><span>No Data</span> 불러들일 데이터가 없습니다.</p></div></div></div></li></ul>
-                </div>
-            </div>
-        </div>
-</div>
+	<input id="dashboardData" type="hidden">
+	<!-- 삭제 필요. dashboardCspData에 데이터 저장하도록 로직 수정 필요 -->
+	<input id="dashboardScanCount" type="hidden"
+		cloudvm_chart_donut_4962="{&quot;registryImageCnt&quot;:27,&quot;vulnerabilityCnt&quot;:[],&quot;malwareCnt&quot;:[{&quot;count&quot;:0}],&quot;scanResultCnt&quot;:[]}">
+	<!-- 0808 추가. 차트 상세보기 데이터 저장 -->
+	<input id="dashboardCspData" type="hidden">
+	<input id="complianceDetailData" type="hidden">
+
+
+	<div id="fatkun-drop-panel">
+		<a id="fatkun-drop-panel-close-btn">×</a>
+		<div id="fatkun-drop-panel-inner">
+			<div class="fatkun-content">
+				<svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+					p-id="5892">
+					<path
+						d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z"
+						p-id="5893"></path>
+				</svg>
+				<div class="fatkun-title">Drag and Drop</div>
+				<div class="fatkun-desc">The image will be downloaded</div>
+			</div>
+		</div>
 	</div>
-</div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical mCSB_scrollTools_onDrag_expand" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; height: 421px; top: 0px; display: block; max-height: 833px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div><div id="mCSB_1_scrollbar_horizontal" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_horizontal mCSB_scrollTools_onDrag_expand" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_horizontal" class="mCSB_dragger" style="position: absolute; min-width: 30px; width: 0px; left: 0px;"><div class="mCSB_dragger_bar"></div></div><div class="mCSB_draggerRail"></div></div></div></div></section>
+	<div class="dim" style="display: none;"></div>
+</body>
 
-<input id="dashboardData" type="hidden">
-<!-- 삭제 필요. dashboardCspData에 데이터 저장하도록 로직 수정 필요 -->
-<input id="dashboardScanCount" type="hidden" cloudvm_chart_donut_4962="{&quot;registryImageCnt&quot;:27,&quot;vulnerabilityCnt&quot;:[],&quot;malwareCnt&quot;:[{&quot;count&quot;:0}],&quot;scanResultCnt&quot;:[]}">
-<!-- 0808 추가. 차트 상세보기 데이터 저장 -->
-<input id="dashboardCspData" type="hidden">
-<input id="complianceDetailData" type="hidden">
-
-
-<div id="fatkun-drop-panel">
-        <a id="fatkun-drop-panel-close-btn">×</a>
-            <div id="fatkun-drop-panel-inner">
-                <div class="fatkun-content">
-                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
-                    <div class="fatkun-title">Drag and Drop</div>
-                    <div class="fatkun-desc">The image will be downloaded</div>
-                </div>
-            </div>
-    </div><div class="dim" style="display: none;"></div></body></html>
+</html>

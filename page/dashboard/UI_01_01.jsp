@@ -707,13 +707,45 @@
 									</div>
 								</div><!--//dashboard_table_box-->
 							</li>
-														
-														
-														<li class="w_50 ui-sortable-handle"><div class="dashboard_cont_top"><h4 class="cont_title">컨테이너 이미지 실행 제어 현황</h4><div class="cont_btn_box"><div class="sel_box fl" style="padding: 10px 10px 10px 10px;"><select onchange="javascript: lf_chartTermSelectEvent(this);" class="popup_sel small" style="display: none;"><option selected="selected" value="DAY">Day</option><option value="WEEK">Weekly</option></select><div class="nice-select popup_sel small" tabindex="0"><span class="current">Day</span><ul class="list"><li data-value="DAY" class="option selected">Day</li><li data-value="WEEK" class="option">Weekly</li></ul></div></div><div class="cont_btn fl"><a href="#" class="cont_btn_link"><span class="linktext">메뉴</span></a><div class="cont_btn_list"><ul><li><a onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a></li><li><a onclick="javascript: lf_refreshChartEvent(this);">Refresh</a></li><li><a onclick="javascript: lf_removeChartEvent(this);">Delete</a></li></ul></div></div></div></div><div class="dashboard_table_box"><div id="cloudvm_table_9194" class="chart_box dashboard_table need_registry_select"><div class="no_data"><p><span>No Data</span> 불러들일 데이터가 없습니다.</p></div></div></div></li></ul>
-                </div><!--//dashboard_box_cont-->
+							<li class="w_50 ui-sortable-handle">
+								<div class="dashboard_cont_top">
+									<h4 class="cont_title">컨테이너 이미지 실행 제어 현황</h4>
+									<div class="cont_btn_box">
+										<div class="sel_box fl" style="padding: 10px 10px 10px 10px;">
+											<select onchange="javascript: lf_chartTermSelectEvent(this);" class="popup_sel small" style="display: none;">
+												<option selected="selected" value="DAY">Day</option>
+												<option value="WEEK">Weekly</option>
+											</select>
+											<div class="nice-select popup_sel small" tabindex="0">
+												<span class="current">Day</span>
+												<ul class="list">
+													<li data-value="DAY" class="option selected">Day</li>
+													<li data-value="WEEK" class="option">Weekly</li>
+												</ul>
+											</div>
+										</div>
+										<div class="cont_btn fl">
+											<a href="#" class="cont_btn_link"><span class="linktext">메뉴</span></a>
+											<div class="cont_btn_list">
+												<ul>
+													<li><a onclick="javascript: lf_dashboardConfiguration(this);">Configuration</a></li>
+													<li><a onclick="javascript: lf_refreshChartEvent(this);">Refresh</a></li>
+													<li><a onclick="javascript: lf_removeChartEvent(this);">Delete</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dashboard_table_box">
+									<div id="cloudvm_table_9194" class="chart_box dashboard_table need_registry_select">
+										<div class="no_data"><p><span>No Data</span> 불러들일 데이터가 없습니다.</p></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div><!--//dashboard_box_cont-->
 				</div><!--//dashboard_box-->
 			</div><!--//tab_cont-->
-			
         </div>
 
 </div>
