@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>2gate 퍼블가이드 | guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keyword" content="">
+<meta name="description" content="guide">
+<meta name="author" content="joahreum">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link rel="stylesheet" type="text/css" href="../asset/css/guide.css"/>
+<link rel="stylesheet" type="text/css" href="../asset/css/lib/shCoreDefault.css" />
+<script src="../asset/js/jquery.min.js"></script>
+<script src="../asset/js/common.js"></script>
+<script src="../asset/js/lib/XRegExp.js"></script>
+<script src="../asset/js/lib/shCore.js"></script>
+<script src="../asset/js/lib/shBrushJScript.js"></script>
+<script src="../asset/js/lib/shBrushXml.js"></script>
+<script src="../asset/js/lib/shBrushCss.js"></script>
+<!-- <script type="text/javascript"> 
+SyntaxHighlighter.defaults['first-line'] = 1; // 라인 시작 숫자 (기본값 1)
+SyntaxHighlighter.config.stripBrs = true;
+SyntaxHighlighter.all();
+</script> -->
+<script type="text/javascript">
+SyntaxHighlighter.defaults["toolbar"] = false; // 툴바없애기
+SyntaxHighlighter.defaults["auto-links"] = false; // 자동 링크없애기
+SyntaxHighlighter.defaults["tab-size"] = 2; // 탭사이즈를 2로 설정
+SyntaxHighlighter.all();
+</script> 
+</head>
+<body>
+<div class="wrapper">
+	<!-- s: aside -->
+	<article class="aside">
+		<div class="header">		
+			<h1><a href="../index.html"><img src="../asset/img/common/logo_white.png" alt="투게이트"/></a></h1>
+			<button type="button" class="btn-mainnav"><span>Menu</span></button>
+		</div>
+		<nav class="main-nav">
+			<ul>
+				<li><a href="../index.html">웹퍼블리싱가이드</a></li>
+				<li><a href="./guide.html" class="on">가이드요약</a></li>
+				<li><a href="./typo.html">Typography</a></li>
+				<li><a href="./color.html">Color</a></li>
+				<li><a href="./table.html">Table or List</a></li>					
+				<li><a href="./tab.html">Tab</a></li>								
+<!-- 				<li><a href="#none">Agreement</a></li> -->					
+				<li><a href="./form.html">Form</a></li>	
+				<li><a href="./button.html">Button</a></li>
+		<!-- 		<li><a href="#none">Layout</a></li>
+				<li><a href="#none">Popup</a></li>
+				<li><a href="#none">Web Accessibility</a></li> -->
+			</ul>
+		</nav>
+	</article>
+	<!-- e: aside -->
+	
+	<!-- s: content -->
+	<article class="content">
+		<div class="sub-header">
+			<h2>가이드요약</h2>
+		</div>
+		
+		<div class="container">
+			<h3 class="guide-tit">기본환경</h3>
+			<section>
+				<h4>1. 폴더구조 및 규칙</h4>
+				<div class="table-type table-row table-scroll">
+					<table cellspacing="0" summary="폴더구조 및 규칙">
+						<colgroup><col style="width:10%;"><col style="width:10%;"><col style="width:10%;"><col style="width:20%;"><col style="width:20%;"><col style="width:*;">
+						</colgroup>
+						<caption>폴더구조 및 규칙</caption>
+						<tbody>
+						<tr>
+							<td scope="row" rowspan="9">[www]</td>
+							<td colspan="2">[html]</td>
+							<td>index.html</td>
+							<td></td>
+							<td>HTML 문서</td>
+						</tr>
+						<tr class="bor-r">
+							<td scope="row" rowspan="8">[asset]</td>
+						</tr>
+						<tr>
+							<td scope="row" rowspan="3">[css]</td>
+							<td>[lib]</td>
+							<td>lib.css</td>
+							<td rowspan="3">스타일시트</td>
+						</tr>
+						<tr class="bor-r">
+							<td scope="row">reset.css</td>
+							<td></td>
+						</tr>
+						<tr class="bor-r">
+							<td scope="row">common.css</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td scope="row" rowspan="2">[img]</td>
+							<td>[main]</td>
+							<td>img_01.png</td>
+							<td rowspan="2">이미지</td>
+						</tr>
+						<tr class="bor-r">
+							<td scope="row">[sub 폴더명]</td>
+							<td>img_02.png</td>
+						</tr>
+						<tr>
+							<td scope="row" rowspan="2">[js]</td>
+							<td>[lib]</td>
+							<td>lib.js</td>
+							<td rowspan="2">자바스크립트</td>
+						</tr>
+						<tr class="bor-r">
+							<td scope="row">common.js</td>
+							<td></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<ul class="bul-hypn">
+					<li>라이브러리 관련 소스폴더(lib)는 css폴더와 js폴더에 나누어 생성</li>
+					<li>별도의 lib폴더로 생성하지 않음</li>
+				</ul>
+
+				<h4 class="mt50">2. 폴더/파일이름</h4>
+				<ul class="bul-hypn">
+					<li>화면ID는 각 프로젝트 규칙에 따르되 별도의 규정이 없는 경우 다음 규칙을 따름</li>
+					<li>파일명은 알파벳 소문자, 숫자, 언더바( _ )을 조합하여 생성 (대문자, 공백, 특수기호는 사용하지 않음)</li>
+					<li>파일명앞단어/이미지크기/형태.의미/순서/상태.확장자
+						<ul class="bul-dot">
+							<li class="txt-red">main_s_btn_01_on.gif sub_s_bg_faq_on.gif</li>
+						</ul>
+					</li>
+				</ul>
+				<p style="display:inline-block; float:left; width:100%;"><img src="../asset/img/bg_ex_01.jpg" alt="프로젝트파일이름규칙"/></p>
+
+				<h4 class="mt50">3. 크로스브라우징</h4>
+				<div class="table-type table-row table-scroll">
+					<table cellspacing="0" summary="크로스브라우징">
+						<colgroup><col style="width:33.33%;"><col style="width:33.33%;"><col style="width:33.33%;">
+						</colgroup>
+						<caption>크로스브라우징</caption>
+						<thead>
+						<tr>
+							<th scope="col">브라우저</th>
+							<th scope="col">버전</th>
+							<th scope="col">접두사</th>
+						</tr>	
+						</thead>
+						<tbody>
+						<tr>
+							<td scope="row">IE</td>
+							<td>최신버전</td>
+							<td>-ms-</td>
+						</tr>
+						<tr>
+							<td scope="row">Firefox</td>
+							<td>최신버전</td>
+							<td>-moz-</td>
+						</tr>
+						<tr>
+							<td scope="row">Chrome</td>
+							<td>최신버전</td>
+							<td>-webkit-</td>
+						</tr>
+						<tr>
+							<td scope="row">Safari</td>
+							<td>최신버전</td>
+							<td>-webkit-</td>
+						</tr>
+						<tr>
+							<td scope="row">Safari on IOS</td>
+							<td>최신버전</td>
+							<td>-webkit-</td>
+						</tr>
+						<tr>
+							<td scope="row">Android Browser</td>
+							<td>최신버전</td>
+							<td>-webkit-</td>
+						</tr>
+						<tr>
+							<td scope="row">Opera</td>
+							<td>최신버전</td>
+							<td>-webkit-</td>
+						</tr>
+						<tr>
+							<td scope="row">네이버 웨일</td>
+							<td>최신버전</td>
+							<td>-</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h4 class="mt50">4. 지원해상도</h4>
+				<div class="table-type table-col table-scroll">
+					<table cellspacing="0" summary="지원해상도">
+						<colgroup><col style="width:30%;"><col style="width:*;">
+						</colgroup>
+						<caption>지원해상도</caption>
+						<tbody>
+						<tr>
+							<th scope="row">모바일</th>
+							<td><span class="fw-700">320px</span> ~ 575px > 100%</td>
+						</tr>
+						<tr>
+							<th scope="row">모바일고해상도</th>
+							<td>576px ~ 767px > 540px</td>
+						</tr>
+						<tr>
+							<th scope="row">태블릿</th>
+							<td><span class="fw-700">768px</span> ~ 991px   > 720px</td>
+						</tr>
+						<tr>
+							<th scope="row">PC 저해상도</th>
+							<td>992px ~ 1199px  > 960px</td>
+						</tr>
+						<tr>
+							<th scope="row">PC 일반</th>
+							<td><span class="fw-700">1200px</span> ~ 1399px > 1140px</td>
+						</tr>
+						<tr>
+							<th scope="row">PC 고해상도</th>
+							<td>1400px ~ ∞  > 1320px</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<ul class="bul-hypn">
+					<li>반응형 웹 기술 사용시 가로해상도가 768px 미만인 경우 모바일, 768px 이상인 경우 태블릿 단말기로 구분한다.</li>
+					<li>PC 화면에 대응하는 경우 992px 이상인 경우 노트북, 1200px 이상인 경우 PC로 구분한다.</li>
+				</ul>
+				<br/>
+				<h4>미디어 쿼리 사용 예시)</h4>
+				<pre class="brush:js html-script:true;" style="display:inline-block; float:left; width:100%; ">
+					<style>
+					/* 모바일 스타일 */
+					@media only screen and (min-width : 320px) {
+					.my_class {}
+					}
+
+					/* 태블릿 스타일 */
+					@media only screen and (min-width : 768px) {
+					.my_class {}
+					}
+
+					/* 노트북 스타일 */
+					@media only screen and (min-width : 1024px) {
+					.my_class {}
+					}
+
+					/* PC 스타일 */
+					@media only screen and (min-width : 1200px) {
+					.my_class {}
+					}
+					</style>
+				</pre>
+			
+				<h4 class="mt50">5. 파일 인코딩(UTF-8)</h4>
+				<ul class="bul-hypn">
+					<li>UTF-8</li>
+				</ul>
+			</section>
+
+			<h3 class="guide-tit">HTML 작업규칙</h3>
+			<section>
+				<h4>1. HTML 문법 (따옴표, 태그정의, 들여쓰기)</h4>
+				<ul class="bul-hypn">
+					<li>모든 요소와 속성은 소문자로 작성한다.
+					<li>속성의 값은 큰따옴표("")로 묶는다.</li>
+					<li>특수기호는 Entity code(ISO-8859-1)를 사용한다.</li>
+					<li>종료태그를 반드시 선언한다. &lt;img /&gt; &lt;br /&gt; ...</li>
+					<li>마크업의 중첩이 깊어질 때마다 자식 요소는 1탭 들여 쓰고, 1탭의 크기는 공백 4칸으로 설정한다.</li>
+					<li><p class="fw-bold">다음의 경우에는 들여쓰기를 하지 않는다.</p>
+						<ul class="bul-dot">
+							<li>html의 자식 요소인 head, body</li>
+							<li>head의 자식 요소인 meta, link, script</li>
+							<li>body의 자식 첫 번째 요소 id="wrapper"</li>
+						</ul>
+					</li>
+					<li><p class="fw-bold">마크업 유의사항</p>
+						<ul class="bul-dot">
+							<li>DTD 선언 앞에 주석 등의 내용이 없어야 한다.</li>
+							<li>&lt;head&gt;태그의 안쪽과 &lt;body&gt;태그의 안쪽 이외에 내용을 삽입하지 않는다.</li>
+							<li>a 태그에 삽입된 img 태그에는 이미지맵을 사용할 수 없다.</li>
+							<li>a 태그 안에는 a 태그가 들어갈 수 없다.</li>
+							<li>p 태그로는 레이아웃을 잡지 않는다. (p태그 안에는 블럭요소 삽입이 불가능하므로 운영시 문제가 생길 수 있음)</li>
+							<li>p 태그 안에는 p, div, ul 등 다른 블럭요소가 들어갈 수 없다. ( display:inline 속성을 적용해도 소용없음)</li>
+							<li>pre 태그 안에는 img, object, big, small, sub, sup 태그가 들어갈 수 없다.</li>
+							<li>button 태그 안에는 input, select, textarea, label, button, form, fieldset, iframe, isindex 태그가 들어갈 수 없다.</li>
+							<li>button 태그의 type 속성을 지정하지 않았을 때 IE6, IE7 의 경우 submit 기능으로 동작하므로 폼 값을 전송하는 용도로 사용하지 않을 경우 type="button"을 지정</li>
+							<li>form 태그 안에는 form  태그가 들어갈 수 없다.</li>
+							<li>label 태그 안에는 label 태그가 들어갈 수 없다.</li>
+							<li>id 값은 하나의 페이지에서 하나씩만 사용한다.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h4 class="mt50">2. 메타태그(작성자, 설명, 뷰포트 등)</h4>
+				<pre class="brush:js html-script:true;">
+					<!DOCTYPE html>
+					<html lang="ko">
+					<head>
+					<title>프로젝트 명 | 서브화면 명</title>
+					<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<meta name="keyword" content="">
+					<meta name="description" content="">
+					<meta name="author" content="">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+					<link rel="stylesheet" type="text/css" href="../asset/css/reset.css"/>
+				<!-- 	<link rel="stylesheet" type="text/css" href="../asset/css/common.css"/> -->
+					<script src="../asset/js/jquery.min.js"></script>
+					<!-- <script src="../asset/js/common.js"></script> -->
+					</head>
+					<body>
+					</body>
+					</html>
+				</pre>
+				<ul class="bul-hypn">
+					<li>name="keyword" : 검색 엔진에 의해 검색되는 단어를 지정
+						<ul>
+							<li>
+								<pre class="brush:js html-script:true;">
+									<meta name="keyword" content="HTML, meta, tag, element, reference, Web">
+								</pre>								
+							</li>
+						</ul>
+					</li>
+					<li>name="description" : 웹 페이지에 대한 설명을 정의
+						<ul>
+							<li>
+								<pre class="brush:js html-script:true;">
+									<meta name="description" content="HTML meta tag page">
+								</pre>								
+							</li>
+						</ul>
+					</li>
+					<li>name="author" : 문서의 작성자를 정의
+						<ul>
+							<li>
+								<pre class="brush:js html-script:true;">
+									<meta name="author" content="name">
+								</pre>								
+							</li>
+						</ul>
+					</li>
+
+
+				</ul>
+
+				<h4 class="mt50">3. 주석</h4>
+				<ul class="bul-hypn">
+					<li>주석 기호와 주석 내용 사이에는 반드시 공백 한 칸이 있어야 한다.</li>
+					<li>주석 기호와 주석 내용 사이에는 다른 기호가 올 수 없다.</li>
+					<li>시작과 종료 주석의 내용은 동일해야 한다.</li>
+				</ul>
+				<pre class="brush:js html-script:true;">
+					<!-- s: 게시물 페이징 -->
+					<nav class="paging">...</nav>
+					<!-- e: 게시물 페이징 -->
+				</pre>
+
+				<h4 class="mt50">4. 속성우선순위</h4>
+				<div class="table-type table-row table-scroll">
+					<table cellspacing="0" summary="속성우선순위">
+						<colgroup><col width="17%"><col width="8%"><col width="14%"><col width="8%"><col width="*"></colgroup>
+						<caption>속성우선순위</caption>
+						<thead>
+						<tr>
+							<th>요소 종류</th>
+							<th>선언순서</th>
+							<th>기본 값</th>
+							<th>필수요소</th>
+							<th>설명</th>
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th rowspan="11">input[type=text],<br>
+									input[type=password]</th>
+								<td>type</td>
+								<td>'text'</td>
+								<td>○</td>
+								<td>필수 기본 속성</td>
+							</tr>
+							<tr>
+								<td>title</td>
+								<td>String</td>
+								<td>△</td>
+								<td>명시적으로 label 요소가 지정되지 않은 경우 반드시 해당 속성 값을 작성한다.</td>
+							</tr>
+							<tr>
+								<td>id</td>
+								<td>String</td>
+								<td>△</td>
+								<td>명시적으로 label 요소가 지정된 경우 반드시 label 요소의 id 속성의 값을 작성한다.</td>
+							</tr>
+							<tr>
+								<td>class</td>
+								<td>'text' + String</td>
+								<td>○</td>
+								<td>'text'라는 클래스명이 기본으로 작성되며 표현과 동작을 위한 클래스는 다중으로 작성할 수 있다.</td>
+							</tr>
+							<tr>
+								<td>style</td>
+								<td>'width'</td>
+								<td>X</td>
+								<td>css로 표현하지 못하는 예외 사항에서 width 속성을 사용하여 너비값을 작성한다.</td>
+							</tr>
+							<tr>
+								<td>name</td>
+								<td>String</td>
+								<td>X</td>
+								<td rowspan="5">옵션 속성은 style 속성 이후에 순서에 상관없이 사용한다.</td>
+							</tr>
+							<tr class="bor-r">
+								<td>value</td>
+								<td>String</td>
+								<td>X</td>
+							</tr>
+							<tr class="bor-r">
+								<td>maxlength</td>
+								<td>Number</td>
+								<td>X</td>
+							</tr>
+							<tr class="bor-r">
+								<td>readonly</td>
+								<td>readonly</td>
+								<td>X</td>
+							</tr>
+							<tr class="bor-r">
+								<td>disable</td>
+								<td>disable</td>
+								<td>X</td>
+							</tr>
+							<tr>
+								<td>accesskey</td>
+								<td>String</td>
+								<td>X</td>
+								<td>단일 영문자(대문자 권장)</td>
+							</tr>
+							<tr>
+								<th rowspan="7">input[type=radio],<br>
+									input[type=checkbox]</th>
+								<td>type</td>
+								<td>'checkbox', 'radio'</td>
+								<td>○</td>
+								<td>필수 기본 속성</td>
+							</tr>
+							<tr>
+								<td>title</td>
+								<td>대체 텍스트</td>
+								<td>△</td>
+								<td>명시적으로 label 요소가 지정되지 않은 경우 반드시 해당 속성 값을 작성한다.</td>
+							</tr>
+							<tr>
+								<td>id</td>
+								<td>String</td>
+								<td>△</td>
+								<td>명시적으로 label 요소가 지정된 경우 반드시 label 요소의 id 속성의 값을 작성한다.</td>
+							</tr>
+							<tr>
+								<td>class</td>
+								<td>'chk' + String</td>
+								<td>○</td>
+								<td>'chk', 'rdi'라는 클래스명이 기본으로 작성되며 표현과 동작을 위한 클래스는 다중으로 작성할 수 있다.</td>
+							</tr>
+							<tr>
+								<td>name</td>
+								<td>String</td>
+								<td>○</td>
+								<td>ex) chk01_01, chk01_02, chk01_03...</td>
+							</tr>
+							<tr class="bor-r">
+								<td>checked</td>
+								<td>'checked'</td>
+								<td>X</td>
+							</tr>
+							<tr>
+								<td>etc</td>
+								<td>해당 속성 값</td>
+								<td>X</td>
+								<td>옵션 속성은 마지막 속성 이후에 순서에 상관없이 사용한다.</td>
+							</tr>
+							<tr>
+								<th rowspan="6">input[type=img]</th>
+								<td>type</td>
+								<td>'image'</td>
+								<td>○</td>
+								<td>필수 지정 속성</td>
+							</tr>
+							<tr>
+								<td>src</td>
+								<td>String</td>
+								<td>○</td>
+								<td>이미지 경로</td>
+							</tr>
+							<tr>
+								<td>title</td>
+								<td>String</td>
+								<td>○</td>
+								<td>대체 텍스트</td>
+							</tr>
+							<tr>
+								<td>id</td>
+								<td>String</td>
+								<td>X</td>
+								<td>DOM 접근을 위하여 사용할 수 있다.</td>
+							</tr>
+							<tr>
+								<td>class</td>
+								<td>'image' + String</td>
+								<td>○</td>
+								<td>'image'라는 클래스명이 기본으로 작성되며 표현과 동작을 위한 클래스는 다중으로 작성할 수 있다.</td>
+							</tr>
+							<tr>
+								<td>etc</td>
+								<td>해당 속성 값</td>
+								<td>X</td>
+								<td>옵션 속성은 마지막 속성 이후에 순서에 상관없이 사용한다.</td>
+							</tr>
+							<tr>
+								<th rowspan="5">select</th>
+								<td>title</td>
+								<td>String</td>
+								<td>○</td>
+								<td>대체 텍스트</td>
+							</tr>
+							<tr>
+								<td>id</td>
+								<td>String</td>
+								<td>X</td>
+								<td>DOM 접근을 위하여 사용할 수 있다.</td>
+							</tr>
+							<tr>
+								<td>class</td>
+								<td>'select' + String</td>
+								<td>○</td>
+								<td>'select'라는 클래스명이 기본으로 작성되며 표현과 동작을 위한 클래스는 다중으로 작성할 수 있다.</td>
+							</tr>
+							<tr>
+								<td>style</td>
+								<td>이미지 경로</td>
+								<td>○</td>
+								<td>기본은 auto 값으로 예외 상황의 경우 width 속성을 사용하여 너비 값을 작성한다.</td>
+							</tr>
+							<tr>
+								<td>etc</td>
+								<td>해당 속성 값</td>
+								<td>X</td>
+								<td>옵션 속성은 마지막 속성 이후에 순서에 상관없이 사용한다.</td>
+							</tr>
+							<tr>
+								<th rowspan="7">textarea</th>
+								<td>cols</td>
+								<td>Number</td>
+								<td>○</td>
+								<td>기본값으로 10 지정</td>
+							</tr>
+							<tr>
+								<td>rows</td>
+								<td>Number</td>
+								<td>○</td>
+								<td>기본값으로 3 지정</td>
+							</tr>
+							<tr>
+								<td>title</td>
+								<td>String</td>
+								<td>○</td>
+								<td>대체 텍스트</td>
+							</tr>
+							<tr>
+								<td>id</td>
+								<td>String</td>
+								<td>X</td>
+								<td>DOM 접근을 위하여 사용할 수 있다.</td>
+							</tr>
+							<tr>
+								<td>class</td>
+								<td>'textarea' + String</td>
+								<td>○</td>
+								<td>'textarea'라는 클래스명이 기본으로 작성되며 표현과 동작을 위한 클래스는 다중으로 작성할 수 있다.</td>
+							</tr>
+							<tr>
+								<td>style</td>
+								<td>'width'</td>
+								<td>X</td>
+								<td>css로 표현하지 못하는 예외 사항에서 width 속성을 사용하여 너비값을 작성한다.</td>
+							</tr>
+							<tr>
+								<td>etc</td>
+								<td>해당 속성 값</td>
+								<td>X</td>
+								<td>옵션 속성은 마지막 속성 이후에 순서에 상관없이 사용한다.</td>
+							</tr>
+							<tr>
+								<th rowspan="2">label</th>
+								<td>for</td>
+								<td>String</td>
+								<td>○</td>
+								<td>for 속성의 값과 라이오 버튼(input type="radio"), 체크 박스(input type="checkbox")의 id 속성 값과 동일한 이름으로 연결하며 명시적 사용을 권장한다.</td>
+							</tr>
+							<tr>
+								<td>class</td>
+								<td>String</td>
+								<td>X</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h4 class="mt50">5. table 요소 사용 방법</h4>
+				<ul class="bul-hypn">
+					<li>table 요소의 속성 지정 순서는 cellspacing, summay 이며 border 값은 클래스를 지정하여 사용한다.</li>
+					<li>caption 요소는 표의 제목을 표현하며 표의 윗부분에 헤딩 요소로 표의 제목을 표시하면 생략가능하다.</li>
+					<li>디자인에 머리글이 제공되어 있지 않더라도 반드시 머리글을 제공한다.</li>
+					<li>행 제목과 열 제목이 있는 경우 이에 대한 scope 속성을 사용하여 행과 열의 범위를 적절히 구분하여 배치한다.</li>
+				</ul>	
+
+				<h4 class="mt50">6. 요소의 기본속성 지정 순서</h4>
+				<p class="fw-bold">a 태그 요소</p>
+				<ul class="bul-hypn">
+					<li>href 속성의 값은 #none으로 한다.</li>
+					<li>앵커 기능이 있다면 해당 요소의 id값을 작성한다.</li>
+					<li>새 창으로 페이지를 표시해야 할 경우 target 속성을 선택적으로 사용한다.</li>
+					<li>링크의 목표가 명확하지 않은 경우 title 속성의 값으로 부가적인 설명을 제공한다.</li>
+				</ul>
+				<p class="fw-bold">img 요소 접근성</p>
+				<ul class="bul-hypn">
+					<li>alt 속성은 반드시 제공되어야 하며 의미없는 이미지에 한하여 빈 값을 허용한다.</li>
+					<li>유지보수의 편의성을 위하여 width, height 속성은 사용하지 않는다.</li>
+					<li>대체 텍스트 사용으로 일부 브라우저에서 말 풍선이 나타는 것을 막을 필요가 있는 경우 title 속성의 빈 값을 제공한다.</li>
+					<li>이미지 맵 사용을 지양하며 포지셔닝 방법을 사용한다.</li>
+				</ul>
+
+				<h4 class="mt50">7. 주의 해야할 특수기호 Entity name</h4>
+				<div class="table-type table-col table-scroll">
+					<table cellspacing="0" summary="주의 해야할 특수기호 Entity name">
+						<colgroup><col style="width:*;"><col style="width:10%;"><col style="width:10%;"><col style="width:10;">
+						<col style="width:10%;"><col style="width:10;"><col style="width:10%;"><col style="width:10%;"><col style="width:10%;">
+						</colgroup>
+						<caption>주의 해야할 특수기호 Entity name</caption>
+						<tbody>
+							<tr>
+								<th>Character</th>
+								<td>"</td>
+								<td>&amp;</td>
+								<td>&lt;</td>
+								<td>&gt;</td>
+								<td>&nbsp;</td>
+								<td>·</td>
+								<td>&#12300;</td>
+								<td>&#12301;</td>
+							</tr>
+							<tr>
+								<th>Entity Name</th>
+								<td>&amp;quot;</td>
+								<td>&amp;amp;</td>
+								<td>&amp;lt;</td>
+								<td>&amp;gt;</td>
+								<td>&amp;nbsp;</td>
+								<td>&amp;middot;</td>
+								<td>&amp;&#35;12300;</td>
+								<td>&amp;&#35;12301;</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h4 class="mt50">8. 종료 태그가 필요한 요소</h4>
+				<div class="table-type table-col table-scroll">
+					<table cellspacing="0" summary="종료 태그가 필요한 요소">
+					<colgroup><col style="width:18%;"><col style="width:*;">
+					</colgroup>
+					<caption>종료 태그가 필요한 요소</caption>
+					<tbody>
+						<tr>
+							<th>설명</th>
+							<td>줄바꿈</td>
+							<td>테이블</td>
+							<td>프레임</td>
+							<td>구분선</td>
+							<td>이미지</td>
+							<td>서식 컨트롤</td>
+							<td>헤드 링크</td>
+							<td>메타 태그</td>
+							<td>오브젝트 요소</td>
+						</tr>
+						<tr>
+							<th>Element Name</th>
+							<td>&lt;br /&gt;</td>
+							<td>&lt;col /&gt;</td>
+							<td>&lt;frame /&gt;</td>
+							<td>&lt;hr /&gt;</td>
+							<td>&lt;img /&gt;</td>
+							<td>&lt;input /&gt;</td>
+							<td>&lt;link /&gt;</td>
+							<td>&lt;meta /&gt;</td>
+							<td>&lt;param /&gt;</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+			</section>
+
+			<h3 class="guide-tit">CSS 작업규칙</h3>
+			<section>
+				<h4>1. 네이밍규칙</h4>
+				<ul class="bul-hypn">
+					<li>이름은 영문 소문자로만 시작할 수 있다.
+						<ul class="bul-dot">
+							<li class="txt-red">ex) btn-apply-on, box-news, box-reply-open 등</li>
+						</ul>
+					</li>
+					<li>id는 camelcase 방식으로 사용한다.</li>
+					<li>두개의 단어를 사용할 경우에는 이어지는 단어를 대문자로 표기하여 사용한다. (카멜표기법)</li>
+					<li>id는 화면에서 한번만 사용이 되므로, 고유기능을 쉽게 인지할 수 있도록 네이밍한다.
+						<ul class="bul-dot">
+							<li class="txt-red">ex) id="btnSch" ( x )   id="btnGnbSearch" ( o )</li>
+						</ul>
+					</li>
+					<li>class는 하이픈 방식으로 사용한다. (케밥표기법)
+						<ul class="bul-dot">
+							<li class="txt-red">ex) class="btn-blackLine-on", class="link-view"</li>
+						</ul>
+					</li>
+					<li>유사한 용도인 경우 가장 뒤에 숫자를 붙여 사용할 수 있으며 첫번째 이름은 숫자를 생략할 수 있다.
+						<ul class="bul-dot">
+							<li class="txt-red">ex) .list-benefit, .list-benefit-02, .list-benefit-03</li>
+						</ul>
+					</li>
+					<li>네이밍의 조합은 <span class="fw-bold">'형태-의미-순서-상태'</span>을 기본 순서로 사용한다.
+						<ul class="bul-dot">
+							<li class="txt-red">ex) .btn-confirm-02-on</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h4 class="mt50">첫단어 (형태)</h4>
+				<div class="table-type table-col table-scroll">
+					<table cellspacing="0" summary="첫단어 (형태)">
+						<colgroup><col style="width:20%;"><col style="width:20%;"><col style="width:*;">
+						</colgroup>
+						<caption>첫단어 (형태)</caption>
+						<tbody>
+						<tr>
+							<th>첫단어</th>
+							<th>형태/용도</th>
+							<th>비고</th>
+						</tr>
+						<tr>
+							<td>box-</td>
+							<td>박스</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>bull-</td>
+							<td>블릿</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td>list-</td>
+							<td>목록</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>table-</td>
+							<td>표</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td>tab-</td>
+							<td>탭 메뉴</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>btn-</td>
+							<td>버튼</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>title-</td>
+							<td>제목</td>
+							<td></td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+
+				<h4 class="mt50">끝단어 (상태)</h4>
+				<div class="table-type table-col table-scroll">
+					<table cellspacing="0" summary="끝단어 (상태)">
+						<colgroup><col style="width:20%;"><col style="width:20%;"><col style="width:*;">
+						</colgroup>
+						<caption>끝단어 (상태)</caption>
+						<tbody>
+						<tr>
+							<th>끝단어</th>
+							<th>용도</th>
+							<th>비고</th>
+						</tr>
+						<tr>
+							<td>-on, -off, -over</td>
+							<td>활성, 비활성, 오버/포커스 상태에 대한 표현에 사용</td>
+							<td>-off는 생략가능</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h4 class="mt50">2. css 작성규칙</h4>
+				<ul class="bul-hypn">
+					<li>모든 속성은 영문 소문자로만 작성한다.</li>
+					<li>폰트의 선언, 배경 url, filter, content에 큰 따옴표("")를 사용한다.</li>
+					<li>마지막 선언된 속성에도 세미콜론(;)을 사용한다.</li>
+					<li>선택자 간, 중괄호간 한칸의 공백을 사용한다, 중괄호 안쪽 좌우에는 공백은 사용한다.</li>
+					<li>객체를 구분하기 위하여 코드 그룹 간 1줄의 빈 줄을 허용한다. 빈 줄은 1줄을 초과하지 않는다.</li>
+					<li>중괄호( { , } ) 사이는 줄바꿈하지 않는다.</li>
+					<li>두개 이상의 요소에 하나의 스타일을 지정하는 경우 쉼표(,) 뒤로 줄바꿈한다.</li>
+					<li>CSS 주석 처리는 시작 주석을 작성하며 종료 주석은 작성하지 않는다. </li>
+					<li>미디어 타입은 공통 CSS 파일의 가장 아랫 부분에 선언한다. 또한 미디어 타입의 코드 작성시 1탭의 들여쓰기는 허용한다.</li>
+				</ul>
+
+				<h4 class="mt50">3. 속성의 선언 순서</h4>
+				<p>속성은 <span class="fw-bold">위치 - 형태 - 흐름 - 크기 - 박스 - (배경 - 글자 - 기타)</span> 순으로 지정한다.</p>
+				<p>전체 속성의 <span class="fw-bold">선언 순서는 시계 방향</span>으로 명시한다. top, right, bottom, left</p>
+				<br/>
+				<ul>
+					<li>1.위치 : position left right top bottom z-index</li>
+					<li>2.형태 : display visibility</li>
+					<li>3.흐름 : float clear</li>
+					<li>4.크기 : width height overflow</li>
+					<li>5.박스 : margin padding border</li>
+					<li>6.배경 : background</li>
+					<li>7.글자 : text font color</li>
+					<li>8.기타 : cursor</li>
+				</ul>
+				<br/>
+				<div class="table-type table-row table-scroll" >
+					<table cellspacing="0" summary="속성우선순위">
+						<colgroup><col width="20%"><col width="20%"><col width="*">
+						</colgroup>
+						<caption>속성우선순위</caption>
+						<thead>
+						<tr>
+							<th>순서</th>
+							<th>속성</th>
+							<th>속성 값</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>position</td>
+							<td>absolute, fixed, relative, static</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>display</td>
+							<td>none, block, inline, inline-block, inline-table, list-item, table, table-caption, table-cell, table-column, table-column-group, table-footer-group, table-header-group, table-row, table-row-group</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>visibility</td>
+							<td>visible, hidden, collapse</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>overflow</td>
+							<td>visible, hidden, scroll, auto</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>float</td>
+							<td>left, right, none</td>
+						</tr>
+						
+						<tr>
+							<td rowspan="3">6</td>
+							<td>width</td>
+							<td rowspan="3">auto, length(px), %</td>
+						</tr>
+						<tr class="bor-r">
+							<td>max-width</td>
+						</tr>
+						<tr class="bor-r">
+							<td>min-width</td>
+						</tr>
+						<tr>
+							<td rowspan="3">7</td>
+							<td>height</td>
+							<td rowspan="3">auto, length(px), %</td>
+						</tr>
+						<tr class="bor-r">
+							<td>max-height</td>
+						</tr>
+						<tr class="bor-r">
+							<td>min-height</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>margin</td>
+							<td>auto, length(px, em), %</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>padding</td>
+							<td>auto, length(px, em), %</td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td>border</td>
+							<td>border-width, border-style, border-color</td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<td>background</td>
+							<td>background-color, background-image, background-repeat, background-attachment, background-position</td>
+						</tr>
+						<tr>
+							<td>12</td>
+							<td>font</td>
+							<td>font-style, font-variant, font-weigth, font-size/line-height, font-family</td>
+						</tr>
+						<tr>
+							<td rowspan="6">13</td>
+							<td>color</td>
+							<td>hex_number, hex_number</td>
+						</tr>
+						<tr>
+							<td>letter-spacing</td>
+							<td>normal, length</td>
+						</tr>
+						<tr>
+							<td>text-decoration</td>
+							<td>none, underline, overline, line-through, blink</td>
+						</tr>
+						<tr>
+							<td>text-align</td>
+							<td>left, right, center, justify</td>
+						</tr>
+						<tr>
+							<td>white-space</td>
+							<td>normal, nowrap, pre, pre-line, pre-wrap</td>
+						</tr>
+						<tr>
+							<td>word-spacing</td>
+							<td>normal, length(px, em, etc)</td>
+						</tr>
+						<tr>
+							<td>13</td>
+							<td>기타</td>
+							<td>여기서 언급하지 않은 나머지 속성들은 폰트 속성 이후에 선언하며, 선언 순서는 무관하다.</td>
+						</tr>
+					  </tbody>
+					</table>
+				</div>
+			
+				<h4 class="mt50">4. css 예약어</h4>
+				<p>이하의 클래스명은 사이트 전역에서 반복하여 사용되는 이름이므로 부모 요소 없이 단독으로 스타일을 선언하지 않는다.</p>
+				<div class="table-type table-col table-scroll">
+					<table cellspacing="0" summary="css 예약어">
+						<colgroup><col width="20%"><col width="20%"><col width="*">
+						</colgroup>
+						<caption>css 예약어</caption>
+						<tbody>
+						<tr>
+							<th>클래스명</th>
+							<th>용도</th>
+							<th>비고</th>
+						</tr>
+						<tr>
+							<td>.title</td>
+							<td>제목</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.subtitle</td>
+							<td>부제</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.content</td>
+							<td>내용</td>
+							<td></td>
+						</tr>					
+						<tr>
+							<td>.info</td>
+							<td>정보</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.detail</td>
+							<td>상세</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.desc</td>
+							<td>설명</td>
+							<td>description</td>
+						</tr>	
+						<tr>
+							<td>.no</td>
+							<td>숫자</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.date</td>
+							<td>날짜</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.name</td>
+							<td>이름</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td>.btn-more</td>
+							<td>더보기 버튼</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.btn-open</td>
+							<td>열기 버튼</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.btn-close</td>
+							<td>닫기 버튼</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.btn-prev</td>
+							<td>이전으로 버튼</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.btn-next</td>
+							<td>다음으로 버튼</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td>.on .active .selected</td>
+							<td>활성</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.off .disabled</td>
+							<td>비활성</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td>.first</td>
+							<td>첫번째 요소</td>
+							<td>IE6 이 :first-child 선택자를 지원하지 않는 것에 대한 대안으로 사용한다.</td>
+						</tr>
+						<tr>
+							<td>.second</td>
+							<td>두번째 요소</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.last</td>
+							<td>마지막 요소</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.each</td>
+							<td>짝수번째 요소</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.odd</td>
+							<td>홀수번째 요소</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>.focus</td>
+							<td>초점받은 요소</td>
+							<td>IE6, IE7 이 :focus 선택자를 지원하지 않는 것에 대한 대안으로 사용한다.</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h4 class="mt50">4. css 예약어</h4>
+				<p>이하의 클래스명은 사이트 전역에서 반복하여 사용되는 이름이므로 부모 요소 없이 단독으로 스타일을 선언하지 않는다.</p>
+				<div class="table-type table-col table-scroll">
+					<table cellspacing="0" summary="css 예약어">
+						<colgroup><col width="20%"><col width="20%"><col width="*">
+						</colgroup>
+						<caption>css 예약어</caption>
+						<tbody>
+						<tr>
+							<th>클래스명</th>
+							<th>용도</th>
+							<th>비고</th>
+						</tr>
+
+						<tr>
+							<td>.dp-none</td>
+							<td>display</td>
+							<td>display:none 정의</td>
+						</tr>	
+
+						<tr>
+							<td>.pt10, .pr10, .pl10, .pb10</td>
+							<td>padding</td>
+							<td>padding 여백 10 ~ 50px 정의. 숫자만 변경해서 사용</td>
+						</tr>	
+						
+						<tr>
+							<td>.mt10, .mr10, .ml10, .mb10</td>
+							<td>margin</td>
+							<td>margin 여백 10 ~ 50px 정의. 숫자만 변경해서 사용</td>
+						</tr>	
+
+						<tr>
+							<td>.w100</td>
+							<td>width</td>
+							<td>width 값 100% 정의</td>
+						</tr>
+
+						<tr>
+							<td>.col02 ~ .col07</td>
+							<td>width(calc)</td>
+							<td>width (100%/2) ~ (100%/7) 정의.</td>
+						</tr>
+
+						<tr>
+							<td>.txt-tit01 ~ .txt-tit05</td>
+							<td>text title style</td>
+							<td>타이틀 폰트사이즈 기본 1rem으로 0.1rem씩 증가하여 정의, 기본 폰트굵기는 볼드</td>
+						</tr>
+
+						<tr>
+							<td>.txt-red</td>
+							<td>text color style</td>
+							<td>폰트 컬러 red 지정</td>
+						</tr>
+
+						<tr>
+							<td>.txt-blue</td>
+							<td>text color style</td>
+							<td>폰트 컬러 blue 지정</td>
+						</tr>
+
+						<tr>
+							<td>.txt-gold</td>
+							<td>text color style</td>
+							<td>폰트 컬러 yellow 지정</td>
+						</tr>
+
+						<tr>
+							<td>.txt-gold</td>
+							<td>text color style</td>
+							<td>폰트 컬러 gray 지정</td>
+						</tr>
+
+						<tr>
+							<td>.txt-ellip</td>
+							<td>text 말줄임표</td>
+							<td>텍스트 일정 길이 초과시 말줄임표 정의, table적용시 td에 class 적용, 자식 p태그로 묶기</td>
+						</tr>
+
+						<tr>
+							<td>.ta-c, ta-r, ta-l</td>
+							<td>text 정렬</td>
+							<td>텍스트 정렬 center, right, left 정의</td>
+						</tr>
+
+						<tr>
+							<td>.bul-dot</td>
+							<td>블릿텍스트</td>
+							<td>블릿 텍스트 " · " , " - " (.bul-hypn) , " ※ " (.bul-refer), " * " (.bul-star), " □ " (.bul-sqr) 정의</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h4 class="mt50">5. 선택자</h4>
+				<ul>
+					<li>앵커태그의 선택자는 다음의 순서로 지정한다.</li>
+					<li>
+						<ul>
+							<li><span>1.</span> a:link</li>
+							<li><span>2.</span> a:visited</li>
+							<li><span>3.</span> a:hover</li>
+							<li><span>4.</span> a:active</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h4 class="mt50">6. 소수점사용</h4>
+				<ul class="bul-hypn">
+					<li>px 단위 수치는 정수값 사용
+						<ul class="bul-dot">
+							<li>width:12.5px; (X), width:13px; (O)</li>
+						</ul>
+					</li>
+					<li>% 단위에서 소수점 사용시 최대 2자리 사용
+						<ul class="bul-dot">
+							<li>3.1415926535% (X), 3.14% (O)</li>
+							<li>6.6666666666% (X), 6.67% (O)</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h4 class="mt50">7. 이미지 이름규칙</h4>
+				<p>이미지 네이밍의 조합은 '형태_의미_순서_상태'의 순서로 조합한다.</p>
+				<div class="table-type table-col">
+					<table cellspacing="0" summary="이미지 이름규칙">
+						<colgroup><col width="20%"><col width="20%"><col width="*">
+						</colgroup>
+						<caption>이미지 이름규칙</caption>
+						<thead>
+						<tr>
+							<th scope="col">분류</th>
+							<th scope="col">파일명</th>
+							<th scope="col">설명</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>아이콘</td>
+							<td>ico_</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>화살표</td>
+							<td>arw</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>블릿</td>
+							<td>bul_</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>배경</td>
+							<td>bg</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>비주얼</td>
+							<td>visual</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>일반</td>
+							<td>img_</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>임시</td>
+							<td></td>
+							<td></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+			
+			<!-- 
+			<h3 class="guide-tit">기본환경</h3>
+			<pre class="brush:js html-script:true;gutter:false">
+				<!DOCTYPE html>
+				<html lang="ko">
+				<head>
+					<title>2gate</title>
+					<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<link rel="stylesheet" type="text/css" href="./asset/js/css/reset.css" />
+					<link rel="stylesheet" type="text/css" href="./asset/js/css/common.css" />
+					<link rel="stylesheet" type="text/css" href="./asset/js/css/footer.css" />
+					
+					<script src="./asset/js/jquery.min.js"></script>
+					<script src="./asset/js/common.js"></script>
+				</head>
+				<body> 
+			
+				<header>
+				</header>
+			
+				<section>
+				</section>
+					
+				<footer>
+				</footer>
+					
+				</body>
+				</html>
+			</pre> -->
+ 
+
+	</article>
+	<!-- content // -->
+</div>
+</body>
+</html>

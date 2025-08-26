@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>퍼블가이드 | button</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keyword" content="">
+<meta name="description" content="button">
+<meta name="author" content="joahreum">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link rel="stylesheet" type="text/css" href="../asset/css/guide.css"/>
+<link rel="stylesheet" type="text/css" href="../asset/css/lib/shCoreDefault.css" />
+<link rel="stylesheet" type="text/css" href="../../resources/css/reset.css"/>
+<script src="../asset/js/lib/XRegExp.js"></script>
+<script src="../asset/js/lib/shCore.js"></script>
+<script src="../asset/js/lib/shBrushJScript.js"></script>
+<script src="../asset/js/lib/shBrushXml.js"></script>
+<script src="../asset/js/lib/shBrushCss.js"></script>
+
+<script type="text/javascript" src="../../re/resources/js/jquery.js"></script>
+<script type="text/javascript" src="../../js/resources/common.js"></script>
+<script type="text/javascript" src="../../js/resources/ui.js"></script>
+<script type="text/javascript" src="../../js/resources/jquery.easing.min.js"></script>
+<script type="text/javascript" src="../../js/resources/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/resources/jquery.easing.js"></script>
+<script type="text/javascript" src="../../js/resources/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/resources/cm.jQuery.ui.js"></script>
+
+<script type="text/javascript"> SyntaxHighlighter.all();</script>
+	<script>
+		$(document).ready(function(){
+			$(".btn-pagenation > li > a").on("click",function(){
+				$(".btn-pagenation > li").removeClass("on");
+				$(this).parent("li").addClass("on");
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="wrapper">
+	<!-- s: aside -->
+	<article class="aside">
+		<div class="header">		
+			<h1><a href="../index.html" class="logo">로니오</a></h1>
+			<button type="button" class="btn-mainnav"><span>Menu</span></button>
+		</div>
+		<nav class="main-nav">
+			<ul>
+				<li><a href="#">웹퍼블리싱가이드</a></li>
+				<li><a href="./color.html">Color</a></li>
+				<li><a href="./font.html" class="on">Font</a></li>
+				<li><a href="./layout.html">Layout</a></li>
+				<li><a href="./input.html">Input</a></li>
+				<li><a href="./checkbox.html">Checkbox</a></li>
+				<li><a href="./select.html">select</a></li>
+				<li><a href="./radio.html">Radio</a></li>					
+				<li><a href="./button.html">Button</a></li>								
+				<!--<li><a href="#">Tooltip</a></li>-->
+				<li><a href="./popup.html">popup/alert</a></li>
+				<li><a href="./tab.html">Tab</a></li>
+				<li><a href="./step.html">step</a></li>
+				<li><a href="./acordion.html" >Acordion</a></li>
+				<li><a href="./table.html" class="">table</a></li>
+				<li><a href="./list.html" class="">Acordion</a></li>
+				<li><a href="#">프로그래스</a></li>
+				<!--<li><a href="#none">Popup</a></li>
+				<li><a href="#none">Web Accessibility</a></li> -->
+			</ul>
+		</nav>
+	</article>
+	<!-- e: aside -->
+	
+	<!-- s: content -->
+	<article class="content">
+		<div class="sub-header">
+			<h2>Popup/Alert</h2>
+		</div>
+		<div class="container">
+			<div class="wrap">
+				<div class="contentsWrap">
+					<div class="contents guide">
+						<h2>&middot; 폰트 기본</h2>
+						<div class="code">
+							<section>
+                                <h4>폰트 베이스 사이즈</h4>
+                                <ul class="list-box">
+                                    <li>PC : 16px = 1rem</li>
+                                    <li>모바일 : 14px = 1rem</li>
+                                </ul>
+                                <br />
+                                <h4>Font Familly - Noto Sans CJK KR</h4>
+                                <ul class="list-box">
+                                    <li style="font-weight:400;">Regular(font-weight:400) : 다람쥐 헌 쳇바퀴에 타고파. 1234567890</li>
+                                    <li style="font-weight:500;">Medium(font-weight:500) : 다람쥐 헌 쳇바퀴에 타고파. 1234567890</li>
+                                    <li style="font-weight:700;">Bold(font-weight:700) : 다람쥐 헌 쳇바퀴에 타고파. 1234567890</li>
+                                    <li style="font-weight:900;">Black(font-weight:900) : 다람쥐 헌 쳇바퀴에 타고파. 1234567890</li>
+                                </ul>
+                            </section>
+						</div>
+
+                        <h2 style="margin-top:30px;">&middot; 타이틀</h2>
+						<div class="code">
+							<section>
+                                <h2>
+                                    H2(Title) - 서브메인 사용  <br/>
+                                    <span>Noto Sans CJK KR(font-size:38px)</span>
+                                </h2>
+                                <br />
+                               <h3>
+                                    H3(Title) - section 타이틀<br/>
+                                    <span>Noto Sans CJK KR(font-size:24px)</span>
+                                </h3>
+                                <br />
+                                <h4>
+                                    H4(Title) - section 그룹 타이틀 자식요소<br/>
+                                    Noto Sans CJK KR(font-size:18px)
+                                </h4>
+                            </section>
+						</div>
+
+					</div>
+			
+			
+			
+		
+				</div>
+			</div>
+		</div>
+	</article>
+
+
+	<!-- content // -->
+</div>
+</body>
+</html>

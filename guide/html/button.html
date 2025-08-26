@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>2gate 퍼블가이드 | button</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keyword" content="">
+<meta name="description" content="button">
+<meta name="author" content="joahreum">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link rel="stylesheet" type="text/css" href="../asset/css/guide.css"/>
+<link rel="stylesheet" type="text/css" href="../asset/css/lib/shCoreDefault.css" />
+<link rel="stylesheet" type="text/css" href="../../resources/css/reset.css"/>
+<script src="../asset/js/jquery.min.js"></script>
+<script src="../asset/js/common.js"></script>
+<script src="../asset/js/lib/XRegExp.js"></script>
+<script src="../asset/js/lib/shCore.js"></script>
+<script src="../asset/js/lib/shBrushJScript.js"></script>
+<script src="../asset/js/lib/shBrushXml.js"></script>
+<script src="../asset/js/lib/shBrushCss.js"></script>
+<script type="text/javascript"> SyntaxHighlighter.all();</script>
+	<script>
+		$(document).ready(function(){
+			$(".btn-pagenation > li > a").on("click",function(){
+				$(".btn-pagenation > li").removeClass("on");
+				$(this).parent("li").addClass("on");
+			});
+		});
+	</script>
+
+</head>
+<body>
+<div class="wrapper">
+		<!-- s: aside -->
+		<article class="aside">
+			<div class="header">		
+				<h1><a href="../index.html" class="logo">로니오</a></h1>
+				<button type="button" class="btn-mainnav"><span>Menu</span></button>
+			</div>
+			<nav class="main-nav">
+				<ul>
+					<li><a href="#">웹퍼블리싱가이드</a></li>
+					<li><a href="./color.html">Color</a></li>
+					<li><a href="./font.html">Font</a></li>
+					<li><a href="./layout.html">Layout</a></li>
+					<li><a href="./input.html">Input</a></li>
+					<li><a href="./checkbox.html">Checkbox</a></li>
+					<li><a href="./select.html">select</a></li>
+					<li><a href="./radio.html">Radio</a></li>					
+					<li><a href="./button.html" class="on">Button</a></li>								
+					<!--<li><a href="#">Tooltip</a></li>-->
+					<li><a href="./popup.html">popup/alert</a></li>
+					<li><a href="./tab.html">Tab</a></li>
+					<li><a href="./step.html">step</a></li>
+					<li><a href="./acordion.html">Acordion</a></li>
+					<li><a href="./table.html" class="">table</a></li>
+					<li><a href="./list.html" class="">Acordion</a></li>
+					<li><a href="#">프로그래스</a></li>
+					<!--<li><a href="#none">Popup</a></li>
+					<li><a href="#none">Web Accessibility</a></li> -->
+			</ul>
+				</ul>
+			</nav>
+		</article>
+		<!-- e: aside -->
+	
+	<!-- s: content -->
+	<article class="content">
+		<div class="sub-header">
+			<h2>button</h2>
+		</div>
+		<div class="container">
+			<div class="wrap">
+				<div class="contentsWrap">
+					<div class="contents guide">
+						<h2>
+							&middot; 본문버튼
+							<span>-링크 이동시, a태그, 펍업 및 액션 구동시 button태그 사용할것</span>	
+						</h2>
+						
+						<div class="code">
+							<section>
+								<div class="btn-wrap">
+									<button class="btn">basic</button>
+									<button class="btn btn-primary">primary</button>
+									<button class="btn btn-green">green</button>
+									<button class="btn btn-darkblue">darkblue</button>
+									<button class="btn btn-line">line</button>
+									<button class="btn btn-line-primary">line-primary</button>
+									<button class="btn btn-text"> text</button>
+								</div>
+							</section>
+							<pre class="brush:js html-script:true;" style="background:#fff;display:inline-block; float:left; width:100%; ">
+								<div class="btn-wrap">
+									<button class="btn round">basic</button>
+									<button class="btn btn-primary">button primary</button>
+									<button class="btn btn-line">button line</button>
+									<button class="btn btn-line-primary">button line primary</button>
+									<button class="btn btn-text">button text</button>
+								</div>
+							</pre>
+						</div>
+
+						<h2>&middot; 라운드 버튼<span>-클래스 round 추가</span></h2>
+						<div class="code">
+								<div class="btn-wrap">
+									<button class="btn round">basic</button>
+									<button class="btn btn-primary round">primary</button>
+									<button class="btn btn-green round">green</button>
+									<button class="btn btn-darkblue round">darkblue</button>
+									<button class="btn btn-line round">line</button>
+									<button class="btn btn-line-primary round">line-primary</button>
+								</div>
+							<pre class="brush:js html-script:true;" style="background:#fff;display:inline-block; float:left; width:100%; ">
+								<div class="btn-wrap">
+									<button class="btn round">basic</button>
+									<button class="btn btn-primary round">primary</button>
+									<button class="btn btn-green round">green</button>
+									<button class="btn btn-darkblue round">darkblue</button>
+									<button class="btn btn-line round">line</button>
+									<button class="btn btn-line-primary round">line-primary</button>
+								</div>
+							</pre>
+						</div>
+
+						<h2>&middot; 큰 버튼<span>-클래스 big 추가</span></h2>
+						<div class="code">
+							<section>
+								<div class="btn-wrap">
+									<button class="btn big">basic</button>
+									<button class="btn btn-primary big">primary</button>
+									<button class="btn btn-green big">green</button>
+									<button class="btn btn-darkblue big">darkblue</button>
+								</div>
+							</section>
+							<pre class="brush:js html-script:true;" style="background:#fff;display:inline-block; float:left; width:100%; ">
+								<div class="btn-wrap">
+									<button class="btn big">basic</button>
+									<button class="btn btn-primary big">primary</button>
+									<button class="btn btn-green big">green</button>
+									<button class="btn btn-darkblue big">darkblue</button>
+									<button class="btn btn-line big">line</button>
+									<button class="btn btn-line-primary big">line-primary</button>
+								</div>
+							</pre>
+						</div>	
+
+
+
+
+						<h2>&middot; 하단 버튼</h2>
+						<div class="code">
+							<section class="bottom-btn-wrap">
+								<div class="btn-wrap">
+									<div class="btn-wrap">
+                                        <a href="javascript:void(0);" class="btn btn-close">취소</a>
+                                        <a href="javascript:void(0);" class="btn btn-darkblue">다음</a>
+                                    </div>
+								</div>
+							</section>
+							<pre class="brush:js html-script:true;" style="background:#fff;display:inline-block; float:left; width:100%; ">
+								<section class="bottom-btn-wrap">
+									<div class="btn-wrap">
+										<div class="btn-wrap">
+                                            <a href="javascript:void(0);" class="btn btn-close">취소</a>
+                                            <a href="javascript:void(0);" class="btn btn-darkblue">다음</a>
+                                        </div>
+									</div>
+								</section>
+							</pre>
+						</div>
+			
+			
+					
+					</div>
+			
+			
+			
+		
+				</div>
+			</div>
+		</div>
+	</article>
+
+
+	<!-- content // -->
+</div>
+</body>
+</html>

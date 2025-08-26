@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>2gate 퍼블가이드 | guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keyword" content="">
+<meta name="description" content="guide">
+<meta name="author" content="joahreum">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link rel="stylesheet" type="text/css" href="./asset/css/guide.css"/>
+<link rel="stylesheet" type="text/css" href="./asset/css/lib/shCoreDefault.css" />
+<script src="./asset/js/jquery.min.js"></script>
+<script src="./asset/js/common.js"></script>
+<script src="./asset/js/lib/XRegExp.js"></script>
+<script src="./asset/js/lib/shCore.js"></script>
+<script src="./asset/js/lib/shBrushJScript.js"></script>
+<script src="./asset/js/lib/shBrushXml.js"></script>
+<script src="../asset/js/lib/shBrushCss.js"></script>
+<!-- <script tpe="text/javascript"> 
+SyntaxHighlighter.defaults['first-line'] = 1; // 라인 시작 숫자 (기본값 1)
+SyntaxHighlighter.config.stripBrs = true;
+SyntaxHighlighter.all();
+</script> -->
+<script type="text/javascript">
+SyntaxHighlighter.defaults["toolbar"] = false; // 툴바없애기
+SyntaxHighlighter.defaults["auto-links"] = false; // 자동 링크없애기
+SyntaxHighlighter.defaults["tab-size"] = 2; // 탭사이즈를 2로 설정
+SyntaxHighlighter.all();
+</script> 
+</head>
+<body>
+<div class="wrapper">
+	<!-- s: aside -->
+	<article class="aside">
+		<div class="header">		
+			<h1><a href="./index.html">로니오</a></h1>
+			<button type="button" class="btn-mainnav"><span>Menu</span></button>
+		</div>
+		<nav class="main-nav">
+			<ul>
+				<li><a href="./index.html" class="on">웹퍼블리싱가이드</a></li>
+				<li><a href="#" class="on">layout</a></li>
+				<li><a href="#">input</a></li>
+				<li><a href="#">checkbox</a></li>
+				<li><a href="#">select</a></li>
+				<li><a href="#">radio</a></li>					
+				<li><a href="#">button</a></li>								
+				<li><a href="#">툴팁</a></li>
+				<li><a href="#">팝업</a></li>
+				<li><a href="#">페이지넘버</a></li>
+				<li><a href="#">탭버튼</a></li>
+				<li><a href="#">스텝</a></li>
+				<li><a href="#">아코디언</a></li>
+				<li><a href="#">프로그래스</a></li>
+
+		<!-- 		<li><a href="#none">Layout</a></li>
+				<li><a href="#none">Popup</a></li>
+				<li><a href="#none">Web Accessibility</a></li> -->
+			</ul>
+		</nav>
+	</article>
+	<!-- e: aside -->
+	
+	<!-- s: content -->
+	<article class="content">
+		<div class="sub-header">
+			<h2>웹퍼블리싱가이드</h2>
+		</div>
+		
+		<div class="container">
+			<h3>목차</h3>
+			<section>
+			
+				<ul class="ul_index ">
+					<li>
+						<a href="./html/guide.html">가이드요약</a>
+						<ul>
+							<li>
+								<a href="#none">기본환경</a>
+								<ul>
+									<li>1. 폴더구조 및 규칙</li>
+									<li>2. 폴더/파일이름</li>
+									<li>3. 크로스브라우징</li>
+									<li>4. 지원해상도</li>
+									<li>5. 파일 인코딩(UTF-8)</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">HTML 작업규칙</a>
+								<ul>
+									<li>1. HTML 문법 (따옴표, 태그정의, 들여쓰기)</li>
+									<li>2. 메타태그(작성자, 설명, 뷰포트 등)</li>
+									<li>3. 주석</li>
+									<li>4. 속성우선순위</li>
+									<li>5. table 요소 사용 방법</li>
+									<li>6. 요소의 기본속성 지정 순서</li>
+									<li>7. 주의 해야할 특수기호 Entity name</li>
+									<li>8. 종료 태그가 필요한 요소</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">CSS 작업규칙</a>
+								<ul>
+									<li>1. 네이밍규칙(카멜표기법)</li>
+									<li>2. css 작성규칙</li>
+									<li>3. 속성의 선언 순서</li>
+									<li>4. css 예약어</li>
+									<li>5. 선택자</li>
+									<li>6. 소수점사용</li>
+									<li>7. 이미지 이름규칙</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="./html/typo.html">Typography</a>
+						<ul>
+							<li>
+								<a href="#none">공통</a>
+								<ul>
+									<li>1. 폰트 베이스 사이즈</li>
+									<li>2. Font Familly</li>
+								</ul>
+							</li>
+							<li><a href="#none">타이틀</a></li>
+							<li>
+								<a href="#none">텍스트 스타일</a>
+								<ul>
+									<li>1. 텍스트 정렬</li>
+									<li>2. Ellipsis</li>
+								</ul>
+							</li>
+							<li><a href="#none">리스트 불릿 유형</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="./html/color.html">Color</a>
+						<ul>
+							<li>
+								<a href="#none">contents color</a>
+								<ul>
+									<li>1. Main</li>
+									<li>2. Sub</li>
+									<li>3. Background/Border Color</li>
+									<li>4. Text</li>
+								</ul>
+							</li>
+							<li><a href="#none">텍스트 컬러</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="./html/table.html">Table or List</a>
+						<ul>
+							<li><a href="#none">table - 가로형</a></li>
+							<li><a href="#none">table - 세로형</a></li>
+							<li><a href="#none">list - img</a></li>
+							<li><a href="#none">list - box</a></li>
+							<li><a href="#none">list-desc</a></li>
+							<li><a href="#none">list-notice</a></li>
+						</ul>
+					</li>					
+					<li>
+						<a href="./html/tab.html">Tab</a>
+						<ul>
+							<li><a href="#none">탭 - 기본형</a></li>
+							<li><a href="#none">탭 - 스탭(화살표)형</a></li>
+						</ul>
+					</li>								
+	<!-- 				<li><a href="#none">Agreement</a></li> -->					
+					<li>
+						<a href="./html/form.html">Form</a>
+						<ul>
+							<li>
+								<a href="#none">input</a>
+								<ul>
+									<li><a href="#none">1. 기본</a></li>
+									<li><a href="#none">2. require</a></li>
+									<li><a href="#none">3. readonly</a></li>
+									<li><a href="#none">4. disabled</a></li>
+									<li><a href="#none">5. select</a></li>
+									<li><a href="#none">6. 라벨</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">Input - 유형별</a>
+								<ul>
+									<li><a href="#none">1. 기본</a></li>
+									<li><a href="#none">2. require</a></li>
+									<li><a href="#none">3. readonly</a></li>
+									<li><a href="#none">4. disabled</a></li>
+									<li><a href="#none">5. select</a></li>
+									<li><a href="#none">6. 라벨</a></li>
+								</ul>
+							</li>
+							<li><a href="#none">Select</a></li>
+							<li><a href="#none">체크박스 / 라디오</a></li>
+							<li><a href="#none">버튼결합</a></li>
+						</ul>
+					</li>	
+					<li>
+						<a href="./html/button.html">Button</a>
+						<ul>
+							<li>
+								<a href="#none">button style 기본정의</a>
+								<ul>
+									<li><a href="#none">1. button - 기본형</a></li>
+									<li><a href="#none">2. button - borer형</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#none">button size</a>
+								<ul>
+									<li><a href="#none">1. button - small</a></li>
+									<li><a href="#none">2. button - medium</a></li>
+									<li><a href="#none">3. button - large</a></li>
+								</ul>
+							</li>
+							<li><a href="#none">input - 버튼</a></li>
+							<li>
+								<a href="#none">모바일</a>
+								<li><a href="#none">하단버튼 - 1개</a></li>
+								<li><a href="#none">하단버튼 - 2개</a></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</article>
+	<!-- content // -->
+</div>
+</body>
+</html>

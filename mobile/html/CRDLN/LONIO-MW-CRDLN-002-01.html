@@ -1,0 +1,130 @@
+<div id="voicePop01" class="layerpopup laypop-all" tabindex="0">
+    <div class="hr-wrap content-wrap pd0">
+        <div class="pop-header">
+            <h3 class="pop-title">조회동의</h3>
+            <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        </div>
+        <div class="ly-scroll-con">
+            <section class="form-wrap group">
+                <h3>보이스피싱 예방을 위한<br />
+                    사전 문진표</h3>
+                <div class="info-wrap box-type">
+                    <p class="txt">다음 단계로 진행하기 전,<br />
+                        다음 내용을 확인 후 작성해 주세요.</p>
+                </div>
+                <div class="form-group survey">
+                    <label>지금 진행하는 대출이 금융회사 직원이라는 전화나 문자를 받아 진행하고 계신가요?</label>
+                    <div class="form-row voice">
+                        <p class="col">
+                            <input type="radio" id="voice01-01" name="vocie01" value="" checked>
+                            <label for="voice01-01" class="btn w100p"><span>예</span></label>
+                        </p>
+                        <p class="col">
+                            <input type="radio" id="voice01-02" name="vocie01" value="">
+                            <label for="voice01-02" class="btn w100p"><span>아니오</span></label>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group survey">
+                    <label>햇살론 등 저금리의 서민지원대출로 바꿔준다는 명목 으로 대출을 받으라고 하던가요?</label>
+                    <div class="form-row voice">
+                        <p class="col">
+                            <input type="radio" id="voice02-01" name="vocie02" value="">
+                            <label for="voice01-01" class="btn w100p"><span>예</span></label>
+                        </p>
+                        <p class="col">
+                            <input type="radio" id="voice02-02" name="vocie02" value="" checked>
+                            <label for="voice02-02" class="btn w100p"><span>아니오</span></label>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group survey bb0">
+                    <label>대출을 받고 바로 상환하면 신용등급 또는 개인신용평점이 올라가 저금리로 대출이 가능하다고 하던가요?</label>
+                    <div class="form-row voice">
+                        <p class="col">
+                            <input type="radio" id="voice03-01" name="vocie03" value="">
+                            <label for="voice03-01" class="btn w100p"><span>예</span></label>
+                        </p>
+                        <p class="col">
+                            <input type="radio" id="voice03-02" name="vocie03" value="" checked>
+                            <label for="voice03-02" class="btn w100p"><span>아니오</span></label>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="list-wrap mt0 pt0 bb0">
+                    <div class="info-wrap box-type red-pastel ta-c">
+                        보이스피싱 피해가 조금이라도 우려된다면
+                        <em>금융감독원 콜센터 1332, 경찰청 112로 문의하시기 바랍니다.</em>    
+                    </div>
+                </div>
+
+                <div class="btn-wrap bb0">
+                    <a href="./LONIO-MW-CRDLN-003.html" class="btn btn-primary" data-focus="btn-layer-close">확인하였습니다.</a>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+<!---------------개발에서는 사용안함 : 퍼블 인크루드 확인용 -->
+<script type="text/javascript" src="../../resources/js/default.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector('form');
+    const requiredInputs = form.querySelectorAll('input[required]:not([type="checkbox"]):not([type="radio"]), input[type="checkbox"][required], input[type="radio"][required]');
+    const requiredSelects = form.querySelectorAll('.btn-select');
+    const submitButton = form.querySelector('.btn-wrap > a.btn.btn-disable');
+
+    function updateSubmitButtonState() {
+        let allValid = true;
+
+        // 기존 입력 필드의 유효성 검사
+        requiredInputs.forEach(input => {
+            if (input.type === "checkbox" || input.type === "radio") {
+                if (input.type === "radio") {
+                    const name = input.name;
+                    const oneChecked = Array.from(form.querySelectorAll(`input[name="${name}"]`)).some(radio => radio.checked);
+                    if (!oneChecked) allValid = false;
+                } else if (!input.checked) {
+                    allValid = false;
+                }
+            } else if (!input.value.trim()) {
+                allValid = false;
+            }
+        });
+        requiredSelects.forEach(select => {
+            if (!select.classList.contains('select-ok') && !select.querySelector('.select-ok')) {
+                allValid = false;
+            }
+        });
+        if (allValid) {
+            submitButton.classList.remove('btn-disable');
+        } else {
+            if (!submitButton.classList.contains('btn-disable')) {
+                submitButton.classList.add('btn-disable');
+            }
+        }
+    }
+
+    requiredInputs.forEach(input => {
+        if (input.type === "checkbox" || input.type === "radio") {
+            input.addEventListener("change", updateSubmitButtonState);
+        } else {
+            input.addEventListener("input", updateSubmitButtonState);
+        }
+    });
+
+    requiredSelects.forEach(select => {
+        select.addEventListener("click", function() {
+            setTimeout(updateSubmitButtonState, 0);
+        });
+    });
+});
+
+</script>
+<!---------------//개발에서는 사용안함 : 퍼블 인크루드 확인용 -->
+</html>
+

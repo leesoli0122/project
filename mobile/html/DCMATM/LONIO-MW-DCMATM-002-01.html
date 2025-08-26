@@ -1,0 +1,198 @@
+<div id="voicePop01" class="layerpopup laypop-all" tabindex="0">
+
+    <div class="hr-wrap content-wrap pd0">
+        <div class="pop-header">
+            <h3 class="pop-title">간편인증</h3>
+            <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        </div>
+        <div class="ly-scroll-con">
+            <form>
+                <section class="group">
+                    <div class="info-wrap box-type easy">
+                        <ul class="form-wrap col03">
+                            <li class="form-group">
+                                <input id="kakao" title="카카오" type="radio" name="easy" class="form-control" required>
+                                <label for="kakao"><span>카카오</span></label>
+                            </li>
+                            <li class="form-group">
+                                <input id="payco" title="페이코" type="radio" name="easy" class="form-control" required>      
+                                <label for="payco">페이코</label>
+                            </li>
+                            <li class="form-group">
+                                <input id="pass" title="통신사패스" type="radio" name="easy" class="form-control" required>
+                                <label for="pass">통신사패스</label>
+                            </li>
+                            <li class="form-group">
+                                <input id="kb" title="통신사패스" type="radio" name="easy" class="form-control" required>
+                                <label for="kb">KB국민은행</label>
+                            </li>
+                            <li class="form-group">
+                                <input id="samsung" title="삼성패스" type="radio" name="easy" class="form-control" required>
+                                <label for="samsung">삼성패스</label>
+                            </li>
+                            <li class="form-group">
+                                <input id="naver" title="삼성패스" type="radio" name="easy" class="form-control" required>
+                                <label for="naver">네이버인증서</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-wrap">
+                        <h4 class="tit-arr">간편인증 정보입력</h4>
+                        <div class="form-group bt">
+                            <label class="required">이름</label>
+                            <input id="" title="이름" type="text" name="" class="form-control" placeholder="이름을 입력해 주세요" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="required">통신사</label>
+                            <div class="select-wrap">
+                                <button class="btn-select">통신사 선택하세요.</button>
+                                <div class="select-list">
+                                    <ul>
+                                        <li><button type="button">SKT</button></li>
+                                        <li><button type="button">KT</button></li>
+                                        <li><button type="button">LGU+</button></li>
+                                        <li><button type="button">알뜰 SKT</button></li>
+                                        <li><button type="button">알뜰KT</button></li>
+                                        <li><button type="button">알뜰 LGU+</button></li>
+                                    </ul>
+                                </div>
+                            </div>   
+                        </div>
+                        <div class="form-group">
+                            <label class="required">전화번호</label>
+                            <input id="" title="생년월일" type="tel" name="" class="form-control" placeholder="'-' 없이 숫자만 입력해 주세요" required>    
+                        </div>
+                    </div>
+
+                    <div class="form-wrap bb0">
+                        <div class="terms-area">
+                            <div class="terms-wrap level1 chk-all">
+                                <fieldset>
+                                    <input type="checkbox" id="allChk01" name="allChk01" value="" class="check all" required>
+                                    <label for="allChk01"><span>서비스 이용에 대한 동의</span></label>
+                                </fieldset>
+                            </div>
+                            <div class="list-wrap dp-block">
+                                <div class="terms-wrap level2">
+                                    <fieldset>
+                                        <input type="checkbox" id="chkEach01-01" name="check" value="" class="check" terms-pop="termsPop01" required>
+                                        <label for="chkEach01-01"><span>개인정보 이용 동의</span></label>
+                                    </fieldset>
+                                </div>
+
+                                <div class="terms-wrap level2">
+                                    <fieldset>
+                                        <input type="checkbox" id="chkEach01-02" name="check" value="" class="check" terms-pop="termsPop02" required>
+                                        <label for="chkEach01-02"><span>고유식별정보처리동의</span></label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-wrap bb0">
+                        <a href="../DCMATM/LONIO-MW-DCMATM-007.html" class="btn btn-darkblue btn-disable">인증요청</a>
+                    </div>
+                </section>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+ 
+
+
+<!--알럿창-->
+<div id="message01" class="layerpopup type-alert on" tabindex="0">
+    <div class="content-wrap">
+        <div class="ly-cont-wrap">
+            <p clas="sub-tit">예시입니다.</p>
+            <p>간편인증 항목이 입력되지 않았습니다.</p>
+        </div>
+        <div class="btn-wrap">
+            <a href="#none" class="btn btn-primary confirm">확인</a>
+        </div>
+    </div>
+</div>
+
+<!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+<script>
+    $(function() {
+        $('div[data-include-path]').each(function(){
+            var path = $(this).attr('data-include-path');
+            $(this).load(path, function(response, status, xhr) {
+                if (status == "error") {
+                    var msg = "Sorry but there was an error: ";
+                    $(this).html(msg + xhr.status + " " + xhr.statusText);
+                }
+            });
+        });
+    });
+
+    //퍼블 흐름도 확인용으로 추가 함. 개발에서는 사용안함.
+   document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector('form');
+    const requiredInputs = form.querySelectorAll('input[required]:not([type="checkbox"]):not([type="radio"]), input[type="checkbox"][required], input[type="radio"][required]');
+    const requiredSelects = form.querySelectorAll('.btn-select');
+    const submitButton = form.querySelector('.btn-wrap > a.btn.btn-disable');
+
+    function updateSubmitButtonState() {
+    var allValid = true;
+    requiredInputs.forEach(input => {
+        if (input.type === "checkbox" || input.type === "radio") {
+            if (input.type === "radio") {
+                const name = input.name;
+                const oneChecked = Array.from(form.querySelectorAll(`input[name="${name}"]`)).some(radio => radio.checked);
+                if (!oneChecked) allValid = false;
+            } else if (!input.checked) {
+                allValid = false;
+            }
+        } else if (!input.value.trim()) {
+            allValid = false;
+        }
+    });
+
+    requiredSelects.forEach(select => {
+        if (!select.classList.contains('select-ok') && !select.querySelector('.select-ok')) {
+            allValid = false;
+        }
+    });
+
+    if (allValid) {
+        submitButton.classList.remove('btn-disable');
+    } else {
+        if (!submitButton.classList.contains('btn-disable')) {
+            submitButton.classList.add('btn-disable');
+        }
+    }
+}
+
+requiredInputs.forEach(input => {
+    if (input.type === "checkbox" || input.type === "radio") {
+        input.addEventListener("change", updateSubmitButtonState);
+    } else {
+        input.addEventListener("input", updateSubmitButtonState);
+    }
+});
+
+requiredSelects.forEach(select => {
+    select.addEventListener("click", function() {
+        setTimeout(updateSubmitButtonState, 0);
+    });
+});
+
+$(document).on('click', 'a.btn-disable', function(e) {
+    e.preventDefault();
+});
+
+submitButton.addEventListener("click", function(e) {
+    if (submitButton.classList.contains('btn-disable')) {
+        e.preventDefault(); 
+        openPopup('message01'); 
+    }
+});
+});
+</script>
+<!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함--> 
+
+

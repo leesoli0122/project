@@ -1,0 +1,114 @@
+<script>
+	$(document).ready(function(){
+		var gnb = $('#gnb .flex.col-4')
+
+		// 마우스 over 시
+		gnb.mouseenter(function() {
+			$('.sub-gnb-wrap').slideDown(300,'easeInOutQuad').show();
+			$('.nav-bg').slideDown(300,'easeInOutQuad').css('display','block');
+		});
+
+		// 마우스  leave 시
+		gnb.mouseleave(function() {
+			$('.sub-gnb-wrap').slideUp(300,'easeInOutQuad').hide();
+			$('.nav-bg').slideUp(300,'easeInOutQuad').css('display', 'none');
+
+		});
+
+		//dept2 hover시 dept1 active
+		$('#gnb > ul > li').mouseenter(function() {
+			$(this).children().addClass('on');
+			$(this).siblings().children().removeClass('on');
+			$(this).parent().siblings().addClass('on');
+		});
+		$('#gnb > ul > li').mouseleave(function() {
+			$(this).children().removeClass('on');
+			$(this).parent().siblings().removeClass('on');
+		});
+
+		// 3daps action
+		$('.menu').click(function(){ 
+			if( $(this).hasClass('.after') == false ){
+				$('.menu').removeClass('on');
+				$('.menu').find('ul').stop().slideUp(300,'easeInOutQuad');
+				$(this).addClass("on");
+				$(this).find('ul').stop().slideDown(300,'easeInOutQuad');
+				//alert("a");
+				
+			}else if( $(this).hasClass('.after') == true ){
+				$('.menu').removeClass('on');
+				$(this).removeClass("on");
+				$(this).find('ul').stop().slideUp(300,'easeInOutQuad');
+				//alert("b");
+			};
+		});
+	})
+</script>
+    <div class="top">
+        <div>
+            <h1><a href="../main.html">로니오</a></h1>
+            <p>(주)에이원대부캐피탈 2016-금감원-0013(대부업)</p>
+            <div class="btn-wrap">
+                <a href="#none" class="text-btn">사이트맵</a>
+            </div>
+        </div>
+    </div>
+    <nav id="gnb"><!-- #gnb -->
+        <ul class="flex col-4"> <!--gnb-->
+            <li> <!-- dept1 -->
+                <a href="javascript:void(0);"><span>대출신청</span></a>
+                <div class="sub-gnb-wrap"><!-- inner-menu -->
+                    <ul class="smenu">
+                        <li><a href="javascript:void(0);">신용대출</a></li><!-- dept2 -->
+                        <li><a href="javascript:void(0);">자동차 담보대출</a></li>
+                        <li><a href="javascript:void(0);">추가 / 재대출</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><span>대출안내</span></a>
+                <div class="sub-gnb-wrap">
+                    <ul class="smenu">
+                        <li><a href="javascript:void(0);">대출상품</a></li>
+                        <li><a href="javascript:void(0);">대출신청</a></li>
+                        <li><a href="javascript:void(0);">대출계산기</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><span>고객센터</span></a>
+                <div class="sub-gnb-wrap">
+                    <ul class="smenu">
+                        <li><a href="javascript:void(0);">자주하는 질문</a></li>
+                        <li><a href="javascript:void(0);">나의상담내역 조회</a></li>
+                        <li><a href="javascript:void(0);">부채증명발급</a></li>
+                        <li><a href="javascript:void(0);">납입이자조회</a></li>
+                        <li><a href="javascript:void(0);">대출진행조회</a></li>
+                        <li><a href="javascript:void(0);">전화권유판매원 조회</a></li>
+                        <li><a href="javascript:void(0);">이용제공현황</a></li>
+                        <li><a href="javascript:void(0);">대출계약철회 안내</a></li>
+                        <li><a href="javascript:void(0);">조회동의확인</a></li>
+                        <li><a href="javascript:void(0);">서류자동화</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><span>회사소개</span></a>
+                <div class="sub-gnb-wrap">
+                    <ul class="smenu">
+                        <li><a href="javascript:void(0);">인사말</a></li>
+                        <li><a href="javascript:void(0);">회사개요</a></li>
+                        <li><a href="javascript:void(0);">연혁</a></li>
+                        <li><a href="javascript:void(0);">조직도</a></li>
+                        <li><a href="javascript:void(0);">CI/BI소개</a></li>
+                        <li><a href="javascript:void(0);">경영공시</a></li>
+                        <li><a href="javascript:void(0);">오시는길</a></li>
+                        <li><a href="javascript:void(0);">A1소식</a></li>
+                        <li><a href="javascript:void(0);">사회공헌활동</a></li>
+                        <li><a href="javascript:void(0);">공지사항</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-bg">배경</div>
+    </nav>
