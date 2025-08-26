@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/main.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div id="skipnavi"></div>
+    <script>
+        $(document).ready(function () {
+            $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+        });
+    </script>
+    </div>
+    <div class="wrap mainWrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function () {
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+        <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:contents -->
+            <div class="contents">
+                <section class="mainSec01">
+                    <div class="inner">
+                        <div class="introMain-area x-slide">
+                            <ul>
+                                <li>
+                                    <em>신차 영업관리 플랫폼</em>
+                                    <strong>오릭스캐피탈 코리아</strong>
+                                    <p>모든 업무를 한눈에<br/>견적서를 작성하고 나의 업무를 관리해 보세요!</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <img class="img x-slide" src="../../resources/images/main/ic_mainCar.png" alt="">
+                        <div class="shortcut-area upAndDown">
+                            <div class="btn-wrap">
+                                <a href="javascript:void(0);" class="btn">렌터카</a>
+                                <a href="javascript:void(0);" class="btn">오토리스</a>
+                            </div>
+                            <ul>
+                                <li><a href="javascript:void(0);">선구매 견적내기</a></li>
+                                <li><a href="javascript:void(0);">실적조회</a></li>
+                                <li><a href="javascript:void(0);">자료실</a></li>
+                                <li><a href="javascript:void(0);">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mainSec02">
+                    <div class="inner">
+                        <div class="intro-box">
+                            <h2>
+                                <em>최근 2주 이내</em>
+                                <strong>나의 현황조회</strong>
+                            </h2>
+                        </div>
+                        <div class="introListSlider">
+                            <ul class="introList-area swiper-wrapper">
+                                <li class="swiper-slide"><a href="javascript:void(0);"><p class="tit">견적</p><p class="num">3건</p><span class="btn">자세히보기</span></a></li>
+                                <li class="swiper-slide"><a href="javascript:void(0);"><p class="tit">심사</p><p class="num">3건</p><span class="btn">자세히보기</span></a></li>
+                                <li class="swiper-slide"><a href="javascript:void(0);"><p class="tit">발주배정</p><p class="num">3건</p><span class="btn">자세히보기</span></a></li>
+                                <li class="swiper-slide"><a href="javascript:void(0);"><p class="tit">약정펀딩</p><p class="num">3건</p><span class="btn">자세히보기</span></a></li>
+                                <li class="swiper-slide"><a href="javascript:void(0);"><p class="tit">인도</p><p class="num">3건</p><span class="btn">자세히보기</span></a></li>
+                            </ul>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <script>
+                        $(document).ready(function() {
+                            var swiper = new Swiper(".introListSlider", {
+                                slidesPerView: 5, // Default
+                                lazy: true,
+                                spaceBetween: 0,
+                                pagination: {
+                                    el: ".swiper-pagination",
+                                    clickable: true,
+                                },
+                                navigation: {
+                                    nextEl: ".swiper-button-next",
+                                    prevEl: ".swiper-button-prev",
+                                },
+                            });
+                        
+                            // Resize
+                            $(window).on('load resize', function() {
+                                if ($(window).width() <= 780) {
+                                    swiper.params.slidesPerView = 1;
+                                    swiper.params.spaceBetween = 14;
+                                } else if ($(window).width() <= 1200) {
+                                    swiper.params.slidesPerView = 2;
+                                    swiper.params.spaceBetween = 14;
+                                } else {
+                                    swiper.params.slidesPerView = 5;
+                                    swiper.params.spaceBetween = 0
+                                }
+                        
+                                swiper.update();
+                        
+                                if ($(window).width() <= 1200) {
+                                    $(".swiper-button-next, .swiper-button-prev, .swiper-pagination").css("display", "block");
+                                } else {
+                                    $(".swiper-button-next, .swiper-button-prev, .swiper-pagination").css("display", "none");
+                                }
+                            });
+                        });
+                        </script>
+                </section>
+
+                <section class="mainSec03">
+                    <div class="inner">
+                        <h2 class="ir">나의 실적 보기</h2>
+                        <a href="javascript:void(0);"><em>나의 실적을 한눈에!</em><strong>최근 1달, 나의 실적과 전체 실적을 확인해 보세요</strong><img class="img" src="../../resources/images/main/ic_my_graph.png" alt=""></a>
+                    </div>
+                </section>
+
+                <section class="mainSec04">
+                    <div class="inner">
+                        <h2>어떤 견적서를 작성하시겠어요?</h2>
+                        <ul class="introList-area">
+                            <li><a href="javascript:void(0);"><p class="tit">일정기간 빌려쓰는 자동차!</p><p class="btn">렌터카 견적내기</p></a></li>
+                            <li><a href="javascript:void(0);"><p class="tit">조건에 따라 소유권을 이전받을 수 있는!</p><p class="btn">오토리스 견적내기</p></a></li>
+                            <li><a href="javascript:void(0);"><p class="tit">내가 미리 구매한 자동차로!</p><p class="btn">선구매 겨적내기</p></a></li>
+                        </ul>
+                    </div>
+                </section>
+ 
+                <section class="mainSec05">
+                    <div class="inner">
+                        <div class="introNotice-area tab-area"><!--[D] [공통] tab-area 클래스 : 탭 스크립트-->
+                            <ul class="intro-tit tab-item"><!--[D] [공통] tab-item 클래스 : 탭 스크립트-->
+                                <li  class="on" data-tab="tab1"><button>공지사항</button></li>
+                                <li data-tab="tab2"><button>자료실</button></li>
+                            </ul>
+                            
+                            <div class="intro-con">
+                                <div id="tab1" class="tab-content"><!--[D] [공통] tab-content 클래스 : 탭 스크립트-->
+                                    <h2 class="ir">공지사항</h2>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span class="txt">공지사항 제목이 최대 1줄까지 노출되고 말줄임 처리 공지사항 제목이 최대 1줄까지 노출되고 말줄임 처리</span><span class="date">2024.08.26</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span class="txt">공지사항 제목이 최대 1줄까지 노출되고 말줄임 처리 공지사항 제목이 최대 1줄까지 노출되고 말줄임 처리</span><span class="date">2024.08.26</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span class="txt">공지사항 제목이 최대 1줄까지 노출되고 말줄임 처리 공지사항 제목이 최대 1줄까지 노출되고 말줄임 처리</span><span class="date">2024.08.26</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a href="javascript:void(0);" class="btn"><span class="ir">공지시힝</span>더보기</a>
+                                </div>
+                                <div id="tab2" class="tab-content dp-none"><!--[D] [공통] tab-content 클래스 : 탭 스크립트-->
+                                    <h2 class="ir">자료실</h2>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span class="txt">자료실 제목이 최대 1줄까지 노출되고 말줄임 처리 자료실 제목이 최대 1줄까지 노출되고 말줄임 처리</span><span class="date">2024.08.26</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span class="txt">자료실 제목이 최대 1줄까지 노출되고 말줄임 처리 자료실 제목이 최대 1줄까지 노출되고 말줄임 처리</span><span class="date">2024.08.26</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <span class="txt">자료실 제목이 최대 1줄까지 노출되고 말줄임 처리 자료실 제목이 최대 1줄까지 노출되고 말줄임 처리</span><span class="date">2024.08.26</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a href="javascript:void(0);" class="btn"><span class="ir">자료실</span>더보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="introNotice-area">
+                            <div class="intro-tit">
+                                <h2>F A Q<span class="ir">자주묻는 질문</span></h2>
+                            </div>
+                            <div class="intro-con ico">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <span class="txt">자주 묻는 질문 제목이 최대 1출까지 노축되고 말줄임…</span><span class="date">2024.08.26</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <span class="txt">렌터카 견적서는 어떻게 작성하나요?</span><span class="date">2024.08.26</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <span class="txt">렌터가와 오토리스 수수료는 어떻게 되나요?</span><span class="date">2024.08.26</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <a href="javascript:void(0);" class="btn"><span class="ir">FAQ</span>더보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function () {
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

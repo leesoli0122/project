@@ -1,0 +1,110 @@
+<div id="headerWrap">
+    <div class="top">
+        <div>
+            <h1>
+                <a href="javascript:void(0);">
+                    <img src="../../resources/images/logo.png" alt="오릭스캐피탈코리아">
+                </a>
+            </h1>
+        </div>
+    </div>
+    <div class="h-menu">
+        <div>
+            <div class="nav-btn">
+                <a href="javascript:void(0);" class="ham">
+                    <img src="../../resources/images/nav_btn.png" alt="메뉴아이콘">
+                </a>
+                <a href="javascript:void(0);" class="close">
+                    <img src="../../resources/images/close.png" alt="닫기버튼">
+                </a>
+            </div>
+            <ul class="menu col04">
+                <li>
+                    <!-- menu 1depth -->
+                    <a href="javascript:void(0);">견적내기</a>
+                    <!-- menu 2depth -->
+                    <div class="menuitem-wrap">
+                        <ul class="menuitem">
+                            <li><a href="#javascript:void(0);">렌터카 견적내기</a></li>
+                            <li><a href="#javascript:void(0);">오토리스 견적내기</a></li>
+                            <li><a href="#javascript:void(0);">선구매</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">현황조회</a>
+                    <div class="menuitem-wrap">
+                        <ul class="menuitem">
+                            <li><a href="#javascript:void(0);">견적</a></li>
+                            <li><a href="#javascript:void(0);">심사</a></li>
+                            <li><a href="#javascript:void(0);">발주</a></li>
+                            <li><a href="#javascript:void(0);">펀딩</a></li>
+                            <li><a href="#javascript:void(0);">인도</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">고객센터</a>
+                    <div class="menuitem-wrap">
+                        <ul class="menuitem">
+                            <li><a href="#javascript:void(0);">공지사항</a></li>
+                            <li><a href="#javascript:void(0);">자료실</a></li>
+                            <li><a href="#javascript:void(0);">QnA</a></li>
+                            <li><a href="#javascript:void(0);">전기차보조금</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">마이페이지</a>
+                    <div class="menuitem-wrap">
+                        <ul class="menuitem">
+                            <li>
+                                <a href="javascript:void(0);">실적조회</a>
+                                <ul class="sub-menuitem bul-dot">
+                                    <li><a href="#javascript:void(0);">나의실적</a></li>
+                                    <li><a href="#javascript:void(0);">팀실적조회</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#javascript:void(0);">비밀번호변경</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu-r">
+                <li><a href="#javascript:void(0);">오릭스캐피탈 강남지점 <span>오릭스(orix)</span>님</a> 환영합니다.</li>
+                <li><button href="#javascript:void(0);" class="btn btn-logout">로그아웃</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        //스크롤시 헤더 fix
+        var lnbOffset = $("#headerWrap").offset().top;
+        $(window).scroll(function () {
+            // 현재 스크롤 위치
+            var scrollPosition = $("#headerWrap").scrollTop();
+
+            // 스크롤 위치가 헤더 위치보다 크면 fix 클래스를 추가, 아니면 제거
+            if (scrollPosition > lnbOffset) {
+                $("#headerWrap").addClass("fix");
+            } else {
+                $("#headerWrap").removeClass("fix");
+            }
+        });
+        // gnb action
+        $(".menu > li").on('click', function(e) {
+            e.preventDefault();
+
+            var $this = $(this).children(".menuitem-wrap");
+            var menu = $(".h-menu, .menuitem-wrap");
+
+            $this.addClass('on');
+            $(this).siblings().children(".menuitem-wrap").removeClass('on');
+
+            menu.off('mouseleave').on('mouseleave', function() {
+                $this.removeClass('on');
+            });
+        });
+    });
+</script>

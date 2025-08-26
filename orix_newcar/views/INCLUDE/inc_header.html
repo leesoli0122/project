@@ -1,0 +1,195 @@
+<div id="gnb" class="header-wrap">
+    <div class="top">
+        <div>
+            <h1>
+                <a href="../MAIN/ORIX-NCR-MAH-001.html">
+                    <img src="../../resources/images/logo.png" alt="오릭스캐피탈코리아">
+                </a>
+            </h1>
+        </div>
+    </div>
+    <div class="h-menu" aria-label="Main navigation">
+        <ul class="menu-r">
+            <li><a href="#javascript:void(0);">오릭스캐피탈 강남지점 <span>오릭스(orix)</span>님</a> 환영합니다.</li>
+            <li><button href="#javascript:void(0);" class="btn btn-logout">로그아웃</button></li>
+        </ul>
+        <ul class="menu col04">
+            <li>
+                <!-- menu 1depth -->
+                <a href="javascript:void(0);">견적내기</a>
+                <!-- menu 2depth -->
+                <div class="menuitem-wrap">
+                    <ul class="menuitem">
+                        <li><a href="#javascript:void(0);" data-dep2-index="2">렌터카 견적내기</a></li>
+                        <li><a href="#javascript:void(0);">오토리스 견적내기</a></li>
+                        <li><a href="#javascript:void(0);">선구매</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);">현황조회</a>
+                <div class="menuitem-wrap">
+                    <ul class="menuitem">
+                        <li><a href="#javascript:void(0);">견적</a></li>
+                        <li><a href="#javascript:void(0);">심사</a></li>
+                        <li><a href="#javascript:void(0);">발주배정</a></li>
+                        <li><a href="#javascript:void(0);">약정펀딩</a></li>
+                        <li><a href="#javascript:void(0);">인도</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);">고객센터</a>
+                <div class="menuitem-wrap">
+                    <ul class="menuitem">
+                        <li><a href="#javascript:void(0);">공지사항</a></li>
+                        <li><a href="#javascript:void(0);">자료실</a></li>
+                        <li><a href="../SERVICE/ORIX-NCR-QNA-001.html">QnA</a></li>
+                        <li><a href="https://ev.or.kr/nportal/buySupprt/initBuySubsidySupprtAction.do" target="_blank">전기차보조금</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);">마이페이지</a>
+                <div class="menuitem-wrap">
+                    <ul class="menuitem">
+                        <li>
+                            <a href="#javascript:void(0);">실적조회</a>
+                            <!--[20241030] 메인 화면설계서에서 실적조회 하나만 노출되어 있음 <ul class="sub-menuitem bul-dot">
+                                <li><a href="#javascript:void(0);">나의실적</a></li>
+                                <li><a href="#javascript:void(0);">전체 실적조회</a></li>
+                            </ul> -->
+                        </li>
+                        <li><a href="#javascript:void(0);">비밀번호변경</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+       
+    </div>
+    <div class="nav-btn">
+        <button aria-label="메뉴 열기" class="ham">
+            <img src="../../resources/images/nav_btn.png" alt="메뉴아이콘">
+            <span class="sr-only">메뉴 열기</span>
+        </button>
+        <button aria-label="메뉴 닫기" class="ham-close">
+            <img src="../../resources/images/common/ic_close.png" alt="닫기버튼">
+            <span class="sr-only">메뉴 닫기</span>
+        </button>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // 전역 변수
+        var isNavMenuOpen = false;
+        var $header = $(".header-wrap");
+        var $lnb = $(".h-menu");
+
+        // 스크롤시 헤더 fix
+        $(window).scroll(function () {
+            $lnb.toggleClass('fix', $(this).scrollTop() > 0);
+        });
+
+        // 미디어쿼리
+        var checkmedia = window.matchMedia("screen and (max-width:1200px)");
+
+        checkScreen();
+        checkmedia.addEventListener("change", checkScreen);
+
+        function checkScreen() {
+            if (checkmedia.matches) {
+                menuTablet();
+            } else {
+                menuDesktop();
+            }
+        }
+
+        // 데스크탑 메뉴
+        function menuDesktop() {
+            let hideMenuTimer;
+
+            // 초기화
+            $(".menu > li").off('mouseenter mouseleave');
+            $("html").css({ 'overflow': 'auto' });
+            $lnb.css({ 'right': '0', 'display': 'flex', 'opacity': '1', 'overflow': 'visible' });
+            $header.removeClass('side');
+
+            // 메뉴에 마우스가 올라가면 서브메뉴 보이기
+            $(".menu > li").on('mouseenter', function () {
+                clearTimeout(hideMenuTimer);
+                $(this).addClass('on').siblings().removeClass('on').find(".menuitem-wrap").removeClass('on');
+                $(this).children(".menuitem-wrap").addClass('on');
+            });
+
+            // 메뉴 전체를 벗어났을 때 일정 시간 후 서브메뉴 닫기
+            $(".menu").on('mouseleave', function () {
+                hideMenuTimer = setTimeout(function () {
+                    $(".menu > li, .menuitem-wrap").removeClass('on');
+                }, 300);
+            });
+
+            // 서브메뉴에 마우스가 들어오면 닫힘 타이머 제거
+            $(".menuitem-wrap").on('mouseenter', function () {
+                clearTimeout(hideMenuTimer);
+            });
+
+            // 포커스 이벤트로 접근성 설정
+            $(".menu > li > a, .menuitem-wrap a").on('focus', function () {
+                clearTimeout(hideMenuTimer);
+                $(this).closest('li').addClass('on').siblings().removeClass('on').find(".menuitem-wrap").removeClass('on');
+                $(this).closest('li').find(".menuitem-wrap").addClass('on');
+                $(".menuitem-wrap a").closest('li').removeAttr('class');
+            }).on('blur', function () {
+                hideMenuTimer = setTimeout(function () {
+                    $(".menu > li, .menuitem-wrap").removeClass('on');
+                }, 300);
+            });
+
+            // Tab 키로 서브메뉴로 이동 가능하게 설정
+            $(".menu > li > a").on('keydown', function (e) {
+                if (e.key === 'Tab' && $(this).hasClass('on')) {
+                    const $firstSubMenuItem = $(this).next(".menuitem-wrap").find('a').first();
+                    if ($firstSubMenuItem.length) {
+                        e.preventDefault();
+                        $firstSubMenuItem.focus();
+                    }
+                }
+            });
+
+            // Shift+Tab으로 상위 메뉴로 포커스 이동
+            $(".menuitem-wrap a").on('keydown', function (e) {
+                if (e.key === 'Tab' && e.shiftKey) {
+                    e.preventDefault();
+                    $(this).closest('.menuitem-wrap').prev('a').focus();
+                }
+            });
+        }
+
+        // 테블릿 및 모바일 메뉴
+        function menuTablet() {
+            // 변수 초기화 및 기존 이벤트 리스너 제거
+            var $sideMenu = $(".header-wrap.side .menu > li");
+            $lnb.css({'right': '-100%'}).hide(); // 메뉴 초기 상태로 숨김 처리
+            $(".nav-btn > .ham, .nav-btn > .ham-close").off('click');
+            $header.removeClass('side');
+            $sideMenu.removeClass('on');
+
+            // 햄버거 메뉴 아이콘 클릭 시
+            $(".ham").click(function (e) {
+                e.preventDefault();
+                $header.addClass('side'); // .header-wrap에 side 클래스 추가
+                $("html").css({ 'overflow': 'hidden' }); // 스크롤 비활성화
+                $lnb.css({'right':'0','display':'block', 'opacity':'1'}).fadeIn(1000); // 메뉴 나타남
+            });
+
+            // 햄버거 메뉴 닫기 아이콘 클릭 시
+            $(".ham-close").click(function (e) {
+                e.preventDefault();
+                $("html").css({ 'overflow': 'auto' }); // 스크롤 활성화
+                $header.removeClass('side'); // .header-wrap에서 side 클래스 제거
+            });
+        }
+    });
+
+</script>

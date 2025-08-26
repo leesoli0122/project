@@ -1,0 +1,154 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+</head>
+<style>
+    h4 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #5474C0;
+        margin: 20px 0 !important;
+    }
+    h3 { font-size:18px; font-weight:600; margin:20px 0; }
+
+    .wrap {
+        padding: 30px;
+    }
+    .home { margin-bottom:10px; }
+    .home a { display:block; width:24px; height:24px; font-size:0; background:url("../../index_home.png")no-repeat center center; }
+</style>
+
+<body>
+    <div class="wrap">
+        <div id="contentWrap" class="sub-content">
+            <div class="contents">
+                <div class="home">
+                    <a href="../../index.html">홈</a>
+                </div>
+                <h4>CTA02(btn-secondary) / CAT01(btn-primary) - 하단 버튼</h4>
+                <div class="btn-wrap bottom">
+                    <button type="button" name="button" class="btn btn-secondary">이전</button>
+                    <button type="button" name="button" class="btn btn-primary">다음</button>
+                </div>
+
+                <h4>Disabled-CTA01(btn-primary.disabled) - 하단 버튼</h4>
+                <div class="btn-wrap bottom">
+                    <button type="button" name="button" class="btn btn-primary disabled">버튼명</button>
+                </div>
+
+                <h4>에러/오류 페이지 버튼</h4>
+                <div class="btn-wrap error">
+                    <button type="button" name="button" class="btn btn-secondary">이전 페이지로</button>
+                    <button type="button" name="button" class="btn btn-primary">홈으로 가기</button>
+                </div>
+
+                <h4>Contents Button(btn-cont) : 컨텐츠 버튼</h4>
+                <div class="btn-wrap cont">
+                    <button type="button" name="button" class="btn btn-cont">버튼명1</button>
+                    <button type="button" name="button" class="btn btn-cont">버튼명2</button>
+                    <button type="button" name="button" class="btn btn-cont disabled">비활성화</button>
+                </div>
+
+                <h4>Form Button(btn-input / btn-input.active) : 폼 버튼</h4>
+                <h3>* Default</h3>
+                <div class="form-group">
+                    <button type="button" name="button" class="btn btn-input" >버튼명2</button>
+                </div>
+                <h3>* Active</h3>
+                <div class="form-group">
+                    <button type="button" name="button" class="btn btn-input active">버튼명2</button>
+                </div>
+
+                <h3>Search(btn-search) : 검색 버튼</h3>
+                <div class="form-group">
+                    <button type="button" name="button" class="btn btn-search"><span class="ir">버튼명2</span></button>
+                </div>
+
+                <h4>Popup Button(btn-close/btn-bottom) : 팝업 버튼</h4>
+                <div class="btn-wrap popup">
+                    <button type="button" name="button" class="btn btn-close" data-focus="btn-layer-close">취소</button>
+                    <button type="button" name="button" class="btn btn-bottom" >확인</button>
+                </div>
+
+                <h4>Alert Button(btn-close/btn-bottom) : 알럿 버튼</h4>
+                <div class="btn-wrap alert">
+                    <button type="button" name="button" class="btn btn-close" data-focus="btn-layer-close" >취소</button>
+                    <button type="button" name="button" class="btn btn-bottom" >확인</button>
+                </div>
+
+                <h4>Alert Button(btn-close/btn-bottom) : 알럿 버튼</h4>
+                <h3> *Text Underline Button(btn-text) : 텍스트 버튼</h3>
+                <button class="btn btn-text">삭제</button>
+
+                <h3>* Text Arrow Button(btn-text medium) : 텍스트 버튼</h3>
+                <button class="btn btn-text medium">버튼명</button>
+
+                <h3>* Text Arrow Button(btn-text small) : 텍스트 버튼</h3>
+                <button class="btn btn-text small">버튼명</button>
+
+                <h4>Right Button</h4>
+                <h3>*Icon Button(btn-icon) : 아이콘 버튼</h3>
+                <div class="btn-wrap right-btn">
+                    <button class="btn btn-icon">등록하기</button>
+                </div>
+
+                <h3>*No Icon Button(btn-icon-no) : 아이콘 없는 버전 버튼</h3>
+                <div class="btn-wrap right-btn">
+                    <button class="btn btn-no-icon">견적 기본 설정</button>
+                </div>
+
+                <h4>출고가격(계산서) 버튼</h4>
+                <div style="display:inline-block; padding:10px; background-color:var(--subtitle);">
+                    <button type="button" class="btn btn-num">+1</button>
+                    <button type="button" class="btn btn-num">-1</button>
+                </div>
+
+                <h4>Top Button(btn-top) : 탑 버튼 **<b>contents밖에 위치 [참고] :: COM-BSC-C002.html</b>**</h4>
+                <!--s: scrollTop-->
+                <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+                <!--//e: scrollTop-->
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+    <script>
+        $(function () {
+            $('div[data-include-path]').each(function () {
+                var path = $(this).attr('data-include-path');
+                $(this).load(path, function (response, status, xhr) {
+                    if (status == 'error') {
+                        var msg = 'Sory but there was an error:';
+                        $(this).html(msg + xhr.status + '' + xhr.statusText);
+                    }
+                })
+            })
+        })
+    </script>
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+</body>
+
+</html>

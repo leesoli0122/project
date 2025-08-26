@@ -1,0 +1,81 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<style>
+    .contents.guide { padding: 15px; }
+    .guide .home { margin-bottom: 10px; }
+    .guide .home a { display: block; width: 24px; height: 24px; font-size: 0; background: url("../../index_home.png")no-repeat center center; }
+    .guide .code h4 { margin-bottom: 5px; }
+
+    /* color css */
+    .guide .code .border { margin-bottom: 20px; padding: 20px; border: 1px solid #33333323; border-radius: 15px; }
+    .guide .code .border .form-wrap+p { margin-top: 20px; }
+    .guide .code .border > p { font-size: 14px; font-weight: bold; }
+</style>
+
+<body>
+    <div class="wrap">
+        <div id="contentWrap" class="sub-content">
+            <div class="contents guide">
+                <div class="home">
+                    <a href="../../index.html">홈</a>
+                </div>
+                <div class="code">
+                    <section>
+                        <h4>step</h4>
+                        <div class="border">
+                            <ul class="step-wrap">
+                                <li class="prev"><span>휴대폰 본인인증</span></li>
+                                <li class="on"><span>정보입력</span></li>
+                                <li class="next"><span>신청완료</span></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../resources/js/default2.js"></script>
+
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+    <script>
+        $(function () {
+            $('div[data-include-path]').each(function () {
+                var path = $(this).attr('data-include-path');
+                $(this).load(path, function (response, status, xhr) {
+                    if (status == 'error') {
+                        var msg = 'Sory but there was an error:';
+                        $(this).html(msg + xhr.status + '' + xhr.statusText);
+                    }
+                })
+            })
+        })
+    </script>
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+</body>
+
+</html>

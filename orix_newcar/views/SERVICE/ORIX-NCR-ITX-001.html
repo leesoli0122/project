@@ -1,0 +1,254 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="ORIX Capital keywords">
+<meta name="description" content="ORIX Capital description">
+
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:type" content="website" />
+
+<title>고객센터 > 금융계산기 > 대출계산기</title>
+
+<link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+        <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">고객센터</a></li>
+                        <li><a href="javascript:void(0);">개별소비세 계산하기</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>개별소비세 계산하기</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+                <div class="sub-text-wrap style2">
+                    <h4>정보입력 및 안내</h4>
+                    <p class="caption"><span class="red">개별소비세 계산하기</span>는 사용자의 편의를 위한 메뉴로, <span class="red">실제 차량구입시의 개별소비세와 차이가 있을 수</span> 있습니다.</p>
+                    <p class="caption"><span class="bold">2023년 7월 1일</span>부터 개별소비세 <span class="red">30%감면</span>은 <span class="red">종료</span> 되었습니다.</p>
+                    <p class="caption">수입차(쉐보레, 르노삼성차 수입차 포함)는 통관가격 기준으로 개별소비세 적용 시점이 계산되어 역산할 수 없어 아래의 계산 결과와 다릅니다.</p>
+                    <p class="caption"><span class="red">개별소비세 과세기준</span>은 <span class="red">출고가격에서 18% 인하된 가격에 적용</span> 됩니다(2023년 7월 1일 부터 3년간)</p>
+                    <p class="caption"><span class="red">개별소비세 부가 대상</span>은 <span class="red">경차를 제외</span>한 <span class="red">8인 이하 승용차</span> 입니다.</p>
+                </div>
+                <form>
+                    <div class="table-type">
+                        <div class="col">
+                            <dl>
+                                <dt>기간</dt>
+                                <dd class="form-group radio">
+                                    <ul class="radio-box">
+                                        <li>
+                                            <input type="radio" id="radio-1" name="period">
+                                            <label for="radio-1"class="radio-button"><span>5%</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="radio-2" name="period" checked="">
+                                            <label for="radio-2"class="radio-button"><span>면세가격</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="radio-3" name="period" checked="">
+                                            <label for="radio-3"class="radio-button"><span>장애인 감면</span></label>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>출하가격</dt>
+                                <dd class="form-group">
+                                    <div class="col-1">
+                                        <input id="" title="출하가격" type="amount" class="form-control amount-num" placeholder=""
+                                            inputmode="numeric"><!-- [D] inputmode="numeric" : 세자리 수마다 콤마 적용  -->
+                                        <span class="amount-txt">원</span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>비교세율</dt>
+                                <dd class="form-group radio">
+                                    <ul class="radio-box">
+                                        <li>
+                                            <input type="radio" id="radio-4" name="tax">
+                                            <label for="radio-4"class="radio-button"><span>5%</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="radio-5" name="tax" checked="">
+                                            <label for="radio-5"class="radio-button"><span>면세가격</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="radio-6" name="tax" checked="">
+                                            <label for="radio-6"class="radio-button"><span>장애인 감면</span></label>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </form>
+                <div class="btn-wrap bottom">
+                    <button type="button" name="button" class="btn btn-primary">계산하기</button>
+                </div>
+                <div class="result-area calc">
+                    <ul class="text-list">
+                        <li>
+                            <span class="tit">세율기준(5%)</span>
+                            <span class="txt">개별소득세 000,000 원</span>
+                        </li>
+                        <li>
+                            <span class="tit">비교세율(면세가격)</span>
+                            <span class="txt">개별소득세 000,000 원</span>
+                        </li>
+                    </ul>
+                    <p class="text-result">
+                        <span class="tit">차액(세율기준-비교세율기준)</span>
+                        <span class="txt"><span class="blue">000,000원</span> <span class="red">-000,000원</span></span>
+                    </p>
+                </div>
+                <div class="sub-text-wrap style2">
+                    <h4>상세안내</h4>
+                </div>
+                <div class="table-type style3 ta-c table-row">
+                    <table>
+                        <caption>테이블 리스트 예시</caption>
+                        <colgroup>
+                            <col width="*%">
+                            <col width="*%">
+                            <col width="*%">
+                            <col width="*%">
+                            <col width="*%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="row" colspan="2">구분</th>
+                                <th scope="row">세율(5%)</th>
+                                <th scope="row">비고세율(장애인감면)</th>
+                                <th scope="row">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2" class="bold">출하가격(판매원가)(A)</td>
+                                <td>000,000 원</td>
+                                <td>000,000 원</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5">개별소비세</td>
+                                <td class="bold">기준세액(5%)</td>
+                                <td>000,000 원</td>
+                                <td>000,000 원</td>
+                                <td>8인 이하 승용(경차 제외)</td>
+                            </tr>
+                            <tr>
+                                <td>감면세액</td>
+                                <td>0 원</td>
+                                <td>0 원</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>노후차 감면</td>
+                                <td>0 원</td>
+                                <td>0 원</td>
+                                <td>100만원 한도에서 개별소비세 70% 감면</td>
+                            </tr>
+                            <tr>
+                                <td>장애인 감면</td>
+                                <td>0 원</td>
+                                <td>0 원</td>
+                                <td>500만원 한도에서 개별소비세 면제</td>
+                            </tr>
+                            <tr>
+                                <td class="bold">결정세액(B)</td>
+                                <td>000,000 원</td>
+                                <td>000,000 원</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="bold">교육세(C)</td>
+                                <td>000,000 원</td>
+                                <td>000,000 원</td>
+                                <td>개별소비세 결정세액(B)의 30%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="bold">부가가치세(D)</td>
+                                <td>000,000 원</td>
+                                <td>000,000 원</td>
+                                <td>출하가격(A)+개별소비세 결정세액(B)+교육세(C)의 10%</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr></tr>
+                                <td colspan="2" class="bold">최종가격(A+B+C+D)</td>
+                                <td>000,000 원</td>
+                                <td>000,000 원</td>
+                                <td>
+                                    <span class="red">-000,000 원</span> 
+                                    <span class="blue">000,000 원</span>
+                                    (세율-비교세율)
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

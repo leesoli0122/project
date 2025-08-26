@@ -1,0 +1,254 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>견적확정 < 견적 < 현황조회</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">현황조회</a></li>
+                        <li><a href="javascript:void(0);">견적</a></li>
+                        <li><a href="javascript:void(0);">견적확정</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>현황조회</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+    <!-- 신용조회 동의요청(법인) -->
+    <div id="PopUp18" class="layerpopup laypop on" style="display:block;" tabindex="0">
+        <div class="content-wrap">
+            <div class="pop-header">
+                <h3 class="pop-title">신용조회 동의요청</h3>
+                <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+            </div>
+            <div class="ly-con-wrap ly-scroll-con">
+                <div class="table-type">
+                    <div class="col">
+                        <dl>
+                            <dt>법인명</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="법인명" type="text" name="" class="form-control" placeholder="법인명 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">법인명을 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>법인등록번호</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="법인등록번호" type="text" name="" class="form-control" placeholder="숫자만 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">법인등록번호를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>법인 설립일자</dt>
+                            <dd class="form-group">
+                                <input type="text" id="" title="법인 설립일자" name="date" class="form-control datepicker" placeholder="YYYY.MM.DD" readonly ><!-- [D] : datepicker 클래스 : datepicker Custom-->
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">법인 설립일자를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>법인대표</br>취임일자</dt>
+                            <dd class="form-group">
+                                <input type="text" id="" title="법인대표 취임일자" name="date" class="form-control datepicker" placeholder="YYYY.MM.DD" readonly ><!-- [D] : datepicker 클래스 : datepicker Custom-->
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">법인대표 취임일자를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>법인 사업자번호</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="법인 사업자번호" type="text" name="" class="form-control" placeholder="숫자만 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">법인 사업자번호를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>법인사업</br>등록일자</dt>
+                            <dd class="form-group">
+                                <input type="text" id="" title="법인사업 등록일자" name="date" class="form-control datepicker" placeholder="YYYY.MM.DD" readonly ><!-- [D] : datepicker 클래스 : datepicker Custom-->
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">법인사업 등록일자를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>업종코드</dt>
+                            <dd class="form-group">
+                                <div class="form-row">
+                                    <div class="col-1">
+                                        <input id="" title="업종코드" type="text" class="form-control" name="" placeholder="">
+                                    </div>
+                                    <button class="btn btn-input active" type="button">검색</button>
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">업종코드를 선택해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>업태명</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="업태명" type="text" name="" class="form-control" placeholder="업태명 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">업태명을 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>사업장명</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="사업장명" type="text" name="" class="form-control" placeholder="사업장명 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">사업장명을 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>사업자 전화번호</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="사업자 전화번호" type="text" name="" class="form-control" placeholder="숫자만 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">사업자 전화번호를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>대표자 이름</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="대표자 이름" type="text" name="" class="form-control" placeholder="대표자 이름 입력">
+                                </div>
+                            </dd>
+                            <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                <p class="info">대표자 이름을 입력해주세요.</p>
+                            -->
+                        </dl>
+                        <dl>
+                            <dt>대표자 생년월일</dt>
+                            <dd class="form-group">
+                                <div class="form-row">
+                                    <div class="col-2">
+                                        <input id="" title="앞 6자리" type="tel" class="form-control" maxlength="6" name="" value="" placeholder="앞 6자리 입력" >
+                                    </div>
+                                    <div class="input-hyphen">-</div>
+                                    <div class="col-2">
+                                        <input id="" title="뒷자리" type="tel" class="form-control jumin" maxlength="1" placeholder="●" name="" value="">
+                                        <span class="jumintext">●●●●●●</span>
+                                    </div>
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">대표자 생년월일을 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>핸드폰번호</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="핸드폰번호" type="text" name="" class="form-control" maxlength="11" placeholder="숫자만 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">핸드폰번호를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap popup">
+                <button type="button" name="button" class="btn btn-bottom" >동의 요청하기</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../resources/js/lib/swiper-bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>마이페이지 > 관리자 관리</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">마이페이지</a></li>
+                        <li><a href="javascript:void(0);">관리자 관리</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>관리자 관리</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+                <form>
+                    <div class="table-type">
+                        <div class="col">
+                            <!-- S: 슈퍼관리자에서만 보임 -->
+                            <dl>
+                                <dt>구분</dt>
+                                <dd class="form-group radio">
+                                    <ul class="radio-box">
+                                        <li>
+                                            <input type="radio" id="radio-1" name="radio">
+                                            <label for="radio-1"class="radio-button"><span>전체</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="radio-2" name="radio" checked="">
+                                            <label for="radio-2"class="radio-button"><span>일반 관리자</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="radio-3" name="radio" checked="">
+                                            <label for="radio-3"class="radio-button"><span>사용자(AG)</span></label>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <!-- E: 슈퍼관리자에서만 보임 -->
+                            <dl>
+                                <dt>아이디</dt>
+                                <dd class="form-group">
+                                    <input id="" title="아이디" type="text" name="" class="form-control" placeholder="아이디 입력">
+                                </dd>
+                                <dt>성명</dt>
+                                <dd class="form-group">
+                                    <input id="" title="성명" type="text" name="" class="form-control" placeholder="성명 성명">
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </form>
+                <div class="btn-wrap bottom">
+                    <button type="button" name="button" class="btn btn-primary">조회</button>
+                </div>
+                <div class="sub-text-wrap style2">
+                    <h4>총 <span>00</span>건</h4>
+                    <button class="btn btn-icon">등록하기</button>
+                </div>
+                <div class="table-type ta-c table-row">
+                    <table>
+                        <caption>회차,구분,아이디,성명,부서,휴대폰 번호,이메일 주소,등록자,등록날짜,계정 삭제에 대한 테이블</caption><!-- 2024.10.21 caption 수정 -->
+                        <colgroup>
+                            <col width="5%">
+                            <col width="*%">
+                            <col width="*%">
+                            <col width="*%">
+                            <col width="*%">
+                            <col width="*%">
+                            <col width="*%">
+                            <col width="*%">
+                            <col width="*%">
+                            <col width="*%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="row">회차</th>
+                                <th scope="row">구분</th>
+                                <th scope="row">아이디</th>
+                                <th scope="row">성명</th>
+                                <th scope="row">부서</th>
+                                <th scope="row">휴대폰 번호</th>
+                                <th scope="row">이메일 주소</th>
+                                <th scope="row">등록자</th>
+                                <th scope="row">등록날짜</th>
+                                <th scope="row">계정 삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>
+                                    <div>중간</div>
+                                    <div>관리자</div>
+                                </td>
+                                <td>Abcded02</td>
+                                <td>김오릭</td>
+                                <td>부서명 노출</td>
+                                <td>010-12**-5678</td>
+                                <td>abc123@naver.com</td>
+                                <td>
+                                    <span>등록자 성명</span>
+                                    <p>(ID)</p>
+                                </td>
+                                <td>2024.09.09</td>
+                                <td>
+                                    <button class="btn btn-text" aria-label="삭제">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>
+                                    <div>하위</div>
+                                    <div>관리자</div>
+                                </td>
+                                <td>Abcded02</td>
+                                <td>김오릭</td>
+                                <td>부서명 노출</td>
+                                <td>010-12**-5678</td>
+                                <td>abc123@naver.com</td>
+                                <td>
+                                    <span>등록자 성명</span>
+                                    <p>(ID)</p>
+                                </td>
+                                <td>2024.09.09</td>
+                                <td>
+                                    <button class="btn btn-text" aria-label="삭제">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>
+                                    <div>중간</div>
+                                    <div>관리자</div>
+                                </td>
+                                <td>Abcded02</td>
+                                <td>김오릭</td>
+                                <td>부서명 노출</td>
+                                <td>010-12**-5678</td>
+                                <td>abc123@naver.com</td>
+                                <td>
+                                    <span>등록자 성명</span>
+                                    <p>(ID)</p>
+                                </td>
+                                <td>2024.09.09</td>
+                                <td>
+                                    <button class="btn btn-text" aria-label="삭제">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>
+                                    <div>중간</div>
+                                    <div>관리자</div>
+                                </td>
+                                <td>Abcded02</td>
+                                <td>김오릭</td>
+                                <td>부서명 노출</td>
+                                <td>010-12**-5678</td>
+                                <td>abc123@naver.com</td>
+                                <td>
+                                    <span>등록자 성명</span>
+                                    <p>(ID)</p>
+                                </td>
+                                <td>2024.09.09</td>
+                                <td>
+                                    <button class="btn btn-text" aria-label="삭제">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>
+                                    <div>중간</div>
+                                    <div>관리자</div>
+                                </td>
+                                <td>Abcded02</td>
+                                <td>김오릭</td>
+                                <td>부서명 노출</td>
+                                <td>010-12**-5678</td>
+                                <td>abc123@naver.com</td>
+                                <td>
+                                    <span>등록자 성명</span>
+                                    <p>(ID)</p>
+                                </td>
+                                <td>2024.09.09</td>
+                                <td>
+                                    <button class="btn btn-text" aria-label="삭제">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <div>중간</div>
+                                    <div>관리자</div>
+                                </td>
+                                <td>Abcded02</td>
+                                <td>김오릭</td>
+                                <td>부서명 노출</td>
+                                <td>010-12**-5678</td>
+                                <td>abc123@naver.com</td>
+                                <td>
+                                    <span>등록자 성명</span>
+                                    <p>(ID)</p>
+                                </td>
+                                <td>2024.09.09</td>
+                                <td>
+                                    <button class="btn btn-text" aria-label="삭제">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <div>중간</div>
+                                    <div>관리자</div>
+                                </td>
+                                <td>Abcded02</td>
+                                <td>김오릭</td>
+                                <td>부서명 노출</td>
+                                <td>010-12**-5678</td>
+                                <td>abc123@naver.com</td>
+                                <td>
+                                    <span>등록자 성명</span>
+                                    <p>(ID)</p>
+                                </td>
+                                <td>2024.09.09</td>
+                                <td>
+                                    <button class="btn btn-text" aria-label="삭제">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div>중간</div>
+                                    <div>관리자</div>
+                                </td>
+                                <td>Abcded02</td>
+                                <td>김오릭</td>
+                                <td>부서명 노출</td>
+                                <td>010-12**-5678</td>
+                                <td>abc123@naver.com</td>
+                                <td>
+                                    <span>등록자 성명</span>
+                                    <p>(ID)</p>
+                                </td>
+                                <td>2024.09.09</td>
+                                <td>
+                                    <button class="btn btn-text" aria-label="삭제">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div>중간</div>
+                                    <div>관리자</div>
+                                </td>
+                                <td>Abcded02</td>
+                                <td>김오릭</td>
+                                <td>부서명 노출</td>
+                                <td>010-12**-5678</td>
+                                <td>abc123@naver.com</td>
+                                <td>
+                                    <span>등록자 성명</span>
+                                    <p>(ID)</p>
+                                </td>
+                                <td>2024.09.09</td>
+                                <td>
+                                    <button class="btn btn-text" aria-label="삭제">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div>중간</div>
+                                    <div>관리자</div>
+                                </td>
+                                <td>Abcded02</td>
+                                <td>김오릭</td>
+                                <td>부서명 노출</td>
+                                <td>010-12**-5678</td>
+                                <td>abc123@naver.com</td>
+                                <td>
+                                    <span>등록자 성명</span>
+                                    <p>(ID)</p>
+                                </td>
+                                <td>2024.09.09</td>
+                                <td>
+                                    <button class="btn btn-text" aria-label="삭제">삭제</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination-wrap">
+                    <div class="pagination">
+                        <ul>
+                            <li><a href="#" class="nb on" title="현재페이지">1</a></li>
+                            <li><a href="#" class="nb">2</a></li>
+                            <li><a href="#" class="nb">3</a></li>
+                            <li><a href="#" class="nb">4</a></li>
+                            <li><a href="#" class="nb">5</a></li>
+                            <li><a href="#" class="nb">6</a></li>
+                            <li><a href="#" class="nb">7</a></li>
+                            <li><a href="#" class="nb">8</a></li>
+                            <li><a href="#" class="nb">9</a></li>
+                            <li><a href="#" class="nb">10</a></li>
+                        </ul>
+                        <a href="#" class="btn-pg next">다음</a>
+                        <a href="#" class="btn-pg last-next">마지막으로</a>
+                    </div>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_3428" data-name="사각형 3428" width="18" height="18" transform="translate(0.308 0.308)" fill="#cccee4"/>
+    </clipPath>
+  </defs>
+  <g id="menu-area" transform="translate(-324.846 -4.846)">
+    <rect id="ico-menu-header-area" width="22" height="22" transform="translate(324.846 4.846)" fill="#cccee4" opacity="0"/>
+    <g id="ico-menu-header" transform="translate(326.538 6.538)" clip-path="url(#clip-path)">
+      <g id="그룹_33768" data-name="그룹 33768" transform="translate(4.752 4.753)">
+        <g id="그룹_1" data-name="그룹 1" transform="translate(0 0)">
+          <line id="선_113" data-name="선 113" x2="10" y2="10" transform="translate(-0.445 -0.445)" fill="none" stroke="rgba(102,102,102,0.8)" stroke-linecap="round" stroke-width="1"/>
+        </g>
+        <g id="그룹_33767" data-name="그룹 33767" transform="translate(0 0)">
+          <line id="선_113-2" data-name="선 113" x1="10" y2="10" transform="translate(-0.445 -0.445)" fill="none" stroke="rgba(102,102,102,0.8)" stroke-linecap="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

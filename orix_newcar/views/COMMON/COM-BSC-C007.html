@@ -1,0 +1,123 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<style>
+    .contents.guide { padding: 15px; }
+    .guide .home { margin-bottom: 10px; }
+    .guide .home a { display: block; width: 24px; height: 24px; font-size: 0; background: url("../../index_home.png")no-repeat center center; }
+    .guide .code h4 { margin-bottom: 5px; }
+
+    /* color css */
+    .guide .code .border { margin-bottom: 20px; padding: 20px; border: 1px solid #33333323; border-radius: 15px; }
+    .guide .code .border .form-wrap+p { margin-top: 20px; }
+    .guide .code .border p { font-size: 16px; font-weight: bold; }
+    /* .datepicker-ico { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cg data-name='그룹 64955'%3E%3Cpath fill='%23fff' d='M0 0h20v20H0z' data-name='사각형 24327'/%3E%3Cpath fill='%23222' d='M6 11h2v1H6z'/%3E%3Cpath fill='%23222' d='M9 11h2v1H9zM12 11h2v1h-2z' data-name='Rectangle'/%3E%3Cpath fill='none' stroke='%23333' stroke-miterlimit='10' d='M3 7.31V3.37h12.44A1.57 1.57 0 0 1 17 4.95V16H4.56A1.57 1.57 0 0 1 3 14.42V8.9'/%3E%3Cpath fill='none' stroke='%23222' stroke-linecap='square' stroke-miterlimit='10' d='M3.39 6.92H16.6'/%3E%3Cpath fill='none' stroke='%23333' stroke-miterlimit='10' d='M6.11 1v3.16M13.11 1v3.16'/%3E%3C/g%3E%3C/svg%3E")no-repeat center; } */
+</style>
+
+<body>
+    <div class="wrap">
+        <div id="contentWrap" class="sub-content">
+            <div class="contents guide">
+                <div class="home">
+                    <a href="../../index.html">홈</a>
+                </div>
+                <div class="code">
+                    <section>
+                        <h4>시작페이지</h4>
+                        <div class="border">
+                            <div class="pagination-wrap">
+                                <div class="pagination">
+                                    <ul>
+                                        <li><a href="#" class="nb on" title="현재페이지">1</a></li>
+                                        <li><a href="#" class="nb">2</a></li>
+                                    </ul>
+                                    <a href="#" class="btn-pg next">다음</a>
+                                    <a href="#" class="btn-pg last-next">마지막으로</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>중간페이지</h4>
+                        <div class="border" style="padding:20px 0;">
+                            <div class="pagination-wrap">
+                                <div class="pagination">
+                                    <a href="#" class="btn-pg last-prev">처음으로</a>
+                                    <a href="#" class="btn-pg prev">전으로</a>
+                                    <ul>
+                                        <li><a href="#" class="nb on" title="현재페이지">1</a></li>
+                                        <li><a href="#" class="nb">2</a></li>
+                                        <li><a href="#" class="nb">3</a></li>
+                                        <li><a href="#" class="nb">4</a></li>
+                                        <li><a href="#" class="nb">5</a></li>
+                                        <li><a href="#" class="nb">6</a></li>
+                                        <li><a href="#" class="nb">7</a></li>
+                                        <li><a href="#" class="nb">8</a></li>
+                                        <li><a href="#" class="nb">9</a></li>
+                                        <li><a href="#" class="nb">10</a></li>
+                                    </ul>
+                                    <a href="#" class="btn-pg next">다음</a>
+                                    <a href="#" class="btn-pg last-next">마지막으로</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>마지막페이지</h4>
+                        <div class="border" style="padding:20px 0;">
+                            <div class="pagination-wrap">
+                                <div class="pagination">
+                                    <a href="#" class="btn-pg last-prev">처음으로</a>
+                                    <a href="#" class="btn-pg prev">전으로</a>
+                                    <ul>
+                                        <li><a href="#" class="nb on" title="현재페이지">21</a></li>
+                                        <li><a href="#" class="nb">22</a></li>
+                                        <li><a href="#" class="nb">23</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+    <script>
+        $(function () {
+            $('div[data-include-path]').each(function () {
+                var path = $(this).attr('data-include-path');
+                $(this).load(path, function (response, status, xhr) {
+                    if (status == 'error') {
+                        var msg = 'Sory but there was an error:';
+                        $(this).html(msg + xhr.status + '' + xhr.statusText);
+                    }
+                })
+            })
+        })
+    </script>
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+</body>
+
+</html>

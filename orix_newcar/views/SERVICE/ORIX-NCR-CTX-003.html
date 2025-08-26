@@ -1,0 +1,154 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>고객센터 > 자동차세 계산하기 > 장애인 감면</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">고객센터</a></li>
+                        <li><a href="javascript:void(0);">자동차세 계산하기</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>자동차세 계산하기</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+                <div class="tabs-wrap">
+                    <div class="tabs">
+                        <ul class="tab-item">
+                            <li data-tab="tab-cont01"><a href="#none">자동차세</a></li>
+                            <li data-tab="tab-cont02" class=""><a href="#none">과세기준 </a></li>
+                            <li data-tab="tab-cont03" class="style2 on"><a href="#none">장애인 감면</br>(비영업용 승용차) </a></li>
+                        </ul>
+                        <div class="tab-content-area">
+
+                            <div id="tab-cont03" class="tab-content">
+                                <div class="sub-text-wrap style3">
+                                    <p class="caption"><span class="red">장애인 감면</span>은 사용자의 편의를 위한 메뉴로, <span class="red">실제 차량구입시의 장애인감면과 차이가 있을 수</span> 있습니다.</p>
+                                    <p class="caption">이 정보는 2024년 8월 15일 기준으로 작성된 것입니다.</p>
+                                </div>
+                                <div class="table-type">
+                                    <div class="col">
+                                        <dl>
+                                            <dt>대상</dt>
+                                            <dd>
+                                                <p>「장애인복지법」에 따른 중증 장애인이 보철용·생업활동용으로 사용하기 위해 취득하여 등록하는 다음의 자동차 중 최초로 감면신청하는 1대에 한하여 2024년 12월 31일까지 취득세 및 자동차세를 각각 면제합니다(「지방세특례제한법」 제17조제1항 및 「지방세특례제한법 시4령」제8조제1항).</p>
+                                                <ul class="bul-dot">
+                                                    <li>배기량 2,000시시 이하인 승용자동차</li>
+                                                    <li>승차정원 7명 이상 10명 이하인 승용자동차. 이 경우 장애인의 이동편의를 위하여 「자동차관리법」에 따라 구조를 변경한 승용자동차의 승차 정원은 구조변경 전의 승차 정원을 기준으로 합니다.</li>
+                                                    <li>「자동차관리법」에 따라 자동차의 구분기준이 화물자동차에서 2006년 1월 1일부터 승용자동차에 해당하게 되는 자동차(2005년 12월 31일 이전부터 승용자동차로 분류된 것은 제외)</li>
+                                                    <li>승차정원 15명 이하의 승합자동차</li>
+                                                    <li>최대 적재적량 1톤 이하인 화물자동차</li>
+                                                    <li>배기량 250시시 이하인 이륜자동차</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>명의</dt>
+                                            <dd>
+                                                <p>취득세 및 자동차세를 면제하는 장애인용 자동차는 해당 장애인이 본인의 명의로 등록하거나 동일한 세대별 주민등록표에 기재되어 있는 아래의 범위에 포함되는 사람과 공동명의로 등록(취득세의 경우에는 해당 자동차 등록일에 세대를 함께하는 것이 확인되는 경우에 한정)하는 자동차를 의미합니다(「지방세특례제한법 시행령」 제8조제3항).</p>
+                                                <div class="table-text-wrap style2">
+                                                    <h4>공동명의 대상</h4>
+                                                </div>
+                                                <ul class="bul-dot">
+                                                    <li>장애인의 배우자·직계혈족·형제자매</li>
+                                                    <li>장애인의 직계혈족의 배우자</li>
+                                                    <li>장애인의 배우자의 직계혈족·형제자매</li>
+                                                </ul>
+                                                <ul class="bul-refer">
+                                                    <li>"직계혈족"은 부모, 조부모, 자녀, 손자녀 및 외조부모, 외손자녀 등 (입양된 사람의 경우 양부모와 친생부모 모두 포함)을 말합니다.</li>
+                                                </ul>
+                                                <p>대체취득(취득세를 감면받은 자동차를 말소등록하거나 이전등록하고 자동차를 다시 취득하는 것을 말하며, 취득하여 등록한 날부터 60일 이내에 취득세를 감면받은 자동차를 말소등록하거나 이전 등록하는 경우 포함)을 하는 경우 해당 자동차에 대해서는「지방세특례제한법」 제17조제1항의 방법으로 취득세와 자동차세를 면제합니다(「지방세특례제한법」 제17조제2항).</p>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>신청</dt>
+                                            <dd>
+                                                <p>장애인용 자동차에 대하여 취득세 및 자동차세 감면을 받으려는 사람은 해당 시장·군수·구청장에게 아래의 서류를 갖추어 감면을 신청해야 합니다(「지방세특례제한법」제184조,「지방세특례제한법 시행규칙」제2조 및 별표1)</p>
+                                                <ul class="bul-dot">
+                                                    <li>소정의 신청서식(지방자치단체 별로 다르므로 해당 시·군·구청에 확인)</li>
+                                                    <li>장애인등록증 또는 장애인증명서</li>
+                                                    <li>자동차등록서류(자동차등록증 사본 등)</li>
+                                                    <li>주민등록등본</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

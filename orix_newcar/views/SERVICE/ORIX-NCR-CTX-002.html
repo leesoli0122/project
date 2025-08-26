@@ -1,0 +1,377 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>고객센터 > 자동차세 계산하기 > 과세기준</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">고객센터</a></li>
+                        <li><a href="javascript:void(0);">자동차세 계산하기</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>자동차세 계산하기</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+                <div class="tabs-wrap">
+                    <div class="tabs">
+                        <ul class="tab-item">
+                            <li data-tab="tab-cont01"><a href="#none">자동차세</a></li>
+                            <li class="on" data-tab="tab-cont02" class=""><a href="#none">과세기준 </a></li>
+                            <li data-tab="tab-cont03" class="style2"><a href="#none">장애인 감면</br>(비영업용 승용차) </a></li>
+                        </ul>
+                        <div class="tab-content-area">
+
+                            <div id="tab-cont02" class="tab-content">
+                                <div class="sub-text-wrap style3">
+                                    <p class="caption"><span class="red">과세기준</span>은 사용자의 편의를 위한 메뉴로, <span class="red">실제 차량구입시의 과세기준 차이가 있을 수</span> 있습니다.</p>
+                                    <p class="caption">이 정보는 2024년 5월 28일 기준으로 작성된 것입니다.</p>
+                                </div>
+                                <div class="table-type">
+                                    <div class="col">
+                                        <dl>
+                                            <dt>자동차세</dt>
+                                            <dd>자동차세는 자동차의 소유사실에 대하여 과세하는 재산세적 성격과 도로손상·환경오염 등에 대한 부담금적 성격을 동시에 갖고 있는 세금입니다. 비영업용 승용자동차에는 지방교육세 30%가 부가됩니다.</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>납세의무자</dt>
+                                            <dd>과세기준일(6.1.과 12.1.) 현재 자동차 및 건설기계등록원부상 소유자로 등재된 자</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>과세대상</dt>
+                                            <dd>「자동차관리법」에 의하여 등록 또는 신고된 차량과 「건설기계관리법」에 의하여 등록된 덤프트럭 및 콘크리트믹서트럭이 과세대상입니다.</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>과세표준과 세율</dt>
+                                            <dd>
+                                                <p>승용자동차 : 배기량에 cc당 세액을 곱하여 산정한 세액을 자동차 1대당 연세액으로 합니다. [연세액이 10만원 이하(지방교육세 별도)의 자동차세는 6월 상반기 세액에 하반기 세액(7.1.~12.31.)의 5%를 공제한 금액을 합산하여 1회만 부과합니다.]</p>
+                                                <div class="table-text-wrap style1">
+                                                    <h4>승용차</h4>
+                                                    <p class="caption">괄호안의 금액은 교육세(30%)가 포함된 금액입니다.</p>
+                                                </div>
+                                                <div class="ta-c table-row">
+                                                    <table>
+                                                        <caption>승용차 비업용일 때 배기량,CC당 세액과 승용차 영업용일 때 배기량,CC당 세액에 대한 표</caption>
+                                                        <colgroup>
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="row" colspan="2">비영업용</th>
+                                                                <th scope="row" colspan="2">영업용</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>배기량</th>
+                                                                <th>CC당 세액</th>
+                                                                <th>배기량</th>
+                                                                <th>CC당 세액</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1,000cc 이하</td>
+                                                                <td>80원(104원)</td>
+                                                                <td>1,000cc 이하</td>
+                                                                <td>18원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>1,600cc 이하</td>
+                                                                <td>140원(182원)</td>
+                                                                <td>1,600cc 이하</td>
+                                                                <td>18원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2,000cc 이하</td>
+                                                                <td>200원(260원)</td>
+                                                                <td>2,000cc 이하</td>
+                                                                <td>19원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td>2,500cc 이하</td>
+                                                                <td>19원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td>2,500cc 초과</td>
+                                                                <td>24원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>전기자동차</td>
+                                                                <td>100,000원(13만원)</td>
+                                                                <td>전기자동차</td>
+                                                                <td>20,000원</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="table-text-wrap style1">
+                                                    <h4>승합차</h4>
+                                                    <p class="caption">승차정원기준으로 40인을 초과하면 대형 / 40인 이하 라면 소형</p>
+                                                </div>
+                                                <div class="ta-c table-row">
+                                                    <table>
+                                                        <caption>승합차일 때 고속버스, 대형전세버스, 소형전세버스, 대형일반버스, 소형일반버스의 비영업용과 영업용에 대한 표</caption>
+                                                        <colgroup>
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>구분</th>
+                                                                <th>비영업용</th>
+                                                                <th>영업용</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>고속버스</td>
+                                                                <td>-</td>
+                                                                <td>100,000원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>대형버스</td>
+                                                                <td>-</td>
+                                                                <td>70,000원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>소형전세버스</td>
+                                                                <td>-</td>
+                                                                <td>50,000원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>대형일반버스</td>
+                                                                <td>115,000원</td>
+                                                                <td>42,000원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>소형일반버스</td>
+                                                                <td>65,000원</td>
+                                                                <td>25,000원</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="table-text-wrap style1">
+                                                    <h4>화물차</h4>
+                                                    <p class="caption">적재정량 1만 킬로그램 초과 자동차에 대하여는 적재정량 1만킬로그램 이하의 세액에 1만킬로그램 초과할 때마다 영업용은 1만원, 비영업용은 3만원을 가산한 금액을 1대당 연세액으로 합니다.</p>
+                                                </div>
+                                                <div class="ta-c table-row">
+                                                    <table>
+                                                        <caption>1,000kg 이하, 2,000kg 이하, 3,000kg 이하, 4,000kg 이하, 5,000kg 이하, 8,000kg 이하, 1만kg 이하, 1만kg 초과의 비영업용, 영업용에 대한 표</caption>
+                                                        <colgroup>
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>구분</th>
+                                                                <th>비영업용</th>
+                                                                <th>영업용</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1,000kg 이하</td>
+                                                                <td>6,600원</td>
+                                                                <td>28,500원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2,000kg 이하</td>
+                                                                <td>9,600원</td>
+                                                                <td>34,500원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>3,000kg 이하</td>
+                                                                <td>13,500원</td>
+                                                                <td>48,000원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>4,000kg 이하</td>
+                                                                <td>18,000원</td>
+                                                                <td>63,000원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>5,000kg 이하</td>
+                                                                <td>22,500원</td>
+                                                                <td>79,500원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>8,000kg 이하</td>
+                                                                <td>36,500원</td>
+                                                                <td>130,500원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>1만kg 이하</td>
+                                                                <td>45,000원</td>
+                                                                <td>157,500원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>1만kg 초과</td>
+                                                                <td>1만kg 초과시 +3만원</td>
+                                                                <td>1만kg 초과시 +1만원</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="table-text-wrap style1">
+                                                    <h4>특수자동차</h4>
+                                                </div>
+                                                <div class="ta-c table-row">
+                                                    <table>
+                                                        <caption>소형특수자동차, 대형특수자동차의 비영업용, 영업용에 대한 표</caption>
+                                                        <colgroup>
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>구분</th>
+                                                                <th>비영업용</th>
+                                                                <th>영업용</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>소형특수자동차</td>
+                                                                <td>58,500원</td>
+                                                                <td>13,500원</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>대형특수자동차</td>
+                                                                <td>157,500원</td>
+                                                                <td>36,000원</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="table-text-wrap style1">
+                                                    <h4>3륜 이하 소형자동차</h4>
+                                                </div>
+                                                <div class="ta-c table-row">
+                                                    <table>
+                                                        <caption>3륜 이하 소형자동차의 비영업용, 영업용에 대한 표</caption>
+                                                        <colgroup>
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                            <col width="*%">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>구분</th>
+                                                                <th>비영업용</th>
+                                                                <th>영업용</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>전체</td>
+                                                                <td>18,000원</td>
+                                                                <td>3,300원</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>납부방법</dt>
+                                            <dd>
+                                                <ul class="bul-dot">
+                                                    <li>정기분 : 연세액을 1/2의 금액으로 분할하여 6월, 12월에 과세합니다. (납기가 있는 달의 1일 현재의 소유자에게 부과)</li>
+                                                    <li>분할납부 : 납세자가 신청하는 경우에 연세액을 1/4의 금액으로 분할하여 3월, 6월, 9월, 12월에 분납할 수 있습니다.</li>
+                                                    <li>3월 분할납부분은 3월 16일, 9월 분할납부분은 9월 16일 현재의 자동차 소재지를 관할하는 시·군·구에서 징수합니다.</li>
+                                                    <li>1년 세액을 일시에(1,3,6,9월) 납부하면 미리 납부할 해당세액의 5%를 공제합니다. (※ '22년 이전 10%, '23년 7%, '24년 5%, '25년 이후 3% 적용)</li>
+                                                    <li>수시부과 : 신규등록이나 말소등록을 한 경우와 비과세 또는 감면대상으로 되거나, 비과세 또는 감면대상이 과세대상이 되는 경우 소유권 이전(일할계산 포함)을 하는 경우에 수시분으로 부과합니다.</li>
+                                                    <li>사용일수 : 일할계산은 매매, 증여 등으로 소유권이전이 발생하는 경우 자동차등록원부상 등록일을 기준으로 세액을 산출합니다.</li>
+                                                    <li>자동차세를 체납한 경우 : 가산금 부과 및 번호판 영치, 재산압류 등의 불이익을 받게 됩니다.</li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

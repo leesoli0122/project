@@ -1,0 +1,364 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>고객센터 > 자동차세 계산하기 > 자동차세</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">고객센터</a></li>
+                        <li><a href="javascript:void(0);">자동차세 계산하기</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>자동차세 계산하기</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+                <div class="tabs-wrap">
+                    <div class="tabs">
+                        <ul class="tab-item">
+                            <li class="on" data-tab="tab-cont01"><a href="#none">자동차세</a></li>
+                            <li data-tab="tab-cont02" class=""><a href="#none">과세기준 </a></li>
+                            <li data-tab="tab-cont03" class="style2"><a href="#none">장애인 감면</br>(비영업용 승용차) </a></li>
+                        </ul>
+                        <div class="tab-content-area">
+
+                            <div id="tab-cont01" class="tab-content">
+                                <div class="sub-text-wrap style3">
+                                    <p class="caption"><span class="red">자동차세 계산하기</span>는 사용자의 편의를 위한 메뉴로, <span class="red">실제 차량구입시의 개별소비세와 차이가 있을 수</span> 있습니다.</p>
+                                    <p class="caption">승용 전기자동차는 배기량에 0을 입력해 주세요.</p>
+                                    <p class="caption">10인승 이하는 승용, 11인승 이상은 승합을 선택해 주세요 (단 다마스는 승합)</p>
+                                </div>
+                                <form>
+                                    <div class="table-type">
+                                        <div class="col">
+                                            <dl>
+                                                <dt>차종</dt>
+                                                <dd class="form-group radio">
+                                                    <ul class="radio-box">
+                                                        <li>
+                                                            <input type="radio" id="radio-1" name="car">
+                                                            <label for="radio-1"class="radio-button"><span>승용</span></label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="radio-2" name="car" checked="">
+                                                            <label for="radio-2"class="radio-button"><span>승합</span></label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="radio-3" name="car" checked="">
+                                                            <label for="radio-3"class="radio-button"><span>화물</span></label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="radio-4" name="car" checked="">
+                                                            <label for="radio-4"class="radio-button"><span>특수</span></label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="radio-5" name="car" checked="">
+                                                            <label for="radio-5"class="radio-button"><span>3륜이하 소형</span></label>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>용도</dt>
+                                                <dd class="form-group radio">
+                                                    <ul class="radio-box">
+                                                        <li>
+                                                            <input type="radio" id="radio-6" name="use">
+                                                            <label for="radio-6"class="radio-button"><span>비영업용</span></label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="radio-7" name="use" checked="">
+                                                            <label for="radio-7" class="radio-button"><span>영업용</span></label>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>배기량</dt>
+                                                <dd class="form-group">
+                                                    <div class="col-1">
+                                                        <input id="" title="배기량" type="amount" class="form-control amount-num" placeholder="1998"
+                                                            inputmode="numeric"><!-- [D] inputmode="numeric" : 세자리 수마다 콤마 적용  -->
+                                                        <span class="amount-txt">cc</span>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                            <!--S: 승용/영업용 –전기차 제외에서 숨김처리 -->
+                                            <dl>
+                                                <dt>최초등록</dt>
+                                                <dd class="dp-b-b">
+                                                    <div class="form-group radio">
+                                                        <ul class="radio-box">
+                                                            <li>
+                                                                <input type="radio" id="radio-8" name="term">
+                                                                <label for="radio-8"class="radio-button"><span>상반기(1월~6월)</span></label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" id="radio-9" name="term" checked="">
+                                                                <label for="radio-9" class="radio-button"><span>하반기(7월~12월)</span></label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </dd>
+                                                <dd class="dp-b-b">
+                                                    <div class="form-group">
+                                                        <input type="text" id="" title="연도선택" name="date" class="form-control yearpicker" placeholder="YYYY" onclick="openPopup('yearDatePopup')" readonly><!-- [D] : yearpicker 클래스 : 팝업 형태-->
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                            <!--E: 승용/영업용 –전기차 제외,전기차에만 해당에서 숨김처리 -->
+                                            <!--S: 승합일 때 -->
+                                            <dl>
+                                                <dt>구분</dt>
+                                                <dd class="form-group radio">
+                                                    <ul class="radio-box">
+                                                        <li>
+                                                            <input type="radio" id="radio-9" name="bus">
+                                                            <label for="radio-9"class="radio-button"><span>소형일반버스</span></label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="radio-10" name="bus" checked="">
+                                                            <label for="radio-10" class="radio-button"><span>대형일반버스</span></label>
+                                                        </li>
+                                                        <!--S: 승합/영업용일때 추가 -->
+                                                        <li>
+                                                            <input type="radio" id="radio-11" name="bus">
+                                                            <label for="radio-11"class="radio-button"><span>소형전세버스</span></label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="radio-12" name="bus" checked="">
+                                                            <label for="radio-12" class="radio-button"><span>대형전세버스</span></label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="radio-13" name="bus" checked="">
+                                                            <label for="radio-13" class="radio-button"><span>고속버스</span></label>
+                                                        </li>
+                                                        <!--E: 승합/영업용일때 추가 -->
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <!--E: 승합일 때 -->
+                                            <!--S: 특수일 때 -->
+                                            <dl>
+                                                <dt>구분</dt>
+                                                <dd class="form-group radio">
+                                                    <ul class="radio-box">
+                                                        <li>
+                                                            <input type="radio" id="radio-9" name="bus">
+                                                            <label for="radio-9"class="radio-button"><span>소형특수자동차</span></label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" id="radio-11" name="bus">
+                                                            <label for="radio-11"class="radio-button"><span>대형특수자동차</span></label>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <!--E: 특수일 때 -->
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="btn-wrap bottom">
+                                    <button type="button" name="button" class="btn btn-primary">계산하기</button>
+                                </div>
+                                <div class="result-area car-calc">
+                                    <!-- S: 계산결과 -->
+                                    <ul class="text-result">
+                                        <li class="tit">
+                                            <ul>
+                                                <li>승용</li>
+                                                <li>승합</li>
+                                                <li>비영업용</li>
+                                                <li>배기량 <span>1988CC</span></li>
+                                            </ul>
+                                        </li>
+                                        <li class="txt bold">연간세액 <span>519,480 원</span></li>
+                                    </ul>
+                                    <!-- E: 계산결과 -->
+                                </div>
+                                <div class="sub-text-wrap style2">
+                                    <h4>과세기간별 납입금</h4>
+                                    <!-- 승용/비영업용/상반기 1월 ~ 6월/하반기 7월 ~ 12월 (전기차 제외)일 때 -->
+                                    <p class="caption">교육세 포함된 납입할 금액입니다. 괄호안은 차량에 따른 감액 비율</p>
+                                    <!-- 승용/비영업용 – 전기차일 때 -->
+                                    <p class="caption">차량에 따른 경감 적용 없이 매년 동일하면, 합계에는 교육세 30%가 포함되었습니다.</p>
+                                    <!--  -->
+                                    <p class="caption">차량 연식에 따른 경감 적용없이 매년 동일합니다.</p>
+                                </div>
+                                <div class="table-wrap">
+                                    <div class="table-type ta-c table-row">
+                                        <table aria-role="table">
+                                            <caption>기간,실적금액에 대한 리스,렌터카,합계 테이블</caption>
+                                            <colgroup>
+                                                <col width="5%">
+                                                <col width="*%">
+                                                <col width="*%">
+                                                <col width="*%">
+                                                <col width="*%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>년도</th>
+                                                    <th>상반기(6월)</th>
+                                                    <th>하반기(12월)</th>
+                                                    <th>합계</th>
+                                                    <th>선납시(1월)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2024</td>
+                                                    <td>259,740 원</td>
+                                                    <td>259,740 원</td>
+                                                    <td>519,480 원</td>
+                                                    <td>6.4% 공제</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2025</td>
+                                                    <td>259,740 원</td>
+                                                    <td>259,740 원</td>
+                                                    <td>519,480 원</td>
+                                                    <td>6.4% 공제</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2026</td>
+                                                    <td><span class="blue">(-5%)</span>246,750 원</td>
+                                                    <td><span class="blue">(-5%)</span>246,750 원</td>
+                                                    <td>493,500 원</td>
+                                                    <td>6.4% 공제</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2027</td>
+                                                    <td><span class="blue">(-10%)</span>233,760 원</td>
+                                                    <td><span class="blue">(-10%)</span>233,760 원</td>
+                                                    <td>467,520 원</td>
+                                                    <td>6.4% 공제</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>매년</td>
+                                                    <td>50,000 원</td>
+                                                    <td>50,000 원</td>
+                                                    <td>130,000 원</td>
+                                                    <td>11,700 원</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+
+    <div id="yearDatePopup" class="layerpopup laypop yeardate" tabindex="0">
+        <div class="content-wrap">
+            <div class="pop-header">
+                <h3 class="pop-title">년도를 선택해 주세요</h3>
+                <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+            </div>
+            <div class="ly-con-wrap">
+                <div class="choose-wrap">
+                    <div class="choose-group brand">
+                        <ul class="choose">
+                            <li><button type="button">2024</button></li>
+                            <li><button type="button">2023</button></li>
+                            <li><button type="button">2022</button></li>
+                            <li><button type="button">2021</button></li>
+                            <li><button type="button">2020</button></li>
+                            <li><button type="button">2019</button></li>
+                            <li><button type="button">2018</button></li>
+                            <li><button type="button">2017</button></li>
+                            <li><button type="button">2016</button></li>
+                            <li><button type="button">2015</button></li>
+                            <li><button type="button">2014</button></li>
+                            <li><button type="button">2013</button></li>
+                            <li><button type="button">2012</button></li>
+                            <li><button type="button">2011</button></li>
+                            <li><button type="button">2010</button></li>
+                            <li><button type="button">2009</button></li>
+                            <li><button type="button">2008</button></li>
+                            <li><button type="button">2006</button></li>
+                            <li><button type="button">2005</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap popup">
+                <button type="button" name="button" class="btn btn-bottom confirm">확인</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

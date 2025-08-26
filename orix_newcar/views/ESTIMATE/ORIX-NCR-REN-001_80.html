@@ -1,0 +1,1612 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>렌터카 견적내기 < 견적내기</title>
+
+            <link href="../../resources/css/lib/default_80.css" rel="stylesheet" type="text/css" />
+            <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+            <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+            <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+            <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+            <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+            <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+            <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+            <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+            <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+</head>
+
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function () {
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function () {
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+        <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">견적내기</a></li>
+                        <li><a href="javascript:void(0);">렌터카 견적내기</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>렌터카 견적내기</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+                <form>
+                    <!-- 차량/옵션/출고 -->
+                    <!-- [D]: 선구매일 때 차량/옵션/출고 grid-list-body에 deactive 클래스 추가 -->
+                    <section class="grid-wrap">
+                        <!-- 차량 선택 -->
+                        <div class="grid-list-wrap">
+                            <p class="grid-list-header">차량 선택</p>
+                            <div class="grid-list-body">
+                                <!-- pop가 있는 곳은 팝업 / 브랜드에는 arr 클래스 디폴트 / arr 클래스는 팝업에서 선택 완료 후 추가 -->
+                                <ul>
+                                    <li class="brand-logo"><!--20150115 클래스 추가-->
+                                        <span class="tit">브랜드</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp01')">
+                                            <!--[D]: 선택 완료 후에는 span에 choose 와 해당 로고 클래스명 추가 -->
+                                            <span>선택해 주세요</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">모델</span>
+                                        <div class="pop"><span>브랜드를 선택해 주세요</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">세부차종</span>
+                                        <div class="pop"><span>브랜드를 선택해 주세요</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">트림</span>
+                                        <div class="pop"><span>브랜드를 선택해 주세요</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">외장 색상</span>
+                                        <div class="pop"><span>브랜드를 선택해 주세요</span></div>
+                                    </li>
+                                    <li><!-- [변경]20241029 인풋으로 변경 -->
+                                        <span class="tit">내장 색상</span>
+                                        <div class="form-group">
+                                            <div class="col-1">
+                                                <input id="" type="amount" title="내장 색상" class="form-control"
+                                                    placeholder="직접 입력">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- S:브랜드/모델/세부차종/트림/색상까지 선택 완료 -->
+                                <!-- <ul>
+                                    <li>
+                                        <span class="tit">브랜드</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp01')"><span class="choose hyu">현대</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">모델</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp01')"><span>그랜저</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">세부차종</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp01')"><span>2025년 디 올 뉴 그랜저 하이브리드</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">트림</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp01')"><span>1.6 익스클루시브 [5인승]</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">외장 색상</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp02')"><span>세레니티 펄 화이트 / 100,000원</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">내장 색상</span>
+                                        <div class="form-group">
+                                            <div class="col-1">
+                                                <input id="" type="amount" title="내장 색상" class="form-control" placeholder="블랙/브라운 투톤">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul> -->
+                                <!-- E:브랜드/모델/세부차종/트림/색상까지 선택 완료 -->
+                            </div>
+                            <div class="grid-list-footer">
+                                <p class="tit">기본 가격</p>
+                                <span class="txt"><span>0</span>원</span>
+                            </div>
+                        </div>
+                        <!-- 옵션 선택 -->
+                        <div class="grid-list-wrap">
+                            <p class="grid-list-header">옵션 선택</p>
+                            <div class="grid-list-body option">
+                                <!-- 화면 진입 시 최초 Default 상태 -->
+                                <!-- <div class="result-area nodata">
+                                    <div class="text-wrap">
+                                        <h3 class="result-no">차량을 먼저 선택해주세요.</h3>
+                                    </div>
+                                </div> -->
+                                <!-- 옵션이 없을 때 -->
+                                <!-- <div class="result-area nodata">
+                                    <div class="text-wrap">
+                                        <h3 class="result-no">선택한 차종에 포함된 옵션이 없습니다.</h3>
+                                    </div>
+                                </div> -->
+                                <!--S: 차량정보 선택 완료 시 , 차량에 해당하는 옵션 정보, 금액 노출 -->
+                                <div class="form-group check">
+                                    <ul class="check-box">
+                                        <li>
+                                            <div class="check-top">
+                                                <input type="checkbox" id="check-1" name="option-select">
+                                                <label for="check-1" class="check-button">
+                                                    <span>파노라마 선루프</span>
+                                                </label>
+                                                <span class="txt"><span class="num">0</span>원</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-top">
+                                                <input type="checkbox" id="check-2" name="option-select">
+                                                <label for="check-2" class="check-button">
+                                                    <span>익스테리어 디자인</span>
+                                                </label>
+                                                <span class="txt"><span class="num">000,000</span>원</span>
+                                            </div>
+                                            <p class="description">Full LED 헤드램프(프로젝션 타입), 방향지시등(앞), LED 리어 콤비램프, LED
+                                                보조제등 등</p>
+                                        </li>
+                                        <li>
+                                            <div class="check-top">
+                                                <input type="checkbox" id="check-3" name="option-select">
+                                                <label for="check-3" class="check-button">
+                                                    <span>현대 스마트 센스 패키지 l</span>
+                                                </label>
+                                                <span class="txt"><span class="num">0</span>원</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-top">
+                                                <input type="checkbox" id="check-4" name="option-select">
+                                                <label for="check-4" class="check-button">
+                                                    <span>헤드업 디스플레이</span>
+                                                </label>
+                                                <span class="txt"><span class="num">0</span>원</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-top">
+                                                <input type="checkbox" id="check-5" name="option-select">
+                                                <label for="check-5" class="check-button">
+                                                    <span>JBL 사운드 패키지</span>
+                                                </label>
+                                                <span class="txt"><span class="num">000,000</span>원</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-top">
+                                                <input type="checkbox" id="check-6" name="option-select">
+                                                <label for="check-6" class="check-button">
+                                                    <span>프리미어 인테리어 셀렉션</span>
+                                                </label>
+                                                <span class="txt"><span class="num">0</span>원</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-wrap">
+                                            <p class="tit">추가옵션</p>
+                                        </li>
+                                        <li class="plus-option">
+                                            <span class="tit">옵션명</span>
+                                            <div class="form-group">
+                                                <div class="col-1">
+                                                    <input id="" title="옵션명" type="text" name="" class="form-control"
+                                                        placeholder="직접 입력">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="plus-option">
+                                            <span class="tit">금액</span>
+                                            <div class="form-group">
+                                                <div class="col-1">
+                                                    <input id="" type="amount" title="금액"
+                                                        class="form-control amount-num" placeholder="금액입력"
+                                                        inputmode="numeric">
+                                                    <span class="amount-txt">원</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--E: 차량정보 선택 완료 시 , 차량에 해당하는 옵션 정보, 금액 노출 -->
+                            </div>
+                            <div class="grid-list-footer">
+                                <p class="tit">총 옵션 가격</p>
+                                <span class="txt"><span>0</span>개 / <span>0</span>원</span>
+                            </div>
+                        </div>
+                        <!-- 출고 선택 -->
+                        <div class="grid-list-wrap no">
+                            <p class="grid-list-header">출고 선택</p>
+                            <div class="grid-list-body style2">
+                                <ul>
+                                    <!--[D]: 수입차는 대리점출고 고정 -->
+                                    <li>
+                                        <span class="tit">출고구분</span>
+                                        <div class="form-group radio">
+                                            <ul class="radio-box">
+                                                <li>
+                                                    <input type="radio" id="radio-1" name="release">
+                                                    <label for="radio-1" class="radio-button"><span>특판출고</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="radio-2" name="release">
+                                                    <label for="radio-2" class="radio-button"><span>대리점출고</span></label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <!--S: 국산/수입 대리점 출고시 노출 -->
+                                    <!-- <li>
+                                        <span class="tit">할인액</span>
+                                        <div class="form-group">
+                                            <div class="col-1">
+                                                <input id="" type="amount" title="할인액" class="form-control amount-num" placeholder="0"
+                                                    inputmode="numeric">
+                                                <span class="amount-txt">원</span>
+                                            </div>
+                                            <div class="sale"><span>0</span> %</div>
+                                        </div>
+                                    </li> -->
+                                    <!--E: 대리점 출고시 노출  -->
+                                    <li>
+                                        <span class="tit">제조사 탁송료</span>
+                                        <div class="form-group">
+                                            <div class="col-1">
+                                                <input id="" type="amount" title="제조사 탁송료"
+                                                    class="form-control amount-num" placeholder="0" inputmode="numeric">
+                                                <span class="amount-txt">원</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--S: 특판출고면서 선택한 차량이 전기차인 경우 -->
+                                    <!-- <li>
+                                        <span class="tit">전기차 보조금</span>
+                                        <div class="form-group">
+                                            <div class="col-1">
+                                                <input id="" type="amount" title="제조사 탁송료" class="form-control amount-num" placeholder="0"
+                                                    inputmode="numeric">
+                                                <span class="amount-txt">원</span>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                    <!--E: 특판출고면서 선택한 차량이 전기차인 경우 -->
+                                    <!--S: 수입차일 경우 -->
+                                    <!-- <li>
+                                        <span class="tit">딜러사</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">선택없음</option>
+                                                        <option value="0">주식회사삼천리모터스</option>
+                                                        <option value="1">(주)내쇼날모터스</option>
+                                                        <option value="2">(주)바바리안모터스</option>
+                                                        <option value="3">(주)한독모터스</option>
+                                                        <option value="4">(주)동성모터스</option>
+                                                        <option value="5">코오롱글로벌(주)</option>
+                                                        <option value="6">도이치모터스(주)</option>
+                                                        <option value="7">코오롱모빌리티그룹(주)</option>
+                                                        <option value="8">코오롱모터스(주)</option>
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                    <!--E: 수입차일 경우 -->
+                                </ul>
+                            </div>
+
+                            <div>
+                                <!--S: 대리점 출고시 노출  -->
+                                <!-- <ul class="all-cost-area">
+                                    <li class="cost-group">
+                                        <span class="tit">손수차량가격</span>
+                                        <span class="txt"><span>00,000,000</span> 원</span>
+                                    </li>
+                                    <li class="cost-group">
+                                        <span class="tit">면세가격</span>
+                                        <span class="txt"><span>00,000,000</span> 원</span>
+                                    </li>
+                                    <li class="cost-group">
+                                        <span class="tit">할인금액</span>
+                                        <span class="txt"><span>0</span> 원</span>
+                                    </li>
+                                    <li class="cost-group">
+                                        <span class="tit">제조사탁송료</span>
+                                        <span class="txt"><span>0</span> 원</span>
+                                    </li>
+                                </ul>
+                                <div class="grid-list-footer style2">
+                                    <div class="bill">
+                                        <p class="tit">출고가격(계산서)</p>
+                                        <button type="button" class="btn btn-num">+1</button>
+                                        <button type="button" class="btn btn-num">-1</button>
+                                    </div>
+                                    <span class="txt"><span>00,000,000</span> 원</span>
+                                </div> -->
+                                <!--E: 대리점 출고시 노출  -->
+                                <!-- S: 특판출고시 노출 -->
+                                <div class="grid-list-footer style2">
+                                    <p class="tit">차량가격(계산서)</p>
+                                    <span class="txt"><span>0</span>원</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- 보험/탁송/용품 -->
+                    <section class="grid-wrap">
+                        <!-- 보험 선택 -->
+                        <div class="grid-list-wrap style2">
+                            <p class="grid-list-header">보험 선택</p>
+                            <div class="grid-list-body style2">
+                                <ul>
+                                    <li>
+                                        <span class="tit">고객구분</span>
+                                        <div class="form-group radio">
+                                            <ul class="radio-box">
+                                                <li>
+                                                    <input type="radio" id="radio-3" name="client" checked>
+                                                    <label for="radio-3" class="radio-button"><span>개인</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="radio-4" name="client">
+                                                    <label for="radio-4" class="radio-button"><span>개인사업자</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="radio-5" name="client">
+                                                    <label for="radio-5" class="radio-button"><span>법인</span></label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <!--S: 개인사업자/법인사업자 -->
+                                    <!-- 개인사업자/법인사업자
+                                    <li>
+                                        <span class="tit">임직원 한정</br>운전 특약</span>
+                                        <div class="form-group radio">
+                                            <ul class="radio-box">
+                                                <li>
+                                                    <input type="radio" id="radio-5" name="employee">
+                                                    <label for="radio-5" class="radio-button"><span>가입(임직원 외 운행시 보상 불가)
+                                                    </span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="radio-6" name="employee" checked>
+                                                    <label for="radio-6" class="radio-button"><span>미가입</span></label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li> -->
+                                    <!--E: 개인사업자/법인사업자 -->
+                                    <li>
+                                        <span class="tit">보험정보</span>
+                                        <div class="pop">차량을 먼저 선택해주세요</div><!--[D]:보험 선택 팝업-->
+                                    </li>
+                                    <!--S: 개인사업자/법인 -->
+                                    <!--
+                                    <li>
+                                        <span class="tit">조건부 업종</span>
+                                        <div class="form-group radio">
+                                            <ul class="radio-box">
+                                                <li>
+                                                    <input type="radio" id="radio-7" name="business">
+                                                    <label for="radio-7" class="radio-button"><span>해당
+                                                    </span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" id="radio-8" name="business">
+                                                    <label for="radio-8" class="radio-button"><span>해당없음</span></label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li> -->
+                                    <!--E: 개인사업자/법인  -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 탁송정보 선택 -->
+                        <div class="grid-list-wrap style2">
+                            <p class="grid-list-header">탁송정보 선택</p>
+                            <!--S: 20241216 수정 -->
+                            <div class="grid-list-body option style2">
+                                <ul>
+                                    <li>
+                                        <span class="tit">탁송방법</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">탁송방법 선택
+                                                        </option>
+                                                        <option value="0">외주탁송(1차+2차)</option>
+                                                        <option value="1">제조사+외주 2차</option>
+                                                        <option value="2">제조사탁송</option><!-- [D]:특판출고 시 제조사탁송 불가처리 -->
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">출고지</span>
+                                        <span class="change-txt">울산</span><!--[20241106] 감싸고 있는 div 삭제-->
+                                    </li>
+                                    <!--s :대리점 출고인 경우-제조사 탁송일 때 숨김처리 -->
+                                    <li>
+                                        <span class="tit">도착지</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">도착지 선택
+                                                        </option><!-- [D] : default - 셀렉트의 placeholder 기능-->
+                                                        <option value="0">서울</option>
+                                                        <option value="1">경기 남부</option>
+                                                        <option value="2">경기 북부</option>
+                                                        <option value="3">인천</option>
+                                                        <option value="4">강원 강릉</option>
+                                                        <option value="5">충북 청주</option>
+                                                        <option value="6">충남 대전</option>
+                                                        <option value="7">경북 대구</option>
+                                                        <option value="8">경남 부산</option>
+                                                        <option value="9">전북 전주</option>
+                                                        <option value="10">전남 광주</option>
+                                                        <option value="11">제주</option>
+                                                        <option value="12">번호판 퀵배송(수도권)</option>
+                                                        <option value="13">번호판 퀵배송(지방)</option>
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="num">
+                                        <span class="tit">외주 탁송료</span>
+                                        <div class="change-txt num"><span>0</span>원</div>
+                                    </li>
+                                    <!--E :대리점 출고인 경우-제조사 탁송일 때 숨김처리 -->
+                                </ul>
+                            </div>
+                            <!--E: 20241216 수정 -->
+                        </div>
+                        <!-- 용품/수수료/CM 선택 -->
+                        <div class="grid-list-wrap style2">
+                            <p class="grid-list-header">용품/수수료/CM 선택</p>
+                            <div class="grid-list-body style2">
+                                <ul>
+                                    <li>
+                                        <span class="tit">용품</span>
+                                        <div class="pop">차량을 먼저 선택해 주세요</div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">수수료</span>
+                                        <div class="change-txt">
+                                            <!--S: 국산차 -->
+                                            <p>CM+AG 8%이내</p>
+                                            <!--E: 국산차 -->
+                                            <!--S: 수입차 -->
+                                            <!-- <p>CM+AG 10%이내</p> -->
+                                            <!--E: 수입차 -->
+                                            <div class="form-group">
+                                                <div class="charge">
+                                                    <span class="tit">CM</span>
+                                                    <div class="col-2">
+                                                        <input id="" type="amount" class="form-control amount-num"
+                                                            placeholder="금액"
+                                                            inputmode="numeric"><!-- [D] inputmode="numeric" : 세자리 수마다 콤마 적용  -->
+                                                        <span class="amount-txt">%</span>
+                                                    </div>
+                                                    <span class="num">0<span></span>원</span>
+                                                </div>
+                                                <div class="charge">
+                                                    <span class="tit">AG</span>
+                                                    <div class="col-2">
+                                                        <input id="" type="amount" class="form-control amount-num"
+                                                            placeholder="금액"
+                                                            inputmode="numeric"><!-- [D] inputmode="numeric" : 세자리 수마다 콤마 적용  -->
+                                                        <span class="amount-txt">%</span>
+                                                    </div>
+                                                    <span class="num">0<span></span>원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">CM</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp07')">선택 없음</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- 계약조건 -->
+                    <section class="grid-wrap btnSelec">
+                        <!-- case1 국산차/개인인수형(국산차-정비제외) -->
+                        <div class="grid-list-wrap style3">
+                            <p class="grid-list-header on">계약조건 01</p>
+                            <div class="grid-list-body">
+                                <!--S: 차량 선택 전 default -->
+                                <!-- <div class="result-area nodata frist-car">
+                                    <div class="text-wrap">
+                                        <h3>차량을 먼저 선택해 주세요.</h3>
+                                    </div>
+                                </div> -->
+                                <!--E: 차량 선택 전 default -->
+                                <ul>
+                                    <li>
+                                        <span class="tit">상품구분</span>
+                                        <div class="change-txt">렌터카(장기)</div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">상품명</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">
+                                                            개인인수형(국산차-정비제외)</option>
+                                                        <option value="0">개인인수형</option>
+                                                        <option value="1">개인인수형(국산차-정비제외)</option>
+                                                        <!--[D]: 국산차 일 때만 노출 -->
+                                                        <!--<option value="2">만기인수형(수입차-소비자가)</option>--><!--[D]: 수입차 일 때만 노출 -->
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">기간</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">36개월</option>
+                                                        <option value="0">12개월</option>
+                                                        <option value="1">24개월</option>
+                                                        <option value="2">36개월</option>
+                                                        <option value="3">48개월</option>
+                                                        <option value="4">60개월</option>
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">약정거리</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">2만 Km
+                                                        </option>
+                                                        <option value="0">1만 Km</option>
+                                                        <option value="1">1.5만 Km</option><!--[D]: 국산차 일때만 노출 -->
+                                                        <option value="2">2만 Km</option>
+                                                        <option value="3">3만 Km</option>
+                                                        <option value="4">4만 Km</option><!--[D]: 국산차 일때만 노출 -->
+                                                        <option value="5">무제한</option><!--[D]: 국산차 일때만 노출 -->
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">선납금</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp08')">0% / 0원</div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">선납금</br>납입방법</span>
+                                        <div><span class="change-txt">회차별 균등배분</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">보증금</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp09')">0% / 0원</div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">잔존가치</span>
+                                        <div class="residual">
+                                            <div class="form-group">
+                                                <div class="col-4">
+                                                    <div class="select-box">
+                                                        <div class="se-select" data-stove="select">
+                                                            <select class="" title="메뉴구분">
+                                                                <option value="" disabled="" selected="" hidden="">64%
+                                                                </option>
+                                                                <option value="0">64%</option>
+                                                                <option value="1">63%</option>
+                                                                <option value="2">62%</option>
+                                                                <option value="3">61%</option>
+                                                                <option value="4">60%</option>
+                                                                <option value="5">59%</option>
+                                                                <option value="6">58%</option>
+                                                                <option value="7">57%</option>
+                                                                <option value="8">56%</option>
+                                                                <option value="9">55%</option>
+                                                                <option value="10">54%</option>
+                                                                <option value="11">53%</option>
+                                                                <option value="12">52%</option>
+                                                                <option value="13">51%</option>
+                                                                <option value="14">50%</option>
+                                                                <option value="15">49%</option>
+                                                                <option value="16">48%</option>
+                                                                <option value="17">47%</option>
+                                                                <option value="18">46%</option>
+                                                                <option value="19">45%</option>
+                                                                <option value="20">44%</option>
+                                                                <option value="21">43%</option>
+                                                                <option value="22">42%</option>
+                                                                <option value="23">41%</option>
+                                                                <option value="24">40%</option>
+                                                                <option value="25">39%</option>
+                                                                <option value="26">38%</option>
+                                                                <option value="27">37%</option>
+                                                                <option value="28">36%</option>
+                                                                <option value="29">35%</option>
+                                                                <option value="30">34%</option>
+                                                                <option value="31">33%</option>
+                                                                <option value="32">32%</option>
+                                                                <option value="33">31%</option>
+                                                                <option value="34">30%</option>
+                                                                <option value="35">29%</option>
+                                                                <option value="36">28%</option>
+                                                            </select>
+                                                            <div class="e-select-dim"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="num"><span class="red">00,000,000</span> 원</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">정비</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분" disabled>
+                                                        <option value="" disabled="" selected="" hidden="">정비(미포함)
+                                                        </option>
+                                                        <option value="0">정비(미포함)</option>
+                                                        <option value="1">오릭스 정비 Premium</option>
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div><!--[D]: 개인인수형(국산차-정비제외) 일 때 정비(미포함)에 disabled -->
+                                    </li>
+                                    <li class="num">
+                                        <span class="tit">출고전납입</span>
+                                        <div class="change-txt num"><span>0</span> 원</div>
+                                        <!-- 선납금+보증금 입력한 상태인 경우
+                                        <div class="change-txt delivery num">
+                                            <span>선납금+보증금</span>
+                                            <div><span>0</span> 원</div>
+                                        </div> -->
+                                        <!-- 보증금만 입력한 상태인 경우
+                                        <div class="change-txt delivery num">
+                                            <span>보증금</span>
+                                            <div><span>0</span> 원</div>
+                                        </div> -->
+                                        <!-- 선납금만 입력한 상태인 경우
+                                        <div class="change-txt delivery num">
+                                            <span>선납금</span>
+                                            <div><span>0</span> 원</div>
+                                        </div> -->
+                                    </li>
+                                </ul>
+                                <!--S: 계약조건 로딩 페이지 -->
+                                <!--E: 계약조건 로딩 페이지 -->
+                            </div>
+                            <!-- 차량 선택 전에는 display:none; -->
+                            <div class="grid-list-footer">
+                                <p class="tit">월납입금</p>
+                                <!-- <span class="num">463,344</span> -->
+                                <button type="button" name="button" class="btn btn-input active">계산하기</button>
+                            </div>
+                        </div>
+                        <!-- case2 국산차/개인인수형 -->
+                        <div class="grid-list-wrap style3">
+                            <p class="grid-list-header">계약조건 02</p>
+                            <div class="grid-list-body">
+                                <!--S: 차량 선택 전 default -->
+                                <!-- <div class="result-area nodata frist-car">
+                                    <div class="text-wrap">
+                                        <h3>차량을 먼저 선택해 주세요.</h3>
+                                    </div>
+                                </div> -->
+                                <!--E: 차량 선택 전 default -->
+                                <ul>
+                                    <li>
+                                        <span class="tit">상품구분</span>
+                                        <div class="change-txt">렌터카(장기)</div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">상품명</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">개인인수형</option>
+                                                        <option value="0">개인인수형</option>
+                                                        <option value="1">개인인수형(국산차-정비제외)</option>
+                                                        <!--[D]: 국산차 일 때만 노출 -->
+                                                        <!--<option value="2">만기인수형(수입차-소비자가)</option>--><!--[D]: 수입차 일 때만 노출 -->
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">기간</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">48개월</option>
+                                                        <option value="0">12개월</option>
+                                                        <option value="1">24개월</option>
+                                                        <option value="2">36개월</option>
+                                                        <option value="3">48개월</option>
+                                                        <option value="4">60개월</option>
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">약정거리</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">2만 Km
+                                                        </option>
+                                                        <option value="0">1만 Km</option>
+                                                        <option value="1">1.5만 Km</option><!--[D]: 국산차 일때만 노출 -->
+                                                        <option value="2">2만 Km</option>
+                                                        <option value="3">3만 Km</option>
+                                                        <option value="4">4만 Km</option><!--[D]: 국산차 일때만 노출 -->
+                                                        <option value="5">무제한</option><!--[D]: 국산차 일때만 노출 -->
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">선납금</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp08')">0% / 0원</div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">선납금</br>납입방법</span>
+                                        <div><span class="change-txt">회차별 균등배분</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">보증금</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp09')">0% / 0원</div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">잔존가치</span>
+                                        <div class="residual">
+                                            <div class="form-group">
+                                                <div class="col-4">
+                                                    <div class="select-box">
+                                                        <div class="se-select" data-stove="select">
+                                                            <select class="" title="메뉴구분">
+                                                                <option value="" disabled="" selected="" hidden="">57%
+                                                                </option>
+                                                                <option value="0">64%</option>
+                                                                <option value="1">63%</option>
+                                                                <option value="2">62%</option>
+                                                                <option value="3">61%</option>
+                                                                <option value="4">60%</option>
+                                                                <option value="5">59%</option>
+                                                                <option value="6">58%</option>
+                                                                <option value="7">57%</option>
+                                                                <option value="8">56%</option>
+                                                                <option value="9">55%</option>
+                                                                <option value="10">54%</option>
+                                                                <option value="11">53%</option>
+                                                                <option value="12">52%</option>
+                                                                <option value="13">51%</option>
+                                                                <option value="14">50%</option>
+                                                                <option value="15">49%</option>
+                                                                <option value="16">48%</option>
+                                                                <option value="17">47%</option>
+                                                                <option value="18">46%</option>
+                                                                <option value="19">45%</option>
+                                                                <option value="20">44%</option>
+                                                                <option value="21">43%</option>
+                                                                <option value="22">42%</option>
+                                                                <option value="23">41%</option>
+                                                                <option value="24">40%</option>
+                                                                <option value="25">39%</option>
+                                                                <option value="26">38%</option>
+                                                                <option value="27">37%</option>
+                                                                <option value="28">36%</option>
+                                                                <option value="29">35%</option>
+                                                                <option value="30">34%</option>
+                                                                <option value="31">33%</option>
+                                                                <option value="32">32%</option>
+                                                                <option value="33">31%</option>
+                                                                <option value="34">30%</option>
+                                                                <option value="35">29%</option>
+                                                                <option value="36">28%</option>
+                                                            </select>
+                                                            <div class="e-select-dim"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="num"><span class="red">00,000,000</span> 원</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">정비</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">오릭스 정비
+                                                            Premium</option>
+                                                        <option value="0">정비(미포함)</option>
+                                                        <option value="1">오릭스 정비 Premium</option>
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div><!--[D]: 개인인수형(국산차-정비제외) 일 때 정비(미포함)에 disabled -->
+                                    </li>
+                                    <li class="num">
+                                        <span class="tit">출고전납입</span>
+                                        <div class="change-txt num"><span>0</span> 원</div>
+                                        <!-- 선납금+보증금 입력한 상태인 경우
+                                        <div class="change-txt delivery num">
+                                            <span>선납금+보증금</span>
+                                            <div><span>0</span> 원</div>
+                                        </div> -->
+                                        <!-- 보증금만 입력한 상태인 경우
+                                        <div class="change-txt delivery num">
+                                            <span>보증금</span>
+                                            <div><span>0</span> 원</div>
+                                        </div> -->
+                                        <!-- 선납금만 입력한 상태인 경우
+                                        <div class="change-txt delivery num">
+                                            <span>선납금</span>
+                                            <div><span>0</span> 원</div>
+                                        </div> -->
+                                    </li>
+                                </ul>
+                                <!--S: 계약조건 로딩 페이지 -->
+                                <!--E: 계약조건 로딩 페이지 -->
+                            </div>
+                            <!-- 차량 선택 전에는 display:none; -->
+                            <div class="grid-list-footer">
+                                <p class="tit">월납입금</p>
+                                <!-- <span class="num">463,344</span> -->
+                                <button type="button" name="button" class="btn btn-input active">계산중…</button>
+                            </div>
+                            <div class="table-type table-col ta-c calctemp">
+                                <table>
+                                    <caption>계약조건에 대한 렌트기간, 만기처리, 약정거리, 정비상품, 선납금, 보증금, 만기 인수가격 테이블</caption>
+                                    <colgroup>
+                                        <col width="40%">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="col">면세율</th>
+                                            <td>1.15863</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">취득세</th>
+                                            <td>432,730</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">등록비용합계</th>
+                                            <td>432,730</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">공급가격</th>
+                                            <td>45,818,380</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">부가가치세</th>
+                                            <td>4,581,840</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">면세가액</th>
+                                            <td>50,400,22</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">취득원가</th>
+                                            <td>46,716,750</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">부대비용 기본가격</th>
+                                            <td>106,200</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">코일매트</th>
+                                            <td>33,000</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">제비용합계</th>
+                                            <td>512,200</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">썬팅/기타비용</th>
+                                            <td>479,200</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- case3 수입차/만기인수형(수입차, 소비자가) -->
+                        <div class="grid-list-wrap style3">
+                            <p class="grid-list-header">계약조건 03</p>
+                            <div class="grid-list-body">
+                                <!--S: 차량 선택 전 default -->
+                                <!-- <div class="result-area nodata frist-car">
+                                    <div class="text-wrap">
+                                        <h3>차량을 먼저 선택해 주세요.</h3>
+                                    </div>
+                                </div> -->
+                                <!--E: 차량 선택 전 default -->
+                                <ul>
+                                    <li>
+                                        <span class="tit">상품구분</span>
+                                        <div class="change-txt">렌터카(장기)</div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">상품명</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">
+                                                            만기인수형(수입차-소비자가)</option>
+                                                        <option value="0">개인인수형</option>
+                                                        <!--<option value="1">개인인수형(국산차-정비제외)</option>--><!--[D]: 국산차 일 때만 노출 -->
+                                                        <option value="2">만기인수형(수입차-소비자가)</option>
+                                                        <!--[D]: 수입차 일 때만 노출 -->
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">기간</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">60개월</option>
+                                                        <option value="0">12개월</option>
+                                                        <option value="1">24개월</option>
+                                                        <option value="2">36개월</option>
+                                                        <option value="3">48개월</option>
+                                                        <option value="4">60개월</option>
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">약정거리</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">2만 Km
+                                                        </option>
+                                                        <option value="0">1만 Km</option>
+                                                        <option value="1">1.5만 Km</option><!--[D]: 국산차 일때만 노출 -->
+                                                        <option value="2">2만 Km</option>
+                                                        <option value="3">3만 Km</option>
+                                                        <option value="4">4만 Km</option><!--[D]: 국산차 일때만 노출 -->
+                                                        <option value="5">무제한</option><!--[D]: 국산차 일때만 노출 -->
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">선납금</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp08')">0% / 0원</div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">선납금</br>납입방법</span>
+                                        <div><span class="change-txt">회차별 균등배분</span></div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">보증금</span>
+                                        <div class="pop arr" onclick="openPopup('PopUp09')">0% / 0원</div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">잔존가치</span>
+                                        <div class="residual">
+                                            <div class="form-group">
+                                                <div class="col-4">
+                                                    <div class="select-box">
+                                                        <div class="se-select" data-stove="select">
+                                                            <select class="" title="메뉴구분">
+                                                                <option value="" disabled="" selected="" hidden="">49%
+                                                                </option>
+                                                                <option value="0">64%</option>
+                                                                <option value="1">63%</option>
+                                                                <option value="2">62%</option>
+                                                                <option value="3">61%</option>
+                                                                <option value="4">60%</option>
+                                                                <option value="5">59%</option>
+                                                                <option value="6">58%</option>
+                                                                <option value="7">57%</option>
+                                                                <option value="8">56%</option>
+                                                                <option value="9">55%</option>
+                                                                <option value="10">54%</option>
+                                                                <option value="11">53%</option>
+                                                                <option value="12">52%</option>
+                                                                <option value="13">51%</option>
+                                                                <option value="14">50%</option>
+                                                                <option value="15">49%</option>
+                                                                <option value="16">48%</option>
+                                                                <option value="17">47%</option>
+                                                                <option value="18">46%</option>
+                                                                <option value="19">45%</option>
+                                                                <option value="20">44%</option>
+                                                                <option value="21">43%</option>
+                                                                <option value="22">42%</option>
+                                                                <option value="23">41%</option>
+                                                                <option value="24">40%</option>
+                                                                <option value="25">39%</option>
+                                                                <option value="26">38%</option>
+                                                                <option value="27">37%</option>
+                                                                <option value="28">36%</option>
+                                                                <option value="29">35%</option>
+                                                                <option value="30">34%</option>
+                                                                <option value="31">33%</option>
+                                                                <option value="32">32%</option>
+                                                                <option value="33">31%</option>
+                                                                <option value="34">30%</option>
+                                                                <option value="35">29%</option>
+                                                                <option value="36">28%</option>
+                                                            </select>
+                                                            <div class="e-select-dim"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="num"><span class="red">00,000,000</span> 원</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="tit">정비</span>
+                                        <div class="form-group">
+                                            <div class="select-box">
+                                                <div class="se-select ei-w160" data-stove="select">
+                                                    <select class="" title="메뉴구분">
+                                                        <option value="" disabled="" selected="" hidden="">정비(미포함)
+                                                        </option>
+                                                        <option value="0">정비(미포함)</option>
+                                                        <option value="1">오릭스 정비 Premium</option>
+                                                    </select>
+                                                    <div class="e-select-dim"></div>
+                                                </div>
+                                            </div>
+                                        </div><!--[D]: 개인인수형(국산차-정비제외) 일 때 정비(미포함)에 disabled -->
+                                    </li>
+                                    <li class="num">
+                                        <span class="tit">출고전납입</span>
+                                        <!-- <div class="change-txt num"><span>0</span>원</div> -->
+                                        <!-- 선납금+보증금 입력한 상태인 경우
+                                        <div class="change-txt delivery num">
+                                            <span>선납금+보증금</span>
+                                            <div><span>0</span> 원</div>
+                                        </div> -->
+                                        <!-- 보증금만 입력한 상태인 경우
+                                        <div class="change-txt delivery num">
+                                            <span>보증금</span>
+                                            <div><span>0</span> 원</div>
+                                        </div> -->
+                                        <!-- 선납금만 입력한 상태인 경우 -->
+                                        <div class="change-txt delivery num">
+                                            <span>선납금</span>
+                                            <div><span>0</span> 원</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!--S: 계약조건 로딩 페이지 -->
+                                <!--E: 계약조건 로딩 페이지 -->
+                            </div>
+                            <!-- 차량 선택 전에는 display:none; -->
+                            <div class="grid-list-footer">
+                                <p class="tit">월납입금</p>
+                                <span class="num">463,344</span>
+                                <!-- <button type="button" name="button" class="btn btn-input active">계산하기</button> -->
+                            </div>
+                        </div>
+                    </section>
+                    <div class="check-plz">
+                        <p class="plz-tit">견적 작성시 유의사항</p>
+                        <ul class="bul-hypn">
+                            <li>고객님과 계약 전에 반드시 요청받은 차량이 맞는지 트림 및 변속기, 제원, 내외장 색상, 탁송료, 채권의 정보를 다시 한번 확인하시기 바랍니다.</li>
+                            <li>오릭스캐피탈코리아에서 제공하는 차량 정보의 가격, 색상, 판매조건에 오류가 있을 수 있습니다. 계약 전에 필히 확인하여 주시기 바랍니다.</li>
+                            <li>제조사의 약세사리 옵션 선택 시, 출고장에 제한이 있습니다. 전용 출고장의 탁송료를 선택해주세요.</li>
+                            <li>견적에 표시된 차량에는 재고차량이나 단종된 차량이 포함되어 있을 수 있습니다. 실제 판매하는 차량인지 확인하시기 바랍니다.</li>
+                            <li>수동 변속기나 특이한 색상, 일반용 LPG, 특판 출고 등은 상품에 따라 취급되지 않을 수 있습니다.</li>
+                        </ul>
+                    </div>
+                </form>
+                <form>
+                    <section class="show-estimate-wrap">
+                        <div class="btn-wrap">
+                            <button type="button" class="btn btn-estimate">견적서 보기</button>
+                        </div>
+                        <div class="estimate">
+                            <div class="contact">
+                                <span class="tit">연락처</span>
+                                <div class="form-group radio">
+                                    <ul class="radio-box">
+                                        <li>
+                                            <input type="radio" id="radio-29" name="contact" checked="">
+                                            <label for="radio-29" class="radio-button"><span>표시</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="radio-30" name="contact">
+                                            <label for="radio-30" class="radio-button"><span>숨김</span></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="estimate-box">
+                                <div class="estimate-header">
+                                    <div class="top">
+                                        <img src="../../resources/images/logo.png" alt="오릭스캐피탈코리아 로고">
+                                        <p class="tit">렌터카 견적서</p>
+                                        <!--[D]: 연락처 숨김 처리 시 미노출 customer-info에 dp-none 추가 -->
+                                        <div class="customer-info">
+                                            <ul>
+                                                <li>
+                                                    <span class="tit">이름</span>
+                                                    <span class="txt">김오릭</span>
+                                                </li>
+                                                <li>
+                                                    <span class="tit">소속</span>
+                                                    <span class="txt">투게이트컴즈</span>
+                                                </li>
+                                                <li>
+                                                    <span class="tit">전화번호</span>
+                                                    <span class="txt">010-1234-5678</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <ul class="sub-header">
+                                        <li>
+                                            <span class="tit">VIP고객</span>
+                                            <p class="txt">님 귀중</p>
+                                        </li>
+                                        <li>
+                                            <p class="tit">작성일</p>
+                                            <span class="txt">2024.08.30</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="estimate-body">
+                                    <div class="specifications-wrap">
+                                        <div class="car-img">
+                                            <img src="../../resources/images/car/hd_d_a_n_g.png"
+                                                alt="현대 2025년형 디 올 뉴 그랜저 이미지">
+                                            <p class="tit">현대 2025년형 디 올 뉴 그랜저</p>
+                                            <span class="txt">가솔린 터보 1.6 하이브리드 익스클루시브</span>
+                                        </div>
+                                        <div class="car-info">
+                                            <div class="info-text">
+                                                <div class="car-info-color">
+                                                    <p class="title">색상</p>
+                                                    <ul>
+                                                        <li>외장 <span class="txt">큐레이티드 실버 메탈릭 <span class="num">+
+                                                                    <span>000,000</span>원</span></span></li>
+                                                        <li>내장 <span class="txt">다크 그레이/라이트 그레이 투톤</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="car-info-option">
+                                                    <p class="title">옵션</p>
+                                                    <ul>
+                                                        <li>
+                                                            <span>파라노마 선루프</span>
+                                                            <span><span class="num">0</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <span>현대 스마트 센스 패키지 l</span>
+                                                            <span class="num">+<span>000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <span>현대 스마트 센스 패키지 l</span>
+                                                            <span class="num">+<span>000,000</span>원</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="total">
+                                                <span class="tit">총 차량 가격</span>
+                                                <span class="txt"><span class="num">00,000,000</span>원</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="notice-word">※ 위 참고 이미지는 실제 판매모델과 다를 수 있습니다.</p>
+                                    <div class="estimate-text-wrap">
+                                        <h5>계약조건</h5>
+                                    </div>
+                                    <!-- [D]: 계약조건 하나일 때 table-wrap에 one 클래스 추가 -->
+                                    <div class="table-wrap">
+                                        <div class="table-type table-col ta-c">
+                                            <table>
+                                                <caption>계약조건에 대한 렌트기간, 만기처리, 약정거리, 정비상품, 선납금, 보증금, 만기 인수가격 테이블
+                                                </caption>
+                                                <colgroup><!--20250120 너비 수정--><!--[D]: 견적 2개일 땐 40%-->
+                                                    <col width="20%">
+                                                    <col width="26.66%">
+                                                    <col width="26.66%">
+                                                    <col width="26.66%">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr class="data">
+                                                        <th scope="col">렌트기간</th>
+                                                        <td>36개월</td>
+                                                        <td>48개월</td>
+                                                        <td>60개월</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">만기처리</th>
+                                                        <td>개인인수형(국산차-정비제외)</td>
+                                                        <td>개인인수형</td>
+                                                        <td>개인인수형</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">약정거리</th>
+                                                        <td>2만Km</td>
+                                                        <td>2만Km</td>
+                                                        <td>2만Km</td>
+                                                    </tr>
+                                                    <!--S: 계약조건 하나 일 때 숨김처리-->
+                                                    <tr>
+                                                        <th scope="col">정비상품</th>
+                                                        <td>정비(미포함)</td>
+                                                        <td>오릭스 정비 Premium</td>
+                                                        <td>오릭스 정비 Premium</td>
+                                                    </tr>
+                                                    <!--E: 계약조건 하나 일 때 숨김처리-->
+                                                    <tr class="num">
+                                                        <th scope="col">선납금</th>
+                                                        <td><span>0</span> 원</td>
+                                                        <td><span>0</span> 원</td>
+                                                        <td><span>0</span> 원</td>
+                                                    </tr>
+                                                    <tr class="num">
+                                                        <th scope="col">보증금</th>
+                                                        <td><span>0</span> 원</td>
+                                                        <td><span>0</span> 원</td>
+                                                        <td><span>0</span> 원</td>
+                                                    </tr>
+                                                    <tr class="num">
+                                                        <th scope="col">만기 인수가격</th>
+                                                        <td><span>64</span>% / <span>14,707,000</span> 원</td>
+                                                        <td><span>64</span>% / <span>14,707,000</span> 원</td>
+                                                        <td><span>48</span>% / <span>10,327,000</span> 원</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="table-type table-col amount">
+                                            <table>
+                                                <caption>계약조건에 대한 매회 렌트료, 선납 렌트료, 납입 렌트료, 초기 납입액 테이블</caption>
+                                                <colgroup><!--20250120 너비 수정--><!--[D]: 견적 2개일 땐 40%-->
+                                                    <col width="20%">
+                                                    <col width="26.66%">
+                                                    <col width="26.66%">
+                                                    <col width="26.66%">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="col" rowspan="2">매회 렌트료</th>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <span>① 공급가</span>
+                                                                <span><span>393,352</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <span>① 공급가</span>
+                                                                <span><span>369,549</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <span>① 공급가</span>
+                                                                <span><span>330,000</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <span>② 부가세</span>
+                                                                <span><span>39,352</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <span>② 부가세</span>
+                                                                <span><span>36,854</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <span>② 부가세</span>
+                                                                <span><span>33,000</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">선납 렌트료</th>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <span>③ 선납금(월)</span>
+                                                                <span>(-) <span>0</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <span>③ 선납금(월)</span>
+                                                                <span>(-) <span>0</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="flex">
+                                                                <span>③ 선납금(월)</span>
+                                                                <span>(-) <span>0</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">납입 렌트료</th>
+                                                        <td class="now">
+                                                            <div class="flex">
+                                                                <span>①+②+③</span>
+                                                                <span><span class="red">432,875</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="now">
+                                                            <div class="flex">
+                                                                <span>①+②+③</span>
+                                                                <span><span class="red">406,503</span> 원</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="now">
+                                                            <div class="flex">
+                                                                <span>①+②+③</span>
+                                                                <span class="red">계산 대기중 </span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="num">
+                                                        <th scope="col">초기 납입액</th>
+                                                        <td><span>0</span> 원</td>
+                                                        <td><span>0</span> 원</td>
+                                                        <td><span>0</span> 원</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="estimate-text-wrap">
+                                        <h5>보험 조건</h5>
+                                    </div>
+                                    <div class="table-wrap">
+                                        <div class="table-type table-col">
+                                            <table>
+                                                <caption>보험 조건에 대한 고객구분, 운전연령, 의무가입에 대한 테이블</caption>
+                                                <!-- [20241030] caption 수정 -->
+                                                <colgroup>
+                                                    <col width="20%">
+                                                    <col width="*">
+                                                    <col width="*">
+                                                    <col width="*">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="col">고객구분</th>
+                                                        <td colspan="3">개인</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">운전연령</th>
+                                                        <td>26세 이상 ~. 5세 이하</td>
+                                                        <th>보험종류</th>
+                                                        <td>영업용</td><!--[D]:영업용 고정-->
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">의무가입</th>
+                                                        <td>무보험차상해, 긴급출동</td>
+                                                        <th>필수가입</th>
+                                                        <td>대물 : <span>1억</span>, 자손 : <span>1억</span>, 면책금 :
+                                                            <span>30만원</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="estimate-text-wrap">
+                                        <h5>정비상품 안내표</h5>
+                                    </div>
+                                    <div class="table-wrap">
+                                        <div class="table-type ta-c repair style2 mb0">
+                                            <table>
+                                                <caption>정비상품(정비-순회정비, 입고정비/소모품 교환-타이어,소모품/고장 및 사고-일반수리, 대차/door to door
+                                                    서비스-정비, 자도차검사),오릭스 정비 Premium에 대한 정비상품 안내표</caption>
+                                                <!-- 2024.10.21 caption 수정 -->
+                                                <colgroup>
+                                                    <col width="*%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th rowspan="2">정비상품</th>
+                                                        <th colspan="2">정비</th>
+                                                        <th colspan="2">소모품 교환</th>
+                                                        <th colspan="2">고장/사고</th>
+                                                        <th colspan="2">Door to Door 서비스</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>순회정비</th>
+                                                        <th>입고정비</th>
+                                                        <th>타이어</th>
+                                                        <th>소모품</th>
+                                                        <th>일반수리</th>
+                                                        <th>대차</th>
+                                                        <th>정비</th>
+                                                        <th>자동차검사</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>오릭스 정비 Premium</th>
+                                                        <td>미제공</td>
+                                                        <td>미제공</td>
+                                                        <td>미제공</td>
+                                                        <td>미제공</td>
+                                                        <td>미제공</td>
+                                                        <td>미제공</td>
+                                                        <td>미제공</td>
+                                                        <td>제공</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="estimate-text-wrap">
+                                        <h5>구비서류</h5>
+                                    </div>
+                                    <div class="table-wrap">
+                                        <div class="table-type table-col">
+                                            <table>
+                                                <caption>개인/개인사업자, 법인사업자별 구비서류에 대한 테이블</caption>
+                                                <colgroup>
+                                                    <col width="20%">
+                                                    <col width="*">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="col">개인/개인사업자</th>
+                                                        <td>사업자등록증, 부가세 과세표준 증명원, 자격증(전문직 한정)</br>재산세과세증명서, 통장(사업자
+                                                            추가서류), 운전면허증 사본(발급일 1년 경과)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">법인사업자</th>
+                                                        <td>법인 : 사업자등록증, 최근연도 재무제표/부가세 과세표준 증명원, 법인인감증명서, 법인등기부등본, 주주명부,
+                                                            통장</br>대표자 : 인감증명서, 재산세과세증명서, 신분증</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <p class="notice-word">※ (개인/법인)인감증명서, 주민등록등본, 법인등기부등본은 계약체결시점 1개월 이내 발급분만 인정합니다.
+                                    </p>
+                                </div>
+                                <div class="check-plz">
+                                    <p class="plz-tit">[꼭 확인하세요!]</p>
+                                    <ul class="bul-refer">
+                                        <li class="red">상기 견적금액은 유효기간까지 적용 가능하며, 차량가 변동, 정부 시책에 따라 변동될 수 있습니다.</li>
+                                        <li>건설/토목, 보험사/보험대리점/정비업, 방송/엔터테인먼트, 렌터카업/셔틀업 업종은 렌트료가 변동되거나 취급이 제한될 수 있습니다.
+                                        </li>
+                                        <li>상기 견적에는 보험료, 차량검사비, 세금이 모두 포함되어 있으며 정비상품 선택 시, 차량점검, 소모품 교체비용이 포함될 수 있습니다.
+                                        </li>
+                                        <li>차량등급별 세부 옵션 사항을 반드시 확인하시기 바라며, 각 차종별 세부옵션사항은 차량 제조사 홈페이지에서 확인 가능합니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-wrap bottom">
+                                <button type="button" name="button" class="btn btn-primary">견적 저장</button>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function () {
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+
+    <script type="text/javascript" src="../../resources/js/lib/swiper-bundle.min.js"></script>
+</body>
+
+</html>

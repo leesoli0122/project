@@ -1,0 +1,476 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>선구매 < 견적내기</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">견적내기</a></li>
+                        <li><a href="javascript:void(0);">선구매</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>선구매</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+                <form>
+                    <div class="table-type">
+                        <div class="col">
+                            <dl>
+                                <dt>상품구분</dt>
+                                <dd>
+                                    <div class="form-group radio">
+                                        <ul class="radio-box">
+                                            <li>
+                                                <input type="radio" id="radio-1" name="product" checked="">
+                                                <label for="radio-1"class="radio-button"><span>전체(<span>000</span>대)</span></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="radio-2" name="product">
+                                                <label for="radio-2"class="radio-button"><span>렌터카(<span>000)</span>대</span></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="radio-3" name="product">
+                                                <label for="radio-3"class="radio-button"><span>오토리스(<span>000</span>대)</span></label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>예약구분</dt>
+                                <dd>
+                                    <div class="form-group radio">
+                                        <ul class="radio-box">
+                                            <li>
+                                                <input type="radio" id="radio-4" name="psb" checked="">
+                                                <label for="radio-4"class="radio-button"><span>예약가능</span></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="radio-6" name="psb">
+                                                <label for="radio-6"class="radio-button"><span>미진행선점건(<span>000</span>대</span></label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>특가차량</dt>
+                                <dd>
+                                    <div class="form-group radio">
+                                        <ul class="radio-box">
+                                            <li>
+                                                <input type="radio" id="radio-7" name="vehicle" checked="">
+                                                <label for="radio-7"class="radio-button"><span>선택없음</span></label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="radio-8" name="vehicle">
+                                                <label for="radio-8"class="radio-button"><span>이벤트(<span>000</span>대)</span></label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl><!--20250116 추가-->
+                                <dt>모델검색</dt>
+                                <dd>
+                                    <div class="form-group">
+                                        <div class="form-row">
+                                            <div class="col-5">
+                                                <input type="text" title="모델검색" name="" id="" class="form-control" placeholder="모델명 입력">
+                                                <button type="button" class="btn btn-cancel" onclick="clearBtn()"><span class="ir">입력취소</span></button>
+                                            </div>
+                                            <button class="btn btn-input active" type="button" id="">조회</button>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>출고완료</dt>
+                                <dd>
+                                    <div class="choose-wrap">
+                                        <div class="choose-group model">
+                                            <ul class="choose"><!--[D] 클릭 시 li에 chk 클래스 추가-->
+                                                <li><button type="button">디 올 뉴 스포티지 HEV(NQ5) (70대)</button></li>
+                                                <li><button type="button">더 뉴 아반떼 (4대)</button></li>
+                                                <li><button type="button">더 뉴 셀토스 (26대)</button></li>
+                                                <li><button type="button">디 올 뉴 산타페 HEV (34대)</button></li>
+                                                <li><button type="button">GV70 (34대)</button></li>
+                                                <li><button type="button">K8 HEV(GL3) (34대)</button></li>
+                                                <li><button type="button">더 뉴 토레스 (34대)</button></li>
+                                                <li><button type="button">쏘나타 디 엣지 (3대)</button></li>
+                                                <li><button type="button">디 올 뉴 그랜저(GN7) (5대)</button></li>
+                                                <li><button type="button">디 올 뉴G80 F/L (1대)</button></li>
+                                                <li><button type="button">더 뉴 K5 HEV (2대)</button></li>
+                                                <li><button type="button">K8(GL3) (2대)</button></li>
+                                                <li><button type="button">디 올 뉴 싼타페(MX5) (1대)</button></li>
+                                                <li><button type="button">더 뉴 팰리세이드 (8대)</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>배정예시시</dt>
+                                <dd>
+                                    <div class="choose-wrap">
+                                        <div class="choose-group model">
+                                            <ul class="choose"><!--[D] 클릭 시 li에 chk 클래스 추가-->
+                                                <li><button type="button">디 올 뉴 스포티지 HEV(NQ5) (70대)</button></li>
+                                                <li><button type="button">더 뉴 아반떼 (4대)</button></li>
+                                                <li><button type="button">더 뉴 셀토스 (26대)</button></li>
+                                                <li><button type="button">디 올 뉴 산타페 HEV (34대)</button></li>
+                                                <li><button type="button">GV70 (34대)</button></li>
+                                                <li><button type="button">K8 HEV(GL3) (34대)</button></li>
+                                                <li><button type="button">더 뉴 토레스 (34대)</button></li>
+                                                <li><button type="button">쏘나타 디 엣지 (3대)</button></li>
+                                                <li><button type="button">디 올 뉴 그랜저(GN7) (5대)</button></li>
+                                                <li><button type="button">디 올 뉴G80 F/L (1대)</button></li>
+                                                <li><button type="button">더 뉴 K5 HEV (2대)</button></li>
+                                                <li><button type="button">K8(GL3) (2대)</button></li>
+                                                <li><button type="button">디 올 뉴 싼타페(MX5) (1대)</button></li>
+                                                <li><button type="button">더 뉴 팰리세이드 (8대)</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </form>
+                <div>
+                    <div class="sub-text-wrap style2">
+                        <h4>선구매 차량 목록</h4>
+                        <div class="select-box">
+                            <div class="se-select ei-w160" data-stove="select">
+                                <select class="" title="가나다순">
+                                    <option value="" disabled="" selected="" hidden="">가나다순</option>
+                                    <option value="0">가나다순</option>
+                                    <option value="1">낮은 가격순</option>
+                                    <option value="2">높은 가격순</option>
+                                </select>
+                                <div class="e-select-dim"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="accordion-wrap">
+                        <li class="accordion-info">
+                            <a href="#none" class="ques toggleChk">
+                                <div class="left"><!--[20241118] 선점중 추가-->
+                                    <span class="tit"><em class="badge01 rcar">렌터카</em><span class="after-line"><span>디 올 뉴 스포티지 HEV(NQ5)<span class="pre-ing"><span class="icon">아이콘</span>선점중 (YYYY.MM.DD HH:MM)</span></span>
+                                </div>
+                                <div class="right no-del">
+                                    <span><span class="tit posit">40,160,000</span> 원 / (<span>2</span>대)</span>
+                                </div>
+                            </a>
+                            <div class="ques-cont">
+                                <div class="list-view">
+                                    <ul>
+                                        <li><p>브랜드</p><p>기아자동차</p></li>
+                                        <li><p>모델</p><p>디 올 뉴 스포티지 HEV(NQ5)</p></li>
+                                        <li><p>트림</p><p>가솔린 1.6 터보 2WD 시그니처</p></li>
+                                        <li><p>색상</p><p>스노우 화이트 펄 / 브라운</p></li>
+                                        <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프,컨비니언스 패키지, 뱅앤올룹슨 사운드 패키지</p></li>
+                                    </ul>
+                                    <ul>
+                                        <li><p>출고요청일자</p><p>2024.09.04</p></li>
+                                        <li><p>탁송비</p><p><span>0</span>원</p></li>
+                                        <li><p>메모</p><p>선구매</p></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-wrap">
+                                    <button type="button" name="button" class="btn btn-cont active">이 차량 견적내기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-info">
+                            <a href="#none" class="ques toggleChk">
+                                <div class="left">
+                                    <span class="tit"><em class="badge01 rcar">렌터카</em><span class="after-line"><span>디 올 뉴 스포티지 HEV(NQ5)</span>
+                                </div>
+                                <div class="right no-del">
+                                    <span><span class="tit posit">40,160,000</span> 원 / (<span>60</span>대)</span>
+                                </div>
+                            </a>
+                            <div class="ques-cont">
+                                <div class="list-view">
+                                    <ul>
+                                        <li><p>브랜드</p><p>기아자동차</p></li>
+                                        <li><p>모델</p><p>디 올 뉴 스포티지 HEV(NQ5)</p></li>
+                                        <li><p>트림</p><p>가솔린 1.6 터보 2WD 시그니처</p></li>
+                                        <li><p>색상</p><p>스노우 화이트 펄 / 브라운</p></li>
+                                        <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프,컨비니언스 패키지, 뱅앤올룹슨 사운드 패키지</p></li>
+                                    </ul>
+                                    <ul>
+                                        <li><p>출고요청일자</p><p>2024.09.04</p></li>
+                                        <li><p>탁송비</p><p><span>0</span>원</p></li>
+                                        <li><p>메모</p><p>선구매</p></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-wrap">
+                                    <button type="button" name="button" class="btn btn-cont active">이 차량 견적내기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-info">
+                            <a href="#none" class="ques toggleChk">
+                                <div class="left">
+                                    <span class="tit"><em class="badge01 rcar">렌터카</em><em class="badge02 event">이벤트</em><span class="after-line"><span>더 뉴 셀토스</span>
+                                </div>
+                                <div class="right no-del">
+                                    <span><span class="tit posit">25,110,000</span> 원 / (<span>25</span>대)</span>
+                                </div>
+                            </a>
+                            <div class="ques-cont">
+                                <div class="list-view">
+                                    <ul>
+                                        <li><p>브랜드</p><p>기아자동차</p></li>
+                                        <li><p>모델</p><p>더 뉴 셀토스</p></li>
+                                        <li><p>트림</p><p>가솔린 1.6 터보 2WD 시그니처</p></li>
+                                        <li><p>색상</p><p>스노우 화이트 펄 / 브라운</p></li>
+                                        <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프,컨비니언스 패키지, 뱅앤올룹슨 사운드 패키지</p></li>
+                                    </ul>
+                                    <ul>
+                                        <li><p>출고요청일자</p><p>2024.09.04</p></li>
+                                        <li><p>탁송비</p><p><span>0</span>원</p></li>
+                                        <li><p>메모</p><p>선구매</p></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-wrap">
+                                    <button type="button" name="button" class="btn btn-cont active">이 차량 견적내기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-info">
+                            <a href="#none" class="ques toggleChk">
+                                <div class="left">
+                                    <span class="tit"><em class="badge01 lease">오토리스</em><em class="badge02 event">이벤트</em><span class="after-line"><span>더 뉴 아반떼</span>
+                                </div>
+                                <div class="right no-del">
+                                    <span><span class="tit posit">27,290,000</span> 원 / (<span>3</span>대)</span>
+                                </div>
+                            </a>
+                            <div class="ques-cont">
+                                <div class="list-view">
+                                    <ul>
+                                        <li><p>브랜드</p><p>기아자동차</p></li>
+                                        <li><p>모델</p><p>더 뉴 아반떼</p></li>
+                                        <li><p>트림</p><p>가솔린 1.6 터보 2WD 시그니처</p></li>
+                                        <li><p>색상</p><p>스노우 화이트 펄 / 브라운</p></li>
+                                        <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프,컨비니언스 패키지, 뱅앤올룹슨 사운드 패키지</p></li>
+                                    </ul>
+                                    <ul>
+                                        <li><p>출고요청일자</p><p>2024.09.04</p></li>
+                                        <li><p>탁송비</p><p><span>0</span>원</p></li>
+                                        <li><p>메모</p><p>선구매</p></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-wrap">
+                                    <button type="button" name="button" class="btn btn-cont active">이 차량 견적내기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-info">
+                            <a href="#none" class="ques toggleChk">
+                                <div class="left">
+                                    <span class="tit"><em class="badge01 rcar">렌터카</em><em class="badge02 promotions">프로모션</em><span class="after-line"><span>디 올 뉴 산타페 HEV(MXS)</span>
+                                </div>
+                                <div class="right no-del">
+                                    <span><span class="tit posit">40,160,000</span> 원 / (<span>60</span>대)</span>
+                                </div>
+                            </a>
+                            <div class="ques-cont">
+                                <div class="list-view">
+                                    <ul>
+                                        <li><p>브랜드</p><p>기아자동차</p></li>
+                                        <li><p>모델</p><p>디 올 뉴 산타페 HEV(MXS)</p></li>
+                                        <li><p>트림</p><p>가솔린 1.6 터보 2WD 시그니처</p></li>
+                                        <li><p>색상</p><p>스노우 화이트 펄 / 브라운</p></li>
+                                        <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프,컨비니언스 패키지, 뱅앤올룹슨 사운드 패키지</p></li>
+                                    </ul>
+                                    <ul>
+                                        <li><p>출고요청일자</p><p>2024.09.04</p></li>
+                                        <li><p>탁송비</p><p><span>0</span>원</p></li>
+                                        <li><p>메모</p><p>선구매</p></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-wrap">
+                                    <button type="button" name="button" class="btn btn-cont active">이 차량 견적내기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-info">
+                            <a href="#none" class="ques toggleChk">
+                                <div class="left">
+                                    <span class="tit"><em class="badge01 rcar">렌터카</em><span class="after-line"><span>GV70</span>
+                                </div>
+                                <div class="right no-del">
+                                    <span><span class="tit posit">61,250,000</span> 원 / (<span>17</span>대)</span>
+                                </div>
+                            </a>
+                            <div class="ques-cont">
+                                <div class="list-view">
+                                    <ul>
+                                        <li><p>브랜드</p><p>기아자동차</p></li>
+                                        <li><p>모델</p><p>디 올 뉴 산타페 HEV(MXS)</p></li>
+                                        <li><p>트림</p><p>가솔린 1.6 터보 2WD 시그니처</p></li>
+                                        <li><p>색상</p><p>스노우 화이트 펄 / 브라운</p></li>
+                                        <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프,컨비니언스 패키지, 뱅앤올룹슨 사운드 패키지</p></li>
+                                    </ul>
+                                    <ul>
+                                        <li><p>출고요청일자</p><p>2024.09.04</p></li>
+                                        <li><p>탁송비</p><p><span>0</span>원</p></li>
+                                        <li><p>메모</p><p>선구매</p></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-wrap">
+                                    <button type="button" name="button" class="btn btn-cont active">이 차량 견적내기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-info">
+                            <a href="#none" class="ques toggleChk">
+                                <div class="left">
+                                    <span class="tit"><em class="badge01 lease">오토리스</em><em class="badge02 promotions">프로모션</em><span class="after-line"><span>GV70</span>
+                                </div>
+                                <div class="right no-del">
+                                    <span><span class="tit posit">61,250,000</span> 원 / (<span>60</span>대)</span>
+                                </div>
+                            </a>
+                            <div class="ques-cont">
+                                <div class="list-view">
+                                    <ul>
+                                        <li><p>브랜드</p><p>기아자동차</p></li>
+                                        <li><p>모델</p><p>GV70</p></li>
+                                        <li><p>트림</p><p>가솔린 1.6 터보 2WD 시그니처</p></li>
+                                        <li><p>색상</p><p>스노우 화이트 펄 / 브라운</p></li>
+                                        <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프,컨비니언스 패키지, 뱅앤올룹슨 사운드 패키지</p></li>
+                                    </ul>
+                                    <ul>
+                                        <li><p>출고요청일자</p><p>2024.09.04</p></li>
+                                        <li><p>탁송비</p><p><span>0</span>원</p></li>
+                                        <li><p>메모</p><p>선구매</p></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-wrap">
+                                    <button type="button" name="button" class="btn btn-cont active">이 차량 견적내기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion-info">
+                            <a href="#none" class="ques toggleChk">
+                                <div class="left">
+                                    <span class="tit"><em class="badge01 lease">오토리스</em><span class="after-line"><span>디 올 뉴 싼타페(MXS)</span>
+                                </div>
+                                <div class="right no-del">
+                                    <span><span class="tit posit">48,410,000</span> 원 / (<span>1</span>대)</span>
+                                </div>
+                            </a>
+                            <div class="ques-cont">
+                                <div class="list-view">
+                                    <ul>
+                                        <li><p>브랜드</p><p>기아자동차</p></li>
+                                        <li><p>모델</p><p>디 올 뉴 싼타페(MXS)</p></li>
+                                        <li><p>트림</p><p>가솔린 1.6 터보 2WD 시그니처</p></li>
+                                        <li><p>색상</p><p>스노우 화이트 펄 / 브라운</p></li>
+                                        <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프,컨비니언스 패키지, 뱅앤올룹슨 사운드 패키지</p></li>
+                                    </ul>
+                                    <ul>
+                                        <li><p>출고요청일자</p><p>2024.09.04</p></li>
+                                        <li><p>탁송비</p><p><span>0</span>원</p></li>
+                                        <li><p>메모</p><p>선구매</p></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-wrap">
+                                    <button type="button" name="button" class="btn btn-cont active">이 차량 견적내기</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pagination-wrap">
+                    <div class="pagination">
+                        <!-- <a href="#" class="btn-pg last-prev">처음으로</a>
+                        <a href="#" class="btn-pg prev">전으로</a> -->
+                        <ul>
+                            <li><a href="#" class="nb on" title="현재페이지">1</a></li>
+                            <li><a href="#" class="nb">2</a></li>
+                        </ul>
+                        <a href="#" class="btn-pg next">다음</a>
+                        <a href="#" class="btn-pg last-next">마지막으로</a>
+                    </div>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+
+    <script type="text/javascript" src="../../resources/js/lib/swiper-bundle.min.js"></script>
+</body>
+
+</html>
