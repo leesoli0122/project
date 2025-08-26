@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/lib/renewal.css">
+    <link rel="stylesheet" href="../../resources/css/lib/default.css">
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/default.js"></script>
+    
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- //header -->
+        <header id="lnb">
+            <a href="javascript:void(0);" onclick="" class="btn-prev header-btn">이전</a>
+            <div class="btn-group header-btn">
+                <a href="javascript:void(0)" class="heart">하트</a>
+                <a href="javascript:void(0)" class="btn-menu" onclick="openMenu('menuWrap')">메뉴</a>
+                <!-- <a href="javascript:void(0)" class="btn-menu_white">메뉴</a> -->
+            </div>
+        </header>
+        <!-- header// -->
+        <form>
+            <div class="contents-wrap">
+                <section>
+                    <div class="form-group address">
+                        <input type="search" id="search" class="form-control search" placeholder="" aria-label="Search Addresses" aria-describedby="user-search" inputmode="search">
+                        <button class="btn btn-search outline-secondary" type="button">검색</button>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <ul>
+                            <li></li>
+                        </ul>
+                        <p>₱7,000,000</p>
+                        <p></p>
+                    </div>
+                </section>
+            </div>
+        </form>
+        <div class="bottom-menu-area">
+            <ul class="bottom-menu-list">
+                <li class="home on"><a href="#none">Home</a></li>
+                <li class="search"><a href="#none">Search</a></li>
+                <li class="save"><a href="#none">Save</a></li>
+                <li class="my"><a href="#none" onclick="openMenu('menuWrap')">My</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<div id="selBox2" class="layerpopup laypop-all show" >
+    <div class="content-wrap">
+        <div class="pop-header"><span>Filter</span></div>
+        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        <div class="ly-scroll-con ly-select">
+            <ul class="ly-select-list">
+                <!-- <li><button type="button">아파트</button></li>[D] 클래스 active 추가 시 활성화 스타일 노출
+                <li><button type="button">오피스텔</button></li>
+                <li><button type="button">주택</button></li> -->
+            </ul>
+        </div>
+    </div>
+</div>
+</html>

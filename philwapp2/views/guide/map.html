@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/lib/renewal.css">
+    <link rel="stylesheet" href="../../resources/css/lib/default.css">
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/default.js"></script>
+    
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- //header -->
+        <header id="lnb">
+			<a href="javascript:void(0);" onclick="" class="btn-prev header-btn">이전</a>
+			<h1>
+				<img src="../../resources/images/common/logo.png" alt="로고">
+			</h1>
+			<a href="javascript:void(0)" class="btn-menu header-btn">메뉴</a>
+        </header>
+        <form>
+            <div class="contents-wrap">
+                <section>
+                    <div class="form-group address">
+                        <input type="search" id="search" class="form-control search" placeholder="" aria-label="Search Addresses" aria-describedby="user-search" inputmode="search">
+                        <button class="btn btn-search outline-secondary" type="button">검색</button>
+                    </div>
+                    <div class="form-group filter">
+                        <a href="#none" class="filter-img">필터</a>
+                        <ul class="filter-group">
+                            <li><a href="#none">아파트,오피스텔</a></li>
+                            <li><a href="#none">$880K~ $996K</a></li>
+                            <li><a href="#none">방 크기(전용면적)</a></li>
+                        </ul>
+                    </div>
+                    <div class="form-group filter">
+                        <a href="#none" class="filter-img">필터</a>
+                        <ul class="filter-group after on" tabindex="1" onclick="openPopupUp('selBox2');">
+                            <li class="option">아파트,오피스텔</li>
+                            <li class="option">$880K~ $996K</li>
+                            <li class="option">방 크기(전용면적)</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <div class="map"></div>
+                </section>
+            </div>
+        </form>
+    </div>
+</body>
+
+<!-- <footer>
+    <div class="footer-wrap">
+        <ul>
+            <li><a href="#none">Home</a></li>
+            <li><a href="#none">Search</a></li>
+            <li><a href="#none">Save</a></li>
+            <li><a href="#none">My</a></li>
+        </ul>
+    </div>
+</footer> -->
+</html>
+<div id="selBox2" class="layerpopup layer-up has-button" style="position: fixed; top: 423.5px; left: 0px; display: none;">
+    <div class="content-wrap">
+        <div class="pop-header"><span>건물을 선택해주세요</span></div>
+        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        <div class="ly-scroll-con ly-select">
+            <ul class="ly-select-list">
+                <li class=""><button type="button">아파트</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                <li class="active"><button type="button">오피스텔</button></li>
+            </ul>
+        </div>
+    </div>
+    <div class="fixed-btn-wrap">
+        <div class="btn-cont-wrap type-popup">
+            <a href="#none" class="btn">확인</a>
+        </div>
+    </div>
+</div>
