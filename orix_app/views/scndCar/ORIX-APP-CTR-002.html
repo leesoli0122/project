@@ -1,0 +1,256 @@
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ORIX Capital</title>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords" />
+    <meta name="description" content="ORIX Capital description" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../resources/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../../resources/favicon.png" />
+    
+    <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../resources/css/lib/renewal.css">
+    <link rel="stylesheet" href="../../resources/css/lib/default.css">
+    <link rel="stylesheet" href="../../resources/css/ui/jquery-ui.css">
+    <link rel="stylesheet" href="../../resources/css/ui/datepicker.css">
+    
+    <script type="text/javascript" src="../../resources/js/ui/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/jquery-1.12.4.min.js"></script>
+    <script  type="text/javascript" src="../../resources/js/ui/jquery-ui-1.12.1.js"></script>
+
+    <script type="text/javascript" src="../../resources/js/lib/default.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/datepicker.js"></script>
+</head>
+
+<body>
+    <!--//wrap-->
+    <div class="wrap">
+        <!-- //headerWrap -->
+        <div id="headerWrap">
+			<script>
+			$(document).ready(function(){
+				document.charset="euc-kr";
+				$("#headerWrap").load("../include/inc_header.html");
+			});
+			</script>
+        </div>
+        <!-- headerWrap// -->
+        <!-- //menuWrap -->
+        <div id="menuWrap">
+            <script>
+            $(document).ready(function(){
+                document.charset="euc-kr";
+                $("#menuWrap").load("../include/inc_all_menu.html");
+            });
+            </script>
+        </div>
+	    <!-- menuWrap// -->
+        <form>
+            <!--//contents-wrap-->
+            <div class="contents-wrap scndCarLayout">
+                <section class="tit-main-area">
+                    <p class="tit">심사요청정보 입력</p>
+                    <p class="text">대출 심사를 위해 필요 정보를 입력하세요</p>
+                </section>
+                <section class="form-wrap">
+                    
+                    <div class="result-box-wrap style1">
+                        <p class="tit">김영수 <span class="small-tit">8107020-1/개인</span></p>
+                        <span class="flag2">할부</span>
+                    </div>
+                
+                    <div class="accordion-cont-wrap">
+                        <div class="accordion-item">
+                            <div class="accordion">
+                                <button type="button" class="btn-accordion on">· 차량조회</button>
+                                <div class="accordion-cont form-wrap on">
+                                    <div class="form-group ">
+                                        <label for="">차량번호로 검색</label>
+                                        <input id="" type="text" name="" class="form-control" placeholder="차량번호 입력">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">차량번호 없이 직접 검색하기</label>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <input id="" type="text" class="form-control" placeholder="모델명 검색" readonly>
+                                            </div>
+                                            <button class="btn btn-txt setting-img" type="button">검색</button><!--[D]: 선택시 ORIX-APP-CTR-00204 팝업 뜸-->
+                                        </div>
+                                    </div>
+
+                                    <!--  s:[2025-04-16-퍼블] : 추가  -->
+                                        <div class="form-group">
+                                            <label for="">추가 아이콘</label>
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <input id="" type="text" class="form-control" placeholder="모델명 검색" readonly>
+                                                </div>
+                                                <button class="btn btn-txt search-img" type="button">검색</button><!--[D]: 선택시 ORIX-APP-CTR-00204 팝업 뜸-->
+                                            </div>
+                                        </div>
+                                    <!--  e:[2025-04-16-퍼블] : 추가 -->
+
+                                    <div class="btn-cont-wrap">
+                                        <a href="#none" class="btn btn-primary disabled">시세조회</a>
+                                    </div>
+                                    <div class="btn-cont-wrap">
+                                        <a href="#none" class="btn btn-primary">시세조회</a><!--[D]:활성화 됐을 경우-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item list">
+                            <div class="accordion">
+                                <p class="accordion-tit">· 조회결과</p>
+                                <div class="accordion-cont form-wrap on">
+
+                                    <div class="txt-detail-area"><!--[D]: 조회 안됐을 경우-->
+                                        <div class="txt-detail-header no-line">
+                                            <p class="tit">차량조회를 진행해 주세요</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="txt-detail-area result"><!--[D]: 조회 됐을 경우-->
+                                        <div class="txt-detail-header no-line">
+                                            <p class="tit">현대 제네시스 GV80 가솔린 3.5 터보<br/>
+                                                2022년식 / 456바 7891</p>
+                                        </div>
+                                        <ul class="txt-list">
+                                            <li>
+                                                <span class="tit">중고시세</span>
+                                                <span class="txt">70,000,000 원</span>
+                                            </li>
+                                            <li>
+                                                <span class="tit">최대 취급가능 대출기간</span>
+                                                <span class="txt">72 개월</span>
+                                            </li>
+                                            <li>
+                                                <span class="tit">취급 가능여부</span>
+                                                <span class="txt">취급가능차량</span>
+                                            </li>
+                                            <li>
+                                                <span class="tit">소유자명</span>
+                                                <span class="txt">카스토리 매매상사</span>
+                                            </li>
+                                            <li>
+                                                <span class="tit">근저당</span>
+                                                <span class="txt no">Y</span>
+                                            </li><!--2/15[D]:근저당이 Y면 안 좋은 거=N-->
+                                            <li>
+                                                <span class="tit">권리침해여부</span>
+                                                <span class="txt yes">N</span><!--2/15[D]:권리침해여부가 N이면 좋은 거=Y-->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="btn-cont-wrap">
+                                        <a href="#none" class="btn view disabled">사고이력 보기</a>
+                                    </div>
+                                    <div class="btn-cont-wrap">
+                                        <a href="#none" class="btn view">사고이력 보기</a><!--[D]:활성화 됐을 경우-->
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item list">
+                            <div class="accordion">
+                                <p class="accordion-tit">· 대출신청 정보</p>
+                                <div class="accordion-cont form-wrap on">
+                                    <div class="form-group">
+                                        <label for="">신청금액</label>
+                                        <div class="amount">
+                                            <input id="" type="amount" class="form-control amount-num" placeholder="신청금액 입력" inputmode="numeric"><!--inputmode="numeric" : 세자리 수마다 콤마 적용-->
+                                            <span class="amount-txt">원</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="amount">대출기간</label><!-- [퍼블]:1/29 -class="essential" 삭제-->
+                                        <div class="amount">
+                                            <input type="number" class="form-control amount-num" id="amount" placeholder="대출기간 선택" onclick="openPopup('lySel5')">
+                                            <span class="amount-txt">개월</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="amount">판매가격</label><!-- [퍼블]:1/29 -class="essential" 삭제-->
+                                        <div class="amount">
+                                            <input type="amount" class="form-control amount-num" id="amount" placeholder="판매가격 입력" inputmode="numeric">
+                                            <span class="amount-txt">원</span>
+                                        </div>
+                                    </div>
+                                    <div class="btn-cont-wrap">
+                                        <a href="#none" class="btn btn-primary disabled">심사 재요청</a>
+                                    </div>
+                                    <div class="btn-cont-wrap">
+                                        <a href="#none" class="btn btn-primary">심사요청</a><!--[D]:활성화 됐을 경우--><!-- [퍼블]:1/29 - 심사 재요청 심사요청->수정 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+            <!--contents-wrap//-->
+        </form>
+    </div>
+    <!--wrap//-->
+</body>
+<!--//통신사 선탱-->
+<div id="lySel1" class="layerpopup layer-up on" tabindex="0">
+    <div class="content-wrap">
+        <div class="pop-header">
+            <h2 class="pop-title">통신사 선택</h2>
+            <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        </div>
+        <div class="ly-scroll-con ly-select">
+            <ul class="ly-select-list">
+                <li><button>SKT</button></li>
+                <li><button>KT</button></li>
+                <li><button>LG</button></li>
+                <li><button>알뜰폰 SK</button></li>
+                <li><button>알뜰폰 KT</button></li>
+                <li><button>알뜰폰 LG</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--통신사 선택//-->
+
+
+<!--//개월팝업-->
+<div id="lySel5" class="layerpopup layer-up" tabindex="0">
+    <div class="content-wrap">
+        <div class="pop-header">
+            <h2 class="pop-title">대출 개월 선택</h2><!-- [퍼블]:1/29 -텍스트 수정-->
+            <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        </div>
+        <div class="ly-scroll-con ly-select">
+            <ul class="ly-select-list">
+                <li><button>24</button></li>
+                <li><button>36</button></li>
+                <li><button>48</button></li>
+                <li><button>60 </button></li>
+                <li><button>72</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--개월팝업//-->
+
+
+
+</html>

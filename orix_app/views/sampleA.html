@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ORIX Capital</title>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords" />
+    <meta name="description" content="ORIX Capital description" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <!-- 
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+    -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../resources/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../resources/favicon.png" />
+
+    <link rel="stylesheet" href="../resources/css/lib/renewal.css">
+	<link rel="stylesheet" href="../resources/css/lib/default.css">
+	<link rel="stylesheet" href="../resources/css/ui/jquery-ui.css">
+	<link rel="stylesheet" href="../resources/css/ui/datepicker.css">
+    
+    <script type="text/javascript" src="../resources/js/ui/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../resources/js/ui/jquery-1.12.4.min.js"></script>
+    <script  type="text/javascript" src="../resources/js/ui/jquery-ui-1.12.1.js"></script>
+
+    <script type="text/javascript" src="../resources/js/lib/default.js"></script>
+    <script type="text/javascript" src="../resources/js/lib/datepicker.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- s: header -->
+        <div id="headerWrap">
+            <script>
+            $(document).ready(function(){
+                document.charset="euc-kr";
+                $("#headerWrap").load("./include/inc_header.html");
+            });
+            </script>
+        </div>
+        <!-- //e: header -->
+        <form>
+            <div class="contents-wrap">
+                <!-- <div class="login-wrap">
+                    <div class="login-tit user-m-img">
+                        <p class="tit"><strong>안녕하세요,홍길동님!</strong></p>
+                    </div>
+                    <button class="btn logout" type="button" onclick="selectAcnoCall('WTCH');">로그아웃</button>
+                </div> -->
+
+				<section class="quick-service-area">
+                    <div class="tit-area">
+                        <p class="title">심사(신용조회 동의 포함) 요청</p>
+                    </div>
+					<div class="visaul-info-box">
+						<div class="info-tit">
+							<p>홍길동 고객님</p>
+							<p>심사요청 진행상황</p>
+						</div>
+						<div class="tit-ok">승인완료</div>
+						<div class="btn-cont-wrap">
+							<a href="#none" class="btn btn-info">자세히보기</a>
+							<a href="#none" class="btn btn-primary">결과확인</a>
+						</div>
+					</div>
+                </section>
+
+				<section class="quick-service-area">
+					<div class="arrow-button-wrap">
+						<ul class="arrow-button-list list-icon">
+							<li class="audit"><a href="#none" onclick="expRenewPop();">심사(신용조회 등)결과 확인</a></li>
+							<li class="documents"><a href="#none" onclick="">서류제출 / 약정체결</a></li>
+							<li class="remittance"><a href="#none" onclick="acnoCancelBtn('')">송금요청</a></li>
+							<li class="market_price"><a href="#none" onclick="">차량시세 조회</a></li>
+							<li class="performance"><a href="#none" onclick="">실적조회</a></li>
+							<li class="counseling"><a href="#none" onclick="">신차상담</a></li>
+							<li class="Pre_guidance"><a href="#none" onclick="">방문판매 사전안내</a></li>
+							<li class="approval"><a href="#none" onclick="">모바일 승인</a></li>
+						</ul>
+					</div>
+				</section>
+                
+            </div>
+        </form>
+    </div>
+</body>
+
+
+
+
+
+</html>

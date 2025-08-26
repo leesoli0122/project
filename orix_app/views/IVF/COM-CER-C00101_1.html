@@ -1,0 +1,183 @@
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ORIX Capital</title>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords" />
+    <meta name="description" content="ORIX Capital description" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../resources/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../../resources/favicon.png" />
+    
+    <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../resources/css/lib/renewal.css">
+    <link rel="stylesheet" href="../../resources/css/lib/default.css">
+    <link rel="stylesheet" href="../../resources/css/ui/jquery-ui.css">
+    <link rel="stylesheet" href="../../resources/css/ui/datepicker.css">
+    
+    <script type="text/javascript" src="../../resources/js/ui/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/jquery-1.12.4.min.js"></script>
+    <script  type="text/javascript" src="../../resources/js/ui/jquery-ui-1.12.1.js"></script>
+
+    <script type="text/javascript" src="../../resources/js/lib/default.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/datepicker.js"></script>
+</head>
+
+<body>
+    <!--//wrap-->
+    <div class="wrap">
+        <!-- //headerWrap -->
+        <div id="headerWrap">
+			<script>
+			$(document).ready(function(){
+				document.charset="euc-kr";
+				$("#headerWrap").load("../include/inc_header.html");
+			});
+			</script>
+        </div>
+        <!-- headerWrap// -->
+        <!-- //menuWrap -->
+        <div id="menuWrap">
+            <script>
+            $(document).ready(function(){
+                document.charset="euc-kr";
+                $("#menuWrap").load("../include/inc_all_menu.html");
+            });
+            </script>
+        </div>
+	    <!-- menuWrap// -->
+        <form>
+            <!--//contents-wrap-->
+            <div class="contents-wrap">
+                css와 js 경로 및 headerWrap, menuWrap인크루드 경로가 잘 연결되었는지 확인해주세요.
+            </div>
+            <!--contents-wrap//-->
+        </form>
+    </div>
+    <!--wrap//-->
+    <div id="lyPullPop02" class="layerpopup laypop-all" style="display: block;">
+		<div class="content-wrap">
+			<div class="pop-header">
+				<h2 class="pop-title">약관동의 및 본인인증</h2>
+				<button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+			</div>
+
+			<div class="ly-con-wrap" id="">
+                <section class="form-wrap">
+					<div class="terms-area">
+						<div class="terms-wrap level1 chk-all">
+							<fieldset>
+								<input type="checkbox" id="allChk01" name="allChk01" value="" class="check all">
+								<label for="allChk01"><span>약관에 모두 동의할게요</span></label>
+							</fieldset>
+						</div>
+
+						<div class="terms-wrap level2">
+							<fieldset>
+								<input type="checkbox" id="chkEach01" name="check" value="" class="check" terms-pop="lyPullPop02"><!--terms-pop 약관 팝업-->
+								<label for="chkEach01"><span>[필수] 대출신청전자서명 동의</span></label>
+							</fieldset>
+						</div>
+
+						<div class="terms-wrap level2">
+							<fieldset>
+								<input type="checkbox" id="chkEach02" name="check" value="" class="check" terms-pop="lyPullPop03">
+								<label for="chkEach02"><span>[필수] 자동차저당권 설정 계약서</span></label>
+							</fieldset>
+						</div>
+
+						<div class="terms-wrap level2">
+							<fieldset>
+								<input type="checkbox" id="chkEach04" name="check" value="" class="check">
+								<label for="chkEach04"><span>[필수] 전자금융거래약관</span></label>
+							</fieldset>
+						</div>
+
+						<div class="terms-wrap level2">
+							<fieldset>
+								<input type="checkbox" id="chkEach05" name="check" value="" class="check">
+								<label for="chkEach05"><span>[필수] 인터넷 서비스 이용약관</span></label>
+							</fieldset>
+						</div>
+
+						<div class="terms-wrap level2">
+							<fieldset>
+								<input type="checkbox" id="chkEach06" name="check" value="" class="check">
+								<label for="chkEach06"><span>[필수] 통신사 인증 이용약관</span></label>
+							</fieldset>
+						</div>
+					</div>
+                    <div class="form-group">
+                        <label for="" class="essential">본인인증</label>
+                        <input id="" type="text" name="" class="form-control" placeholder="홍길동" disabled="">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col">
+                                <input id="" type="number" class="form-control" maxlength="6" name="" value="" placeholder="900123" required="" disabled="">
+                            </div>
+                            <div class="input-hyphen">-</div>
+                            <div class="col">
+                                <input id="" type="tel" class="form-control jumin" maxlength="1" placeholder="1" name="" value="" required="" disabled="">
+                                <span class="jumintext">●●●●●●</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-3">
+                                <input id="" type="text" class="form-control select" placeholder="통신사" onclick="openPopup('lySel2')" readonly>
+                            </div>
+                            <div class="col">
+                                <input id="" type="tel" name="" class="form-control" maxlength="11" placeholder="- 없이 숫자만 입력">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input id="" type="number" class="form-control" placeholder="인증번호 입력">
+                            </div>
+                            <button class="btn btn-primary disabled" type="button">인증번호요청</button><!--[D]: 통신사 선택 영역에 기입된 후 버튼 활성화-->
+                        </div>
+                    </div>
+				</section>
+			</div>
+		</div>
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap">
+                <button type="button" class="btn btn-primary">확인</button><!--[D]: 유효성 체크 알럿 4종류-->
+            </div>
+        </div>
+	</div>
+</body>
+<!--//휴대폰팝업2-->
+<div id="lySel2" class="layerpopup layer-up on" tabindex="0" style="display:block;"><!-- [D] 클래스 has-button 추가 시 하단 fixed 버튼 있을 시 스타일 노출-->
+    <div class="content-wrap">
+        <div class="pop-header">
+            <h2 class="pop-title">통신사 선택</h2>
+            <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        </div>
+        <div class="ly-scroll-con ly-select">
+            <ul class="ly-select-list">
+                <li><button>SKT</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                <li><button>KT</button></li>
+                <li><button>LG</button></li>
+                <li><button>알뜰폰 SK</button></li>
+                <li><button>알뜰폰 KT</button></li>
+                <li><button>알뜰폰 LG</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--휴대폰팝업2//-->
+</html>
