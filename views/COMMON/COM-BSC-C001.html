@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:type" content="website" />
+
+	<link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<style>
+    .contents.guide { padding:15px; }
+    .guide .home { margin-bottom:10px; }
+    .guide .home a { display:block; width:24px; height:24px; font-size:0; background:url("../../index_home.png")no-repeat center center; }
+    .guide .code h4 { margin-bottom:5px; }
+    /* color css */
+    .guide .code .border { margin-bottom:20px; padding:20px; border:1px solid #33333323; border-radius:15px; }
+    .guide .code .border li { padding:10px; }
+    .btn-wrap > span{  display:inline; font-weight:bold; }
+    .btn-wrap > button,
+    .btn-wrap > a {  margin-bottom:10px; }
+    .flex { display:flex; align-items: center; }
+</style>
+<body>
+    <div class="wrap">
+        <div id="contentWrap" class="sub-content">
+            <div class="contents guide">
+                <div class="home">
+                    <a href="../../index.html">홈</a>
+                </div>
+                <div class="code">
+                    <section>
+                        <h4>font-size</h4>
+                        <ul class="border">
+                            <li>
+                                <ul class="flex">
+                                    <li style="font-size:var(--font28);">H2 오릭스 캐피탈 모바일 플랫폼</li>
+                                    <li>28px</li>
+                                    <li>line-height: 2.375rem</li>
+                                    <li>컨텐츠 타이틀</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="flex">
+                                    <li style="font-size:var(--font22);">H3 오릭스 캐피탈 모바일 플랫폼</li>
+                                    <li>22px</li>
+                                    <li>line-height: 2.125rem</li>
+                                    <li>팝업 타이틀</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="flex">
+                                    <li style="font-size:var(--font20);">H4 오릭스 캐피탈 모바일 플랫폼</li>
+                                    <li>20px</li>
+                                    <li>line-height: 2rem</li>
+                                    <li>본문 타이틀, 하단 CTA 버튼,</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="flex">
+                                    <li style="font-size:var(--font18);">오릭스 캐피탈 모바일 플랫폼</li>
+                                    <li>18px</li>
+                                    <li>line-height: 1.625rem</li>
+                                    <li>테이블 TH, 테이블 TD</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="flex">
+                                    <li style="font-size:var(--font16);">P 오릭스 캐피탈 모바일 플랫폼</li>
+                                    <li>16px</li>
+                                    <li>line-height: 1.5rem</li>
+                                    <li>기준폰트, 본문 서브타이틀, 본문 영역 강조, 본문 내용, 보조버튼</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="flex">
+                                    <li style="font-size:var(--font14);">Caption 오릭스 캐피탈 모바일 플랫폼</li>
+                                    <li>14px</li>
+                                    <li>line-height: 1.31rem</li>
+                                    <li>캡션</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h4>font-weight</h4>
+                        <ul class="border">
+                            <li style="font-weight:var(--w-light)">나눔고딕OTF - Light</li>
+                            <li style="font-weight:var(--w-regular);">나눔고딕OTF - Regular</li>
+                            <li style="font-weight:var(--w-bold);">나눔고딕OTF - Bold</li>
+                        </ul>
+                        <h4>text-wrap</h4>
+                        <div class="border">
+                            <div class="text-wrap">
+                                <h2>본문타이틀</h2>
+                            </div>
+                            <div class="text-wrap">
+                                <p class="sub-tit">서브본문타이틀</p>
+                            </div>
+                        </div>
+                        <h4>sub-text-wrap</h4>
+                        <div class="border">
+                            <div class="sub-text-wrap style1">
+                                <h4>1. 타이틀 padding:10px 0 20px;</h4>
+                            </div>
+                            <div class="sub-text-wrap style2">
+                                <h4>2. 타이틀 padding:20px 0;</h4>
+                            </div>
+                            <div class="sub-text-wrap style3">
+                                <p class="caption">3. caption만 들어갈 경우</p>
+                            </div>
+                        </div>
+                        <h4>caption</h4>
+                        <div class="border">
+                            <p class="caption">기본 info</p>
+                            <p class="caption2">테이블캡션(단위)</p>
+                            <p class="caption3">레이어팝업에서</p>
+                        </div>
+                        <h4>table-text-wrap</h4>
+                        <div class="border">
+                            <div class="table-text-wrap style1">
+                                <h4>테이블 타이틀 기본 padding:20px 0;</h4>
+                            </div>
+                            <div class="table-text-wrap style2">
+                                <h4>테이블 타이틀 기본 padding:20px 0 10px;</h4>
+                            </div>
+                        </div>
+                        <h4>estimate-text-wrap</h4>
+                        <div class="border">
+                            <div class="estimate-text-wrap">
+                                <h5>견적서 타이틀</h5>
+                            </div>
+                            <p class="notice-word">※ 안내문구</p>
+                        </div>
+                        <h4>popup-text-wrap</h4>
+                        <div class="border">
+                            <div class="popup-text-wrap">
+                                <h4>팝업 기본 본문 타이틀 padding:20px 0;</h4>
+                            </div>
+                            <div class="popup-text-wrap style2">
+                                <h4>팝업 타이틀 padding:10px 0 20px;</h4>
+                            </div>
+                            <div class="popup-text-wrap style3">
+                                <h4 class="tit">팝업 타이틀 padding:0 0 20px 0;</h4>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+	<script>
+        $(function(){
+            $('div[data-include-path]').each(function(){
+                var path = $(this).attr('data-include-path');
+                $(this).load(path,function(response,status,xhr){
+                    if(status == 'error'){
+                        var msg = 'Sory but there was an error:';
+                        $(this).html(msg + xhr.status + '' + xhr.statusText);
+                    }
+                })
+            })
+        })
+    </script>
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+</body>
+</html>
+

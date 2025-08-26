@@ -1,0 +1,313 @@
+:root{
+    --m-img-q: url(../images/mian/ic_question.png);
+    --m-img-arrow: url(../images/mian/ic_m_arrow.png);
+    --m-img-mainsec01: url(../images/mian/ic_mainCar.png);
+    --m-img-mainsec02: url(../images/mian/ic_my_current.png);
+    --m-img-mainSec03: url(../images/mian/ic_my_graph.png);
+    --m-img-shortCut01: url(../images/mian/ic_sc_quote.png);
+    --m-img-shortCut02: url(../images/mian/ic_sc_perfo.png);
+    --m-img-shortCut03: url(../images/mian/ic_sc_data.png);
+    --m-img-shortCut04: url(../images/mian/ic_sc_faq.png);
+
+    --m-color01:#1A3B6C;
+    --m-color02:#1168E6;
+    --m-color03:#2844C1;
+    --m-color04:#00A3E2;
+    --m-color05:#255695;
+    --m-color06:#377A6B;
+    --m-color07:#056ED6;
+    --m-color08:#060a13;
+    
+    --m-background1: #E2ECF7;
+    --m-background2: #F2F6FC;
+    --m-background3: #F9F9F9;
+    --m-background4: #EAFADF;
+    --m-background5: #F1F4FB;
+}
+
+
+/*********************************************************************
+메인 Layout
+*********************************************************************/
+.mainWrap .sub-content{ padding:0 0 80px; max-width: initial;}
+.mainWrap .inner {  max-width:1400px; margin:0 auto; }
+
+/*********************************************************************
+메인 Animation
+*********************************************************************/
+.x-slide { animation-name: x-slide; animation-duration: 0.6s; animation-timing-function: ease; animation-delay: 0.2s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: forwards; opacity: 0; transform: translateX(20px); }
+@keyframes x-slide {
+    0% { transform: translateX("20px"); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+.y-slide { animation-name: y-slide; animation-duration: 0.6s; animation-timing-function: ease; animation-delay: 0.2s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: forwards; opacity: 0; transform: translateY(-20px); }
+@keyframes y-slide {
+    0% { transform: translateX("-20px"); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+.upAndDown ul>li:hover,
+.upAndDown ul>li:focus { animation-name: upAndDown;  animation-duration: 0.34s; }
+@keyframes upAndDown {
+    0%, 20%, 100% { padding-top: 75px; background-position: center 8px; }
+    25% { padding-top: 76px; background-position: center 9px; }
+    40% { padding-top: 78px; background-position: center 11px; }
+    55% { padding-top: 82px; background-position: center 15px; }
+    70% { padding-top: 80px; background-position: center 13px; }
+    85% { padding-top: 78px; background-position: center 11px; }
+}
+
+
+/*********************************************************************
+메인.01 - 메인베너/바로가기
+*********************************************************************/
+/*---------------------------------------------
+    mainSec01 Default
+---------------------------------------------*/
+.mainSec01 { max-height:502px; background:var(--m-background1); }
+.mainSec01>div { display:flex; justify-content: space-between; height:502px; }
+.mainSec01 .shortcut-area>ul { display:flex; flex-wrap:wrap; justify-content: space-between; gap:10px; margin-top:25px; }
+.mainSec01 .shortcut-area>ul>li { flex:1 0 calc((100% - 2 * 14px) / 2); height:110px; text-align: center; padding-top:75px; cursor: pointer;}
+.mainSec01 .shortcut-area>ul>li>a { font-weight: var(--w-bold); }
+/*---------------------------------------------
+    mainSec01 Contents
+---------------------------------------------*/
+.mainSec01 .introMain-area { margin-top:92px; }
+.mainSec01 .introMain-area>ul>li>h2>em { font-style:initial;  font-size:var(--font24); font-weight: var(--w-bold); color:var(--m-color01); }
+.mainSec01 .introMain-area>ul>li>h2>.tit { margin-top:18px; font-weight:var(--w-bold); font-size: var(--font50); }
+.mainSec01 .introMain-area>ul>li>h2>.txt { margin-top:48px;  font-size: var(--font20);  line-height:1.5;}
+
+.mainSec01 .shortcut-area { margin-top:60px; padding:36px; width:368px; height:382px; border-radius: 36px; background: var(--white); box-shadow: 0px 0px 10px rgba(0,12 ,44, 0.16); }
+.mainSec01 .shortcut-area>.btn-wrap  { display:flex; }
+.mainSec01 .shortcut-area>.btn-wrap>button.btn { margin-left:10px; height:70px; border-radius: 8px; font-size: var(--font22); color:var(--white); }
+.mainSec01 .shortcut-area>.btn-wrap>button.btn:nth-child(1) { margin-left:0; padding:0 40px; background: var(--m-color02); }
+.mainSec01 .shortcut-area>.btn-wrap>button.btn:nth-child(2) { padding:0 30px; background: var(--m-color03); }
+.mainSec01 .shortcut-area>ul>li:nth-of-type(1) { background: var(--m-img-shortCut01) no-repeat 50% 10px/50px auto;  }
+.mainSec01 .shortcut-area>ul>li:nth-of-type(2) { background: var(--m-img-shortCut02) no-repeat 50% 10px/50px auto; }
+.mainSec01 .shortcut-area>ul>li:nth-of-type(3) { background: var(--m-img-shortCut03) no-repeat 50% 10px/50px auto; }
+.mainSec01 .shortcut-area>ul>li:nth-of-type(4) { background: var(--m-img-shortCut04) no-repeat 50% 10px/50px auto; }
+.mainSec01 .shortcut-area>ul>li:nth-of-type(1):hover,
+.mainSec01 .shortcut-area>ul>li:nth-of-type(2):hover,
+.mainSec01 .shortcut-area>ul>li:nth-of-type(3):hover,
+.mainSec01 .shortcut-area>ul>li:nth-of-type(4):hover,
+.mainSec01 .shortcut-area>ul>li:nth-of-type(5):hover { background-color: var(--m-background5); border-radius: 10px;}
+
+/*********************************************************************
+메인.02 - 나의 현황조회
+*********************************************************************/
+/*---------------------------------------------
+    mainSec02 Default
+---------------------------------------------*/
+.mainSec02 { margin-top:110px; }
+.mainSec02>div { display:flex; gap:20px; width:100%; }
+.mainSec02 ul.introList-area { display:flex; justify-content: flex-start;  /*gap:14px;*/ width:100%; }
+.mainSec02 .intro-box { flex:0 0 309px; margin-right:16px;  }
+.mainSec02 .intro-box>a { display:block; width:100%; height:232px; padding:30px; font-weight: var(--w-bold); border-radius: 20px; background: var(--m-img-mainsec02) no-repeat var(--m-background2) right 20px bottom 20px /97px auto; }
+.mainSec02 ul.introList-area>li { flex:1;  }
+.mainSec02 ul.introList-area>li>a { display:block; padding:30px 20px; background: var(--m-background3); }
+.mainSec02 ul.introList-area>li>a  { height:232px; border-radius:20px; }
+.mainSec02 ul.introList-area>li:not(.intro-box)>a:hover,
+.mainSec02 ul.introList-area>li:not(.intro-box)>a:focus{ background: var(--m-color02); }
+.mainSec02 ul.introList-area>li:not(.intro-box)>a:hover>p,
+.mainSec02 ul.introList-area>li:not(.intro-box)>a:hover>.btn,
+.mainSec02 ul.introList-area>li:not(.intro-box)>a:hover>.btn::after,
+.mainSec02 ul.introList-area>li:not(.intro-box)>a:focus>p,
+.mainSec02 ul.introList-area>li:not(.intro-box)>a:focus>.btn,
+.mainSec02 ul.introList-area>li:not(.intro-box)>a:focus>.btn::after  { color:var(--white); }
+/*---------------------------------------------
+    mainSec02 Contents
+---------------------------------------------*/
+.mainSec02 .intro-box>a>.tit { font-size:var(--font22); color:var(--m-color04); }
+.mainSec02 .intro-box>a>.txt { margin:10px 0 0 -2px; font-size:var(--font32); color:var(--m-color05); }
+.mainSec02 ul.introList-area>li>a>p { font-weight: var(--w-bold); }
+.mainSec02 ul.introList-area>li>a>.tit { font-size:var(--font28); }
+.mainSec02 ul.introList-area>li>a>.num { margin-top:16px; padding-bottom:2px; text-decoration: underline; text-underline-offset:6px; font-size:var(--font24); }
+.mainSec02 ul.introList-area>li>a>.btn { display:flex; align-items: center; position: absolute; bottom:20px; right:37px; color:var(--title); }
+.mainSec02 ul.introList-area>li>a>.btn::after { display:inline-block; content: '>'; margin-left:6px; text-align: center; vertical-align: middle; font-size:var(--font16); color:var(--title); }
+/*---------------------------------------------
+    mainSec02 Swiper
+---------------------------------------------*/
+.mainSec02 .introListSlider { flex:1; width:100%; min-width:0; }
+.mainSec02 .introListSlider { overflow: hidden; width:100%; }
+.mainSec02 .introListSlider .swiper-button-next:after, .introListSlider .swiper-button-prev:after { content: ''; position: absolute; width:45px; height:45px; background: url(../images/mian/ic_arror_right.png)no-repeat right -4px center/45px auto; border:3px solid #789EEF; border-radius: 50%;  }
+.mainSec02 .introListSlider .swiper-button-prev:after { transform: rotate(180deg); }
+.mainSec02 .introListSlider .swiper-button-next, .swiper-rtl .swiper-button-prev { right:var(--swiper-navigation-sides-offset, 20px); }
+.mainSec02 .introListSlider .swiper-button-prev, .swiper-rtl .swiper-button-next { left:var(--swiper-navigation-sides-offset, 20px); }
+.mainSec02 .introListSlider .swiper-button-prev,
+.mainSec02 .introListSlider .swiper-button-next { transition: transform 0.3s ease; }
+.mainSec02 .introListSlider .swiper-button-prev:hover,
+.mainSec02 .introListSlider .swiper-button-next:hover { transform: scale(1.1); }
+.mainSec02 .introListSlider .swiper-pagination { bottom:0; }
+.mainSec02 .introListSlider .swiper-pagination-bullet { width:var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 12px)); height:var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 12px)); border-radius: var(--swiper-pagination-bullet-border-radius, 8px);  }
+.mainSec02 .introListSlider .swiper-pagination-bullet-active {  width:var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 34px)); background:#789EEF;  }
+
+
+/*********************************************************************
+메인.03 - 나의 실적
+*********************************************************************/
+/*---------------------------------------------
+    mainSec03 Default
+---------------------------------------------*/
+.mainSec03 { margin-top:123px; }
+.mainSec03 a { transition: all 0.2s ease; }
+.mainSec03 a:hover,
+.mainSec03 a:focus { transform: scale(1.05); }
+/*---------------------------------------------
+    mainSec03 Contents
+---------------------------------------------*/
+.mainSec03 a { display:flex; justify-content: center; gap:12px; padding:32px 0; font-weight: var(--w-bold); text-align: center; border-radius: 20px; color:var(--m-color06); background: var(--m-background4); }
+.mainSec03 a>.tit { font-size: var(--font24); }
+.mainSec03 a>.txt { font-size: var(--font20); }
+.mainSec03 a>.img { position: absolute; bottom:0; right:0; width:212px; height:138px; }
+
+
+/*********************************************************************
+메인.04 - 견적서
+*********************************************************************/
+/*---------------------------------------------
+    mainSec04 Default
+---------------------------------------------*/
+.mainSec04 { margin-top:74px; }
+.mainSec04 ul.introList-area {  display:flex; flex-wrap: wrap; gap:14px; margin-top:52px; }
+.mainSec04 ul.introList-area>li { flex:1; min-width: 0; }
+.mainSec04 ul.introList-area>li>a { display:flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding:33px 20px; height:138px; border-radius: 34px; background: var(--m-background2);}
+.mainSec04 ul.introList-area>li>a { transition: 0.1s ease; }
+.mainSec04 ul.introList-area>li>a:hover,
+.mainSec04 ul.introList-area>li>a:focus { transform: scale(1.03); box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.08); }
+/*---------------------------------------------
+    mainSec04 Contents
+---------------------------------------------*/
+.mainSec04 ul.introList-area>li>a>.tit { overflow: hidden; text-overflow:ellipsis; white-space: nowrap; font-size: var(--font20); }
+.mainSec04 ul.introList-area>li>a>.btn { margin:18px 26px 0 0; line-height: 23px; font-size:var(--font24); font-weight: var(--w-bold); }
+.mainSec04 ul.introList-area>li>a>.btn::after { content: ''; display:inline-flex; align-items: center; position: absolute; margin-left:3px; width:23px; height:23px; background:var(--m-img-arrow)no-repeat 100%/23px auto; }
+
+
+/*********************************************************************
+메인.05 - 공지사항/자료실/FAQ
+*********************************************************************/
+/*---------------------------------------------
+    mainSec05 Tab
+---------------------------------------------*/
+.mainSec05 ul.intro-tit>li { display:inline-block; position: relative; cursor: pointer;}
+.mainSec05 ul.intro-tit>li + li { margin-left:22px;  }
+.mainSec05 ul.intro-tit>li.on h2 { line-height: 28px; color:var(--m-color07); }
+.mainSec05 ul.intro-tit>li.on::after { content: ''; position: absolute; left:0; bottom:-5px; width:100%; height:2px; background: var(--m-color07); }
+/*---------------------------------------------
+    mainSec05 Default
+---------------------------------------------*/
+.mainSec05 {  margin-top:74px; }
+.mainSec05>div { display:flex; justify-content: space-between; flex-wrap: wrap; gap:14px;}
+.mainSec05 [class*="area"] {flex:1; min-width: 0; padding:48px 40px 55px 40px; max-height:308px; border-radius: 24px; border:1px solid var(--border1);  background: var(--white); }
+.mainSec05 .intro-tit h2 { line-height:35px; font-size:var(--font24); font-weight: var(--w-bold); }
+.mainSec05 .intro-con { margin-top:45px; max-height:120px; }
+.mainSec05 .intro-con ul>li + li{ margin-top:24px; }
+.mainSec05 .intro-con ul>li{ border-bottom:1px solid transparent; line-height:1.4; max-height:24px; }
+/* .mainSec05 .intro-con ul>li:hover,
+.mainSec05 .intro-con ul>li:focus { background: var(--m-background2);} */
+
+.mainSec05 .intro-con ul>li>a { display:flex; justify-content: space-between; gap:10px; }
+.mainSec05 .intro-con ul>li span.txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size:var(--font18); font-weight:var(--w-bold); color:var(--inactive); }
+.mainSec05 .intro-con ul>li span.date { text-align: right; min-width:88px; color:var(--subtitle);}
+.mainSec05 .intro-con .btn.btn-text { position:absolute; top:-81px; right:13px; }
+/*---------------------------------------------
+    mainSec05 Contents Faq
+---------------------------------------------*/
+.mainSec05 .introFaq-area .intro-tit h2 { display:inline-block; letter-spacing:-3.2px;}
+.mainSec05 .introFaq-area .intro-con ul>li { padding-left:32px; }
+.mainSec05 .introFaq-area .intro-con ul>li:before { content:''; position:absolute;  transform: translateY(-50%); top:50%; left:0; width:24px; height:24px; background: var(--m-img-q)no-repeat 100%/24px auto; }
+
+
+/*********************************************************************
+Media Query
+*********************************************************************/
+@media (max-width: 1200px) { /* DeskTop */
+/*********************************************************************
+메인 Layout
+*********************************************************************/
+    .mainWrap { padding-top:76px; }
+    .mainWrap .inner { padding:0 20px; }
+/*********************************************************************
+메인.01 - 메인베너/바로가기
+*********************************************************************/
+    .mainSec01 .img { margin-top:70px; width:400px; height:342px; }
+    .mainSec01 .introMain-area ul>li>p.tit { font-size:var(--font40); }
+    .mainSec01 .introMain-area ul>li>p.txt { margin-top:30px; }
+    .mainSec01 .shortcut-area { display:flex; align-items: center; flex-direction: row; flex-wrap: wrap; gap:20px; padding:30px; position: absolute; bottom:30px; width:calc(100% - 40px); height:auto; transform: translateY(50%); }
+    .mainSec01 .shortcut-area>.btn-wrap { flex:0 0 247px; }
+    .mainSec01 .shortcut-area>.btn-wrap>button.btn { margin-left:15px; font-size:var(--font20); }
+    .mainSec01 .shortcut-area>.btn-wrap>button.btn:nth-child(1) { padding:0 30px; }
+    .mainSec01 .shortcut-area>.btn-wrap>button.btn:nth-child(2) { padding:0 20px; }
+    .mainSec01 .shortcut-area>ul { flex-wrap: initial; width:100%; flex:1; margin-top:0; }
+    .mainSec01 .shortcut-area>ul>li { flex:1; }
+    .mainSec01 .shortcut-area>ul>li:nth-of-type(1) {flex:1.2; }
+    .mainSec01 .shortcut-area>ul>li:nth-of-type(1):hover,
+    .mainSec01 .shortcut-area>ul>li:nth-of-type(2):hover,
+    .mainSec01 .shortcut-area>ul>li:nth-of-type(3):hover,
+    .mainSec01 .shortcut-area>ul>li:nth-of-type(4):hover,
+    .mainSec01 .shortcut-area>ul>li:nth-of-type(5):hover { background-color: var(--white); }
+/*********************************************************************
+메인.02 - 나의 현황조회
+*********************************************************************/
+    .mainSec02>div { gap:initial; }
+    .mainSec02 .intro-box { margin-right:0; }
+    .mainSec02 ul.introList-area { flex:initial;}
+    .mainSec02 ul.introList-area>li { flex: 1 0 calc((100% - 2 * 14px) / 2); }
+    /* .mainSec02 ul.introList-area { flex-wrap: wrap;}
+    .mainSec02 ul.introList-area>li { flex: 1 0 calc((100% - 2 * 14px) / 3); } */
+    .mainSec02 ul.introList-area>li>a { height:180px; }
+    /* .mainSec02 ul.introList-area>li>a>.tit { font-size:var(--font18); }
+    .mainSec02 ul.introList-area>li>a>.num { font-size:var(--font20); }
+    .mainSec02 .intro-box { flex: 1 0 calc((100% - 2 * 14px) / 3);  margin-right:0; }
+    .mainSec02 .intro-box>a { background:var(--m-img-mainsec02) no-repeat var(--m-background2) right 20px bottom 20px /80px auto }
+    .mainSec02 .intro-box>a>.tit { font-size:var(--font18); }
+    .mainSec02 .intro-box>a>.txt { font-size:var(--font20); } */
+    /*---------------------------------------------
+        mainSec02 Swiper
+    ---------------------------------------------*/
+    .mainSec02 .introListSlider { padding:30px 35px; }
+    .mainSec02 .introListSlider::before,
+    .mainSec02 .introListSlider::after { content: ''; position: absolute; top: 0; bottom: 0; width: 50px; /* 블러 영역의 너비 */ z-index: 2; pointer-events: none; }
+    .mainSec02 .introListSlider::before { left: 0; background: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0)); }
+    .mainSec02 .introListSlider::after { right: 0; background: linear-gradient(to left, rgba(255,255,255,0.6), rgba(255,255,255,0)); } 
+
+/*********************************************************************
+메인.03 - 나의 실적
+*********************************************************************/
+    .mainSec03 a { flex-direction:column; padding:22px 0; }
+    .mainSec03 a>.tit { font-size:var(--font20); }
+    .mainSec03 a>.txt { font-size:var(--font18); }
+    .mainSec03 a>.img { width:200px; height:126px; }
+/*********************************************************************
+메인.04 - 견적서
+*********************************************************************/
+    .mainSec04 ul.introList-area { flex-direction: column; }
+    .mainSec04 ul.introList-area>li>a { height:120px; padding:20px; }
+    .mainSec04 ul.introList-area>li>a>.tit { font-size:var(--font18); }
+    .mainSec04 ul.introList-area>li>a>.btn { font-size:var(--font20); }
+}
+
+@media (max-width: 780px) { /* Tablet */
+/*********************************************************************
+메인.01 - 메인베너/바로가기
+*********************************************************************/
+    .mainSec01 .shortcut-area { gap:15px; }
+    .mainSec01 .shortcut-area>.btn-wrap { flex: 0 0 210px; }
+    .mainSec01 .shortcut-area>.btn-wrap>button.btn { margin-left:10px; font-size:var(--font18); }
+    .mainSec01 .shortcut-area>.btn-wrap>button.btn:nth-child(1) { padding:0 20px; }
+/*********************************************************************
+메인.02 - 나의 현황조회
+*********************************************************************/
+    .mainSec02 .introListSlider::before, .mainSec02 .introListSlider::after { width:34px; }
+/*********************************************************************
+메인.03 - 나의 실적
+*********************************************************************/
+    .mainSec03 a>.txt { padding-right:20px; }
+/*********************************************************************
+메인.05 - 공지사항/자료실/FAQ
+*********************************************************************/
+    .mainSec05>div { flex-direction: column; }
+    .mainSec05 [class*="area"] { width:100%;  padding:30px;}
+    .mainSec05 .intro-tit h2 { font-size:var(--font18); }
+    .mainSec05 ul.intro-tit>li + li { margin-left:10px; }
+    .mainSec05 .intro-con { margin-top:30px; }
+    .mainSec05 .intro-con .btn.btn-text { top:-71px; }
+}

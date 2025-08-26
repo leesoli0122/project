@@ -1,0 +1,93 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+    <meta name="viewport" content="width=device-width, initital-scale=1">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);"><span class="ir">홈</span></a></li>
+                        <li><a href="javascript:void(0);">1depth</a></li>
+                        <li><a href="javascript:void(0);">2depth</a></li>
+                        <li><a href="javascript:void(0);">3depth</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>페이지 타이틀 </h2>
+                    <p class="sub-tit">페이지 보조 내용이 들어갑니다.</p>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+                <!--S: 계약조건 로딩 페이지 견적 -->
+                <div class="loading-wrap2">
+                    <div>
+                        <div class="loader2"></div>
+                    </div>
+                </div>
+                <!--E: 계약조건 로딩 페이지 -->
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

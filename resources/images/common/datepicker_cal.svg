@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="그룹_64955" data-name="그룹 64955" transform="translate(-743 -1466)">
+    <rect id="사각형_24327" data-name="사각형 24327" width="20" height="20" transform="translate(743 1466)" fill="#fff"/>
+    <g id="icon" transform="translate(746 1467)">
+      <rect id="Rectangle" width="2" height="1" transform="translate(3 10)" fill="#222"/>
+      <rect id="Rectangle-2" data-name="Rectangle" width="2" height="1" transform="translate(6 10)" fill="#222"/>
+      <rect id="Rectangle-3" data-name="Rectangle" width="2" height="1" transform="translate(9 10)" fill="#222"/>
+      <path id="Rectangle55" d="M0,3.947V0H12.444A1.567,1.567,0,0,1,14,1.579V12.632H1.556A1.567,1.567,0,0,1,0,11.053V5.526" transform="translate(0 2.368)" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Line16" d="M0,.5H13.222" transform="translate(0.389 5.421)" fill="none" stroke="#222" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Stroke11" d="M1,0V3.158" transform="translate(2.111)" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Stroke13" d="M1,0V3.158" transform="translate(9.111)" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

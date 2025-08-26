@@ -1,0 +1,181 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="ORIX Capital keywords">
+<meta name="description" content="ORIX Capital description">
+
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:type" content="website" />
+
+<title>정보입력 < 사용자신청</title>
+
+<link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+<script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+<script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+<script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap login">
+        <!-- s:header -->
+        <div class="login-header">
+            <img src="../../resources/images/login_logo.png" alt="오릭스캐피탈코리아 로고">
+            <h2>
+                사용자신청
+                <span>오릭스캐피탈코리아 신차 영업 플랫폼 입니다.</span>
+            </h2>
+        </div>
+        <!-- //e:header -->
+        <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:contents -->
+            <div class="contents">
+                <!--S: 2024.10.23 text 변경 -->
+                <ul class="step-wrap">
+                    <li class="prev"><span>Step1.휴대폰 본인인증</span></li>
+                    <li class="on"><span>Step2.정보입력</span></li>
+                    <li class="next"><span>Step3.신청완료</span></li>
+                </ul>
+                <!--E: 2024.10.23 text 변경 -->
+                <form>
+                    <div class="sub-text-wrap style2">
+                        <h4>신청 정보입력</h4>
+                    </div>
+                    <div class="table-type">
+                        <div class="col">
+                            <dl>
+                                <dt>성명</dt>
+                                <dd class="form-group">
+                                    <input id="" title="성명" type="text" name="" class="form-control" placeholder="성명" value="김오릭" disabled>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>휴대폰번호</dt>
+                                <dd class="form-group"><!--[20241104] input 수정-->
+                                    <input id="" type="number" title="휴대폰번호입력" name="" class="form-control" maxlength="11" oninput="this.value = this.value.slice(0,11)" placeholder="휴대폰번호 입력" value="010-1234-5678" disabled>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>사업지점</dt>
+                                <dd class="form-group">
+                                    <div class="form-row"><!-- [D] 인풋/버튼 클릭 시 팝업 호출 영역  -->
+                                        <div class="col-1">
+                                            <input id="" title="사업지점" type="text" class="form-control" name="" value="사업지점 입력">
+                                        </div>
+                                        <button class="btn btn-input active" type="button">지점 검색</button><!-- [D] active 클래스 : 완료 됐을 경우 활성화 -->
+                                    </div>
+                                    <!--[20241120] 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                        <p class="info">사업지점이 검색되지 않았습니다.(사업지점을 정확히 입력해주세요)</p>
+                                    -->
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>아이디</dt>
+                                <dd class="form-group">
+                                    <div class="form-row"><!-- [D] 인풋/버튼 클릭 시 팝업 호출 영역  -->
+                                        <div class="col-1">
+                                            <input id="" title="아이디" type="text" class="form-control" name="" value="아이디 입력">
+                                            <!-- form-group에 correct가 있을 때/사용 가능할 경우
+                                                <p class="info">사용 가능한 아이디 입니다.</p>
+                                            -->
+
+                                            <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                                <p class="info">이미 사용중인 아이디 입니다.</p>
+                                                <p class="info">아이디를 입력해 주세요.</p>
+                                                <p class="info">아이디 중복체크를 진행해 주세요.</p>
+                                            -->
+                                        </div>
+                                        <button class="btn btn-input active" type="button">중복체크</button><!-- [D] active 클래스 : 완료 됐을 경우 활성화 -->
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>비밀번호</dt>
+                                <dd class="form-group"><!--[20241104] input 수정-->
+                                    <input id="" title="비밀번호" type="password" name="" class="form-control" placeholder="영문/숫자 포함 8자리 이상 입력">
+                                    <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                        <p class="info">비밀번호를 입력해 주세요.</p>
+                                    -->
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>비밀번호 확인</dt>
+                                <dd class="form-group"><!--[20241104] input 수정-->
+                                    <input id="" title="비밀번호 확인" type="password" name="" class="form-control" placeholder="비밀번호 확인 입력">
+                                    <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                        <p class="info">비밀번호 확인에 비밀번호를 입력해 주세요.</p>
+                                        <p class="info">비밀번호화 일치하지 않아요, 비밀번호확인을 다시 해주세요.</p>
+                                    -->
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>이메일</dt>
+                                <dd class="form-group">
+                                    <div class="form-row">
+                                        <div class="col-2">
+                                            <input id="" title="이메일" type="text" class="form-control" name="" value="" placeholder="직접입력" >
+                                        </div>
+                                        <div class="input-hyphen">@</div>
+                                        <div class="col-2">
+                                            <input id="" title="이메일" type="text" class="form-control" name="" value="" placeholder="" >
+                                        </div>
+                                    </div>
+                                    <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                        <p class="info">이메일을 정확히 입력해주세요.</p>
+                                    -->
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </form>
+                <div class="btn-wrap bottom">
+                    <button type="button" name="button" class="btn btn-primary">신청</button>
+                </div>
+                <div class="check-plz">
+                    <p class="plz-tit">확인해 주세요</p>
+                    <ul class="bul-hypn">
+                        <li>아이디는 영문,숫자 불문 8자리 이상 입력해야 합니다.</li>
+                        <li>특수문자는 아이디에 입력할 수 없습니다.</li>
+                        <li>비밀번호는 영문, 숫자 포함 8자리 이상 입력해야 합니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

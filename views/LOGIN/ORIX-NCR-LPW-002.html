@@ -1,0 +1,189 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>휴대폰본인인증 < 비밀번호 찾기 < 로그인</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap login">
+        <!-- s:header -->
+        <div class="login-header">
+            <img src="../../resources/images/login_logo.png" alt="오릭스캐피탈코리아 로고">
+            <h2>
+                비밀번호 찾기
+                <span>오릭스캐피탈코리아 신차 영업 플랫폼 비밀번호 찾기 화면입니다.</span>
+            </h2>
+        </div>
+        <!-- //e:header -->
+        <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:contents -->
+            <div class="contents">
+                <form>
+                    <div class="sub-text-wrap style1">
+                        <h4>휴대폰 본인인증</h4>
+                        <p class="caption"><span class="blue">반드시 본인 명의의 휴대폰 번호로 인증</span> 받으시기 바랍니다.</p>
+                    </div>
+                    <div class="table-type">
+                        <div class="col">
+                            <dl>
+                                <!--S: 2024.10.23 text 변경 -->
+                                <dt>휴대폰 본인인증</br>약관동의</dt>
+                                <!--E: 2024.10.23 text 변경 -->
+                                <dd>
+                                    <div class="terms-area">
+                                        <div class="terms-wrap level1 chk-all">
+                                            <fieldset>
+                                                <input type="checkbox" id="allChk01" name="allChk01" value="" class="check all">
+                                                <label for="allChk01"><span>휴대폰 본인 인증 약관 전체 동의</span></label><!--[20241101]오타수정-->
+                                            </fieldset>
+                                        </div>
+                                        <div class="terms-box">
+                                            <div class="terms-wrap level2">
+                                                <button class="btn btn-text small" type="button" onclick="openPopup('termsPop01')">자세히 보기</button>
+                                                <fieldset>
+                                                    <input type="checkbox" id="chkEach01" name="check" value="" class="check" terms-pop="lyPullPop02"><!--terms-pop 약관 팝업-->
+                                                    <label for="chkEach01"><span>[필수] 개인정보 수집 &middot; 이용 동의</span></label><!--[20241101]&middot; 추가-->
+                                                </fieldset>
+                                            </div>
+                                            <div class="terms-wrap level2">
+                                                <button class="btn btn-text small" type="button">자세히 보기</button>
+                                                <fieldset>
+                                                    <input type="checkbox" id="chkEach02" name="check" value="" class="check" terms-pop="lyPullPop01"><!--terms-pop 약관 팝업-->
+                                                    <label for="chkEach02"><span>[필수] 고유식별 정보 처리 동의</span></label>
+                                                </fieldset>
+                                            </div>
+                                            <div class="terms-wrap level2">
+                                                <button class="btn btn-text small" type="button">자세히 보기</button>
+                                                <fieldset>
+                                                    <input type="checkbox" id="chkEach03" name="check" value="" class="check" terms-pop="lyPullPop03"><!--terms-pop 약관 팝업-->
+                                                    <label for="chkEach03"><span>[필수] 통신사 이용약관 동의</span></label>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="sub-text-wrap style2">
+                        <h4>정보입력</h4>
+                    </div>
+                    <div class="table-type">
+                        <div class="col">
+                            <dl>
+                                <dt>성명</dt>
+                                <dd class="form-group">
+                                    <input id="" title="성명" type="text" name="" class="form-control" placeholder="성명">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>주민등록번호</dt>
+                                <dd class="form-group">
+                                    <div class="form-row"><!--[20241104] input 수정-->
+                                        <div class="col-2">
+                                            <input id="" title="주민등록번호 앞자리" type="number" class="form-control" min="0" step="1" maxlength="6" oninput="this.value = this.value.slice(0, 6)" name="" value="" placeholder="" >
+                                        </div>
+                                        <div class="input-hyphen">-</div>
+                                        <div class="col-2">
+                                            <input id="" title="주민등록번호 뒷자리" type="number" class="form-control jumin" min="0" step="1" maxlength="1" oninput="this.value = this.value.slice(0, 1)" placeholder="●" name="" value="">
+                                            <span class="jumintext">●●●●●●</span>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>휴대폰번호</dt>
+                                <dd class="form-group style1">
+                                    <div class="form-row">
+                                        <div class="select-box">
+                                            <div class="se-select" data-stove="select">
+                                                <select class="" title="메뉴구분">
+                                                    <option value="" disabled="" selected="" hidden="">선택하세요</option><!-- [D] : default - 셀렉트의 placeholder 기능-->
+                                                    <option value="0">option 00</option>
+                                                    <option value="1">option 01</option>
+                                                    <option value="2">option 02</option>
+                                                    <option value="3">option 03</option>
+                                                    <option value="4">option 04</option>
+                                                    <option value="5">option 05</option>
+                                                    <option value="6">option 06</option>
+                                                </select>
+                                                <div class="e-select-dim"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-1"><!--[20241104] input 수정-->
+                                            <input id="" title="" type="number" name="" class="form-control" maxlength="11" oninput="this.value = this.value.slice(0,11)" placeholder="휴대폰번호 입력">
+                                        </div>
+                                        <button class="btn btn-input" type="button">인증번호 요청</button>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>인증번호</dt>
+                                <dd class="form-group correct time">
+                                    <div class="form-row">
+                                        <div class="col-1"><!--[20241104] input 수정-->
+                                            <input id="" title="인증번호입력" type="number" class="form-control" name="" placeholder="숫자 6자리 입력" oninput="this.value = this.value.slice(0,6)">
+                                            <span class="timeNum">3:00</span>
+                                        </div>
+                                        <button class="btn btn-input active" type="button">시간연장</button>
+                                    </div>
+                                    <p class="info">시간연장은 1회만 할 수 있습니다.</p>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </form>
+                <div class="btn-wrap bottom">
+                    <button type="button" name="button" class="btn btn-primary">인증</button>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

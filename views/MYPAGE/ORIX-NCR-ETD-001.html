@@ -1,0 +1,357 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>마이페이지 > 기타서류제출</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">마이페이지</a></li>
+                        <li><a href="javascript:void(0);">기타서류제출</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>기타서류제출</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+                <div class="form-wrap search">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="select-box">
+                                <div class="se-select ei-w160" data-stove="select">
+                                    <select class="" title="메뉴구분">
+                                        <option value="" disabled="" selected="" hidden="">구분</option><!-- [D] : default - 셀렉트의 placeholder 기능-->
+                                        <option value="0">제목</option>
+                                        <option value="1">담당부서</option>
+                                        <option value="2">담당자명</option>
+                                    </select>
+                                    <div class="e-select-dim"></div>
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <input id="" title="검색" type="tel" name="" class="form-control hasCancel" maxlength="11" placeholder="검색어 입력">
+                            </div>
+                            <button class="btn btn-search" type="button"><span class="ir">검색</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-text-wrap style2">
+                    <div>
+                        <h4>총 <span>75</span>개</h4>
+                        <p class="caption">현재 시점으로부터 3달간 내역만 유지되며, 이전의 내역은 자동 삭제됩니다.</p>
+                    </div>
+                    <button class="btn btn-icon">신규제출</button>
+                </div>
+                <div class="result-area nodata">
+                    <div class="text-wrap">
+                        <h3 class="result-no">조회 결과가 없습니다.</h3>
+                    </div>
+                </div>
+                <div class="list-card-wrap">
+                    <div class="list-card-group">
+                        <ul class="txt-list">
+                            <li>
+                                <div class="tit">홍길동 고객님 운전자보험 서류</div>
+                                <div class="txt">
+                                    <!-- 첨부파일아이콘 최대 3개까지 -->
+                                    <ul class="icon">
+                                        <li>첨부파일아이콘</li>
+                                        <li>첨부파일아이콘</li>
+                                        <li>첨부파일아이콘</li>
+                                    </ul>
+                                    <span>: 첨부파일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="data">
+                                    <span>담당부서</span>
+                                    <span>담당자명</span>
+                                    <span>2024.09.02</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card-group">
+                        <ul class="txt-list">
+                            <li>
+                                <div class="tit">김오릭 고객님 운전자보험 서류</div>
+                                <div class="txt">
+                                    <ul class="icon">
+                                        <li>첨부파일아이콘</li>
+                                    </ul>
+                                    <span>: 첨부파일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="data">
+                                    <span>담당부서</span>
+                                    <span>담당자명</span>
+                                    <span>2024.09.02</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card-group">
+                        <ul class="txt-list">
+                            <li>
+                                <div class="tit">이길동 고객님 운전자보험 서류</div>
+                                <div class="txt">
+                                    <ul class="icon">
+                                        <li>첨부파일아이콘</li>
+                                    </ul>
+                                    <span>: 첨부파일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="data">
+                                    <span>담당부서</span>
+                                    <span>담당자명</span>
+                                    <span>2024.09.02</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card-group">
+                        <ul class="txt-list">
+                            <li>
+                                <div class="tit">오릭스 고객님 운전자보험 서류</div>
+                                <div class="txt">
+                                    <!-- 첨부파일아이콘 최대 3개까지 -->
+                                    <ul class="icon">
+                                        <li>첨부파일아이콘</li>
+                                        <li>첨부파일아이콘</li>
+                                        <li>첨부파일아이콘</li>
+                                    </ul>
+                                    <span>: 첨부파일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="data">
+                                    <span>담당부서</span>
+                                    <span>담당자명</span>
+                                    <span>2024.09.02</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card-group">
+                        <ul class="txt-list">
+                            <li>
+                                <div class="tit">김철수 고객님 운전자보험 서류</div>
+                                <div class="txt">
+                                    <!-- 첨부파일아이콘 최대 3개까지 -->
+                                    <ul class="icon">
+                                        <li>첨부파일아이콘</li>
+                                        <li>첨부파일아이콘</li>
+                                    </ul>
+                                    <span>: 첨부파일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="data">
+                                    <span>담당부서</span>
+                                    <span>담당자명</span>
+                                    <span>2024.09.02</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card-group">
+                        <ul class="txt-list">
+                            <li>
+                                <div class="tit">박오릭 고객님 운전자보험 서류</div>
+                                <div class="txt">
+                                    <!-- 첨부파일아이콘 최대 3개까지 -->
+                                    <ul class="icon">
+                                        <!-- <li>첨부파일아이콘</li>
+                                        <li>첨부파일아이콘</li>
+                                        <li>첨부파일아이콘</li> -->
+                                    </ul>
+                                    <span>: 첨부파일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="data">
+                                    <span>담당부서</span>
+                                    <span>담당자명</span>
+                                    <span>2024.09.02</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card-group">
+                        <ul class="txt-list">
+                            <li>
+                                <div class="tit">최민수 고객님 운전자보험 서류</div>
+                                <div class="txt">
+                                    <!-- 첨부파일아이콘 최대 3개까지 -->
+                                    <ul class="icon">
+                                        <li>첨부파일아이콘</li>
+                                        <li>첨부파일아이콘</li>
+                                    </ul>
+                                    <span>: 첨부파일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="data">
+                                    <span>담당부서</span>
+                                    <span>담당자명</span>
+                                    <span>2024.09.02</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card-group">
+                        <ul class="txt-list">
+                            <li>
+                                <div class="tit">오릭스 고객님 운전자보험 서류</div>
+                                <div class="txt">
+                                    <!-- 첨부파일아이콘 최대 3개까지 -->
+                                    <ul class="icon">
+                                        <li>첨부파일아이콘</li>
+                                    </ul>
+                                    <span>: 첨부파일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="data">
+                                    <span>담당부서</span>
+                                    <span>담당자명</span>
+                                    <span>2024.09.02</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card-group">
+                        <ul class="txt-list">
+                            <li>
+                                <div class="tit">이동길 고객님 운전자보험 서류</div>
+                                <div class="txt">
+                                    <!-- 첨부파일아이콘 최대 3개까지 -->
+                                    <ul class="icon">
+                                        <li>첨부파일아이콘</li>
+                                        <li>첨부파일아이콘</li>
+                                    </ul>
+                                    <span>: 첨부파일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="data">
+                                    <span>담당부서</span>
+                                    <span>담당자명</span>
+                                    <span>2024.09.02</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-card-group">
+                        <ul class="txt-list">
+                            <li>
+                                <div class="tit">홍길동 고객님 운전자보험 서류</div>
+                                <div class="txt">
+                                    <!-- 첨부파일아이콘 최대 3개까지 -->
+                                    <ul class="icon">
+                                        <!-- <li>첨부파일아이콘</li> -->
+                                    </ul>
+                                    <span>: 첨부파일</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="data">
+                                    <span>담당부서</span>
+                                    <span>담당자명</span>
+                                    <span>2024.09.02</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pagination-wrap">
+                    <div class="pagination">
+                        <ul>
+                            <li><a href="#" class="nb on" title="현재페이지">1</a></li>
+                            <li><a href="#" class="nb">2</a></li>
+                            <li><a href="#" class="nb">3</a></li>
+                            <li><a href="#" class="nb">4</a></li>
+                            <li><a href="#" class="nb">5</a></li>
+                            <li><a href="#" class="nb">6</a></li>
+                            <li><a href="#" class="nb">7</a></li>
+                            <li><a href="#" class="nb">8</a></li>
+                            <li><a href="#" class="nb">9</a></li>
+                            <li><a href="#" class="nb">10</a></li>
+                        </ul>
+                        <a href="#" class="btn-pg next">다음</a>
+                        <a href="#" class="btn-pg last-next">마지막으로</a>
+                    </div>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>펀딩승인 < 약정펀딩 < 현황조회</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">현황조회</a></li>
+                        <li><a href="javascript:void(0);">약정펀딩</a></li>
+                        <li><a href="javascript:void(0);">펀딩승인</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>현황조회</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+    <!-- 차량 탁송 요청 -->
+    <div id="PopUp35" class="layerpopup laypop on" style="display:block;" tabindex="0">
+        <div class="content-wrap">
+            <div class="pop-header">
+                <h3 class="pop-title">차량 탁송 요청</h3>
+                <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+            </div>
+            <div class="ly-con-wrap ly-scroll-con">
+                <div class="popup-text-wrap style3">
+                    <h4 class="tit">차량 탁송 정보를 입력해 주세요.</h4>
+                </div>
+                <div class="table-type">
+                    <div class="col">
+                        <dl>
+                            <dt>대리점 계약번호</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="대리점 계약번호" type="text" name="" class="form-control" placeholder="계약번호 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">대리점 계약번호를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>대리점명</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="대리점명" type="text" name="" class="form-control" placeholder="대리점명 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">대리점명을 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>탁송 요청일</dt>
+                            <dd class="form-group">
+                                <input type="text" id="" title="탁송 요청일" name="date" class="form-control datepicker" placeholder="YYYY.MM.DD" readonly ><!-- [D] : datepicker 클래스 : datepicker Custom-->
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">탁송 요청일을 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>인수자 이름</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="인수자 이름" type="text" name="" class="form-control" placeholder="이름 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">인수자 이름을 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>인수자 연락처</dt>
+                            <dd class="form-group">
+                                <div class="col-1">
+                                    <input id="" title="인수자 연락처" type="text" name="" class="form-control" maxlength="11" placeholder="숫자만 입력">
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">인수자 연락처를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>탁송지 주소지</dt>
+                            <dd class="form-group">
+                                <div class="form-row">
+                                    <div class="col-1">
+                                        <input id="" title="탁송지 주소지" type="text" class="form-control" name="" placeholder="" readonly="readonly">
+                                    </div>
+                                    <button class="btn btn-input active" type="button">검색</button>
+                                </div>
+                                <div class="col-1 mt14">
+                                    <input id="" title="상세주소" type="text" class="form-control" name="" value="" placeholder="상세주소 입력" >
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">탁송지 주소지를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>코일매트 배송</br>주소지</dt>
+                            <dd class="form-group">
+                                <div class="form-row">
+                                    <div class="col-1">
+                                        <input id="" title="코일매트 배송 주소지" type="text" class="form-control" name="" placeholder="" readonly="readonly">
+                                    </div>
+                                    <button class="btn btn-input active" type="button">검색</button>
+                                </div>
+                                <div class="col-1 mt14">
+                                    <input id="" title="상세주소" type="text" class="form-control" name="" value="" placeholder="상세주소 입력" >
+                                </div>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">코일매트 배송 주소지를 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>용품 확인</dt>
+                            <dd>
+                                <ul class="bul-dot">
+                                    <li>전면썬팅 : 루마 100,000원</li>
+                                    <li>측/후면 썬팅 : 루마 100,000원</li>
+                                    <li>블랙박스 : 파인뷰 200,000원</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>전달사항</dt>
+                            <dd class="form-group style3">
+                                <textarea type="text" title="전달사항" id="ipt02" class="inp" name="" value="" placeholder="전달사항 입력" maxlength="100" required=""></textarea>
+                                <!-- 유효성 체크 시, 오류 메시지(form-group에 error추가)
+                                    <p class="info">전달사항을 입력해주세요.</p>
+                                -->
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap popup">
+                <button type="button" name="button" class="btn btn-bottom" >탁송요청</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../resources/js/lib/swiper-bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+  <g id="그룹_64924" data-name="그룹 64924" transform="translate(-12.5)">
+    <g id="Oval" transform="translate(12.5)" fill="#fff" stroke="#e2e2e2" stroke-miterlimit="10" stroke-width="3">
+      <circle cx="17" cy="17" r="17" stroke="none"/>
+      <circle cx="17" cy="17" r="15.5" fill="none"/>
+    </g>
+    <path id="Rectangle_2" data-name="Rectangle 2" d="M6.278,14.486H1.207a1.207,1.207,0,0,1,0-2.415H5.072V1.207a1.207,1.207,0,1,1,2.414,0V13.279a1.208,1.208,0,0,1-1.207,1.207Z" transform="translate(32.243 7.5) rotate(45)" fill="#e2e2e2"/>
+  </g>
+</svg>

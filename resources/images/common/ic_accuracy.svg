@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="그룹_65783" data-name="그룹 65783" transform="translate(1 1)">
+    <g id="Oval_2" data-name="Oval 2" fill="#fff" stroke="#056ed6" stroke-miterlimit="10" stroke-width="1">
+      <circle cx="7" cy="7" r="7" stroke="none"/>
+      <circle cx="7" cy="7" r="7.5" fill="none"/>
+    </g>
+    <path id="Combined_Shape" data-name="Combined Shape" d="M1,7A1,1,0,1,1,2,8,1,1,0,0,1,1,7Zm.6-2a1,1,0,0,1-.883-.532L.233,3.555A2,2,0,0,1,0,2.617V1A1,1,0,0,1,1,0H3A1,1,0,0,1,4,1V2.657a2,2,0,0,1-.244.958l-.472.864A1,1,0,0,1,2.407,5Z" transform="translate(5 3)" fill="#056ed6"/>
+  </g>
+</svg>

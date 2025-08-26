@@ -1,0 +1,1060 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    <title>KB국민은행</title>
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-TC7KKN0QLR&amp;cx=c&amp;_slc=1"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-PWF0L3XHV4&amp;cx=c&amp;_slc=1"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-XTXVQQ6FS8&amp;cx=c&amp;_slc=1"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" defer="" charset="utf-8" src="/js/container_intro.js?202411061453"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TGSH3RL"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TGSH3RL');</script>
+    <!-- End Google Tag Manager -->
+    <link rel="apple-touch-icon" href="https://www.kbstar.com/openimg/favi_iphone_n201512.png">
+    <link rel="apple-touch-icon-precomposed" media="screen and (resolution:163dpi)" href="https://www.kbstar.com/openimg/favi_ipad_n201512.png">
+    <link rel="apple-touch-icon-precomposed" media="screen and (resolution:326dpi)" href="https://www.kbstar.com/openimg/favi_iphone4_n201512.png">
+    <script type="text/javascript" src="2017/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="2017/jquery.cookie.js"></script>
+    <!-- # 2018리뉴얼 #-->
+    <!-- link rel="stylesheet" type="text/css" href="font/font.css?20181120" /-->
+    <link rel="stylesheet" type="text/css" href="2018/css/intro_2018.css?20240702">
+    <link rel="stylesheet" type="text/css" href="2018/css/intro_2018_content.css?20241031">
+    <script type="text/javascript" src="2018/js/intro_2018.js?20181120"></script>
+    <script type="text/javascript" src="2018/js/intro_2018_ui.js?20181120"></script>
+    <!-- // -->
+    <script type="text/javascript">
+    //<![CDATA[
+        ////////////////////////////////////////
+        // i.kbstar.com Check
+        ////////////////////////////////////////
+        var Domain = document.URL;
+    
+        $(function() {
+            if (Domain.indexOf("i.kbstar.com") > 0 ) {
+                window.open("./install","_self");
+            }
+    
+            initCookie("QSID");
+                initCookie("QSTTL");
+                fn_sdk_ajax();
+    
+            if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || navigator.userAgent.match(/Android/i)) {
+                location.href="https://obank.kbstar.com/quics?page=omweb&amp;QViewPC=N";
+            }
+    
+            if (navigator.userAgent.match(/iPad/i)) {
+                $('body').append('<div class="btn-mobile"><a href="https://obank.kbstar.com/quics?page=omweb">모바일웹 사이트로</a></div>');
+            }
+    
+            var today = new Date();
+            today = getvalDate();
+        });
+    
+        function initCookie(name) {
+            var value = "";
+            var today = new Date();
+    
+            today.setDate( today.getDate() -1);
+            document.cookie = name + "=" + escape( value ) + "; domain=kbstar.com; path=/; expires=" + today.toGMTString() + ";";
+        }
+    
+        function getvalDate() {
+            var now = new Date();
+            year = now.getYear();
+    
+            if((year + "").length <4) year = year + 1900;
+            month = now.getMonth() +1;
+    
+            if((month + "").length <2) month = "0" + month;
+            date = now.getDate();
+    
+            if((date + "").length <2) date = "0" + date;
+            today = year+""+month+""+date;
+    
+            return today;
+        }
+    
+        ////////////////////////////////////////
+        // 피싱체크
+        ////////////////////////////////////////
+        if(parent && parent!=this) {
+            location.href='https://obank.kbstar.com/quics?page=C026057';
+        }
+    
+        function cardSSOAlert(){
+            alert("2014년 8월 5일(화)부터 은행/카드 홈페이지間 자동 로그인 중단으로 카드서비스는 KB국민카드 홈페이지에서 별도 로그인 후 이용하실 수 있습니다.");
+            location.href='https://www.kbcard.com/';
+        }
+    
+        ////////////////////////////////////////
+        // 레이어팝업
+        ////////////////////////////////////////
+        $('.closebtn').click(function(){
+            $('.layerType').hide();
+            return false;
+        });
+    
+        function layerOn(){
+            $('body').prepend('<div class="layerType layerWrap" style="width:374px;" id="pid_0001126"><div class="contimg"><img src="https://www.kbstar.com/2017/images/intro_zerolayer_181018_01.png" alt="보이스피싱 제로(Zero)캠페인 그놈목소리 3go의심하고! 전화끊고! 확인하고! 보이스피싱 의심하GO! 주저 없이 전화끊Go! 해당 기관에 확인하Go!" /><img src="https://www.kbstar.com/2017/images/intro_zerolayer_181018_02.png" alt="다음 항목 중 하나라도 해당한다면? 보이스피싱사기가 의심됩니다!대출 처리비용 등을이유로 선입금 요구!저금리,정부지원 대출상품이 가능하다며 선입금요구!검찰,경찰,금융감독원이라며 안전계좌로 이체요구!계좌 비밀번호, 인증서비밀번호 등 개인금융정보 요구!가족 납치,협박 등을 하며 금전요구!" /><img src="https://www.kbstar.com/2017/images/intro_zerolayer_181018_03.png" alt="금융감독원 범금융권 보이스피싱전화번호 경찰청 112 금융감독원 1332" /></div><div class="btnArea"><input type="checkbox" id="checkbox_0001126" class="chk" name="checkbox_0001126" /><label for="checkbox_0001126">7일간 이 창을 열지 않음</label><button type="button" class="closebtn" onclick="closeOpenPopupWin(\'0001126\',\'notOpen_0001126\',7); return false;">닫기</button></div></div>'); //
+        }
+    
+        $(window).load(function(){
+            var getWWWCookiedate = getWWWCookie('notOpen_0001126');
+            //if( getWWWCookiedate != 'checked') layerOn();
+        });
+    //]]>
+    </script>
+    
+    <!-- # 2019.6.24 비대면 로그수집  #-->
+    <script type="text/javascript">
+    var readyFg = false;
+    var loadFg = false;
+    var sHost = window.location.host;
+    
+    function fn_sdk_lp(s,l,c){if(c.length>l){return s;}s+="";c+="";while(s.length<l)s=c+s;s=s.length>=l?s.substring(0,l):s;return s;}
+    
+    function fn_sdk_gT(){
+        var db=new Date();
+        return db.getFullYear().toString()+"-"+fn_sdk_lp(db.getMonth()+1,2,0)+"-"+fn_sdk_lp(db.getDate().toString(),2,0)
+            +"T"+fn_sdk_lp(db.getHours().toString(),2,0)+":"+fn_sdk_lp(db.getMinutes().toString(),2,0)+":"+fn_sdk_lp(db.getSeconds().toString(),2,0)+"."+fn_sdk_lp(db.getMilliseconds().toString(),3,0)+"Z";
+    }
+    
+    function fn_sdk_gR(){
+        var r = '';
+        try {
+            r = window.top.document.referrer;
+        } catch (e) {
+            if (window.parent) {
+                try {
+                    r = window.parent.document.referrer;
+                } catch (e2) {
+                    r = '';
+                }
+            }
+        }
+        if (r === '') {
+            r = document.referrer;
+        }
+        return r;
+    }
+    
+    function fn_sdk_gEc(t){
+        return window.encodeURIComponent(t);
+    }
+    
+    var execSdk = function() {
+        var _ait = _ait || [];
+        _ait.push({'ait.startTime': (new Date().getTime()), 'event': 'ait.Start'});
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src='/js/container_intro.js'; s.parentNode.insertBefore(g,s);
+    };
+    
+    function fn_sdk_ajax() {
+        if (navigator.appName == "Microsoft Internet Explorer") { //IE 10 or Lower
+            readyFg = true;
+        }
+    
+        if (sHost.indexOf("www.kbstar.com") > -1) {
+            loadFg = true;
+        }
+    
+        $.ajax({
+            url: "/quics?page=intro",
+            type: "POST",
+            xhrFields : { withCredentials : true },
+            data: {"_LOG_TYPE":"WM", "lgTmClnt": fn_sdk_gT(), "pageURL":window.location.href, "referrer":fn_sdk_gEc(fn_sdk_gR())},
+            success: function() {
+                if (!readyFg && loadFg) {
+                    var _ait = window["_ait"] || [];
+    
+                    (function(_ait){
+                        var d = document;
+                        var g = d.createElement('script');
+                        var s = d.getElementsByTagName('script')[0];
+    
+                        try{
+                            var sdk_date = new Date();
+                            var sdk_yyyy = sdk_date.getFullYear();
+                            var sdk_mm =''+ (sdk_date.getMonth()+1);
+                            sdk_mm = sdk_mm.length==1?'0'+sdk_mm:sdk_mm;
+                            var sdk_dd = ''+sdk_date.getDate();
+                            sdk_dd = sdk_dd.length==1?'0'+sdk_dd:sdk_dd;
+                            var sdk_hour = ''+sdk_date.getHours();
+                            sdk_hour = sdk_hour.length==1?'0'+sdk_hour:sdk_hour;
+                            var sdk_min = ''+sdk_date.getMinutes();
+                            sdk_min = sdk_min.length==1?'0'+sdk_min:sdk_min;
+    
+                            _ait.push( { 'ait.startTime': new Date().getTime(), 'event': 'ait.Start' });
+                            g.type='text/javascript';
+                            g.async=true;
+                            g.defer=true;
+                            g.charset='utf-8';
+                            g.src='/js/container_intro.js?' +sdk_yyyy+sdk_mm+sdk_dd+sdk_hour+sdk_min;
+                            g.onerror = function(e){
+                                g.src = '';
+                            };
+    
+                            s.parentNode.insertBefore(g,s);
+                        }catch(e){
+                            (window.$ || function(){})(function(){
+                                $("body").append(g);
+                            });
+                        }
+                    })(_ait);
+                }
+    
+                $(document).ready(function(){
+                    if (readyFg && loadFg) execSdk();
+                });
+            },
+            error: function() {
+            }
+        });
+    }
+    </script>
+    <script type="text/javascript">
+        //창닫기
+        //function closeWinAt230127(winName, expiredays){
+        //	if(document.getElementById('closechk').checked){
+        //		setCookieAt1202(winName, "done", expiredays);
+        //	}
+        //	var obj = eval("window." + winName);
+        //	obj.style.display = "none";
+        //}
+        //창닫기 전산센터 이전에 따른 일부 금융서비스 일시중단 안내 (2020-04-06)
+        //function closeWinAt0409(winName, expiredays){
+        //	if(document.getElementById('closechk_0409').checked){
+        //		setCookieAt1202(winName, "done", expiredays);
+        //	}
+        //	var obj = eval("window." + winName);
+        //	obj.style.display = "none";
+        //}
+    
+        //창닫기 긴급재난지원금 안내(2020-05-11)
+        //function closeWinAt0511(winName, expiredays){
+        //	if(document.getElementById('closechk_0511').checked){
+        //		setCookieAt1202(winName, "done", expiredays);
+        //	}
+        //	var obj = eval("window." + winName);
+        //	obj.style.display = "none";
+        //}
+    
+        //쿠키 가져오기
+        function getCookie(name){
+            var nameOfCookie = name + "=";
+            var x = 0;
+            while(x <= document.cookie.length){
+                var y = (x+nameOfCookie.length);
+                if(document.cookie.substring(x, y) == nameOfCookie){
+                    if((endOfCookie=document.cookie.indexOf(";", y)) == -1)
+                    endOfCookie = document.cookie.length;
+                    return unescape(document.cookie.substring(y, endOfCookie));
+                }
+                x = document.cookie.indexOf(" ", x) + 1;
+                if(x == 0)
+                break;
+            }
+            return "";
+        }
+        //00:00시 기준 쿠키 설정하기
+        function setCookieAt1202(name, value, expiredays){
+            var todayDate = new Date();
+            todayDate = new Date(parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000);
+            if(todayDate > new Date()){
+                expiredays = expiredays -1;
+            }
+            todayDate.setDate(todayDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + ";path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+        window.onload = function(){
+            //if(getCookie("layer_today230127")!="done"){
+            //	document.getElementById('layer_today230127').style.display = "block";
+            //}
+            //  전산센터 이전에 따른 일부 금융서비스 일시중단 안내(2020-04-06)
+            //if(getCookie("layer_today0409")!="done"){
+            //	document.getElementById('layer_today0409').style.display = "block";
+            //}
+    
+            //  긴급재난지원금 안내(2020-05-11)
+            //if(getCookie("layer_today0511")!="done"){
+            //	document.getElementById('layer_today0511').style.display = "block";
+            //}
+    
+            // 긴급상황/비상시 서비스 일시중단 안내 
+            //if(getCookie("layer_system_Noti")!="done"){
+            //	document.getElementById('layer_system_Noti').style.display = "block";
+            //}
+        }
+    </script>
+    </head>
+    <body>
+    
+    <div id="skipNav"><a href="#content">본문이동</a></div>
+    <div class="wrapAll">
+    
+        <!--div id="layer_today230127" class="topNoticelayer" style="display:none;">
+            <div class="inner">
+                <dl class="case5">
+                    <dt>영업시간 정상화 안내</dt>
+                    <dd>
+                        KB국민은행을 이용해 주시는 고객님께 감사드립니다.<br />
+                        코로나19 관련 정부의 방역지침 변경에 따라 영업점 영업시간이 정상화되었음을 안내드립니다.<br /><br />
+                        영업시간 : 09:00 ~ 16:00 (2023.1.30, 월 부터)<br />
+                    </dd>
+                    <dd class="space"><a href="https://otalk.kbstar.com/quics?page=C019391&amp;bbsMode=view&amp;articleId=120109&amp;QSL=F">자세히보기 &gt;</a></dd>
+                </dl>
+                <div class="closeWrap">
+                    <input type="checkbox" id="closechk" name="close" value="OK" /><label for="closechk">3일동안 열지않기</label>
+                    <a href="javascript:;" onclick="closeWinAt230127('layer_today230127', 3);"   class="nClose">닫기</a>
+                </div>
+            </div>
+        </div-->
+        
+    
+        <div class="headerWrap">
+            
+            <!-- ###### start 긴급상황/비상시 서비스 일시중단 안내 ###### -->
+            <!-- div id="layer_system_Noti" class="pop_pushNoti" style="display:none;">
+                <div class="pop_pushCont">
+                    <div class="txt_pushTit">
+                        <p>대학수학능력시험일 영업시간 안내 </p>
+                    </div>
+                    <div class="pushCont">
+                        <p>KB국민은행을 이용해 주시는 고객님께 진심으로 감사드립니다.<br />대학수학능력시험으로 인한 영업시간 변경을 안내드립니다.</p>
+                        <div class="box_case">
+                            <ul class="list_type1">
+                                <li>대상지점 : 일반 지점 및 「9 To 6 Bank」 오전조</li>
+                                <li>영업시간 : (변경전) 09:30 ~ 15:30&nbsp;&nbsp;(변경후) 10:00 ~ 16:00</li>
+                                <li>적용기간 : 2022.11.17(목) 시험 당일</li>
+                            </ul>
+                        </div>
+                        <p style="margin-top:10px">자세한 내용은 KB국민은행 고객센터(☎ 1588-9999)로 문의하시기 바랍니다.</p>
+                    </div>
+                    <div class="push_foot">
+                        <span class="btn large"><a href="https://otalk.kbstar.com/quics?page=C019391&amp;bbsMode=view&amp;articleId=118814&amp;QSL=F" class="btn-action c1">자세히보기</a></span>
+                    </div>
+                    <a href="javascript:;" class="btn_close"  onclick="$('#layer_system_Noti').hide();return false;"><img src="https://www.kbstar.com/2018/img/btn_layerclose.png" alt="레이어 닫기"/></a>
+                </div>
+            </div -->
+            <!-- ###### end 긴급상황/비상시 서비스 일시중단 안내 ###### -->
+            
+            <!--div id="layer_today0409" class="pop_pushNoti" style="display:none" >
+                <div class="pop_pushCont">
+                    <div class="txt_pushTit">
+                        <p>전산센터 이전에 따른 <br/>일부 금융서비스 일시중단 안내</p>
+                    </div>
+                    <div class="pushCont">
+                        <p>전산센터 이전에 따라 일부서비스(인터넷전자등기, 보험/공제, 증권대행)가 일시 중단되오니 양해 부탁드립니다. </p>
+                        <div class="box_case">
+                            <ul class="list_type1">
+                                <li>중단일시 : 2020.4.10(금) 19:00 ~ 2020.4.12(일) 11:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="push_foot">
+                        <p><input type="checkbox" id="closechk_0409" name="close" value="OK" /> <label for="closechk_0409">3일간 이 창을 열지 않음</label></p>
+                        <span class="btn large"><a href="https://otalk.kbstar.com/quics?page=C019391&amp;bbsMode=view&amp;articleId=19174&amp;QSL=F" class="btn-action c1">자세히보기</a></span>
+                    </div>
+                    <a href="javascript:;" class="btn_close" onclick="closeWinAt0409('layer_today0409', 3);"><img src="https://www.kbstar.com/2018/img/btn_layerclose.png" alt="레이어 닫기"/></a>
+                </div>
+            </div-->
+            <!-- // 전산센터 이전에 따른 일부 금융서비스 일시중단 안내 layer -->
+            
+            <!-- 긴급재난지원금 안내(2020-05-11)-->
+            <!--div id="layer_today0511" class="pop_pushNoti_type2" style="display:none" >
+                <div class="pop_pushCont">
+                    <h1 class="logo"><a href="https://www.kbstar.com/">KB국민은행</a></h1>
+                    <div class="pushCont case0511">
+                        <p><img src="https://www.kbstar.com/2018/img/intro_popup_20200511.png" alt="힘내라 우리국민, 힘내라 우리경제 긴급재난지원금" /></p>
+                        <p>
+                            <span class="btn large"><a href="https://otalk.kbstar.com/quics?page=C019391&amp;bbsMode=view&amp;articleId=19363&amp;QSL=F" class="btn-action c1">신청안내 바로가기</a></span>
+                        </p>
+                    </div>
+                    <div class="push_foot">
+                        <p><input type="checkbox" id="closechk_0511" name="close" value="OK" /> <label for="closechk_0511">3일간 이 창을 열지 않음</label></p>
+                        <span class="btn_close"><a href="javascript:;"onclick="closeWinAt0511('layer_today0511', 3);" class="">닫기</a></span>
+                    </div>	
+                </div>
+            </div-->
+            <!-- 긴급재난지원금 안내(2020-05-11)-->
+    
+            <div class="headBox">
+                <div id="headArea">
+                    <!-- ################################## -->
+                    <!-- ### LOGO 및 GNB ### -->
+                    <!-- ################################## -->
+                    <h1 class="logo"><a href="https://www.kbstar.com/">KB국민은행</a></h1>
+                    <div class="wrap-gnb" id="uiNavGnb">
+                        <ul class="nav-gnb">
+                            <!-- 개인 -->
+                            <li class="m1">
+                                <a href="https://obank.kbstar.com/quics?page=obank&amp;QSL=F">개인</a>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="https://obank.kbstar.com/quics?page=C055068&amp;QSL=F">조회</a></li>
+                                        <li><a href="https://obank.kbstar.com/quics?page=C016524&amp;QSL=F">이체</a></li>
+                                        <li><a href="https://obank.kbstar.com/quics?page=C016526&amp;QSL=F">공과금</a></li>
+                                        <li><a href="https://obank.kbstar.com/quics?page=C030037&amp;QSL=F">금융상품</a></li>
+                                        <li><a href="https://obank.kbstar.com/quics?page=C102239&amp;QSL=F">외환</a></li>
+                                        <li><a href="https://obank.kbstar.com/quics?page=C016535&amp;QSL=F">뱅킹관리</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- // -->
+                            <!-- 기업 -->
+                            <!-- 1108 기업인터넷뱅킹 개편관련 GNB 변경 -->
+                            <li class="m2">
+                                <a href="https://obiz.kbstar.com/quics?page=obiz&amp;QSL=F">기업</a>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="https://obiz.kbstar.com/quics?page=obiz&amp;QSL=F">마이페이지</a></li>
+                                        <li><a href="https://obiz.kbstar.com/quics?page=C015661&amp;QSL=F">조회</a></li>
+                                        <li><a href="https://obiz.kbstar.com/quics?page=C064502&amp;QSL=F">이체</a></li>
+                                        <li><a href="https://obiz.kbstar.com/quics?page=C057030&amp;QSL=F">Star CMS</a></li>
+                                        <li><a href="https://obiz.kbstar.com/quics?page=C101540&amp;QSL=F">외환</a></li>
+                                        <li><a href="https://obiz.kbstar.com/quics?page=C105749&amp;QSL=F">금융상품</a></li>
+                                        <li><a href="https://obiz.kbstar.com/quics?page=C105164&amp;QSL=F">KB bridge</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- // 1108 기업인터넷뱅킹 개편관련 GNB 변경 -->
+                            <!-- // -->
+                            <!-- 기타 -->
+                            <li class="m3"><a href="https://obank.kbstar.com/quics?page=C030037&amp;QSL=F">금융상품</a></li>
+                            <li class="m4"><a href="https://omoney.kbstar.com/quics?page=onmoney&amp;QSL=F">자산관리</a></li>
+                            <li class="m5"><a href="https://kbland.kr" target="_blank" title="바로가기">부동산</a></li>
+                            <!-- li class="m6"><a href="https://okbfex.kbstar.com/quics?page=ofex&amp;QSL=F">외환</a></li -->
+                            <li class="m7"><a href="https://okbfex.kbstar.com/quics?page=opensn&amp;QSL=F">퇴직연금</a></li>
+                            <li class="m8"><a href="https://www.kbcard.com" target="_blank" title="새창">카드</a></li>
+                            <!-- // -->
+                            <!-- 전체서비스 -->
+                            <li class="m9">
+                                <a href="#">전체서비스</a>
+                                <div class="submenu list">
+                                    <ul>
+                                        <li>
+                                            <span class="tit">금융서비스</span>
+                                            <ul>
+                                                <!--<li><a href="https://okbfex.kbstar.com/quics?page=ofex&amp;QSL=F">외환</a></li>-->
+                                                <!--<li><a href="https://okbfex.kbstar.com/quics?page=opensn&amp;QSL=F">퇴직연금</a></li>-->
+                                                <li><a href="https://okbfex.kbstar.com/quics?page=oescrow&amp;QSL=F">에스크로이체</a></li>
+                                                <!-- li><a href="https://omoney.kbstar.com/quics?page=osenior&amp;QSL=F">골든라이프뱅킹</a></li -->
+                                                <li><a href="https://obank.kbstar.com/quics?page=osecure&amp;QSL=F">보안센터</a></li>
+                                                <li><a href="https://obank.kbstar.com/quics?page=C018872">인증센터(개인)</a></li>
+                                                <li><a href="https://obank.kbstar.com/quics?page=C100996">인증센터(기업)</a></li>
+                                                <!-- li><a href="https://cms.kbstar.com/quics?page=ocms&amp;QSL=F">Star CMS</a></li -->
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="tit">특화서비스</span>
+                                            <ul>
+                                                <li><a href="https://oland.kbstar.com/quics?page=ohsubs&amp;QSL=F">주택청약</a></li>
+                                                <li><a href="https://okbfex.kbstar.com/quics?page=onhbond&amp;QSL=F">국민주택채권</a></li>
+                                                <li><a href="https://okbfex.kbstar.com/quics?page=onhouse&amp;QSL=F">주택도시기금</a></li>
+                                                <li><a href="https://omoney.kbstar.com/quics?page=omobile&amp;QSL=F">스마트금융서비스</a></li>
+                                                <li><a href="https://omoney.kbstar.com/quics?page=oliivm">Liiv M</a></li>
+                                               <li><a href="https://www.kbgoldenlifex.com" target="_blank" title="바로가기"><span class="link_blank">KB골든라이프X</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="tit">멤버십서비스</span>
+                                            <ul>
+                                                <li><a href="https://otalk.kbstar.com/quics?page=omember&amp;QSL=F">KB고객우대제도</a></li>
+                                                <li><a href="https://omoney.kbstar.com/quics?page=ognw&amp;QSL=F">GOLD&amp;WISE</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="tit">KB와 함께</span>
+                                            <ul>
+                                                <li><a href="https://omoney.kbstar.com/quics?page=oabout&amp;QSL=F">은행소개</a></li>
+                                                <li><a href="https://omoney.kbstar.com/quics?page=C016505&amp;QSL=F">지점안내</a></li>
+                                                <li><a href="https://obank.kbstar.com/quics?page=osupp&amp;QSL=F">고객센터</a></li>
+                                                <li><a href="https://otalk.kbstar.com/quics?page=oblog&amp;QSL=F">KB정보광장</a></li>
+                                                <li><a href="https://omoney.kbstar.com/quics?page=oevent&amp;QSL=F">이벤트</a></li>
+                                                <li><a href="https://omoney.kbstar.com/quics?page=ohope&amp;QSL=F">희망금융클리닉</a></li>
+                                                <!-- li><a href="https://omoney.kbstar.com/quics?page=olovekr&amp;QSL=F">나라사랑서비스</a></li -->
+                                                <li><a href="https://kbgoodjob.kbstar.com" target="_blank" title="새창 열기">KB굿잡</a></li>
+                                                <li><a href="https://kbthink.com/main.html" target="_blank" title="새창 열기">KB의 생각</a></li>
+                                                <!-- li><a href="http://www.kbbizmatch.com" target="_blank" title="새창 열기">KB Biz-매칭</a></li -->
+                                            </ul>
+    
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- // -->
+                            <!-- GLOBAL -->
+                            <li class="m10">
+                                <a href="#">GLOBAL</a>
+                                <div class="submenu list">
+                                    <ul>
+                                        <li>
+                                            <span class="tit">LANGUAGE</span>
+                                            <ul class="langList">
+                                                <li class="lang_eng"><a href="https://omoney.kbstar.com/quics?page=oeng&amp;QSL=F">English</a></li>
+                                                <li class="lang_china"><a href="https://omoney.kbstar.com/quics?page=ochn&amp;QSL=F">Chinese</a></li>
+                                                <li class="lang_japan"><a href="https://omoney.kbstar.com/quics?page=ojpn&amp;QSL=F">Japanese</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="https://kbglobal.kbstar.com" class="tit" target="_blank" title="새창열기">KB GLOBAL NETWORK</a>
+                                            <ul>
+                                                <li class="nation1"><a target="_blank" title="새창열기" href="https://kbglobal.kbstar.com/tk/main">Japan</a></li>
+                                                <li class="nation2"><a target="_blank" title="새창열기" href="https://kbglobal.kbstar.com/ld/main">UK</a></li>
+                                                <li class="nation3"><a target="_blank" title="새창열기" href="https://kbglobal.kbstar.com/auc/main">New Zealand</a></li>
+                                                <li class="nation4"><a target="_blank" title="새창열기" href="https://kbglobal.kbstar.com/cbd/main">Cambodia</a></li>
+                                                <li class="nation5"><a target="_blank" title="새창열기" href="https://www.kbstarchina.com/">China</a></li>
+                                                <li class="nation6"><a target="_blank" title="새창열기" href="https://kbglobal.kbstar.com/vtn/main">Vietnam</a></li>
+                                                <li class="nation7"><a target="_blank" title="새창열기" href="https://omoney.kbstar.com/quics?page=C021267">Hong Kong</a></li>
+                                                <li class="nation8"><a target="_blank" title="새창열기" href="https://kbglobal.kbstar.com/ind/main">India</a></li>
+                                                <li class="nation9"><a target="_blank" title="새창열기" href="https://kbglobal.kbstar.com/mmr/main">Myanmar</a></li>
+                                                <li class="nation10"><a target="_blank" title="새창열기" href="https://kbglobal.kbstar.com/sg/main">Singapore</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- // -->
+                            <!-- 통합검색 -->
+                            <li class="m11">
+                                <a href="#search_container_2018">통합검색</a>
+                                <!-- ################################## -->
+                                <!-- 검색레이어 -->
+                                <!-- ################################## -->
+                                <div id="search_container_2018">
+                                    <form name="TopTotalSearchForm" id="TopTotalSearchForm" method="get" action="https://obank.kbstar.com/quics" onsubmit="return false;">
+                                        <fieldset class="form-search">
+                                            <legend>통합검색</legend>
+                                            <input type="hidden" name="page" value="C020697">
+                                            <input type="hidden" name="검색설정명" id="검색설정명" value="total">
+                                            <input type="hidden" name="검색출력량" id="검색출력량" value="3">
+                                            <input type="hidden" name="검색페이지번호" id="검색페이지번호" value="1">
+                                            <!-- ### 검색어입력 ### -->
+                                            <div class="form">
+                                                <div class="input-holder">
+                                                    <input type="text" name="검색어" id="검색어" title="검색어" onkeypress="if (event.keyCode==13) { TopTotalSearchFormSearch(); event.returnValue=false; }" aria-describedby="uiMesIntroSearchHolder" autocomplete="off">
+                                                    <span id="uiMesIntroSearchHolder">검색어를 입력하세요.</span>
+                                                </div>
+                                                <button type="button" class="btn-icon ic1 ui-reset">입력값초기화</button>
+                                                <button type="button" class="btn-icon ic2 ui-submit">검색</button>
+                                            </div>
+                                            <!-- ### 추천검색어 ### -->
+                                            <dl class="info-word">
+                                                <dt>추천검색어</dt>
+                                                <dd>
+                                                    <button type="button" onclick="search('주택청약');">주택청약</button>
+                                                    <button type="button" onclick="search('청약');">청약</button>
+                                                    <!-- button type="button" onclick="search('공동인증서');">공동인증서</button -->
+                                                    <button type="button" onclick="search('otp');">OTP</button>
+                                                    <button type="button" onclick="search('이체한도');">이체한도</button>
+                                                    <button type="button" onclick="search('FATI');">FATI</button>
+                                                </dd>
+                                            </dl>
+    
+                                            <!-- // -->
+                                        </fieldset>
+                                        <button type="button" title="통합검색 닫기" class="ui-close">통합검색 닫기</button>
+                                    </form>
+                                </div>
+                                <!-- ################################## -->
+                            </li>
+                            <!-- // -->
+                        </ul>
+                    </div>
+                    <!-- ################################## -->
+                    <!-- ### 로그인 ### -->
+                    <!-- ################################## -->
+                    <ul class="certMenu session-off c1 certMenu_2020">
+                        <li><a href="https://obank.kbstar.com/quics?page=C019088&amp;QSL=F">로그인</a></li>
+                        <li class="h_cert">
+                            <a href="#" class="">인증센터</a>
+                            <div class="cert_submenu" style="display: none;">
+                                <a href="https://obank.kbstar.com/quics?page=C018872&amp;QSL=F" class=""><span>개인</span></a>
+                                <a href="https://obank.kbstar.com/quics?page=C100996&amp;QSL=F" class=""><span>기업</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- ################################## -->
+                </div>
+            </div>
+            <!-- //headBox -->
+        </div>
+    
+        <div id="content" class="contentWrap">
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- 상단 비주얼영역 -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="wrap-visual active3">
+                <!-- ################################## -->
+                <!-- 슬라이더 : 컨텐츠 -->
+                <!-- ################################## -->
+                <div class="area-con">
+                    <ul>             
+                        <!-- KB셀러론 이자 지원 마케팅 (9/25) ---------------------- // -->
+                        <li class="section section5">
+                            <div>
+                                <strong><img src="https://www.kbstar.com/2018/img/visual/visual_section143_tit01.png" alt="KB셀러론 이자 전액 지원 KB국민은행이 대한민국 셀러와 함께합니다"></strong>
+                                <span><img src="https://www.kbstar.com/2018/img/visual/visual_section143_tit02.png" alt="2024.9.9(월) ~ 한도소진시까지"></span>
+                                <a href="https://omoney.kbstar.com/quics?page=C016559&amp;cc=b033091:b032977&amp;이벤트일련번호=344865&amp;QSL=F" title="" class="link">바로가기</a>
+                            </div>
+                        </li>
+                        
+                        <!-- 2023 국가고객만족도(NCSI) 1위 (2023-11-07) ---------------------- // -->
+                        <li class="section section3">
+                            <div>
+                                <strong><img src="https://www.kbstar.com/2018/img/visual/visual_section119_tit01.png" alt="고객의 행복과 더 나은 세상을 만들겠습니다"></strong>
+                                <span><img src="https://www.kbstar.com/2018/img/visual/visual_section119_tit02.png" alt="2023 국가고객만족도(NCSI) 1위 은행권 최다 17회 달성"></span>
+                            </div>
+                        </li>
+    
+                        <!-- 여섯시은행(9To6 Bank)지점 운영 안내 (2023-09-27) ---------------------- // -->
+                        <li class="section section4 on">
+                            <div>
+                                <strong><img src="https://www.kbstar.com/2018/img/visual/visual_section109_tit01_v2.png" alt="저녁 6시까지 운영하는 KB국민은행 여섯시은행(9To6 Bank)"></strong>
+                                <span><img src="https://www.kbstar.com/2018/img/visual/visual_section109_tit02_v2.png" alt="전국 82개 지점 운영 중입니다!"></span>
+                                <a href="https://omoney.kbstar.com/quics?page=C027860" title="" class="link">바로가기</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ################################## -->
+                <!-- 슬라이더 : 컨트롤 -->
+                <!-- ################################## -->
+                <div class="area-control">
+                    <button class="ui-btn before">이전</button>
+                    <ul>
+                        <li class="on"><a href="#" class="" title="">KB셀러론 이자 지원 마케팅</a></li>
+                           <li><a href="#" title="" class="">2023 국가고객만족도(NCSI) 1위</a></li>
+                        <li><a href="#" title="선택됨" class="on">여섯시은행(9To6 Bank)지점 운영 안내</a></li>
+                    </ul>
+                    <button class="ui-btn play off">자동재생시작</button>
+                    <button class="ui-btn stop">자동재생멈춤</button>
+                    <button class="ui-btn next btn-off">다음</button>
+                </div>
+                <!-- ################################## -->
+                <!-- 브랜드스토리보기 -->
+                <!-- ################################## -->
+                <div class="area-aside">
+                    <a href="#" class="ui-btn-brand" id="uiBtnBrand">KB브랜드 스토리 보기</a>
+                </div>
+                <!-- ################################## -->
+            </div>
+    
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- 빠른메뉴 -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="main-section main-con1">
+                <h2 class="blind">빠른메뉴</h2>
+                <ul class="menu1">
+                    <li><a href="https://obank.kbstar.com/quics?page=C019088&amp;QSL=F" class="q1">전체계좌조회</a></li>
+                    <li><a href="https://obank.kbstar.com/quics?page=C055027&amp;QSL=F" class="q2">계좌이체</a></li>
+                    <li><a href="#" onclick="openPopup('https://obank.kbstar.com/quics?page=C025255&amp;cc=b028364:b028702&amp;QSL=F','빠른조회','720','650'); return false;" title="새창 열기">빠른조회</a></li>
+                </ul>
+                <ul class="menu2">
+                    <li><a href="https://obank.kbstar.com/quics?page=osecure&amp;QSL=F">보안센터</a></li>
+                    <li><a href="https://otalk.kbstar.com/quics?page=omember&amp;QSL=F">고객우대제도</a></li>
+                    <li><a href="https://obank.kbstar.com/quics?page=C036336&amp;QSL=F">소비자보호</a></li>
+                    <li><a href="https://obank.kbstar.com/quics?page=C029656&amp;QSL=F">상담/예약</a></li>
+                    <li><a href="https://obank.kbstar.com/quics?page=C022180&amp;QSL=F">상품공시실</a></li>
+                </ul>
+            </div>
+    
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- 새소식, 이벤트 -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="main-section main-con2">
+                <!-- ################################## -->
+                <!-- 새소식 -->
+                <!-- ################################## -->
+                <div class="section">
+                    <h2>새소식</h2>
+                    <ul class="list-board">
+                        <!-- 컨텐츠하나 ---------------------- // -->
+                        <li>
+                            <a href="https://otalk.kbstar.com/quics?page=C019391&amp;bbsMode=view&amp;articleId=135192&amp;QSL=F">
+                                <span>「KB스타(기업)뱅킹 간편회원 서비스」 이용약관 개정 안내</span>
+                                <!-- em class="icon-new">[NEW]</em -->
+                                <span>10.04</span>
+                            </a>
+                        </li>
+                         <!-- 컨텐츠하나 ---------------------- // -->
+                        <li>
+                            <a href="https://otalk.kbstar.com/quics?page=C019391&amp;bbsMode=view&amp;articleId=135109&amp;QSL=F">
+                                <span>「점심시간 집중상담」 확대 운영 안내</span>
+                                <!-- <em class="icon-new">[NEW]</em> -->
+                                <span>09.27</span>
+                            </a>
+                        </li>
+                        <!-- 컨텐츠하나 ---------------------- // -->
+                        <li>
+                            <a href="https://otalk.kbstar.com/quics?page=C019391&amp;bbsMode=view&amp;articleId=135117&amp;QSL=F">
+                                <span>「주택도시기금대출」 약정서 변경 안내</span>
+                                <!-- <em class="icon-new">[NEW]</em> -->
+                                <span>09.27</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="https://otalk.kbstar.com/quics?page=C019391&amp;QSL=F" class="sub" title="새소식 바로가기">바로가기</a>
+                </div>
+    
+                <!-- ################################## -->
+                <!-- 이벤트 -->
+                <!-- ################################## -->
+                <div class="section">
+                    <h2>이벤트</h2>
+                    <ul class="list-board">
+                        <!-- 컨텐츠하나 ---------------------- // -->
+                        <li>
+                            <a href="https://omoney.kbstar.com/quics?page=C016559&amp;cc=b033091:b032977&amp;이벤트일련번호=345069&amp;QSL=F">
+                                <span>가맹점주를 위한 ★KB사장님+ 마이너스통장★ 6개월 이자를 돌려드려요!</span>
+                                <!-- <em class="icon-new">[NEW]</em> -->
+                                <span>09.25 ~ 01.31</span>
+                            </a>
+                        </li>
+                        <!-- 컨텐츠하나 ---------------------- // -->
+                        <li>
+                            <a href="https://omoney.kbstar.com/quics?page=C016559&amp;cc=b033091:b032977&amp;이벤트일련번호=345150&amp;QSL=F">
+                                <span>연금 2개월 연속 받고, 현금 최대 5만원!</span>
+                                <!-- <em class="icon-new">[NEW]</em> -->
+                                <span>09.23 ~ 12.20</span>
+    
+                            </a>
+                        </li>
+                        <!-- 컨텐츠하나 ---------------------- // -->
+                        <li>
+                            <a href="https://omoney.kbstar.com/quics?page=C016559&amp;cc=b033091:b032977&amp;이벤트일련번호=344759&amp;QSL=F">
+                                <span>해외여행 후 남은 외국통화, 고민 끝! 최대 40% 환율우대 이벤트</span>
+                                <!-- <em class="icon-new">[NEW]</em> -->
+                                <span>09.13 ~ 12.31</span>
+                            </a>
+                        </li>
+                        <!-- ---------------------------------- // -->
+                    </ul>
+                    <a href="https://omoney.kbstar.com/quics?page=oevent&amp;QSL=F" class="sub" title="이벤트 바로가기">바로가기</a>
+                </div>
+                <!-- ################################## -->
+            </div>
+    
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- 인사이트 -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="main-section main-con3">
+                <div class="section wrap-slider on-slider">
+                    <h2 class="blind">인사이트</h2>
+                    <!-- ################################## -->
+                    <!-- 슬라이더 : 컨텐츠 -->
+                    <!-- ################################## -->
+                    <div class="area-con">
+                        <ul>
+                            <!-- 컨텐츠하나 ---------------------- // -->
+                            <li class="ico8 disabled" aria-hidden="true" style="left: 1340px;">
+                                <a href="https://obank.kbstar.com/quics?page=C016613&amp;cc=b061496:b061645&amp;isNew=Y&amp;prcode=DP01001243">
+                                    <span><em>추천상품</em></span>
+                                    <strong class="tit"><span>KB마이핏통장</span></strong>
+                                    <span>높은 이율! 수수료 혜택!<br>목적별 자금관리를 통장 하나로!</span>
+                                </a>
+                            </li>
+                            <!-- 컨텐츠하나 ---------------------- // -->
+                            <li class="ico3 disabled" aria-hidden="true" style="left: 1675px;">
+                                <a href="https://omoney.kbstar.com/quics?page=C043279&amp;QSL=F">
+                                    <span><em>서비스</em></span>
+                                    <strong class="tit"><span>건강한 자산관리 KB마이데이터</span></strong>
+                                    <span>각 기관에 흩어진 나의 자산을 <br>한 곳에 모아서 관리해보세요.</span>
+                                </a>
+                            </li>
+                            <!-- 컨텐츠하나 ---------------------- // -->
+                            <li class="ico7 disabled" aria-hidden="true" style="left: -335px;"><!-- 2019-11-01 추가 -->
+                                <a href="https://omoney.kbstar.com/quics?page=oliivm">
+                                    <span><em>서비스</em></span>
+                                    <strong class="tit">이동통신서비스 <span>Liiv M</span></strong>
+                                    <span>KB국민은행의 혁신금융서비스로<br>금융권 최초로 제공하는 이동통신서비스</span>
+                                </a>
+                            </li>
+                            <!-- 컨텐츠하나 ---------------------- // -->
+                            <li class="ico6 on" aria-hidden="false" style="left: 0px;">
+                                <a href="https://obank.kbstar.com/quics?page=C101339">
+                                    <span><em>서비스</em></span>
+                                    <strong class="tit"><span>KB환전서비스</span></strong>
+                                    <span>최대 90%까지 환율우대 받고<br>인터넷으로 편하게 환전 하세요</span>
+                                </a>
+                            </li>
+                            <!-- 컨텐츠하나 ---------------------- // -->
+                            <li class="ico1" aria-hidden="false" style="left: 335px;">
+                                <a href="https://omoney.kbstar.com/quics?page=onmoney">
+                                    <span><em>서비스</em></span>
+                                    <strong class="tit"><span>KBot SAM</span> (케이봇쌤)</strong>
+                                    <span>로봇과 인간이 함께 추천하는<br>최적의 포트폴리오</span>
+                                </a>
+                            </li>
+                            <!-- 컨텐츠하나 ---------------------- // -->
+                            <li class="ico2" aria-hidden="false" style="left: 670px;">
+                                <a href="https://obank.kbstar.com/quics?page=C016613&amp;cc=b061496:b061645&amp;isNew=Y&amp;prcode=DP01000940">
+                                    <span><em>추천상품</em></span>
+                                    <strong class="tit"><span>KB Young Youth 적금</span></strong>
+                                    <span>나와 내아이를 위한 상품<br>다양한 부가서비스까지 한가득</span>
+                                </a>
+                            </li>
+                            <!-- 컨텐츠하나 ---------------------- // -->
+                            <li class="ico4 disabled" aria-hidden="true" style="left: 1005px;">
+                                <a href="https://obank.kbstar.com/quics?page=C016613&amp;cc=b061496:b061645&amp;isNew=Y&amp;prcode=DP01000938">
+                                    <span><em>추천상품</em></span>
+                                    <strong class="tit"><span>KB Star</span> 정기예금</strong>
+                                    <span>Digital KB의 대표 정기예금<br>알아서 자동재예치/자동해지</span>
+                                </a>
+                            </li>
+                            <!-- ---------------------------------- // -->
+                        </ul>
+                    </div>
+                    <!-- ################################## -->
+                    <!-- 슬라이더 : 컨트롤 -->
+                    <!-- ################################## -->
+                    <div class="area-control">
+                        <button class="ui-btn before">이전</button>
+                        <button class="ui-btn play off">자동재생시작</button>
+                        <button class="ui-btn stop">자동재생멈춤</button>
+                        <button class="ui-btn next">다음</button>
+                    </div>
+                    <!-- ################################## -->
+                </div>
+            </div>
+    
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- 금융상품 -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="main-section main-con4">
+                <div class="section">
+                    <h2>금융상품</h2>
+                    <ul class="list-link1">
+                        <li><a href="https://obank.kbstar.com/quics?page=C016528" class="ico1">예금</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C016529" class="ico2">펀드</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C016530" class="ico3">대출</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C016531" class="ico4">신탁</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C040686" class="ico5">ISA</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C016533" class="ico6">보험/공제</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C016622" class="ico7">골드</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C101324" class="ico8">외화예금</a></li>
+                    </ul>
+                    <a href="https://obank.kbstar.com/quics?page=C030037" class="sub" title="금융상품 바로가기">바로가기</a>
+                </div>
+            </div>
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- 금융사고예방 / 소비자권익보호 -->
+    
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="main-section main-con5">
+                <!-- ################################## -->
+                <!-- 금융사고예방 -->
+                <!-- ################################## -->
+                <div class="section">
+                    <h2>금융사고예방</h2>
+                    <ul>
+                        <li>
+                            <a href="https://obank.kbstar.com/quics?page=C034288&amp;QSL=F">
+                                <strong>전자금융사기예방 서비스</strong>
+                                <span>각종 금융사기수법에 한층 강화된 다양한 전자금융사기예방 서비스로 안전한 인터넷뱅킹 사용이 가능합니다.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://obank.kbstar.com/quics?page=C047785&amp;QSL=F">
+                                <strong>통장(카드) 매매·양도는 불법</strong>
+                                <span>고객님의 자산을 보호하고 금융사기를 예방하기 위한 최선의 방법은 대포통장 근절입니다.</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://obank.kbstar.com/quics?page=C034305&amp;boardId=722&amp;compId=b035718&amp;articleId=1489&amp;bbsMode=view&amp;viewPage=2&amp;articleClass=&amp;searchCondition=title&amp;searchStr=&amp;QSL=F">
+                                <strong>사진촬영·QR스캔 절대금지</strong>
+                                <span>타인이 OTP/보안카드 번호를 요구 (2개 초과) 하는 경우는 금융사기이니 절대 응하지 마십시오.</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ################################## -->
+                <!-- 소비자권익보호 -->
+                <!-- ################################## -->
+                <div class="section">
+                    <h2>소비자권익보호</h2>
+                    <ul>
+                        <li><a href="http://www.fss.or.kr" target="_blank" title="새창 열기">금융감독원 바로가기</a></li>
+                        <li><a href="https://obiz.kbstar.com/quics?page=C039486&amp;QSL=F">미수령주식 찾아주기 캠페인</a></li>
+                        <li class="toggle-area open">
+                            <span>비교조회서비스<button type="button" class="ui-toggle" title="접기">상세목록</button></span>
+                            <ul>
+                                <li><a target="_blank" title="새창 열기" href="https://portal.kfb.or.kr/compare/receiving_deposit_3.php">은행금리비교</a></li>
+                                <li><a target="_blank" title="새창 열기" href="http://finlife.fss.or.kr">금융상품한눈에</a></li>
+                                <li><a target="_blank" title="새창 열기" href="https://fine.fss.or.kr/fine/main/main.do?menuNo=900000">금융소비자정보포털 '파인'</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ################################## -->
+                <!-- 리브메이트 배너 -->
+                <!-- ################################## -->
+                <div class="aside box-info">
+                    <a href="https://otalk.kbstar.com/quics?page=C063974&amp;QSL=F" target="_blank" title="새창열림">
+                        <h2 class="blind">KB국민인증서</h2>
+                        <strong>평생! 쉽게! 안전하게!</strong>
+                        <span>휴대폰으로 어느 PC에서나 인증 OK!</span>
+                    </a>
+                </div>
+                <!-- ################################## -->
+            </div>
+    
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- KB APP -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="main-section main-con6">
+                <div class="section">
+                    <h2><span>KB</span>국민은행 <span>APP</span></h2>
+                    <ul class="list-link2">
+                        <li><a href="https://omoney.kbstar.com/quics?page=C028156&amp;QSL=F" class="ico1">KB스타뱅킹</a></li>
+                        <li><a href="https://omoney.kbstar.com/quics?page=C030160&amp;QSL=F" class="ico2">KB기업뱅킹</a></li>
+                        <!-- li><a href="https://omoney.kbstar.com/quics?page=C043279&amp;QSL=F" class="ico3">KB마이머니</a></li -->
+                        <!-- li><a href="https://obank.kbstar.com/quics?page=C040663&amp;QSL=F" class="ico4">KB스타알림</a></li -->
+                        <li><a href="https://omoney.kbstar.com/quics?page=C106299&amp;QSL=F" class="ico5">리브 Next</a></li>
+                        <li><a href="https://kbland.kr" target="_blank" title="새창 열기" class="ico6">KB부동산</a></li>
+                        <li><a href="https://omoney.kbstar.com/quics?page=C056265&amp;QSL=F" title="리브똑똑 안내페이지" class="ico7">리브똑똑</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+        </div>
+    
+        <!-- ////////////////////////////////////////// -->
+        <!-- FOOTER  -->
+        <!-- ////////////////////////////////////////// -->
+        <div class="footWrap">
+            <div id="FOOTER">
+                <div class="foot_area_2015">
+                    <!-- ################################## -->
+                    <!-- ### 기본정보 ### -->
+                    <!-- ################################## -->
+                    <ul class="nav-fnb mb0">
+                        <li><a href="https://obank.kbstar.com/quics?page=C019763&amp;QSL=F">이용상담</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C040531&amp;QSL=F">보안프로그램</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C019933&amp;QSL=F">사고신고</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C023000&amp;QSL=F">보호금융상품등록부</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C036346&amp;QSL=F"><strong>전자민원접수</strong></a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C108662&amp;QSL=F" class="fot_p_txt"><strong>개인정보처리방침</strong></a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C019924&amp;QSL=F"><strong>신용정보활용체제</strong></a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C110586&amp;QSL=F"><strong>위치기반서비스 이용약관</strong></a></li>
+                        <li><a href="https://omoney.kbstar.com/quics?page=C017681&amp;QSL=F"><strong>경영공시</strong></a></li>
+                    </ul>
+                    <ul class="nav-fnb">
+                        <li><a href="https://obank.kbstar.com/quics?page=C040593&amp;QSL=F">그룹 내 고객정보 제공안내</a></li>
+                        <li><a href="https://obank.kbstar.com/quics?page=C057315&amp;QSL=F">스튜어드십 코드</a></li>
+                    </ul>
+                    <!-- ################################## -->
+                    <!-- ### 바로가기 및 고객센터 ### -->
+                    <!-- ################################## -->
+                    <div class="info-group" id="navFooterGroup">
+                        <ul class="list">
+                            <!-- ---------------------- -->
+                            <!-- KB금융그룹네트워크 -->
+                            <!-- ---------------------- -->
+                            <li>
+                                <a href="#" class="tit">KB금융그룹네트워크</a>
+                                <div class="info">
+                                    <ul>
+                                        <li><a href="https://www.kbfg.com" target="_blank" title="새창 열기">KB금융그룹</a></li>
+                                        <li><a href="http://www.kbsec.co.kr" target="_blank" title="새창 열기">KB증권</a></li>
+                                        <li><a href="http://www.kbinsure.co.kr" target="_blank" title="새창 열기">KB손해보험</a></li>
+                                        <li><a href="https://www.kbcard.com" target="_blank" title="새창 열기">KB국민카드</a></li>
+                                        <!-- <li><a href="https://www.prudential.co.kr" target="_blank" title="새창 열기">푸르덴셜생명</a></li> --><!-- 230101 합병 -->
+                                        <li><a href="http://www.kbam.co.kr" target="_blank" title="새창 열기">KB자산운용</a></li>
+                                        <li><a href="http://www.kbcapital.co.kr" target="_blank" title="새창 열기">KB캐피탈</a></li>
+                                        <li><a href="https://www.kblife.co.kr" target="_blank" title="새창 열기">KB라이프생명</a></li><!-- 230101 합병 -->
+                                        <li><a href="http://www.kbret.co.kr" target="_blank" title="새창 열기">KB부동산신탁</a></li>
+                                        <li><a href="https://www.kbsavings.com" target="_blank" title="새창 열기">KB저축은행</a></li>
+                                        <li><a href="http://www.kbic.co.kr" target="_blank" title="새창 열기">KB인베스트먼트</a></li>
+                                        <li><a href="http://www.kds.co.kr" target="_blank" title="새창 열기">KB데이타시스템</a></li>
+                                        <li><a href="http://www.kbci.co.kr" target="_blank" title="새창 열기">KB신용정보</a></li>
+                                        <li><a href="https://www.kbfg.com/kbresearch/main.do" target="_blank" title="새창 열기">KB경영연구소</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- ---------------------- -->
+                            <!-- 대표전화 -->
+                            <!-- ---------------------- -->
+                            <li class="ic1">
+                                <a href="#" class="tit">대표전화 1588-9999</a>
+                                <div class="info">
+                                    <dl>
+                                        <dt>대표전화</dt>
+                                        <dd>
+                                            <ul>
+                                                <li>1588-9999, 1599-9999, 1644-9999</li>
+                                                <li><span>해외에서 국내로 걸 때</span>+82-2-6300-9999</li>
+                                                <li class="groupLine">대출 단기연체 및 만기안내<br><em class="s1">1588-9008</em></li>
+                                                <li><span>해외에서 국내로 걸 때</span>+82-2-3702-1240</li>										
+                                            </ul>
+                                        </dd>
+                                        <dt>상담전용</dt>
+                                        <dd>
+                                            <ul>
+                                                <li>1800-9999<span>(분실 및 사고신고 제외)</span></li>
+                                                <li class="groupLine">투자상품 승낙확인<br><em class="s1">1833-3938</em></li>
+                                                <li><span>해외에서 국내로 걸 때</span>+82-1833-3938</li>										
+                                            </ul>
+                                        </dd>
+                                        <dt>기업전용</dt>
+                                        <dd>1599-9499</dd>
+                                        <dt>기업(B2B)</dt>
+                                        <dd>1566-9944</dd>
+                                        <dt>외국인전용</dt>
+                                        <dd>1599-4477</dd>
+                                        <dt>어르신전용</dt>
+                                        <dd>1644-3308</dd>
+                                        <!-- // -->
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- ---------------------- -->
+                            <!-- 챗봇/채팅/이메일상담 -->
+                            <!-- ---------------------- -->
+                            <li class="ic3"><a href="https://obank.kbstar.com/quics?page=C043954"><span class="tit">챗봇/채팅/이메일상담(24시간)</span></a></li>
+                            <!-- ---------------------- -->
+                            <!-- 비교조회서비스 -->
+                            <!-- ---------------------- -->
+                            <li>
+                                <a href="#" class="tit">비교조회서비스</a>
+                                <div class="info">
+                                    <ul>
+                                        <li><a href="https://portal.kfb.or.kr/compare/receiving_deposit_3.php" target="_blank" title="새창 열기">은행금리비교</a></li>
+                                        <li><a href="http://finlife.fss.or.kr" target="_blank" title="새창 열기">금융상품 한눈에</a></li>
+                                        <li><a href="https://fine.fss.or.kr/fine/main/main.do?menuNo=900000" target="_blank" title="새창 열기">금융소비자정보포털 '파인'</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- ---------------------- -->
+                        </ul>
+                        <p><a href="https://img2.kbstar.com/obj/ocommon/20230228_kbcard.pdf" target="_blank" title="새창열기">KB국민은행은 KB국민카드의 판매대리·중개업자입니다.</a></p>
+                    </div>
+                    <!-- ################################## -->
+                    <!-- ### SNS ### -->
+                    <!-- ################################## -->
+                    <div class="info-sns">
+                        <ul>
+                            <li class="ic1"><a href="https://www.facebook.com/kbkookminbank" target="_blank" title="KB국민은행 페이스북 새창 열기">페이스북</a></li>
+                            <li class="ic2"><a href="https://instagram.com/kbkookminbank" target="_blank" title="KB국민은행 인스타그램 새창 열기">인스타그램</a></li>
+                            <li class="ic3"><a href="https://www.youtube.com/user/openkbstar" target="_blank" title="KB국민은행 YouTube 새창 열기">YouTube</a></li>
+                            <li class="ic4"><a href="https://blog.naver.com/youngkbblog" target="_blank" title="KB국민은행 blog 새창 열기">blog</a></li><!-- 2018-12-28 추가  -->
+                        </ul>
+                    </div>
+                    <!-- ################################## -->
+                    <!-- ### COPYRIGHT 및 마크 ### -->
+                    <!-- ################################## -->
+                    <p class="copy">Copyright KB Kookmin Bank. All Rights Reserved.</p>
+                    <ul class="info-mark">
+                        <li class="ic1"><span>2023년 국가고객만족도(NCSI) 은행부문 16회 1위</span></li>
+                        <!-- li class="ic2"><a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=8046" target="_blank" title="웹어워드코리아 새창 열기">웹어워드 코리아 2018 은행분야 대상 수상</a></li -->
+                        <li class="ic3"><a href="http://webwatch.or.kr" target="_blank" title="국가 공인 인증기관 웹와치 새창열기">과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2024.7.01 ~ 2025.6.30</a></li>
+                        <li class="ic4"><a href="https://obank.kbstar.com/quics?page=C034312" title="KB개인(신용)정보보호 국제/국내보안인증 자세히보러가기">ISMS-P 인증, APEC CBPR 인증, ISO27701 인증</a></li>
+                    </ul>
+                    <!-- ################################## -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script id="" text="" charset="" type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script></body></html>

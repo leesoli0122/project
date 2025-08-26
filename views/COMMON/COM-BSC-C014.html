@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:type" content="website" />
+
+	<link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<style>
+    .contents.guide { padding:15px; }
+    .guide .home { margin-bottom:50px; }
+    .guide .home a { display:block; width:24px; height:24px; font-size:0; background:url("../../index_home.png")no-repeat center center; }
+    .guide .code h4 { margin-bottom:40px; }
+    /* color css */
+</style>
+<body>
+    <div class="wrap">
+        <div id="contentWrap" class="sub-content">
+            <div class="contents guide">
+                <div class="home">
+                    <a href="../../index.html">홈</a>
+                </div>
+                <div class="code">
+                    <section>
+                        <h4>탭(스크립트O)</h4>
+                        <div class="tabs-wrap">
+                            <div class="tabs">
+                                <ul class="tab-item">
+                                    <li class="on" data-tab="tab-cont01"><a href="#none">TAB1</a></li>
+                                    <li data-tab="tab-cont02" class=""><a href="#none">TAB2</a></li>
+                                    <li data-tab="tab-cont03"><a href="#none">TAB3</a></li>
+                                    <li data-tab="tab-cont04" class=""><a href="#none">TAB4</a></li>
+                                    <li data-tab="tab-cont05" class=""><a href="#none">TAB5</a></li>
+                                    </ul>
+                                <div class="tab-content-area">
+        
+                                    <div id="tab-cont01" class="tab-content">
+                                        <h4 class="title">1번 본문 타이틀</h4>
+                                    </div>
+                                    <div id="tab-cont02" class="tab-content dp-none">
+                                        <h4 class="title">2번 본문 타이틀</h4>
+                                    </div>
+                                    <div id="tab-cont03" class="tab-content dp-none">
+                                        <h4 class="title">3번 본문 타이틀</h4>
+                                    </div>
+                                    <div id="tab-cont04" class="tab-content dp-none">
+                                        <h4 class="title">4번 본문 타이틀</h4>
+                                    </div>
+                                    <div id="tab-cont05" class="tab-content dp-none">
+                                        <h4 class="title">5번 본문 타이틀</h4>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+                        <h4 style="margin:40px 0 20px; padding-top:20px; border-top:1px solid #ddd;">탭(스크립트x)</h4>
+                        <div class="tabs-wrap">
+                            <div class="tabs">
+                                <ul class="tab-list">
+                                    <li class="on" data-tab="tab-cont06"><a href="#none">TAB1</a></li>
+                                    <li data-tab="tab-cont07" class=""><a href="#none">TAB2</a></li>
+                                    <li data-tab="tab-cont08"><a href="#none">TAB3</a></li>
+                                    <li data-tab="tab-cont09" class=""><a href="#none">TAB4</a></li>
+                                    <li data-tab="tab-cont10" class=""><a href="#none">TAB5</a></li>
+                                    </ul>
+                                <div class="tab-content-area">
+                                    <div id="tab-cont06" class="tab-content">
+                                        <h4 class="title">1번 본문 타이틀</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 style="margin:40px 0 20px; padding-top:20px; border-top:1px solid #ddd;">본문 in 탭</h4>
+                        <div class="tabs-wrap">
+                            <div class="tab-content">
+                                <div class="tabs type2">
+                                    <ul class="tab-item02">
+                                        <li data-tab="tab-cont001" data-id="teb1" id=""><a href="#javascript:void(0);">심사승인<span>2</span></a></li>
+                                        <li data-tab="tab-cont002" data-id="teb2" id=""><a href="#javascript:void(0);">심사협의<span>2</span></a></li>
+                                        <li class="on" data-tab="tab-cont003" data-id="teb3" id=""><a href="#javascript:void(0);">심사거절<span>2</span></a></li>
+                                    </ul>
+                                    <div class="tab-content-area02">
+                                        <div id="tab-cont001" class="tab-content on">탭내용1</div>
+                                        <div id="tab-cont002" class="tab-content dp-none">탭내용2</div>
+                                        <div id="tab-cont003" class="tab-content dp-none">탭내용3</div>
+                                        <div id="tab-cont004" class="tab-content dp-none">탭내용4</div>
+                                        <div id="tab-cont005" class="tab-content dp-none">탭내용5</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+	<script>
+        $(function(){
+            $('div[data-include-path]').each(function(){
+                var path = $(this).attr('data-include-path');
+                $(this).load(path,function(response,status,xhr){
+                    if(status == 'error'){
+                        var msg = 'Sory but there was an error:';
+                        $(this).html(msg + xhr.status + '' + xhr.statusText);
+                    }
+                })
+            })
+        })
+    </script>
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+</body>
+</html>
+

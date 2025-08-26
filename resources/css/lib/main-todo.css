@@ -1,0 +1,156 @@
+/*********************************************************************
+메인.02 - To-Do-List style2(리스트 10개)
+*********************************************************************/
+/*---------------------------------------------
+    mainSec-myTodoList Default
+---------------------------------------------*/
+.mainSec-myTodoList { margin-top:100px; }
+.mainSec-myTodoList.style2>div{ display:block; }/*style2 전용*/
+/*---------------------------------------------
+    mainSec-myTodoList Contents
+---------------------------------------------*/
+/* intro-box */
+.mainSec-myTodoList.style2 div.intro-box { padding:36px 30px; margin-bottom:50px; width:100%; height:268px; border-radius: 16px; color:var(--white); background: var(--m-img-todo) no-repeat right 0px bottom 4px/ 318px auto, linear-gradient(#404040, #ABBCD0); }/*style2 전용*/
+.mainSec-myTodoList.style2 div.intro-box>h2 { font-size:var(--font32); }
+.mainSec-myTodoList.style2 div.intro-box>p { margin-top:25px; font-size:var(--font24); line-height:2; }/*style2 전용*/
+
+/* introToList-area */
+.mainSec-myTodoList.style2 ul.introToList-area>li { margin-bottom:24px; height:auto; }/*style2 전용*/
+.mainSec-myTodoList.style2 ul.introToList-area>li:only-child,
+.mainSec-myTodoList.style2 ul.introToList-area>li:last-child { margin-bottom:0; }/*style2 전용*/
+.mainSec-myTodoList.style2 ul.introToList-area>li>a{ display:flex; height:100%; border:1px solid var(--border1); border-radius: 10px;  background: var(--white); overflow: hidden; }/*style2 전용*/
+.mainSec-myTodoList.style2 ul.introToList-area>li>a>p.intro-tit { flex:159px 0 0; padding:64px 0; text-align: center; font-size:var(--font18); font-weight:var(--w-bold); background: var(--m-background3); line-height:2;}/*style2 전용*/
+.mainSec-myTodoList.style2 ul.introToList-area>li>a>div.intro-con { display:block; padding:20px 24px; width:100%; height:auto; }/*style2 전용 height 지워도 됨*/
+.mainSec-myTodoList ul.introToList-area>li>a:hover,
+.mainSec-myTodoList ul.introToList-area>li>a:focus { border:1px solid var(--secondary); }
+.mainSec-myTodoList.style2 div.intro-con>p { font-size:0; }/*style2 전용*/
+.mainSec-myTodoList.style2 div.intro-con>p>em { display:inline-block; padding:0 12px; height:27px; line-height: 27px; border-radius: 4px; font-size:var(--font14); font-weight:var(--w-bold); color: var(--m-color11); background: var(--tag5); }/*style2 전용*/
+.mainSec-myTodoList.style2 div.intro-con>p>strong { display:inline-block; margin-top:0; font-size:var(--font20); line-height: 1.2; }/*style2 전용*/
+.mainSec-myTodoList.style2 div.intro-con>p>em + strong { margin-top:0; margin-left:12px; }/*style2 전용*/
+.mainSec-myTodoList.style2 div.intro-con>ul { margin-top:15px; }
+.mainSec-myTodoList div.intro-con>ul>li:first-child { margin-top:0; }
+.mainSec-myTodoList div.intro-con>ul>li { margin-top:10px; }
+.mainSec-myTodoList div.intro-con>ul>li>span.tit{ margin-right:10px; }
+.mainSec-myTodoList div.intro-con>ul>li.date>span.txt { font-size:var(--font18); font-weight:var(--w-bold); }
+.mainSec-myTodoList div.intro-con>ul>li.deadline>span.txt { color:var(--error); }
+.mainSec-myTodoList div.intro-con>ul>li.num{ font-size:var(--font14); color:var(--inactive); }
+.mainSec-myTodoList.style2 div.intro-con>p.btn { position:absolute; top:50%; transform:translateY(-50%); right:24px; font-size:var(--font16); }/*style2 전용*/
+.mainSec-myTodoList div.intro-con>p.btn::after { content:">"; padding-left:6px;}
+/*---------------------------------------------
+    mainSec-myTodoList result
+---------------------------------------------*/
+.mainSec-myTodoList.style2 div.introResult-area{ display:flex; align-items: center; justify-content: center; padding:50px 0; width:100%; height:auto; text-align: center; border:1px solid var(--border1);border-radius: 10px; overflow: hidden; background: var(--white); }/*style2 전용*/
+.mainSec-myTodoList div.introResult-area>.con { padding-top: 112px; }
+.mainSec-myTodoList div.introResult-area>.con>p { font-weight: var(--w-bold); line-height:1.4;  font-size: var(--font22); }
+.mainSec-myTodoList div.introResult-area.noData>.con::before { content:""; position: absolute; top:40px; left:50%; transform: translate(-50%, -50%); width:80px; height:80px; background: url(../../images/nodata.png) no-repeat center 100%/80px auto; }
+/*---------------------------------------------
+    mainSec-myTodoList Swiper style2는 스와이퍼 안 씀
+---------------------------------------------*/
+
+/*********************************************************************
+메인.02 - To-Do-List style3(scroll)
+*********************************************************************/
+/*---------------------------------------------
+    mainSec-myTodoList Default
+---------------------------------------------*/
+.mainSec-myTodoList { margin-top:100px; }
+.mainSec-myTodoList.style3>div{ display:flex; gap:40px; }
+/*---------------------------------------------
+    mainSec-myTodoList Contents
+---------------------------------------------*/
+.mainSec-myTodoList div.intro-box { flex:0 0 380px; padding:36px 30px; width:418px; height:420px; border-radius: 16px; color:var(--white); background: var(--m-img-todo) no-repeat right 0px bottom 4px/ 318px auto, linear-gradient(#404040, #ABBCD0); }
+.mainSec-myTodoList div.intro-box>h2 { font-size:var(--font32); }
+.mainSec-myTodoList div.intro-box>p { margin-top:25px; font-size:var(--font16); line-height:2; }
+
+/* introToList-area */
+.mainSec-myTodoList.style3 .introTodoSlider { padding:20px 0 20px 20px; width:100%; height:420px; border-top: 1px solid var(--border3); border-bottom: 1px solid var(--border3); } /* style3 전용 */
+.mainSec-myTodoList.style3 ul.introToList-area { padding-right:28px; height:100%; overflow:auto; }/* style3 전용 */
+.mainSec-myTodoList.style3 ul.introToList-area::-webkit-scrollbar { width:14px; }/* style3 전용 */
+.mainSec-myTodoList.style3 ul.introToList-area::-webkit-scrollbar-thumb { width:11px; background-color:var(--border2); border-radius:2px; }/* style3 전용 */
+.mainSec-myTodoList.style3 ul.introToList-area::-webkit-scrollbar-track { width:14px; background-color:var(--background2); border-radius:5px; }/* style3 전용 */
+.mainSec-myTodoList.style3 ul.introToList-area::-webkit-scrollbar-button {  height:100%; }/* style3 전용 */
+.mainSec-myTodoList.style3 ul.introToList-area>li { margin-bottom:24px; height:auto; }/*style3 전용*/
+.mainSec-myTodoList.style3 ul.introToList-area>li:only-child,
+.mainSec-myTodoList.style3 ul.introToList-area>li:last-child { margin-bottom:0; }/*style3 전용*/
+.mainSec-myTodoList.style3 ul.introToList-area>li>a{ display:flex; height:100%; border:1px solid var(--border1); border-radius: 10px;  background: var(--white); overflow: hidden; }/*style3 전용*/
+.mainSec-myTodoList.style3 ul.introToList-area>li>a>p.intro-tit { flex:159px 0 0; padding:64px 0; text-align: center; font-size:var(--font18); font-weight:var(--w-bold); background: var(--m-background3); line-height:2;}/*style3 전용*/
+.mainSec-myTodoList.style3 ul.introToList-area>li>a>div.intro-con { display:block; padding:20px 24px; width:100%; height:auto; }/*style3 전용 height 지워도 됨*/
+.mainSec-myTodoList ul.introToList-area>li>a:hover,
+.mainSec-myTodoList ul.introToList-area>li>a:focus { border:1px solid var(--secondary); }
+.mainSec-myTodoList.style3 div.intro-con>p { font-size:0; }/*style3 전용*/
+.mainSec-myTodoList.style3 div.intro-con>p>em { display:inline-block; padding:0 12px; height:27px; line-height: 27px; border-radius: 4px; font-size:var(--font14); font-weight:var(--w-bold); color: var(--m-color11); background: var(--tag5); }/*style3 전용*/
+.mainSec-myTodoList.style3 div.intro-con>p>strong { display:inline-block; margin-top:0; font-size:var(--font20); line-height: 1.2; }/*style3 전용*/
+.mainSec-myTodoList.style3 div.intro-con>p>em + strong { margin-top:0; margin-left:12px; }/*style3 전용*/
+.mainSec-myTodoList.style3 div.intro-con>ul { margin-top:15px; }
+.mainSec-myTodoList div.intro-con>ul>li:first-child { margin-top:0; }
+.mainSec-myTodoList div.intro-con>ul>li { margin-top:10px; }
+.mainSec-myTodoList div.intro-con>ul>li>span.tit{ margin-right:10px; }
+.mainSec-myTodoList div.intro-con>ul>li.date>span.txt { font-size:var(--font18); font-weight:var(--w-bold); }
+.mainSec-myTodoList div.intro-con>ul>li.deadline>span.txt { color:var(--error); }
+.mainSec-myTodoList div.intro-con>ul>li.num{ font-size:var(--font14); color:var(--inactive); }
+.mainSec-myTodoList.style3 div.intro-con>p.btn { position:absolute; top:50%; transform:translateY(-50%); right:24px; font-size:var(--font16); }/*style3 전용*/
+.mainSec-myTodoList div.intro-con>p.btn::after { content:">"; padding-left:6px;}
+/*---------------------------------------------
+    mainSec-myTodoList result
+---------------------------------------------*/
+.mainSec-myTodoList div.introResult-area{ display:flex; align-items: center; justify-content: center; width:100%; height:auto; text-align: center; border:1px solid var(--border1);border-radius: 10px; overflow: hidden; background: var(--white);   }
+.mainSec-myTodoList div.introResult-area>.con { padding-top: 112px; }
+.mainSec-myTodoList div.introResult-area>.con>p { font-weight: var(--w-bold); line-height:1.4;  font-size: var(--font22); }
+.mainSec-myTodoList div.introResult-area.noData>.con::before { content:""; position: absolute; top:40px; left:50%; transform: translate(-50%, -50%); width:80px; height:80px; background: url(../../images/nodata.png) no-repeat center 100%/80px auto; }
+
+/*------------S : DeskTop(1200PX)------------ */
+@media (max-width: 1200px) { /* style3 전용 */
+    /************************************************************           *********
+    메인.02 - TO-DO-LIST
+    *********************************************************************/
+    .mainSec-myTodoList.style3>div { display:block; }
+    .mainSec-myTodoList.style3 div.intro-box { margin-bottom:40px; width:100%; height:268px; }
+    /*------------E : DeskTop(1200PX)------------*/
+}
+
+/*********************************************************************
+메인.02 - To-Do-List style4(grid)
+*********************************************************************/
+/*---------------------------------------------
+    mainSec-myTodoList Default
+---------------------------------------------*/
+.mainSec-myTodoList { margin-top:100px; }
+.mainSec-myTodoList.style4 >div{ display:block; }/* style4 전용 */
+/*---------------------------------------------
+    mainSec-myTodoList Contents
+---------------------------------------------*/
+.mainSec-myTodoList.style4 div.intro-box { flex:0 0 380px; margin-bottom:40px; padding:36px 30px; width:100%; height:268px; border-radius: 16px; color:var(--white); background: var(--m-img-todo) no-repeat right 0px bottom 4px/ 318px auto, linear-gradient(#404040, #ABBCD0); }/* style4 전용 */
+.mainSec-myTodoList div.intro-box>h2 { font-size:var(--font32); }
+.mainSec-myTodoList div.intro-box>p { margin-top:25px; font-size:var(--font16); line-height:2; }
+
+.mainSec-myTodoList.style4 ul.introToList-area { display:grid; grid-template-columns:1fr 1fr; gap:20px; padding-right:20px; padding-bottom:20px; height:550px; overflow:auto; }/* style4 전용 */
+.mainSec-myTodoList.style4 ul.introToList-area::-webkit-scrollbar { width:14px; }/* style4 전용 */
+.mainSec-myTodoList.style4 ul.introToList-area::-webkit-scrollbar-thumb { width:11px; background-color:var(--border2); border-radius:2px; }/* style4 전용 */
+.mainSec-myTodoList.style4 ul.introToList-area::-webkit-scrollbar-track { width:14px; background-color:var(--background2); border-radius:5px; }/* style4 전용 */
+.mainSec-myTodoList.style4 ul.introToList-area::-webkit-scrollbar-button {  height:100%; }/* style4 전용 */
+.mainSec-myTodoList.style4 ul.introToList-area>li { border-radius:12px; box-shadow:5px 5px 6px -5px #55555570; }/* style4 전용 */
+.mainSec-myTodoList ul.introToList-area>li>a{ display:block; border:1px solid var(--border1); border-radius: 10px;  background: var(--white); overflow: hidden; }
+.mainSec-myTodoList ul.introToList-area>li>a>p.intro-tit { padding:14px 0; text-align: center; font-size:var(--font18); font-weight:var(--w-bold); background: var(--m-background3);}
+.mainSec-myTodoList.style4 ul.introToList-area>li>a>div.intro-con { display: flex; flex-direction: column; justify-content: space-between; padding:20px 24px; height:210px; }/* style4 전용 */
+.mainSec-myTodoList ul.introToList-area>li>a:hover,
+.mainSec-myTodoList ul.introToList-area>li>a:focus { border:1px solid var(--secondary); }
+.mainSec-myTodoList.style4 div.intro-con>p { display:flex; gap:12px; }/* style4 전용 */
+.mainSec-myTodoList div.intro-con>p>em { display:inline-block; padding:0 12px; height:27px; line-height: 27px; border-radius: 4px; font-weight:var(--w-bold); color: var(--m-color11); background: var(--tag5); }
+.mainSec-myTodoList.style4 div.intro-con>p>strong { display:inline-block; margin-top:0; max-width:410px; font-size:var(--font20); line-height: 1.4; }/* style4 전용 */
+.mainSec-myTodoList div.intro-con>p>em + strong { margin-top:18px; }
+.mainSec-myTodoList.style4 div.intro-con>ul { margin-top:20px; }/* style4 전용 */
+.mainSec-myTodoList div.intro-con>ul>li:first-child { margin-top:0; }
+.mainSec-myTodoList div.intro-con>ul>li { margin-top:16px; }
+.mainSec-myTodoList div.intro-con>ul>li>span.tit{ margin-right:10px; }
+.mainSec-myTodoList div.intro-con>ul>li.date>span.txt { font-size:var(--font18); font-weight:var(--w-bold); }
+.mainSec-myTodoList div.intro-con>ul>li.deadline>span.txt { color:var(--error); }
+.mainSec-myTodoList div.intro-con>ul>li.num{ font-size:var(--font14); color:var(--inactive); }
+.mainSec-myTodoList.style4 div.intro-con>p.btn { position:absolute; top:20px; right:24px; }/* style4 전용 */
+.mainSec-myTodoList div.intro-con>p.btn::after { content:">"; padding-left:6px;}
+/*---------------------------------------------
+    mainSec-myTodoList result
+---------------------------------------------*/
+.mainSec-myTodoList.style4 div.introResult-area{ display:flex; align-items: center; justify-content: center; padding:50px 0; width:100%; height:auto; text-align: center; border:1px solid var(--border1);border-radius: 10px; overflow: hidden; background: var(--white); }/*style4 전용*/
+.mainSec-myTodoList div.introResult-area>.con { padding-top: 112px; }
+.mainSec-myTodoList div.introResult-area>.con>p { font-weight: var(--w-bold); line-height:1.4;  font-size: var(--font22); }
+.mainSec-myTodoList div.introResult-area.noData>.con::before { content:""; position: absolute; top:40px; left:50%; transform: translate(-50%, -50%); width:80px; height:80px; background: url(../../images/nodata.png) no-repeat center 100%/80px auto; }

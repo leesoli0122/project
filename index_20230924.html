@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>오릭스 신차 | worklist</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keyword" content="">
+    <meta name="description" content="ia, worklist">
+    <meta name="author" content="kys">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/worklist.css" />
+    <script src="../../resources/js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="container">
+
+            <div class="header">
+                <h1>오릭스 신차 | worklist</h1>
+                <ul>
+                    <li>프로젝트 기간 : 2024년 08월 05일 ~ 2025년 05월 27일</li>
+                    <!-- <li><span id="delCnt"></span> / <span id="compCnt"></span> (loan / renewal)</li> -->
+                    <li>
+                        <h3>전체페이지 나온 이후 수정진척률 확인용</h3>
+                        <span id="wipCnt"></span> (남은 화면 수)
+                    </li>
+                    <li><span id="totCnt"></span> (총 본수)</li>
+                    <li style="margin-bottom:30px;">
+                </ul>
+                <div class="progressArea"></div>
+
+                <dl>
+                    <dt>메모사항</dt>
+                    <dd>2024-09-03 IA기능정의서 기준</dd>
+                </dl>
+            </div>
+
+            <div class="cont">
+                <!-- s: 공통 -->
+                <div class="guide">
+                    <h3 class="tit">공통</h3>
+                    <summary></summary>
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col width="15%">
+                            <col width="*">
+                            <col width="*">
+                            <col width="*">
+                            <col width="15%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">화면명</th>
+                                <th scope="col">경로</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="12">style guide</td>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C001.html">COM-BSC-C001</a></td>
+                                <td>폰트</td>
+                                <td>/views/COMMON/COM-BSC-C001.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C002.html" target="_blank">COM-BSC-C002</a></td>
+                                <td>layout</td>
+                                <td>/views/COMMON/COM-BSC-C002.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C004.html">COM-BSC-C004</a></td>
+                                <td>인풋박스/셀렉트박스</td>
+                                <td>/views/COMMON/COM-BSC-C004.html</td>
+                                <td>박수현</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C005.html">COM-BSC-C005</a></td>
+                                <td>체크박스/라디오버튼</td>
+                                <td>/views/COMMON/COM-BSC-C005.html</td>
+                                <td>박수현</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C007.html">COM-BSC-C007</a></td>
+                                <td>페이징</td>
+                                <td>/views/COMMON/COM-BSC-C007.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C008.html">COM-BSC-C008</a></td>
+                                <td>버튼</td>
+                                <td>/views/COMMON/COM-BSC-C008.html</td>
+                                <td>박수현</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C009.html">COM-BSC-C009</a></td>
+                                <td>툴팁/라벨</td>
+                                <td>/views/COMMON/COM-BSC-C009.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C013.html">COM-BSC-C013</a></td>
+                                <td>아코디언</td>
+                                <td>/views/COMMON/COM-BSC-C013.html</td>
+                                <td>박수현</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C014.html">COM-BSC-C014</a></td>
+                                <td>탭</td>
+                                <td>/views/COMMON/COM-BSC-C014.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C012.html">COM-BSC-C012</a></td>
+                                <td>step</td>
+                                <td>/views/COMMON/COM-BSC-C012.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C021.html">COM-BSC-C021</a></td>
+                                <td>alert</td>
+                                <td>/views/COMMON/COM-BSC-C021.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/COM-BSC-C022.html">COM-BSC-C022</a></td>
+                                <td>popup</td>
+                                <td>/views/COMMON/COM-BSC-C022.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">common</td>
+                                <td class="fileName"><a href="/views/COMMON/layout.html" target="_blank">layout.html</a></td>
+                                <td>Layout - group</td>
+                                <td>/views/COMMON/layout.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/list.html" target="_blank">list.html</a></td>
+                                <td>list</td>
+                                <td>/views/COMMON/list.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/result.html" target="_blank">result.html</a></td>
+                                <td>result</td>
+                                <td>/views/COMMON/result.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="fileName"><a href="/views/COMMON/table.html" target="_blank">table.html</a></td>
+                                <td>table</td>
+                                <td>/views/COMMON/table.html</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 공통 -->
+
+                <!-- s: 로그인 -->
+                <div class="guide">
+                    <h3 class="tit">로그인</h3>
+                    <summary></summary>
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="10%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">step/tap</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="14">로그인</td>
+                                <td rowspan="2">로그인</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-LOG-001.html" target="_blank">ORIX-NCR-LOG-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.10</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>알럿</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-LOG-001-1.html" target="_blank">ORIX-NCR-LOG-001-1</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.10</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">ID찾기</td>
+                                <td>휴대폰본인인증</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-LID-001.html" target="_blank">ORIX-NCR-LID-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.10</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>성공</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-LID-002.html" target="_blank">ORIX-NCR-LID-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.10</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>실패</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-LID-003.html" target="_blank">ORIX-NCR-LID-003</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.10</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">비밀번호 찾기</td>
+                                <td>아이디 입력</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-LPW-001.html" target="_blank">ORIX-NCR-LPW-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.10</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>휴대폰본인인증</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-LPW-002.html" target="_blank">ORIX-NCR-LPW-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.10</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>새 비밀번호 입력</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-LPW-003.html" target="_blank">ORIX-NCR-LPW-003</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.10</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">슈퍼 관리자 신청</td>
+                                <td>휴대폰본인인증</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/휴대폰본인인증.html" target="_blank">휴대폰본인인증</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.12</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>정보입력</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/정보입력.html" target="_blank">정보입력</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.12</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>완료</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/완료.html" target="_blank">완료</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.12</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">사용자신청</td>
+                                <td>휴대폰본인인증</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-USR-001.html" target="_blank">ORIX-NCR-USR-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.23 </td>
+                                <td></td>
+                                <td>20240923 화면추가 / 인풋 아래 문구 들어오는 거 확인 필요</td>
+                            </tr>
+                            <tr>
+                                <td>정보입력</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-USR-002.html" target="_blank">ORIX-NCR-USR-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.23</td>
+                                <td></td>
+                                <td>20240923 화면추가</td>
+                            </tr>
+                            <tr>
+                                <td>완료</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/LOGIN/ORIX-NCR-USR-003.html" target="_blank">ORIX-NCR-USR-003</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.23</td>
+                                <td></td>
+                                <td>20240923 화면추가</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 로그인 -->
+
+                <!-- s: 메인 -->
+                <div class="guide">
+                    <h3 class="tit">메인</h3>
+                    <summary></summary>
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="10%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">step/tap</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="6">메인</td>
+                                <td>바로가기</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>견적</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>선출고</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>상담진행</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>마이페이지</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>나의실적으로 이동</td>
+                            </tr>
+                            <tr>
+                                <td>공지사항</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 메인 -->
+
+                <!-- s: 견적내기 -->
+                <div class="guide">
+                    <h3 class="tit">견적내기</h3>
+                    <summary></summary>
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="10%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">step/tap</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="4">견적내기</td>
+                                <td>렌터카 견적내기</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/ESTIMATE/렌터카 견적내기.html" target="_blank">렌터카 견적내기</a></td>
+                                <td>이솔</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <br>
+                                <td>오토리스 견적내기</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">선구매</td>
+                                <td>목록</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>상세보기</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 견적내기 -->
+
+                <!-- s: 현황조회 -->
+                <div class="guide">
+                    <h3 class="tit">현황조회</h3>
+                    <summary></summary>
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="10%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">step/tap</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="10">현황조회</td>
+                                <td rowspan="2">견젹</td>
+                                <td>상세보기</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>목록</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">심사</td>
+                                <td>목록</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>상세보기</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">발주</td>
+                                <td>목록</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>상세보기</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">펀딩</td>
+                                <td>목록</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>상세보기</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">인도</td>
+                                <td>목록</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>상세보기</td>
+                                <td></td>
+                                <td class="fileName"><a href="" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 현황조회 -->
+
+                <!-- s: 고객센터 -->
+                <div class="guide">
+                    <h3 class="tit">고객센터</h3>
+                    <summary></summary>
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="10%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">step/tap</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="14">고객센터</td>
+                                <td rowspan="2">공지사항</td>
+                                <td>목록</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-NTE-001.html" target="_blank">ORIX-NCR-NTE-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.09</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>상세보기</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-NTE-002.html" target="_blank">ORIX-NCR-NTE-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.06</td>
+                                <td></td>
+                                <td>20240920 이전글.다음글과 목록 위치 수정</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">자료실</td>
+                                <td>목록</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-REF-001.html" target="_blank">ORIX-NCR-REF-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.09</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>상세보기</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-REF-002.html" target="_blank">ORIX-NCR-REF-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.09</td>
+                                <td></td>
+                                <td>20240920 이전글.다음글과 목록 위치 수정</td>
+                            </tr>
+                            <tr>
+                                <td>자료실 등록하기</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-REF-003.html" target="_blank">ORIX-NCR-REF-003</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.20</td>
+                                <td></td>
+                                <td>20240920 화면추가</td>
+                            </tr>
+                            <tr>
+                                <td>자료실 수정하기</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-REF-004.html" target="_blank">ORIX-NCR-REF-004</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.20</td>
+                                <td></td>
+                                <td>20240920 화면추가</td>
+                            </tr>
+                            <tr>
+                                <td>FAQ</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-QNA-001.html" target="_blank">ORIX-NCR-QNA-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.09</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">금융계산기</td>
+                                <td>대출계산기</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-CAL-001.html" target="_blank">ORIX-NCR-CAL-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.12</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                            <tr>
+                                <td>할부계산기</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-CAL-002.html" target="_blank">ORIX-NCR-CAL-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.12</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                            <tr>
+                                <td>전기차보조금</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName line"><a href="#javascript:void(0);" target="_blank">외부링크연결</a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>개별소득세계산</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-ITX-001.html" target="_blank">ORIX-NCR-ITX-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.12</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">자동차세계산하기</td>
+                                <td>자동차세</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-CTX-001.html" target="_blank">ORIX-NCR-CTX-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.19</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                            <tr>
+                                <td>과세세준</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-CTX-002.html" target="_blank">ORIX-NCR-CTX-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.19</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                            <tr>
+                                <td>장애인 감면(비영업용 승용차)</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/SERVICE/ORIX-NCR-CTX-003.html" target="_blank">ORIX-NCR-CTX-003</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.19</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 고객센터 -->
+
+                <!-- s: 마이페이지 -->
+                <div class="guide">
+                    <h3 class="tit">마이페이지</h3>
+                    <summary></summary>
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="10%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col">step/tap</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="12">마이페이지</td>
+                                <td rowspan="2">나의실적조회</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-PRI-001.html" target="_blank">ORIX-NCR-PRI-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.10</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>조회결과 없을 경우</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-PRI-002.html" target="_blank">ORIX-NCR-PRI-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.11</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>팀실적조회</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-PRI-003.html" target="_blank">ORIX-NCR-PRI-003</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.11</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">상담내역</td>
+                                <td>목록</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-MCL-001.html" target="_blank">ORIX-NCR-MCL-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.11</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                            <tr>
+                                <td>등록</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-MCL-002.html" target="_blank">ORIX-NCR-MCL-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.11</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                            <tr>
+                                <td>상세보기</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-MCL-006.html" target="_blank">ORIX-NCR-MCL-006</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.11</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">기타서류제출</td>
+                                <td>목록</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-ETD-001.html" target="_blank">ORIX-NCR-ETD-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.11</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                            <tr>
+                                <td>입력</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-ETD-003.html" target="_blank">ORIX-NCR-ETD-003</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.11</td>
+                                <td></td>
+                                <td style="color:red;">삭제화면</td>
+                            </tr>
+                            <tr>
+                                <td>상세보기</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-ETD-011.html" target="_blank">ORIX-NCR-ETD-011</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.11</td>
+                                <td></td>
+                                <td>20240920 이전글.다음글과 목록 위치 수정/<span style="color:red;">삭제화면</span></td>
+                            </tr>
+                            <tr>
+                                <td>비밀번호변경</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-MPC-001.html" target="_blank">ORIX-NCR-MPC-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.10</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">관리자 관리(슈퍼 관리자)</td>
+                                <td>관리자 관리</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-MMA-001.html" target="_blank">ORIX-NCR-MMA-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.12</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>관리자 등록</td>
+                                <td></td>
+                                <td class="fileName"><a href="/views/MYPAGE/ORIX-NCR-MMA-002.html" target="_blank">ORIX-NCR-MMA-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.09.12</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 마이페이지 -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+
+
+        $(document).ready(function () {
+
+            //var fromDate = [],
+            //toDate = [],
+            //dateGap = [];
+
+            var totCnt, wipCnt = 0, compCnt = 0;
+
+            pjState();
+
+            // var headerH = $(".container .header").outerHeight();
+
+            //alert(headerH);
+            // $(".container .cont").css("margin-top", headerH + "px");
+
+
+            function pjState() {
+                $(".guide table tbody tr").each(function (i, e) {
+                    // fromDate[i] = new Date($(".fromDate").eq(i).text());
+                    // toDate[i] = new Date($(".toDate").eq(i).text());
+                    // dateGap[i] = Math.ceil((toDate[i].getTime() - fromDate[i].getTime()) / (1000 * 3600 * 24));
+
+                    // dateGap[i] >= 0 ? $(".state").eq(i).text("완료").closest("tr").addClass("comp") : $(".state").eq(i).text(""); 기존소스 - 시작날짜 없는 화면의 진척률 파악 위해 아래와 같이 임시 수정(종료날짜만 입력하면 완료 상태로 처리)
+
+                    !!($(".toDate").eq(i).text()) ? $(".state").eq(i).text("완료").closest("tr").addClass("comp") : $(".state").eq(i).text("");
+
+                    ($(".state").eq(i).text() == "완료") ? compCnt++ : wipCnt++;
+
+                });
+
+                var allpage = $(".guide table tbody tr").length; //전체
+                var Nonpage = $('tr.Non').length; //제외
+                var Okpage = $('tr.comp').length; //완료
+                totCnt = $(".guide table tbody tr").length;
+
+                compCnt = Okpage; //완료본수
+                test = allpage - Nonpage; //실질적인화면수
+                wipCnt = totCnt - compCnt - Nonpage; //남은본수
+
+                $("#totCnt").text(totCnt); //전체
+                $("#wipCnt").text(wipCnt);  //남은본수
+                $("#compCnt").text(compCnt); //완료
+                $("#delCnt").text(Nonpage); //제외
+
+                $(".progressArea > span").animate({ "width": (compCnt / test) * 100 + "%" }, 1500);
+                // $(".progressArea > span").after("종합 진척률 : " + Math.floor((compCnt / test) * 100) + "%"); 2023-07-14 수정 진척률로 변경 전 백업
+                $(".progressArea > span").after("수정 진척률 : " + Math.floor((compCnt / test) * 100) + "%");
+            }
+            /* list toggle */
+            $('.cont .tit').addClass('on');
+            $('.cont .tit').on('click', function () {
+                $(this).toggleClass('on');
+            })
+        });
+
+
+    </script>
+</body>
+
+</html>

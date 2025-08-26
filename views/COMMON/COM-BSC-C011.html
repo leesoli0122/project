@@ -1,0 +1,86 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+</head>
+<style>
+    h4 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #5474C0;
+        margin: 20px 0 !important;
+    }
+
+    .wrap {
+        padding: 30px;
+    }
+    .home { margin-bottom:10px; }
+    .home a { display:block; width:24px; height:24px; font-size:0; background:url("../../index_home.png")no-repeat center center; }
+</style>
+
+<body>
+    <div class="wrap">
+        <div id="contentWrap" class="sub-content">
+            <div class="contents">
+                <div class="home">
+                    <a href="../../index.html">홈</a>
+                </div>
+
+                <h4>Datepicker</h4>
+                <div class="form-group">
+                    <label for="">Datepicker</label>
+                    <div class="form-row">
+                        <div class="col-2">
+                            <input type="text" id="" title="기간" name="from" class="form-control datepicker" placeholder="YYYY.MM.DD" readonly ><!-- [D] : datepicker 클래스 : datepicker Custom-->
+                        </div>
+                        <div class="input-hyphen">~</div>
+                        <div class="col-2">
+                            <input type="text" id="" title="기간" name="to" class="form-control datepicker" placeholder="YYYY.MM.DD" readonly ><!-- [D] : datepicker 클래스 : datepicker Custom-->
+                        </div>
+                        <button class="btn btn-input" name="btnSearch" type="button">조회</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+    <script>
+        $(function () {
+            $('div[data-include-path]').each(function () {
+                var path = $(this).attr('data-include-path');
+                $(this).load(path, function (response, status, xhr) {
+                    if (status == 'error') {
+                        var msg = 'Sory but there was an error:';
+                        $(this).html(msg + xhr.status + '' + xhr.statusText);
+                    }
+                })
+            })
+        })
+    </script>
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+</body>
+
+</html>

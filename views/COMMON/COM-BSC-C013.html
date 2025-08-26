@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:type" content="website" />
+
+	<link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+</head>
+<style>
+    .home { margin-bottom:10px; }
+    .home a { display:block; width:24px; height:24px; font-size:0; background:url("../../index_home.png")no-repeat center center; }
+    h4 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #5474C0;
+        margin: 20px 0 !important;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <div id="contentWrap" class="sub-content">
+            <div class="contents">
+                <div class="home">
+                    <a href="../../index.html">홈</a>
+                </div>
+                <h4>공지사항 아코디언</h4>
+                <ul class="accordion-wrap ico">
+                    <li class="accordion-info">
+                        <a href="#none" class="ques toggleChk">
+                            <div class="left">
+                                <span class="tit">질문 내용이 들어갑니다 질문 내용이 들어갑니다 질문 내용이 들어갑니다 질문 내용이 들어갑니다</span>
+                            </div>
+                            <div class="right inline">
+                                <!-- <span class="btn after-line"><button type="button" class="modifi"><span>수정</span></button><button type="button" class="delete"><span>삭제</span></button></span> -->
+                                <span class="date">2024-08-22</span>
+                            </div>
+                        </a>
+                        <div class="ques-cont">
+                            <p>
+                                질문 내용이 들어갑니다<br/>
+                                질문 내용이 들어갑니다<br/>
+                                질문 내용이 들어갑니다<br/>
+                                질문 내용이 들어갑니다<br/>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="accordion-info">
+                        <a href="#none" class="ques toggleChk">
+                            <div class="left">
+                                <span class="tit">질문 내용이 들어갑니다</span>
+                            </div>
+                            <div class="right inline">
+                                <span class="btn after-line"><button type="button" class="modifi"><span>수정</span></button><button type="button" class="delete"><span>삭제</span></button></span>
+                                <span class="date">2024-08-22</span>
+                            </div>
+                        </a>
+                        <div class="ques-cont">
+                            <p>
+                                질문 내용이 들어갑니다<br/>
+                                질문 내용이 들어갑니다<br/>
+                                질문 내용이 들어갑니다<br/>
+                                질문 내용이 들어갑니다<br/>
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="accordion-info">
+                        <a href="#none" class="ques toggleChk">
+                            <div class="left">
+                                <span class="tit">질문 내용이 들어갑니다</span>
+                            </div>
+                            <div class="right inline">
+                                <span class="btn after-line"><button type="button" class="modifi"><span>수정</span></button><button type="button" class="delete"><span>삭제</span></button></span>
+                                <span class="date">2024-08-22</span>
+                            </div>
+                        </a>
+                        <div class="ques-cont">
+                            <p>
+                                질문 내용이 들어갑니다<br/>
+                                질문 내용이 들어갑니다<br/>
+                                질문 내용이 들어갑니다<br/>
+                                질문 내용이 들어갑니다<br/>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <h4>현황조회  아코디언</h4>
+                <ul class="accordion-wrap">
+                    <!--S: 반복문-->
+                    <li class="accordion-info">
+                        <a href="#none" class="ques toggleChk">
+                            <div class="left">
+                                <span class="date">2024-08-22</span>
+                                <span class="tit"><em class="badge02 success">회의</em><span class="after-line"><span>렌터카(정기)_개인수형</span><span>홍길동</span><span>홍길동님 차량 견적 건</span></span></span>
+                                <span class="txt">현대 캐스퍼 2023년형 가솔린 1.0 스마트</span>
+                            </div>
+                            <div class="right inline">
+                                <span class="tit posit">가견적</span>
+                                <span class="btn"><button type="button" class="del"><span class="ir">삭제</span></button></span>
+                            </div>
+                        </a>
+                        <div class="ques-cont active"><!--[D] active 클래스 : 열림-->
+
+                            <div class="list-view">
+
+                                <!--S: 반복-->
+                                <ul>
+                                    <li><p>고객구분</p><p>톰보이 카키(TKS) 블랙</p></li>
+                                </ul>
+                                <ul>
+                                    <li><p>색상</p><p>톰보이 카키(TKS) 블랙</p></li>
+                                    <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프</p></li>
+                                    <li><p class="price"><span class="txt">차량가격</span><span class="num">34,500,000</span>원</p></li>
+                                </ul>
+                                <ul>
+                                    <li><p>출고구분</p><p>특판출고</p></li>
+                                    <li><p>용품</p><p>전면선팅(루마 패키지), 측후면 선팅(루마 패키지), 블랙박스(아이나비 Z900), 용품구분(상세용품명)</p></li>
+                                    <li><p>보험</p><p>26세 이상, 1억, 1억, 30만원</p></li>
+                                    <li><p>탁송</p><p>외주탁송(1차+2차)  |  광주 -> 서울</p></li>
+                                    <li><p>수수료</p><p>AG : 0%/0원   CM : 0%/0원</p></li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <p>상담기록</p>
+                                        <p>견적서 작성 시 상담기록 입력한 내용이 있을 경우 여기에 노출됩니다<br/>
+                                            견적서 작성 시 상담기록 입력한 내용이 있을 경우 여기에 노출됩니다
+                                        </p>
+                                    </li>
+                                </ul>
+                                <!--E: 반복-->
+
+                            </div>
+
+                            <div class="estimate-view">
+                                <ul>
+
+                                    <!--S: 반복-->
+                                    <li>
+                                        <p>견적 1</p>
+                                        <div>
+                                            <ul>
+                                                <li>36개월</li>
+                                                <li>2만Km</li>
+                                                <li>선납 : 0원</li>
+                                                <li>보증금 : 0원</li>
+                                                <li>잔존가치 : 0,000,000,000원 (52%)</li>
+                                                <li>오릭스 정비 Premium</li>
+                                            </ul>
+                                            <p class="price"><span class="txt">월 납입</span><span class="num">432,875</span>원</p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p>견적 2</p>
+                                        <div>
+                                            <ul>
+                                                <li>36개월</li>
+                                                <li>2만Km</li>
+                                                <li>선납 : 0원</li>
+                                                <li>보증금 : 0원</li>
+                                                <li>잔존가치 : 0,000,000,000원 (52%)</li>
+                                                <li>오릭스 정비 Premium</li>
+                                            </ul>
+                                            <p class="price"><span class="txt">월 납입</span><span class="num">432,875</span>원</p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p>견적 3</p>
+                                        <div>
+                                            <ul>
+                                                <li>36개월</li>
+                                                <li>2만Km</li>
+                                                <li>선납 : 0원</li>
+                                                <li>보증금 : 0원</li>
+                                                <li>잔존가치 : 0,000,000,000원 (52%)</li>
+                                                <li>오릭스 정비 Premium</li>
+                                            </ul>
+                                            <p class="price"><span class="txt">월 납입</span><span class="num">432,875</span>원</p>
+                                        </div>
+                                    </li>
+                                    <!--E: 반복-->
+
+                                </ul>
+                            </div>
+
+                            <div class="btn-wrap">
+                                <button type="button" name="button" class="btn btn-cont">재견적</button>
+                                <button type="button" name="button" class="btn btn-cont">견적서 보기</button>
+                                <button type="button" name="button" class="btn btn-cont active">견적 확정</button>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="accordion-info">
+                        <a href="#none" class="ques toggleChk">
+                            <div class="left">
+                                <span class="date">2024-08-22</span>
+                                <span class="tit"><em class="badge02 success">회의</em><span class="after-line"><span>렌터카(정기)_개인수형</span><span>홍길동</span><span>홍길동님 차량 견적 건</span></span></span>
+                                <span class="txt">현대 캐스퍼 2023년형 가솔린 1.0 스마트</span>
+                            </div>
+                            <div class="right inline">
+                                <span class="tit posit">가견적</span>
+                                <span class="btn"><button type="button" class="del"><span class="ir">삭제</span></button></span>
+                            </div>
+                        </a>
+                        <div class="ques-cont">
+
+                            <div class="list-view">
+
+                                <!--S: 반복-->
+                                <ul>
+                                    <li><p>고객구분</p><p>톰보이 카키(TKS) 블랙</p></li>
+                                </ul>
+                                <ul>
+                                    <li><p>색상</p><p>톰보이 카키(TKS) 블랙</p></li>
+                                    <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프</p></li>
+                                    <li><p class="price"><span class="txt">차량가격</span><span class="num">34,500,000</span>원</p></li>
+                                </ul>
+                                <ul>
+                                    <li><p>출고구분</p><p>특판출고</p></li>
+                                    <li><p>용품</p><p>전면선팅(루마 패키지), 측후면 선팅(루마 패키지), 블랙박스(아이나비 Z900), 용품구분(상세용품명)</p></li>
+                                    <li><p>보험</p><p>26세 이상, 1억, 1억, 30만원</p></li>
+                                    <li><p>탁송</p><p>외주탁송(1차+2차)  |  광주 -> 서울</p></li>
+                                    <li><p>수수료</p><p>AG : 0%/0원   CM : 0%/0원</p></li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <p>상담기록</p>
+                                        <p>견적서 작성 시 상담기록 입력한 내용이 있을 경우 여기에 노출됩니다<br/>
+                                            견적서 작성 시 상담기록 입력한 내용이 있을 경우 여기에 노출됩니다
+                                        </p>
+                                    </li>
+                                </ul>
+                                <!--E: 반복-->
+
+                            </div>
+
+                            <div class="estimate-view">
+                                <ul>
+
+                                    <!--S: 반복-->
+                                    <li>
+                                        <p>견적 1</p>
+                                        <div>
+                                            <ul>
+                                                <li>36개월</li>
+                                                <li>2만Km</li>
+                                                <li>선납 : 0원</li>
+                                                <li>보증금 : 0원</li>
+                                            </ul>
+                                            <p class="price"><span class="txt">월 납입</span><span class="num">432,875</span>원</p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p>견적 2</p>
+                                        <div>
+                                            <ul>
+                                                <li>36개월</li>
+                                                <li>2만Km</li>
+                                                <li>선납 : 0원</li>
+                                                <li>보증금 : 0원</li>
+                                            </ul>
+                                            <p class="price"><span class="txt">월 납입</span><span class="num">432,875</span>원</p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p>견적 3</p>
+                                        <div>
+                                            <ul>
+                                                <li>36개월</li>
+                                                <li>2만Km</li>
+                                                <li>선납 : 0원</li>
+                                                <li>보증금 : 0원</li>
+                                            </ul>
+                                            <p class="price"><span class="txt">월 납입</span><span class="num">432,875</span>원</p>
+                                        </div>
+                                    </li>
+                                    <!--E: 반복-->
+
+                                </ul>
+                            </div>
+
+                            <div class="btn-wrap">
+                                <button type="button" name="button" class="btn btn-cont">재견적</button>
+                                <button type="button" name="button" class="btn btn-cont">견적서 보기</button>
+                                <button type="button" name="button" class="btn btn-cont active">견적 확정</button>
+                            </div>
+                            
+                        </div>
+                    </li>
+
+                    <li class="accordion-info">
+                        <a href="#none" class="ques toggleChk">
+                            <div class="left">
+                                <span class="date">2024-08-22</span>
+                                <span class="tit"><em class="badge02 success">회의</em><span class="after-line"><span>렌터카(정기)_개인수형</span><span>홍길동</span><span>홍길동님 차량 견적 건</span></span></span>
+                                <span class="txt">현대 캐스퍼 2023년형 가솔린 1.0 스마트</span>
+                            </div>
+                            <div class="right inline">
+                                <span class="tit posit">가견적</span>
+                                <span class="btn"><button type="button" class="del"><span class="ir">삭제</span></button></span>
+                            </div>
+                        </a>
+                        <div class="ques-cont">
+
+                            <div class="list-view">
+
+                                <!--S: 반복-->
+                                <ul>
+                                    <li><p>고객구분</p><p>톰보이 카키(TKS) 블랙</p></li>
+                                </ul>
+                                <ul>
+                                    <li><p>색상</p><p>톰보이 카키(TKS) 블랙</p></li>
+                                    <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프</p></li>
+                                    <li><p class="price"><span class="txt">차량가격</span><span class="num">34,500,000</span>원</p></li>
+                                </ul>
+                                <ul>
+                                    <li><p>출고구분</p><p>특판출고</p></li>
+                                    <li><p>용품</p><p>전면선팅(루마 패키지), 측후면 선팅(루마 패키지), 블랙박스(아이나비 Z900), 용품구분(상세용품명)</p></li>
+                                    <li><p>보험</p><p>26세 이상, 1억, 1억, 30만원</p></li>
+                                    <li><p>탁송</p><p>외주탁송(1차+2차)  |  광주 -> 서울</p></li>
+                                    <li><p>수수료</p><p>AG : 0%/0원   CM : 0%/0원</p></li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <p>상담기록</p>
+                                        <p>견적서 작성 시 상담기록 입력한 내용이 있을 경우 여기에 노출됩니다<br/>
+                                            견적서 작성 시 상담기록 입력한 내용이 있을 경우 여기에 노출됩니다
+                                        </p>
+                                    </li>
+                                </ul>
+                                <!--E: 반복-->
+
+                            </div>
+
+                            <div class="estimate-view">
+                                <ul>
+
+                                    <!--S: 반복-->
+                                    <li>
+                                        <p>견적 1</p>
+                                        <div>
+                                            <ul>
+                                                <li>36개월</li>
+                                                <li>2만Km</li>
+                                                <li>선납 : 0원</li>
+                                                <li>보증금 : 0원</li>
+                                            </ul>
+                                            <p class="price"><span class="txt">월 납입</span><span class="num">432,875</span>원</p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p>견적 2</p>
+                                        <div>
+                                            <ul>
+                                                <li>36개월</li>
+                                                <li>2만Km</li>
+                                                <li>선납 : 0원</li>
+                                                <li>보증금 : 0원</li>
+                                            </ul>
+                                            <p class="price"><span class="txt">월 납입</span><span class="num">432,875</span>원</p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p>견적 3</p>
+                                        <div>
+                                            <ul>
+                                                <li>36개월</li>
+                                                <li>2만Km</li>
+                                                <li>선납 : 0원</li>
+                                                <li>보증금 : 0원</li>
+                                            </ul>
+                                            <p class="price"><span class="txt">월 납입</span><span class="num">432,875</span>원</p>
+                                        </div>
+                                    </li>
+                                    <!--E: 반복-->
+
+                                </ul>
+                            </div>
+
+                            <div class="btn-wrap">
+                                <button type="button" name="button" class="btn btn-cont">재견적</button>
+                                <button type="button" name="button" class="btn btn-cont">견적서 보기</button>
+                                <button type="button" name="button" class="btn btn-cont active">견적 확정</button>
+                            </div>
+                            
+                        </div>
+                    </li>
+
+                    <li class="accordion-info">
+                        <a href="#none" class="ques toggleChk">
+                            <div class="left">
+                                <span class="date">2024-08-22</span>
+                                <span class="tit"><em class="badge02 success">선구매</em><span class="after-line"><span>렌터카(정기)_개인수형</span><span>홍길동</span><span>홍길동님 차량 견적 건</span></span></span>
+                                <span class="txt">현대 캐스퍼 2023년형 가솔린 1.0 스마트</span>
+                            </div>
+                            <div class="right inline">
+                                <span class="tit posit">심사승인(선점완료)</span>
+                            </div>
+                        </a>
+                        <div class="ques-cont">
+                            <div class="Pre-purchase">
+                                <p class="tit">선구매 차량 선점 요청 정보</p>
+                                <ul>
+                                    <li><p>확보 가능 기한</p><p><span class="red">2024.08,27 23:59:59</span> 까지 펀딩을 진행해 주세요. (미완료 시 선점 취소)</p></li>
+                                    <li><p>제조사 계약번호</p><p>AAAA1</p></li>
+                                </ul>
+                            </div>
+                            <div class="list-view">
+                                <!--S: 반복-->
+                                <ul>
+                                    <li><p>견적번호</p><p>RM202408-0004</p></li>
+                                    <li><p>고객구분</p><p>개인</p></li>
+                                </ul>
+                                <ul>
+                                    <li><p>색상</p><p>톰보이 카키(TKS) 블랙</p></li>
+                                    <li><p>옵션</p><p>시그니처 디자인 셀렉션 II, (가니쉬)올리브애쉬 리얼우드, 파퓰러 패키지, 파노라마 선루프</p></li>
+                                    <li><p class="price"><span class="txt">차량가격</span><span class="num">34,500,000</span>원</p></li>
+                                </ul>
+                                <ul>
+                                    <li><p>출고구분</p><p>특판출고</p></li>
+                                    <li><p>용품</p><p>전면선팅(루마 패키지), 측후면 선팅(루마 패키지), 블랙박스(아이나비 Z900), 용품구분(상세용품명)</p></li>
+                                    <li><p>보험</p><p>26세 이상, 1억, 1억, 30만원</p></li>
+                                    <li><p>탁송</p><p>외주탁송(1차+2차)  |  광주 -> 서울</p></li>
+                                    <li><p>수수료</p><p>AG : 0%/0원   CM : 0%/0원</p></li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <p>상담기록</p>
+                                        <p>견적서 작성 시 상담기록 입력한 내용이 있을 경우 여기에 노출됩니다<br/>
+                                            견적서 작성 시 상담기록 입력한 내용이 있을 경우 여기에 노출됩니다
+                                        </p>
+                                    </li>
+                                </ul>
+                                <!--E: 반복-->
+                            </div>
+                            <div class="estimate-view">
+                                <ul>
+                                    <!--S: 반복-->
+                                    <li>
+                                        <p>견적 1</p>
+                                        <div>
+                                            <ul>
+                                                <li>36개월</li>
+                                                <li>2만Km</li>
+                                                <li>선납 : 0원</li>
+                                                <li>보증금 : 0원</li>
+                                                <li>잔존가치 : 0,000,000,000원 (52%)</li>
+                                                <li>오릭스 정비 Premium</li>
+                                            </ul>
+                                            <p class="price"><span class="txt">월 납입</span><span class="num">432,875</span>원</p>
+                                        </div>
+                                    </li>
+                                    <!--E: 반복-->
+                                </ul>
+                            </div>
+                            <div class="btn-wrap">
+                                <button type="button" name="button" class="btn btn-cont">재견적</button>
+                                <button type="button" name="button" class="btn btn-cont">견적서 보기</button>
+                                <button type="button" name="button" class="btn btn-cont active" onclick="openPopup('PopUp06')">전자약정 요청</button>
+                            </div>
+                        </div>
+                    </li>
+                    <!--E: 반복문-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+	<script>
+        $(function(){
+            $('div[data-include-path]').each(function(){
+                var path = $(this).attr('data-include-path');
+                $(this).load(path,function(response,status,xhr){
+                    if(status == 'error'){
+                        var msg = 'Sory but there was an error:';
+                        $(this).html(msg + xhr.status + '' + xhr.statusText);
+                    }
+                })
+            })
+        })
+    </script>
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+</body>
+</html>
+

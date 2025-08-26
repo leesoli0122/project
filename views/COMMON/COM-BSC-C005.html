@@ -1,0 +1,190 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+</head>
+<style>
+    h4 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #5474C0;
+        margin: 20px 0 !important;
+    }
+
+    .wrap {
+        padding: 30px;
+    }
+    .home { margin-bottom:10px; }
+    .home a { display:block; width:24px; height:24px; font-size:0; background:url("../../index_home.png")no-repeat center center; }
+</style>
+
+<body>
+    <div class="wrap">
+        <div id="contentWrap" class="sub-content">
+            <div class="contents">
+                <div class="home">
+                    <a href="../../index.html">홈</a>
+                </div>
+                <div class="form-wrap">
+                    <h4>CheckBox</h4>
+                    <div class="form-group check">
+                        <ul class="check-box">
+                            <li>
+                                <input type="checkbox" id="check-1" name="checkbox">
+                                <label for="check-1" class="check-button">
+                                    <span>Check Box OFF - 다건선택</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="check-2" name="checkbox" checked="">
+                                <label for="check-2" class="check-button">
+                                    <span>Check Box ON - 다건선택</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="check-3" name="checkbox" disabled="">
+                                <label for="check-3" class="check-button">
+                                    <span>Check Box Disabled  - 다건선택</span>
+                                </label>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="form-group check round">
+                        <ul class="check-box">
+                            <li>
+                                <input type="checkbox" id="check-4" name="checkbox">
+                                <label for="check-4" class="check-button">
+                                    <span>Check Box OFF - 단일 사용</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="check-5" name="checkbox" checked="">
+                                <label for="check-5" class="check-button">
+                                    <span>Check Box ON - 단일 사용</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="check-6" name="checkbox" disabled="">
+                                <label for="check-6" class="check-button">
+                                    <span>Check Box Disabled - 단일 사용</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4>약관 CheckBox</h4>
+                    <div class="terms-area">
+                        <div class="terms-wrap level1 chk-all">
+                            <fieldset>
+                                <input type="checkbox" id="allChk01" name="allChk01" value="" class="check all">
+                                <label for="allChk01"><span>휴대폰 본인 인증 약관 전체 동의</span></label><!--[20241101]오타수정-->
+                            </fieldset>
+                        </div>
+                        <div class="terms-box">
+                            <div class="terms-wrap level2">
+                                <button class="btn btn-text small" type="button" onclick="openPopup('termsPop01')">자세히 보기</button>
+                                <fieldset>
+                                    <input type="checkbox" id="chkEach01" name="check" value="" class="check" terms-pop="lyPullPop02"><!--terms-pop 약관 팝업-->
+                                    <label for="chkEach01"><span>[필수] 개인정보 수집 &middot; 이용 동의</span></label><!--[20241101]&middot; 추가-->
+                                </fieldset>
+                            </div>
+                            <div class="terms-wrap level2">
+                                <button class="btn btn-text small" type="button">자세히 보기</button>
+                                <fieldset>
+                                    <input type="checkbox" id="chkEach02" name="check" value="" class="check" terms-pop="lyPullPop01"><!--terms-pop 약관 팝업-->
+                                    <label for="chkEach02"><span>[필수] 고유식별 정보 처리 동의</span></label>
+                                </fieldset>
+                            </div>
+                            <div class="terms-wrap level2">
+                                <button class="btn btn-text small" type="button">자세히 보기</button>
+                                <fieldset>
+                                    <input type="checkbox" id="chkEach03" name="check" value="" class="check" terms-pop="lyPullPop03"><!--terms-pop 약관 팝업-->
+                                    <label for="chkEach03"><span>[필수] 통신사 이용약관 동의</span></label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>Radio</h4>
+                    <div class="form-group radio">
+                        <ul class="radio-box">
+                            <li>
+                                <input type="radio" id="radio-1" name="radio">
+                                <label for="radio-1" class="radio-button"><span>Radio Button1</span></label>
+                            </li>
+                            <li>
+                                <input type="radio" id="radio-2" name="radio" checked>
+                                <label for="radio-2" class="radio-button"><span>Radio Button2</span></label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4>Radio2</h4>
+                    <div class="form-group radio style3">
+                        <ul class="radio-box">
+                            <li>
+                                <input type="radio" id="radio-3" name="radio2">
+                                <label for="radio-3" class="radio-button"><span>Radio Button1</span></label>
+                            </li>
+                            <li>
+                                <input type="radio" id="radio-4" name="radio2" checked>
+                                <label for="radio-4" class="radio-button"><span>Radio Button2</span></label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <h4>Toggle</h4>
+                    <div class="form-group toggle">
+                        <div class="toggle-box">
+                            <input type="checkbox" id="checkbox01" name="checkbox">
+                            <label for="checkbox01" class="toggle-button"></label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+    <script>
+        $(function () {
+            $('div[data-include-path]').each(function () {
+                var path = $(this).attr('data-include-path');
+                $(this).load(path, function (response, status, xhr) {
+                    if (status == 'error') {
+                        var msg = 'Sory but there was an error:';
+                        $(this).html(msg + xhr.status + '' + xhr.statusText);
+                    }
+                })
+            })
+        })
+    </script>
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+@media screen and (max-width: 1200px) {
+	.wrap { padding-top:76px; }
+	/*********************************************************************
+	list #리스트
+	*********************************************************************/
+	/*---------------------------------------------
+    list-card-wrap
+	---------------------------------------------*/
+	.list-card-wrap.download .list-card-group .card-left > div,
+	.list-card-wrap.attachment .list-card-group .txt-list .cont-txt { max-width:650px; width:100%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+	.list-card-wrap.download .list-card-group .icon { margin-right:20px; }
+
+	/*---------------------------------------------
+    grid-wrap 그리드 안에 있는 list
+	---------------------------------------------*/
+	.grid-wrap { grid-template-columns: 1fr 1fr; }
+	.grid-list-wrap:last-child { display:grid; grid-column-start:1; grid-column-end:3; }
+
+	/* 팝업 */
+	/* .layerpopup.laypop .ly-con-wrap { margin-bottom:100px; max-height:426px; overflow-y:auto; } */
+
+	/*********************************************************************
+	TOGGLE_ACCORDION #토글_아코디언
+	*********************************************************************/
+	/*---------------------------------------------
+		Toggle_Accordion Default [QnA]
+	---------------------------------------------*/
+	.accordion-wrap > .accordion-info > .ques-cont .estimate-view>ul>li { flex-direction: column; }
+	.accordion-wrap > .accordion-info > .ques-cont .estimate-view>ul>li p:first-child { flex:0; width:100%; }
+	.accordion-wrap > .accordion-info > .ques-cont .estimate-view>ul>li>div { width:100%; margin-top:20px;   flex-direction: column; }
+	.accordion-wrap > .accordion-info > .ques-cont .estimate-view>ul>li>div>ul { width:100%; }
+	.accordion-wrap > .accordion-info > .ques-cont .estimate-view>ul>li>div>p:last-child { flex:0; width:100%; margin-top:20px; }
+
+}
+
+@media screen and (max-width:980px) {
+    .list-card-wrap.download .list-card-group .card-left > div, .list-card-wrap.attachment .list-card-group .txt-list .cont-txt { max-width:480px; }
+
+	/* 견적내기-계약조건 */
+	/* .grid-list-wrap.style3 { max-height:951px; } */
+	.grid-list-body li .residual { flex-direction:column; }
+	.grid-list-body li .residual .form-group .col-4 { max-width:none; }
+	.grid-list-body li .residual .num { margin-top:10px; width:100%; }
+
+	/* 페이지네이션 */
+	.pagination ul li { padding-right:0; }
+	.pagination ul li:first-child { padding-left:0; }
+	.pagination ul li + li { margin:0; }
+
+	/* 선구매 */
+	.accordion-wrap > .accordion-info > .ques .left .after-line span.pre-ing { padding:0; margin-top:16px; }
+	.accordion-wrap > .accordion-info > .ques .left .after-line span.pre-ing::before { content:none; }
+}
+
+@media screen and (max-width:800px) {
+    .list-card-wrap.download .list-card-group .card-left > div, .list-card-wrap.attachment .list-card-group .txt-list .cont-txt { max-width:430px;
+	}
+
+	.grid-list-wrap { max-height:636px; }
+	.grid-list-body { max-height:504px; }
+}

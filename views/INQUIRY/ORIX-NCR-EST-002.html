@@ -1,0 +1,421 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>가견적 < 견적 < 현황조회</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/lib/img.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">현황조회</a></li>
+                        <li><a href="javascript:void(0);">견적</a></li>
+                        <li><a href="javascript:void(0);">가견적</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h2>현황조회</h2>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+    <!-- 견적서 보기 -->
+    <div id="PopUp13" class="layerpopup laypop status on" style="display:block; " tabindex="0">
+        <div class="content-wrap">
+            <div class="pop-header">
+                <h3 class="pop-title">견적서 보기</h3>
+                <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+            </div>
+            <div class="ly-con-wrap ly-scroll-con">
+                <section class="show-estimate-wrap">
+                    <div class="estimate">
+                        <div class="contact">
+                            <span class="tit">연락처</span>
+                            <div class="form-group radio">
+                                <ul class="radio-box">
+                                    <li>
+                                        <input type="radio" id="radio-29" name="contact" checked="">
+                                        <label for="radio-29" class="radio-button"><span>표시</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="radio-30" name="contact">
+                                        <label for="radio-30" class="radio-button"><span>숨김</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="estimate-box">
+                            <div class="estimate-header">
+                                <div class="top">
+                                    <img src="../../resources/images/logo.png" alt="오릭스캐피탈코리아 로고">
+                                    <p class="tit">렌터카 견적서</p>
+                                    <!--[D]: 연락처 숨김 처리 시 미노출 customer-info에 dp-none 추가 -->
+                                    <div class="customer-info">
+                                        <ul>
+                                            <li>
+                                                <span class="tit">이름</span>
+                                                <span class="txt">김오릭</span>
+                                            </li>
+                                            <li>
+                                                <span class="tit">소속</span>
+                                                <span class="txt">투게이트컴즈</span>
+                                            </li>
+                                            <li>
+                                                <span class="tit">전화번호</span>
+                                                <span class="txt">010-1234-5678</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul class="sub-header">
+                                    <li>
+                                        <span class="tit">VIP고객</span>
+                                        <p class="txt">님 귀중</p>
+                                    </li>
+                                    <li>
+                                        <p class="tit">작성일</p>
+                                        <span class="txt">2024.08.30</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="estimate-body">
+                                <div class="specifications-wrap">
+                                    <div class="car-img">
+                                        <img src="../../resources/images/car/hd_d_a_n_g.png" alt="현대 2025년형 디 올 뉴 그랜저 이미지">
+                                        <p class="tit">현대 2025년형 디 올 뉴 그랜저</p>
+                                        <span class="txt">가솔린 터보 1.6 하이브리드 익스클루시브</span>
+                                    </div>
+                                    <div class="car-info">
+                                        <div class="info-text">
+                                            <div class="car-info-color">
+                                                <p class="title">색상</p>
+                                                <ul>
+                                                    <li>외장 <span class="txt">큐레이티드 실버 메탈릭 <span class="num">+ <span>000,000</span>원</span></span></li>
+                                                    <li>내장 <span class="txt">다크 그레이/라이트 그레이 투톤</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="car-info-option">
+                                                <p class="title">옵션</p>
+                                                <ul>
+                                                    <li>
+                                                        <span>파라노마 선루프</span>
+                                                        <span><span class="num">0</span>원</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>현대 스마트 센스 패키지 l</span>
+                                                        <span class="num">+<span>000,000</span>원</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>현대 스마트 센스 패키지 l</span>
+                                                        <span class="num">+<span>000,000</span>원</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="total">
+                                            <span class="tit">총 차량 가격</span>
+                                            <span class="txt"><span class="num">00,000,000</span>원</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="notice-word">※ 위 참고 이미지는 실제 판매모델과 다를 수 있습니다.</p>
+                                <div class="estimate-text-wrap">
+                                    <h5>계약조건</h5>
+                                </div>
+                                <!-- [D]: 계약조건 하나일 때 table-wrap에 one 클래스 추가 -->
+                                <div class="table-wrap one">
+                                    <div class="table-type table-col ta-c">
+                                        <table>
+                                            <caption>계약조건에 대한 렌트기간, 만기처리, 약정거리, 정비상품, 선납금, 보증금, 만기 인수가격 테이블</caption>
+                                            <colgroup>
+                                                <col width="40%">
+                                                <col width="*">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr class="data">
+                                                    <th scope="col">렌트기간</th>
+                                                    <td>36개월</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">만기처리</th>
+                                                    <td>개인인수형(국산차-정비제외)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">약정거리</th>
+                                                    <td>2만Km</td>
+                                                </tr>
+                                                <!--S: 계약조건 하나 일 때 숨김처리-->
+                                                <!-- <tr>
+                                                    <th scope="col">정비상품</th>
+                                                    <td>정비(미포함)</td>
+                                                    <td>오릭스 정비 Premium</td>
+                                                    <td>오릭스 정비 Premium</td>
+                                                </tr> -->
+                                                <!--E: 계약조건 하나 일 때 숨김처리-->
+                                                <tr class="num">
+                                                    <th scope="col">선납금</th>
+                                                    <td><span>0</span> 원</td>
+                                                </tr>
+                                                <tr class="num">
+                                                    <th scope="col">보증금</th>
+                                                    <td><span>0</span> 원</td>
+                                                </tr>
+                                                <tr class="num">
+                                                    <th scope="col">만기 인수가격</th>
+                                                    <td><span>64</span>% / <span>14,707,000</span> 원</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="table-type table-col amount">
+                                        <table>
+                                            <caption>계약조건에 대한 매회 렌트료, 선납 렌트료, 납입 렌트료, 초기 납입액 테이블</caption>
+                                            <colgroup>
+                                                <col width="40%">
+                                                <col width="*%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col" rowspan="2">매회 렌트료</th>
+                                                    <td>
+                                                        <div class="flex">
+                                                            <span>① 공급가</span>
+                                                            <span><span>393,352</span> 원</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flex">
+                                                            <span>② 부가세</span>
+                                                            <span><span>39,352</span> 원</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">선납 렌트료</th>
+                                                    <td>
+                                                        <div class="flex">
+                                                            <span>③ 선납금(월)</span>
+                                                            <span>(-) <span>0</span> 원</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">납입 렌트료</th>
+                                                    <td class="now">
+                                                        <div class="flex">
+                                                            <span>①+②+③</span>
+                                                            <span><span class="red">432,875</span> 원</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="num">
+                                                    <th scope="col">초기 납입액</th>
+                                                    <td><span>0</span> 원</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="estimate-text-wrap">
+                                    <h5>보험 조건</h5>
+                                </div>
+                                <div class="table-wrap">
+                                    <div class="table-type table-col">
+                                        <table>
+                                            <caption>보험 조건에 대한 고객구분, 운전연령, 의무가입에 대한 테이블</caption><!-- [20241030] 필수가입 항목 사라져서 caption 수정 -->
+                                            <colgroup>
+                                                <col width="20%">
+                                                <col width="*">
+                                                <col width="*">
+                                                <col width="*">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col">고객구분</th>
+                                                    <td colspan="3">개인</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">운전연령</th>
+                                                    <td>26세 이상 ~. 5세 이하</td>
+                                                    <th>보험종류</th>
+                                                    <td>영업용</td><!--[D]:영업용 고정-->
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">의무가입</th>
+                                                    <td>무보험차상해, 긴급출동</td>
+                                                    <th>필수가입</th>
+                                                    <td>대물 : <span>1억</span>, 자손 : <span>1억</span>, 면책금 : <span>30만원</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="estimate-text-wrap">
+                                    <h5>정비상품 안내표</h5>
+                                </div>
+                                <div class="table-wrap">
+                                    <div class="table-type ta-c repair style2 mb0">
+                                        <table>
+                                            <caption>정비상품(정비-순회정비, 입고정비/소모품 교환-타이어,소모품/고장 및 사고-일반수리, 대차/door to door 서비스-정비, 자도차검사),오릭스 정비 Premium에 대한 정비상품 안내표</caption>
+                                            <colgroup><!-- 2024.10.21 caption 수정 -->
+                                                <col width="*%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                                <col width="10%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2">정비상품</th>
+                                                    <th colspan="2">정비</th>
+                                                    <th colspan="2">소모품 교환</th>
+                                                    <th colspan="2">고장/사고</th>
+                                                    <th colspan="2">Door to Door 서비스</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>순회정비</th>
+                                                    <th>입고정비</th>
+                                                    <th>타이어</th>
+                                                    <th>소모품</th>
+                                                    <th>일반수리</th>
+                                                    <th>대차</th>
+                                                    <th>정비</th>
+                                                    <th>자동차검사</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>오릭스 정비 Premium</th>
+                                                    <td>미제공</td>
+                                                    <td>미제공</td>
+                                                    <td>미제공</td>
+                                                    <td>미제공</td>
+                                                    <td>미제공</td>
+                                                    <td>미제공</td>
+                                                    <td>미제공</td>
+                                                    <td>제공</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="estimate-text-wrap">
+                                    <h5>구비서류</h5>
+                                </div>
+                                <div class="table-wrap">
+                                    <div class="table-type table-col">
+                                        <table>
+                                            <caption>개인/개인사업자, 법인사업자별 구비서류에 대한 테이블</caption>
+                                            <colgroup>
+                                                <col width="20%">
+                                                <col width="*">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col">개인/개인사업자</th>
+                                                    <td>사업자등록증, 부가세 과세표준 증명원, 자격증(전문직 한정)</br>재산세과세증명서, 통장(사업자 추가서류), 운전면허증 사본(발급일 1년 경과)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">법인사업자</th>
+                                                    <td>법인 : 사업자등록증, 최근연도 재무제표/부가세 과세표준 증명원, 법인인감증명서, 법인등기부등본, 주주명부, 통장</br>대표자 : 인감증명서, 재산세과세증명서, 신분증</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <p class="notice-word">※ (개인/법인)인감증명서, 주민등록등본, 법인등기부등본은 계약체결시점 1개월 이내 발급분만 인정합니다.</p>
+                            </div>
+                            <div class="check-plz">
+                                <p class="plz-tit">[꼭 확인하세요!]</p>
+                                <ul class="bul-refer">
+                                    <li class="red">상기 견적금액은 유효기간까지 적용 가능하며, 차량가 변동, 정부 시책에 따라 변동될 수 있습니다.</li>
+                                    <li>건설/토목, 보험사/보험대리점/정비업, 방송/엔터테인먼트, 렌터카업/셔틀업 업종은 렌트료가 변동되거나 취급이 제한될 수 있습니다.</li>
+                                    <li>상기 견적에는 보험료, 차량검사비, 세금이 모두 포함되어 있으며 정비상품 선택 시, 차량점검, 소모품 교체비용이 포함될 수 있습니다.</li>
+                                    <li>차량등급별 세부 옵션 사항을 반드시 확인하시기 바라며, 각 차종별 세부옵션사항은 차량 제조사 홈페이지에서 확인 가능합니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="btn-wrap popup">
+                <button type="button" name="button" class="btn btn-bottom" >SMS</button>
+                <button type="button" name="button" class="btn btn-bottom" >이메일</button>
+                <button type="button" name="button" class="btn btn-bottom" >FAX</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../resources/js/lib/swiper-bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>로그인</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap login">
+        <!-- s:header -->
+        <div class="login-header">
+            <img src="../../resources/images/login_logo.png" alt="오릭스캐피탈코리아 로고">
+            <h2>
+                로그인
+                <span>오릭스캐피탈코리아 신차 영업 플랫폼 로그인 화면입니다.</span>
+            </h2>
+        </div>
+        <!-- //e:header -->
+        <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:contents -->
+            <div class="contents">
+                <div class="form-wrap">
+                    <div class="form-group">
+                        <input id="" title="아이디" type="text" name="" class="form-control" placeholder="아이디 입력" maxlength="20">
+                    </div>
+                    <div class="form-group"><!--[20241104] input 수정-->
+                        <input id="" title="패스워드" type="password" name="" class="form-control" placeholder="비밀번호 입력">
+                    </div>
+                    <ul class="text-after">
+                        <li><a href="javascript:void(0);">아이디 찾기</a></li>
+                        <li><a href="javascript:void(0);">비밀번호 찾기</a></li>
+                        <li><a href="javascript:void(0);">사용자신청</a></li><!--[20241119]사용자신청 위치 이동-->
+                    </ul>
+                    <div class="btn-wrap loginBtn"><!--[20241118] 사용자신청 추가 및 bottom->loginBtn으로 변경-->
+                        <button type="button" name="button" class="btn btn-primary" onclick="messagePopup('lyAlert01')">로그인</button>
+                    </div>
+                </div>
+                <div class="check-plz">
+                    <p class="plz-tit">확인해 주세요</p>
+                    <ul class="bul-hypn">
+                        <li>비밀번호를 5회 잘못 입력하면 10분간 로그인이 제한됩니다.</li>
+                        <li>비밀번호는 영문, 숫자 포함 8자리 이상 입력해야 합니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+    <div id="lyAlert01" class="layerpopup type-alert" tabindex="0">
+        <div class="content-wrap">
+            <div class="ly-cont-wrap">
+                <p class="tit">아이디 또는 비밀번호가 일치하지 않습니다.</br>
+                    확인 후 다시 입력해 주세요</p>
+                <p class="tit-bold">[오류 누적 횟수 1회]</p>
+                <p class="tit">누적 5회 오류 시, 10분간 계정 잠금 처리 됩니다.</p>
+            </div>
+            <div class="btn-wrap alert">
+                <button type="button" name="button" class="btn btn-bottom confirm">확인</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

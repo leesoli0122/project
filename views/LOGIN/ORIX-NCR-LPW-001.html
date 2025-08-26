@@ -1,0 +1,92 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords">
+    <meta name="description" content="ORIX Capital description">
+
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:type" content="website" />
+
+    <title>아이디 입력 < 비밀번호 찾기 < 로그인</title>
+
+    <link href="../../resources/css/lib/default.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/ui_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/ui/media-query.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+
+
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap login">
+        <!-- s:header -->
+        <div class="login-header">
+            <img src="../../resources/images/login_logo.png" alt="오릭스캐피탈코리아 로고">
+            <h2>
+                비밀번호 찾기
+                <span>오릭스캐피탈코리아 신차 영업 플랫폼 비밀번호 찾기 화면입니다.</span>
+            </h2>
+        </div>
+        <!-- //e:header -->
+        <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:contents -->
+            <div class="contents">
+                <form>
+                    <div class="sub-text-wrap style1">
+                        <h4>아이디 확인 후 비밀번호를 재설정 할 수 있습니다.</h4>
+                    </div>
+                    <div class="table-type">
+                        <div class="col">
+                            <dl>
+                                <dt>아이디</dt>
+                                <dd class="form-group error">
+                                    <input id="" title="아이디" type="text" name="" class="form-control" placeholder="아이디 입력">
+                                    <p class="info">아이디를 입력해 주세요.</p>
+                                    <p class="info">아이디를 다시 확인해 주세요.</p>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </form>
+                <div class="btn-wrap bottom">
+                    <button type="button" name="button" class="btn btn-primary">확인</button>
+                </div>
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

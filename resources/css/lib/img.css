@@ -1,0 +1,99 @@
+/*********************************************************************
+이미지
+*********************************************************************/
+/*---------------------------------------------
+    로고 이미지
+---------------------------------------------*/
+/* 팝업 */
+.choose-group.brand .choose.image li.hyu::before { background: url(../../images/Brand_Logo/Hyundai.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.gen::before { background:url(../../images/Brand_Logo/Genesis.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.kia::before { background:url(../../images/Brand_Logo/Kia.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.che::before { background:url(../../images/Brand_Logo/Chevrolet.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.ren::before { background:url(../../images/Brand_Logo/Renault_Korea.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.gmc::before { background:url(../../images/Brand_Logo/GMC.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.kgm::before { background:url(../../images/Brand_Logo/KGM.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.dea::before { background:url(../../images/Brand_Logo/Deachamg.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.toy::before { background:url(../../images/Brand_Logo/Toyota.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.lex::before { background:url(../../images/Brand_Logo/Lexus.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.hon::before { background:url(../../images/Brand_Logo/Honda.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.benz::before { background:url(../../images/Brand_Logo/Benz.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.bmw::before { background:url(../../images/Brand_Logo/BMW.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.aud::before { background:url(../../images/Brand_Logo/Audi.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.vol::before { background:url(../../images/Brand_Logo/Volkswagen.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.min::before { background:url(../../images/Brand_Logo/Mini.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.volv::before { background:url(../../images/Brand_Logo/Volvo.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.pol::before { background:url(../../images/Brand_Logo/Polestar.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.por::before { background:url(../../images/Brand_Logo/Porsche.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.fer::before { background:url(../../images/Brand_Logo/Ferrari.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.lam::before { background:url(../../images/Brand_Logo/Lamborghini.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.mas::before { background:url(../../images/Brand_Logo/Maserati.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.mcl::before { background:url(../../images/Brand_Logo/Mclaren.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.ast::before { background:url(../../images/Brand_Logo/Aston_martin.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.peu::before { background:url(../../images/Brand_Logo/Peugeot.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.ds::before { background:url(../../images/Brand_Logo/DS.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.ben::before { background:url(../../images/Brand_Logo/Bentley.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.rol::before { background:url(../../images/Brand_Logo/Rollsroyce.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.ine::before { background:url(../../images/Brand_Logo/Ineos.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.cor::before { background:url(../../images/Brand_Logo/Coric_Seg.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.lin::before { background:url(../../images/Brand_Logo/Lincoln.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.jee::before { background:url(../../images/Brand_Logo/Jeep.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.cad::before { background:url(../../images/Brand_Logo/Cadillac.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.for::before { background:url(../../images/Brand_Logo/Fored.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.tes::before { background:url(../../images/Brand_Logo/Tesla.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.riv::before { background:url(../../images/Brand_Logo/Rivian.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.fis::before { background:url(../../images/Brand_Logo/Fisker.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.byd::before { background:url(../../images/Brand_Logo/BYD.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.vin::before { background:url(../../images/Brand_Logo/Vinfast.png)no-repeat 50%/18px auto; }
+.choose-group.brand .choose.image li.luc::before { background:url(../../images/Brand_Logo/Lucid.png)no-repeat 50%/18px auto; }
+
+/* 선택 후 */
+.pop.arr span.hyu::before { background:url(../../images/Brand_Logo/Hyundai.png)no-repeat 50%/18px auto; }
+.pop.arr span.gen::before { background:url(../../images/Brand_Logo/Genesis.png)no-repeat 50%/18px auto; }
+.pop.arr span.kia::before { background:url(../../images/Brand_Logo/Kia.png)no-repeat 50%/18px auto; }
+.pop.arr span.che::before { background:url(../../images/Brand_Logo/Chevrolet.png)no-repeat 50%/18px auto; }
+.pop.arr span.ren::before { background:url(../../images/Brand_Logo/Renault_Korea.png)no-repeat 50%/18px auto; }
+.pop.arr span.gmc::before { background:url(../../images/Brand_Logo/GMC.png)no-repeat 50%/18px auto; }
+.pop.arr span.kgm::before { background:url(../../images/Brand_Logo/KGM.png)no-repeat 50%/18px auto; }
+.pop.arr span.dea::before { background:url(../../images/Brand_Logo/Deachamg.png)no-repeat 50%/18px auto; }
+.pop.arr span.toy::before { background:url(../../images/Brand_Logo/Toyota.png)no-repeat 50%/18px auto; }
+.pop.arr span.lex::before { background:url(../../images/Brand_Logo/Lexus.png)no-repeat 50%/18px auto; }
+.pop.arr span.hon::before { background:url(../../images/Brand_Logo/Honda.png)no-repeat 50%/18px auto; }
+.pop.arr span.benz::before { background:url(../../images/Brand_Logo/Benz.png)no-repeat 50%/18px auto; }
+.pop.arr span.bmw::before { background:url(../../images/Brand_Logo/BMW.png)no-repeat 50%/18px auto; }
+.pop.arr span.aud::before { background:url(../../images/Brand_Logo/Audi.png)no-repeat 50%/18px auto; }
+.pop.arr span.vol::before { background:url(../../images/Brand_Logo/Volkswagen.png)no-repeat 50%/18px auto; }
+.pop.arr span.min::before { background:url(../../images/Brand_Logo/Mini.png)no-repeat 50%/18px auto; }
+.pop.arr span.volv::before { background:url(../../images/Brand_Logo/Volvo.png)no-repeat 50%/18px auto; }
+.pop.arr span.pol::before { background:url(../../images/Brand_Logo/Polestar.png)no-repeat 50%/18px auto; }
+.pop.arr span.por::before { background:url(../../images/Brand_Logo/Porsche.png)no-repeat 50%/18px auto; }
+.pop.arr span.fer::before { background:url(../../images/Brand_Logo/Ferrari.png)no-repeat 50%/18px auto; }
+.pop.arr span.lam::before { background:url(../../images/Brand_Logo/Lamborghini.png)no-repeat 50%/18px auto; }
+.pop.arr span.mas::before { background:url(../../images/Brand_Logo/Maserati.png)no-repeat 50%/18px auto; }
+.pop.arr span.mcl::before { background:url(../../images/Brand_Logo/Mclaren.png)no-repeat 50%/18px auto; }
+.pop.arr span.ast::before { background:url(../../images/Brand_Logo/Aston_martin.png)no-repeat 50%/18px auto; }
+.pop.arr span.peu::before { background:url(../../images/Brand_Logo/Peugeot.png)no-repeat 50%/18px auto; }
+.pop.arr span.ds::before { background:url(../../images/Brand_Logo/DS.png)no-repeat 50%/18px auto; }
+.pop.arr span.ben::before { background:url(../../images/Brand_Logo/Bentley.png)no-repeat 50%/18px auto; }
+.pop.arr span.rol::before { background:url(../../images/Brand_Logo/Rollsroyce.png)no-repeat 50%/18px auto; }
+.pop.arr span.ine::before { background:url(../../images/Brand_Logo/Ineos.png)no-repeat 50%/18px auto; }
+.pop.arr span.cor::before { background:url(../../images/Brand_Logo/Coric_Seg.png)no-repeat 50%/18px auto; }
+.pop.arr span.lin::before { background:url(../../images/Brand_Logo/Lincoln.png)no-repeat 50%/18px auto; }
+.pop.arr span.jee::before { background:url(../../images/Brand_Logo/Jeep.png)no-repeat 50%/18px auto; }
+.pop.arr span.cad::before { background:url(../../images/Brand_Logo/Cadillac.png)no-repeat 50%/18px auto; }
+.pop.arr span.for::before { background:url(../../images/Brand_Logo/Fored.png)no-repeat 50%/18px auto; }
+.pop.arr span.tes::before { background:url(../../images/Brand_Logo/Tesla.png)no-repeat 50%/18px auto; }
+.pop.arr span.riv::before { background:url(../../images/Brand_Logo/Rivian.png)no-repeat 50%/18px auto; }
+.pop.arr span.fis::before { background:url(../../images/Brand_Logo/Fisker.png)no-repeat 50%/18px auto; }
+.pop.arr span.byd::before { background:url(../../images/Brand_Logo/BYD.png)no-repeat 50%/18px auto; }
+.pop.arr span.vin::before { background:url(../../images/Brand_Logo/Vinfast.png)no-repeat 50%/18px auto; }
+.pop.arr span.luc::before { background:url(../../images/Brand_Logo/Lucid.png)no-repeat 50%/18px auto; }
+
+/*---------------------------------------------
+    자동차 이미지
+---------------------------------------------*/
+.car-img img { width:156px; }
+
+/*---------------------------------------------
+    견적서 자동차 이미지
+---------------------------------------------*/
+.specifications-wrap .car-img img { width:220px; }
