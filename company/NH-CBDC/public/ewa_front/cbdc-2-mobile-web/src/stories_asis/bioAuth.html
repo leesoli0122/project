@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+        
+    </script>
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="sub-top">
+            <button type="button" onclick="location.href='keypadSet.html'" class="btn back-btn">
+                <span>뒤로가기</span>
+            </button>
+        </div>
+        <div class="content sub">
+            <div class="sub-desc">
+                <!-- 회원가입 > Pin 설정 > 표기
+                기존 회원 본인인증 후 > Pin 재설정 > 표기하지 않음 -->
+                <p class="desc-sub">회원가입이 완료되었습니다.</p>
+                
+                <p>
+                    빠른 로그인 및 인증을 위해<br/>
+                    <b>생체 인증</b>을 사용하시겠어요?
+                </p>
+            </div>
+            <div class="bio-auth-set">
+                <p>
+                    메뉴 > 인증/보안 > 생체 인증 설정을 통해<br>
+                    변경할 수 있습니다. 
+                </p>
+                <div class="bio-auth-img">
+                    <img src="../img/faceID.svg" alt="face-id">
+                    <img src="../img/fingerprint.svg" alt="fingerprint">
+                </div>
+            </div>
+        </div>
+        <div class="btm-btn-area confirm">
+            <button type="button" onclick="location.href='main.html?join=on'" class="btm-btn">다음에</a>
+            <button type="button" onclick="location.href='main.html?join=on'" class="btm-btn app">사용하기</a>
+        </div>
+    </div>
+</body>
+</html>

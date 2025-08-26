@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script></script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="sub-top">
+        <h2>공지사항</h2>
+        <button type="button" onclick="location.href='setting.html'" class="btn back-btn">
+          <span>뒤로가기</span>
+        </button>
+      </div>
+      <div class="content sub">
+        <!-- 탭 메뉴 필요시 추가 -->
+        <div class="board-list-tab">
+          <ul>
+            <li class="on">
+              <button type="button" class="tab-btn">가맹점</button>
+            </li>
+            <li>
+              <button type="button" class="tab-btn">일반</button>
+            </li>
+          </ul>
+        </div>
+        <!-- <div class="empty">
+                <p>등록된 공지사항이 없습니다.</p>
+            </div> -->
+        <div class="board-list">
+          <ul>
+            <li>
+              <button type="button" onclick="location.href='noticeView.html'">
+                <p>개인정보 처리 방침 개정 안내 개인정보 처리 방침 개정 안내 <span class="new">새글</span></p>
+                <span>2024.02.03</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <p>운영 정책 변경 안내<span class="new">새글</span></p>
+                <span>2024.02.03</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <p>2월 신규 바우처 발행 안내</p>
+                <span>2024.02.03</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <p>개인정보 처리 방침 개정 안내 (2024.02.01 시행)</p>
+                <span>2024.02.03</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

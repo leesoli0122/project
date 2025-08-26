@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/custom.css">
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+        let allChk = false;
+        
+        $(window).ready(function(){
+            console.log( $("#chkAll").is(":checked") );
+            $(".all label").click(function(){
+                //console.log(  );
+                if( $("#chkAll").is(":checked") ){
+                    $("#nexnBtn").removeClass("disabled");
+                }else{
+                    $("#nexnBtn").addClass("disabled");
+                }
+            });
+
+            $(".back-btn").click(function(){
+                showAlert('pageBack');
+                return false;
+            });
+
+            $("#reset").click(function(){
+                location.href="start.html";
+            });
+        });
+
+    </script>
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="sub-top">
+            <button type="button" class="btn back-btn">
+                <span>뒤로가기</span>
+            </button>
+        </div>
+        <div class="content sub">
+    
+        </div>
+    </div>
+
+
+</body>
+</html>

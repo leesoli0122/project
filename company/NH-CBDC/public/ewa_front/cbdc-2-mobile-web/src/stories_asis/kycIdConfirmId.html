@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+        
+    </script>
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="sub-top">
+            <button type="button" onclick="location.href='main.html'" class="btn back-btn">
+                <span>뒤로가기</span>
+            </button>
+        </div>
+        <div class="content sub">
+            <div class="sub-step">
+                <span>1step</span>
+                <span class="on">2step</span>
+                <span>2step</span>
+            </div>
+            <div class="sub-desc">
+                <p>입력한 정보가 맞는지<br/>확인해 주세요.</p>
+            </div>
+            <dl class="info-list">
+                <dt>신분증 스캔 정보 안내</dt>
+                <dd>
+                    5회 이상 인증 실패 시 인증이 제한될 수 있으니, <br/>
+                    인식된 정보가 올바른지 꼭 확인해 주세요.
+                </dd>
+            </dl>
+            <div class="sample-area">
+                <div class="id-sample-area">
+                    <div class="id-sample-box bay-one">
+                        <div class="id-sample-img">
+                            <img src="../img/id_sample_female.png" alt="여성의 주민등록증 예시">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ipt-form-area">
+                <div class="ipt-form on-data">
+                    <label class="ipt-label">이름</label>
+                    <div class="ipt-form-box">
+                        <input type="text" class="ipt-text" value="홍길순">
+                        <button type="button" class="btn ipt_reset"><span>전체삭제</span></button>
+                    </div>
+                </div>
+                <div class="ipt-form on-data persnal-num">
+                    <label class="ipt-label">주민등록번호</label>
+                    <div class="ipt-form-box">
+                        <input type="number" class="ipt-text" pattern="\d*" value="850128">
+                        <button type="button" class="btn ipt_reset"><span>전체삭제</span></button>
+                    </div>
+                    <div class="persnal-num-masking">
+                        <span>-</span>
+                        <span>2 ● ● ● ● ● ●</span>
+                    </div>
+                </div>
+                <div class="ipt-form on-data">
+                    <label class="ipt-label">발급일자</label>
+                    <div class="ipt-form-box">
+                        <input type="text" class="ipt-text" value="2019.03.10">
+                        <button type="button" class="btn ipt_reset"><span>전체삭제</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btm-btn-area confirm">
+            <button type="button" class="btm-btn">재촬영</a>
+            <button type="button" onclick="location.href=''" class="btm-btn app">확인</a>
+        </div>
+    </div>
+</body>
+</html>

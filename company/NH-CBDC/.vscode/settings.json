@@ -1,0 +1,26 @@
+{
+    "liveSassCompile.settings.autoprefix": [],
+    "liveSassCompile.settings.formats": [
+        {
+            // expanded 스타일의 css로 컴파일하겠다는 뜻
+            "format": "expanded",
+            // 컴파일된 파일 확장자를 .css로 저장하겠다는 뜻
+            // (작업한 scss파일명 + .css로 저장됨)
+            "extensionName": ".css",
+            // 컴파일된 파일 저장경로를 아래와 같이 설정하겠다는 뜻
+            "savePath": "~/..",
+        },
+        {
+            // compressed 스타일의 css로 커파일하겠다는 뜻(min)
+            "format": "compressed",
+            // (작업한 scss파일명 + min.css로 저장됨)
+            "extensionName": ".min.css",
+            "savePath": "~/../"
+        }
+    ],
+    "liveSassCompile.settings.generateMap": false,//scss저장시 불필요한 map 파일이 생성되는 것을 막는 코드
+    "liveSassCompiel.settings.includeItems": [
+        //css폴더 안에 있는 scss폴더 안에 있는 .scss인 파일만 컴파일하겠다
+        "/css/scss/*.scss"
+    ]
+}

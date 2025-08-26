@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+      $(window).ready(function () {
+        //alert( $(window).width() );
+      });
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="content">
+        <div class="sub-desc">
+          <p>APP <b>퍼블리싱</b> 목록</p>
+        </div>
+
+        <div class="pub-list">
+          <h4>컴포넌트</h4>
+          <ul>
+            <li>
+              <p>
+                공통
+                <span>component.html</span>
+              </p>
+              <a href="component.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-list">
+          <h4>앱구동</h4>
+          <ul>
+            <li>
+              <p>
+                네이티브 인트로
+                <span>nativeIntro.html</span>
+              </p>
+              <a href="nativeIntro.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                앱권한
+                <span>appAuth.html</span>
+              </p>
+              <a href="appAuth.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                인트로
+                <span>intro.html</span>
+              </p>
+              <a href="intro.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                시작화면
+                <span>start.html</span>
+              </p>
+              <a href="start.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-list">
+          <h4>회원가입</h4>
+          <ul>
+            <li>
+              <p>
+                휴대폰본인인증
+                <span>join.html</span>
+              </p>
+              <a href="join.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                약관동의
+                <span>policy.html</span>
+              </p>
+              <a href="policy.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                간편 비밀번호 설정
+                <span>keypadSet.html</span>
+              </p>
+              <a href="keypadSet.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                간편 비밀번호 입력
+                <span>keypad.html</span>
+              </p>
+              <a href="keypad.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                생체인증설정
+                <span>bioAuth.html</span>
+              </p>
+              <a href="bioAuth.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-list">
+          <h4>지갑생성</h4>
+          <ul>
+            <li>
+              <p>
+                지갑생성 - 지갑유형선택
+                <span>walletSelect.html</span>
+              </p>
+              <a href="walletSelect.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                지갑생성 - 지갑생성절차
+                <span>walletCreateInfo.html</span>
+              </p>
+              <a href="walletCreateInfo.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                고객확인 - 계좌인증 - 1
+                <span>kycAccount.html</span>
+              </p>
+              <a href="kycAccount.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                고객확인 - 계좌인증 - 2
+                <span>kycAccount.html</span>
+              </p>
+              <a href="kycAccountChk.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                고객확인 - 신분증
+                <span>kycId.html</span>
+              </p>
+              <a href="kycId.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                고객확인 - 신분증확인 - 주민등록증
+                <span>kycIdConfirmId.html</span>
+              </p>
+              <a href="kycIdConfirmId.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                고객확인 - 신분증확인 - 운전면허증
+                <span>kycIdConfirmDriver.html</span>
+              </p>
+              <a href="kycIdConfirmDriver.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                고객확인 - 신분증확인 - 여권
+                <span>kycIdConfirmPassport.html</span>
+              </p>
+              <a href="kycIdConfirmPassport.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                고객확인 - 사업자등록증
+                <span>kycCompany.html</span>
+              </p>
+              <a href="kycCompany.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                고객확인 - 사업자등록증확인
+                <span>kycComConfirm.html</span>
+              </p>
+              <a href="kycComConfirm.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-list">
+          <h4>메인</h4>
+          <ul>
+            <li>
+              <p>
+                지갑메인(지갑미생성)
+                <span>main_no_wallet.html</span>
+              </p>
+              <a href="main_no_wallet.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                지갑메인(QR코드 선택 시 QR표기)
+                <span>main.html</span>
+              </p>
+              <a href="main.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                지갑상세
+                <span>walletDetail.html</span>
+              </p>
+              <a href="walletDetail.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                전체 이용 내역조회
+                <span>historyAll.html</span>
+              </p>
+              <a href="historyAll.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                토큰 상세
+                <span>tokenDetail.html</span>
+              </p>
+              <a href="tokenDetail.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                연계 계좌 확인
+                <span>accountInfo.html</span>
+              </p>
+              <a href="accountInfo.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                이용 내역 상세
+                <span>detail.html</span>
+              </p>
+              <a href="detail.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                알림 목록
+                <span>alertList.html</span>
+              </p>
+              <a href="alertList.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-list">
+          <h4>전환/충전/송금/결제</h4>
+          <ul>
+            <li>
+              <p>
+                전환/충전 - 입력
+                <span>exChange.html</span>
+              </p>
+              <a href="exChange.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                전환/충전 - 확인
+                <span>exChangeConfirm.html</span>
+              </p>
+              <a href="exChangeConfirm.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                송금-지갑정보입력
+                <span>transfer.html</span>
+              </p>
+              <a href="transfer.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                결제
+                <span>payConfirm.html</span>
+              </p>
+              <a href="payConfirm.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                결제번호 입력
+                <span>payNumIpt.html</span>
+              </p>
+              <a href="payNumIpt.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                결제가이드(QR스캔)
+                <span>payGuideQrScan.html</span>
+              </p>
+              <a href="payGuideQrScan.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                결제가이드(QR보여주기)
+                <span>payGuideQrView.html</span>
+              </p>
+              <a href="payGuideQrView.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                NFC결제
+                <span>payNfc.html</span>
+              </p>
+              <a href="payNfc.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                QR 보여주기 결제
+                <span>payQrShow.html</span>
+              </p>
+              <a href="payQrShow.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-list">
+          <h4>바우처관련</h4>
+          <ul>
+            <li>
+              <p>
+                사용처관리
+                <span>shopList.html</span>
+              </p>
+              <a href="shopList.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                바우처 목록
+                <span>voucList.html</span>
+              </p>
+              <a href="voucList.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-list">
+          <h4>메뉴</h4>
+          <ul>
+            <li>
+              <p>
+                메뉴
+                <span>setting.html</span>
+              </p>
+              <a href="setting.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                인증/보안
+                <span>security.html</span>
+              </p>
+              <a href="security.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                알림 설정
+                <span>alert.html</span>
+              </p>
+              <a href="alert.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                공지사항
+                <span>noticeList.html</span>
+              </p>
+              <a href="noticeList.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                자주 묻는 질문
+                <span>faqList.html</span>
+              </p>
+              <a href="faqList.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                1:1 문의
+                <span>qnaList.html</span>
+              </p>
+              <a href="qnaList.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                폰트크기설정
+                <span>fontSet.html</span>
+              </p>
+              <a href="fontSet.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-list">
+          <h4>기타</h4>
+          <ul>
+            <li>
+              <p>
+                로딩
+                <span>loading.html</span>
+              </p>
+              <a href="loading.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>
+                빈화면(접근불가페이지)
+                <span>error.html</span>
+              </p>
+              <a href="error.html" class="btn arr-right">
+                <span>바로가기</span>
+              </a>
+            </li>
+            <li>
+              <p>빈화면 내에 아이콘 변경하여 다른 페이지에도 활요예정</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-list">
+          <h4>은행이름 / CSS 코드</h4>
+          <ul>
+            <li>
+              <p>BOK <span>한국은행</span></p>
+            </li>
+
+            <li>
+              <p>KBB <span>KB국민은행</span></p>
+            </li>
+            <li>
+              <p>SHB <span>SH수협은행</span></p>
+            </li>
+            <li>
+              <p>NHB <span>NH농협은행</span></p>
+            </li>
+            <li>
+              <p>WOB <span>우리은행</span></p>
+            </li>
+            <li>
+              <p>HNB <span>하나은행</span></p>
+            </li>
+            <li>
+              <p>SIB <span>신한은행</span></p>
+            </li>
+            <li>
+              <p>IBK <span>IBK기업은행</span></p>
+            </li>
+            <li>
+              <p>DGB <span>대구은행</span></p>
+            </li>
+            <li>
+              <p>BNK <span>부산은행</span></p>
+            </li>
+            <li>
+              <p>JBB <span>전북은행</span></p>
+            </li>
+            <li>
+              <p>KBK <span>케이뱅크</span></p>
+            </li>
+          </ul>
+        </div>
+
+        <!--
+            .BOK::before{ background-image: url(../img/bank_img_BOK.png); }
+            .KBB::before{ background-image: url(../img/bank_icon/bank_KBB.svg); }
+            .SHB::before{ background-image: url(../img/bank_icon/BAnk_shb.svg); }
+            .NHB::before{ background-image: url(../img/bank_icon/bank_nhb.svg); }
+            .WOB::before{ background-image: url(../img/bank_icon/bank_wob.svg); }
+            .HNB::before{ background-image: url(../img/bank_icon/bank_hnb.svg); }
+            .SIB::before{ background-image: url(../img/bank_icon/bank_sib.svg); }
+            .IBK::before{ background-image: url(../img/bank_icon/bank_ibk.svg); }
+            .DGB::before{ background-image: url(../img/bank_icon/bank_dgb.svg); }
+            .BNK::before{ background-image: url(../img/bank_icon/bank_bnk.svg); }
+            .JBB::before{ background-image: url(../img/bank_icon/bank_jbb.svg); }
+            .KBK::before{ background-image: url(../img/bank_icon/bank_kbk.svg); }
+            -->
+      </div>
+    </div>
+  </body>
+</html>

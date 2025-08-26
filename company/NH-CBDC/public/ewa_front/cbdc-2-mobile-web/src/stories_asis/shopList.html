@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://oapi.map.naver.com/openapi/v3/maps.js?govClientId=jxuw9asafd&callback=initMap"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://oapi.map.naver.com/openapi/v3/maps.js?govClientId=jxuw9asafd&submodules=geocoder"
+    ></script>
+
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="sub-top">
+        <h2>사용처</h2>
+        <button type="button" onclick="location.href='main.html'" class="btn back-btn">
+          <span>뒤로가기</span>
+        </button>
+      </div>
+      <div class="content sub">
+          <div class="shop-search-area">
+            <div class="shop-search-box">
+              <div class="shop-search-ipt">
+                <input type="text" class="search-ipt">
+                <button type="button" class="btn shop-search-btn"><span>검색</span></button>
+              </div>
+              <button type="button" class="btn shop-list-btn" onclick="location.href='shopListMap.html'"><span>지도보기</span></button>
+            </div>
+            <div class="user-location">
+              <span>현재 위치</span>
+              <p>서울 중구 소공동 </p>
+            </div>
+          </div>
+          <div class="shop-list-area">
+            <!-- <div class="empty">
+              <p>
+                <b>'은행행'</b><br />
+                검색 결과가 없습니다.<br /><br />
+                다른 검색어를 입력해 보세요.
+              </p>
+            </div> -->
+            <div class="shop-vouc-filter">
+              <div class="toggle-area">
+                <div class="toggle-box">
+                  <button type="button" class="toggle-btn on">
+                    <span class="toggle">Toggle</span>
+                  </button>
+                  <p class="toggle-label">내 바우처 사용처만 보기</p>
+                </div>
+              </div>
+              <div class="shop-filter-btn-area">
+                <span>000</span>
+                <button type="button" class="btn shop-filter-btn">
+                  <span>검색필터보기</span>
+                </button>
+              </div>
+            </div>
+            <div class="shop-list">
+              <p class="shop-cnt">총 0,000개</p>
+              <div class="shop-list-inner">
+                <ul>
+                  <li>
+                    <button type="button" class="shop-list-box use">
+                      <p class="use">내 바우처 사용 가능</p>
+                      <h3>씨제이웰케어 주식회사</h3>
+                      <span class="shop-addr"><b>500m</b> 서울특별시 중구 세종대로 14(남대문로5가)</span>
+                      <span class="shop-type">건강 보조식품 소매업</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="shop-list-box">
+                      <h3>뽀뽀치킨</h3>
+                      <span class="shop-addr"><b>0,000m</b> 서울특별시 중구 세종대로 3-1 </span>
+                      <span class="shop-type">치킨 전문점</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="shop-list-box">
+                      <h3>김영만법무사</h3>
+                      <span class="shop-addr"><b>0,000m</b> 서울시 중구 세종대로 14길 15</span>
+                      <span class="shop-type">법무사업</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="shop-list-box use">
+                      <p class="use">내 바우처 사용 가능</p>
+                      <h3>자혜당한의원</h3>
+                      <span class="shop-addr"><b>500m</b> 서울시 중구 세종대로 18길 16(북창동, 우성빌딩 7층 3호실)</span>
+                      <span class="shop-type">한의원</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="mask"></div>
+    
+    <!-- 검색 조건 선택 -->
+    <div class="btm-sheet-area btm-sheet-vouc-list">
+        <div class="btm-sheet-top">
+            <h2>검색 조건 선택</h2>
+            <button type="button" class="btn close-btn">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="btm-sheet-filter">
+          <div class="filter-box">
+            <h3>정렬 기준</h3>
+            <div class="filter-item">
+              <button type="button" class="filter-rdo-btn on">가까운 순</button>
+              <button type="button" class="filter-rdo-btn">가나다 순</button>
+            </div>
+          </div>
+          <div class="filter-box">
+            <h3>바우처</h3>
+            <p class="filter-sub-title">내 바우처</p>
+            <div class="filter-item">
+              <ul>
+                <li>
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box">
+                    <span>동의체크박스</span>
+                  </label>
+                  <div class="filter-vouc-item">
+                    <p>서울 사랑</p>
+                    <span>서울시</span>
+                  </div>
+                </li>
+                <li>
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box">
+                    <span>동의체크박스</span>
+                  </label>
+                  <div class="filter-vouc-item">
+                    <p>서울 사랑 바우처</p>
+                    <span>종로구청</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <p class="filter-sub-title">그 외</p>
+            <div class="filter-item rdo-btn-type">
+              <ul>
+                <li>
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box">
+                    <span>동의체크박스</span>
+                  </label>
+                  <div class="filter-vouc-item">
+                    <p>서울 사랑</p>
+                    <span>서울시</span>
+                  </div>
+                </li>
+                <li>
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box">
+                    <span>동의체크박스</span>
+                  </label>
+                  <div class="filter-vouc-item">
+                    <p>서울 사랑</p>
+                    <span>서울시</span>
+                  </div>
+                </li>
+                <li>
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box">
+                    <span>동의체크박스</span>
+                  </label>
+                  <div class="filter-vouc-item">
+                    <p>서울 사랑</p>
+                    <span>서울시</span>
+                  </div>
+                </li>
+                <li>
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box">
+                    <span>동의체크박스</span>
+                  </label>
+                  <div class="filter-vouc-item">
+                    <p>서울 사랑</p>
+                    <span>서울시</span>
+                  </div>
+                </li>
+                <li>
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box">
+                    <span>동의체크박스</span>
+                  </label>
+                  <div class="filter-vouc-item">
+                    <p>서울 사랑</p>
+                    <span>서울시</span>
+                  </div>
+                </li>
+                <li>
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box">
+                    <span>동의체크박스</span>
+                  </label>
+                  <div class="filter-vouc-item">
+                    <p>서울 사랑</p>
+                    <span>서울시</span>
+                  </div>
+                </li>
+                <li>
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box">
+                    <span>동의체크박스</span>
+                  </label>
+                  <div class="filter-vouc-item">
+                    <p>서울 사랑</p>
+                    <span>서울시</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="shop-list-filter-item">
+          <button type="button" class="vouc-item-btn">서울사랑</button>
+          <button type="button" class="vouc-item-btn">대한민국 화이팅</button>
+          <button type="button" class="vouc-item-btn">서울사랑</button>
+          <button type="button" class="vouc-item-btn">대한민국화이팅</button>
+          <button type="button" class="vouc-item-btn">서울사랑</button>
+          <button type="button" class="vouc-item-btn">대한민국화이팅</button>
+          <button type="button" class="vouc-item-btn">서울사랑</button>
+          <button type="button" class="vouc-item-btn">대한민국화이팅</button>
+        </div>
+        <div class="btm-btn-area confirm">
+          <button type="button" class="btm-btn">초기화</a>
+          <button type="button" class="btm-btn app">0,000개의 사용처 보기</a>
+        </div>
+    </div>
+
+    <!-- 사용처 상세 팝업 -->
+    <div class="modal">
+      <div class="modal-top">
+          <h2>어머니칼국수</h2>
+          <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+              <span>닫기</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="shop-detail">
+            <div class="shop-detail-map">
+              <div id="map" class="shop-map"></div>
+            </div>
+            <div class="vouc-detail-info">
+                <dl>
+                    <dt>가맹점 정보</dt>
+                    <dd>
+                        <span>주소</span>
+                        <p>서울시 중구 세종대로 92</p>
+                    </dd>
+                    <dd>
+                        <span>전화번호</span>
+                        <p>02-3789-5844</p>
+                    </dd>
+                    <dd>
+                        <span>업종</span>
+                        <p>한식 일반 음식점업</p>
+                    </dd>
+                    <dd>
+                        <span>사용가능 바우처</span>
+                        <p>
+                          <b>사울사랑바우처</b>, 대한민국화이팅바우처, 종로사랑바우처, 캐시백룰루랄라
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+          </div>
+      </div>
+      <div class="btm-btn-area">
+        <button type="button" class="btm-btn app">전화하기</a>
+      </div>
+    </div>
+
+  <script>
+    $(window).ready(function () {
+
+      var MARKER_SPRITE_POSITION = {
+        "어머니칼국수|한식 일반 음식점업": [37.5642574,126.9775934]
+      };
+
+
+      var map = new naver.maps.Map('map', {
+          center: new naver.maps.LatLng(37.5642574, 126.9775934),
+          zoom: 15
+      });
+
+      var bounds = map.getBounds(),
+          southWest = bounds.getSW(),
+          northEast = bounds.getNE(),
+          lngSpan = northEast.lng() - southWest.lng(),
+          latSpan = northEast.lat() - southWest.lat();
+
+      var markers = [],
+          infoWindows = [];
+
+          for (var key in MARKER_SPRITE_POSITION) {
+
+      var position = new naver.maps.LatLng(
+          southWest.lat() + latSpan * Math.random(),
+          southWest.lng() + lngSpan * Math.random());
+
+      var marker = new naver.maps.Marker({
+          map: map,
+          position: position,
+          title: key.split("|")[0],
+          zIndex: 100
+      });
+
+      var infoWindow = new naver.maps.InfoWindow({
+          content: '<div class="shop-icon-box"><h3>'+key.split("|")[0]+'</h3><p>'+key.split("|")[1]+'</p></div>'
+      });
+
+      markers.push(marker);
+        infoWindows.push(infoWindow);
+      };
+
+      naver.maps.Event.addListener(map, 'idle', function() {
+        updateMarkers(map, markers);
+      });
+
+      function updateMarkers(map, markers) {
+
+      var mapBounds = map.getBounds();
+      var marker, position;
+
+      for (var i = 0; i < markers.length; i++) {
+
+          marker = markers[i]
+          position = marker.getPosition();
+
+          if (mapBounds.hasLatLng(position)) {
+              showMarker(map, marker);
+          } else {
+              hideMarker(map, marker);
+          }
+      }
+      }
+
+      function showMarker(map, marker) {
+
+      if (marker.setMap()) return;
+        marker.setMap(map);
+      }
+
+      function hideMarker(map, marker) {
+        if (!marker.setMap()) return;
+        marker.setMap(null);
+      }
+
+      // 해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환합니다.
+      function getClickHandler(seq) {
+        return function(e) {
+            var marker = markers[seq],
+                infoWindow = infoWindows[seq];
+
+            if (infoWindow.getMap()) {
+                infoWindow.close();
+            } else {
+                infoWindow.open(map, marker);
+            }
+        }
+      }
+
+      for (var i=0, ii=markers.length; i<ii; i++) {
+        naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i));
+      }
+    });
+  </script>
+
+  </body>
+</html>

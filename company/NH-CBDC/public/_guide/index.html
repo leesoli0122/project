@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/guide.css" rel="stylesheet">
+    <script type="text/javascript" src="../scripts/libs/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="scripts/libs/shCore.js"></script>
+    <script type="text/javascript" src="scripts/libs/shBrushCss.js"></script>
+    <script type="text/javascript" src="scripts/libs/shBrushJScript.js"></script>
+    <script type="text/javascript" src="scripts/libs/shBrushXml.js"></script>
+    <script type="text/javascript" src="scripts/static2.js"></script>
+    <title>현황판</title>
+    <style>
+        .tr-delete.tr-noj { background-color:#fff !important; }
+        .guide-wrap2 .table li .col-1depth,
+        .guide-wrap2 .table li .col-2depth{ width:120px; }
+        .guide-wrap2 .table li .col-3depth,
+        .guide-wrap2 .table li .col-4depth { width:80px; }
+       .guide-wrap2 .table li.table-header span:nth-of-type(7) { background:#189650; }
+       .guide-wrap2 .table li > span:nth-of-type(7) { background:#18965020; font-weight:bold; font-size:14px;  }
+       .guide-wrap2 .table .tr-delete.tr-noj > span{ text-decoration:none !important; color:#999 !important; }
+       .guide-wrap2 .table li span:nth-of-type(9) { width:150px; }
+       .point {color:#a50e0e;}
+    </style>
+</head>
+<body style="margin:0;">
+    <div id="guide-wrap" class="guide-wrap2">
+        <div id="guide-header">
+            <h1 class="logo"><a href="../index.html">NH CBDC</a></h1>
+            <!--<div class="header-btn-group">
+                <button class="btn-guide orange" onClick="location.href='../mo/index.html'">Mobile</button>
+                <button class="btn-guide" onClick="location.href='convention/rule-intro.html'">퍼블리싱가이드</button>
+            </div>-->
+        </div>
+        <div id="container" class="ia">
+            <div class="guide-note">
+                <h2>작성 가이드</h2>
+                <ul>
+                    <li>* 구분 표시방법 - P : Popup,  A : Alert, T : Tab, ST: Step </li>
+                    <li>* 진척관리 - 최초 완료표시 기준으로 날짜를 표시하고, 비고란에 전달사항이 있는경우 표시한다.</li>
+                    <li>* 결함관리 - 신규/수정/삭제 이슈가 있는 경우 소스코드와 비고란에 동일한 주석문구를 표시한다.<br />(주석표기 예시 - YY.MM.DD 수정 : 작업내용)</li>
+                    <!-- <li>3차 최종완료 - 사이트 오픈후에 전체현황을 엑셀로 백업하여 기록을 남기고 비고란은 삭제한다.</li> -->
+                </ul>
+            </div>
+            <div class="work-status">
+                <span class="item"><em>총 페이지 : </em><em class="real-total-amount"></em>(<em class="total-amount"></em>),</span>
+                <span class="item"><em>완료 : </em><em class="done-amount"></em>,</span>
+                <span class="item"><em>배포 : </em><em class="fine-amount"></em>,</span>
+                <span class="item"><em>진척률 : </em><em class="ratio"></em>%</span>
+            </div>
+            <ul class="table">
+                <li class="table-header">
+                    <span scope="col" class="col-no">번호</span>
+                    <span scope="col" class="col-sort">카테고리</span>
+                    <span scope="col" class="col-1depth">1depth</span>
+                    <span scope="col" class="col-2depth">2depth</span>
+                    <span scope="col" class="col-3depth">3depth</span>
+                    <span scope="col" class="col-4depth">4depth</span>
+                    <span scope="col" class="col-url">URL</span>
+                    <span scope="col" class="col-id">화면ID</span>
+                    <span scope="col" class="col-id">화면명</span>
+                    <span scope="col" class="col-date">날짜</span>
+                    <span scope="col" class="col-status">상태</span><!-- ing, done, fine, delete -->
+                    <span scope="col" class="col-worker">담당자</span>
+                    <span scope="col" class="col-memo">비고</span>
+                </li>
+            </ul>
+            <ul class="table table-app">
+                <li class="table-body">
+                    <span class="col-no"></span>
+                    <span class="col-sort">KYC 인증</span>
+                    <span class="col-1depth">지갑 생성 안내</span>
+                    <span class="col-2depth"></span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/createWallet</span>
+                    <span class="col-id">UI-CBDC-MA-0100</span>
+                    <span class="col-id"></span>
+                    <span class="col-date">2024.12.27</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">2025.01.10 : 문구변경</span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth">약관동의</span>
+                    <span class="col-2depth"></span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/policy</span>
+                    <span class="col-id">UI-CBDC-MA-0102</span>
+                    <span class="col-id">약관동의</span>
+                    <span class="col-date">2025.02.26</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">2024.12.27 -> 약관내용변경<br>
+                    2025.01.06 -> 선택약관 삭제<br>
+                    2025.02.18 -> 약관팝업추가<br>
+                    약관 하단버튼 삭제</span>
+                    2025.02.20 -> 약관팝업수정<br>
+                    「예금 토큰」 상품설명서(안) 이미지 추가<br>
+                    2025.02.26 -> 약관팝업추가<br>
+                    개인(신용)정보 수집·이용 및 제3자 제공 동의서 추가
+                </span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth">예금자보호 안내</span>
+                    <span class="col-2depth"></span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/depositorProtection</span>
+                    <span class="col-id">UI-CBDC-MA-0101</span>
+                    <span class="col-id"></span>
+                    <span class="col-date"></span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker">윤은정</span>
+                    <span class="col-memo">2025.01.13 : 레이아웃 위치변경 policy-list -> type2 클래스 추가</span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">NICE 본인인증</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/nice</span>
+                    <span class="col-id">UI-CBDC-UI-0114</span>
+                    <span class="col-id">NICE 본인인증</span>
+                    <span class="col-date"></span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">퍼블 불필요 바닥화면만 있으면됨</span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">계좌 등록</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/kycAccount</span>
+                    <span class="col-id">UI-CBDC-UI-0121</span>
+                    <span class="col-id">계좌 등록</span>
+                    <span class="col-date"></span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">2025.01.10 -> placeholder 문구변경<span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">고객 확인 완료</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/confirmationComplete</span>
+                    <span class="col-id">UI-CBDC-UI-0114</span>
+                    <span class="col-id">고객 확인 완료</span>
+                    <span class="col-date"></span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">2024.01.10 문구변경</span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">로딩</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/loading</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"></span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"></span>
+                </li>
+                
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">ARS 인증</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/arsNumber</span>
+                    <span class="col-id">UI-CBDC-UI-122</span>
+                    <span class="col-id">ARS 인증</span>
+                    <span class="col-date"></span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">ARS 인증<br>재요청</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/arsRetry</span>
+                    <span class="col-id">UI-CBDC-UI-122</span>
+                    <span class="col-id">ARS 인증<br>재요청</span>
+                    <span class="col-date"></span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">PIN 번호</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/keypad</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2025.01.21</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">
+                        2024.01.21<br>
+                        간편비밀번호 -> PIN 번호 문구변경
+                    <span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort">공통</span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">팝업</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/modal</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2025.02.11</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">
+                       2025.02.05 요청사항<br>
+                       약관동의 팝업 단락 수정<br>
+                       2025. 02.11 <br>
+                       약관동의 컨텐츠 내용 변경<br>
+                       2025.02.14<br>
+                       예금토큰거래기본약관(안) 수정<br>
+                       2025.02.17<br>
+                       약관하단 버튼 삭제 및 체크박스 삭제
+                    <span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth">결제 금액 확인</span>
+                    <span class="col-2depth"></span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/payConfirm</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2025.02.03</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">
+                    <span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">완료</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/payConfirm02</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2025.02.04</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">
+
+                    <span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort">메인</span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth"></span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/main</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2025.02.20</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">
+                        2025.02.05<br>
+                        사용가능 실시간 잔액 추가 <br>
+                        2025.02.20<br>
+                       예금보험공시 추가
+                    <span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort">메인</span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth"></span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">stories_asis/join</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2025.03.12</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">
+                        2025.03.12<br>
+                        약관내용 추가
+                    <span>
+                </li>
+                <li class="table-body">
+                    <span class="col-no"></span>
+                    <span class="col-sort">관리자</span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">로그인</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/login</span>
+                    <span class="col-id"></span>
+                    <span class="col-id">로그인</span>
+                    <span class="col-date"></span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">왼쪽메뉴</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/sample</span>
+                    <span class="col-id"></span>
+                    <span class="col-id">로그인</span>
+                    <span class="col-date"></span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li class="table-body">
+                    <span class="col-no"></span>
+                    <span class="col-sort">비즈 업무시스템</span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">로그인</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/login_biz</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"></span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">toast</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/toast</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2024.01.21</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">키패드</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/login_biz_keypad</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2025.01.21</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">아이디 찾기</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/id_find</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2024.01.21</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">비밀번호 찾기</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/pass_find</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2025.01.21</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">이중인증등록(OTP)</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/otp</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2025.01.24</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">이중 인증</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/otp2</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date"> 2025.02.03</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo"><span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">왼쪽메뉴</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/sample_biz</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date">2025.02.07</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">
+                        2025.02.05 수정사항<br>
+                        menu 3뎁스까지 추가<br>
+                        2025.02.06 수정사항<br>
+                        - menu atcite일때 효과 디자인
+                    <span>
+                </li>
+                <li>
+                    <span class="col-no"></span>
+                    <span class="col-sort"></span>
+                    <span class="col-1depth"></span>
+                    <span class="col-2depth">초기비밀번호 추가</span>
+                    <span class="col-3depth"></span>
+                    <span class="col-4depth"></span>
+                    <span class="col-url">manager/changePasswd</span>
+                    <span class="col-id"></span>
+                    <span class="col-id"></span>
+                    <span class="col-date">2025.02.06</span>
+                    <span class="col-status done fine"></span>
+                    <span class="col-worker"></span>
+                    <span class="col-memo">
+                    <span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

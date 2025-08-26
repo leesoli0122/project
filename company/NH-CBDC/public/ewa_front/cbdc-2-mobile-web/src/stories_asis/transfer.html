@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+
+    <script>
+      let accntNumChk = false;
+      let accntBnkChk = false;
+      $(window).ready(function () {
+        $('#accntNum').focus(function () {
+          setAccntIpt();
+          chkNet();
+          $('.accnt-num-scan').addClass('on');
+        });
+
+        $('#accntNum').keyup(function () {
+          recomedBank($(this).val());
+          chkNet();
+        });
+
+        $('#accntNum').focusout(function () {
+          if ($(this).val() == '') {
+            resetAccntIpt();
+            $(this).closest('.ipt-form').removeClass('on-focus');
+            accntNumChk = false;
+          } else {
+            accntNumChk = true;
+          }
+        });
+
+        $('.recent-btn').click(function () {
+          let accntBnk = $(this).find('.recent-logo').attr('class').split(' ')[1];
+          let accntNum = $(this).find('.recent-text span').html().split(' ')[1];
+          // console.log( $(this).find(".recent-text span").html().split(" ")[1] );
+          $('#accntNum').val(accntNum);
+          $('#accntNum').closest('.ipt-form').addClass('on-focus');
+
+          $('#btm-sheet-btn-a').addClass('on-data');
+          $('#btm-sheet-btn-a .bank-logo').addClass('KBB');
+          $('#selectBank').val('국민은행');
+
+          setAccntIpt();
+          chkNet();
+        });
+
+        $('.bank-box').click(function () {
+          let accntBnk = $(this).attr('class').split(' ')[1];
+          $('#btm-sheet-btn-a').addClass('on-data');
+          $('#btm-sheet-btn-a .bank-logo').addClass(accntBnk);
+          $('#selectBank').val($(this).html());
+          closeBtmSheet();
+          accntBnkChk = true;
+          chkNet();
+          $('.recomed-bank .reco-info, .recomed-bank .reco-bank-btn').hide();
+        });
+
+        $('.reco-bank-btn').click(function () {
+          let accntBnk = $(this).attr('class').split(' ')[1];
+          $('#btm-sheet-btn-a').addClass('on-data');
+          $('#btm-sheet-btn-a .bank-logo').addClass(accntBnk);
+          $('#selectBank').val($(this).data('banknm'));
+          $('.reco-bank-btn').hide();
+          accntBnkChk = true;
+          chkNet();
+        });
+      });
+
+      function setAccntIpt() {
+        $('#btm-sheet-btn-a').removeClass('hide');
+        $('.recent-list').addClass('hide');
+        $('.ipt-form-area').removeClass('no-flex');
+        $('.btn-area').removeClass('hide');
+      }
+
+      function resetAccntIpt() {
+        $('#btm-sheet-btn-a').removeClass('on-data');
+        $('#btm-sheet-btn-a').addClass('hide');
+        $('.recent-list').removeClass('hide');
+        $('.ipt-form-area').addClass('no-flex');
+        $('.btn-area').addClass('hide');
+        $('.bank-logo').attr('class', 'bank-logo');
+        $('#selectBank').val('');
+        $('.accnt-num-scan').removeClass('on');
+        accntBnkChk = false;
+        accntNumChk = false;
+      }
+
+      function recomedBank(num) {
+        $('.reco-info').hide();
+        $('.reco-bank-btn').hide();
+        let bankList = [
+          { code: 'KBB', num: '004' },
+          { code: 'SHB', num: '007' },
+          { code: 'NHB', num: '011' },
+          { code: 'WOB', num: '020' },
+          { code: 'HNB', num: '081' },
+          { code: 'NHB', num: '088' },
+          { code: 'IBK', num: '003' },
+          { code: 'DGB', num: '031' },
+          { code: 'BNK', num: '032' },
+          { code: 'JBB', num: '037' },
+          { code: 'KBK', num: '089' },
+        ];
+        let chkNum = num.substr(0, 3);
+        // console.log(num);
+        // console.log(chkNum);
+        if (chkNum.length > 1) {
+          bankList.forEach(function (data) {
+            if (data.num.includes(chkNum)) {
+              $('.reco-bank-btn.' + data.code).show();
+            }
+          });
+        } else {
+          if (!$('#selectBank').val()) {
+            $('.reco-info').show();
+          }
+        }
+      }
+
+      function chkNet() {
+        if (accntNumChk && accntBnkChk) {
+          $('#transferBtn').removeClass('disabled');
+          $('.accnt-num-scan').removeClass('on');
+        } else {
+          $('#transferBtn').addClass('disabled');
+        }
+      }
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="sub-top">
+        <h2>송금</h2>
+        <button type="button" onclick="location.href='setting.html'" class="btn back-btn">
+          <span>뒤로가기</span>
+        </button>
+      </div>
+      <div class="content sub">
+        <div class="sub-desc exchange">
+          <p>어디로 보낼까요?</p>
+        </div>
+        <div class="ipt-form-area no-flex">
+          <div class="ipt-form">
+            <label class="ipt-label">지갑 번호를 입력해 주세요.</label>
+            <div class="ipt-form-box">
+              <input type="text" class="ipt-text" pattern="\d*" id="accntNum" />
+              <button type="button" class="btn ipt_reset"><span>전체삭제</span></button>
+            </div>
+          </div>
+          <div class="ipt-form btm-sheet hide" id="btm-sheet-btn-a">
+            <label class="ipt-label">은행선택</label>
+            <div class="ipt-form-box bank">
+              <span class="bank-logo"></span>
+              <input type="text" class="ipt-text" readonly id="selectBank" />
+            </div>
+          </div>
+          <!-- 오류사항일 경우 <div class="recomed-bank error"> 클래스 추가-->
+          <div class="recomed-bank">
+            <p class="reco-info">지갑 번호를 입력하시면 은행을 추천해 드려요.</p>
+            <p class="reco-error">입력하신 정보를 다시 확인해 주세요.</p>
+            <button type="button" class="reco-bank-btn KBB" data-banknm="국민은행">국민</button>
+            <button type="button" class="reco-bank-btn SHB" data-banknm="수협은행">수협</button>
+            <button type="button" class="reco-bank-btn NHB" data-banknm="농협은행">농협</button>
+            <button type="button" class="reco-bank-btn WOB" data-banknm="우리은행">우리</button>
+            <button type="button" class="reco-bank-btn HNB" data-banknm="하나은행">하나</button>
+            <button type="button" class="reco-bank-btn NHB" data-banknm="신한은행">신한</button>
+            <button type="button" class="reco-bank-btn IBK" data-banknm="기업은행">기업</button>
+            <button type="button" class="reco-bank-btn DGB" data-banknm="대구은행">대구</button>
+            <button type="button" class="reco-bank-btn BNK" data-banknm="부산은행">부산</button>
+            <button type="button" class="reco-bank-btn JBB" data-banknm="전북은행">전북</button>
+            <button type="button" class="reco-bank-btn KBK" data-banknm="케이뱅크">케이</button>
+          </div>
+        </div>
+        <div class="recent-list">
+          <h2>최근 보낸 사람</h2>
+          <ul>
+            <!-- <li class="empty">
+                        <p>송금 내역이 없습니다.</p>
+                    </li> -->
+            <li>
+              <button type="button" class="recent-btn">
+                <span class="recent-logo WOB">은행로고</span>
+                <div class="recent-text">
+                  <p>김한국</p>
+                  <span>신한 1234-1234-1234</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="recent-btn">
+                <span class="recent-logo KBB">은행로고</span>
+                <div class="recent-text">
+                  <p>김국민</p>
+                  <span>국민 1234-1234-1234</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="recent-btn">
+                <span class="recent-logo NHB">은행로고</span>
+                <div class="recent-text">
+                  <p>이농협</p>
+                  <span>농협 1234-1234-1234</span>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="btn-area hide">
+        <button class="btm-btn app disabled" id="transferBtn">다음</button>
+      </div>
+    </div>
+
+    <div class="accnt-num-scan">
+      <button type="button" class="accnt-num-scan-btn">
+        <div class="scan-icon"><img src="../shared/ui/assets/img/qr_scan_loop.gif" /></div>
+        <span>지갑번호 QR 스캔하기</span>
+      </button>
+    </div>
+
+    <div class="mask"></div>
+
+    <!-- bottom sheet -->
+    <div class="btm-sheet-area" id="btm-sheet-a">
+      <div class="btm-sheet-top">
+        <h2>은행 선택</h2>
+        <button type="button" class="btn close-btn">
+          <span>닫기</span>
+        </button>
+      </div>
+      <div class="btm-sheet-list">
+        <ul class="bank-list">
+          <li>
+            <button type="button" class="bank-box KBB">국민은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box SHB">수협은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box NHB">농협은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box WOB">우리은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box HNB">하나은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box NHB">신한은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box IBK">기업은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box DGB">대구은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box BNK">부산은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box JBB">전북은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box KBK">케이뱅크</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

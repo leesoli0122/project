@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+      $(window).ready(function () {
+        console.log();
+        let joinChk = window.location.href.split('?join=')[1];
+        if (joinChk == 'on') {
+          notiMsg('회원가입이 완료되었습니다.');
+        }
+      });
+    </script>
+        <script>
+          $(window).ready(function () {
+            $('.help-btn').click(function () {
+              $tooltip = $(this).prev('.tooltip');
+              if ($tooltip.hasClass('on')) {
+                $tooltip.removeClass('on');
+              } else {
+                $tooltip.addClass('on');
+              }
+            });
+    
+            $('.tooltip-close').click(function () {
+              $tooltip = $(this).closest('.tooltip');
+              $tooltip.removeClass('on');
+            });
+          });
+        </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap">
+      <div class="header">
+        <h1>Wallet</h1>
+        <div class="header-util">
+          <button type="button" class="header-btn alert on" onclick="location.href='alertList.html'">
+            <span>알림</span>
+          </button>
+          <button type="button" class="header-btn menu" onclick="location.href='setting.html'">
+            <span>menu</span>
+          </button>
+        </div>
+      </div>
+      <div class="content main">
+        <div class="account-box">
+          <div class="wallet-main-box">
+            <div class="wallet-main">
+              <div class="wallet-user">
+                <!-- 지갑상태 / 사업자지갑 -->
+                <!-- <div class="wallet-sttus">
+                                <span class="company">사업자</span>
+                                <span class="spd">거래제한</span>
+                            </div> -->
+                <div class="user-info"><b>A은행</b>님 지갑</div>
+                <button type="button" class="wallet-account NHB">A 123-456-789-0</button>
+              </div>
+              <button type="button" class="wallet-qr btm-sheet" id="btm-sheet-btn-a">
+                <img src="../shared/ui/assets/img/qr_sample.png" />
+              </button>
+            </div>
+            <div class="wallet-info">
+              <span>전체 5</span>
+              <button type="button" onclick="location.href='walletDetail.html'"><b>584,710</b> 원</button>
+            </div>
+            <!--S NEW : 사용가능 실시간 잔액-->
+            <div class="wallet-info sm">
+              <span>사용가능 실시간 잔액</span>
+              <div class="help-btn-area"> 
+              <span>584,710원</span>
+                <div class="tooltip">
+                  <div class="tooltip-inner">
+                    <button type="button" class="btn tooltip-close">
+                      <span>도움말닫기</span>
+                    </button>
+                    <div class="tooltip-cont">
+                      <p class="tooltip-cont">1.이전영업일의 환불건은 2~3일후 반영됩니다.</p>
+                      <p class="tooltip-cont sub">· 전체 잔액과 차이가 있을수 있습니다.</p>
+                      <p class="tooltip-cont">2.은행 정산시간 동안 잔액이 표시되지 않을 수 있습니다.</p>
+
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn help-btn">
+                  <span>도움말</span>
+                </button>
+              </div>
+            </div>
+            <!--E NEW : 사용가능 실시간 잔액-->
+            <div class="wallet-asset-list">
+              <div class="wallet-asset-box">
+                <button type="button">
+                  <div class="wallet-asset-info">
+                    <span class="type my">예금 토큰</span>|
+                    <span class="wallet-account NHB">A</span>
+                  </div>
+                  <div class="wallet-asset-balance">
+                    <p><b>100,000</b> 원</p>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <!--S NEW : 예금자보호-->
+            <div class="protectionmark">
+              <p>이 예금 토큰은 「예금자보호법」에 따라 <strong>원금과 소정의 이자를 합하여 1인당 “5천만원까지”</strong>(본 은행의 여타 보호상품과 합산) 보호됩니다.</p>
+            </div>
+            <!--E NEW : 예금자보호-->
+          </div>
+        </div>
+        <div class="bank-account">
+          <p>연계계좌</p>
+          <button type="button" onclick="location.href='accountInfo.html'">A 1231</button>
+        </div>
+
+        <!-- <div class="vc-info">
+                <button type="button" class="vc-info-btn">연계 계좌 확인</button>
+                <span class="vc-info-gap">&nbsp;</span>
+                <button type="button" class="vc-info-btn">내 바우처 현황</button>
+            </div> -->
+        <button class="main-box vc-info"><i class="vc-icon">바우처아이콘</i><b>내 바우처 현황</b></button>
+
+        <div class="main-box payment">
+          <div class="main-box-top">
+            <h2>결제</h2>
+          </div>
+          <div class="payment-box">
+            <button type="button" class="payment-btn qr-scan">
+              <span>QR 스캔하기</span>
+            </button>
+            <button type="button" class="payment-btn qr-show" onclick="location.href='payQrShow.html'">
+              <span>QR 보여주기</span>
+            </button>
+            <button type="button" class="payment-btn nfc-auto" onclick="location.href='payNfc.html'">
+              <span>NFC 자동결제</span>
+            </button>
+            <button type="button" class="payment-btn nfc-manual" onclick="location.href='payNfc.html'">
+              <span>NFC 수동결제</span>
+            </button>
+          </div>
+        </div>
+
+        <button class="main-box findshop" onclick="location.href='shopList.html'">
+          <b>내 주변 사용처를</b>
+          <p>찾아보세요</p>
+        </button>
+
+        <div class="main-box receipt">
+          <div class="main-box-top">
+            <h2>
+              최근이용내역
+              <button type="button" class="btn reset-btn">
+                <span>reset</span>
+              </button>
+            </h2>
+            <button type="button" class="btn more-btn">
+              <span>more</span>
+            </button>
+          </div>
+          <div class="receipt-list">
+            <ul>
+              <!-- <li class="empty">
+                            <p>이용내역이 없습니다.</p>
+                        </li> -->
+              <li>
+                <p class="date">2024.02.21</p>
+              </li>
+              <li>
+                <button type="button">
+                  <p>
+                    <span class="pay-time">23:19:21 | 결제</span>
+                    <span class="pay-type">바우처 | 한국은행, 예금 토큰</span>
+                  </p>
+                  <div class="pay-info">
+                    <p class="memo">GS편의점 발산역점</p>
+                    <p class="amount withdraw">-5,600원</p>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <p class="date">2024.02.20</p>
+              </li>
+              <li>
+                <button type="button">
+                  <p>
+                    <span class="pay-time">23:19:21 | 받기</span>
+                    <span class="pay-type">예금 토큰</span>
+                  </p>
+                  <div class="pay-info">
+                    <p class="memo">김농협</p>
+                    <p class="amount">+5,600원</p>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <p>
+                    <span class="pay-time">23:19:21 | 충전</span>
+                    <span class="pay-type">이머니 토큰 | 한국은행</span>
+                  </p>
+                  <div class="pay-info">
+                    <p class="memo">내용이 길어내용이 길어내용이 길어내용이 길어</p>
+                    <p class="amount">+100,000,000원</p>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="main-box notice">
+          <div class="main-box-top">
+            <h2>공지사항</h2>
+            <button type="button" class="btn more-btn">
+              <span>more</span>
+            </button>
+          </div>
+          <div class="board-list">
+            <ul>
+              <!-- <li class="empty">
+                            <p>등록된 공지사항이 없습니다.</p>
+                        </li> -->
+              <li>
+                <button type="button">
+                  <p>개인정보 처리 방침 개정 안내 (2024.02.01 시행) 개인정보 처리 방침 개정 안내 (2024.02.01 시행)</p>
+                  <span>2024.02.03</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <p>운영 정책 변경 안내</p>
+                  <span>2024.02.03</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <p>2월 신규 바우처 발행 안내</p>
+                  <span>2024.02.03</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <p>개인정보 처리 방침 개정 안내 (2024.02.01 시행)</p>
+                  <span>2024.02.03</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mask"></div>
+
+    <!-- bottom sheet -->
+    <div class="btm-sheet-area wallet-qr-view" id="btm-sheet-a">
+      <div class="btm-sheet-top">
+        <h2 class="text-center">내 지갑 QR코드</h2>
+        <button type="button" class="btn close-btn">
+          <span>닫기</span>
+        </button>
+      </div>
+      <div class="btm-sheet-list">
+        <div class="wallet-qr-box">
+          <h3>
+            QR코드를 스캔하면<br />
+            내 지갑 주소가 전달됩니다.
+          </h3>
+          <div class="qr-img-box">
+            <img src="../img/qrcode.jpg" alt="Wallet QR CODE" />
+          </div>
+          <div class="qr-account-info">
+            <button type="button" class="wallet-account NHB dark">A 123-456-789-0</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

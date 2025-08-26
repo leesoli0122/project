@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+      $(window).ready(function () {
+        $('.filter-btn').click(function () {
+          filterReset();
+          $(this).addClass('on');
+        });
+      });
+
+      function filterReset() {
+        $('.filter .filter-btn').removeClass('on');
+      }
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap">
+      <div class="sub-top">
+        <button type="button" onclick="location.href='walletDetail.html'" class="btn back-btn">
+          <span>뒤로가기</span>
+        </button>
+        <h2>전체 이용 내역조회</h2>
+      </div>
+      <div class="content sub">
+        <div class="search-area">
+          <div class="search-area-inner">
+            <div class="search-date">
+              <button type="button" class="cal-btn month">
+                <span>전체</span>
+                <span class="sel-month-icon">월선택 화살표</span>
+              </button>
+            </div>
+          </div>
+          <div class="search-area-inner">
+            <div class="search-date">
+              <button type="button" class="cal-btn prev">
+                <span>이전달</span>
+              </button>
+              <button type="button" class="cal-btn month">
+                <span>1월</span>
+                <span class="sel-month-icon">월선택 화살표</span>
+              </button>
+              <button type="button" class="cal-btn next" disabled>
+                <span>다음달</span>
+              </button>
+            </div>
+            <div class="search-keyword">
+              <div class="search-keyword-box">
+                <input type="text" placeholder="사용처, 사람 이름으로 검색해 보세요." />
+                <button type="button" class="btn search-btn">
+                  <span>검색</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter">
+          <button type="button" class="filter-btn on">
+            <span>전체</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>캐시백</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>결제</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>전환입금</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>충전</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>송금</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>예금전환</span>
+          </button>
+        </div>
+        <div class="receipt-area">
+          <!-- <div class="empty">
+                    <p>이용내역이 없습니다.</p>
+                </div> -->
+          <div class="receipt-list">
+            <ul>
+              <li>
+                <p class="date">2024.02.21</p>
+              </li>
+              <li>
+                <button type="button">
+                  <p>
+                    <span class="pay-time">23:19:21 | 결제</span>
+                    <span class="pay-type">바우처 | 한국은행, 예금 토큰</span>
+                  </p>
+                  <div class="pay-info">
+                    <p class="memo">GS편의점 발산역점</p>
+                    <p class="amount withdraw">-5,600원</p>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <p class="date">2024.02.20</p>
+              </li>
+              <li>
+                <button type="button">
+                  <p>
+                    <span class="pay-time">23:19:21 | 받기</span>
+                    <span class="pay-type">예금 토큰</span>
+                  </p>
+                  <div class="pay-info">
+                    <p class="memo">김농협</p>
+                    <p class="amount">+5,600원</p>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <p>
+                    <span class="pay-time">23:19:21 | 충전</span>
+                    <span class="pay-type">이머니 토큰 | 한국은행</span>
+                  </p>
+                  <div class="pay-info">
+                    <p class="memo">내용이 길어내용이 길어내용이 길어내용이 길어</p>
+                    <p class="amount">+100,000,000원</p>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script></script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="content sub">
+        <div class="sub-top">
+          <h2>알림설정</h2>
+          <button type="button" onclick="location.href='setting.html'" class="btn back-btn">
+            <span>뒤로가기</span>
+          </button>
+        </div>
+
+        <div class="toggle-area">
+          <div class="toggle-box">
+            <p class="toggle-label">모든 알림 받기</p>
+            <button type="button" class="toggle-btn on">
+              <span class="toggle">Toggle</span>
+            </button>
+          </div>
+          <p class="toggle-info">
+            서비스 이용에 유용한 알림을 앱 푸시로 받아보세요.<br />
+            받고 싶지 않은 알림은 언제든 끌 수 있어요.
+          </p>
+        </div>
+
+        <div class="line-box line-2">
+          <div class="toggle-area">
+            <div class="toggle-box">
+              <p class="toggle-label">토큰·결제</p>
+              <button type="button" class="toggle-btn">
+                <span class="toggle">Toggle</span>
+              </button>
+            </div>
+            <p class="toggle-info">
+              서비스 이용에 유용한 알림을 앱 푸시로 받아보세요.<br />
+              받고 싶지 않은 알림은 언제든 끌 수 있어요.
+            </p>
+          </div>
+          <div class="toggle-area">
+            <div class="toggle-box">
+              <p class="toggle-label">보안</p>
+              <button type="button" class="toggle-btn">
+                <span class="toggle">Toggle</span>
+              </button>
+            </div>
+            <p class="toggle-info">보안 관련 앱 푸시 알림을 받습니다.</p>
+          </div>
+          <div class="toggle-area">
+            <div class="toggle-box">
+              <p class="toggle-label">활동·소식</p>
+              <button type="button" class="toggle-btn">
+                <span class="toggle">Toggle</span>
+              </button>
+            </div>
+            <p class="toggle-info">공지사항, 1:1 문의 답변 등 앱 내 활동/소식 관련 앱 푸시 알림을 받습니다.</p>
+          </div>
+        </div>
+        <div class="line-box line-10">
+          <dl class="info-list">
+            <dt>푸시알림정보</dt>
+            <dd>서비스 이용에 필수적인 정보에 대한 알림은 설정과 관계없이 앱 푸시 알림이 발송됩니다.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

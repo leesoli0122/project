@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="sub-top">
+        <h2>송금</h2>
+        <button type="button" onclick="location.href='transfer.html'" class="btn back-btn">
+          <span>뒤로가기</span>
+        </button>
+      </div>
+      <div class="content sub">
+        <div class="sub-desc exchange">
+          <p>어디로 보낼까요?</p>
+        </div>
+        <div class="ipt-form-area">
+          <div class="ipt-form">
+            <label class="ipt-label">지갑 번호를 입력해 주세요.</label>
+            <div class="ipt-form-box">
+              <input type="number" class="ipt-text" pattern="\d*" id="accntNum" />
+              <button type="button" class="btn ipt_reset"><span>전체삭제</span></button>
+            </div>
+          </div>
+          <div class="ipt-form btm-sheet" id="btm-sheet-btn-a">
+            <label class="ipt-label">은행선택</label>
+            <div class="ipt-form-box bank">
+              <span class="bank-logo"></span>
+              <input type="text" class="ipt-text" readonly id="selectBank" />
+            </div>
+          </div>
+        </div>
+        <div class="btn-area">
+          <button class="btm-btn disabled">다음</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mask"></div>
+
+    <!-- bottom sheet -->
+    <div class="btm-sheet-area" id="btm-sheet-a">
+      <div class="btm-sheet-top">
+        <h2>은행 선택</h2>
+        <button type="button" class="btn close-btn">
+          <span>닫기</span>
+        </button>
+      </div>
+      <div class="btm-sheet-list">
+        <ul class="bank-list">
+          <li>
+            <button type="button" class="bank-box KBB">KB국민은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box shb">SH수협은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box NHB">NH농협은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box wob">우리은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box hnb">하나은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box NHB">신한은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box ibk">IBK기업은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box dgb">대구은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box bnk">부산은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box jbb">전북은행</button>
+          </li>
+          <li>
+            <button type="button" class="bank-box kbk">케이뱅크</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

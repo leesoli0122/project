@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
+    />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+      let nameChk = false;
+      let birthChk = false;
+      let agencyChk = false;
+      let telnumChk = false;
+
+      $(window).ready(function () {
+        $(".btm-sheet-btn").click(function () {
+          $(".btm-sheet-btn").removeClass("selected");
+          $(this).addClass("selected");
+          closeBtmSheet();
+          selectedAgency($(this));
+        });
+
+        $("#name").focusout(function () {
+          if (
+            checkKor($(this).val()) &&
+            !checkEngNum($(this).val()) &&
+            !checkSpace($(this).val()) &&
+            !checkSpecial($(this).val()) &&
+            $(this).val().length > 1
+          ) {
+            $(this).closest(".ipt-form").removeClass("on-error");
+            $(this).closest(".ipt-form").addClass("on-data");
+            $("#birth").focus();
+            nameChk = true;
+          } else {
+            nameChk = false;
+            if ($(this).val()) {
+              $(this).closest(".ipt-form").addClass("on-error");
+            } else {
+              $(this).closest(".ipt-form").removeClass("on-error");
+            }
+          }
+          chkGetPinBtn();
+        });
+
+        $("#birth").keyup(function () {
+          let num = $(this).val();
+          if (num.length > 8) {
+            $(this).val(num.substr(0, 8));
+          }
+        });
+
+        $("#birth").focusout(function () {
+          let chkVal = checkBirth($(this).val());
+          console.log(chkVal);
+          if (chkVal == true) {
+            $(this).closest(".ipt-form").removeClass("on-error");
+            $(this).closest(".ipt-form").addClass("on-data");
+            birthChk = true;
+            if (!$("#agency").val()) {
+              $("#btm-sheet-btn-a").click();
+            }
+          } else {
+            birthChk = false;
+            if ($(this).val()) {
+              $(this).closest(".ipt-form").addClass("on-error");
+            } else {
+              $(this).closest(".ipt-form").removeClass("on-error");
+            }
+            if (chkVal == "future") {
+              $("#birthDesc").html("오늘 이전 날짜로 입력해 주세요.");
+            } else if (chkVal == "length") {
+              $("#birthDesc").html("생년월일을 8자리로 입력해 주세요.");
+            } else {
+              $("#birthDesc").html("생년월일을 정확하게 입력해 주세요.");
+            }
+          }
+          chkGetPinBtn();
+        });
+
+        $("#telNum").keyup(function () {
+          console.log(checkTelnum($(this).val()));
+          if (checkTelnum($(this).val())) {
+            $(this).closest(".ipt-form").removeClass("on-error");
+            $(this).closest(".ipt-form").addClass("on-data");
+            telnumChk = true;
+          } else {
+            telnumChk = false;
+            $(this).closest(".ipt-form").addClass("on-error");
+          }
+          chkGetPinBtn();
+        });
+
+        $("#getPinNum").click(function () {
+          if ($("#telNum").val() == "01000000000") {
+            showAlert("privacyFail");
+          } else {
+            $(this).remove();
+            toastMsg("인증번호가 발송되었습니다.");
+            $(".pinnum-box").removeClass("hide");
+            $("#pinVerify").removeClass("hide");
+            $("#pinNum").focus();
+          }
+        });
+
+        $(".pin-retry").click(function () {
+          toastMsg("인증번호가 재발송되었습니다.");
+          $("#pinNum").val("");
+          $("#pinNum").focus();
+          $(".pinnum-box .ipt-desc").addClass("hide");
+          $(".pinnum-box").removeClass("on-error");
+          return false;
+        });
+
+        $("#pinNum").keyup(function () {
+          if ($(this).val().length > 5) {
+            $("#pinVerify").removeClass("disabled");
+          } else {
+            $("#pinVerify").addClass("disabled");
+          }
+        });
+
+        $("#pinVerify").click(function () {
+          $(this).hide();
+          if ($("#pinNum").val() == "000000") {
+            $(".pin-timer").hide();
+            $(".pin-info").hide();
+            $(".pinnum-box .ipt-desc").addClass("hide");
+            $(".pinnum-box").removeClass("on-error");
+            toastMsg("본인인증이 완료되었습니다.");
+            setTimeout(function () {
+              location.href = "policy.html";
+            }, 2500);
+          } else {
+            $(this).show();
+            $(".pinnum-box .ipt-desc").removeClass("hide");
+            $(".pinnum-box").addClass("on-error");
+          }
+        });
+      });
+
+      function selectedAgency($agency) {
+        $("#agency").val($agency.text());
+        $(".agency").addClass("on-data");
+        $(".agency").removeClass("on-error");
+        $("#telNum").focus();
+        agencyChk = true;
+
+        if (!nameChk) {
+          $("#name").closest(".ipt-form").addClass("on-error");
+        }
+
+        if (!birthChk) {
+          $("#birth").closest(".ipt-form").addClass("on-error");
+          $("#birthDesc").html("생년월일을 8자리로 입력해 주세요.");
+        }
+        chkGetPinBtn();
+      }
+
+      function chkGetPinBtn() {
+        if (nameChk && birthChk && agencyChk) {
+          $("#getPinNum").removeClass("hide");
+        }
+        if (nameChk && birthChk && agencyChk && telnumChk) {
+          $("#getPinNum").removeClass("disabled");
+        } else {
+          $("#getPinNum").addClass("disabled");
+        }
+      }
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="content sub">
+        <div class="sub-top">
+          <button
+            type="button"
+            onclick="location.href='start.html'"
+            class="btn back-btn"
+          >
+            <span>뒤로가기</span>
+          </button>
+        </div>
+        <div class="sub-desc">
+          <p>
+            서비스 이용을 위해<br />
+            <b>본인 인증</b>을 진행해 주세요.
+          </p>
+        </div>
+        <div class="ipt-form-area">
+          <!-- 
+                    default : <div class="ipt-form">
+                    전체삭제버튼 On : <div class="ipt-form on-focus show-del-btn">
+                    전체삭제버튼 On  - error : <div class="ipt-form on-error show-del-btn">
+                    유효 - : <div class="ipt-form on-data">
+                    error - : <div class="ipt-form on-error">
+                -->
+          <div class="ipt-form">
+            <label class="ipt-label">이름</label>
+            <div class="ipt-form-box">
+              <input type="text" class="ipt-text" id="name" />
+              <button type="button" class="btn ipt_reset">
+                <span>전체삭제</span>
+              </button>
+            </div>
+            <div class="ipt-desc">
+              <span>이름을 두 글자 이상 입력해 주세요.</span>
+            </div>
+          </div>
+          <div class="ipt-form">
+            <label class="ipt-label">생년월일 (8자리)</label>
+            <div class="ipt-form-box">
+              <input type="number" class="ipt-text" pattern="\d*" id="birth" />
+              <button type="button" class="btn ipt_reset">
+                <span>전체삭제</span>
+              </button>
+            </div>
+            <div class="ipt-desc">
+              <span id="birthDesc">&nbsp;</span>
+            </div>
+          </div>
+          <div class="form-flex">
+            <div class="ipt-form agency btm-sheet" id="btm-sheet-btn-a">
+              <label class="ipt-label">통신사</label>
+              <div class="ipt-form-box">
+                <input type="text" class="ipt-text" readonly id="agency" />
+              </div>
+              <div class="ipt-desc">
+                <!-- <span>통신사를 선택해주세요.</span> -->
+              </div>
+            </div>
+            <div class="ipt-form tel-num">
+              <label class="ipt-label">휴대폰 번호(-없이 입력)</label>
+              <div class="ipt-form-box">
+                <input
+                  type="number"
+                  class="ipt-text"
+                  pattern="\d*"
+                  id="telNum"
+                />
+                <button type="button" class="btn ipt_reset">
+                  <span>전체삭제</span>
+                </button>
+              </div>
+              <div class="ipt-desc">
+                <span>휴대폰 번호를 정확하게 입력해주세요.</span>
+              </div>
+            </div>
+          </div>
+          <!--S new : 2025-03-11-->
+          <div class="policy-list fc">
+            <p class="title">본인인증을 위한 약관에 동의합니다.</p>
+            <ul class="type2">
+              <li class="all">
+                <label class="ipt-label">
+                  <input type="checkbox" class="check-box" id="chkAll" />
+                  <span>동의체크박스</span>
+                </label>
+                <p>약관 전체 동의하기</p>
+              </li>
+              <li>
+                <div class="chk-cont">
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box" />
+                    <span>동의체크박스</span>
+                  </label>
+                  <p>개인정보 수집·이용 동의</p>
+                  <button
+                    type="button"
+                    class="btn arr-right"
+                    onclick="showModal('modal-C-F')"
+                  >
+                    <span>약관보기</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="chk-cont">
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box" />
+                    <span>동의체크박스</span>
+                  </label>
+                  <p>고유식별정보 처리 동의</p>
+                  <button
+                    type="button"
+                    class="btn arr-right"
+                    onclick="showModal('modal-C-G')"
+                  >
+                    <span>약관보기</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="chk-cont">
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box" />
+                    <span>동의체크박스</span>
+                  </label>
+                  <p>통신사 이용약관 동의</p>
+                  <button
+                    type="button"
+                    class="btn arr-right"
+                    onclick="showModal('modal-C-H')"
+                  >
+                    <span>약관보기</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="chk-cont">
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box" />
+                    <span>동의체크박스</span>
+                  </label>
+                  <p>서비스 이용약관 동의</p>
+                  <button
+                    type="button"
+                    class="btn arr-right"
+                    onclick="showModal('modal-C-I')"
+                  >
+                    <span>약관보기</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="chk-cont">
+                  <label class="ipt-label">
+                    <input type="checkbox" class="check-box" />
+                    <span>동의체크박스</span>
+                  </label>
+                  <p>개인정보 제3자 제공 동의(알뜰폰)</p>
+                  <button
+                    type="button"
+                    class="btn arr-right"
+                    onclick="showModal('modal-C-J')"
+                  >
+                    <span>약관보기</span>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!--E new : 2025-03-11-->
+
+          <div class="btn-area">
+            <button class="btm-btn app hide disabled" id="getPinNum">
+              인증요청
+            </button>
+          </div>
+
+          <div class="ipt-form pinnum-box hide on-focus">
+            <label class="ipt-label"
+              >인증번호 6자리 입력
+              <span class="pin-timer">(2분 32초)</span></label
+            >
+            <div class="ipt-form-box">
+              <input type="number" class="ipt-text" pattern="\d*" id="pinNum" />
+            </div>
+            <div class="ipt-desc hide">
+              <span>올바르지 않은 인증번호입니다. 다시 시도해 주세요.</span>
+            </div>
+            <div class="pin-info">
+              <p>인증 문자를 받지 못하셨나요?</p>
+              <button type="button" class="pin-retry">재요청</button>
+            </div>
+          </div>
+
+          <div class="btn-area">
+            <button class="btm-btn app hide disabled" id="pinVerify">
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mask"></div>
+
+    <!-- bottom sheet -->
+    <div class="btm-sheet-area" id="btm-sheet-a">
+      <div class="btm-sheet-top">
+        <h2>통신사 선택</h2>
+        <button type="button" class="btn close-btn">
+          <span>닫기</span>
+        </button>
+      </div>
+      <div class="btm-sheet-list">
+        <ul>
+          <li>
+            <button type="button" class="btm-sheet-btn">SKT</button>
+          </li>
+          <li>
+            <button type="button" class="btm-sheet-btn">KT</button>
+          </li>
+          <li>
+            <button type="button" class="btm-sheet-btn">LG U+</button>
+          </li>
+          <li>
+            <button type="button" class="btm-sheet-btn">알뜰폰</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 본인인증 실패 -->
+    <div class="alert-modal" id="privacyFail">
+      <div class="alert-msg">
+        <p>
+          휴대폰 인증 요청에 실패했습니다.<br />
+          입력하신 정보를 다시 한 번 확인해 주세요.
+        </p>
+      </div>
+      <div class="alert-btn">
+        <button
+          href="#"
+          class="btm-btn app"
+          onclick="hideAlert(); return false;"
+        >
+          확인
+        </button>
+      </div>
+    </div>
+    <!-- S new : 2025-03-12 -->
+    <!--개인정보 수집/이용 동의-->
+    <div class="modal full " id="modal-C-F" style="display: block;">
+      <div class="modal-top">
+          <h2>개인정보 수집/이용 동의</h2>
+          <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+              <span>닫기</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div data-include-path="../treams/treamsOin01.html"></div>
+      </div>
+    </div>
+
+    <!--고유식별정보 처리 동의-->
+    <div class="modal full" id="modal-C-G">
+      <div class="modal-top">
+          <h2>고유식별정보 처리 동의</h2>
+          <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+              <span>닫기</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div data-include-path="../treams/treamsOin02.html"></div>
+      </div>
+    </div>
+
+    <!--통신사 이용약관 동의-->
+    <div class="modal full " id="modal-C-H">
+      <div class="modal-top">
+          <h2>통신사 이용약관 동의</h2>
+          <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+              <span>닫기</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div data-include-path="../treams/treamsOin03.html"></div>
+      </div>
+    </div>
+
+    <!--서비스 이용약관 동의-->
+    <div class="modal full " id="modal-C-I">
+      <div class="modal-top">
+          <h2>서비스 이용약관 동의</h2>
+          <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+              <span>닫기</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div data-include-path="../treams/treamsOin04.html"></div>
+      </div>
+    </div>
+
+    <!--개인정보 제3자 제공 동의(알뜰폰)-->
+    <div class="modal full " id="modal-C-J">
+      <div class="modal-top">
+          <h2>개인정보 제3자 제공 동의(알뜰폰)</h2>
+          <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+              <span>닫기</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div data-include-path="../treams/treamsOin05.html"></div>
+      </div>
+    </div>
+    <script>
+      window.addEventListener('load', function() {
+          var allElements = document.getElementsByTagName('*');
+          Array.prototype.forEach.call(allElements, function(el) {
+              var includePath = el.dataset.includePath;
+              if (includePath) {
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function () {
+                      if (this.readyState == 4 && this.status == 200) {
+                          el.outerHTML = this.responseText;
+                      }
+                  };
+                  xhttp.open('GET', includePath, true);
+                  xhttp.send();
+              }
+          });
+      });
+  </script>
+    <!-- S new : 2025-03-13 -->
+  </body>
+</html>

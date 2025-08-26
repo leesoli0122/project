@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+
+    <!-- LottieFiles 웹 플레이어 -->
+    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="sub-top">
+            <h2>&nbsp;</h2>
+            <button type="button" onclick="location.href='exChange.html'" class="btn back-btn">
+                <span>뒤로가기</span>
+            </button>
+        </div>
+        <div class="content sub">
+            <!--NEW : pay-confirm 추가-->
+            <div class="sub-desc exc-confirm pay-confirm">
+                <p>
+                    <b>현대홈쇼핑</b> 에서
+                    <span class="token">예금토큰</span>
+                    <span class="amount">20,000원</span>
+                    <span id="textSttus">결제가 완료되었습니다</span>
+                    <span class="token">기존 화면으로 돌아가 주세요</span>
+                </p>
+            </div>
+            <div class="result-area">
+                <div class="process">
+                    <div class="ok"></div>
+                </div>
+                <div class="exc-result">
+                    <div class="exc-result-list">
+                        <ul>
+                            <li class="exc-type">
+                                <span>거래 구분</span>
+                                <b>결제</b>
+                            </li>
+                            <li class="exc-type">
+                                <span>이용 토큰</span>
+                                <b>예금토큰 | 농협</b>
+                            </li>
+                            <li class="exc-type">
+                                <span>결제번호</span>
+                                <b>1234567</b>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>적용혜택</h3>
+                    <div class="exc-result-list">
+                        <ul>
+                            <li class="exc-type">
+                                <span>한국사랑바우처 5,000원 사용</span>
+                            </li>
+                            <li class="sm exc-type">
+                                <span>예금토큰 적립 예정</span>
+                                <b>+5,000원</b>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="trans-info">이용 내역 반영까지 최대 5분이 소요될 수 있습니다.</p>
+                </div>
+            </div>
+       
+          
+        </div>
+        <div class="btm-btn-area">
+            <button type="button" class="btm-btn app">확인</a>
+        </div>
+    </div>
+</body>
+</html>
+

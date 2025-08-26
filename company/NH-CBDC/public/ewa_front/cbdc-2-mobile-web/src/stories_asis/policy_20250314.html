@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+        let allChk = false;
+        
+        $(window).ready(function(){
+            console.log( $("#chkAll").is(":checked") );
+            $(".all label").click(function(){
+                //console.log(  );
+                if( $("#chkAll").is(":checked") ){
+                    $("#nexnBtn").removeClass("disabled");
+                }else{
+                    $("#nexnBtn").addClass("disabled");
+                }
+            });
+
+            $(".back-btn").click(function(){
+                showAlert('pageBack');
+                return false;
+            });
+
+            $("#reset").click(function(){
+                location.href="start.html";
+            });
+        });
+
+    </script>
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="sub-top">
+            <button type="button" class="btn back-btn">
+                <span>뒤로가기</span>
+            </button>
+        </div>
+        <div class="content sub">
+            <div class="sub-desc">
+                <h3><b>이용 약관</b>에 동의해주세요.</h3>
+            </div>
+            <div class="policy-list">
+                <ul class="type2">
+                    <li class="all">
+                        <label class="ipt-label">
+                            <input type="checkbox" class="check-box" id="chkAll">
+                            <span>동의체크박스</span>
+                        </label>
+                        <p>약관 전체 동의하기</p>
+                    </li>
+                    <li>
+                        <div class="chk-cont">
+                            <label class="ipt-label">
+                                <input type="checkbox" class="check-box">
+                                <span>동의체크박스</span>
+                            </label>
+                            <p><span class="req">(필수)</span>예금 토큰 전자지갑 서비스</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <label class="ipt-label">
+                                    <input type="checkbox" class="check-box">
+                                    <span>동의체크박스</span>
+                                </label>
+                                <p>예금 토큰 거래 기본약관</p>
+                                <button type="button" class="btn arr-right" onclick="showModal('modal-C-A')">
+                                    <span>약관보기</span>
+                                </button>
+                            </li>
+                            <li>
+                                <label class="ipt-label">
+                                    <input type="checkbox" class="check-box">
+                                    <span>동의체크박스</span>
+                                </label>
+                                <p>예금 토큰 상품설명서</p>
+                                <button type="button" class="btn arr-right" onclick="showModal('modal-C-B')">
+                                    <span>약관보기</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="chk-cont">
+                            <label class="ipt-label">
+                                <input type="checkbox" class="check-box">
+                                <span>동의체크박스</span>
+                            </label>
+                            <p><span class="req">(필수)</span>정보제공 동의</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <label class="ipt-label">
+                                    <input type="checkbox" class="check-box">
+                                    <span>동의체크박스</span>
+                                </label>
+                                <p>수집이용동의서(전자지갑서비스용)</p>
+                                <button type="button" class="btn arr-right" onclick="showModal('modal-C-C')">
+                                    <span>약관보기</span>
+                                </button>
+                            </li>
+                            <li>
+                                <label class="ipt-label">
+                                    <input type="checkbox" class="check-box">
+                                    <span>동의체크박스</span>
+                                </label>
+                                <p>수집이용동의서(출금이체서비스용)</p>
+                                <button type="button" class="btn arr-right" onclick="showModal('modal-C-D')">
+                                    <span>약관보기</span>
+                                </button>
+                            </li>
+                            <li>
+                                <label class="ipt-label">
+                                    <input type="checkbox" class="check-box">
+                                    <span>동의체크박스</span>
+                                </label>
+                                <p>개인(신용)정보 수집·이용 및 제3자 제공 동의서 [개인 전자지갑 개설 및 예금 토큰 거래용]</p>
+                                <button type="button" class="btn arr-right" onclick="showModal('modal-C-E')">
+                                    <span>약관보기</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <div class="chk-cont">
+                            <label class="ipt-label">
+                                <input type="checkbox" class="check-box">
+                                <span>동의체크박스</span>
+                            </label>
+                            <p><span class="req">(필수)</span>혁신금융서비스 고지사항</p>
+                            <button type="button" class="btn arr-right" onclick="showModal('modal-C-F')">
+                                <span>약관보기</span>
+                            </button>
+                        </div>
+                    </li>
+                    <!--
+                    <li>
+                        <div class="chk-cont">
+                            <label class="ipt-label">
+                                <input type="checkbox" class="check-box">
+                                <span>동의체크박스</span>
+                            </label>
+                            <p><span>(선택)</span> 마케팅 정보 수신 동의</p>
+                        </div>
+                    </li>
+                    <li class="sub-policy">
+                        <div class="sub-policy-box">
+                            <label class="ipt-label">
+                                <input type="checkbox" class="check-box">
+                                <span>동의체크박스</span>
+                            </label>
+                            <p>앱 push 알림</p>
+                        </div>
+                        <div class="sub-policy-box">
+                            <label class="ipt-label">
+                                <input type="checkbox" class="check-box">
+                                <span>동의체크박스</span>
+                            </label>
+                            <p>SMS</p>
+                        </div>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="btm-btn-area">
+            <button type="button" onclick="location.href='keypadSet.html'" class="btm-btn app disabled" id="nexnBtn">다음</a>
+        </div>
+    </div>
+
+    <div class="mask"></div>
+
+
+
+
+    <div class="alert-modal" id="pageBack">
+        <div class="alert-msg">
+            <h4>처음으로 돌아가시겠습니까?</h4>
+            <p>지금 페이지를 벗어나시면 인증정보가 초기화됩니다.</p>
+        </div>
+        <div class="alert-btn confirm">
+            <button type="button" class="btm-btn" onclick="hideAlert(); return false;">취소</a>
+            <button type="button" class="btm-btn app" id="reset">돌아가기</a>
+        </div>
+    </div>
+
+
+     <!--예금토큰 상품설명서-->
+     <div class="modal full" id="modal-C-A">
+        <div class="modal-top">
+            <h2>약관동의</h2>
+            <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div data-include-path="../treams/treams01.html"></div>
+        </div>
+    </div>
+
+
+     <!--예금토큰 상품설명서-->
+     <div class="modal full " id="modal-C-B">
+        <div class="modal-top">
+            <h2>약관동의</h2>
+            <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div data-include-path="../treams/treams02.html"></div>
+        </div>
+    </div>
+
+     <!--수집이용동의서(전자지갑서비스용)-->
+     <div class="modal full" id="modal-C-C">
+        <div class="modal-top">
+            <h2>약관동의</h2>
+            <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            수집이용동의서(전자지갑서비스용) 약관동의 준비중
+        </div>
+    </div>
+
+    <!--수집이용동의서(출금이체서비스용)-->
+    <div class="modal full" id="modal-C-D">
+        <div class="modal-top">
+            <h2>약관동의</h2>
+            <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            수집이용동의서(출금이체서비스용) 약관동의 준비중
+        </div>
+    </div>
+
+        <!--개인(신용)정보 수집·이용 및 제3자 제공 동의서-->
+        <div class="modal full" id="modal-C-E">
+            <div class="modal-top">
+                <h2>약관동의</h2>
+                <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+                    <span>닫기</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div data-include-path="../treams/treams05.html"></div>
+            </div>
+        </div>
+
+        <!--혁신금융서비스 고지사항-->
+        <div class="modal full" id="modal-C-F">
+            <div class="modal-top">
+                <h2>약관동의</h2>
+                <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+                    <span>닫기</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div data-include-path="../treams/treams06.html"></div>
+            </div>
+        </div>
+
+
+    <script>
+        window.addEventListener('load', function() {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+
+
+</body>
+</html>

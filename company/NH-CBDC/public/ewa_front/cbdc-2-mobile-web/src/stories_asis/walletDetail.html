@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+      $(window).ready(function () {
+        $('.help-btn').click(function () {
+          $tooltip = $(this).prev('.tooltip');
+          if ($tooltip.hasClass('on')) {
+            $tooltip.removeClass('on');
+          } else {
+            $tooltip.addClass('on');
+          }
+        });
+
+        $('.tooltip-close').click(function () {
+          $tooltip = $(this).closest('.tooltip');
+          $tooltip.removeClass('on');
+        });
+      });
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap">
+      <div class="content sub">
+        <div class="sub-top">
+          <button type="button" onclick="location.href='main.html'" class="btn back-btn">
+            <span>뒤로가기</span>
+          </button>
+          <h2>내 지갑 관리</h2>
+          <button type="button" class="btn wallet-qr-btn">
+            <span>QR코드보기</span>
+          </button>
+          <button type="button" class="btn top-more-btn">
+            <span>더보기 버튼</span>
+          </button>
+          <div class="more-menu">
+            <ul>
+              <li>
+                <button type="button" class="more-menu-btn">
+                  <span>지갑삭제</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="asset-detail">
+          <div class="asset-detail-inner">
+            <!-- <div class="wallet-sttus">
+                        <span class="spd">거래제한</span>
+                        <span class="desc">결제/송금 불가</span>
+                    </div> -->
+            <button type="button" class="wallet-account NHB dark">신한 123-456-789-0</button>
+            <h3 class="asset-title">총 보유 토큰</h3>
+            <p class="asset-balance"><b>584,710</b> 원</p>
+            <button type="button" class="link-btn bl" onclick="location.href='historyAll.html'">
+              <b>전체 이용 내역 보기</b>
+            </button>
+          </div>
+          <div class="wallet-fnc-btn">
+            <button type="button" class="wallet-btn app btm-sheet" id="btm-sheet-btn-a">결제</button>
+            <button type="button" class="wallet-btn">송금</button>
+          </div>
+        </div>
+        <div class="wallet-asset-list-top">
+          <h3 class="sub-top-title">
+            내 토큰 목록
+            <div class="help-btn-area">
+              <div class="tooltip">
+                <div class="tooltip-inner">
+                  <button type="button" class="btn tooltip-close">
+                    <span>도움말닫기</span>
+                  </button>
+                  <div class="tooltip-cont">
+                    <p class="tooltip-cont">가지고 있는 모든 토큰을 확인할 수 있어요.</p>
+                    <p class="tooltip-cont sub">· 예금토큰 : 예금 기반의 토큰</p>
+                    <p class="tooltip-cont sub">· 이머니토큰 : 예금 토큰 기반의 토큰</p>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn help-btn">
+                <span>도움말</span>
+              </button>
+            </div>
+          </h3>
+        </div>
+        <div class="wallet-asset-list sub">
+          <ul>
+            <li>
+              <div class="wallet-asset-box my">
+                <button type="button" onclick="location.href='tokenDetail.html'">
+                  <div class="wallet-asset-info">
+                    <span class="type">예금 토큰</span>
+                    <span class="wallet-account NHB">신한</span>
+                  </div>
+                  <div class="wallet-asset-balance">
+                    <p><b>100,000</b> 원</p>
+                  </div>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="wallet-asset-box my">
+                <button type="button">
+                  <div class="wallet-asset-info">
+                    <span class="type">이머니 토큰</span>
+                    <span class="wallet-account NHB">신한</span>
+                  </div>
+                  <div class="wallet-asset-balance">
+                    <p><b>100,000</b> 원</p>
+                  </div>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="wallet-asset-box">
+                <button type="button">
+                  <div class="wallet-asset-info">
+                    <span class="type">이머니 토큰</span>
+                    <span class="wallet-account KBB">국민</span>
+                  </div>
+                  <div class="wallet-asset-balance">
+                    <p><b>100,000</b> 원</p>
+                  </div>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="wallet-asset-box">
+                <button type="button">
+                  <div class="wallet-asset-info">
+                    <span class="type">이머니 토큰</span>
+                    <span class="wallet-account NHB">농협</span>
+                  </div>
+                  <div class="wallet-asset-balance">
+                    <p><b>100,000</b> 원</p>
+                  </div>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mask"></div>
+
+    <div class="btm-sheet-area" id="btm-sheet-a">
+      <div class="btm-sheet-top">
+        <h2>결제방법 선택</h2>
+        <button type="button" class="btn close-btn">
+          <span>닫기</span>
+        </button>
+      </div>
+      <div class="btm-sheet-list">
+        <div class="payment">
+          <div class="payment-box">
+            <button type="button" class="payment-btn qr-scan">
+              <span>QR 스캔하기</span>
+            </button>
+            <button type="button" class="payment-btn qr-show">
+              <span>QR 보여주기</span>
+            </button>
+            <button type="button" class="payment-btn nfc-auto">
+              <span>NFC 자동결제</span>
+            </button>
+            <button type="button" class="payment-btn nfc-manual">
+              <span>NFC 수동결제</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

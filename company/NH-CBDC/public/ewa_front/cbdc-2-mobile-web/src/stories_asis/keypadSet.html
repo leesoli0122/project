@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <!-- LottieFiles 웹 플레이어 -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script>
+      let keyIptTime = 0;
+      let iptKeyVal = [];
+      let verKeyVal = [];
+      let failCnt = 0;
+      $(window).ready(function () {
+        let pinNum = 1;
+        $('.num-pad').click(function () {
+          console.log($(this).html());
+          $('#num' + pinNum).val($(this).html());
+          $('#num' + pinNum)
+            .closest('.pin-box')
+            .addClass('on');
+          $('#num' + pinNum)
+            .NHBlings('span')
+            .html($(this).html());
+          $('#num' + pinNum)
+            .NHBlings('span')
+            .addClass('on');
+          pinNum++;
+          if (pinNum == 7) {
+            pinNum = 1;
+            comNum();
+          }
+          return false;
+        });
+
+        $('.del-btn').click(function () {
+          if (pinNum > 1) {
+            delNum(pinNum - 1);
+            pinNum--;
+          }
+        });
+
+        $('.shuffle').click(function () {
+          keypadShuffle();
+        });
+
+        $('#keyPadReset').click(function () {
+          for (var i = 1; i < 7; i++) {
+            delNum(i);
+          }
+          keyIptTime = 0;
+          iptKeyVal = [];
+          verKeyVal = [];
+          failCnt = 0;
+          $('#keyPadInfo').removeClass('on-fail');
+          $('#keyPadInfo').html('생년월일, 휴대폰 번호 또는<br>동일하거나 연속된 숫자는 등록이 제한됩니다.');
+          hideAlert();
+          return false;
+        });
+      });
+
+      function keypadShuffle() {
+        let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let shuffleArr = shuffleArray(arr);
+        shuffleArr.forEach(function (data, index) {
+          $('.num-pad').eq(index).html(data);
+        });
+      }
+
+      function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+        return array;
+      }
+
+      function comNum() {
+        if (keyIptTime == 1) {
+          for (var i = 1; i < 7; i++) {
+            verKeyVal.push($('#num' + i).val());
+          }
+          console.log('verKeyVal', verKeyVal);
+          if (JSON.stringify(iptKeyVal) === JSON.stringify(verKeyVal)) {
+            toastMsg('간편 비밀번호 설정이 완료되었습니다.');
+            setTimeout(function () {
+              location.href = 'bioAuth.html';
+            }, 2000);
+          } else {
+            failCnt++;
+            if (failCnt < 5) {
+              fail(failCnt);
+              for (var i = 1; i < 7; i++) {
+                delNum(i);
+              }
+              keypadShuffle();
+            } else {
+              showAlert('retryFail');
+            }
+          }
+        } else {
+          for (var i = 1; i < 7; i++) {
+            iptKeyVal.push($('#num' + i).val());
+            delNum(i);
+          }
+          keypadShuffle();
+          keyIptTime++;
+          if (keyIptTime == 1) {
+            $('#keyPadInfo').html('동일한 비밀번호를 한번 더 입력해 주세요.');
+          }
+          console.log('iptKeyVal', iptKeyVal);
+        }
+      }
+
+      function delNum(num) {
+        $('#num' + num).val('');
+        $('#num' + num)
+          .closest('.pin-box')
+          .removeClass('on');
+        $('#num' + num)
+          .NHBlings('span')
+          .html('');
+        $('#num' + num)
+          .NHBlings('span')
+          .removeClass('on');
+      }
+
+      function fail(num) {
+        verKeyVal = [];
+        $('#keyPadInfo').addClass('on-fail');
+        $('#keyPadInfo').html('먼저 입력한 비밀번호와 다릅니다.<br>다시 확인해 주세요. (' + num + '/5)');
+      }
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="content sub">
+        <div class="sub-top">
+          <button type="button" onclick="location.href='policy.html'" class="btn back-btn">
+            <span>뒤로가기</span>
+          </button>
+        </div>
+        <div class="keypad-wrap">
+          <div class="keypad-top">
+            <h3>간편 비밀번호 설정</h3>
+            <p id="keyPadInfo">
+              생년월일, 휴대폰 번호 또는<br />
+              동일하거나 연속된 숫자는 등록이 제한됩니다.
+            </p>
+            <div class="keypad-pin">
+              <label class="pin-box">
+                <input type="hidden" id="num1" />
+                <span></span>
+              </label>
+              <label class="pin-box">
+                <input type="hidden" id="num2" />
+                <span></span>
+              </label>
+              <label class="pin-box">
+                <input type="hidden" id="num3" />
+                <span></span>
+              </label>
+              <label class="pin-box">
+                <input type="hidden" id="num4" />
+                <span></span>
+              </label>
+              <label class="pin-box">
+                <input type="hidden" id="num5" />
+                <span></span>
+              </label>
+              <label class="pin-box">
+                <input type="hidden" id="num6" />
+                <span></span>
+              </label>
+            </div>
+          </div>
+          <div class="keypad-list">
+            <div class="secure-info">
+              <!-- <p>보안키패드 작동 중</p> -->
+              <lottie-player
+                src="../img/lottie//keypad_ani.json"
+                background="transparent"
+                speed="1"
+                style="width: 220px; height: auto"
+                autoplay
+              ></lottie-player>
+            </div>
+            <div class="keypad-box">
+              <div class="keypad-num">
+                <ul>
+                  <li>
+                    <button type="button" class="num-pad">1</button>
+                  </li>
+                  <li>
+                    <button type="button" class="num-pad">2</button>
+                  </li>
+                  <li>
+                    <button type="button" class="num-pad">3</button>
+                  </li>
+                  <li>
+                    <button type="button" class="num-pad">4</button>
+                  </li>
+                  <li>
+                    <button type="button" class="num-pad">5</button>
+                  </li>
+                  <li>
+                    <button type="button" class="num-pad">6</button>
+                  </li>
+                  <li>
+                    <button type="button" class="num-pad">7</button>
+                  </li>
+                  <li>
+                    <button type="button" class="num-pad">8</button>
+                  </li>
+                  <li>
+                    <button type="button" class="num-pad">9</button>
+                  </li>
+                  <li>
+                    <button type="button" class="shuffle">재배열</button>
+                  </li>
+                  <li>
+                    <button type="button" class="num-pad">0</button>
+                  </li>
+                  <li>
+                    <button type="button" class="del-btn">삭제</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mask"></div>
+
+    <div class="alert-modal" id="retryFail">
+      <div class="alert-msg">다시 입력할 수 있는 횟수를 초과했습니다. 간편 비밀번호를 처음부터 설정해 주세요.</div>
+      <div class="alert-btn">
+        <button type="button" class="btm-btn app" id="keyPadReset">확인</button>
+      </div>
+    </div>
+  </body>
+</html>

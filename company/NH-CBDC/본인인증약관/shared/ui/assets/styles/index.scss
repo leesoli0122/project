@@ -1,0 +1,543 @@
+@import 'animate.css/animate.min.css';
+@import 'cbdc-react-toastify/dist/ReactToastify.css';
+@import './common.css';
+@import './init.scss';
+@import './style.scss';
+
+:root {
+  --pageSpeed: 250ms;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.transitions-group {
+  position: relative;
+  min-height: calc(var(--vh, 1vh) * 100 - env(safe-area-inset-top));
+  width: 100vw;
+  display: flex;
+}
+
+.right-enter {
+  transform: translate3d(100%, 0, 0);
+}
+
+.right-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--pageSpeed) ease-in-out;
+}
+
+.right-exit {
+  transform: translate3d(0, 0, 0);
+}
+
+.right-exit-active {
+  transform: translate3d(-100%, 0, 0);
+  transition: transform var(--pageSpeed) ease-in-out;
+  transition-delay: 30ms;
+}
+
+.left-enter {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.left-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--pageSpeed) ease-in-out;
+}
+
+.left-exit {
+  transform: translate3d(0, 0, 0);
+}
+
+.left-exit-active {
+  transform: translate3d(100%, 0, 0);
+  transition: transform var(--pageSpeed) ease-in-out;
+}
+
+.top-button {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 999999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: hotpink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.animate__zero {
+  --animate-duration: 0s;
+}
+
+.Toastify {
+  z-index: 9999;
+  position: relative;
+}
+
+.goto-top-btn {
+  display: block;
+  text-indent: -9999px;
+  margin-bottom: calc(env(safe-area-inset-top) / 3);
+}
+
+* {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+body {
+  overflow-x: clip;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-left);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.5s ease;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+.env-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+:not(.show-scrollbar)::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+  display: none;
+}
+
+input:focus {
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+
+.ipt-form .ipt-desc {
+  opacity: 1;
+}
+.text-input {
+}
+
+.btm-sheet {
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/ArrowDropDownFilled.svg');
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+  }
+}
+
+.start .content {
+  padding-top: 56px;
+  height: calc(100vh - env(safe-area-inset-top) - 152px);
+}
+
+.btm-sheet-btn {
+  position: relative;
+  line-height: 52px;
+  &.selected {
+    background-image: none !important;
+    &::after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 12px);
+      right: 37px;
+      bottom: 0;
+      background-image: url(../img/bottom_sheet_selected.svg);
+      width: 24px;
+      height: 24px;
+      z-index: 1;
+    }
+  }
+}
+
+.bank-btm-sheet-btn {
+  position: relative;
+  width: calc(25% - 10px);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+  padding-top: 60px;
+  &::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: #f8f8f8;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+.persnal-num-masking {
+  display: flex;
+  gap: 10px;
+}
+
+.persnal-num-masking span {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.sel-wallet {
+  min-height: auto;
+  flex: 1 1 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.sel-wallet.info {
+  min-height: auto;
+}
+
+.content.has-btm-btn {
+  min-height: auto;
+}
+
+.wallet-qr-box {
+  transform: none;
+  position: static;
+  margin: 0;
+  width: auto;
+  margin-bottom: 7vh;
+}
+
+.bank-logo {
+  & input {
+    padding-left: 33px;
+  }
+  &::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-color: #f8f8f8;
+    position: absolute;
+    bottom: 7px;
+    left: 0;
+    z-index: 10;
+    border-radius: 12px;
+  }
+}
+
+@keyframes pinIpt {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.header {
+  flex: 0 0 50px;
+}
+
+.content.main {
+  overflow: unset;
+}
+
+.wrap {
+  overflow: unset;
+  min-height: auto;
+}
+
+.wallet-user {
+  width: 0;
+  flex: 1 1 auto;
+}
+
+.start {
+  min-height: auto;
+}
+
+.intro {
+  margin-top: -env(safe-area-inset-top);
+  min-height: auto;
+  height: auto;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+[role='tooltip'].tooltip-base {
+  background-color: rgb(60, 86, 125);
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 20px;
+  white-space: pre-wrap;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-image: url(../img/close_tooltip.svg);
+    width: 16px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px auto;
+  }
+
+  & > .react-tooltip-arrow {
+    bottom: -10px !important;
+    transform: translateX(50%);
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.ios-status-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: env(safe-area-inset-top);
+  background-color: #fff;
+}
+
+.wallet-asset-list.sub {
+  flex: 1 1 auto;
+}
+
+iframe#webpack-dev-server-client-overlay {
+  display: none;
+}
+
+.board-list {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  width: 100dvw;
+  height: 100%;
+  min-height: 100dvh;
+
+  .inner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex: 1 1 auto;
+    width: 100dvw;
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.spinner {
+    width: 100%;
+    height: 100%;
+    position: static;
+    display: flex;
+    min-height: auto;
+    background: none;
+
+    .inner-container {
+      flex: 1 1 auto;
+      position: static;
+      width: 100%;
+      height: 100%;
+      background: none;
+    }
+  }
+}
+
+.env-bottom {
+  padding-bottom: calc(env(safe-area-inset-top) / 3);
+  box-sizing: content-box;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.has-btm-btn {
+  & .btm-btn,
+  & + * .btm-btn {
+    padding-bottom: calc(env(safe-area-inset-top) / 3);
+    box-sizing: content-box;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.reco-bank-btn.on {
+  display: inline-block;
+}
+
+.amount-preview.on {
+  display: block;
+}
+
+.modal.in-dialog {
+  display: block;
+}
+
+.shop-search-area .user-location span {
+  width: auto;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.shop-search-area .user-location p {
+  flex: 1 1 auto;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.board-list-tab {
+  display: flex;
+  flex-direction: row;
+}
+.tab-btn {
+  width: 100%;
+  line-height: 24px;
+  position: relative;
+  font-size: var(--font-size-16);
+  color: #202020;
+  padding: 10px 0px;
+  &.on {
+    font-weight: 600;
+    &::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      height: 3px;
+      background-color: var(--font-primary-color);
+    }
+  }
+}
+
+.sub-top {
+  .close-btn {
+    position: absolute;
+    right: 5px;
+  }
+}
+
+.qr-pay-show .qr-img-area .refresh-code button {
+  background: none;
+  padding: 0;
+}
+
+.qr-pay-show .qr-img-area {
+  flex-grow: unset;
+  flex-shrink: unset;
+}
+
+.timer.exp {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.modal {
+  position: inherit;
+  top: auto;
+  left: auto;
+  transform: none;
+  background-color: unset;
+  display: block;
+  width: auto;
+}
+
+.blocked-dialog-check-box {
+  label {
+    justify-content: flex-end;
+    font-size: 16px;
+    margin-top: 30px;
+    // align-items: flex-end;
+  }
+}
+
+#headlessui-portal-root {
+  z-index: 10;
+  position: relative;
+}
+
+/* https://stackoverflow.com/questions/32851413/input-field-ios-safari-bug-cant-type-in-any-text */
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
+}
+.btm-sheet-filter2 {
+  max-height: 70vh;
+  overflow: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 10px 10px 0px 10px;
+}
+.shop-addr2 {
+  display: inline-block;
+  max-width: calc(100% - 90px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: text-top;
+}

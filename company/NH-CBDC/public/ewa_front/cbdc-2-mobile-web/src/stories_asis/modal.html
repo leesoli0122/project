@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+    <style>
+        .pub-list { padding:20px 24px; }
+        .btn-col { padding-top:0; }
+        .whitespace-pre-line { white-space: pre-line; line-height: normal; }
+        .break-words { overflow-wrap: break-word; }
+    </style>
+
+
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="content component">
+            <div class="sub-desc">
+                <p>
+                    팝업
+                </p>
+            </div>
+            
+            <div class="pub-list">
+                <h4>Modal</h4>
+            </div>
+            <div class="sel-wallet component">
+                <div class="btn-col">
+                    <button type="button" class="app-btn" onclick="showModal('modal-B')">개인(신용)정보 수집·이용 및 제3자 제공 동의서</button>
+                    약관동의 부분
+                    <button type="button" class="app-btn" onclick="showModal('modal-C-A')">예금토큰거래기본약관(안)<br>(2025.02.14 변경)</button>
+                    <button type="button" class="app-btn" onclick="showModal('modal-C-B')">예금토큰 상품설명서</button>
+                    <button type="button" class="app-btn" onclick="showAlert('modal-A')">작은화면(Confirm)</button>
+                    <button type="button" class="app-btn" onclick="showAlert('modal-C')">작은화면(Confirm)<br>(2025.02.19 변경)</button>
+
+                    <button type="button" class="app-btn btm-sheet" id="btm-sheet-btn-a">하단(popup)</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mask"></div>
+
+    <!-- Modal - 작은화면 -->
+    <div class="alert-modal" id="modal-A">
+        <div class="alert-msg">
+            <h4>Modal Title</h4>
+            <p>Modal Content Modal Content Modal Content Modal Content Modal Content</p>
+        </div>
+        <div class="alert-btn confirm">
+            <button type="button" class="btm-btn" onclick="hideAlert(); return false;">취소</a>
+            <button type="button" class="btm-btn app" >확인</a>
+        </div>
+    </div>
+
+    <!-- Modal - 작은화면 -->
+    <div class="alert-modal" id="modal-C">
+        <div class="alert-msg">
+            <h4>현재 일부 거래가 제한된 상태입니다.</h4>
+            <p>
+                관련 문의 사항은 1:1 문의 또는
+                고객센터를 이용해 주세요.
+            </p>
+            <div class="sub-msg">
+                <h4>거래제한 사유</h4>
+                <p>
+                    거래제한
+                </p>
+            </div>
+            <div class="modal-ipt justify-content-start">
+                <label class="ipt-label">
+                    <input type="checkbox" class="check-box" checked>
+                    <span>동의체크박스</span>
+                </label>
+                <p>오늘은 다시 보지 않기</p>
+            </div>
+        </div>
+        <div class="alert-btn">
+            <button type="button" class="btm-btn app" onclick="hideAlert(); return false;">확인</a>
+        </div>
+    </div>
+    <!--개인(신용)정보 수집·이용 및 제3자 제공 동의서-->
+    <div class="modal full" id="modal-B">
+        <div class="modal-top">
+            <h2>약관동의</h2>
+            <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="policy-content">
+                <div>
+                    <h3><strong>개인(신용)정보 수집·이용 및 제3자 제공 동의서 (초안)</strong></h3>
+                    <div>
+                        <p>*본 동의서는 초안이며, 추후 관련기관과 협의하며 변동될 수 있습니다.</p>
+                        <p><em class="txt blue">[귀 행]</em>은 CBDC활용성테스트 예금 토큰 거래와 관련하여 아래와 같이 「개인정보 보호법」 제15조 제1항 제1호, 제17조 제1항 제1호, 제22조 제1항, 「신용정보의 이용 및 보호에 관한 법률」 제32조 제1항, 제33조에 따라 귀하의 동의를 얻고자 합니다.</p>
+                    </div>
+                    <div>
+                        <p><strong class="title">1. [필수] 수집·이용에 관한 사항</strong></p>
+                        <p><strong>수집·이용 목적</strong></p>
+                        <p>
+                            CBDC 활용성 테스트 참가 시 예금 토큰 거래 이용 관련 (금융)계약의 체결·유지·이행·관리<br>
+                            법령상 의무이행(실명확인, 특정금융거래보고 등)<br>
+                            금융사고 조사, 분쟁해결, 민원처리
+                        </p>
+                        <p><strong>수집·이용 항목</strong></p>
+                        <ul class="info-txt hypn">
+                            <li>본인확인을 위한 정보 : 성명, 생년월일, 성별, 내/외국인 정보, 휴대전화번호, 통신사, CI값</li>
+                            <li>고객확인정보(CDD/EDD) : 신원확인정보(이름, 전화번호, 집주소, 직장주소, 직업및업종), 거래목적 및 자금출처</li>
+                            <li>거래매체정보 : 간편비밀번호, IP/MAC주소, 이용단말기정보, 쿠키, 접속일시, 서비스이용기록</li>
+                            <li>연계계좌정보 : 연계계좌번호, 통합고객번호, 계좌비밀번호, 출금이체 동의이력</li>
+                            <li>거래정보 : 거래시마다 생성되는 송신인/수취인 전자지갑주소, 간편지갑주소, 거래일시, 거래금액, 수취인명</li>
+                        </ul>
+                        <p><strong>보유·이용 기간</strong></p>
+                        <p>
+                            <em>테스트 기간 종료 또는 이용자가 동의 철회(전자지갑삭제) 시점까지 보유
+                            단, 법령상 의무이행을 위해 (금융)거래 관련 정보는 [귀 행] 내 별도 저장공간에 5년간 보관
+                            </em>
+                        </p>
+                        <p><strong>동의를 거부할 권리 및 거부할 경우의 불이익</strong></p>
+                        <p>귀하는 개인(신용)정보의 수집·이용에 대해 거부하실 수 있습니다.<br>
+                            다만, 수집·이용에 관한 동의는 CBDC 활용성 테스트의 예금 토큰 거래 이용을 위한 필수적 사항이므로 동의를 거부하실 경우 관련 테스트 참가에 제한이 있을 수 있습니다.
+                        </p>
+                        <!--<div class="check">
+                            <span class="ipt-label">
+                                <input id="test" type="checkbox" class="check-box">
+                                <span>동의체크박스</span>
+                            </span>
+                            <label for="test">개인정보를 수집·이용하는데 동의하시겠습니까?</label>
+                        </div>-->
+                    </div>
+                </div>
+            </div><!--//policy-content-->
+        </div>
+        <!--<div class="modal-footer">
+            <button type="button" class="btm-btn app" id="reset">확인</a>
+        </div>-->
+    </div>
+
+
+     <!--예금토큰 상품설명서-->
+     <div class="modal full" id="modal-C-A">
+        <div class="modal-top">
+            <h2>약관동의</h2>
+            <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div data-include-path="../treams/treams01.html"></div>
+        </div>
+    </div>
+
+
+     <!--예금토큰 상품설명서-->
+     <div class="modal full" id="modal-C-B">
+        <div class="modal-top">
+            <h2>약관동의</h2>
+            <button type="button" class="btn close-btn" onclick="hideModal(); return false;">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div data-include-path="../treams/treams02.html"></div>
+        </div>
+    </div>
+
+
+
+    <!-- 하단팝업 -->
+    <div class="btm-sheet-area" id="btm-sheet-a">
+        <div class="btm-sheet-top">
+            <h2>title</h2>
+        </div>
+        <div class="btm-sheet-list">
+            
+        </div>
+        <div class="btm-btn-area">
+            <button type="button" class="btm-btn app" onclick="closeBtmSheet()">확인</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.addEventListener('load', function() {
+        var allElements = document.getElementsByTagName('*');
+        Array.prototype.forEach.call(allElements, function(el) {
+            var includePath = el.dataset.includePath;
+            if (includePath) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        el.outerHTML = this.responseText;
+                    }
+                };
+                xhttp.open('GET', includePath, true);
+                xhttp.send();
+            }
+        });
+    });
+</script>
+ 
+</html>

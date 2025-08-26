@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+      function fontLarge() {
+        if ($('.toggle-btn').hasClass('on')) {
+          $('#body').removeClass('fs-large');
+        } else {
+          $('#body').addClass('fs-large');
+        }
+      }
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="content sub">
+        <div class="sub-top">
+          <h2>큰폰트 설정</h2>
+          <button type="button" onclick="location.href='setting.html'" class="btn back-btn">
+            <span>뒤로가기</span>
+          </button>
+        </div>
+
+        <div class="toggle-area">
+          <div class="toggle-box">
+            <p class="toggle-label">큰폰트 사용</p>
+            <button type="button" class="toggle-btn" onclick="fontLarge()">
+              <span class="toggle">Toggle</span>
+            </button>
+          </div>
+          <p class="toggle-info">지갑조회, 이체화면 등의 글자를 크게 볼 수 있습니다.</p>
+        </div>
+
+        <div class="font-example">
+          <img src="../shared/ui/assets/img/font_size_sample.png" class="font-size-sample" />
+          <div class="font-example-inner">
+            <div class="fs-normal">가</div>
+            <div class="fs-step">
+              <span>point</span>
+              <span>point</span>
+              <span>point</span>
+            </div>
+            <div class="fs-large">가</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

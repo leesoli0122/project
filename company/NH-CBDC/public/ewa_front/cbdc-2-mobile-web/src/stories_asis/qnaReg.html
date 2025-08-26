@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+        let categoryChk = false;
+        let titleChk = false;
+        let contentChk = false;
+
+        $(window).ready(function(){
+            $("#title").keyup(function(){
+                if( $(this).val().length > 19 ){
+                    $(this).val( $(this).val().substr(0,19) );
+                    toastMsg("제목은 20자 이하로 작성 할 수 있습니다.");
+                }
+                if( $(this).val().length > 4 ){
+                    titleChk = true;
+                    $(this).closest(".ipt-form").removeClass("on-error");
+                    $(this).closest(".ipt-form").addClass("on-data");
+                }else{
+                    titleChk = false;
+                    if( $(this).val() ){
+                        $(this).closest(".ipt-form").addClass("on-error");
+                    }else{
+                        $(this).closest(".ipt-form").removeClass("on-error");
+                    }
+                }
+                qnaCheck();
+            });
+
+            $("#qnaContent").keyup(function(){
+
+                if( $(this).val().length < 501 ){
+                    $("#txtCnt").html( $(this).val().length+"/500" );
+                }
+
+                if( $(this).val().length > 500 ){
+                    $(this).val( $(this).val().substr(0,500) );
+                    toastMsg("질문은 500자 이하로 작성 할 수 있습니다.");
+                }
+
+                if( $(this).val().length > 0 ){
+                    contentChk = true;
+                    $(this).closest(".ipt-form").addClass("on-data");
+                }else{
+                    contentChk = false;
+                }
+                qnaCheck();
+            });
+
+            $("#qnaContent").focusout(function(){
+                if( $(this).val().length > 1 ){
+                    $(this).closest(".ipt-form").addClass("on-data");
+                }
+                qnaCheck();
+            });
+
+            $(".btm-sheet-btn").click(function(){
+                $(".btm-sheet-btn").removeClass("selected");
+                $(this).addClass("selected");
+                closeBtmSheet();
+                selectedCategory($(this));
+            });
+        });
+
+        function selectedCategory($cate){
+            $("#category").val($cate.text());
+            $(".category").addClass("on-data");
+            $(".category").removeClass("on-error");
+            $("#title").focus();
+            categoryChk = true;
+            qnaCheck();
+        }
+
+        function qnaCheck(){
+            if( contentChk && titleChk && categoryChk ){
+                $("#qnaReg").removeClass("disabled");
+            }else{
+                $("#qnaReg").addClass("disabled");
+            }
+            
+        }
+    </script>
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="sub-top">
+            <h2>&nbsp;</h2>
+            <button type="button" onclick="location.href='qnaList.html'" class="btn back-btn">
+                <span>뒤로가기</span>
+            </button>
+        </div>
+        <div class="content sub">
+            <div class="sub-desc">
+                <p>
+                    무엇을 도와드릴까요?
+                </p>
+            </div>
+            <div class="ipt-form-area">
+                <div class="ipt-form category btm-sheet" id="btm-sheet-btn-a">
+                    <label class="ipt-label">카테고리 선택</label>
+                    <div class="ipt-form-box">
+                        <input type="text" class="ipt-text" id="category" value="" readonly>
+                    </div>
+                    <div class="ipt-desc">
+                        <span>카테고리를 선택해주세요.</span>
+                    </div>
+                </div>
+                <div class="ipt-form">
+                    <label class="ipt-label">문의 제목을 입력해주세요.</label>
+                    <div class="ipt-form-box">
+                        <input type="text" class="ipt-text" id="title" value="">
+                        <button type="button" class="btn ipt_reset"><span>전체삭제</span></button>
+                    </div>
+                    <div class="ipt-desc">
+                        <span>제목은 5글자 이상 작성해주세요.</span>
+                    </div>
+                </div>
+                <div class="ipt-form text-area">
+                    <label class="ipt-label">문의 내용을 입력해주세요.</label>
+                    <div class="ipt-form-box">
+                        <textarea class="ipt-text" id="qnaContent"></textarea>
+                    </div>
+                    <div class="ipt-desc text-cnt">
+                        <span id="txtCnt">0/500</span>
+                    </div>
+                </div>
+                <dl class="info-list">
+                    <dt>1:1문의 안내</dt>
+                    <dd>담당자 확인 즉시 답변해 드립니다.</dd>
+                    <dd>등록하신 문의의 답변이 완료된 경우 새로운 문의 작성하기로 추가 문의 부탁드립니다.</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="btm-btn-area">
+            <button type="button" class="btm-btn app disabled" id="qnaReg">등록하기</a>
+        </div>
+    </div>
+
+    <div class="mask"></div>
+
+    <!-- bottom sheet -->
+    <div class="btm-sheet-area" id="btm-sheet-a">
+        <div class="btm-sheet-top">
+            <h2>카테고리 선택</h2>
+            <button type="button" class="btn close-btn">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="btm-sheet-list">
+            <ul>
+                <li>
+                    <button type="button" class="btm-sheet-btn">가입/변경/탈퇴</button>
+                </li>
+                <li>
+                    <button type="button" class="btm-sheet-btn">서비스 이용</button>
+                </li>
+                <li>
+                    <button type="button" class="btm-sheet-btn">지갑/토큰</button>
+                </li>
+                <li>
+                    <button type="button" class="btm-sheet-btn">결제/송금/충전</button>
+                </li>
+                <li>
+                    <button type="button" class="btm-sheet-btn">환불</button>
+                </li>
+                <li>
+                    <button type="button" class="btm-sheet-btn">전환</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+

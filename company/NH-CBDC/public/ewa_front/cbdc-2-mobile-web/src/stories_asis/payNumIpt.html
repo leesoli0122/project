@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap">
+      <div class="pay-num-ipt">
+        <div class="pay-num-top">
+            <button type="button" class="btn close-btn" onclick="history.back(-1)">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="pay-num-tit">
+            <h2>사용처 번호를<br/>직접 입력해 주세요.</h2>
+        </div>
+        <div class="kit-sample-img">
+            <img src="../shared/ui/assets/img/qr_kit_sample.png">
+        </div>
+        <div class="ipt-form-area no-flex">
+          <div class="ipt-form">
+              <label class="ipt-label">번호를 입력해 주세요.</label>
+              <div class="ipt-form-box">
+                  <input type="text" class="ipt-text" pattern="\d*">
+                  <button type="button" class="btn ipt_reset"><span>전체삭제</span></button>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="btm-btn-area">
+        <button type="button" class="btm-btn app disabled" id="charge" onclick="location.href='exChangeConfirm.html'">확인</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script></script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="sub-top">
+        <h2>이용안내</h2>
+        <button type="button" onclick="location.href='payQrShow.html'" class="btn close-btn">
+          <span>닫기</span>
+        </button>
+      </div>
+      <div class="content sub">
+        <!-- 탭 메뉴 필요시 추가 -->
+        <div class="board-list-tab">
+          <ul>
+            <li class="on">
+              <button type="button" onclick="location.href='payGuideQrScan.html'" class="tab-btn">QR/NFC 스캔</button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='payGuideQrView.html'" class="tab-btn">QR 보여주기</button>
+            </li>
+          </ul>
+        </div>
+        <div class="guide-cont">
+          <div class="guide-inner">
+            <h3>1. 매장의 QR 또는 NFC 스캔</h3>
+            <div class="gd-img">
+              <img src="../shared/ui/assets/img/guide_qr_scan_01.png" />
+            </div>
+            <h3>2. 결제할 금액을 입력 또는 결제 내용 확인</h3>
+            <p>
+              결제는 예금 토큰으로만 가능합니다.<br />
+              결제 금액을 입력하셨거나, 결제 금액이 이미 입력된 상태라면 결제 내용을 확인하고 결제를 진행해 주세요.
+            </p>
+            <div class="gd-img">
+              <img src="../shared/ui/assets/img/guide_qr_scan_02.png" />
+            </div>
+            <p>결제 내용을 확인하면서 사용할 수 있는 혜택을 적용할 수 있어요.</p>
+            <div class="gd-img">
+              <img src="../shared/ui/assets/img/guide_qr_scan_03.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

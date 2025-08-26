@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script></script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="content sub">
+        <div class="sub-top">
+          <h2>자주 묻는 질문</h2>
+          <button type="button" onclick="location.href='setting.html'" class="btn back-btn">
+            <span>뒤로가기</span>
+          </button>
+        </div>
+        <div class="filter">
+          <button type="button" class="filter-btn on">
+            <span>전체</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>가입/변경/탈퇴</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>서비스 이용</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>지갑/토큰</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>결제/송금/충전</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>환불</span>
+          </button>
+          <button type="button" class="filter-btn">
+            <span>전환</span>
+          </button>
+        </div>
+        <!-- <div class="empty">
+                <p>등록된 FAQ가 없습니다.</p>
+            </div> -->
+        <div class="board-list">
+          <ul>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>서비스 이용</span>
+                <p>사용할 수 있는 곳을 확인하고 싶어요.</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>지갑</span>
+                <p>지갑은 무엇인가요?</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>가입/변경/탈퇴</span>
+                <p>인증문자가 오지 않아요. 어떻게 하나요?</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>결제/송금/충전</span>
+                <p>자산은 어떻게 등록하나요? 등록 후에 삭제할 수 있나요?</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>환불</span>
+                <p>
+                  FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대
+                  2줄까지 노출
+                </p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>전환</span>
+                <p>
+                  FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대
+                  2줄까지 노출
+                </p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>서비스 이용</span>
+                <p>
+                  FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대
+                  2줄까지 노출
+                </p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>서비스 이용</span>
+                <p>사용할 수 있는 곳을 확인하고 싶어요.</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>지갑</span>
+                <p>지갑은 무엇인가요?</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>가입/변경/탈퇴</span>
+                <p>인증문자가 오지 않아요. 어떻게 하나요?</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>결제/송금/충전</span>
+                <p>자산은 어떻게 등록하나요? 등록 후에 삭제할 수 있나요?</p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>환불</span>
+                <p>
+                  FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대
+                  2줄까지 노출
+                </p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>전환</span>
+                <p>
+                  FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대
+                  2줄까지 노출
+                </p>
+              </button>
+            </li>
+            <li>
+              <button type="button" onclick="location.href='faqView.html'">
+                <span>서비스 이용</span>
+                <p>
+                  FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대 2줄까지 노출 FAQ 제목은 최대
+                  2줄까지 노출
+                </p>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="faq-btm-bnn">
+        <p>문제를 해결하지 못하셨나요?</p>
+        <div class="faq-btm-btn">
+          <button type="button">1:1 문의하기</button>
+          <button type="button">전화 문의</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

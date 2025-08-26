@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+      $(window).ready(function () {
+        console.log();
+        let joinChk = window.location.href.split('?join=')[1];
+        if (joinChk == 'on') {
+          notiMsg('회원가입이 완료되었습니다.');
+        }
+      });
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap">
+      <div class="header">
+        <h1>Wallet</h1>
+        <div class="header-util">
+          <button type="button" class="header-btn alert">
+            <span>알림</span>
+          </button>
+          <button type="button" class="header-btn menu" onclick="location.href='setting.html'">
+            <span>menu</span>
+          </button>
+        </div>
+      </div>
+      <div class="content main">
+        <div class="account-box">
+          <div class="wallet-main-box">
+            <button type="button" class="no-wallet" onclick="location.href='walletSelect.html'">
+              <span><b>김한국</b>님</span>
+              <span><b>지갑</b>을 만들어 보세요</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="main-box findshop">
+          <b>내 주변 사용처를</b>
+          <p>찾아보세요</p>
+        </div>
+
+        <div class="main-box notice">
+          <div class="main-box-top">
+            <h2>공지사항</h2>
+            <button type="button" class="btn more-btn">
+              <span>more</span>
+            </button>
+          </div>
+          <div class="board-list">
+            <ul>
+              <li class="empty">
+                <p>등록된 공지사항이 없습니다.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

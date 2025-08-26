@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+        
+    </script>
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="content sub">
+            <div class="sub-top">
+                <h2>이용 내역</h2>
+                <button type="button" onclick="history.back()" class="btn back-btn">
+                    <span>뒤로가기</span>
+                </button>
+            </div>
+
+            <!-- 확인용으로 hide class 제거하면서 확인  -->
+
+            <!-- 받기 -->
+            <div class="detail-area hide">
+                <div class="detail-box">
+                    <div class="detail-top">
+                        <div class="wallet-asset-info">
+                            <span class="type">예금 토큰</span>|
+                            <span class="wallet-account NHB">신한</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-memo">김한국</div>
+                    <div class="detail-info">
+                        <ul>
+                            <li class="deposit">
+                                <span>받은금액</span>
+                                <div class="detail-amount">
+                                    +30,000원
+                                </div>
+                            </li>
+                            <li>
+                                <span>일시</span>
+                                <p>2024.00.00 00:00:00</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 송금 -->
+            <div class="detail-area hide">
+                <div class="detail-box">
+                    <div class="detail-top">
+                        <div class="wallet-asset-info">
+                            <span class="type">예금 토큰</span>|
+                            <span class="wallet-account NHB">신한</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-memo">김한국</div>
+                    <div class="detail-info">
+                        <ul>
+                            <li class="withdraw">
+                                <span>송금금액</span>
+                                <div class="detail-amount">
+                                    -30,000원
+                                </div>
+                            </li>
+                            <li>
+                                <span>일시</span>
+                                <p>2024.00.00 00:00:00</p>
+                            </li>
+                            <li>
+                                <span>송금지갑</span>
+                                <p>국민 1234-1234-0000</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 예금전환 -->
+            <div class="detail-area hide">
+                <div class="detail-box">
+                    <div class="detail-top">
+                        <div class="wallet-asset-info">
+                            <span class="type">예금 토큰</span>|
+                            <span class="wallet-account NHB">신한</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-memo">연계 계좌로 전환 출금</div>
+                    <div class="detail-info">
+                        <ul>
+                            <li class="withdraw">
+                                <span>출금 금액</span>
+                                <div class="detail-amount">
+                                    -30,000원
+                                </div>
+                            </li>
+                            <li>
+                                <span>일시</span>
+                                <p>2024.00.00 00:00:00</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 전환입금 -->
+            <div class="detail-area hide">
+                <div class="detail-box">
+                    <div class="detail-top">
+                        <div class="wallet-asset-info">
+                            <span class="type">예금 토큰</span>|
+                            <span class="wallet-account NHB">신한</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-memo">연계계좌에서 전환 입금</div>
+                    <div class="detail-info">
+                        <ul>
+                            <li class="deposit">
+                                <span>전환 입금 금액</span>
+                                <div class="detail-amount">
+                                    +30,000원
+                                </div>
+                            </li>
+                            <li>
+                                <span>연계계좌</span>
+                                <p>신한 1234</p>
+                            </li>
+                            <li>
+                                <span>일시</span>
+                                <p>2024.00.00 00:00:00</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 예금토큰전환 -->
+            <div class="detail-area hide">
+                <div class="detail-box">
+                    <div class="detail-top">
+                        <div class="wallet-asset-info">
+                            <span class="type">이머니 토큰</span>|
+                            <span class="wallet-account NHB">농협</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-memo">예금 토큰(신한)으로 전환 출금</div>
+                    <div class="detail-info">
+                        <ul>
+                            <li class="withdraw">
+                                <span>전환 출금 금액</span>
+                                <div class="detail-amount">
+                                    -30,000원
+                                </div>
+                            </li>
+                            <li>
+                                <span>일시</span>
+                                <p>2024.00.00 00:00:00</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 예금토큰전환 -->
+            <div class="detail-area hide">
+                <div class="detail-box">
+                    <div class="detail-top">
+                        <div class="wallet-asset-info">
+                            <span class="type">이머니 토큰</span>|
+                            <span class="wallet-account kbk">케뱅</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-memo">예금 토큰(케이뱅크)으로 전환 입금</div>
+                    <div class="detail-info">
+                        <ul>
+                            <li class="deposit">
+                                <span>전환 입금 금액</span>
+                                <div class="detail-amount">
+                                    +30,000원
+                                </div>
+                            </li>
+                            <li>
+                                <span>일시</span>
+                                <p>2024.00.00 00:00:00</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 충전 -->
+            <div class="detail-area hide">
+                <div class="detail-box">
+                    <div class="detail-top">
+                        <div class="wallet-asset-info">
+                            <span class="type">이머니 토큰</span>|
+                            <span class="wallet-account NHB">신한</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-memo">연계계좌에서 충전</div>
+                    <div class="detail-info">
+                        <ul>
+                            <li class="deposit">
+                                <span>충전 금액</span>
+                                <div class="detail-amount">
+                                    +30,000원
+                                </div>
+                            </li>
+                            <li>
+                                <span>연계계좌</span>
+                                <p>신한 1234</p>
+                            </li>
+                            <li>
+                                <span>일시</span>
+                                <p>2024.00.00 00:00:00</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 캐시백 / 관련결제정보-->
+            <div class="detail-area hide">
+                <div class="detail-box">
+                    <div class="detail-top">
+                        <div class="wallet-asset-info">
+                            <span class="type">예금 토큰</span>|
+                            <span class="wallet-account NHB">신한</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-memo">한국사랑바우처 캐시백</div>
+                    <div class="detail-info">
+                        <ul>
+                            <li class="deposit">
+                                <span>캐시백 금액</span>
+                                <div class="detail-amount">
+                                    +30,000원
+                                </div>
+                            </li>
+                            <li>
+                                <span>일시</span>
+                                <p>2024.00.00 00:00:00</p>
+                            </li>
+                            <li class="vouc-info">
+                                <span>바우처 정보</span>
+                                <button type="button" class="vouc-info-btn">한국사랑바우처</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-btm-info hide">
+                <div class="pay-info-top">
+                    <h3>관련 결제 정보</h3>
+                    <button type="button" class="btn more-btn"><span>상세보기</span></button>
+                </div>
+                <div class="pay-info-detail">
+                    <ul>
+                        <li>
+                            <span>가맹점명</span>
+                            <p>스피카 나폴리 합정</p>
+                        </li>
+                        <li>
+                            <span>결제 금액</span>
+                            <p>34,000원</p>
+                        </li>
+                        <li>
+                            <span>결제 일시</span>
+                            <p>2024.01.24 20:49:51</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 캐시백 / 관련결제정보-->
+
+            <!-- 결제 -->
+            <div class="detail-area hide">
+                <div class="detail-box">
+                    <div class="detail-top">
+                        <div class="detail-type repay">환불완료</div>
+                        <div class="wallet-asset-info">
+                            <span class="type">예금 토큰</span>|
+                            <span class="wallet-account NHB">신한</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-memo">스피카 나폴리 합정</div>
+                    <div class="detail-info">
+                        <ul>
+                            <li class="withdraw">
+                                <span>결제 금액</span>
+                                <div class="detail-amount">
+                                    -30,000원
+                                </div>
+                            </li>
+                            <li class="shop-info">
+                                <span>가맹점 정보</span>
+                                <dl>
+                                    <dt>가맹점 정보</dt>
+                                    <dd>
+                                        <span>대표자명</span>
+                                        <p>김대표</p>
+                                    </dd>
+                                    <dd>
+                                        <span>사업자 번호</span>
+                                        <p>000-00-00000</p>
+                                    </dd>
+                                    <dd>
+                                        <span>전화번호</span>
+                                        <p>000-0000-0000</p>
+                                    </dd>
+                                    <dd>
+                                        <span>주소</span>
+                                        <p>서울시 강서구 공항대로43길 208</p>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <span>일시</span>
+                                <p>2024.00.00 00:00:00</p>
+                            </li>
+                            <li>
+                                <span>결제 번호</span>
+                                <p>12341234</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-btm-info hide">
+                <!-- 혜택이 없는 경우 히든 처리 -->
+                <div class="pay-info-top">
+                    <h3>혜택</h3>
+                </div>
+                <div class="pay-info-detail">
+                    <ul>
+                        <li>
+                            <span>한국사랑바우처 5,000원 사용</span>
+                        </li>
+                        <li>
+                            <div class="wallet-asset-info">
+                                <span class="type">예금 토큰</span>|
+                                <span class="wallet-account NHB">신한 적립</span>
+                            </div>
+                            <p>+5,000원</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 혜택이 없는 경우 히든 처리 -->
+
+                <p class="trans-info">환불은 결제일 기준 7일 이내에 사용처에서만 가능합니다.</p>
+            </div>
+            <!-- 환불 // 페이지는 확인 후 다시 추가 예정-->
+
+            <!-- 환불 -->
+            <div class="detail-area">
+                <div class="detail-box">
+                    <div class="detail-top">
+                        <div class="wallet-asset-info">
+                            <span class="type">예금 토큰</span>|
+                            <span class="wallet-account NHB">신한</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-memo">스피카 나폴리 합정</div>
+                    <div class="detail-info">
+                        <ul>
+                            
+                            <li class="repay deposit">
+                                <div class="repay-amount">
+                                    <span>환불 금액</span>
+                                    <div class="detail-amount">
+                                        +20,000원
+                                    </div>
+                                </div>
+                                <div class="repay-info">
+                                    <dl>
+                                        <dt>환불정보</dt>
+                                        <dd>
+                                            <div class="wallet-asset-info">
+                                                <span class="type">예금 토큰</span>|
+                                                <span class="wallet-account NHB">신한</span>
+                                            </div>
+                                            <p>15,000원</p>
+                                        </dd>
+                                        <dd>
+                                            <span>캐시백 상품권</span>
+                                            <p>1매(5,000원)</p>
+                                        </dd>
+                                        <dd class="repay-fee">
+                                            <span>환불수수료</span>
+                                            <p>5,000원</p>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li class="shop-info">
+                                <span>가맹점 정보</span>
+                                <dl>
+                                    <dt>가맹점 정보</dt>
+                                    <dd>
+                                        <span>대표자명</span>
+                                        <p>김대표</p>
+                                    </dd>
+                                    <dd>
+                                        <span>사업자 번호</span>
+                                        <p>000-00-00000</p>
+                                    </dd>
+                                    <dd>
+                                        <span>전화번호</span>
+                                        <p>000-0000-0000</p>
+                                    </dd>
+                                    <dd>
+                                        <span>주소</span>
+                                        <p>서울시 강서구 공항대로43길 208</p>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <span>일시</span>
+                                <p>2024.00.00 00:00:00</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-btm-info">
+                <div class="repay-desc">
+                    <dl>
+                        <dt>환불 안내</dt>
+                        <dd>캐시백 환급 금액을 차감한 예금 토큰이 환불되며, 사용하신 캐시백 상품권은 환불 완료 후 복구됩니다.</dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- 환불 // 페이지는 확인 후 다시 추가 예정-->
+            
+        </div>
+        <div class="btn-area">
+            <!-- <button class="btm-btn app" onclick="showAlert('modal-repay')">환불하기</button> -->
+            <button class="btm-btn app">환불 건 결제 내역 확인하기</button>
+        </div>
+    </div>
+
+    <div class="mask"></div>
+
+    <!-- Modal - 작은화면 -->
+    <div class="modal" id="modal-repay">
+        <div class="modal-top">
+            <h2>환불하시겠습니까?</h2>
+        </div>
+        <div class="modal-body">
+            <div class="repay-modal">
+                <div class="detail-info">
+                    <ul>
+                        <li class="repay">
+                            <div class="repay-amount">
+                                <span>환불총액</span>
+                                <div class="detail-amount">
+                                    20,000원
+                                </div>
+                            </div>
+                            <div class="repay-info">
+                                <dl>
+                                    <dt>환불정보</dt>
+                                    <dd>
+                                        <div class="wallet-asset-info">
+                                            <span class="type">예금 토큰</span>|
+                                            <span class="wallet-account NHB">신한</span>
+                                        </div>
+                                        <p>15,000원</p>
+                                    </dd>
+                                    <dd>
+                                        <span>캐시백 상품권</span>
+                                        <p>1매(5,000원)</p>
+                                    </dd>
+                                    <dd class="repay-fee">
+                                        <span>환불수수료</span>
+                                        <p>5,000원</p>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li>
+                            <span>사용처</span>
+                            <p>스피카 나폴리 합정</p>
+                        </li>
+                        <li>
+                            <span>결제일시</span>
+                            <p>2024.01.02 00:00:00</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="repay-desc">
+                    <dl>
+                        <dt>환불 안내</dt>
+                        <dd>결제일 기준 7일 이내에 결제한 사용처를 직접 방문하여 환불할 수 있습니다.</dd>
+                        <dd>캐시백 환급 금액을 차감한 예금 토큰이 환불되며, 사용하신 캐시백 상품권은 환불 완료 후 복구됩니다.</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="modal-btn">
+            <button type="button" class="btm-btn " onclick="hideModal(); return false;">취소</a>
+            <button type="button" class="btm-btn app" onclick="location.href='repayQr.html'">확인</a>
+        </div>
+    </div>
+
+</body>
+</html>

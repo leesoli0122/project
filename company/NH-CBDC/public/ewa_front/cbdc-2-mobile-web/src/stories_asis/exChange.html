@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+        let chargeChk = false;
+
+        $(window).ready(function(){
+            $("#amount-preview, .amount-empty").click(function(){
+                $("#amount").focus();
+            });
+            $("#amount").focus();
+            var amount = 1000000000000000000000;
+            const accntBalance = amount.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            $("#acntBalance").html(accntBalance);
+
+            $("#amount").keyup(function(){
+                if( $(this).val().length > 0 ){
+                    chargeChk = true;
+                    $(".amount-preview").show();
+                    $(".amount-empty").hide();
+                    let commaVal = $(this).val().toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+                    $("#amount-preview").html(commaVal);
+                    
+                    if( balanceChk( $(this).val(), amount ) ){
+                        $(".amount-info").removeClass('error');
+                        $(".amount-info").html(geKoreanNumber($(this).val())+'원');
+                    }else{
+                        chargeChk = false;
+                        if( !$(".amount-info").hasClass('error') ){
+                            $(".amount-info").addClass('error');
+                        }
+                        $(".amount-info").html('잔액 부족 전환 불가');
+                    }
+                    
+                }else{
+                    chargeChk = false;
+                    $(".amount-preview").hide();
+                    $(".amount-empty").show();
+                }
+                btnChk();
+            });
+
+            $("#amount").focusout(function(){
+                if( $(this).val().length > 0 ){
+                    $(this).closest(".ipt-form").addClass("on-data");
+                }else{
+                    $(this).closest(".ipt-form").removeClass("on-focus");
+                    $(this).closest(".ipt-form").removeClass("on-data");
+                    $(this).closest(".ipt-form").removeClass("on-data");
+                }
+                btnChk();
+            });
+        });
+
+        function balanceChk(amount, balnce){
+            var result = false;
+            if( amount > balnce ){
+            }else{
+                result = true;
+            }
+            return result;
+        }
+
+        function btnChk(){
+            if(chargeChk){
+                $("#charge").removeClass("disabled");
+            }else{
+                $("#charge").addClass("disabled");
+            }
+        }
+
+    </script>
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="sub-top">
+            <h2>&nbsp;</h2>
+            <button type="button" onclick="location.href='tokenDetail.html'" class="btn back-btn">
+                <span>뒤로가기</span>
+            </button>
+        </div>
+        <div class="content sub">
+            <div class="sub-desc exchange">
+                <p>
+                    얼마를 충전할까요?
+                </p>
+                <div class="transfer-area">
+                    <button type="button" class="wallet-account dark no-btn NHB">신한 123-456-789-0</button>
+                    <!-- <div class="wallet-asset-info">
+                        <span class="type">예금 토큰</span>|
+                        <span class="wallet-account NHB">신한</span>
+                    </div>
+                    <div class="token-arr">전송</div>
+                    <div class="wallet-asset-info">
+                        <span class="type">이머니 토큰</span>|
+                        <span class="wallet-account NHB">신한</span>
+                    </div> -->
+                </div>
+            </div>
+            <div class="ipt-form-area pay">
+                <div class="ipt-form pay">
+                    <label class="ipt-label pay-label">충전할 금액을 입력해주세요.</label>
+                    <div class="ipt-form-box">
+                        <input type="number" class="ipt-text" pattern="\d*" id="amount">
+                        <button type="button" class="btn ipt_reset"><span>전체삭제</span></button>
+                    </div>
+                </div>
+                <div class="amount-view">
+                    <p class="amount-empty">충전할 금액을 입력해주세요.</p>
+                    <div class="amount-preview">
+                        <p class="amount-number">
+                            <span id="amount-preview"></span> 원
+                        </p>
+                        <p class="amount-info">0원</p>
+                    </div>
+                </div>
+                <div class="app-info pay">
+                    <div class="acnt-info">
+                        <p class="info">이용 토큰</p>
+                        <div class="wallet-asset-info">
+                            <span class="type">예금 토큰</span>|
+                            <span class="wallet-account NHB">신한</span>
+                        </div>
+                    </div>
+                    <div class="acnt-info">
+                        <p class="info">충전 가능 금액</p>
+                        <span class="balance-info"><b id="acntBalance"></b> 원</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btm-btn-area">
+            <button type="button" class="btm-btn app disabled" id="charge" onclick="location.href='exChangeConfirm.html'">확인</a>
+        </div>
+    </div>
+
+</body>
+</html>
+

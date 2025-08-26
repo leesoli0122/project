@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script></script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="content sub">
+        <div class="sub-top">
+          <button type="button" onclick="location.href='main.html'" class="btn back-btn">
+            <span>뒤로가기</span>
+          </button>
+        </div>
+        <div class="sub-step">
+          <span>1step</span>
+          <span class="on">2step</span>
+          <span>2step</span>
+        </div>
+        <div class="sub-desc">
+          <p>신분증 또는 여권을 선택해주세요.</p>
+        </div>
+        <div class="sample-area">
+          <p>인증수단을 선택하시면 촬영이 시작됩니다.</p>
+          <div class="id-sample-area">
+            <div class="id-sample-box">
+              <div class="id-sample-img">
+                <img src="../img/id_sample_female.png" alt="여성의 주민등록증 사진 예시" />
+              </div>
+              <p>신분증 정보 예시</p>
+            </div>
+            <div class="id-sample-box">
+              <div class="id-sample-img">
+                <img src="../img/passport_sample_male.png" alt="남성의 여권 사진 예시" />
+              </div>
+              <p>여권 정보 예시</p>
+            </div>
+          </div>
+        </div>
+        <div class="sel-wallet kyc-id">
+          <div class="btn-col">
+            <button type="button" onclick="location.href='kycIdConfirmId.html'" class="app-btn">
+              주민등록증/운전면허증
+            </button>
+            <button type="button" onclick="location.href='kycIdConfirmPassport.html'" class="app-btn">여권</button>
+            <!-- 아래 버튼은 테스트용 -->
+            <button type="button" onclick="location.href='kycIdConfirmDriver.html'" class="app-btn">운전면허증</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

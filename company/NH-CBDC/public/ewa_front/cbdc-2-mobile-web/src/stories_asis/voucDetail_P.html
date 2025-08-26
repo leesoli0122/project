@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="sub-top">
+        <button type="button" onclick="history.back()" class="btn back-btn">
+          <span>뒤로가기</span>
+        </button>
+      </div>
+      <div class="content sub">
+        <!-- <div class="vouc-detail-area exp"> 기간 만료일 경우 exp 클래스 추가-->
+        <div class="vouc-detail-area">
+          <div class="vouc-detail-top">
+            <p>서울 사랑 바우처</p>
+            <span class="vouc-type cashback">캐시백</span>
+          </div>
+          <div class="vouc-balance">잔액<b>90,000</b>원</div>
+          <span class="vouc-exp">기간 만료</span>
+          <div class="vouc-detail-info">
+            <dl>
+              <dt>바우처정보</dt>
+              <dd>
+                <span>발행 기관</span>
+                <p>서울시</p>
+              </dd>
+              <dd>
+                <span>지원 대상</span>
+                <p>서울에 주민등록을 둔 만 19세 이상 성인</p>
+              </dd>
+              <dd>
+                <span>사용 조건</span>
+                <p>2만원 이상 구매 시 5,000원 캐시백</p>
+              </dd>
+              <dd>
+                <span>발행 금액</span>
+                <p>200,000원</p>
+              </dd>
+              <dd>
+                <span>발행일</span>
+                <p>2024.01.01</p>
+              </dd>
+              <dd>
+                <span>유효 기간</span>
+                <p>2024.12.31 까지 사용 가능</p>
+              </dd>
+            </dl>
+            <button type="button" class="chk-shop-btn">사용 가능 가맹점 확인</button>
+          </div>
+        </div>
+
+        <div class="receipt-area">
+          <!-- <div class="empty">
+                        <p>최근 사용 내역이 없습니다.</p>
+                    </div> -->
+          <h2>최근 사용 내역</h2>
+          <div class="receipt-list">
+            <ul>
+              <li>
+                <p class="date">오늘</p>
+              </li>
+              <li>
+                <button type="button">
+                  <p>
+                    <span class="pay-time">23:19:21</span>
+                  </p>
+                  <div class="pay-info">
+                    <p class="memo">GS편의점 발산역점</p>
+                    <p class="amount withdraw">-5,600원</p>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <p class="date">2024.02.20</p>
+              </li>
+              <li>
+                <button type="button">
+                  <p>
+                    <span class="pay-time">23:19:21</span>
+                  </p>
+                  <div class="pay-info">
+                    <p class="memo">GS편의점 발산역점</p>
+                    <p class="amount withdraw">-5,600원</p>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <p>
+                    <span class="pay-time">23:19:21</span>
+                  </p>
+                  <div class="pay-info">
+                    <p class="memo">GS편의점 발산역점</p>
+                    <p class="amount withdraw">-5,600원</p>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <div data-headlessui-portal=""><div>
+        <div id="headlessui-dialog-:rs:" role="dialog" tabindex="-1" aria-modal="true" data-headlessui-state="open" data-open="" aria-labelledby="headlessui-dialog-title-:r14:" style="">
+            <div class="fixed inset-0 bg-black/30" aria-hidden="true" style=""></div>
+            <div data-testid="dialog-panel" class="fixed bottom-0 w-full rounded-t-[30px] bg-white" id="headlessui-dialog-panel-:r13:" data-headlessui-state="open" data-open="" style="">
+                <div class="relative flex px-[30px] pt-[30px]" id="headlessui-dialog-title-:r14:" data-headlessui-state="open" data-open=""><div>
+                    <h2 class="grow text-lg font-bold">서울시 스포츠 바우처</h2>
+                    <p class="mt-[8px] text-[14px] text-[#888888]">사용 가능 가맹점</p>
+                </div>
+                <button class="btn close-btn absolute right-[30px] top-[27px]"><span>닫기</span></button>
+            </div>
+            <div class="btm-sheet-filter2">
+                <div class="shop-list">
+                    <p class="shop-cnt">총 2개</p>
+                    <div class="shop-list-inner">
+                        <ul>
+                            <li>
+                                <div class="shop-list-box">
+                                    <h3>한국편의점-신길점</h3>
+                                    <span class="shop-addr">
+                                        <b>100km 이상</b> 
+                                        <span class="shop-addr2">서울시 영등포구 신길동</span>
+                                    </span>
+                                    <span class="shop-type"></span>
+                                </div>
+                            </li>
+                            <li><div class="shop-list-box"><h3>한국편의점-마포점</h3><span class="shop-addr"><b>100km 이상</b> <span class="shop-addr2">서울시 마포구</span></span><span class="shop-type"></span></div></li></ul></div></div></div></div></div></div></div>
+  </body>
+</html>

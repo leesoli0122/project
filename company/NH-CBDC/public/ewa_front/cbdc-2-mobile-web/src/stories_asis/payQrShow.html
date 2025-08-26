@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/custom.css">
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="sub-top">
+            <h2>QR 결제하기</h2>
+            <button type="button" onclick="history.back(-1)" class="btn back-btn">
+                <span>뒤로가기</span>
+            </button>
+        </div>
+        <div class="content sub">
+            <div class="qr-pay-show">
+                <div class="qr-switch-area">
+                    <button type="button">QR 스캔하기</button>
+                    <button type="button" class="on">QR 보여주기</button>
+                </div>
+                <!-- 유효할 경우 -->
+                <div class="qr-img-area">
+                    
+                    <div class="barcode-img">
+                        <img src="../shared/ui/assets/img/barcode.png">
+                    </div>
+
+                    <div class="qr-img">
+                        <img src="../shared/ui/assets/img/qr_pay_sample.png">
+                    </div>
+
+                    <div class="timer">
+                        <p>
+                            유효시간
+                            <span>0:00</span>
+                        </p>
+                        <button type="button" class="btn reset-btn"><span>새로고침</span></button>
+                    </div>
+                    <div class="pay-info-area">
+                        <button type="button" class="pay-info btm-sheet" id="btm-sheet-btn-b">
+                            <p>
+                                예금토큰 | 신한
+                            </p>
+                            <p class="balance">284,710 원</p>
+                        </button>
+    
+                        <button type="button" class="benefit-info btm-sheet" id="btm-sheet-btn-a">
+                            <p>바우처 혜택 적용</p>
+                            <p class="benefit-empty">미적용</p>
+                        </button>
+                    </div>
+                </div>
+                <!-- 인증 시간 만료 -->
+                <div class="qr-img-area exp">
+                    <div class="refresh-code">
+                        <div class="refresh-code-area">
+                            <button type="button" class="refresh-code-btn">재발급</button>
+                        </div>
+                    </div>
+                    <div class="timer">
+                        <p>인증 시간이 만료되었습니다.</p>
+                    </div>
+                    <div class="pay-info-area">
+                        <button type="button" class="pay-info btm-sheet" id="btm-sheet-btn-b">
+                            <p>
+                                예금토큰 | 신한
+                            </p>
+                            <p class="balance">284,710 원</p>
+                        </button>
+                        <button type="button" class="benefit-info btm-sheet" id="btm-sheet-btn-a">
+                            <p>바우처 혜택 적용</p>
+                            <p class="benefit-empty">미적용</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="show-guide">
+                <button type="button" onclick="location.href='payGuideQrView.html'">
+                    <span>&nbsp;</span>
+                    이용안내
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mask"></div>
+
+    <!-- 바우처 혜택 적용 선택 -->
+    <div class="btm-sheet-area" id="btm-sheet-a">
+        <div class="btm-sheet-top">
+            <h2>바우처 혜택 적용 선택</h2>
+        </div>
+        <div class="btm-sheet-list">
+            <div class="pay-benefit-area">
+                <div class="pay-benefit-box">
+                    <ul>
+                        <li>
+                            <button type="button" class="rdo-btn selected">적용안함</button>
+                        </li>
+                        <li>
+                            <button type="button" class="rdo-btn">
+                                11% 캐시백 상품권
+                                <span>최소 1만원 이상 결제 시 사용 가능</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="rdo-btn">
+                                캐시백 상품권 5,000원 
+                                <span>최소 5만원 이상 결제 시 사용 가능</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="btm-btn-area">
+            <button type="button" class="btm-btn app" onclick="closeBtmSheet()">확인</a>
+        </div>
+    </div>
+
+    <!-- 예금토큰 현황 -->
+    <div class="btm-sheet-area" id="btm-sheet-b">
+        <div class="btm-sheet-top">
+            <h2>
+                예금토큰 | 신한
+                <button class="wallet-account dark no-btn NHB">
+                    A 123-456-789-0
+                </button>
+            </h2>
+            <button type="button" class="btn close-btn">
+                <span>닫기</span>
+            </button>
+        </div>
+        <div class="btm-sheet-list">
+            <div class="qr-pay-info">
+                <button type="button" class="menu-btn">
+                    <span class="menu-btn-text">전환 입금</span>
+                </button>
+                <div class="toggle-area">
+                    <div class="toggle-box">
+                      <p class="toggle-label">잔액 숨기기</p>
+                      <button type="button" class="toggle-btn">
+                        <span class="toggle">Toggle</span>
+                      </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

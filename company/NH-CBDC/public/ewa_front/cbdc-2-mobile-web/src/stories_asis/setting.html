@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script></script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="content sub">
+        <div class="sub-top">
+          <button type="button" onclick="location.href='main.html'" class="btn back-btn">
+            <span>뒤로가기</span>
+          </button>
+        </div>
+        <div class="menu-area">
+          <div class="menu-box user-profile">
+            <div class="profile-info">
+              <!-- <div class="wallet-sttus">
+                                    <span class="company">사업자</span>
+                                    <span class="spd">거래제한</span>
+                                </div> -->
+              <p class="profile-nm">
+                <b>김한국</b>님
+                <button type="button" class="chk-account">계좌확인</button>
+              </p>
+              <span class="last-login">최근 접속 일시 2024.01.35 13:21:33</span>
+            </div>
+            <div class="profile-btn">
+              <button type="button" class="menu-btn no-icon add-bg" onclick="location.href='walletDetail.html'">
+                <span class="menu-btn-text">내 지갑 관리</span>
+              </button>
+              <button type="button" class="menu-btn no-icon" onclick="location.href='security.html'">
+                <span class="menu-btn-text">인증/보안</span>
+              </button>
+              <button type="button" class="menu-btn no-icon add-alert" onclick="location.href='noticeList.html'">
+                <span class="menu-btn-text">공지사항</span>
+              </button>
+            </div>
+          </div>
+          <div class="menu-box">
+            <p class="sub-menu-title">서비스 설정</p>
+            <!-- <button type="button" class="menu-btn">
+                        <span class="menu-btn-text">예금 토큰 자동 결제</span>
+                    </button> -->
+            <button type="button" class="menu-btn" onclick="location.href='alert.html'">
+              <span class="menu-btn-text">알림설정</span>
+            </button>
+            <button type="button" class="menu-btn">
+              <span class="menu-btn-text">내 바우처 현황</span>
+            </button>
+          </div>
+          <div class="menu-box">
+            <p class="sub-menu-title">서비스 안내</p>
+            <button type="button" class="menu-btn">
+              <span class="menu-btn-text">이용 안내</span>
+            </button>
+            <button type="button" class="menu-btn">
+              <span class="menu-btn-text">사용처 안내</span>
+            </button>
+            <button type="button" class="menu-btn">
+              <span class="menu-btn-text">전체 바우처 확인</span>
+            </button>
+          </div>
+          <div class="menu-box">
+            <p class="sub-menu-title">고객 지원</p>
+            <button type="button" class="menu-btn" onclick="location.href='faqList.html'">
+              <span class="menu-btn-text">자주 묻는 질문</span>
+            </button>
+            <!-- 메뉴에 알림표시 필요시 add-alert -->
+            <button type="button" class="menu-btn add-alert" onclick="location.href='qnaList.html'">
+              <span class="menu-btn-text">1:1 문의</span>
+            </button>
+          </div>
+          <div class="menu-box">
+            <button type="button" class="menu-btn">
+              <span class="menu-btn-text">약관 및 이용 동의</span>
+            </button>
+            <button type="button" class="menu-btn">
+              <span class="menu-btn-text">개인정보 처리방침</span>
+            </button>
+            <button type="button" class="menu-btn" onclick="location.href='appInfo.html'">
+              <span class="menu-btn-text">앱 버전</span>
+              <span class="btn-info">1.23.1</span>
+            </button>
+            <button type="button" class="menu-btn" onclick="location.href='fontSet.html'">
+              <span class="menu-btn-text">큰폰트 설정</span>
+            </button>
+          </div>
+          <div class="menu-box">
+            <button type="button" class="menu-btn no-icon logout">
+              <span class="menu-btn-text">로그아웃</span>
+            </button>
+            <div class="help-area">
+              <div class="help-box">
+                <div class="help-desk">
+                  <b>고객센터 : </b>
+                  <button type="button" class="help-call">1111-1111</button>
+                </div>
+                <div class="help-desk">
+                  <p>평일 09:00 ~ 18:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+    <style>
+      /**로딩**/
+      .loading.type2 {
+        background: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    
+      .loading.type2 .loading-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        margin: 0 auto;
+        z-index: 11;
+        aspect-ratio: 1;
+        --color1: #b3e0e2;
+        --color2: #47b6ac;
+        --color3: #7ecdc8;
+        --color4: #b3e0e2;
+        background: 
+          radial-gradient(circle, var(--color1) 70%, transparent 70%) 20% 50%,
+          radial-gradient(circle, var(--color2) 70%, transparent 70%) 40% 50%,
+          radial-gradient(circle, var(--color3) 70%, transparent 70%) 60% 50%,
+          radial-gradient(circle, var(--color4) 70%, transparent 70%) 80% 50%;
+        background-size: 15px 15px;
+        background-repeat: no-repeat;
+        animation: colorChange 3s infinite linear;
+      }
+    
+      @keyframes colorChange {
+        0% {
+          --color1: #b3e0e2;
+          --color2: #47b6ac;
+          --color3: #7ecdc8;
+          --color4: #b3e0e2;
+        }
+        10% {
+          --color1: #47b6ac;
+          --color2: #7ecdc8;
+          --color3: #b3e0e2;
+          --color4: #b3e0e2;
+        }
+        20% {
+          --color1: #7ecdc8;
+          --color2: #b3e0e2;
+          --color3: #b3e0e2;
+          --color4: #47b6ac;
+        }
+        30% {
+          --color1: #b3e0e2;
+          --color2: #b3e0e2;
+          --color3: #47b6ac;
+          --color4: #7ecdc8;
+        }
+        40% {
+          --color1: #b3e0e2;
+          --color2: #47b6ac;
+          --color3: #7ecdc8;
+          --color4: #b3e0e2;
+        }
+        50% {
+          --color1: #47b6ac;
+          --color2: #7ecdc8;
+          --color3: #b3e0e2;
+          --color4: #b3e0e2;
+        }
+        60% {
+          --color1: #7ecdc8;
+          --color2: #b3e0e2;
+          --color3: #b3e0e2;
+          --color4: #47b6ac;
+        }
+        70% {
+          --color1: #b3e0e2;
+          --color2: #b3e0e2;
+          --color3: #47b6ac;
+          --color4: #7ecdc8;
+        }
+        80% {
+          --color1: #b3e0e2;
+          --color2: #47b6ac;
+          --color3: #7ecdc8;
+          --color4: #b3e0e2;
+        }
+        90% {
+          --color1: #47b6ac;
+          --color2: #7ecdc8;
+          --color3: #b3e0e2;
+          --color4: #b3e0e2;
+        }
+        100% {
+          --color1: #b3e0e2;
+          --color2: #47b6ac;
+          --color3: #7ecdc8;
+          --color4: #b3e0e2;
+        }
+      }
+    </style>
+    <!--<style>
+      .loading {
+        background: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    
+      .loading .loading-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 60px;
+        margin: 0 auto;
+        z-index: 11;
+        --color1: #b3e0e2;
+        --color2: #47b6ac;
+        --color3: #7ecdc8;
+        --color4: #b3e0e2;
+        --circle-transparent: #0000;
+        background:
+          radial-gradient(circle, var(--color1) 50%, var(--circle-transparent) 50%) calc(0*100%/3) 50%,
+          radial-gradient(circle, var(--color2) 50%, var(--circle-transparent) 50%) calc(1*100%/3) 50%,
+          radial-gradient(circle, var(--color3) 50%, var(--circle-transparent) 50%) calc(2*100%/3) 50%,
+          radial-gradient(circle, var(--color4) 50%, var(--circle-transparent) 50%) calc(3*100%/3) 50%;
+        background-size: 25px 25px;
+        background-repeat: no-repeat;
+        animation: colorChange 3s infinite linear, l43 1.5s infinite linear;
+      }
+    
+      @keyframes l43 {
+        0% {
+          background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%;
+        }
+        16.67% {
+          background-position: calc(0*100%/3) 0, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%;
+        }
+        33.33% {
+          background-position: calc(0*100%/3) 100%, calc(1*100%/3) 0, calc(2*100%/3) 50%, calc(3*100%/3) 50%;
+        }
+        50% {
+          background-position: calc(0*100%/3) 50%, calc(1*100%/3) 100%, calc(2*100%/3) 0, calc(3*100%/3) 50%;
+        }
+        66.67% {
+          background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 100%, calc(3*100%/3) 0;
+        }
+        83.33% {
+          background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 100%;
+        }
+        100% {
+          background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%;
+        }
+      }
+    
+      @keyframes colorChange {
+        0% {
+          --color1: #b3e0e2;
+          --color2: #47b6ac;
+          --color3: #7ecdc8;
+          --color4: #b3e0e2;
+        }
+        50% {
+          --color1: #7ecdc8;
+          --color2: #b3e0e2;
+          --color3: #b3e0e2;
+          --color4: #47b6ac;
+        }
+        100% {
+          --color1: #b3e0e2;
+          --color2: #47b6ac;
+          --color3: #7ecdc8;
+          --color4: #b3e0e2;
+        }
+      }
+    </style>-->
+    
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="content sub">
+        <div class="loading type2">
+          <div class="loading-box">
+            <!--<img src="../img/loading/loading.gif" />-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

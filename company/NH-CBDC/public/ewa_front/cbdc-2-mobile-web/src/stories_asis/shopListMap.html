@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://oapi.map.naver.com/openapi/v3/maps.js?govClientId=jxuw9asafd&callback=initMap"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://oapi.map.naver.com/openapi/v3/maps.js?govClientId=jxuw9asafd&submodules=geocoder"
+    ></script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="sub-top">
+        <h2>사용처</h2>
+        <button type="button" onclick="location.href='main.html'" class="btn back-btn">
+          <span>뒤로가기</span>
+        </button>
+      </div>
+      <div class="content sub">
+        <div class="shop-search-area">
+          <div class="shop-search-box">
+            <div class="shop-search-ipt">
+              <input type="text" class="search-ipt" />
+              <button type="button" class="btn shop-search-btn"><span>검색</span></button>
+            </div>
+            <button type="button" class="btn shop-list-btn list" onclick="location.href='shopList.html'">
+              <span>지도보기</span>
+            </button>
+          </div>
+          <div class="user-location">
+            <span>현재 위치</span>
+            <p>서울 중구 소공동</p>
+          </div>
+        </div>
+        <div class="shop-list-area">
+          <!-- <div class="empty">
+            <p>
+              <b>'은행행'</b><br />
+              검색 결과가 없습니다.<br /><br />
+              다른 검색어를 입력해 보세요.
+            </p>
+          </div> -->
+          <div class="shop-vouc-filter">
+            <div class="toggle-area">
+              <div class="toggle-box">
+                <button type="button" class="toggle-btn on">
+                  <span class="toggle">Toggle</span>
+                </button>
+                <p class="toggle-label">내 바우처 사용처만 보기</p>
+              </div>
+            </div>
+            <div class="shop-filter-btn-area">
+              <span>000</span>
+              <button type="button" class="btn shop-filter-btn">
+                <span>검색필터보기</span>
+              </button>
+            </div>
+          </div>
+          <button type="button" class="map-btn loc-reset">이 지역 검색</button>
+          <button type="button" class="btn map-btn loc-current"><span>현재위치로 이동</span></button>
+          <div id="map" class="shop-map"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 사용처 -->
+    <div class="map-marker-info">
+      <div class="map-marker-info-inner">
+        <p>씨제이웰케어 주식회사</p>
+        <span>건강 보조식품 소매업</span>
+      </div>
+    </div>
+
+    <!-- 내가 쓸 수 있는 바우처가 있는 사용처 use-voc 클래스 추가 -->
+    <div class="map-marker-info use-voc">
+      <div class="map-marker-info-inner">
+        <p>씨제이웰케어 주식회사</p>
+        <span>건강 보조식품 소매업</span>
+      </div>
+    </div>
+
+    <!-- 검색어 포커스 되었을 때 커버 >> add class "on" -->
+    <div class="shop-search-cover"></div>
+    <script>
+      $(window).ready(function () {
+        var MARKER_SPRITE_POSITION = {
+          '씨제이웰케어 주식회사|건강 보조식품 소매업': [37.5578385, 126.9744151],
+          '뽀뽀치킨|치킨 전문점': [37.5576881, 126.9725138],
+          '김영만법무사|법무사업': [37.5629682, 126.9774945],
+          '동영관|한식 면 요리 전문점': [37.5692966, 126.9755204],
+          '칠성레더케어|신발 소매업': [37.5580765, 126.9728736],
+          '구이대장쪽갈비 서울역점|한식 일반 음식점업': [37.5582219, 126.9756182],
+          '신성식당|한식 일반 음식점업': [37.5626273, 126.9780831],
+          '웍스디자인|도배, 실내 장식 및 내장 목공사업': [37.561964, 126.9734075],
+          '담소사골순대 (북창점)|한식 일반 음식점업': [37.5637252, 126.97744],
+          '서울 사랑의열매|그 외 기타 비거주 복지 서비스업': [37.5684953, 126.9753893],
+          '천복|한식 일반 음식점업': [37.5629781, 126.9783024],
+          '이여곰탕 서울역점|한식 일반 음식점업': [37.5586371, 126.9732806],
+          '수|노래 연습장 운영업': [37.5619983, 126.9778766],
+          '함평집 서울시청점|한식 일반 음식점업': [37.5622717, 126.973634],
+          '미소담치과의원|치과의원': [37.5616585, 126.9738508],
+          '도토리|일식 음식점업': [37.5583731, 126.9746105],
+          '에스힐마취통증의학과의원한의원|일반의원': [37.5590959, 126.9738597],
+          '공차 태평로점|기타 비알코올 음료점업': [37.5629202, 126.9770808],
+          '요나끼|한식 육류 요리 전문점': [37.5607137, 126.9737753],
+          '김명자굴국밥전문점(북창점)|한식 일반 음식점업': [37.5626176, 126.9784053],
+          '세븐일레븐북창프리마점|체인화 편의점': [37.5628936, 126.9783218],
+          '자혜당한의원|한의원': [37.5635365, 126.9780269],
+          '금강산|한식 일반 음식점업': [37.5672351, 126.978345],
+          '한라개발(주)SFC지점|골프 연습장 운영업': [37.5684246, 126.9782701],
+          '연세예감치과의원|치과의원': [37.5623268, 126.9766441],
+          '호텔 퍼스트스테이 명동|호텔업': [37.5621482, 126.9766734],
+          '행복한 베이커리&카페|커피 전문점': [37.5666103, 126.9783882],
+          '어머니칼국수|한식 일반 음식점업': [37.5642574, 126.9775934],
+          '강가 무교점|기타 외국식 음식점업': [37.5684246, 126.9782701],
+          '㈜다누리웨드|결혼 상담 및 준비 서비스업': [37.5623268, 126.9766441],
+        };
+
+        var map = new naver.maps.Map('map', {
+          center: new naver.maps.LatLng(37.5642574, 126.9775934),
+          zoom: 15,
+        });
+
+        var bounds = map.getBounds(),
+          southWest = bounds.getSW(),
+          northEast = bounds.getNE(),
+          lngSpan = northEast.lng() - southWest.lng(),
+          latSpan = northEast.lat() - southWest.lat();
+
+        var markers = [],
+          infoWindows = [];
+
+        for (var key in MARKER_SPRITE_POSITION) {
+          var position = new naver.maps.LatLng(
+            southWest.lat() + latSpan * Math.random(),
+            southWest.lng() + lngSpan * Math.random(),
+          );
+
+          var marker = new naver.maps.Marker({
+            map: map,
+            position: position,
+            title: key.split('|')[0],
+            // icon: {
+            //     url: HOME_PATH +'/img/example/sp_pins_spot_v3.png',
+            //     size: new naver.maps.Size(24, 37),
+            //     anchor: new naver.maps.Point(12, 37),
+            //     origin: new naver.maps.Point(MARKER_SPRITE_POSITION[key][0], MARKER_SPRITE_POSITION[key][1])
+            // },
+            zIndex: 100,
+          });
+
+          var infoWindow = new naver.maps.InfoWindow({
+            content:
+              '<div class="shop-icon-box"><h3>' + key.split('|')[0] + '</h3><p>' + key.split('|')[1] + '</p></div>',
+          });
+
+          markers.push(marker);
+          infoWindows.push(infoWindow);
+        }
+
+        naver.maps.Event.addListener(map, 'idle', function () {
+          updateMarkers(map, markers);
+        });
+
+        function updateMarkers(map, markers) {
+          var mapBounds = map.getBounds();
+          var marker, position;
+
+          for (var i = 0; i < markers.length; i++) {
+            marker = markers[i];
+            position = marker.getPosition();
+
+            if (mapBounds.hasLatLng(position)) {
+              showMarker(map, marker);
+            } else {
+              hideMarker(map, marker);
+            }
+          }
+        }
+
+        function showMarker(map, marker) {
+          if (marker.setMap()) return;
+          marker.setMap(map);
+        }
+
+        function hideMarker(map, marker) {
+          if (!marker.setMap()) return;
+          marker.setMap(null);
+        }
+
+        // 해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환합니다.
+        function getClickHandler(seq) {
+          return function (e) {
+            var marker = markers[seq],
+              infoWindow = infoWindows[seq];
+
+            if (infoWindow.getMap()) {
+              infoWindow.close();
+            } else {
+              infoWindow.open(map, marker);
+            }
+          };
+        }
+
+        for (var i = 0, ii = markers.length; i < ii; i++) {
+          naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i));
+        }
+
+        // naver.maps.Service.geocode({ address: '서울시 중구 세종대로 92' }, function (status, response) {
+        //   // console.log(status);
+        //   // console.log(naver.maps.Service.Status.ERROR);
+        //   // if (status === naver.maps.Service.Status.ERROR) {
+        //   //   return alert('Something wrong!');
+        //   // }
+        //   var result = response.result;
+        //   var items = result.items;
+        //   xPos = items[0].point.x;
+        //   yPos = items[0].point.y;
+
+        //   // xPos = 37.5642574;
+        //   // yPos = 126.9775934;
+
+        //   console.log(yPos);
+        //   console.log(xPos);
+
+        //   map = new naver.maps.Map('map', {
+        //     center: new naver.maps.LatLng(yPos, xPos),
+        //     zoom: 17,
+        //   });
+
+        //   var marker = new naver.maps.Marker({
+        //     position: new naver.maps.LatLng(yPos, xPos),
+        //     map: map,
+        //     // icon: {
+        //     //     url: '../shared/ui/assets/styles/img/shop/default.png',
+        //     //     size: new naver.maps.Size(50, 52),
+        //     //     origin: new naver.maps.Point(0, 0),
+        //     //     anchor: new naver.maps.Point(30, 32)
+        //     // }
+        //   });
+
+        //   var contentString = [
+        //     '<div class="shop-icon-box">',
+        //     '   <h3>어머니칼국수</h3>',
+        //     '   <p>한식 일반 음식점업</p>',
+        //     '</div>',
+        //   ].join('');
+
+        //   var infowindow = new naver.maps.InfoWindow({
+        //     content: contentString,
+        //   });
+
+        //   naver.maps.Event.addListener(marker, 'click', function (e) {
+        //     if (infowindow.getMap()) {
+        //       infowindow.close();
+        //     } else {
+        //       infowindow.open(map, marker);
+        //     }
+        //   });
+
+        //   infowindow.open(map, marker);
+        // });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+
+    <!-- LottieFiles 웹 플레이어 -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script>
+      $(window).ready(function () {
+        var option = {
+          container: document.getElementById('nfcTag'), // the dom element
+          renderer: 'svg',
+          loop: false,
+          autoplay: true,
+          path: '../shared/ui/assets/styles/img/lottie/nfc_tag.json', // the path to the animation json
+        };
+
+        var animation;
+        animation = lottie.loadAnimation(option);
+
+        let dir = 1;
+        setInterval(function () {
+          if (dir == 1) {
+            dir = '-1';
+          } else {
+            dir = '1';
+          }
+          animation.setDirection(dir);
+          animation.play();
+        }, 4000);
+      });
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="sub-top">
+        <h2>NFC 결제</h2>
+        <button type="button" onclick="history.back(-1)" class="btn back-btn">
+          <span>뒤로가기</span>
+        </button>
+      </div>
+      <div class="content sub">
+        <div class="nfc-view">
+          <div class="nfc-view-top">
+            <h2>
+              매장의 기기에<br />
+              <b>휴대폰을 터치</b>해 주세요.
+            </h2>
+          </div>
+          <div class="nfc-view-img" id="nfcTag"></div>
+          <div class="timer">
+            <p>
+              유효시간
+              <span>0:00</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

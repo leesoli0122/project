@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css">
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css">
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+        
+    </script>
+</head>
+<body class="NHB">
+    <div class="wrap bgw">
+        <div class="sub-top">
+            <button type="button" onclick="location.href='main.html'" class="btn back-btn">
+                <span>뒤로가기</span>
+            </button>
+        </div>
+        <div class="content sub">
+            <div class="sub-step">
+                <span class="on">1step</span>
+                <span>2step</span>
+                <span>2step</span>
+            </div>
+            <div class="sub-desc">
+                <p>계좌로 1원을 입금했어요.<br/>
+                <b>숫자 3자리</b>를 입력해 주세요.</p>
+            </div>
+            <div class="account-auth-area">
+                <span class="auth-text">김</span>
+                <span class="auth-text">한</span>
+                <span class="auth-text">국</span>
+                <input type="number" class="auth-num" pattern="\d*" >
+                <input type="number" class="auth-num" pattern="\d*" >
+                <input type="number" class="auth-num" pattern="\d*" >
+            </div>
+            <!-- 인증번호 불일치 시 메세지 및 실패 카운트 생성 'on' class 추가 시 표출 -->
+            <div class="ipt-desc-out text-center">
+                인증정보가 올바르지 않습니다. <br/>
+                다시 시도해 주세요. <span>(1/5)</span>
+            </div>
+            <div class="account-info-area">
+                <div class="account-info">
+                    <p>신한은행 123-456-789-0</p>
+                    <button type="button" class="account-btn">계좌변경</button>
+                </div>
+            </div>
+        </div>
+        <div class="btm-btn-area">
+            <button type="button" class="btm-btn app" onclick="location.href='kycId.html'">1원 인증하기</a>
+        </div>
+    </div>
+
+</body>
+</html>

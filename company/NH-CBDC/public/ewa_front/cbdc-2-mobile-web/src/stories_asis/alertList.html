@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script>
+      $(window).ready(function () {
+        $('.filter-btn').click(function () {
+          filterReset();
+          $(this).addClass('on');
+        });
+      });
+
+      function filterReset() {
+        $('.filter .filter-btn').removeClass('on');
+      }
+    </script>
+  </head>
+  <body class="NHB">
+    <div class="wrap">
+      <div class="sub-top">
+        <button type="button" onclick="history.back(-1)" class="btn back-btn">
+          <span>뒤로가기</span>
+        </button>
+        <h2>알림</h2>
+        <button type="button" onclick="location.href='alert.html'" class="btn top-set-btn">
+          <span>알림설정 버튼</span>
+        </button>
+      </div>
+      <div class="content sub">
+        <!-- 알림내역 없을 경우 -->
+        <div class="empty">
+          <p>알림내역이 없습니다.</p>
+        </div>
+
+        <!-- 알림내역 없을 경우 필터까지 Hidden 처리 -->
+        <div class="hide">
+          <div class="filter">
+            <button type="button" class="filter-btn on">
+              <span>전체</span>
+            </button>
+            <button type="button" class="filter-btn">
+              <span>자산·결제</span>
+            </button>
+            <button type="button" class="filter-btn">
+              <span>보안</span>
+            </button>
+            <button type="button" class="filter-btn">
+              <span>활동·소식</span>
+            </button>
+          </div>
+          <div class="alert-list">
+            <p class="alert-info">알림 내역은 최근 3개월까지 보관됩니다.</p>
+            <ul>
+              <li>
+                <p class="date">오늘</p>
+              </li>
+              <li>
+                <!-- 확인하지 않은 메세지일 경우 noti-box에 class new 추가-->
+                <div class="noti-box new">
+                  <div class="noti-box-top">
+                    <div class="noti-date">23:19:21</div>
+                    <button type="button" class="btn close-btn sm"><span>알림삭제</span></button>
+                  </div>
+                  <div class="noti-box-title">
+                    <span>입금</span>
+                    <p>예금 토큰</p>
+                  </div>
+                  <div class="noti-box-desc">
+                    <p>34,500원이 입금 되었습니다.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <!-- 확인하지 않은 메세지일 경우 noti-box에 class new 추가-->
+                <div class="noti-box">
+                  <div class="noti-box-top">
+                    <div class="noti-date">23:19:21</div>
+                    <button type="button" class="btn close-btn sm"><span>알림삭제</span></button>
+                  </div>
+                  <div class="noti-box-title">
+                    <span>예금 토큰 전환</span>
+                    <p>예금 토큰 | 신한 → 예금 토큰</p>
+                  </div>
+                  <div class="noti-box-desc">
+                    <p>34,500원을 전환하였습니다.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p class="date">어제</p>
+              </li>
+              <li>
+                <div class="noti-box">
+                  <div class="noti-box-top">
+                    <div class="noti-date">23:19:21</div>
+                    <button type="button" class="btn close-btn sm"><span>알림삭제</span></button>
+                  </div>
+                  <div class="noti-box-title">
+                    <span>공지사항</span>
+                  </div>
+                  <div class="noti-box-desc">
+                    <p>개인정보 처리 방침 개정 안내 (2024.02.01 시행)</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p class="date">2일 전</p>
+              </li>
+              <li>
+                <div class="noti-box">
+                  <div class="noti-box-top">
+                    <div class="noti-date">23:19:21</div>
+                    <button type="button" class="btn close-btn sm"><span>알림삭제</span></button>
+                  </div>
+                  <div class="noti-box-title">
+                    <span>환불</span>
+                    <p>예금 토큰</p>
+                  </div>
+                  <div class="noti-box-desc">
+                    <p>99,500원이 환불 되었습니다.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="noti-box">
+                  <div class="noti-box-top">
+                    <div class="noti-date">23:19:21</div>
+                    <button type="button" class="btn close-btn sm"><span>알림삭제</span></button>
+                  </div>
+                  <div class="noti-box-title">
+                    <span>결제</span>
+                    <p>예금 토큰</p>
+                  </div>
+                  <div class="noti-box-desc">
+                    <p>92,349,500원을 결제하였습니다.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p class="date">2023.12.23</p>
+              </li>
+              <li>
+                <div class="noti-box">
+                  <div class="noti-box-top">
+                    <div class="noti-date">23:19:21</div>
+                    <button type="button" class="btn close-btn sm"><span>알림삭제</span></button>
+                  </div>
+                  <div class="noti-box-title">
+                    <span>가입</span>
+                  </div>
+                  <div class="noti-box-desc">
+                    <p>김한국님, 환영합니다!</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

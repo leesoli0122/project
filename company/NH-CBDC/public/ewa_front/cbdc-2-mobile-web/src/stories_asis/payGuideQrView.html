@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <title>CBDC - APP</title>
+    <link rel="stylesheet" href="../shared/ui/assets/styles/common.css" />
+    <link rel="stylesheet" href="../shared/ui/assets/styles/style.css" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../shared/ui/assets/js/app.js"></script>
+
+    <script></script>
+  </head>
+  <body class="NHB">
+    <div class="wrap bgw">
+      <div class="sub-top">
+        <h2>이용안내</h2>
+        <button type="button" onclick="location.href='payQrShow.html'" class="btn close-btn">
+          <span>닫기</span>
+        </button>
+      </div>
+      <div class="content sub">
+        <!-- 탭 메뉴 필요시 추가 -->
+        <div class="board-list-tab">
+          <ul>
+            <li>
+              <button type="button" onclick="location.href='payGuideQrScan.html'" class="tab-btn">QR/NFC 스캔</button>
+            </li>
+            <li class="on">
+              <button type="button" onclick="location.href='payGuideQrView.html'" class="tab-btn">QR 보여주기</button>
+            </li>
+          </ul>
+        </div>
+        <div class="guide-cont">
+          <div class="guide-inner">
+            <h3>1. QR 보여주기</h3>
+            <p>
+              결제 QR코드 또는 바코드는 유효 시간 내에 가맹점에서 스캔을 진행해야 합니다. 유효 시간 만료 후에는 재발급
+              버튼으로 결제 QR코드/바코드를 다시 만들고 결제를 진행할 수 있어요.
+            </p>
+            <div class="gd-img">
+              <img src="../shared/ui/assets/img/guide_qr_view_01.png" />
+            </div>
+            <h3>2. 결제 전 예금 토큰과 혜택 적용 확인</h3>
+            <p>결제 전에 결제에 사용할 예금 토큰과 혜택 적용 내용을 확인해 보세요.</p>
+            <div class="gd-img">
+              <img src="../shared/ui/assets/img/guide_qr_view_02.png" />
+            </div>
+            <p>결제는 예금 토큰으로만 사용 가능하며, 결제 금액보다 잔액이 부족한 경우 충전 후 결제가 가능합니다.</p>
+            <div class="gd-img">
+              <img src="../shared/ui/assets/img/guide_qr_view_03.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
