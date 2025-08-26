@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/lib/renewal.css">
+    <link rel="stylesheet" href="../../resources/css/lib/default.css">
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/default.js"></script>
+</head>
+<style>
+    .hidden { display: none !important; }
+</style>
+<body>
+    <div class="wrap">
+        <!-- //header -->
+        <header id="lnb">
+            <script>
+                $(document).ready(function(){
+                    document.charset="euc-kr";
+                    $("#lnb").load("../include/inc_header.html");
+                });
+            </script>
+        </header>
+        <!-- header// -->
+        <!-- s:menuWrap -->
+        <div id="menuWrap">
+            <script>
+            $(document).ready(function(){
+                document.charset="euc-kr";
+                $("#menuWrap").load("../include/inc_menu.html");
+            });
+            </script>
+        </div>
+        <!-- e:menuWrap -->
+        <form>
+            <div class="contents-wrap">
+                <section>
+                    <div class="form-group address">
+                        <input type="search" id="search" class="form-control search" placeholder="" aria-label="Search Addresses" aria-describedby="user-search" inputmode="search">
+                        <button class="btn btn-search outline-secondary" type="button">검색</button>
+                    </div>
+                    <div class="form-group filter hidden">
+                        <a href="#none" class="filter-img">필터</a>
+                        <ul class="filter-group">
+                            <li><a href="#none">아파트,오피스텔</a></li>
+                            <li><a href="#none">$880K~ $996K</a></li>
+                            <li><a href="#none">방 크기(전용면적)</a></li>
+                        </ul>
+                    </div>
+                    <div class="form-group filter hidden">
+                        <a href="#none" class="filter-img">필터</a>
+                        <ul class="filter-group after on" tabindex="1" onclick="openPopupUp('selBox2');">
+                            <li class="option">아파트,오피스텔</li>
+                            <li class="option">$880K~ $996K</li>
+                            <li class="option">방 크기(전용면적)</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="list-wrap">
+                    <div class="list-group">
+                        <ul class="img-list">
+                            <li>
+                                <img src="../../resources/images/common/image_1.png" alt="방1">
+                            </li>
+                            <li>
+                                <img src="../../resources/images/common/image_2.png" alt="방2">
+                            </li>
+                        </ul>
+                        <p class="list-tit">₱7,000,000</p>
+                        <a href="#none" class="btn-set like">찜</a>
+                        <div class="list-txt">
+                            <div class="list-sub-tit tooltip-wrap">₱140,000 PSM
+                                <div class="info-tooltip">정보</div>
+                                <div class="tooltip-txt">
+                                    <p>PSM</p>
+                                    <p>means ‘per square meter’</p>
+                                    <button type="button" class="tooltip-close">닫기</button>
+                                </div>
+                            </div>
+                            <span class="ic-room">2</span>
+                            <span class="ic-bathtub">2</span>
+                        </div>
+                    </div>
+                    <div class="list-group">
+                        <ul class="img-list">
+                            <li>
+                                <img src="../../resources/images/common/image_3.png" alt="방1">
+                            </li>
+                            <li>
+                                <img src="../../resources/images/common/image_4.png" alt="방2">
+                            </li>
+                        </ul>
+                        <p class="list-tit">₱7,000,000</p>
+                        <a href="#none" class="btn-set like">찜</a>
+                        <div class="list-txt">
+                            <div class="list-sub-tit tooltip-wrap">₱140,000 PSM
+                                <div class="info-tooltip">정보</div>
+                                <div class="tooltip-txt">
+                                    <p>PSM</p>
+                                    <p>means ‘per square meter’</p>
+                                    <button type="button" class="tooltip-close">닫기</button>
+                                </div>
+                            </div>
+                            <span class="ic-room">2</span>
+                            <span class="ic-bathtub">2</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

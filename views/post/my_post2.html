@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/lib/renewal.css">
+    <link rel="stylesheet" href="../../resources/css/lib/default.css">
+    <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/default.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- //header -->
+        <header id="lnb">
+            <script>
+                $(document).ready(function(){
+                    document.charset="euc-kr";
+                    $("#lnb").load("../include/inc_header.html");
+                });
+            </script>
+        </header>
+        <!-- header// -->
+        <!-- s:menuWrap -->
+        <div id="menuWrap">
+            <script>
+            $(document).ready(function(){
+                document.charset="euc-kr";
+                $("#menuWrap").load("../include/inc_menu.html");
+            });
+            </script>
+        </div>
+        <!-- e:menuWrap -->
+        <form>
+            <div class="contents-wrap">
+                <section class="info-img-wrap">
+                    <div class="text-wrap">
+                        <p class="tit">My post</p>
+                    </div>
+                </section>
+                <section class="list-wrap">
+                    <div class="list-group">
+                        <ul class="img-list">
+                            <li>
+                                <img src="../../resources/images/common/image_1.png" alt="방1">
+                            </li>
+                            <li>
+                                <img src="../../resources/images/common/image_2.png" alt="방2">
+                            </li>
+                        </ul>
+                        <p class="list-tit">₱7,000,000</p>
+                        <div class="list-txt">
+                            <div class="list-sub-tit tooltip-wrap">₱140,000 PSM
+                            </div>
+                            <span class="ic-room">2</span>
+                            <span class="ic-bathtub">2</span>
+                        </div>
+                    </div>
+                    <div class="list-group">
+                        <ul class="img-list">
+                            <li>
+                                <img src="../../resources/images/common/image_3.png" alt="방1">
+                            </li>
+                            <li>
+                                <img src="../../resources/images/common/image_4.png" alt="방2">
+                            </li>
+                        </ul>
+                        <p class="list-tit">₱7,000,000</p>
+                        <div class="list-txt">
+                            <div class="list-sub-tit tooltip-wrap">₱140,000 PSM
+                            </div>
+                            <span class="ic-room">2</span>
+                            <span class="ic-bathtub">2</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        }
+    });
+</script>
+
+</html>

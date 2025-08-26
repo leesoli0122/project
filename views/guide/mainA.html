@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/lib/renewal.css">
+    <link rel="stylesheet" href="../../resources/css/lib/default.css">
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/default.js"></script>
+    
+</head>
+
+<body class="scrollX">
+    <div class="wrap">
+        <!-- //header -->
+        <div class="header-wrap">
+            <header id="lnb" class="main-header">
+                <h1>
+                    <img src="../../resources/images/common/logo_white.png" alt="로고">
+                </h1>
+                <a href="javascript:void(0)" class="btn-menu-white header-btn">메뉴</a>
+            </header>
+            <section class="top-img type-spread">
+                <img src="../../resources/images/main/main_top_image.png" alt="">
+                <p class="top_text">WHat Kind of <span class="yellow">house</span><br>are you<br><strong>looking for?</strong></p>
+            </section>
+        </div>
+        <!-- header// -->
+        <!-- s:menuWrap -->
+        <div id="menuWrap">
+            <script>
+            $(document).ready(function(){
+                document.charset="euc-kr";
+                $("#menuWrap").load("./include/inc_menu.html");
+            });
+            </script>
+        </div>
+        <!-- e:menuWrap -->
+        <form>
+            <div class="contents-wrap main">
+                <section class="quick-service-area">
+					<div class="arrow-button-wrap">
+						<ul class="arrow-button-list list-icon ">
+							<li class="sell-house">
+                                <a href="#none" >
+                                    <span class="tit">Sell my house</span>
+                                    <span class="sub-tit">WHat Kind of house are you<br>looking for?</span>
+                                </a>
+                            </li>
+							<li class="buy-home">
+                                <a href="#none" >
+                                    <span class="tit">Buy Home</span>
+                                    <span class="sub-tit">WHat Kind of house are you<br>looking for?</span>
+                                </a>
+                            </li>
+							<li class="home-rental">
+                                <a href="#none" >
+                                    <span class="tit">Home Rental</span>
+                                    <span class="sub-tit">WHat Kind of house are you<br>looking for?</span>
+                                </a>
+                            </li>
+							<li class="romm-rental">
+                                <a href="#none" >
+                                    <span class="tit">Room Rental</span>
+                                    <span class="sub-tit">WHat Kind of house are you<br>looking for?</span>
+                                </a>
+                            </li>
+						</ul>
+					</div>
+				</section>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/lib/renewal.css">
+    <link rel="stylesheet" href="../../resources/css/lib/default.css">
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.12.4.min.js"></script>
+    <!-- <script type="text/javascript" src="../resources/js/lib/default.js"></script> -->
+    <script type="text/javascript" src="../../resources/js/lib/layer_bottom_pop.js"></script>
+    
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- //header -->
+        <header id="lnb">
+            <a href="javascript:void(0);" onclick="" class="btn-prev header-btn">이전</a>
+            <h1>
+                <img src="../../resources/images/common/logo.png" alt="로고">
+            </h1>
+            <a href="javascript:void(0)" class="btn-menu header-btn">메뉴</a>
+        </header>
+        <form>
+            <div class="contents-wrap">
+                <section class="form-wrap">
+                    <div class="form-group">
+                        <label for="user_phone">휴대폰 번호</label>
+                        <div class="form-control select"  onclick="openPopupUp('lySel')"  tabindex="0">
+                            <a href="#none" tabindex="-1"><span>통신사 선택</span></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+<!--//휴대폰팝업-->
+<div id="lySel" class="layerpopup layer-up" tabindex="0"><!-- [D] 클래스 has-button 추가 시 하단 fixed 버튼 있을 시 스타일 노출-->
+    <div class="content-wrap">
+        <div class="pop-header">
+            <h2 class="pop-title">통신사 선택</h2>
+            <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        </div>
+        <div class="ly-scroll-con ly-select">
+            <ul class="ly-select-list">
+                <li><button>SKT</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                <li><button>KT</button></li>
+                <li><button>LG</button></li>
+                <li><button>알뜰폰 SK</button></li>
+                <li><button>알뜰폰 KT</button></li>
+                <li><button>알뜰폰 LG</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--휴대폰팝업//-->
