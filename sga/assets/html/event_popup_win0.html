@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>장비선택 - Aegis</title>
+    <meta charset="UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- TODO: search engine info -->
+    <meta name="robots" content="Aegis" />
+    <meta name="keywords" content="Aegis" />
+    <meta name="title" content="Aegis" />
+    <meta name="description" content="Aegis" />
+
+    <!-- TODO: social url link image -->
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Aegis">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="cloudVM.png">
+    <meta property="og:description" content="Aegis 입니다.">
+
+    <!-- TODO: favicon -->
+    <link rel="icon" href="favicon.png" type="favicon.png" />
+
+    <!-- TODO: import -->
+    <link rel="stylesheet" href="../css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/lib/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../css/lib/datatables.css">
+    <link rel="stylesheet" href="../css/lib/datatables.css">
+    <link rel="stylesheet" href="../css/lib/select.dataTables.css">
+    <link rel="stylesheet" href="../css/lib/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../css/lib/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../css/lib/jstree.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="../js/lib/moment.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/bootstrap-datetimepicker.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="../js/lib/echarts.js"></script>
+    <script src="../js/lib/jquery.nice-select.js"></script>
+    <script src="../js/lib/select.dataTables.js"></script>
+    <script src="../js/lib/datatables.js"></script>
+    <script src="../js/lib/dataTables.colReorder.js"></script>
+    <script src="../js/lib/dataTables.rowReorder.js"></script>
+    <script src="../js/lib/dataTables.buttons.min.js"></script>
+    <script src="../js/lib/sweetalert.js"></script>
+    <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="../js/lib/jquery.scrollbar.js"></script>
+    <script src="../js/lib/jstree.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<body class="win_popup rec mscrollbar">
+<section>
+    <h4>장비 선택</h4>
+    <div class="popup_view_cont">
+        <div class="equiplist_search">
+            <div class="search_cont">
+                <div class="sel_box fl">
+                    <select class="">
+                        <option value="1" selected="selected">000.000.000.000</option>
+                        <option value="11">000.000.000.000</option>
+                        <option value="2">000.000.000.000</option>
+                        <option value="12">000.000.000.000</option>
+                        <option value="3">000.000.000.000</option>
+                        <option value="4">000.000.000.000</option>
+                        <option value="5">000.000.000.000</option>
+                        <option value="6">000.000.000.000</option>
+                    </select>
+                </div>
+                <div class="ipt_box fl">
+                    <input type="text" placeholder="장비를 검색하여 주십시오" name="required">
+                    <a href="#" class="">장비 검색</a>
+                </div>
+            </div>
+            <a href="#" class="btn grey">검색 초기화</a>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                tbl ();
+            } );
+            $(window).resize(function() {
+                tbl ();
+            });
+            function tbl () {
+                if (window.matchMedia('(min-height: 0) and (max-height: 850px)').matches){
+                    $("#testTb1").dataTable({
+                        "autoWidth": false,
+                        "scrollY": "407px",
+                        "scrollCollapse": true,
+                        "paging": false,
+                        "pagingType" : "full_numbers",
+                        "ordering": false,
+                        "info": true,
+                        "filter": false,
+                        "lengthChange": true,
+                        "pageResize": true,
+                        "destroy": true,
+                        "language": {
+                            "info": "<span>_MAX_</span>",
+                        },
+                        "dom": '<"stt"i>rt<"bottom"f><"clear">',
+                    });
+                }else {
+                    $("#testTb1").dataTable({
+                        "autoWidth": false,
+                        "scrollY": "664px",
+                        "scrollCollapse": true,
+                        "paging": false,
+                        "pagingType" : "full_numbers",
+                        "ordering": false,
+                        "info": true,
+                        "filter": false,
+                        "lengthChange": true,
+                        "pageResize": true,
+                        "destroy": true,
+                        "language": {
+                            "info": "<span>_MAX_</span>",
+                        },
+                        "dom": '<"stt"i>rt<"bottom"f><"clear">',
+                    });
+                }
+                $('.dataTables_scrollBody').mCustomScrollbar();
+            }
+
+        </script>
+        <div class="tbl">
+            <table id="testTb1" class="click">
+                <colgroup>
+                    <col width="8%">
+                    <col width="25%">
+                    <col width="auto">
+                    <col width="35%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>
+                        <div class="chk_box">
+                            <input type="checkbox" name="all_checkbox" id="chk00" value="">
+                            <label for="chk00"></label>
+                        </div>
+                    </th>
+                    <th>장비IP</th>
+                    <th>장비명</th>
+                    <th>비고</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check01" value="">
+                            <label for="check01"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None</td>
+                    <td class="long_w tl">None</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check02" value="">
+                            <label for="check02"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">192.168.2.10</td>
+                    <td class="long_w tl">General</td>
+                    <td class="long_w tl">General</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check03" value="">
+                            <label for="check03"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">MG 인재개발_1</td>
+                    <td class="long_w tl">MG 인재개발_1</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check04" value="">
+                            <label for="check04"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">192.168.2.10</td>
+                    <td class="long_w tl">MG 인재개발_2</td>
+                    <td class="long_w tl">MG 인재개발_2</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check05" value="">
+                            <label for="check05"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">None2</td>
+                    <td class="long_w tl">None2</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check06" value="">
+                            <label for="check06"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">192.168.2.10</td>
+                    <td class="long_w tl">General2</td>
+                    <td class="long_w tl">General2</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check07" value="">
+                            <label for="check07"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">MG 인재개발_12</td>
+                    <td class="long_w tl">MG 인재개발_12</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check08" value="">
+                            <label for="check08"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">192.168.2.10</td>
+                    <td class="long_w tl">MG 인재개발_22</td>
+                    <td class="long_w tl">MG 인재개발_22</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check09" value="">
+                            <label for="check09"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">000.000.000.000</td>
+                    <td class="long_w tl">MG 인재개발_13</td>
+                    <td class="long_w tl">MG 인재개발_13</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="chk_box">
+                            <input type="checkbox" name="checkbox_list" id="check10" value="">
+                            <label for="check10"></label>
+                        </div>
+                    </td>
+                    <td class="long_w tl">192.168.2.10</td>
+                    <td class="long_w tl">MG 인재개발_23</td>
+                    <td class="long_w tl">MG 인재개발_23</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="equiplist_list">
+            <div class="fl equiplist_list_box mscrollbar">
+                <ul class="fl">
+                    <li>
+                        <p><span>000.000.000.000</span> / <span>General</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>192.168.2.10</span> / <span>MG 인재개발_1</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>192.168.2.100</span> / <span>MG 인재개발_2</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>000.000.000.000</span> / <span>MG 인재개발_12</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>192.158.12.10</span> / <span>MG 인재개발_13</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>000.000.000.000</span> / <span>General</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>000.000.000.000</span> / <span>General</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>000.000.000.000</span> / <span>General</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>000.000.000.000</span> / <span>E1552613816089</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>000.000.000.000</span> / <span>E1552613816089</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>000.000.000.000</span> / <span>E1552613816089</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>000.000.000.000</span> / <span>E1552613816089</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                    <li>
+                        <p><span>000.000.000.000</span> / <span>E1552613816089</span></p>
+                        <a href="#">삭제</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_wrap">
+            <a href="#" class="btn grey close">취소</a>
+            <a href="#" class="btn">확인</a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
