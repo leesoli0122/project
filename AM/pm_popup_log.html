@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SecureGuard Prime</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/pm/common.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<!-- 헤더 -->
+		<div id="header">
+			<div class="gnb">
+				<h1 class="logo"><a href="">Secureguard Prime</a></h1>
+				<p class="btn_tree"><a href="">그룹보기</a></p>
+				<!-- 1024사이즈일때 전체카테고리 -->
+				<p class="btn_allcategory"><a href=""><i class="icon">전체카테고리보기</i></a></p> <!--팝업창열리면 a 클래스 on 추가-->
+				<!-- 유저관련버튼 -->
+				<ul class="user_area">
+					<li class="btn_user"><a href=""><i class="icon">정보변경</i></a></li>
+					<li class="btn_alam"><a href=""><i class="icon">알림</i><span>2</span></a></p></li>
+					<li class="btn_logout"><a href=""><i class="icon">로그아웃</i></a></li>
+				</ul>				
+			</div>
+			<!-- 1280사이즈일때 왼쪽메뉴 -->
+			<div class="lnb_wrap">
+				<div class="user_info">
+					<p class="profile_img"><img src="img/am/img_profile.png" alt="프로필이미지"></p>
+					<div class="text_info">
+						<p class="user_id">ADMIN</p>
+						<dl>
+							<dt class="icon_logintime">로그인시간</dt>
+							<dd>2016.12.20 09:46:56</dd>
+							<dt class="icon_account">접속계정</dt>
+							<dd>192.168.0.131</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="main_menu nav_icon">
+					<ul>
+						<li><a href=""><em class="icon_home"></em>HOME</a></li>
+						<li class="on"><a href=""><em class="icon_mng"></em>관리<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="" class="on">시스템</a></li> 
+								<li><a href="">계정</a></li>
+								<li><a href="">사용자</a></li>
+								<li><a href="">그룹</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_access"></em>접근제어<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">접속조회</a></li>
+								<li><a href="">이벤트조회</a></li>
+								<li><a href="">정책설정</a></li>
+								<li><a href="">정책모델</a></li>
+								<li><a href="">명령어</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_workflow"></em>워크플로우<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">요청문서함</a></li>
+								<li><a href="">결재문서함</a></li>
+								<li><a href="">결재선</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_schedule"></em>작업/스케줄<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">작업</a></li>
+								<li><a href="">스케줄</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_report"></em>감사/보고서<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">감사</a></li>
+								<li><a href="">관리</a></li>
+								<li><a href="">워크플로우</a></li>
+								<li><a href="">접근제어</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_setting"></em>설정<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">환경</a></li>
+								<li><a href="">권한</a></li>
+								<li><a href="">메뉴</a></li>
+								<li><a href="">대시보드</a></li>
+								<li><a href="">연동</a></li>
+								<li><a href="">코드</a></li>
+								<li><a href="">라이선스</a></li>
+								<li><a href="">공지사항</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 전체카테고리 -->
+			<div class="nav_allcategory nav_icon" style="display:none">
+				<ul>
+					<li class="on"><a href=""><em class="icon_mng"></em>관리</a>
+						<ul>
+							<li><a href="">시스템</a></li>
+							<li><a href="">계정</a></li>
+							<li><a href="">사용자</a></li>
+							<li><a href="">그룹</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_access"></em>접근제어</a>
+						<ul>
+							<li><a href="">접속조회</a></li>
+							<li><a href="">이벤트조회</a></li>
+							<li><a href="">정책설정</a></li>
+							<li><a href="">정책모델</a></li>
+							<li><a href="">명령어</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_workflow"></em>워크플로우</a>
+						<ul>
+							<li><a href="">요청문서함</a></li>
+							<li><a href="">결재문서함</a></li>
+							<li><a href="">결재선</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_schedule"></em>작업/스케줄</a>
+						<ul>
+							<li><a href="">작업</a></li>
+							<li><a href="">스케줄</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_report"></em>감사/보고서</a>
+						<ul>
+							<li><a href="">감사</a></li>
+							<li><a href="">관리</a></li>
+							<li><a href="">워크플로우</a></li>
+							<li><a href="">접근제어</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_setting"></em>설정</a>
+						<ul>
+							<li><a href="">환경</a></li>
+							<li><a href="">권한</a></li>
+							<li><a href="">메뉴</a></li>
+							<li><a href="">대시보드</a></li>
+							<li><a href="">연동</a></li>
+							<li><a href="">코드</a></li>
+							<li><a href="">라이선스</a></li>
+							<li><a href="">공지사항</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 트리 -->
+			<div class="tree_wrap" style="left:-242px">
+				<div class="tab">
+					<ul>
+						<li><a href="">시스템</a></li>
+						<li><a href="">계정</a></li>
+						<li><a href="" class="on">사용자</a></li>
+					</ul>
+				</div>
+				<div class="tree_box">
+					<p>
+						<select class="form_contrl">
+							<option value="">그룹별</option>
+							<option value="">그룹별2</option>
+							<option value="">그룹별3</option>
+						</select>
+					</p>
+					<div class="tree_view">
+						<ul>
+							<li>
+								<a href=""><span class="icon_folder_open"></span>root</a>
+								<ul>
+									<li><a href=""><span class="icon_folder_open"></span>QA서버</a>
+										<ul>
+											<li><a href=""><span class="icon_file"></span>운영</a></li>
+											<li><a href=""><span class="icon_file"></span>개발</a></li>
+										</ul>
+									</li>
+									<li><a href=""><span class="icon_folder_close"></span>네트워크그룹</a></li>
+									<li><a href=""><span class="icon_folder_open"></span>Server</a>
+										<ul>
+											<li><a href=""><span class="icon_file"></span>서버그룹</a></li>
+											<li><a href=""><span class="icon_file"></span>시연용시스템</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 본문 -->
+		<div id="container">
+			<div class="content">
+				<div class="title_box">
+					<h2>시스템목록</h2>
+					<ol class="link_depth">
+						<li><a href="">관리</a></li>
+						<li><a href="">시스템</a></li>
+					</ol>
+				</div>
+				<div class="list_detail pd24">
+				</div>
+			</div>
+			<!-- 푸터 -->
+			<div id="footer">
+				<p class="copy"><img src="img/am/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+			</div>
+		</div>
+		<div class="layer_popup is_visible">
+			<div class="bg"></div>
+			<div class="popup_wrap">
+				<div class="popup_title">
+					<h3>정책설정</h3>
+					<a href="" class="btn_close">닫기</a>
+				</div>
+				<div class="popup_content">
+					<div class="tab50 flx"> <!-- 탭이 두개일때 tab50클래스 추가해주세요 -->
+						<div class="tab_wrap"> 
+							<ul class="tab_menu">
+								<li><a href="" class="on">사용자</a></li>
+							</ul>
+							<div class="tab_inbox">
+								<div class="tab_cont log scoll"> 
+									RECV_BUF case 3 :Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-169-generic x86_64)
+ 
+* Documentation:  https://help.ubuntu.com
+* Management:     https://landscape.canonical.com
+* Support:        https://ubuntu.com/advantage
+ 
+  System information as of Fri 26 Jan 2024 01:39:52 AM UTC
+ 
+  System load:  0.0                Processes:              195
+  Usage of /:   56.7% of 10.70GB   Users logged in:        1
+  Memory usage: 20%                IPv4 address for ens34: 172.24.10.75
+  Swap usage:   0%
+ 
+* Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+ 
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+ 
+* Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+ 
+     https://ubuntu.com/pro
+ 
+Expanded Security Maintenance for Applications is not enabled.
+ 
+0 updates can be applied immediately.
+ 
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+ 
+ 
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+New release '22.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+ 
+ 
+Last login: Fri Jan 26 01:38:15 2024 from 172.24.0.201
+ 
+ 
+RECV_BUF case 3 :]0;sgadmin@ubuntu: ~sgadmin@ubuntu:~$ 
+CMD_SEND::::su - root
+::::
+RECV_BUF case 3 :su - root
+ 
+RECV_BUF case 3 :Password: 
+CMD_SEND::::l9Lg85ZSFEIDNp00lXZ3jQ==::::
+RECV_BUF case 2 :]0;root@ubuntu: ~root@ubuntu:~#
+ 
+RECV_BUF case 2 :]0;root@ubuntu: ~root@ubuntu:~# 
+CMD_SEND::::passwd acctest_0100
+::::
+RECV_BUF case 2 :passwd acctest_0100
+ 
+RECV_BUF case 2 :New password: 
+CMD_SEND::::KiWvd3bf1TDXSHJQ0xnEpw==_SNVp4xBpdotGVV9DsccVCQ==::::
+RECV_BUF case 2 :Retype new password: 
+CMD_SEND::::TNWGCVqRqY1fKPkm9G3Yhg==_5GK3IL3NJZeCwI9JHmLAkQ==::::
+RECV_BUF case 2 :passwd: password updated successfully
+ 
+RECV_BUF case 2 :]0;root@ubuntu: ~root@ubuntu:~# 
+distLogFile:/secureguard/pm/engine/log//2024.01.26/dist//172.24.10.75/103951824.02
+START CHECK PROCESS
+RECV_BUF:Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-169-generic x86_64)
+ 
+* Documentation:  https://help.ubuntu.com
+* Management:     https://landscape.canonical.com
+* Support:        https://ubuntu.com/advantage
+ 
+  System information as of Fri 26 Jan 2024 01:39:53 AM UTC
+ 
+  System load:  0.0                Processes:              200
+  Usage of /:   56.7% of 10.70GB   Users logged in:        2
+  Memory usage: 20%                IPv4 address for ens34: 172.24.10.75
+  Swap usage:   0%
+ 
+ 
+RECV_BUF: * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+ 
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+ 
+* Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+ 
+     https://ubuntu.com/pro
+ 
+Expanded Security Maintenance for Applications is not enabled.
+ 
+0 updates can be applied immediately.
+ 
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+ 
+ 
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+New release '22.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+ 
+RECV_BUF:Last login: Fri Jan 26 01:39:52 2024 from 172.24.0.201
+ 
+ 
+RECV_BUF:sgadmin@ubuntu:~$ 
+CMD_SEND::::su acctest_0100
+::::
+RECV_BUF:su acctest_0100
+ 
+RECV_BUF:Password: 
+CMD_SEND::::vU5VvnzKpCr1g7ZzR9+//w==_Fh4Dr8ddWlMDEtmBcLVfRA==::::
+RECV_BUF:$ $ 
+CMD_SEND::::
+::::
+RECV_BUF case 2 :]0;root@ubuntu: ~root@ubuntu:~#
+								</div>
+							</div>
+						</div>
+						<div class="tab_wrap"> 
+							<ul class="tab_menu">
+								<li><a href="" class="on">시스템</a></li>
+								<li><a href="" class="">계정</a></li>
+							</ul>
+							<div class="tab_inbox">
+								<div class="tab_cont log scoll">RECV_BUF case 3 :Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-169-generic x86_64)
+ 
+* Documentation:  https://help.ubuntu.com
+* Management:     https://landscape.canonical.com
+* Support:        https://ubuntu.com/advantage
+ 
+  System information as of Fri 26 Jan 2024 01:39:52 AM UTC
+ 
+  System load:  0.0                Processes:              195
+  Usage of /:   56.7% of 10.70GB   Users logged in:        1
+  Memory usage: 20%                IPv4 address for ens34: 172.24.10.75
+  Swap usage:   0%
+ 
+* Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+ 
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+ 
+* Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+ 
+     https://ubuntu.com/pro
+ 
+Expanded Security Maintenance for Applications is not enabled.
+ 
+0 updates can be applied immediately.
+ 
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+ 
+ 
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+New release '22.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+ 
+ 
+Last login: Fri Jan 26 01:38:15 2024 from 172.24.0.201
+ 
+ 
+RECV_BUF case 3 :]0;sgadmin@ubuntu: ~sgadmin@ubuntu:~$ 
+CMD_SEND::::su - root
+::::
+RECV_BUF case 3 :su - root
+ 
+RECV_BUF case 3 :Password: 
+CMD_SEND::::l9Lg85ZSFEIDNp00lXZ3jQ==::::
+RECV_BUF case 2 :]0;root@ubuntu: ~root@ubuntu:~#
+ 
+RECV_BUF case 2 :]0;root@ubuntu: ~root@ubuntu:~# 
+CMD_SEND::::passwd acctest_0100
+::::
+RECV_BUF case 2 :passwd acctest_0100
+ 
+RECV_BUF case 2 :New password: 
+CMD_SEND::::KiWvd3bf1TDXSHJQ0xnEpw==_SNVp4xBpdotGVV9DsccVCQ==::::
+RECV_BUF case 2 :Retype new password: 
+CMD_SEND::::TNWGCVqRqY1fKPkm9G3Yhg==_5GK3IL3NJZeCwI9JHmLAkQ==::::
+RECV_BUF case 2 :passwd: password updated successfully
+ 
+RECV_BUF case 2 :]0;root@ubuntu: ~root@ubuntu:~# 
+distLogFile:/secureguard/pm/engine/log//2024.01.26/dist//172.24.10.75/103951824.02
+START CHECK PROCESS
+RECV_BUF:Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-169-generic x86_64)
+ 
+* Documentation:  https://help.ubuntu.com
+* Management:     https://landscape.canonical.com
+* Support:        https://ubuntu.com/advantage
+ 
+  System information as of Fri 26 Jan 2024 01:39:53 AM UTC
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btn_box">
+						<div class="f_l">
+							<a href="" class="white">초기화</a>
+						</div>
+						<div class="f_r">
+							<a href="" class="violet">다음</a>
+							<a href="" class="grey close">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

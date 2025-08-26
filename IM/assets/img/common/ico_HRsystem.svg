@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(0 0)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ico_HRsystem" transform="translate(0 0)" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(0 1)">
+      <path id="pass9" d="M5.162,12.148c-2.635,1.2-1.539,3.059.461,3.96a14.407,14.407,0,0,0,8.688.469" transform="translate(-0.012 -1.31)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass8" d="M3.5,14.23v0Z" transform="translate(0 -1.544)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass7" d="M3.5,14.263V19.6c0,1.628,3.222,2.948,7.195,2.948.31,0,.615-.008.914-.024" transform="translate(0 -1.547)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="line" x2="1.638" transform="translate(9.779 18.462)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass6" d="M17.885,3.418C17.846,1.8,14.643.5,10.695.5S3.543,1.8,3.5,3.418v.029C3.5,5.075,6.722,6.4,10.695,6.4s7.189-1.32,7.194-2.947A.175.175,0,0,0,17.885,3.418Z" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass5" d="M19.711,3.787h0v0Z" transform="translate(-1.823 -0.37)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass4" d="M3.5,3.787v0Z" transform="translate(0 -0.37)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass3" d="M19.71,9.154c-.022-1.777,0-3.556,0-5.333" transform="translate(-1.821 -0.373)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass2" d="M3.5,3.821V9.154c0,1.628,3.222,2.947,7.195,2.947a15.573,15.573,0,0,0,3.8-.446" transform="translate(0 -0.373)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="line-2" data-name="line" x2="1.638" transform="translate(9.779 9.194)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass1" d="M15.611,12.989A2.887,2.887,0,1,1,18.5,15.877,2.887,2.887,0,0,1,15.611,12.989Zm2.882,9.45a12.368,12.368,0,0,0-2.959.457c-.788.193-1.6.4-1.867.187-.094-.071-.249-.3-.249-1.036a5.077,5.077,0,0,1,5.07-5.069H18.5a5.077,5.077,0,0,1,5.07,5.069c0,.733-.154.965-.249,1.036-.264.209-1.079.012-1.867-.187a12.368,12.368,0,0,0-2.959-.457" transform="translate(-1.115 -1.08)" fill="none" stroke="#27ad98" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

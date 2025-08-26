@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+						<span>Admin</span>
+					</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class=""><i class="icon_user"></i><span>사용자</span></a></li>
+					<li><a href=""><i class="icon_userg"></i><span>사용자 그룹</span></a></li>
+					<li><a href=""><i class="icon_om"></i><span>조직관리</span></a></li>
+					<li><a href="" class="on"><i class="icon_system"></i><span>시스템</span></a></li>
+					<li><a href=""><i class="icon_stg"></i><span>시스템 그룹</span></a></li>
+					<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+						<ul>
+							<li><a href="">역할</a></li>
+							<li><a href="" class="on">규칙 관리</a></li>
+							<li><a href="">계산식 관리</a></li>
+							<li><a href="">이벤트 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+						<ul>
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="icon_monitor"></i><span>모니터링</span></a></li>
+					<li><a href=""><i class="icon_report"></i><span>리포트</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>역할 관리</h1>
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">시스템 관리</a></li>
+						<li><span>생성</span></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> user01</a></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="dash_wrap">
+				<div class="row-w3 cl_both">
+					<div class="f_l wid33">
+						<div class="dash_box">
+							<p class="dash_tit">사용자<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-t cl_both">
+									<div class="d-t-l f_l">
+										<p><em>20000</em><span>total</span></p>
+									</div>
+									<div class="d-t-r f_r">
+										<p class="icon"><i></i></p>
+									</div>
+								</div>
+								<div class="d-gray">
+									<div class="d-g-txt">
+										<p><em>200</em><span>Created</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Removed</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Diserved</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Expired</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="f_l wid33">
+						<div class="dash_box">
+							<p class="dash_tit">시스템<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-t cl_both d-system">
+									<div class="d-t-l f_l">
+										<p><em>200</em><span>total</span></p>
+									</div>
+									<div class="d-t-r f_r">
+										<p class="icon"><i></i></p>
+									</div>
+								</div>
+								<div class="d-gray">
+									<div class="d-g-txt">
+										<p><em>200</em><span>Created</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Removed</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Diserved</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="f_l wid33">
+						<div class="dash_box">
+							<p class="dash_tit">계정<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-t cl_both d-acc">
+									<div class="d-t-l f_l">
+										<p><em>2000000</em><span>total</span></p>
+									</div>
+									<div class="d-t-r f_r">
+										<p class="icon"><i></i></p>
+									</div>
+								</div>
+								<div class="d-gray">
+									<div class="d-g-txt">
+										<p><em>200</em><span>Provisioned</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>De-Provisioned</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Failed</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Orphan</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-w2 cl_both">
+					<div class="f_l wid50">
+						<div class="dash_box">
+							<p class="dash_tit">사용자<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-t cl_both">
+									<div class="d-t-l f_l">
+										<p><em>20000</em><span>total</span></p>
+									</div>
+									<div class="d-t-r f_r">
+										<p class="icon"><i></i></p>
+									</div>
+								</div>
+								<div class="d-gray">
+									<div class="d-g-txt">
+										<p><em>200</em><span>Created</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Removed</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Diserved</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Expired</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="f_l wid50">
+						<div class="dash_box">
+							<p class="dash_tit">시스템<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-t cl_both d-system">
+									<div class="d-t-l f_l">
+										<p><em>200</em><span>total</span></p>
+									</div>
+									<div class="d-t-r f_r">
+										<p class="icon"><i></i></p>
+									</div>
+								</div>
+								<div class="d-gray">
+									<div class="d-g-txt">
+										<p><em>200</em><span>Created</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Removed</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Diserved</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-w2-w1 cl_both">
+					<div class="f_l wid40">
+						<div class="dash_box">
+							<p class="dash_tit">사용자<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-t cl_both">
+									<div class="d-t-l f_l">
+										<p><em>20000</em><span>total</span></p>
+									</div>
+									<div class="d-t-r f_r">
+										<p class="icon"><i></i></p>
+									</div>
+								</div>
+								<div class="d-gray">
+									<div class="d-g-txt">
+										<p><em>200</em><span>Created</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Removed</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Diserved</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Expired</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="f_l wid60">
+						<div class="dash_box">
+							<p class="dash_tit">계정<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-t cl_both d-acc">
+									<div class="d-t-l f_l">
+										<p><em>2000000</em><span>total</span></p>
+									</div>
+									<div class="d-t-r f_r">
+										<p class="icon"><i></i></p>
+									</div>
+								</div>
+								<div class="d-gray">
+									<div class="d-g-txt">
+										<p><em>200</em><span>Provisioned</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>De-Provisioned</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Failed</span></p>
+									</div>
+									<div class="d-g-txt">
+										<p><em>0</em><span>Orphan</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-w3 cl_both">
+					<div class="f_l wid33">
+						<div class="dash_box">
+							<p class="dash_tit">비밀번호<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-t cl_both d-psw">
+									<div class="d-t-l f_l">
+										<p><em>20000</em><span>resets</span></p>
+									</div>
+									<div class="d-t-r f_r">
+										<p class="icon"><i></i></p>
+									</div>
+								</div>
+								<div class="d-gray">
+									<div class="d-g-txt d-g-t02">
+										<p><em>2</em><span>Failed Attempts</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="f_l wid33">
+						<div class="dash_box">
+							<p class="dash_tit">로그인<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-t cl_both d-rogin">
+									<div class="d-t-l f_l">
+										<p><em>20000</em><span>total</span></p>
+									</div>
+									<div class="d-t-r f_r">
+										<p class="icon"><i></i></p>
+									</div>
+								</div>
+								<div class="d-gray">
+									<div class="d-g-txt d-g-t02">
+										<p><em>2</em><span>Failed Attempts</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="f_l wid33">
+						<div class="dash_box">
+							<p class="dash_tit">리포트<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-t cl_both d-report">
+									<div class="d-t-l f_l">
+										<p><em>5</em><span>total</span></p>
+									</div>
+									<div class="d-t-r f_r">
+										<p class="icon"><i></i></p>
+									</div>
+								</div>
+								<div class="d-gray">
+									<div class="d-g-txt d-g-t02">
+										<p></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-w3 cl_both">
+					<div class="f_l wid33">
+						<div class="dash_box">
+							<p class="dash_tit">사용자그룹<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-chart cl_both">
+									<div class="f_l piechart">
+										<img src="img/admin/piechart01.png">
+									</div>
+									<div class="f_l c-legend">
+										<p class="lg-color">End-user<em>1500</em></p>
+										<p class="lg-color lgc01">Manager<em>300</em></p>
+										<p class="lg-color lgc02">Admin<em>1</em></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="f_l wid33">
+						<div class="dash_box">
+							<p class="dash_tit">시스템 별 계정현황<a href="" class="btn_more">더보기</a></p>
+							<div class="dash_con">
+								<div class="d-chart cl_both">
+									<div class="f_l piechart">
+										<img src="img/admin/piechart02.png">
+									</div>
+									<div class="f_l c-legend">
+										<p class="lg-color">PostgreSQL<em>1500</em></p>
+										<p class="lg-color lgc01">Active Directory<em>300</em></p>
+										<p class="lg-color lgc02">Application 1<em>100</em></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="f_l wid33">
+						<div class="dash_box">
+							<p class="dash_tit">
+								대시보드 컨트롤러
+								<button class="shadow">상태저장</button>
+								<button class="shadow">초기화</button>
+							</p>
+							<div class="dash_con">
+								<div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SecureGuard AM V8.0</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/am/common.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<!-- 헤더 -->
+		<div id="header">
+			<div class="gnb">
+				<h1 class="logo"><a href="">Secureguard Prime</a></h1>
+				<p class="btn_tree"><a href="">그룹보기</a></p>
+				<!-- 1024사이즈일때 전체카테고리 -->
+				<p class="btn_allcategory"><a href=""><i class="icon">전체카테고리보기</i></a></p> <!--팝업창열리면 a 클래스 on 추가-->
+				<!-- 유저관련버튼 -->
+				<ul class="user_area">
+					<li class="btn_user"><a href=""><i class="icon">정보변경</i></a></li>
+					<li class="btn_alam"><a href=""><i class="icon">알림</i><span>2</span></a></p></li>
+					<li class="btn_logout"><a href=""><i class="icon">로그아웃</i></a></li>
+				</ul>				
+			</div>
+			<!-- 1280사이즈일때 왼쪽메뉴 -->
+			<div class="lnb_wrap">
+				<div class="user_info">
+					<p class="profile_img"><img src="img/am/img_profile.png" alt="프로필이미지"></p>
+					<div class="text_info">
+						<p class="user_id">ADMIN</p>
+						<dl>
+							<dt class="icon_logintime">로그인시간</dt>
+							<dd>2016.12.20 09:46:56</dd>
+							<dt class="icon_account">접속계정</dt>
+							<dd>192.168.0.131</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="main_menu nav_icon">
+					<ul>
+						<li><a href=""><em class="icon_home"></em>HOME</a></li>
+						<li class="on"><a href=""><em class="icon_mng"></em>관리<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="" class="on">시스템</a></li> 
+								<li><a href="">계정</a></li>
+								<li><a href="">사용자</a></li>
+								<li><a href="">그룹</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_access"></em>접근제어<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">접속조회</a></li>
+								<li><a href="">이벤트조회</a></li>
+								<li><a href="">정책설정</a></li>
+								<li><a href="">정책모델</a></li>
+								<li><a href="">명령어</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_workflow"></em>워크플로우<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">요청문서함</a></li>
+								<li><a href="">결재문서함</a></li>
+								<li><a href="">결재선</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_schedule"></em>작업&amp;스케줄<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">작업</a></li>
+								<li><a href="">스케줄</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_setting"></em>설정<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">환경</a></li>
+								<li><a href="">권한</a></li>
+								<li><a href="">메뉴</a></li>
+								<li><a href="">대시보드</a></li>
+								<li><a href="">연동</a></li>
+								<li><a href="">코드</a></li>
+								<li><a href="">라이선스</a></li>
+								<li><a href="">공지사항</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 전체카테고리 -->
+			<div class="nav_allcategory nav_icon" style="display:none">
+				<ul>
+					<li class="on"><a href=""><em class="icon_mng"></em>관리</a>
+						<ul>
+							<li><a href="">시스템</a></li>
+							<li><a href="">계정</a></li>
+							<li><a href="">사용자</a></li>
+							<li><a href="">그룹</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_access"></em>접근제어</a>
+						<ul>
+							<li><a href="">접속조회</a></li>
+							<li><a href="">이벤트조회</a></li>
+							<li><a href="">정책설정</a></li>
+							<li><a href="">정책모델</a></li>
+							<li><a href="">명령어</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_workflow"></em>워크플로우</a>
+						<ul>
+							<li><a href="">요청문서함</a></li>
+							<li><a href="">결재문서함</a></li>
+							<li><a href="">결재선</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_schedule"></em>작업&amp;스케줄</a>
+						<ul>
+							<li><a href="">작업</a></li>
+							<li><a href="">스케줄</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_setting"></em>설정</a>
+						<ul>
+							<li><a href="">환경</a></li>
+							<li><a href="">권한</a></li>
+							<li><a href="">메뉴</a></li>
+							<li><a href="">대시보드</a></li>
+							<li><a href="">연동</a></li>
+							<li><a href="">코드</a></li>
+							<li><a href="">라이선스</a></li>
+							<li><a href="">공지사항</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 트리 -->
+			<div class="tree_wrap" style="left:-242px">
+				<div class="tab">
+					<ul>
+						<li><a href="">시스템</a></li>
+						<li><a href="">계정</a></li>
+						<li><a href="" class="on">사용자</a></li>
+					</ul>
+				</div>
+				<div class="tree_box">
+					<p>
+						<select class="form_contrl">
+							<option value="">그룹별</option>
+							<option value="">그룹별2</option>
+							<option value="">그룹별3</option>
+						</select>
+					</p>
+					<div class="tree_view">
+						<ul>
+							<li>
+								<a href=""><span class="icon_folder_open"></span>root</a>
+								<ul>
+									<li><a href=""><span class="icon_folder_open"></span>QA서버</a>
+										<ul>
+											<li><a href=""><span class="icon_file"></span>운영</a></li>
+											<li><a href=""><span class="icon_file"></span>개발</a></li>
+										</ul>
+									</li>
+									<li><a href=""><span class="icon_folder_close"></span>네트워크그룹</a></li>
+									<li><a href=""><span class="icon_folder_open"></span>Server</a>
+										<ul>
+											<li><a href=""><span class="icon_file"></span>서버그룹</a></li>
+											<li><a href=""><span class="icon_file"></span>시연용시스템</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 본문 -->
+		<div id="container">
+			<div class="content">
+				<div class="title_box">
+					<h2>결재선 수정</h2>
+					<ol class="link_depth">
+						<li><a href="">워크플로우</a></li>
+						<li><a href="">요청문서함</a></li>
+						<li><a href="">결재 요청</a></li>
+					</ol>
+				</div>
+				<div class="list_detail pd24">
+					<p class="tit02">결재라인 정보</p>
+					<div class="form_wrap wk_box">
+						<dl class="input_form no_line">
+							<dt><label for="approval01">결재선 명</label></dt>
+							<dd><input type="text" name="" id="approval01" class="form_contrl" placeholder="결재선"></dd>
+						</dl>
+						<dl class="check_radio_form checkbox_style no_line">
+							<dt>결재선 범위</dt>
+							<dd>
+								<p><input type="checkbox" name="protocol" id="protocol1" value=""><label for="protocol1">공통</label></p>
+								<p><input type="checkbox" name="protocol" id="protocol2" value=""><label for="protocol2">접근제어</label></p>
+								<p><input type="checkbox" name="protocol" id="protocol3" value=""><label for="protocol3">패스워드</label></p>
+								<p><input type="checkbox" name="protocol" id="protocol4" value=""><label for="protocol4">계정관리</label></p>
+							</dd>
+						</dl>
+						<dl class="input_form no_line">
+							<dt><label for="approval03">요청 사유</label></dt>
+							<dd><textarea id="approval03" name="" rows="" cols="" class="form_contrl"></textarea></dd>
+						</dl>
+					</div>
+					<div class="pmnt_edit">
+						<p class="tit02">결재/참조 편집</p>
+						<div class="box2"> <!-- float줄때 box2 클래스 -->
+							<div class="f_l wid50"> 
+								<div class="wid100 search_box">
+									<input type="text" placeholder="사용자명 / 로그인ID / 부서 / 직급" class="search_inputbox" />
+									<button class="btn_search" type="submit">검색</button>
+								</div>
+								<div class="department_wrap">
+									<div class="tree_view f_l wid50">
+										<ul>
+											<li>
+												<a href=""><span class="icon_folder_open"></span>root</a>
+												<ul>
+													<li><a href=""><span class="icon_folder_open"></span>QA서버</a>
+														<ul>
+															<li><a href=""><span class="icon_file"></span>운영</a></li>
+															<li><a href=""><span class="icon_file"></span>개발</a></li>
+														</ul>
+													</li>
+													<li><a href=""><span class="icon_folder_close"></span>네트워크그룹</a></li>
+													<li><a href=""><span class="icon_folder_open"></span>Server</a>
+														<ul>
+															<li><a href=""><span class="icon_file"></span>서버그룹</a></li>
+															<li><a href=""><span class="icon_file"></span>시연용시스템</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									<div class="checkbox_style f_l wid50 scroll">
+										<ul>
+											<li>
+												<input type="checkbox" name="pmm" id="pmm1" value="" checked="checked"><label for="pmm1">PM팀 팀장 정성진</label>
+											</li>
+											<li>
+												<input type="checkbox" name="pmm" id="pmm2" value=""><label for="pmm2">PM팀 팀장 정성진</label>
+											</li>
+											<li>
+												<input type="checkbox" name="pmm" id="pmm3" value=""><label for="pmm3">PM팀 팀장 정성진</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="f_l wid50">
+								<div class="pmnt_step_box wid100">
+									<p class="tit">결재<a href="" class="small_btn step_btn">STEP</a></p>
+									<div class="pmnt_step_box_inner scroll">
+										<div class="step_box">
+											<div class="step_tit">
+												<p><span>1</span>step.</p>
+												<select name="" id="" class="form_contrl">
+													<option value="">순차전원결재</option>
+													<option value="">병렬전원결재</option>
+													<option value="">병렬일부결재</option>
+												</select>
+											</div>
+											<div class="step_con">
+												<p class="step_ctrl"><a href="" class="add">추가</a><a href="" class="minus">삭제</a></p>
+												<ul class="list scroll">
+													<li class="on">PM팀 과장 정지훈</li>
+													<li>PM팀 과장 정지훈</li>
+													<li>PM팀 과장 정지훈</li>
+													<li>PM팀 과장 정지훈</li>
+													<li>PM팀 과장 정지훈</li>
+												</ul>
+												<p class="order_ctrl"><a href="" class="top">위로</a><a href="" class="under">아래로</a></p>
+											</div>
+											<a href="" class="del">삭제</a>
+										</div>
+										<div class="step_box">
+											<div class="step_tit">
+												<p><span>2</span>step.</p>
+												<select name="" id="" class="form_contrl">
+													<option value="">순차전원결재</option>
+													<option value="">병렬전원결재</option>
+													<option value="">병렬일부결재</option>
+												</select>
+											</div>
+											<div class="step_con">
+												<p class="step_ctrl"><a href="" class="add">추가</a><a href="" class="minus">삭제</a></p>
+												<ul class="list">
+													<li>PM팀 과장 정지훈</li>
+												</ul>
+												<p class="order_ctrl"><a href="" class="top">위로</a><a href="" class="under">아래로</a></p>
+											</div>
+											<a href="" class="del">삭제</a>
+										</div>
+									</div>
+								</div>
+								<div class="pmnt_step_box refer_box wid100">
+									<p class="tit">참조</p>
+									<div class="pmnt_step_box_inner">
+										<div class="step_box">
+											<div class="step_con">
+												<p class="step_ctrl"><a href="" class="add">추가</a><a href="" class="minus">삭제</a></p>
+												<ul class="list">
+													<li class="">PM팀 과장 정지훈</li>
+												</ul>
+												<p class="order_ctrl"><a href="" class="top">위로</a><a href="" class="under">아래로</a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btn_box"> 
+					<!-- 버튼이 세개이상일때 왼쪽으로갈 버튼 부모클래스 "f_l"추가 오른쪽갈 버튼 부모클래스 "f_r"추가 -->
+						<div class="f_l">
+							<a href="" class="white">초기화</a>
+						</div>
+						<div class="f_r">
+							<div class="confirm_popup">
+								<a href="" class="violet btn_detail_save">저장</a>
+								<div class="save_alert" style="display:none">
+									<div class="arrow"></div>
+									<p>저장하시겠습니까?</p>
+									<div class="btn_box">
+										<a href="" class="violet">저장</a>
+										<a href="" class="grey cancel">취소</a>
+									</div>
+								</div>
+							</div>
+							<a href="" class="grey">닫기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 푸터 -->
+			<div id="footer">
+				<p class="copy"><img src="img/am/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>

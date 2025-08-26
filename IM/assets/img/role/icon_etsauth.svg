@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 34 34">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_15567" data-name="사각형 15567" width="34" height="34" transform="translate(3.401 4)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon_etsauth" transform="translate(-3.4 -4)" clip-path="url(#clip-path)">
+    <g id="그룹_856" data-name="그룹 856" transform="translate(0 4)">
+      <g id="그룹_855" data-name="그룹 855" transform="translate(19.564 16.839)">
+        <path id="패스_632" data-name="패스 632" d="M8.652,3S7.278,6.218,3,5.6v6.439c.111.374-.382,3.4,5.652,4.9,6.034-1.5,5.541-4.525,5.652-4.9V5.6C10.027,6.218,8.652,3,8.652,3Z" transform="translate(-2.435 -2.347)" fill="#27ad98" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <path id="패스_633" data-name="패스 633" d="M23,34.942l1.884,1.789L27.522,34" transform="translate(-18.667 -27.506)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+      <g id="타원_97" data-name="타원 97" transform="translate(8.4 3)" fill="#999" stroke="#999" stroke-width="1">
+        <circle cx="3" cy="3" r="3" stroke="none"/>
+        <circle cx="3" cy="3" r="2.5" fill="none"/>
+      </g>
+      <g id="타원_98" data-name="타원 98" transform="translate(8.4 12)" fill="#999" stroke="#999" stroke-width="1">
+        <circle cx="3" cy="3" r="3" stroke="none"/>
+        <circle cx="3" cy="3" r="2.5" fill="none"/>
+      </g>
+      <g id="타원_99" data-name="타원 99" transform="translate(8.4 21)" fill="#999" stroke="#999" stroke-width="1">
+        <circle cx="3" cy="3" r="3" stroke="none"/>
+        <circle cx="3" cy="3" r="2.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

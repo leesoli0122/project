@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+					</a>
+				</div>
+				<div class="nav_tab">
+					<a href="" class="">사용자</a>
+					<a href="" class="on">관리자</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class="depth_menu"><i class="UserMangement"></i><span>사용자 관리</span></a>
+						<ul>
+							<li><a href="">사용자</a></li>
+							<li><a href="" class="on">사용자 그룹</a></li>
+							<li><a href="">조직 그룹</a></li>
+							<li><a href="">대량 등록</a></li>
+							<li><a href="">자가 등록</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="ResourceMangement"></i><span>시스템 관리</span></a>
+						<ul>
+							<li><a href="">조정 및 배포</a></li>
+							<li><a href="">시스템(자원)</a></li>
+							<li><a href="">시스템(자원) 그룹</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="PolicyMangement"></i><span>정책 관리</span></a>
+						<ul>
+							<li><a href="">역할</a></li>
+							<li><a href="">조정 정책</a></li>
+							<li><a href="">배포 정책</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="AMMangement"></i><span>정책제어 정책</span></a>
+						<ul>
+							<li><a href="">PAM 연결 관리</a></li>
+							<li><a href="">접속조회</a></li>
+							<li><a href="">접근권한 관리</a></li>
+							<li><a href="">명령어</a></li>
+							<li><a href="">금지 명령어</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_pw"></i><span>인증/인가 관리</span></a>
+						<ul>
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="AuditingReport"></i><span>감사 및 보고서 긴 메뉴명입니다</span></a>
+						<ul>
+							<li><a href="">모니터링</a></li>
+							<li><a href="">감사</a></li>
+							<li><a href="">보고서</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="AttributeMangement"></i><span>속성관리</span></a>
+						<ul>
+							<li><a href="">사용자 정보</a></li>
+							<li><a href="">사용자그룹 정보</a></li>
+							<li><a href="">조직 정보</a></li>
+						</ul>
+					</li>
+					<li><a href="" class=""><i class="Connector"></i><span>Connector</span></a></li>
+					<li><a href="" class=""><i class="ONSDModel"></i><span>ONSD Entry</span></a></li>
+					<li><a href="" class=""><i class="WorkflowManagement"></i><span>워크플로우</span></a></li>
+					<li><a href="" class="depth_menu"><i class="System"></i><span>시스템</span></a>
+						<ul>
+							<li><a href="">관리자</a></li>
+							<li><a href="">저장소 관리</a></li>
+							<li><a href="">서비스 모듈 관리</a></li>
+							<li><a href="">스케줄 관리</a></li>
+							<li><a href="">CMS</a></li>
+							<li><a href="">환경 설정</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>사용자 관리</h1>
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">역할관리</a></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_modetrans"><a href="">사용자 모드<i></i></a></li>
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> <span>user01</span></a></li>
+					<li class="time"><i></i><span>2020-09-11 15:35:00</span></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>기타알람</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content tab_cont">
+				<div class="tab_wrap">
+					<ul class="tab_list">
+						<li><a href="" class="on">보안 정책</a></li>
+						<li><a href="">사내 자원</a></li>
+						<li><a href="">디바이스 스코어</a></li>
+					</ul>
+				</div>
+				<div class="t_cont_in">
+					<div class="flx tst_score_wrap">
+						<div class="move_box pg_m_tbl">
+							<div class="moved_tit">
+								신뢰 스코어 목록
+								<div class="btn_box tit_in_btn">
+									<button class="blue">추가</button>
+									<button class="navy">삭제</button>
+								</div>
+							</div>
+							<div class="search_box mini_search">
+								<input type="text" placeholder="검색어를 입력해주세요" class="search_inputbox" />
+								<button class="btn_search" type="submit">검색</button>
+							</div>
+							<div class="move_tbl">
+								<table class="default_tbl scroll">
+									<thead>
+										<tr>
+											<th></th>
+											<th>계산식 목록</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr class="on">
+											<td>3</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td>6</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td>7</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td>8</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td>9</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td>11</td>
+											<td>172.24.128.222</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="formula_wrap">
+							<div class="btn_box cl_both">
+								<div class="f_l">
+									<a href="" class="blue">생성</a>
+									<a href="" class="white">수정</a>
+									<a href="" class="white">삭제</a>
+								</div>
+								<div class="f_r">
+									<a href="" class="navy">시뮬레이션</a>
+									<a href="" class="navy">Metrix Export</a>
+								</div>				
+							</div>
+							<div class="formula_box">
+								<div class="fml_txtbox">
+									<textarea class="form_contrl"></textarea>
+									<button class="btnstl btn_ref">새로고침</button>
+								</div>
+								<div class="vrb_box">
+									<div class="fml_list_wrap">
+										<div class="fml_list flx">
+											<div class="fml_elmt">
+												<input type="text" name="" class="form_contrl">
+											</div>
+											<p>=</p>
+											<div class="fml_elmt">
+												<select class="form_contrl">
+													<option>인증방법</option>
+													<option>인증방법</option>
+												</select>
+											</div>
+											<div class="fml_elmt">
+												<select class="form_contrl">
+													<option>(ID/PWD) 기본인증</option>
+													<option>(ID/PWD) 기본인증</option>
+												</select>
+											</div>
+											<p>/Value =</p>
+											<div class="fml_elmt">
+												<input type="text" name="" class="form_contrl">
+											</div>
+										</div>
+										<div class="fml_list flx">
+											<div class="fml_elmt">
+												<input type="text" name="" class="form_contrl">
+											</div>
+											<p>=</p>
+											<div class="fml_elmt">
+												<select class="form_contrl">
+													<option>인증방법</option>
+													<option>인증방법</option>
+												</select>
+											</div>
+											<div class="fml_elmt">
+												<select class="form_contrl">
+													<option>(ID/PWD) 기본인증</option>
+													<option>(ID/PWD) 기본인증</option>
+												</select>
+											</div>
+											<p>/Value =</p>
+											<div class="fml_elmt">
+												<input type="text" name="" class="form_contrl">
+											</div>
+										</div>
+										<div class="fml_list flx">
+											<div class="fml_elmt">
+												<input type="text" name="" class="form_contrl">
+											</div>
+											<p>=</p>
+											<div class="fml_elmt">
+												<select class="form_contrl">
+													<option>인증방법</option>
+													<option>인증방법</option>
+												</select>
+											</div>
+											<div class="fml_elmt">
+												<select class="form_contrl">
+													<option>(ID/PWD) 기본인증</option>
+													<option>(ID/PWD) 기본인증</option>
+												</select>
+											</div>
+											<p>/Value =</p>
+											<div class="fml_elmt">
+												<input type="text" name="" class="form_contrl">
+											</div>
+										</div>
+										<div class="fml_list flx">
+											<div class="fml_elmt">
+												<input type="text" name="" class="form_contrl">
+											</div>
+											<p>=</p>
+											<div class="fml_elmt">
+												<select class="form_contrl">
+													<option>인증방법</option>
+													<option>인증방법</option>
+												</select>
+											</div>
+											<div class="fml_elmt">
+												<select class="form_contrl">
+													<option>(ID/PWD) 기본인증</option>
+													<option>(ID/PWD) 기본인증</option>
+												</select>
+											</div>
+											<p>/Value =</p>
+											<div class="fml_elmt">
+												<input type="text" name="" class="form_contrl">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

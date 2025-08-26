@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_15519" data-name="사각형 15519" width="16" height="16" transform="translate(0 0)" fill="none" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="ico_upload" clip-path="url(#clip-path)">
+    <g id="upload" transform="translate(1 1.667)">
+      <path id="패스_478" data-name="패스 478" d="M15.663,35.344v1.5a2.018,2.018,0,0,1-2.018,2.018H4.018A2.017,2.017,0,0,1,2,36.841v-1.5" transform="translate(-2 -26.989)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="패스_479" data-name="패스 479" d="M22.437,27.513l-3.428-3.3-3.429,3.3" transform="translate(-12.178 -24.214)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="선_190" data-name="선 190" y2="8.865" transform="translate(6.831 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

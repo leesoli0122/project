@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SecureGuard Prime</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/am/common.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<!-- 로그인 -->
+		<div id="login_wrap">
+			<!-- * 로고타입 기본 * <p class="logo"><img src="img/am/logo.png"></p> -->
+			<p class="logo_type02"><img src="img/am/logo_type02.png"><span>운영망</span></p> 
+			<div class="login_input">
+				<p class="id_input"><label for="user_id">아이디</label><input type="text" name="" id="user_id" class="form_contrl" placeholder="ID"></p>
+				<p class="warning_txt">아이디에 허용하지 않는 문자열과 공백이 있습니다. 아이디를 다시 한번 입력해 주세요.</p> <!-- 경고텍스트 blind클래스를 추가하면 텍스트 없어짐 -->
+				<p class="pw_input"><label for="user_pw">비밀번호</label><input type="text" name="" id="user_pw" class="form_contrl" placeholder="Password"></p>
+				<p class="warning_txt blind">비밀번호를 입력해주세요</p>
+				<p class="check_radio_form checkbox_style"><input type="checkbox" name="" value="" id="AD"><label for="AD">AD계정</label></p>
+			</div>
+			<p class="btn_box login_btn"><a class="violet">로그인</a></p>
+			<p class="lost_pw"><a href="">비밀번호를 잃어버리셨나요?</a></p>
+		<!-- 푸터 -->
+			<div id="footer">
+				<p class="copy"><img src="img/am/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>

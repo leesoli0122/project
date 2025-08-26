@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="assets/img/common/logo.png"><!--[2025] 이미지 경로 및 이미지 변경-->
+						<span>Admin</span>
+					</a>
+				</div>
+				<!-- s: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li><a href="" class=""><i class="icon_user"></i><span>사용자</span></a></li>
+						<li><a href=""><i class="icon_userg"></i><span>사용자 그룹</span></a></li>
+						<li><a href=""><i class="icon_om"></i><span>조직관리</span></a></li>
+						<li><a href="" class="on"><i class="icon_system"></i><span>시스템</span></a></li>
+						<li><a href=""><i class="icon_stg"></i><span>시스템 그룹</span></a></li>
+						<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+							<ul>
+								<li><a href="">역할</a></li>
+								<li><a href="" class="on">규칙 관리</a></li>
+								<li><a href="">계산식 관리</a></li>
+								<li><a href="">이벤트 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+							<ul>
+								<li><a href="">인증 관리</a></li>
+								<li><a href="">인가 관리</a></li>
+								<li><a href="">암호 정책 관리</a></li>
+							</ul>
+						</li>
+						<li><a href=""><i class="icon_monitor"></i><span>모니터링</span></a></li>
+						<li><a href=""><i class="icon_report"></i><span>리포트</span></a></li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard  ICAM V2.0</p>
+					<!-- e: copyright 추가 -->
+				</div>
+				<!-- e: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+			</div>
+		</div>
+		<div id="container">
+			<!-- s : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="header no_navlink">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">시스템 관리</a></li>
+						<li><a href="">생성</a></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><span>user01</span></a></li>
+					<li class="timer">
+						<i></i>
+						<span><em>00:15:00</em> 후 접속 끊김</span>
+						<button class="time_ref" title="세션 시간 새로고침"></button>
+					</li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>기타알람</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_menualdown"><a id="guide_manualDown"></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<!-- e : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="content">
+				<div class="topPrss"><!--[2025] scrollPrss 삭제-->
+					<div class="inner_topPrss">
+						<div class="detail_process">
+							<ul class="flx">
+								<li class="flx_cell process_comple"><span class="s_num">1</span>기본 정보</li>
+								<li class="flx_cell process_comple"><span class="s_num">2</span>서버 정보</li>
+								<li class="flx_cell process_comple"><span class="s_num">3</span>사용자 속성</li>
+								<li class="flx_cell process_comple"><span class="s_num">4</span>그룹 속성</li>
+								<li class="flx_cell process_comple"><span class="s_num">5</span>조직 속성</li>
+								<li class="flx_cell process_current"><span class="s_num">6</span>조정 정책</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="btn_box cl_both">
+					<div class="f_l">
+					</div>
+					<div class="f_r">
+						<!-- s: class명 변경 -->
+						<a href="" class="basic">승인</a>
+						<a href="" class="line">반려</a>
+						<a href="" class="primary">확인</a>
+						<!-- e: class명 변경 -->
+					</div>
+				</div>
+				
+				<p class="def_tit">신청자 정보</p><!--[2025] &middot; 식제 -->
+				<div class="tbl_list">
+					<table class="default_tbl tblStl2">
+						<tbody>
+							<tr>
+								<th class="th-bl">사번</th>
+								<td>0000</td>
+								<th class="th-bl">이름</th>
+								<td>홍길동</td>
+							</tr>
+							<tr>
+								<th class="th-bl">부서</th>
+								<td>IT부</td>
+								<th class="th-bl">업무</th>
+								<td>입금</td>
+							</tr>
+							<tr>
+								<th class="th-bl">직원분류</th>
+								<td>내부직원</td>
+								<th class="th-bl">IP</th>
+								<td>10.10.10.10</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="def_tit">변경 요청 정보</p><!--[2025] &middot; 식제 -->
+				<div class="tbl_list">
+					<table class="default_tbl tblStl2">
+						<tbody>
+							<tr>
+								<th rowspan="2" class="th-bl">요청 시스템(정보)</th>
+								<th>
+									<div class="tb_dt_link">
+										<p>Linux / 개발서버 / Linux for SharedAccount test / 172.24.130.112 / 공유계정 신청가능한 리눅스<span> 외 1건</span>
+										</p>
+										<button class="btn_d_arw" title="상세보기"><i class="btn_dtail_arrow"></i></button>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<td>업무</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tbl_list">
+					<table class="default_tbl tblStl2">
+						<tbody>
+							<tr>
+								<th rowspan="2" class="th-bl">요청 시스템(정보)</th>
+								<th>
+									<div class="tb_dt_link">
+										<p>Linux / 개발서버 / Linux for SharedAccount test / 172.24.130.112 / 공유계정 신청가능한 리눅스<span> 외 1건</span>
+										</p>
+										<button class="btn_d_arw" title="상세보기"><i class="btn_dtail_arrow up"></i></button>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<td>업무</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tbl_list">
+					<table class="default_tbl tblStl2">
+						<tbody>
+							<tr>
+								<!-- s: style 삭제 -->
+								<th rowspan="8" class="th-bl">변경 요청 정보</th>
+								<th>항목</th>
+								<th>변경 전</th>
+								<th class="bluetxt">변경 후</th>
+								<!-- e: style 삭제 -->
+							</tr>
+							<tr>
+								<td>사용자 구분</td>
+								<td>내부직원</td>
+								<td>내부직원</td>
+							</tr>
+							<tr>
+								<td rowspan="5">업무</td>
+								<td>-</td>
+								<td class="aft_cont">
+									<div class="aft_ir">
+										<i class="aft_i aft_add"></i>
+										인터페이스 - 대외계
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>-</td>
+								<td class="aft_cont">
+									<div class="aft_ir">
+										<i class="aft_i aft_add"></i>
+										인터페이스 - 대내계
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>기간계 - 입금</td>
+								<td class="aft_cont">
+									<div class="aft_ir">
+										<i class="aft_i aft_mod"></i>
+										기간계 - 입금
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>기간계 - 보전</td>
+								<td class="aft_cont">
+									<div class="aft_ir">
+										<i class="aft_i aft_mod"></i>
+										기간계 - 보전
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>기간계 - 일반지급</td>
+								<td class="aft_cont">
+									<div class="aft_ir">
+										<i class="aft_i aft_mns"></i>
+										-
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="def_tit">승인 의견</p><!--[2025] &middot; 식제 -->
+				<div class="tbl_list">
+					<table class="default_tbl tblStl2">
+						<tbody>
+							<tr>
+								<th class="th-bl">승인의견</th>
+								<td><input type="text" class="form_contrl" name=""></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="btn_box cl_both">
+					<div class="f_l">
+					</div>
+					<div class="f_r">
+						<!-- s: class명 변경 -->
+						<a href="" class="basic">승인</a>
+						<a href="" class="line">반려</a>
+						<a href="" class="primary">확인</a>
+						<!-- e: class명 변경 -->
+					</div>				
+				</div>
+			</div>
+			<!-- nav로 이동 <div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div> -->
+		</div>
+	</div>
+</body>
+</HTML>

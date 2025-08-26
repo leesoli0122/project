@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+					</a>
+				</div>
+				<div class="nav_tab">
+					<a href="" class="">사용자</a>
+					<a href="" class="on">관리자</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class="depth_menu"><i class="UserMangement"></i><span>사용자 관리</span></a>
+						<ul>
+							<li><a href="">사용자</a></li>
+							<li><a href="" class="on">사용자 그룹</a></li>
+							<li><a href="">조직 그룹</a></li>
+							<li><a href="">대량 등록</a></li>
+							<li><a href="">자가 등록</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="ResourceMangement"></i><span>시스템 관리</span></a>
+						<ul>
+							<li><a href="">조정 및 배포</a></li>
+							<li><a href="">시스템(자원)</a></li>
+							<li><a href="">시스템(자원) 그룹</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="PolicyMangement"></i><span>정책 관리</span></a>
+						<ul>
+							<li><a href="">역할</a></li>
+							<li><a href="">조정 정책</a></li>
+							<li><a href="">배포 정책</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="AMMangement"></i><span>정책제어 정책</span></a>
+						<ul>
+							<li><a href="">PAM 연결 관리</a></li>
+							<li><a href="">접속조회</a></li>
+							<li><a href="">접근권한 관리</a></li>
+							<li><a href="">명령어</a></li>
+							<li><a href="">금지 명령어</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_pw"></i><span>인증/인가 관리</span></a>
+						<ul>
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="AuditingReport"></i><span>감사 및 보고서 긴 메뉴명입니다</span></a>
+						<ul>
+							<li><a href="">모니터링</a></li>
+							<li><a href="">감사</a></li>
+							<li><a href="">보고서</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="AttributeMangement"></i><span>속성관리</span></a>
+						<ul>
+							<li><a href="">사용자 정보</a></li>
+							<li><a href="">사용자그룹 정보</a></li>
+							<li><a href="">조직 정보</a></li>
+						</ul>
+					</li>
+					<li><a href="" class=""><i class="Connector"></i><span>Connector</span></a></li>
+					<li><a href="" class=""><i class="ONSDModel"></i><span>ONSD Entry</span></a></li>
+					<li><a href="" class=""><i class="WorkflowManagement"></i><span>워크플로우</span></a></li>
+					<li><a href="" class="depth_menu"><i class="System"></i><span>시스템</span></a>
+						<ul>
+							<li><a href="">관리자</a></li>
+							<li><a href="">저장소 관리</a></li>
+							<li><a href="">서비스 모듈 관리</a></li>
+							<li><a href="">스케줄 관리</a></li>
+							<li><a href="">CMS</a></li>
+							<li><a href="">환경 설정</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>사용자 관리</h1>
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">역할관리</a></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_modetrans"><a href="">사용자 모드<i></i></a></li>
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> <span>user01</span></a></li>
+					<li class="time"><i></i><span>2020-09-11 15:35:00</span></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<li><a><i></i>경고!</a></li>
+									<li><a><i></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i></i>전체적인 알람공지</a></li>
+									<li><a><i></i>SMS문자왔숑</a></li>
+									<li><a><i></i>메일왔네요</a></li>
+									<li><a><i></i>기타알람</a></li>
+								</ul>
+								<div class="allAlim">
+									<a href="" class="btn_allAlim">모두 보기 ></a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="search_wrap">
+					<div class="search_box">
+						<input type="text" placeholder="검색어를 입력해주세요" class="search_inputbox" />
+						<button class="btn_search" type="submit">검색</button>
+						<button class="btn_detail_search" type="submit">상세검색</button>
+					</div>
+					<form class="detail_search_wrap" style="display:none">
+						<p class="detail_search_btn">상세검색<i>닫기</i></p>
+						<div class="search_column4">
+							<div class="col">
+								<dl>
+									<dt><label for="detail01">종류</label></dt>
+									<dd><input type="text" name="" id="detail01" class="form_contrl"></dd>
+								</dl>
+							</div>
+							<div class="col">
+								<dl>
+									<dt><label for="detail04">제조사</label></dt>
+									<dd><input type="text" name="" id="detail04" class="form_contrl"></dd>
+								</dl>
+							</div>
+							<div class="col">
+								<dl>
+									<dt><label for="detail07">모델명</label></dt>
+									<dd><select name="" id="detail07" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+							</div>
+							<div class="col">
+								<dl>
+									<dt><label for="detail09">이름</label></dt>
+									<dd><input type="text" name="" id="detail09" class="form_contrl"></dd>
+								</dl>
+							</div>
+							<div class="col">
+								<dl>
+									<dt><label for="detail10">이름</label></dt>
+									<dd><input type="text" name="" id="detail10" class="form_contrl"></dd>
+								</dl>
+							</div>
+						</div>
+						<div class="search_date">
+							<dl class="flx">
+								<dt>생성일</dt>
+								<dd>
+									<div class="flx">
+										<ul class="flx month_select">
+											<li><button class="shadow">1개월</button></li>
+											<li><button class="shadow on">3개월</button></li>
+											<li><button class="shadow">6개월</button></li>
+											<li><button class="shadow">10개월</button></li>
+											<li><button class="shadow">12개월</button></li>
+										</ul>
+										<div class="form_date">
+											<input type="text" class="form_contrl date_ctl" value="시작날짜" readonly="readonly">
+											<span> - </span>
+											<input type="text" class="form_contrl date_ctl" value="종료날짜" readonly="readonly">
+										</div>
+										<button class="shadow">초기화</button>
+									</div>
+								</dd>
+							</dl>
+						</div>
+						<div class="search_column1">
+							<div class="col">
+								<dl class="flx">
+									<dt><label for="detail07">모델명</label></dt>
+									<dd><select name="" id="detail07" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+							</div>
+						</div>
+						<div class="box2">
+							<p class="btn_box">
+								<a href="" class="white">초기화</a>
+								<a href="" class="gradient">검색</a>
+							</p>
+						</div>
+					</form>
+					
+					<div class="related_box" style="display:none">
+						<ul class="related_list">
+							<li><a href="">연관검색어1</a></li>
+							<li><a href="">연관검색어2</a></li>
+							<li><a href="">연관검색어3</a></li>
+							<li><a href="">연관검색어4</a></li>
+							<li><a href="">연관검색어5</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="tab_wrap cont_in_tab">
+					<ul class="tab_list">
+						<li><a href="" class="on">시스템 계정 현황<span class="new_org">N</span></a></li>
+						<li><a href="">비인가 계정 현황</a></li>
+						<li><a href="">계정 사용 현황<span class="new_org">N</span></a></li>
+					</ul>
+				</div>
+				<div class="list_btn">
+					<div class="list_left_btn">
+						<button class="shadow">활성</button>
+						<button class="shadow">비활성</button>
+						<span class="divide"></span>
+						<p class="inb opttxt">상태 :</p>
+						<p class="inb"><input type="checkbox" name="" id="chk01" class="check_stl">
+						<label for="chk01" class="check_stl_lab"> 활성화</label></p>
+						<p class="inb"><input type="checkbox" name="" id="chk02" class="check_stl">
+						<label for="chk02" class="check_stl_lab"> 비활성화</label></p>
+						<p class="inb"><input type="checkbox" name="" id="chk03" class="check_stl">
+						<label for="chk03" class="check_stl_lab"> 삭제진행중</label></p>
+					</div>
+					<div class="list_right_btn">
+						<button class="skyblue">자가등록</button>
+						<button class="skyblue">수동 Recon</button>
+						<button class="skyblue">대량등록</button>
+					</div>
+				</div>
+				<div class="tbl_list">
+					<p class="req_txt inb"><em>6건</em>의 변경된 데이터가 있습니다.</p>
+					<table class="default_tbl">
+						<thead>
+							<tr>
+								<th class="tbl_num_wid"></th>
+								<th class="check_list"><input type="checkbox" name="" id="list00" class="check_stl"><label for="list00" class="check_stl_lab"></label></th>
+								<th></th>
+								<th class="sort_column">
+									<div class="">종류<p class="ascanding"><span class="asc_num">1</span></p></div>
+								</th>
+								<th class="sort_column">
+									<div class="">제조사<p class="ascanding"><span class="asc_num">2</span></p></div>
+								</th>
+								<th class="sort_column">
+									<div class="">모델명<p class="ascanding"><span class="asc_num">3</span></p></div>
+								</th>
+								<th></th>
+								<th class="sort_column">
+									<div class="">이름<p class="ascanding"><span class="asc_num">4</span></p></div>
+								</th>
+								<th class="sort_column">
+									<div class="">설명<p class="ascanding"><span class="asc_num">5</span></p></div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="newalim">
+								<th>1</th>
+								<td class="check_list"><input type="checkbox" name="" id="list01" class="check_stl"><label for="list01" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_list none"></i>상태없음</td>
+								<td>CentOS(1503)</td>
+								<td><button class="btnstl trcolor">TRUE</button></td>
+							</tr>
+							<tr class="newalim">
+								<th>2</th>
+								<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_pgs"></i>생성 진행중</td>
+								<td>CentOS(1503)</td>
+								<td><button class="btnstl fcolor">FALSE</button></td>
+							</tr>
+							<tr class="newalim">
+								<th>3</th>
+								<td class="check_list"><input type="checkbox" name="" id="list03" class="check_stl"><label for="list03" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_list icheck"></i>생성</td>
+								<td>CentOS(1503)</td>
+								<td>Linux 표준모델</td>
+							</tr>
+							<tr class="newalim">
+								<th>4</th>
+								<td class="check_list"><input type="checkbox" name="" id="list04" class="check_stl"><label for="list04" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_list"></i>정상</td>
+								<td>CentOS(1503)</td>
+								<td>Linux 표준모델</td>
+							</tr>
+							<tr class="newalim">
+								<th>5</th>
+								<td class="check_list"><input type="checkbox" name="" id="list05" class="check_stl"><label for="list05" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_pgs shippingcart_edit"></i>수정 작업중</td>
+								<td>CentOS(1503)</td>
+								<td>Linux 표준모델</td>
+							</tr>
+							<tr class="newalim">
+								<th>6</th>
+								<td class="check_list"><input type="checkbox" name="" id="list06" class="check_stl"><label for="list06" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_pgs progress_update"></i>수정 진행중</td>
+								<td>CentOS(1503)</td>
+								<td>Linux 표준모델</td>
+							</tr>
+							<tr>
+								<th>7</th>
+								<td class="check_list"><input type="checkbox" name="" id="list07" class="check_stl"><label for="list07" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_pgs progress_pending"></i>작업 보류중</td>
+								<td>CentOS(1503)</td>
+								<td>Linux 표준모델</td>
+							</tr>
+							<tr>
+								<th>7</th>
+								<td class="check_list"><input type="checkbox" name="" id="list07" class="check_stl"><label for="list07" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_list iwarning"></i>작업중 오류</td>
+								<td>CentOS(1503)</td>
+								<td>Linux 표준모델</td>
+							</tr>
+							<tr>
+								<th>8</th>
+								<td class="check_list"><input type="checkbox" name="" id="list08" class="check_stl"><label for="list08" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_list disabled"></i>비활성</td>
+								<td>CentOS(1503)</td>
+								<td>Linux 표준모델</td>
+							</tr>
+							<tr>
+								<th>9</th>
+								<td class="check_list"><input type="checkbox" name="" id="list09" class="check_stl"><label for="list09" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_pgs progress_del"></i>삭제 진행중</td>
+								<td>CentOS(1503)</td>
+								<td>Linux 표준모델</td>
+							</tr>
+							<tr>
+								<th>10</th>
+								<td class="check_list"><input type="checkbox" name="" id="list10" class="check_stl"><label for="list10" class="check_stl_lab"></label></td>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>OS</td>
+								<td>RedHat</td>
+								<td>data1</td>
+								<td><i class="icon_list idisabled"></i>삭제됨</td>
+								<td>CentOS(1503)</td>
+								<td>Linux 표준모델</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tbl_btm">
+					<div class="page_info">1-10/50</div>
+					<div class="pagination">
+						<ul>
+							<li><a href="" class="first diss"><span></span>첫페이지</a></li>
+							<li><a href="" class="prev diss"><span></span>이전</a></li>
+							<li><a href="">1</a></li>
+							<li><a href="" class="on">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+							<li><a href="" class="next"><span></span>다음</a></li>
+							<li><a href="" class="last"><span></span>마지막페이지</a></li>
+						</ul>
+					</div>
+					<div class="page_select">
+						<select class="form_contrl">
+							<option value="">10</option>
+							<option value="">25</option>
+							<option value="">50</option>
+							<option value="">100</option>
+						</select>
+					</div>
+				</div>
+				<div class="list_btn cl_both">
+					<div class="list_left_btn f_l wid50">
+						<button class="shadow">생성</button>
+						<button class="shadow">복사생성</button>
+						<button class="shadow">삭제</button>
+						<button class="shadow">Update</button>
+					</div>
+					<div class="list_right_btn f_r wid50">
+						<button class="skyblue">자가등록</button>
+						<button class="skyblue">수동 Recon</button>
+						<button class="skyblue">대량등록</button>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

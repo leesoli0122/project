@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 34 34">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="34" height="34" transform="translate(-4.318 -0.14)" fill="none" stroke="#121212" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon-locked" transform="translate(4.318 0.14)" clip-path="url(#clip-path)">
+    <g id="locked" transform="translate(2.057 1.985)">
+      <path id="pass" d="M6.832,11.824V7.25c0-3.482,2.832-5.75,6.312-5.75s6.311,2.268,6.311,5.75v4.574" transform="translate(-2.712 -1.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect id="box" width="20.863" height="18.159" rx="5" transform="translate(0 10.985)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="line" y2="4.25" transform="translate(10.431 17.94)" fill="none" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>treemenu</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
+    />
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/font.css" />
+
+    <!-- 추가 css -->
+    <link rel="stylesheet" href="../../css/jquery.scrollbar.css" />
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+
+    <!-- jQuery 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <!-- jQuery UI 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-ui.js"></script>
+    <!-- js -->
+    <script
+      type="text/javascript"
+      charset="utf-8"
+      src="../../js/common.js"
+    ></script>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://test.co.kr/respond.min.js"></script>
+    <![endif]-->
+    <!--[if (gte IE 7)&(lte IE 8)]>
+      <script
+        type="text/javascript"
+        src="http://test.co.kr/respond.min.js"
+      ></script>
+    <![endif]-->
+    <style>
+      h2 {
+        font-size: 30px;
+      }
+      .tit {
+        display: block;
+        margin: 20px 0;
+        padding: 10px 5px;
+        font-size: 16px;
+        background-color: #6ebda8;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="SGIM_wrap" class="mini_nav">
+		<!-- S: side nav -->
+		<!-- E: side nav -->
+		<!-- S: container -->
+		<div id="container" style="padding: 0 !important">
+			<!-- S: header -->
+			<!-- E: header -->
+			<!-- S: content -->
+			<div
+			class="content"
+			style="border-radius: 10px; margin: 20px; padding: 20px"
+			>
+			<h2>menu</h2>
+			<section>
+				<p class="tit">tree_menu_box 기본</p>
+				<div class="tree_menu_wrap">
+					<div class="flx tree_menu_area">
+						<div class="tree_menu_box">
+							<div class="tree_menu_tab flx">
+								<button class="on">그룹</button>
+								<button>OS타입</button>
+							</div>
+							<div class="tree_menu_tl">
+								<ul class="tree_menu_inner">
+								<li>
+									<a
+									><i class="icon_tree folder open"></i
+									><span>Root</span></a
+									>
+									<!-- s: class명 추가 sub_tree_menu -->
+									<ul class="sub_tree_menu">
+									<li>
+										<a
+										><i class="icon_tree folder"></i
+										><span>최고관리자</span></a
+										>
+									</li>
+									<li>
+										<a
+										><i class="icon_tree folder"></i
+										><span>관리자</span></a
+										>
+									</li>
+									<li>
+										<a
+										><i class="icon_tree folder"></i
+										><span>헬프데스크</span></a
+										>
+									</li>
+									<li>
+										<a class="on"
+										><i class="icon_tree iuser"></i
+										><span>매니저</span></a
+										>
+									</li>
+									<li>
+										<a
+										><i class="icon_tree iuser"></i
+										><span>일반사용자</span></a
+										>
+									</li>
+									<li>
+										<a
+										><i class="icon_tree file"></i
+										><span>JWT사용자</span></a
+										>
+									</li>
+									<li>
+										<a
+										><i class="icon_tree file"></i
+										><span>익명사용자</span></a
+										>
+									</li>
+									</ul>
+									<!-- e: class명 추가 sub_tree_menu -->
+								</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<p class="tit">tree_menu_box + search</p>
+				<div class="tree_menu_wrap">
+					<div class="flx tree_menu_area">
+						<div class="tree_menu_box">
+							<div class="tree_menu_tab flx">
+								<button class="on">그룹</button>
+								<button>OS타입</button>
+							</div>
+							<div class="search_box mini_search">
+								<input
+								type="text"
+								placeholder="검색어를 입력해주세요"
+								class="search_inputbox"
+								/>
+								<button class="btn_search" type="submit">검색</button>
+							</div>
+							<div class="tree_menu_tl">
+								<ul class="tree_menu_inner">
+									<li>
+										<a
+										><i class="icon_tree folder open"></i
+										><span>Root</span></a
+										>
+										<ul class="sub_tree_menu">
+											<li>
+												<a
+												><i class="icon_tree folder"></i
+												><span>최고관리자</span></a
+												>
+											</li>
+											<li>
+												<a
+												><i class="icon_tree folder"></i
+												><span>관리자</span></a
+												>
+											</li>
+											<li>
+												<a
+												><i class="icon_tree folder"></i
+												><span>헬프데스크</span></a
+												>
+											</li>
+											<li>
+												<a class="on"
+												><i class="icon_tree iuser"></i
+												><span>매니저</span></a
+												>
+											</li>
+											<li>
+												<a class="diss"
+												><i class="icon_tree iuser"></i
+												><span>일반사용자</span></a
+												>
+											</li>
+											<li>
+												<a
+												><i class="icon_tree file"></i
+												><span>JWT사용자</span></a
+												>
+											</li>
+											<li>
+												<a
+												><i class="icon_tree file"></i
+												><span>익명사용자</span></a
+												>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<p class="tit">treeType02</p>
+				<div class="tree_menu_wrap">
+					<div class="flx tree_menu_area">
+						<div class="treeType02" style="flex: 0" z>
+							<div class="flx tt_tit">
+								<p>서버</p>
+								<p class="branch"></p>
+								<p>인스턴스</p>
+							</div>
+							<div class="search_box mini_search">
+								<input
+								type="text"
+								placeholder="검색어를 입력해주세요"
+								class="search_inputbox"
+								/>
+								<button class="btn_search" type="submit">검색</button>
+							</div>
+							<div class="db_list">
+								<!-- 해당줄 선택하면 "on" 클래스 추가 -->
+								<div class="db_detail open">
+									<div class="db_server_row">
+										<p class="meth">Oracle</p>
+										<p class="db_server_name">InsaDB01</p>
+										<p class="ip_add flx">192.168.127.1:3306</p>
+									</div>
+									<div class="inst_list">
+										<div class="inst_row">
+											<i class="branch"></i>
+											<p class="inst_name">InsaDB</p>
+											</div>
+											<div class="inst_row on">
+											<i class="branch"></i>
+											<p class="inst_name">SharedDB</p>
+											</div>
+											<div class="inst_row">
+											<i class="branch"></i>
+											<p class="inst_name">InsaDB</p>
+										</div>
+									</div>
+								</div>
+							<div class="db_detail">
+								<div class="db_server_row">
+									<p class="meth">MSSQL</p>
+									<p class="db_server_name">InsaDB01</p>
+									<p class="ip_add flx">192.168.127.1:3306</p>
+								</div>
+								<div class="inst_list">
+									<div class="inst_row">
+										<i class="branch"></i>
+										<p class="inst_name">InsaDB</p>
+										</div>
+										<div class="inst_row">
+										<i class="branch"></i>
+										<p class="inst_name">SharedDB</p>
+										</div>
+										<div class="inst_row">
+										<i class="branch"></i>
+										<p class="inst_name">InsaDB</p>
+									</div>
+								</div>
+							</div>
+							<div class="db_detail open">
+							<div class="db_server_row">
+								<p class="meth">TmaxTibero</p>
+								<p class="db_server_name">InsaDB01</p>
+								<p class="ip_add flx">192.168.127.1:3306</p>
+							</div>
+							<div class="inst_list">
+								<div class="inst_row">
+								<i class="branch"></i>
+								<p class="inst_name">InsaDB</p>
+								</div>
+								<div class="inst_row">
+								<i class="branch"></i>
+								<p class="inst_name">SharedDB</p>
+								</div>
+								<div class="inst_row">
+								<i class="branch"></i>
+								<p class="inst_name">InsaDB</p>
+								</div>
+								<div class="inst_row">
+								<i class="branch"></i>
+								<p class="inst_name">InsaDB</p>
+								</div>
+								<div class="inst_row">
+								<i class="branch"></i>
+								<p class="inst_name">SharedDB</p>
+								</div>
+								<div class="inst_row">
+								<i class="branch"></i>
+								<p class="inst_name">InsaDB</p>
+								</div>
+								<div class="inst_row">
+								<i class="branch"></i>
+								<p class="inst_name">InsaDB</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+
+				<p class="tit">tree_wrap</p>
+				<div class="move_wrap treeview" style="width: 320px; height: 500px">
+					<div class="move_box">
+						<div class="moved_tit flx">
+						<!-- s: class 추가 및 변경 -->
+							<div class="dropdown">
+								<button class="line btn_dropdown">
+								저장소
+								<!-- s : background에 이미지 삽입 <span>
+														<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M6 10L10 5H2L6 10Z" fill="#494949"/>
+														</svg>
+													</span> -->
+								</button>
+								<!-- s: min-width 스타일 삭제 -> css로 옮김 -->
+								<ul class="dropdown_list" style="display: none">
+								<li>
+									<button>저장소 이름1</button>
+								</li>
+								<li>
+									<button>저장소 이름2</button>
+								</li>
+								</ul>
+								<!-- e: min-width 스타일 삭제 -> css로 옮김 -->
+							</div>
+							<div class="flx treem_btn_lyt">
+								<button class="treem_btn">추가</button>
+								<button class="treem_btn">상세정보</button>
+								<button class="treem_btn">수정</button>
+								<button class="treem_btn">삭제</button>
+							</div>
+						<!-- e: class 추가 및 변경 -->
+						</div>
+						<div class="search_box mini_search">
+							<input
+								type="text"
+								placeholder="검색어를 입력해주세요"
+								class="search_inputbox"
+							/>
+							<button class="btn_search" type="submit">검색</button>
+						</div>
+						<div class="scroll tree_wrap">
+							<ul class="tree_list">
+								<li>
+								<a href=""
+									><i class="icon_folder open"></i>Tenant Store</a
+								>
+								<ul>
+									<li>
+									<button class="tree_arrow open"></button
+									><a href=""
+										><i class="icon_folder open"></i>Tenant A</a
+									>
+									<!-- s: sub_tree_menu 추가 -->
+									<ul class="sub_tree_menu">
+										<!-- e: sub_tree_menu 추가 -->
+										<li>
+										<a href="" class="selected"
+											><i class="icon_folder"></i>JSP</a
+										>
+										<div class="tree_more_wrap">
+											<button
+											class="btn_tree_more"
+											title="더보기"
+											></button>
+											<div class="tree_more_list" style="">
+											<button class="tmlist">새폴더 생성</button>
+											<button class="tmlist">이름 변경</button>
+											<button class="tmlist">상세보기</button>
+											<button class="tmlist">삭제</button>
+											</div>
+										</div>
+										</li>
+									</ul>
+									</li>
+									<li>
+									<button class="tree_arrow"></button
+									><a href=""><i class="icon_folder"></i>Tenant B</a>
+									</li>
+								</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<p class="tit">화살표 tree</p>
+				<div class="move_stl2">
+					<div class="move_box">
+						<div class="scroll tree_wrap">
+							<ul class="tree_list">
+								<li>
+									<button type="button" class="tree_arrow"></button>
+									<a class="">Root</a>
+									<ul>
+										<li id="101">
+											<button
+												type="button"
+												class="tree_arrow open"
+												style="display: none"
+											></button>
+											<a class="">이사회</a>
+											<ul></ul>
+										</li>
+										<li id="201">
+											<button
+												type="button"
+												class="tree_arrow open"
+											></button>
+											<a class="" draggable="false">경영혁신총괄</a>
+											<ul>
+												<li id="202">
+												<button
+													type="button"
+													class="tree_arrow open"
+												></button>
+												<a class="" draggable="false">경역혁신실</a>
+												<ul>
+													<li id="203">
+													<button
+														type="button"
+														class="tree_arrow open"
+														style="display: none"
+													></button>
+													<a class="" draggable="false"> 재무관리팀</a>
+													<ul></ul>
+													</li>
+													<li id="204">
+													<button
+														type="button"
+														class="tree_arrow open"
+														style="display: none"
+													></button>
+													<a class="" draggable="false">IPR팀</a>
+													<ul></ul>
+													</li>
+													<li id="205">
+													<button
+														type="button"
+														class="tree_arrow open"
+														style="display: none"
+													></button>
+													<a class="" draggable="false">총무팀</a>
+													<ul></ul>
+													</li>
+												</ul>
+												</li>
+											</ul>
+										</li>
+										<li id="301">
+											<button
+												type="button"
+												class="tree_arrow open"
+												style="display: none"
+											></button>
+											<a class="">인사기획실</a>
+											<ul></ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<p class="tit">화살표 tree2</p>
+				<div class="scroll tree_wrap scroll tree_wrap">
+				<ul class="tree_list">
+					<li>
+					<button
+						type="button"
+						class="tree_arrow open"
+						style=""
+					></button
+					><a class="selected"
+						><!---->
+						BaseStore
+					</a>
+					<ul>
+						<li id="1013">
+						<button type="button" class="tree_arrow open"></button
+						><a class=""
+							><!---->
+							pwpolicy
+						</a>
+						<ul>
+							<li id="1014">
+							<button
+								type="button"
+								class="tree_arrow open"
+								style="display: none"
+							></button
+							><a class=""
+								><!---->
+								jar
+							</a>
+							<ul></ul>
+							</li>
+						</ul>
+						</li>
+						<li id="1009">
+						<button type="button" class="tree_arrow open"></button
+						><a class=""
+							><!---->
+							connector
+						</a>
+						<ul>
+							<li id="1010">
+							<button
+								type="button"
+								class="tree_arrow open"
+								style="display: none"
+							></button
+							><a class=""
+								><!---->
+								jar
+							</a>
+							<ul></ul>
+							</li>
+						</ul>
+						</li>
+						<li id="1017">
+						<button
+							type="button"
+							class="tree_arrow open"
+							style="display: none"
+						></button
+						><a class=""
+							><!---->
+							apilib
+						</a>
+						<ul></ul>
+						</li>
+						<li id="1000">
+						<button type="button" class="tree_arrow open"></button
+						><a class=""
+							><!---->
+							scheduler
+						</a>
+						<ul>
+							<li id="1001">
+							<button
+								type="button"
+								class="tree_arrow open"
+								style="display: none"
+							></button
+							><a class=""
+								><!---->
+								jar
+							</a>
+							<ul></ul>
+							</li>
+						</ul>
+						</li>
+						<li id="1019">
+						<button
+							type="button"
+							class="tree_arrow open"
+							style="display: none"
+						></button
+						><a class=""
+							><!---->
+							Workflow
+						</a>
+						<ul></ul>
+						</li>
+						<li id="1015">
+						<button
+							type="button"
+							class="tree_arrow open"
+							style="display: none"
+						></button
+						><a class=""
+							><!---->
+							Form
+						</a>
+						<ul></ul>
+						</li>
+						<li id="1011">
+						<button type="button" class="tree_arrow open"></button
+						><a class=""
+							><!---->
+							resourcemapping
+						</a>
+						<ul>
+							<li id="1012">
+							<button
+								type="button"
+								class="tree_arrow open"
+								style="display: none"
+							></button
+							><a class=""
+								><!---->
+								jar
+							</a>
+							<ul></ul>
+							</li>
+						</ul>
+						</li>
+						<li id="1016">
+						<button
+							type="button"
+							class="tree_arrow open"
+							style="display: none"
+						></button
+						><a class=""
+							><!---->
+							attachfile
+						</a>
+						<ul></ul>
+						</li>
+						<li id="1020">
+						<button type="button" class="tree_arrow open"></button
+						><a class=""
+							><!---->
+							secureguard
+						</a>
+						<ul>
+							<li id="1021">
+							<button type="button" class="tree_arrow open"></button
+							><a class=""
+								><!---->
+								im
+							</a>
+							<ul>
+								<li id="1022">
+								<button
+									type="button"
+									class="tree_arrow open"
+								></button
+								><a class=""
+									><!---->
+									temp
+								</a>
+								<ul>
+									<li id="1023">
+									<button
+										type="button"
+										class="tree_arrow open"
+									></button
+									><a class=""
+										><!---->
+										Report
+									</a>
+									<ul>
+										<li id="1026">
+										<button
+											type="button"
+											class="tree_arrow open"
+											style="display: none"
+										></button
+										><a class=""
+											><!---->
+											2025
+										</a>
+										<ul></ul>
+										</li>
+										<li id="1024">
+										<button
+											type="button"
+											class="tree_arrow open"
+											style="display: none"
+										></button
+										><a class=""
+											><!---->
+											2024
+										</a>
+										<ul></ul>
+										</li>
+									</ul>
+									</li>
+								</ul>
+								</li>
+							</ul>
+							</li>
+						</ul>
+						</li>
+						<li id="1007">
+						<button type="button" class="tree_arrow open"></button
+						><a class=""
+							><!---->
+							authorization
+						</a>
+						<ul>
+							<li id="1008">
+							<button
+								type="button"
+								class="tree_arrow open"
+								style="display: none"
+							></button
+							><a class=""
+								><!---->
+								jar
+							</a>
+							<ul></ul>
+							</li>
+						</ul>
+						</li>
+						<li id="1002">
+						<button type="button" class="tree_arrow open"></button
+						><a class=""
+							><!---->
+							authentication
+						</a>
+						<ul>
+							<li id="1004">
+							<button
+								type="button"
+								class="tree_arrow open"
+								style="display: none"
+							></button
+							><a class=""
+								><!---->
+								images
+							</a>
+							<ul></ul>
+							</li>
+							<li id="1006">
+							<button
+								type="button"
+								class="tree_arrow open"
+								style="display: none"
+							></button
+							><a class=""
+								><!---->
+								client
+							</a>
+							<ul></ul>
+							</li>
+							<li id="1005">
+							<button
+								type="button"
+								class="tree_arrow open"
+								style="display: none"
+							></button
+							><a class=""
+								><!---->
+								css
+							</a>
+							<ul></ul>
+							</li>
+							<li id="1003">
+							<button
+								type="button"
+								class="tree_arrow open"
+								style="display: none"
+							></button
+							><a class=""
+								><!---->
+								jar
+							</a>
+							<ul></ul>
+							</li>
+						</ul>
+						</li>
+						<li id="1027">
+						<button
+							type="button"
+							class="tree_arrow open"
+							style="display: none"
+						></button
+						><a class=""
+							><!---->
+							2025
+						</a>
+						<ul></ul>
+						</li>
+						<li id="1025">
+						<button
+							type="button"
+							class="tree_arrow open"
+							style="display: none"
+						></button
+						><a class=""
+							><!---->
+							2024
+						</a>
+						<ul></ul>
+						</li>
+						<li id="1018">
+						<button
+							type="button"
+							class="tree_arrow open"
+							style="display: none"
+						></button
+						><a class=""
+							><!---->
+							sslkey
+						</a>
+						<ul></ul>
+						</li>
+					</ul>
+					</li>
+				</ul>
+				</div>
+
+				<p class="tit">화살표 tree + check</p>
+				<div class="move_stl2">
+				<div class="move_box">
+					<ul class="moved_list scroll">
+					<li>
+						<button class="tree_arrow"></button>
+						<input
+						type="checkbox"
+						name="mapKey"
+						id="mlist01"
+						class="check_stl"
+						/><label for="mlist01" class="check_stl_lab2"
+						><i></i>menu01</label
+						>
+					</li>
+					<li>
+						<button class="tree_arrow"></button>
+						<input
+						type="checkbox"
+						name=""
+						id="mlist02"
+						class="check_stl"
+						/><label for="mlist02" class="check_stl_lab2"
+						><i></i>menu02</label
+						>
+					</li>
+					<li>
+						<button class="tree_arrow open"></button>
+						<input
+						type="checkbox"
+						name=""
+						id="mlist03"
+						class="check_stl"
+						/><label for="mlist03" class="check_stl_lab2"
+						><i></i>menu03</label
+						>
+						<ul>
+						<li>
+							<button class="tree_arrow open"></button>
+							<input
+							type="checkbox"
+							name=""
+							id="mlist03_1"
+							class="check_stl"
+							/><label for="mlist03_1" class="check_stl_lab2"
+							><i></i>menu03_1</label
+							>
+							<ul>
+							<li>
+								<input
+								type="checkbox"
+								name=""
+								id="mlist03_1"
+								class="check_stl"
+								/><label for="mlist03_1" class="check_stl_lab2"
+								><i></i>menu03_1_1</label
+								>
+							</li>
+							<li>
+								<input
+								type="checkbox"
+								name=""
+								id="mlist03_1"
+								class="check_stl"
+								/><label for="mlist03_1" class="check_stl_lab2"
+								><i></i>menu03_1_2</label
+								>
+							</li>
+							<li>
+								<input
+								type="checkbox"
+								name=""
+								id="mlist03_1"
+								class="check_stl"
+								/><label for="mlist03_1" class="check_stl_lab2"
+								><i></i>menu03_1_3</label
+								>
+							</li>
+							</ul>
+						</li>
+						<li>
+							<input
+							type="checkbox"
+							name=""
+							id="mlist03_2"
+							class="check_stl"
+							/><label for="mlist03_2" class="check_stl_lab2"
+							><i></i>menu03_2</label
+							>
+						</li>
+						<li>
+							<input
+							type="checkbox"
+							name=""
+							id="mlist03_3"
+							class="check_stl"
+							/><label for="mlist03_3" class="check_stl_lab2"
+							><i></i>menu03_3</label
+							>
+						</li>
+						</ul>
+					</li>
+					<li>
+						<button class="tree_arrow"></button>
+						<input
+						type="checkbox"
+						name=""
+						id="mlist04"
+						class="check_stl"
+						/><label for="mlist04" class="check_stl_lab2"
+						><i></i>menu04</label
+						>
+					</li>
+					<li>
+						<button class="tree_arrow"></button>
+						<input
+						type="checkbox"
+						name=""
+						id="mlist05"
+						class="check_stl"
+						/><label for="mlist05" class="check_stl_lab2"
+						><i></i>menu05</label
+						>
+					</li>
+					<li>
+						<button class="tree_arrow"></button>
+						<input
+						type="checkbox"
+						name=""
+						id="mlist06"
+						class="check_stl"
+						/><label for="mlist06" class="check_stl_lab2"
+						><i></i>menu06</label
+						>
+					</li>
+					</ul>
+				</div>
+				</div>
+			</section>
+			</div>
+			<!-- E: content -->
+			<!-- S: footer -->
+			<!-- E: footer -->
+		</div>
+		<div class="scroll_btns" style="display: none">
+			<button class="btn_toTheTop"></button>
+			<button class="btn_toThebottom"></button>
+		</div>
+		<script>
+			$("body").on("mousewheel", function (e) {
+			var wheel = e.originalEvent.wheelDelta;
+
+			if (wheel > 0) {
+				//스크롤 올릴때
+			} else {
+				//스크롤 내릴때
+				$(".scroll_btns").show();
+			}
+			});
+			$(window).scroll(function () {
+			var scrollValue = $(document).scrollTop();
+			if (scrollValue > 65) {
+				$(".list_btn_stk").addClass("btnarea");
+			} else {
+				$(".list_btn_stk").removeClass("btnarea");
+			}
+			});
+		</script>
+
+		<!-- s : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+		<script>
+			$(document).ready(function () {
+			$(".accordion").on("click", function () {
+				$(this).toggleClass("tr_open");
+			});
+			});
+		</script>
+		<!-- e : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+		</div>
+	</body>
+</html>

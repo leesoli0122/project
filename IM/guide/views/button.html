@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>button</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/font.css">
+
+    <!-- 추가 css -->
+    <link rel="stylesheet" href="../../css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+
+    <!-- jQuery 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <!-- jQuery UI 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-ui.js"></script>
+    <!-- js -->
+    <script type="text/javascript" charset="utf-8" src="../../js/common.js"></script>
+
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <style>
+        .info_text { margin-top:10px; padding:10px; border-radius:14px; background:#ffd582; }
+        .info_text li { margin-bottom:5px; }
+        .info_text li:last-child { margin-bottom:0; }
+        h2 { font-size:30px; }
+        .tit { display:block; margin:20px 0; padding:10px 5px; font-size:16px; background-color:#6ebda8; color:#fff; }
+
+        .month_select li { margin-right:10px; text-align:center; }
+    </style>
+</head>
+
+<body>
+    <div id="SGIM_wrap" class="mini_nav">
+        <!-- S: side nav -->
+        <!-- E: side nav -->
+        <!-- S: container -->
+        <div id="container" style="padding:0 !important;">
+            <!-- S: header -->
+            <!-- E: header -->
+            <!-- S: content -->
+            <div class="content" style="border-radius:10px; margin:20px; padding:20px; background-color:#fff;">
+                <h2>button</h2>
+                <ul class="info_text">
+                    <li>
+                        <p style="font-weight:500;">talbe 위 아래에 버튼 올 때: list_btn</p>
+                        <ul>
+                            <li>- 왼쪽: list_left_btn</li>
+                            <li>- 오른쪽: list_right_btn</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p style="font-weight:500;">트리 구조 안에 버튼 : align_right</p>
+                    </li>
+                    <li>
+                        <p style="font-weight:500;">그 외의 버튼 : btn_box</p>
+                        <ul>
+                            <li>- 왼쪽: f_l</li>
+                            <li>- 오른쪽: f_r</li>
+                        </ul>
+                    </li>
+                </ul>
+                <section>
+                    <p class="tit">Basic</p>
+                    <p>height: 30px, padding:0 14px;</p>
+                    <div class="list_btn" style="padding:24px 0;">
+                        <div class="list_left_btn">
+                            <button class="basic">normal</button>
+                            <button class="basic" style="background:#0A153C; border:1px solid #0A153C;">focus</button>
+                            <button class="basic diss">disable</button>
+                            <button class="primary">point</button>
+                        </div>
+                    </div>
+
+                    <p class="tit">Line</p>
+                    <p>height: 30px, padding:0 14px;</p>
+                    <div class="list_btn" style="padding:24px 0;">
+                        <div class="list_left_btn">
+                            <button class="line">normal</button>
+                            <button class="line" style="color:#222222;
+                            border:1px solid #454545;">focus</button>
+                            <button class="line diss">disable</button>
+                        </div>
+                    </div>
+
+                    <p class="tit">Big(Ex. 상세검색 및 팝업 하단 버튼)</p>
+                    <p>height: 38px; padding: 0 14px;(Ex. 상세검색 및 팝업 하단 버튼)</p>
+                    <div class="list_btn" style="padding:24px 0;">
+                        <div class="list_left_btn">
+                            <button class="primary big">normal</button>
+                            <button class="primary big" style="background:#138170;">focus</button>
+                            <button class="diss big">disable</button>
+                        </div>
+                    </div>
+
+                    <p class="tit">Icon button</p>
+                    <p>height: 30px, padding: 0 14px;</p>
+                    <div class="list_btn" style="padding:24px 0;">
+                        <div class="list_left_btn">
+                            <button class="line icon">
+                                <i class="icon_reset"></i>
+                                새로고침
+                            </button>
+                            <button class="line diss icon">
+                                <i class="icon_reset init"></i>
+                                상태초기화
+                            </button>
+                            <button class="line icon">
+                                <i class="icon_ff excel"></i>
+                                EXEL 추출
+                            </button>
+                            <button class="line icon"><i class="icon_setting"></i> 설정</button>
+                            <button class="line icon"><i class="checkout"></i> 체크아웃</button>
+                            <button class="line icon"><i class="checkin"></i> 체크인</button>
+                            <button class="line icon"><i class="icon_applylist"></i>1개 보유</button>
+                            <button class="btnstl basic list_upload"><i></i>목록 업로드</button>
+                        </div>
+                    </div>
+                    <p class="tit">No Line + Icon</p>
+                    <div class="list_btn" style="padding:0;">
+                        <div class="list_left_btn">
+                            <button class="text icon_reset">초기화</button>
+                        </div>
+                    </div>
+
+                    <p class="tit">Only Icon</p>
+                    <div style="padding:0;">
+                        <button class="line icon mo_del" title="이전"></button>
+                        <button class="line icon mo_add" title="다음"></button>
+                        <button class="line icon icon_reset">초기화</button>
+                        <button class="line icon close">닫기</button>
+                        <button class="line icon bottom">아래화살표</button>
+                        <div class="default_addel_btn" style="display:inline-block;">
+                            <a title="추가" class="btn_option"></a>
+                            <a title="삭제" class="btn_option btn_del_option"></a>
+                            <a title="테스트" class="btn_option btn_test"></a>
+                        </div>
+                        <div class="home_lyt" style="margin:0; display:inline-block;">
+                            <div class="dash_box" style="border:0; padding:0;">
+                                <div class="home_pfbox" style="min-height:fit-content;">
+                                    <button class="pf_btns icon_mymodify" title="내 정보 수정"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tit">button > i인데 텍스트가 없을 때</p>
+                    <div class="list_btn" style="padding:24px 0;">
+                        <div class="list_left_btn">
+                            <button class="line icon n_text"><i class="icon_setting"></i></button>
+                        </div>
+                    </div>
+
+                    <p class="tit">Select-sm</p>
+                    <div class="flx">
+                        <button class="normal" style="margin-right:5px;">normal</button>
+                        <button class="normal diss" style="margin-right:5px;">disabled normal</button>
+                        <button class="normal on">active</button>
+                    </div>
+
+                    <p class="tit">pagination</p>
+                    <div class="tbl_btm">
+						<div class="page_info">1-10/50</div>
+						<div class="pagination">
+							<ul>
+								<li><a href="" class="first diss"><span></span>첫페이지</a></li>
+								<li><a href="" class="prev diss"><span></span>이전</a></li>
+								<li><a href="">1</a></li>
+								<li><a href="" class="on">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="" class="next"><span></span>다음</a></li>
+								<li><a href="" class="last"><span></span>마지막페이지</a></li>
+							</ul>
+						</div>
+						<div class="page_select">
+							<select class="form_contrl">
+								<option value="">10</option>
+								<option value="">25</option>
+								<option value="">50</option>
+								<option value="">100</option>
+							</select>
+						</div>
+					</div>
+
+                    <p class="tit">pagination mini</p>
+                    <div class="pagination mini_paging">
+                        <ul>
+                            <li>
+                                <a href="" class="first diss"><span></span>처음</a>
+                            </li>
+                            <li>
+                                <a href="" class="prev diss"><span></span>이전</a>
+                            </li>
+                            <li class="currentpage">
+                                <p><em>1</em> / 5</p>
+                            </li>
+                            <li>
+                                <a href="" class="next"><span></span>다음</a>
+                            </li>
+                            <li>
+                                <a href="" class="last"><span></span>마지막</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h2 style="padding-top:20px; margin:20px 0 10px; border-top:1px solid #454545; font-size:20px; font-weight:500; border-bottom:0;">예시</h2>
+                    <div class="dash_box" style="padding:10px;">
+                        <p class="tit">list_btn</p>
+                        <div class="list_btn">
+                            <div class="list_left_btn">
+                                <button class="line">활성</button>
+                                <button class="line">비활성</button>
+                                <span class="divide"></span>
+                                <p class="inb opttxt">상태 :</p>
+                                <p class="inb"><input type="checkbox" name="" id="chk01" class="check_stl">
+                                <label for="chk01" class="check_stl_lab"> 활성화</label></p>
+                                <p class="inb"><input type="checkbox" name="" id="chk02" class="check_stl">
+                                <label for="chk02" class="check_stl_lab"> 비활성화</label></p>
+                                <p class="inb"><input type="checkbox" name="" id="chk03" class="check_stl">
+                                <label for="chk03" class="check_stl_lab"> 삭제진행중</label></p>
+                            </div>
+                            <div class="list_right_btn">
+                                <button class="basic">자가등록</button>
+                                <button class="basic">수동 Recon</button>
+                                <button class="primary">대량등록</button>
+                            </div>
+                        </div>
+
+                        <p class="tit">btn_box</p>
+                        <div class="btn_box cl_both">
+                            <div class="f_l">
+                                <button class="line">되돌리기</button>
+                            </div>
+                            <div class="f_r">
+                                <button class="basic">승인</button>
+                                <button class="line">반려</button>
+                                <button class="primary">확인</button>
+                            </div>
+                        </div>
+
+                        <p class="tit">btn_box</p>
+                        <div class="btn_box cl_both">
+                            <div class="f_l">
+                                <button class="basic2">이전</button>
+                            </div>
+                            <div class="f_r">
+                                <button class="basic">다음</button>
+                                <button class="primary">저장</button>
+                                <button class="line">취소</button>
+                            </div>
+                        </div>
+
+                        <p class="tit">align_right</p>
+                        <div class="align_right">
+                            <button class="btnstl basic">선택추가<i></i></button>
+                            <button class="btnstl primary">전체추가<i></i></button>
+                        </div>
+
+                        <p class="tit">그냥 div에 묶여있음(15_02_systemgroup_tree_layout_filelist.html)</p>
+                        <div>
+                            <button class="btnstl line">선택삭제</button>
+                            <button class="btnstl basic">선택다운로드</button>
+                        </div>
+
+                        <p class="tit">table 안에 버튼</p>
+                        <div class="btns_detail">
+                            <ul class="cl_both">
+                                <li class="f_l wid33">
+                                    <a title="편집"></a>
+                                </li>
+                                <li class="f_l wid33">
+                                    <a title="삭제" class="del"></a>
+                                </li>
+                                <li class="f_l wid33">
+                                    <a title="테스트" class="test"></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p class="tit">tit_in_btn</p>
+                        <div class="move_wrap list_stl">
+                            <div class="move_box">
+                                <div class="moved_tit">
+                                    List01
+                                    <div class="btn_box tit_in_btn">
+                                        <button class="basic">텍스트</button>
+                                        <button class="primary">텍스트</button>
+                                        <button class="line icon icon_reset">새로고침</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="tit">sych_mnt_toast 버튼</p>
+                        <div class="sych_mnt_toast" style="position:static;">
+                            <div class="err_toast">
+                                <div class="flx">
+                                    <p class="icon_err"></p>
+                                    <div class="sych_mnt_toast_detail">
+                                        <p>접근제어 시스템 배포오류 : <em>2</em></p>
+                                        <p>OS System 접속오류 : <em>5</em></p>
+                                        <p>결재오류 : <em>1</em></p>
+                                    </div>
+                                </div>
+                                <button class="btn_close"></button>
+                            </div>
+                            <div class="warning_toast">
+                                <div class="flx">
+                                    <p class="icon_warning"></p>
+                                    <div class="sych_mnt_toast_detail">
+                                        <p>비인가 생성 계정 : <em>15</em></p>
+                                        <p>OS System 접속오류 : <em>5</em></p>
+                                        <p>결재오류 : <em>1</em></p>
+                                    </div>
+                                </div>
+                                <button class="btn_close"></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- E: content -->
+            <!-- S: footer -->
+            <div class="footer">
+                <p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+            </div>
+            <!-- E: footer -->
+        </div>
+        <div class="scroll_btns" style="display:none">
+            <button class="btn_toTheTop"></button>
+            <button class="btn_toThebottom"></button>
+        </div>
+        <script>
+            $("body").on("mousewheel", function (e) {
+                var wheel = e.originalEvent.wheelDelta;
+
+                if (wheel > 0) {
+                    //스크롤 올릴때
+                } else {
+                    //스크롤 내릴때
+                    $(".scroll_btns").show();
+                }
+            });
+            $(window).scroll(function () {
+                var scrollValue = $(document).scrollTop();
+                if (scrollValue > 65) {
+                    $(".list_btn_stk").addClass("btnarea");
+                } else {
+                    $(".list_btn_stk").removeClass("btnarea");
+                }
+            });
+        </script>
+
+        <!-- s : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+        <script>
+            $(document).ready(function(){
+        
+                $('.accordion').on('click',  function() {
+                    $(this).toggleClass("tr_open");
+                });
+            });
+
+        </script>	
+        <!-- e : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+    </div>
+</body>
+
+</HTML>

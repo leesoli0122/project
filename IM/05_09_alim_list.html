@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="assets/img/common/logo.png"><!--[2025] 이미지 경로 및 이미지 변경-->
+					</a>
+				</div>
+				<div class="nav_tab">
+					<a href="" class="">사용자</a>
+					<a href="" class="on">관리자</a>
+				</div>
+				<!-- s: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li><a href="" class="depth_menu"><i class="UserMangement"></i><span>사용자 관리</span></a>
+							<ul>
+								<li><a href="">사용자</a></li>
+								<li><a href="" class="on">사용자 그룹</a></li>
+								<li><a href="">조직 그룹</a></li>
+								<li><a href="">대량 등록</a></li>
+								<li><a href="">자가 등록</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="ResourceMangement"></i><span>시스템 관리</span></a>
+							<ul>
+								<li><a href="">조정 및 배포</a></li>
+								<li><a href="">시스템(자원)</a></li>
+								<li><a href="">시스템(자원) 그룹</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="PolicyMangement"></i><span>정책 관리</span></a>
+							<ul>
+								<li><a href="">역할</a></li>
+								<li><a href="">조정 정책</a></li>
+								<li><a href="">배포 정책</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="icon_pw"></i><span>인증/인가 관리</span></a>
+							<ul>
+								<li><a href="">인증 관리</a></li>
+								<li><a href="">인가 관리</a></li>
+								<li><a href="">암호 정책 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AuditingReport"></i><span>감사 및 보고서 긴 메뉴명입니다</span></a>
+							<ul>
+								<li><a href="">모니터링</a></li>
+								<li><a href="">감사</a></li>
+								<li><a href="">보고서</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AttributeMangement"></i><span>속성관리</span></a>
+							<ul>
+								<li><a href="">사용자 정보</a></li>
+								<li><a href="">사용자그룹 정보</a></li>
+								<li><a href="">조직 정보</a></li>
+							</ul>
+						</li>
+						<li><a href="" class=""><i class="Connector"></i><span>Connector</span></a></li>
+						<li><a href="" class=""><i class="ONSDModel"></i><span>ONSD Entry</span></a></li>
+						<li><a href="" class=""><i class="Workflow"></i><span>워크플로우</span></a></li>
+						<li><a href="" class="depth_menu"><i class="System"></i><span>시스템</span></a>
+							<ul>
+								<li><a href="">관리자</a></li>
+								<li><a href="">저장소 관리</a></li>
+								<li><a href="">서비스 모듈 관리</a></li>
+								<li><a href="">스케줄 관리</a></li>
+								<li><a href="">CMS</a></li>
+								<li><a href="">환경 설정</a></li>
+							</ul>
+						</li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard  ICAM V2.0</p>
+					<!-- e: copyright 추가 -->
+				</div>
+				<!-- e: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+			</div>
+		</div>
+		<div id="container">
+			<!-- s : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">역할관리</a></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><span>user01</span></a></li>
+					<li class="timer"><i></i><span><em>00:15:00</em> 후 접속 끊김</span><button class="time_ref" title="세션 시간 새로고침"></button></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim msg5"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim msg4"></i>기타알람</a></li>
+									<li class="no_msg"><a>새로운 메세지가 존재하지 않습니다.</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+						<div class="balloon alim_toast">
+							<p class="newalim_txt">새 알림 <em>6건</em> 있습니다.</p>
+						</div>
+					</li>
+					<li class="btn_menualdown"><a id="guide_manualDown"></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<!-- e : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="content">
+				<div class="search_wrap">
+					<div class="search_box">
+						<input type="text" placeholder="검색어를 입력해주세요" class="search_inputbox" />
+						<button class="btn_search" type="submit">검색</button>
+						<button class="btn_detail_search" type="submit">상세검색</button>
+					</div>
+					<form class="detail_search_wrap" style="display:none">
+						<p class="detail_search_btn">상세검색<i>닫기</i></p>
+						<div class="search_column4">
+							<div class="col">
+								<!-- s: bul_dot 추가 -->
+								<dl class="bul_dot">
+									<dt><label for="detail01">종류</label></dt>
+									<dd><input type="text" name="" id="detail01" class="form_contrl"></dd>
+								</dl>
+								<dl class="bul_dot">
+									<dt><label for="detail02">제조사</label></dt>
+									<dd><select name="" id="detail02" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+								<!-- e: bul_dot 추가 -->
+							</div>
+							<div class="col">
+								<!-- s: bul_dot 추가 -->
+								<dl class="bul_dot">
+									<dt><label for="detail04">제조사</label></dt>
+									<dd><input type="text" name="" id="detail04" class="form_contrl"></dd>
+								</dl>
+								<dl class="bul_dot">
+									<dt><label for="detail05">도메인</label></dt>
+									<dd><input type="text" name="" id="detail05" class="form_contrl"></dd>
+								</dl>
+								<!-- e: bul_dot 추가 -->
+							</div>
+							<div class="col">
+								<!-- s: bul_dot 추가 -->
+								<dl class="bul_dot">
+									<dt><label for="detail07">모델명</label></dt>
+									<dd><select name="" id="detail07" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+								<dl class="bul_dot">
+									<dt>관리자ID</dt>
+									<dd class="txt">admin</dd>
+								</dl>
+								<!-- e: bul_dot 추가 -->
+							</div>
+							<div class="col">
+								<!-- s: bul_dot 추가 -->
+								<dl class="bul_dot">
+									<dt><label for="detail09">이름</label></dt>
+									<dd><input type="text" name="" id="detail09" class="form_contrl"></dd>
+								</dl>
+								<dl class="bul_dot">
+									<dt><label for="detail10">계정구분</label></dt>
+									<dd><select name="" id="detail10" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+								<!-- e: bul_dot 추가 -->
+							</div>
+						</div>
+						<div class="box2">
+							<p class="btn_box">
+								<!-- s: class 변경 -->
+								<a href="" class="line icon_reset">초기화</a>
+								<a href="" class="primary">검색</a>
+								<!-- e: class 변경 -->
+							</p>
+						</div>
+					</form>
+
+					<div class="related_box" style="display:none">
+						<ul class="related_list">
+							<li><a href="">연관검색어1</a></li>
+							<li><a href="">연관검색어2</a></li>
+							<li><a href="">연관검색어3</a></li>
+							<li><a href="">연관검색어4</a></li>
+							<li><a href="">연관검색어5</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="list_btn cl_both">
+					<!-- s: class 변경 -->
+					<div class="list_left_btn f_l wid50">
+						<button class="line">활성</button>
+						<button class="line">비활성</button>
+						<span class="divide"></span>
+						<button class="line">생성</button>
+						<button class="line">복사생성</button>
+						<button class="line">삭제</button>
+						<button class="line">Update</button>
+					</div>
+					<div class="list_right_btn f_r wid50">
+						<button class="basic">자가등록</button>
+						<button class="basic">수동 Recon</button>
+						<button class="primary">대량등록</button>
+					</div>
+					<!-- e: class 변경 -->
+				</div>
+				<div class="tbl_list">
+					<!-- s: masg2,3,4,5,99 class 변경 -->
+					<table class="default_tbl">
+						<tbody>
+							<tr class="newalim">
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>유재석</td>
+								<td><i class="icon_alim icon_caution"></i>경고알림입니다.</td>
+								<td class="alim_date">2020-06-10 14:41:50</td>
+							</tr>
+							<tr class="newalim">
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>이효리</td>
+								<td><i class="icon_alim icon_message"></i>'Role' 규칙(Role) 변경 작업(Role)이 완료 되었습니다.</td>
+								<td class="alim_date">2020-06-10 14:41:50</td>
+							</tr>
+							<tr class="newalim">
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>비룡</td>
+								<td><i class="icon_alim icon_notice"></i>공지메세지1 공지사항입니다.</td>
+								<td class="alim_date">2020-06-10 14:41:50</td>
+							</tr>
+							<tr class="newalim">
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>린다.G</td>
+								<td><i class="icon_alim icon_receive"></i>SMS메세지 도착알림</td>
+								<td class="alim_date">2020-06-10 14:41:50</td>
+							</tr>
+							<tr class="newalim">
+								<td colspan="4">
+									<div class="m-detail">
+										<div class="m-info_wrap">
+											<p class="m-date">2020.06.15 14:27:50</p>
+											<div class="m-info">
+												<p><em>보낸사람</em>System</p>
+												<p><em>받는사람</em>System Admin</p>
+												<p class="m-c-date"><em>확인날짜</em>2020.06.19 16:34:54</p>
+											</div>
+										</div>
+										<div class="m-cont">
+											<p>'Local - GroupWare User' 배포정책 변경 작업(ReconciliationPolicy)에 0.2초 소요되었습니다.</p>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>황광희</td>
+								<td><i class="icon_alim msg5"></i>메일 도착알림</td>
+								<td class="alim_date">2020-06-10 14:41:50</td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<div class="m-detail">
+										<div class="m-info_wrap">
+											<p class="m-date">2020.06.15 14:27:50</p>
+											<div class="m-info">
+												<p><em>보낸사람</em>System</p>
+												<p><em>받는사람</em>System Admin</p>
+												<p class="m-c-date"><em>확인날짜</em>2020.06.19 16:34:54</p>
+											</div>
+										</div>
+										<div class="m-cont">
+											<p>'Local - GroupWare User' 배포정책 변경 작업(ReconciliationPolicy)에 0.2초 소요되었습니다.</p>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>정지훈</td>
+								<td><i class="icon_alim msg5"></i>메일도착쿠</td>
+								<td class="alim_date">2020-06-10 14:41:50</td>
+							</tr>
+							<tr>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>슬기</td>
+								<td><i class="icon_alim msg4"></i>기타 알림메세지</td>
+								<td class="alim_date">2020-06-10 14:41:50</td>
+							</tr>
+							<tr>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>제니</td>
+								<td><i class="icon_alim msg4"></i>기타 알림메세지</td>
+								<td class="alim_date">2020-06-10 14:41:50</td>
+							</tr>
+							<tr>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>임윤아</td>
+								<td><i class="icon_alim msg4"></i>기타 알림메세지</td>
+								<td class="alim_date">2020-06-10 14:41:50</td>
+							</tr>
+							<tr>
+								<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+								<td>태연</td>
+								<td><i class="icon_alim msg4"></i>기타 알림메세지</td>
+								<td class="alim_date">2020-06-10 14:41:50</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- e: masg2,3,4,5,99 class 변경 -->
+				</div>
+				<div class="tbl_btm">
+					<div class="page_info">1-10/50</div>
+					<div class="pagination">
+						<ul>
+							<li><a href="" class="first diss"><span></span>첫페이지</a></li>
+							<li><a href="" class="prev diss"><span></span>이전</a></li>
+							<li><a href="">1</a></li>
+							<li><a href="" class="on">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+							<li><a href="" class="next"><span></span>다음</a></li>
+							<li><a href="" class="last"><span></span>마지막페이지</a></li>
+						</ul>
+					</div>
+					<div class="page_select">
+						<select class="form_contrl">
+							<option value="">10</option>
+							<option value="">25</option>
+							<option value="">50</option>
+							<option value="">100</option>
+						</select>
+					</div>
+				</div>
+				<div class="list_btn cl_both">
+					<!-- s: class 변경 -->
+					<div class="list_left_btn f_l wid50">
+						<button class="line">생성</button>
+						<button class="line">복사생성</button>
+						<button class="line">삭제</button>
+						<button class="line">Update</button>
+					</div>
+					<div class="list_right_btn f_r wid50">
+						<button class="basic">자가등록</button>
+						<button class="basic">수동 Recon</button>
+						<button class="primary">대량등록</button>
+					</div>
+					<!-- e: class 변경 -->
+				</div>
+			</div>
+			<!-- nav로 이동 <div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div> -->
+		</div>
+	</div>
+</body>
+</HTML>

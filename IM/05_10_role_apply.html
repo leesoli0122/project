@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+						<span>Admin</span>
+					</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class="depth_menu"><i class="icon_userg"></i><span>사용자 관리</span></a>
+						<ul>
+							<li><a href="">사용자</a></li>
+							<li><a href="" class="on">사용자 그룹</a></li>
+							<li><a href="">조직 그룹</a></li>
+							<li><a href="">대량 등록</a></li>
+							<li><a href="">자가 등록</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_stg"></i><span>시스템 관리</span></a>
+						<ul>
+							<li><a href="">조정 및 배포</a></li>
+							<li><a href="">시스템(자원)</a></li>
+							<li><a href="">시스템(자원) 그룹</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+						<ul>
+							<li><a href="">역할</a></li>
+							<li><a href="">조정 정책</a></li>
+							<li><a href="">배포 정책</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+						<ul>
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_report"></i><span>감사 및 보고서</span></a>
+						<ul>
+							<li><a href="">모니터링</a></li>
+							<li><a href="">감사</a></li>
+							<li><a href="">보고서</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_property"></i><span>속성관리</span></a>
+						<ul>
+							<li><a href="">사용자 정보</a></li>
+							<li><a href="">사용자그룹 정보</a></li>
+							<li><a href="">조직 정보</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="on"><i class="icon_connector"></i><span>Connector</span></a></li>
+					<li><a href="" class=""><i class="icon_onsd"></i><span>ONSD Entry</span></a></li>
+					<li><a href="" class=""><i class="icon_workflow"></i><span>워크플로우</span></a></li>
+					<li><a href="" class="depth_menu"><i class="icon_system"></i><span>시스템</span></a>
+						<ul>
+							<li><a href="">관리자</a></li>
+							<li><a href="">저장소 관리</a></li>
+							<li><a href="">서비스 모듈 관리</a></li>
+							<li><a href="">스케줄 관리</a></li>
+							<li><a href="">CMS</a></li>
+							<li><a href="">환경 설정</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>사용자 관리</h1>
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">시스템 관리</a></li>
+						<li><span>상세</span></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> user01</a></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="topPrss">
+					<div class="dp_tbl detail_process">
+						<ul class="dp_tbl_row">
+							<li class="dp_tbl_cell process_comple">기본 정보</li>
+							<li class="dp_tbl_cell process_current">서버 정보</li>
+							<li class="dp_tbl_cell">조정 정책</li>
+						</ul>
+					</div>
+				</div>
+				<div class="btn_box cl_both">
+					<div class="f_l">
+					</div>
+					<div class="f_r">
+						<a href="" class="white diss">이전</a>
+						<a href="" class="navy">다음</a>
+						<a href="" class="blue">신청</a>
+						<a href="" class="skyblue">취소</a>
+					</div>					
+				</div>
+				<p class="ct-txt">다음과 같은 내용의 역할(Role)를 신청합니다.<br />시작일과 종료일을 입력하지 않을 경우 영구 사용으로 신청합니다.  </p>
+				<p class="space"></p>
+				<div class="tbl_list">
+					<table class="default_tbl">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>역할(Role) 이름</th>
+								<th>승인 형태</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>[ROLE_ID]</td>
+								<td>[ROLE_NM]</td>
+								<td>[ROLE_REQ_TYPE]</td>
+							</tr>
+							<tr>
+								<td>[ROLE_ID]</td>
+								<td>[ROLE_NM]</td>
+								<td>[ROLE_RQEWRERFFDFQ_TYPE]</td>
+							</tr>
+							<tr>
+								<td>[ROLE_ID]</td>
+								<td>[ROLE_NM]</td>
+								<td>[ROLE_RQEWRERFFDFQ_TYPE]</td>
+							</tr>
+							<tr>
+								<td>[ROLE_ID]</td>
+								<td>[ROLE_NM]</td>
+								<td>[ROLE_RQEWRERFFDFQ_TYPE]</td>
+							</tr>
+							<tr>
+								<td>[ROLE_ID]</td>
+								<td>[ROLE_NM]</td>
+								<td>[ROLE_RQEWRERFFDFQ_TYPE]</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="space"></p>
+				<div class="form_stl">
+					<ul class="form_tbl">
+						<li>
+							<div class="form_tit"><label for="onsdName02">기한</label></div>
+							<div class="form_txt">
+								<div class="form_date">
+									<input type="text" class="form_contrl date_ctl" value="시작일" readonly="readonly">
+									<span> ~ </span>
+									<input type="text" class="form_contrl date_ctl" value="종료일" readonly="readonly">
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="form_tit"><label for="modelExplain">신청사유</label></div>
+							<div class="form_txt"><textarea class="form_contrl" id="modelExplain"></textarea></div>
+						</li>
+					</ul>
+				</div>
+				<div class="btn_box cl_both">
+					<div class="f_l">
+					</div>
+					<div class="f_r">
+						<a href="" class="white diss">이전</a>
+						<a href="" class="navy">다음</a>
+						<a href="" class="blue">신청</a>
+						<a href="" class="skyblue">취소</a>
+					</div>					
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

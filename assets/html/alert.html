@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>알럿 - vAegis</title>
+    <meta charset="UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- TODO: search engine info -->
+    <meta name="robots" content="vAegis" />
+    <meta name="keywords" content="vAegis" />
+    <meta name="title" content="vAegis" />
+    <meta name="description" content="vAegis" />
+
+    <!-- TODO: social url link image -->
+    <meta property="og:url" content="">
+    <meta property="og:title" content="vAegis">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="cloudVM.png">
+    <meta property="og:description" content="vAegis 입니다.">
+
+    <!-- TODO: favicon -->
+    <link rel="icon" href="favicon.png" type="favicon.png" />
+
+    <!-- TODO: import -->
+    <link rel="stylesheet" href="/assets/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/lib/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/assets/css/lib/datatables.css">
+    <link rel="stylesheet" href="/assets/css/lib/datatables.css">
+    <link rel="stylesheet" href="/assets/css/lib/select.dataTables.css">
+    <link rel="stylesheet" href="/assets/css/lib/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="/assets/css/lib/jquery.scrollbar.css">
+    <link rel="stylesheet" href="/assets/css/lib/jstree.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/common.css">
+
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="/assets/js/lib/moment.js"></script>
+    <script src="/assets/js/lib/bootstrap.min.js"></script>
+    <script src="/assets/js/lib/bootstrap-datetimepicker.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="/assets/js/lib/echarts.js"></script>
+    <script src="/assets/js/lib/jquery.nice-select.js"></script>
+    <script src="/assets/js/lib/select.dataTables.js"></script>
+    <script src="/assets/js/lib/datatables.js"></script>
+    <script src="/assets/js/lib/dataTables.colReorder.js"></script>
+    <script src="/assets/js/lib/dataTables.rowReorder.js"></script>
+    <script src="/assets/js/lib/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/lib/sweetalert.js"></script>
+    <script src="/assets/js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="/assets/js/lib/jquery.scrollbar.js"></script>
+    <script src="/assets/js/lib/jstree.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+</head>
+<body>
+<h1>CloudVM ADMIN</h1>
+<div class="skip_navigation">
+    <ul>
+        <li>
+            <a href="#Content" class="go_content">본문 바로가기</a>
+        </li>
+        <li>
+            <a href="#Gnb">메뉴 바로가기</a>
+        </li>
+    </ul>
+</div>
+<header class="header_box">
+    <div class="logo_box">
+        <a href="/" class="logo_link">
+            <div class="logo_hidden_box">
+                <img src="assets/images/logo.png"/>
+            </div>
+        </a>
+    </div>
+    <nav>
+        <ul class="lnb">
+            <li>
+                <a href="menu01.html" class="menu01">
+                    <span>대시보드</span>
+                </a>
+            </li>
+            <li>
+                <a href="menu02.html" class="menu02">
+                    <span>경보</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu03">
+                    <span>이벤트</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu03_01.html"><span>방화벽</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_02.html"><span>IPS</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_03.html"><span>Malware</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_04.html"><span>파일 무결성</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_05.html"><span>실행 파일 통제</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_06.html"><span>서비스 제어</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu04">
+                    <span>자산</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu04_01.html"><span>자산 현황</span></a>
+                    </li>
+                    <li>
+                        <a href="menu04_02.html"><span>자산 관리</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu06">
+                    <span>탐지룰</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu06.html"><span>탐지 룰 관리</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu05">
+                    <span>설정</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu05_01.html"><span>사용자 관리</span></a>
+                    </li>
+                    <li>
+                        <a href="menu05_02.html"><span>권한 설정</span></a>
+                    </li>
+                    <li>
+                        <a href="menu05_03.html"><span>사이트 이용 설정</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+
+
+<article class="top_cont">
+    <div class="location">
+        <ul>
+            <li>Home</li>
+            <li>알럿</li>
+            
+        </ul>
+        <h2>알럿</h2>
+    </div>
+    <div class="user_box">
+        <div class="user_info">
+            <a href="#" class="user_info_link">
+                <p class="user">Hello, <span>redcastle</span></p>
+            </a>
+            <div class="user_info_list">
+                <ul>
+                    <li><a href="#" rel="user_modal" class="modalLoad">내정보</a></li>
+                    <li><a href="menu05_01.html">사용자관리</a></li>
+                    <li class="logout"><a href="main.html">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="top_dashboard">
+            <a href="#" class="top_dashboard_link">
+                <span class="linktext">사용자 정보 버튼</span>
+            </a>
+        </div>
+        <div class="top_dashboard_list">
+            <ul>
+                <li><a href="#" rel="dashboard_save" class="modalLoad">공용 대시 보드 등록</a></li>
+                <li><a href="#" rel="dashboard_view_modal" class="modalLoad">모든 대시보드 보기</a></li>
+                <li><a href="#" rel="dashboard_view_modal" class="modalLoad">저장된 대시보드 보기</a></li>
+                <li><a href="#" rel="dashboard_edit_save" class="modalLoad">공용 대시보드 수정</a></li>
+                <li><a href="#">대시보드 저장</a></li>
+                <li><a href="#">대시보드 삭제</a></li>
+            </ul>
+        </div>
+    </div>
+</article>
+
+<!--  modal :: 내정보 팝업  -->
+<div class="modal small" id="user_modal">
+    <div class="modal_header">
+        <h3>내정보</h3>
+    </div>
+    <div class="modal_body">
+        <div class="modal_cont">
+            <dl>
+                <dt>
+                    <span>사용자 권한</span>
+                </dt>
+                <dd>
+                    <div class="sel_box">
+                        <select class="popup_sel disabled">
+                            <option>Super Admin</option>
+                            <option>Admin</option>
+                            <option>Operator</option>
+                            <option>Viewer</option>
+                        </select>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User ID</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" readonly="" value="aptcastle" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>Password</dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="password" placeholder="기존 비밀번호를 입력해 주세요." name="required">
+                    </div>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="password" placeholder="신규 비밀번호를 입력해 주세요." name="required">
+                    </div>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="password" placeholder="신규 비밀번호를 다시한번 입력해 주세요." name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User Name</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="사용자의 이름을 입력해주세요." value="auditcastle Maker" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User Phone</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="연락처를 입력해 주세요." value="010-0000-0000" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User Email</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="이메일를 입력해 주세요." value="auditcastle@sgacorp.co.kr" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>Company</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="회사명을 입력해 주세요." name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>Address</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="주소를 입력해주세요." name="required">
+                    </div>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="상세주소를 입력하세요." name="required">
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="modal_footer">
+        <div class="btn_wrap">
+            <a href="#" class="btn grey close">취소</a>
+            <a href="#" class="btn">수정</a>
+        </div>
+    </div>
+    <div class="modal_controller">
+        <a href="#" class="close">close</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    <!-- 알럿 컨트롤 스크립트 -->
+    $(document).ready(function() {
+        $('a.code_btn').on('click', function () {
+            alertEvt();
+        });
+        $('a.code_btn1').on('click', function () {
+            alertEvt1();
+        });
+        $('a.code_btn2').on('click', function () {
+            alertEvt2();
+        });
+        $('a.code_btn3').on('click', function () {
+            alertEvt3();
+        });
+        $('a.code_btn4').on('click', function () {
+            alertEvt4();
+        });
+        $('a.code_btn5').on('click', function () {
+            alertEvt5();
+        });
+    });
+    function alertEvt(){
+        swal("", "예시 텍스트만 필요할시 사용", "", {
+            buttons: "확인",
+        });
+    }
+    function alertEvt1(){
+        swal("사용자 정보 변경","사용자정보를 변경하시겠습니까?",'assets/images/icon_alert01.png',{
+            buttons: ["취소", "확인"],
+        }).then(function(willDelete) {
+            if (willDelete) {
+                swal("사용자 정보 변경","사용자 정보가 정상적으로 변경 되었습니다.", {
+                    icon: "assets/images/icon_alert02.png",
+                    buttons:"확인"
+                });
+            } else {
+                swal("사용자 정보 변경","취소합니다", {
+                    icon: "assets/images/icon_alert03.png",
+                    buttons:"확인"
+                });
+            }
+        });
+    }
+    function alertEvt2(){
+        swal("대시보드삭제","대시보드를 삭제하시겠습니까?","assets/images/icon_alert04.png", {
+            buttons: ["취소", "확인"],
+        }).then(function(willDelete) {
+            if (willDelete) {
+                swal("대시보드삭제","삭제하였습니다.", {
+                    icon: "assets/images/icon_alert02.png",
+                    buttons:"확인"
+                });
+            } else {
+                swal("대시보드삭제","취소합니다", {
+                    icon: "assets/images/icon_alert03.png",
+                    buttons:"확인"
+                });
+            }
+        });
+    }
+    function alertEvt3(){
+        swal("접속실패", "서버로 부터 정보를 가져올 수 없습니다.", "assets/images/icon_alert03.png", {
+            buttons: "확인",
+        });
+    }
+    function alertEvt4(){
+        swal("허용시간 초과", "로그인후 시간이 경과되어 서버정보를 가져올 수 없습니다.\n" +
+            "다시 로그인하여 주십시요.\n", "assets/images/icon_alert05.png", {
+            buttons: "확인",
+        });
+    }
+    function alertEvt5(){
+        swal("업데이트", "성공적으로 업데이트 했습니다.", "assets/images/icon_alert02.png", {
+            buttons: "확인",
+        });
+    }
+</script>
+
+<section id="Content" class="sub certification" style="padding: 20px">
+    <div class="inner">
+        <a href="#" class="btn code_btn">알럿예시(텍스트만 있을시)</a>
+        <a href="#" class="btn code_btn1">알럿예시(변경사항 알럿)</a>
+        <a href="#" class="btn code_btn2">알럿예시(삭제나 행위에 대한 알럿)</a>
+        <a href="#" class="btn code_btn3">알럿예시(실패 알럿)</a>
+        <a href="#" class="btn code_btn4">알럿예시(경고 알럿)</a>
+        <a href="#" rel="policyediting_modal" class="btn modalLoad">알럿예시(팝업 내 알럿 예시)</a>
+    </div>
+</section>
+
+<div class="modal mid securitypolicy" id="policyediting_modal">
+    <div class="modal_header">
+        <h3>정책 편집 (IPS)</h3>
+        <!--        <h3>정책 편집 (방화벽)</h3>-->
+        <!--        <h3>정책 편집 (AntiMalware)</h3>-->
+        <!--        <h3>정책 편집 (파일무결성)</h3>-->
+    </div>
+    <div class="modal_body">
+        <div class="modal_cont top">
+            <ul>
+                <li>
+                    <dl>
+                        <dt>
+                            revision
+                        </dt>
+                        <dd>
+                            <div class="policy">
+                                <span>rev 1,000+</span>
+                            </div>
+                            <a href="#" class="rev_list_btn">rev list</a>
+                            <ul class="rev_list">
+                                <li>
+                                    <a href="#" class="code_btn5">
+                                        <div class="policy fl">
+                                            <span>rev 1,000+</span>
+                                        </div>
+                                        <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="policy ind fl">
+                                            <span>rev 1,000+</span>
+                                        </div>
+                                        <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="policy fl">
+                                            <span>rev 1,000+</span>
+                                        </div>
+                                        <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="policy ind fl">
+                                            <span>rev 1,000+</span>
+                                        </div>
+                                        <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="policy fl">
+                                            <span>rev 1,000+</span>
+                                        </div>
+                                        <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>생성시간</dt>
+                        <dd>2020/11/06 12:23</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>등록사용자</dt>
+                        <dd>이종화(jonghlee)</dd>
+                    </dl>
+                </li>
+                <li class="wide">
+                    <dl>
+                        <dt>변경 사항</dt>
+                        <dd>
+                            <textarea>2020년 4분기 정기 업데이트&#10;담당자 : 오인수 사원</textarea>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="modal_cont">
+            <h4>룰편집</h4>
+            <div class="ips_rule" style="display: none;">
+                <textarea>alert http $EXTERNAL_NET any -> $HTTP_SERVERS any (msg:"ET WEB_SPECIFIC_APPS Gazi&#10;alert dns $HOME_NET any -> any any (msg:"ET INFO DYNAMIC_DNS Query to a Suspicious&#10;alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET CURRENT_EVENTS Metasploit&#10;# alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET WEB_CLIENT PDF With eval&#10;alert http $EXTERNAL_NET any -> $HTTP_SERVERS any (msg:"ET WEB_SPECIFIC_APPS WordP&#10;alert tcp $EXTERNAL_NET any -> $HOME_NET 5900:5920 (msg:"ET SCAN Potential VNC Sca&#10;alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"ET TROJAN ProxyBox -roxyBotCom&#10;alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET TROJAN [PTsecurity] W32/Rod&#10;alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET WEB_SERVER Possible SQL Inj&#10;# alert tls $EXTERNAL_NET 443 -> $HOME_NET any (msg:"ET TROJAN ABUSE.CH SSL Blackl&#10;alert http $EXTERNAL_NET any -> $HTTP_SERVERS any (msg:"ET WEB_SPECIFIC_APPS The A&#10;alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET EXPLOIT Possible Redirect t&#10;alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET EXPLOIT DLink DNS 320 emot&#10;alert http $EXTERNAL_NET any -> $HTTP_SERVERS any (msg:"ET WEB_SPECIFIC_APPS Rialt&#10;# alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"ET TROJAN Spyeye Data Exfiltr&#10;alert tcp [5.103.132.68,5.103.61.111,5.104.90.29,51.103.128.189,51.103.129.145,51.&#10;alert tcp $EXTERNAL_NET 32768:61000 -> $HOME_NET 1024:65535 (msg:"ET INFO SOCKSv5&#10;alert http $EXTERNAL_NET any -> $HTTP_SERVERS any (msg:"ET WEB_SPECIFIC_APPS TEDE&#10;alert dns $HOME_NET any -> any any (msg:"ET INFO DNS Query Domain .bit"; dns_query&#10;alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"ET TROJAN Observed Malicious SS&#10;# alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS (msg:"ET SPECIFIC_A</textarea>
+            </div>
+            <div class="firewall">
+                <ul class="firewall_edit">
+                    <li>
+                        <dl class="ip">
+                            <dt>출발지</dt>
+                            <dd>
+                                <div class="ipt_box">
+                                    <input type="text" placeholder="0.0.0.0" name="required">
+                                </div>
+                            </dd>
+                            <dd>
+                                <div class="ipt_box">
+                                    <input type="text" placeholder="ip가 0이면 ANY" name="required">
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="ip">
+                            <dt>도착지</dt>
+                            <dd>
+                                <div class="ipt_box">
+                                    <input type="text" placeholder="0.0.0.0" name="required">
+                                </div>
+                            </dd>
+                            <dd>
+                                <div class="ipt_box">
+                                    <input type="text" placeholder="ip가 0이면 ANY" name="required">
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="se">
+                            <dt>프로토콜</dt>
+                            <dd>
+                                <div class="sel_box">
+                                    <select class="popup_sel">
+                                        <option value="tcp" selected="selected">TCP</option>
+                                        <option value="udp">UDP</option>
+                                    </select>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="se">
+                            <dt>액션</dt>
+                            <dd>
+                                <div class="sel_box">
+                                    <select class="popup_sel">
+                                        <option value="allowed" selected="selected">Allowed</option>
+                                        <option value="blocked">Blocked</option>
+                                    </select>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>비고내용</dt>
+                            <dd>
+                                <div class="ipt_box">
+                                    <input type="text" placeholder="참고 할 내용을 자유롭게 적어 주세요." name="required">
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+                <a href="#" class="firewall_add_btn">정책 추가</a>
+                <div class="tbl">
+                    <script>
+                        $(document).ready(function() {
+                            $('a.modalLoad').on('click',function(){
+                                var $self = $(this);
+                                var $thisrel = $self.attr('rel');
+                                var $target = $('#'+ $thisrel);
+                                $target.find(".close").on('click',function(){
+                                    if ($('.tbl .scroll').length) {
+                                        var table = $('.tbl .scroll').DataTable();
+                                        table.destroy();
+                                    }
+                                });
+                                $target.parents('html body').find(".dim").click(function () {
+                                    if ($('.tbl .scroll').length) {
+                                        var table = $('.tbl .scroll').DataTable();
+                                        table.destroy();
+                                    }
+                                });
+                                if ($('.tbl .scroll').length) {
+                                    $('.scroll').dataTable({
+                                        "autoWidth": false,
+                                        "paging": false,
+                                        "ordering": false,
+                                        "info": false,
+                                        "filter": false,
+                                        "pageLength": '5',
+                                        "scrollY": "240",
+                                    });
+                                }
+                            });
+                        });
+                    </script>
+                    <table id="" class="scroll hover" style="width: 100%">
+                        <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="15%">
+                            <col width="15%">
+                            <col width="auto">
+                            <col width="55px">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>출발지</th>
+                            <th>도착지</th>
+                            <th>프로토콜</th>
+                            <th>액션</th>
+                            <th>비고</th>
+                            <th>삭제</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w">TCP</td>
+                            <td class="long_w">Allowed</td>
+                            <td class="long_w tl">Web</td>
+                            <td>
+                                <a href="#">삭제</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w">TCP</td>
+                            <td class="long_w">Allowed</td>
+                            <td class="long_w tl">Web</td>
+                            <td>
+                                <a href="#">삭제</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w">TCP</td>
+                            <td class="long_w">Allowed</td>
+                            <td class="long_w tl">Web</td>
+                            <td>
+                                <a href="#">삭제</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w">TCP</td>
+                            <td class="long_w">Allowed</td>
+                            <td class="long_w tl">Web</td>
+                            <td>
+                                <a href="#">삭제</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w">TCP</td>
+                            <td class="long_w">Allowed</td>
+                            <td class="long_w tl">Web</td>
+                            <td>
+                                <a href="#">삭제</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w">TCP</td>
+                            <td class="long_w">Allowed</td>
+                            <td class="long_w tl">Web</td>
+                            <td>
+                                <a href="#">삭제</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w tl">000.000.000.000:0000</td>
+                            <td class="long_w">TCP</td>
+                            <td class="long_w">Allowed</td>
+                            <td class="long_w tl">Web</td>
+                            <td>
+                                <a href="#">삭제</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="individual" style="display: none;">
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $("#testTb1").dataTable({
+                            "autoWidth": false,
+                            "paging": true,
+                            "pagingType" : "full_numbers",
+                            "ordering": false,
+                            "info": true,
+                            "filter": false,
+                            "lengthChange": true,
+                            "language": {
+                                "info": "<span>_PAGE_</span> - _PAGES_ / _MAX_",
+                            },
+                            "dom": 'rt<"bottom"fip><"clear">',
+                            "pageLength": '10',
+                        });
+                    } );
+
+                </script>
+                <div class="tbl row10">
+                    <table id="testTb1" class="hover">
+                        <colgroup>
+                            <col width="55px">
+                            <col width="25%">
+                            <col width="auto">
+                            <col width="35%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="all_checkbox" id="chk00" value="">
+                                    <label for="chk00"></label>
+                                </div>
+                            </th>
+                            <th>장비IP</th>
+                            <th>장비명</th>
+                            <th>비고</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                    <label for="check01"></label>
+                                </div>
+                            </td>
+                            <td class="long_w">000.000.000.000</td>
+                            <td class="long_w tl">None</td>
+                            <td class="long_w tl">None</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="checkbox_list" id="check02" value="">
+                                    <label for="check02"></label>
+                                </div>
+                            </td>
+                            <td class="long_w">192.168.2.10</td>
+                            <td class="long_w tl">General</td>
+                            <td class="long_w tl">General</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="checkbox_list" id="check03" value="">
+                                    <label for="check03"></label>
+                                </div>
+                            </td>
+                            <td class="long_w">000.000.000.000</td>
+                            <td class="long_w tl">MG 인재개발_1</td>
+                            <td class="long_w tl">MG 인재개발_1</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="checkbox_list" id="check04" value="">
+                                    <label for="check04"></label>
+                                </div>
+                            </td>
+                            <td class="long_w">192.168.2.10</td>
+                            <td class="long_w tl">MG 인재개발_2</td>
+                            <td class="long_w tl">MG 인재개발_2</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="checkbox_list" id="check05" value="">
+                                    <label for="check05"></label>
+                                </div>
+                            </td>
+                            <td class="long_w">000.000.000.000</td>
+                            <td class="long_w tl">None2</td>
+                            <td class="long_w tl">None2</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="checkbox_list" id="check06" value="">
+                                    <label for="check06"></label>
+                                </div>
+                            </td>
+                            <td class="long_w">192.168.2.10</td>
+                            <td class="long_w tl">General2</td>
+                            <td class="long_w tl">General2</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="checkbox_list" id="check07" value="">
+                                    <label for="check07"></label>
+                                </div>
+                            </td>
+                            <td class="long_w">000.000.000.000</td>
+                            <td class="long_w tl">MG 인재개발_12</td>
+                            <td class="long_w tl">MG 인재개발_12</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="checkbox_list" id="check08" value="">
+                                    <label for="check08"></label>
+                                </div>
+                            </td>
+                            <td class="long_w">192.168.2.10</td>
+                            <td class="long_w tl">MG 인재개발_22</td>
+                            <td class="long_w tl">MG 인재개발_22</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="checkbox_list" id="check09" value="">
+                                    <label for="check09"></label>
+                                </div>
+                            </td>
+                            <td class="long_w">000.000.000.000</td>
+                            <td class="long_w tl">MG 인재개발_13</td>
+                            <td class="long_w tl">MG 인재개발_13</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="chk_box">
+                                    <input type="checkbox" name="checkbox_list" id="check10" value="">
+                                    <label for="check10"></label>
+                                </div>
+                            </td>
+                            <td class="long_w">192.168.2.10</td>
+                            <td class="long_w tl">MG 인재개발_23</td>
+                            <td class="long_w tl">MG 인재개발_23</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal_footer">
+        <div class="btn_wrap fr">
+            <a href="#" class="btn code_btn5">업데이트</a>
+        </div>
+    </div>
+    <div class="modal_controller">
+        <a href="#" class="close">close</a>
+    </div>
+</div>
+
+</body>
+</html>
+

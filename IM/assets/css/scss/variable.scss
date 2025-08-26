@@ -1,0 +1,222 @@
+/*---------------------------------------------
+	#변수 지정하기
+---------------------------------------------*/
+/***************** 폰트 *****************/
+/* font-size */
+$font10:10px;
+$font12:12px;
+$font13:13px;
+$font14:14px;
+$font15:15px;
+$font16:16px;
+$font18:18px;
+$font27:27px;
+$font28:28px;
+
+/* font-weight */
+$font-w-r:400;
+$font-w-m:500;
+$font-w-b:600;
+$font-w-e:700;
+$font-w-h:800;
+
+/***************** 색상 *****************/
+/* primary color */
+$primary: #27AD98;
+$basic:#162866;
+$basic2:#495991;
+
+/* ui color */
+$true:#23AC3D;
+$false:#FF0000;
+$info: #F76900;
+$blue: #1863BA;
+
+/* background color */
+$body: #F3F5F7;
+$table-th: #F8F8F8;
+$white: #FFFFFF;
+
+/* text color */
+$title: #222222;
+$content: #454545;
+$secondary: #757575;
+$text-disabled: #999999;
+
+/* border color */
+$border-d:#DDDDDD;
+$border-disabled: #AAB0B8;
+$list-border:#C9C9C9;
+
+/* button color */
+$btn-hover: #138170;
+$line-hover: #797979;
+$btn-disabled: #EEEEEE;
+$disabled-line-bg: #FCFCFC;
+
+/* form color */
+$default: #BBBBBB;
+$sub-select: #F8FAFB;
+
+/***************** 자주 쓰이는 이미지 *****************/
+// common
+$iconClose:url("../img/common/close.svg"); //닫기
+$iconBtnAdd:url("../img/common/btn_add.svg"); //+버튼
+$icoAccordion:url("../img/common/ico_accordion.svg"); //아코디언 화살표(라인)
+$icoAccordion2:url("../img/common/ico_accordion2.svg"); //아코디언 화살표(삼각형모양)
+$icoInfo:url("../img/common/ico_info.svg");//info
+$icoCheck:url("../img/common/ico_check.svg");//체크
+$icoCheckS:url("../img/common/ico_check_s.svg");//작은 체크
+$icoFolder:url("../img/common/ico_folder.svg");//폴더
+$icoFolderOpen:url("../img/common/ico_folder_open.svg");//폴더 오픈
+$icoMember:url("../img/common/ico_member.svg");//유저 기본 이미지
+$icoArrow:url("../img/common/arrow.svg");//화살표 >
+$icoArrowNone:url("../img/common/icon_arrow_none.svg");// -
+$icoReset:url("../img/common/ico_reset.svg");//초기화
+$icoDocument:url("../img/common/ico_document.svg");//상세보기
+$icoBtn:url("../img/common/ico_btn.svg");//검색버튼 돋보기 모양
+$icoKebab:url("../img/common/ico_kebab.svg");//... 세로 모양
+// label
+$iconPgs:url("../img/label/icon_pgs.svg"); // 진행중
+$icoPlugConnected:url("../img/label/ico_PlugConnected.svg"); //연결됨
+$icoPlugZapOff:url("../img/label/ico_PlugZapOff.svg");//연결끊김
+$icoFileEdit:url("../img/label/ico_FileEdit.svg");//수정작업중
+$icoTrash:url("../img/label/ico_trash.svg");//삭제
+$icoBolt:url("../img/label/ico_bolt.svg");//활성, 비활성
+$iconLocked:url("../img/label/icon_locked.svg");//잠금
+
+/***************** 기타 *****************/
+$wh100: 100%;
+$borderD: 1px solid $border-d;
+$borderP: 1px solid $primary;
+$borderC: 1px solid $list-border;
+
+/*---------------------------------------------
+	#Mixin
+---------------------------------------------*/
+@mixin flexsb($justify: space-between) {
+    display: flex;
+    align-items: center;
+    @if $justify != null {
+        justify-content: $justify;
+    }
+}
+
+@mixin content($width, $height) {
+    content:"";
+    width:$width;
+    height:$height;
+}
+
+@mixin title($size, $weight, $color) {
+    font-size:$size;
+    font-weight:$weight;
+    color:$color;
+}
+
+@mixin icon($width, $height) {
+    width:$width;
+    height:$height;
+    background-size:$wh100;
+    background-repeat:no-repeat;
+    background-image:none;
+}
+
+@mixin label {
+    display:inline-block;
+    width:auto;
+    border-radius:14px;
+    font-size:$font13;
+}
+
+@mixin mask($backColor) {
+    -webkit-mask-repeat:no-repeat;
+    mask-repeat:no-repeat;
+    -webkit-mask-size:100%;
+    mask-size:100%;
+    -webkit-mask-position:center;
+    mask-position:center;
+    background-color:$backColor;
+    vertical-align:text-bottom;
+}
+
+@mixin wh ($width, $height) {
+    width:$width;
+    height:$height;
+}
+
+@mixin topCenter($left: null, $right: null, $bottom: null) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @if $left != null {
+        left: $left;
+    }
+    @if $right != null {
+        right: $right;
+    }
+    @if $bottom != null {
+        bottom: $bottom;
+    }
+}
+/*---------------------------------------------
+	#Placeholder
+---------------------------------------------*/
+%tag-base {
+    display:inline-block;
+    padding: 0 8px 0 6px;
+    border-radius: 12px;
+    font-size:$font13;
+    font-weight:$font-w-r;
+    line-height:25px;
+    vertical-align:unset;
+}
+%imgae {
+    display:inline-block;
+    background-size:90%;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+%box_showbtn_common {
+    border: 1px solid $btn-disabled;
+    background-color: $disabled-line-bg;
+
+    &::before {
+        @include mask($text-disabled);
+    }
+
+    &.hide {
+        &::after {
+            background-color: $text-disabled;
+        }
+    }
+}
+%positon_center {
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+%btn_columnadd {
+    height:45px;
+    border:1px dashed $border-d;
+    border-radius:6px;
+    background-color:$table-th;
+}
+
+%btn_option {
+    top:5px;
+    @include wh (18px, 18px);
+    padding:0;
+    border:0;
+    &::after {
+        @include wh (18px, 18px);
+        @include mask ($text-disabled);
+    }
+}
+
+%btn_option30 {
+    @include wh(30px, 30px);
+    border-radius:6px;
+    background-color:$basic;
+}

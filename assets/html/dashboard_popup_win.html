@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>대시보드 새창 - vAegis</title>
+    <meta charset="UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- TODO: search engine info -->
+    <meta name="robots" content="vAegis" />
+    <meta name="keywords" content="vAegis" />
+    <meta name="title" content="vAegis" />
+    <meta name="description" content="vAegis" />
+
+    <!-- TODO: social url link image -->
+    <meta property="og:url" content="">
+    <meta property="og:title" content="vAegis">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="cloudVM.png">
+    <meta property="og:description" content="vAegis 입니다.">
+
+    <!-- TODO: favicon -->
+    <link rel="icon" href="favicon.png" type="favicon.png" />
+
+    <!-- TODO: import -->
+    <link rel="stylesheet" href="/assets/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/lib/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/assets/css/lib/datatables.css">
+    <link rel="stylesheet" href="/assets/css/lib/datatables.css">
+    <link rel="stylesheet" href="/assets/css/lib/select.dataTables.css">
+    <link rel="stylesheet" href="/assets/css/lib/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="/assets/css/lib/jquery.scrollbar.css">
+    <link rel="stylesheet" href="/assets/css/lib/jstree.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="/assets/js/lib/moment.js"></script>
+    <script src="/assets/js/lib/bootstrap.min.js"></script>
+    <script src="/assets/js/lib/bootstrap-datetimepicker.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="/assets/js/lib/echarts.js"></script>
+    <script src="/assets/js/lib/jquery.nice-select.js"></script>
+    <script src="/assets/js/lib/select.dataTables.js"></script>
+    <script src="/assets/js/lib/datatables.js"></script>
+    <script src="/assets/js/lib/dataTables.colReorder.js"></script>
+    <script src="/assets/js/lib/dataTables.rowReorder.js"></script>
+    <script src="/assets/js/lib/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/lib/sweetalert.js"></script>
+    <script src="/assets/js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="/assets/js/lib/jquery.scrollbar.js"></script>
+    <script src="/assets/js/lib/jstree.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+</head>
+<body class="win_popup2 mscrollbar">
+<section class="sub">
+    <div class="dashboard_box">
+        <div class="dashboard_box_top">
+            <div class="dashboard_title">
+                <h3>Tab style1 <span>적용일시 : 2020-12-03 15:35:18</span></h3>
+            </div>
+        </div>
+        <div class="dashboard_box_cont">
+            <ul class="dashboard_cont">
+                <li class="w_50" >
+                    <div class="dashboard_cont_top">
+                        <h4 class="cont_title">
+                            Anti Malware 이벤트 트렌드
+                        </h4>
+                        <div class="cont_btn_box">
+                            <div class="cont_btn_day fl">
+                                <a href="#" class="on">Daily</a>
+                                <a href="#" class="">Weekly</a>
+                            </div>
+                            <div class="cont_btn disabled fl">
+                                <a href="#" class="cont_btn_link">
+                                    <span class="linktext">메뉴</span>
+                                </a>
+                                <div class="cont_btn_list">
+                                    <ul>
+                                        <li><a href="#">Refresh</a></li>
+                                        <li><a href="#" class="delete">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_chart_line_box">
+                        <div id="chart01" class="dashboard_chart_line">
+                            <script>
+                                $(document).ready(function(){
+                                    var myChart = echarts.init(document.getElementById('chart01'));
+                                    option = {
+                                        tooltip: {
+                                            triggerOn : 'mousemove',
+                                            backgroundColor: 'rgba(47,55,66,0.8)',
+                                            borderColor: "#515964",
+                                            transitionDuration: 0,
+                                            textStyle: {
+                                                color : '#bbbbbb',
+                                                fontWeight: 400,
+                                                fontSize : 11,
+                                            },
+                                            position: 'top',
+                                            renderMode : 'html',
+                                            formatter: '2020.11.05 {b}:00:00 <span style="color: #ed960a">{c}</span>',
+                                        },
+                                        grid : {
+                                            height : '300',
+                                            top : '70',
+                                            bottom : '0',
+                                            left : '100',
+                                            right : '110'
+                                        },
+                                        xAxis: {
+                                            type: 'category',
+                                            name: '(시간)',
+                                            nameTextStyle: {
+                                                padding : [25,0,0,0],
+                                            },
+                                            axisLine: {
+                                                lineStyle: {
+                                                    color: '#565d68',
+                                                }
+                                            },
+                                            data: ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '23']
+                                        },
+                                        yAxis: {
+                                            type: 'value',
+                                            name: '(갯수)',
+                                            nameTextStyle: {
+                                                padding : [0,45,0,0],
+                                            },
+                                            splitLine: {show: false},
+                                            axisLine: {
+                                                show: true,
+                                                lineStyle: {
+                                                    color: '#565d68'
+                                                },
+                                            },
+                                        },
+                                        series: [{
+                                            data: [780, 790, 770, 190, 130, 100, 500, 80, 110, 120, 603, 121, 120, 116, 300, 200, 180, 980, 100, 420, 130, 140 , 110],
+                                            type: 'line',
+                                            showSymbol: true,
+                                            showAllSymbol: true,
+                                            markLine: {
+                                                silent: true,
+                                                data: [{
+                                                    yAxis: 250
+                                                }],
+                                                symbol : 'none',
+                                                label : {
+                                                    color : '#2196f3',
+                                                },
+                                                lineStyle : {
+                                                    color : '#2196f3',
+                                                },
+                                            },
+                                            markPoint: {
+                                                data: [
+                                                    {
+                                                        type: 'max',
+                                                        symbolSize: [20, 30],
+                                                        itemStyle : {
+                                                            color : 'transparent',
+                                                        },
+                                                        label : {
+                                                            color : '#ddd',
+                                                        },
+                                                    }
+                                                ],
+                                            },
+                                            symbol: 'circle',
+                                            lineStyle: {
+                                                width: 2,
+                                                type: 'solid'
+                                            },
+                                        }],
+                                        visualMap: [{
+                                            show: false,
+                                            seriesIndex: 0,
+                                            min: 0,
+                                            max: 500,
+                                            borderWidth: 5,
+                                            inRange: {
+                                                color: ['#747b86', '#2195f2'],
+                                                symbolSize: 8,
+                                            },
+                                        }],
+                                        textStyle : {
+                                            color: '#adb0bc',
+                                            fontWeight: 100,
+                                        },
+                                    };
+                                    myChart.setOption(option);
+                                    window.addEventListener('resize',function(){
+                                        myChart.resize();
+                                    });
+                                    myChart.on('mouseover', 'series', function () {
+                                        $(this).attr('rel', 'event_modal3');
+                                    });
+                                    myChart.on('click', 'series', function () {
+                                        window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </li>
+                <li class="w_25" >
+                    <div class="dashboard_cont_top">
+                        <h4 class="cont_title">
+                            Anti Malware 처리상태
+                        </h4>
+                        <div class="cont_btn_box">
+                            <div class="cont_btn_day fl">
+                                <a href="#" class="on">Daily</a>
+                                <a href="#" class="">Weekly</a>
+                            </div>
+                            <div class="cont_btn fl">
+                                <a href="#" class="cont_btn_link">
+                                    <span class="linktext">메뉴</span>
+                                </a>
+                                <div class="cont_btn_list">
+                                    <ul>
+                                        <li><a href="#">Refresh</a></li>
+                                        <li><a href="#" class="delete">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_chart_pie_box">
+                        <div id="chart02" class="dashboard_chart_pie">
+                            <script>
+                                $(document).ready(function(){
+                                    var myChart2 = echarts.init(document.getElementById('chart02'));
+                                    option = {
+                                        title: {
+                                            text: 'Anti\n' + 'Malware',
+                                            left: 'center',
+                                            top: 'center',
+                                            textStyle: {
+                                                color : '#ddd',
+                                                fontFamily: 'SpoqaHanSans',
+                                                fontWeight: 400,
+                                                fontSize : 18,
+                                            },
+                                        },
+                                        legend: {
+                                            left: 'center',
+                                            bottom : '0',
+                                            data: [
+                                                {
+                                                    name : 'allowed',
+                                                    icon : 'circle',
+                                                    textStyle: {
+                                                        color : '#4d67cc',
+                                                    },
+                                                },
+                                                {
+                                                    name : 'allowed02',
+                                                    icon : 'circle',
+                                                    textStyle: {
+                                                        color : '#3faeb8',
+                                                    },
+                                                },
+                                                {
+                                                    name : 'drop',
+                                                    icon : 'circle',
+                                                    textStyle: {
+                                                        color : '#da9527',
+                                                    },
+                                                },
+                                                {
+                                                    name: 'drop03',
+                                                    icon : 'circle',
+                                                    textStyle: {
+                                                        color: '#9f9e9e',
+                                                    },
+                                                },
+                                                {
+                                                    name : 'drop02',
+                                                    icon : 'circle',
+                                                    textStyle: {
+                                                        color : '#55a559',
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                        tooltip: {
+                                            triggerOn : 'mousemove',
+                                            backgroundColor: 'rgba(47,55,66,0.8)',
+                                            borderColor: "#515964",
+                                            transitionDuration: 0,
+                                            textStyle: {
+                                                color : '#bbbbbb',
+                                                fontWeight: 400,
+                                                fontSize : 11,
+                                            },
+                                            position: 'inside',
+                                            renderMode : 'html',
+                                            formatter: '{b} <span style="color: #ed960a">{d}%</span>',
+                                        },
+                                        series: [
+                                            {
+                                                type: 'pie',
+                                                radius: ['30%', '60%'],
+                                                emphasis  :{
+                                                    itemStyle: {
+                                                        shadowBlur: 4,
+                                                        shadowOffsetX: 1,
+                                                        shadowColor: 'rgba(0, 0, 0, 0.4)'
+                                                    },
+                                                },
+
+                                                data: [
+                                                    {
+                                                        value: 335,
+                                                        name: 'allowed',
+                                                        itemStyle: {
+                                                            color: '#4d67cc',
+                                                            opacity : 1,
+                                                        },
+                                                        label : {
+                                                            fontSize: 12,
+                                                            color: '#4d67cc',
+                                                        },
+                                                        emphasis  :{
+                                                            itemStyle:{
+                                                                color: '#4d67cc',
+                                                                opacity: 1,
+                                                            },
+                                                        },
+                                                    },
+                                                    {
+                                                        value: 310,
+                                                        name: 'allowed02',
+                                                        itemStyle: {
+                                                            color: '#3faeb8',
+                                                        },
+                                                        label : {
+                                                            fontSize: 12,
+                                                            color: '#3faeb8',
+                                                        },
+                                                        emphasis  :{
+                                                            itemStyle:{
+                                                                color: '#3faeb8',
+                                                                opacity: 1,
+                                                            },
+                                                        },
+                                                    },
+                                                    {
+                                                        value: 234,
+                                                        name: 'drop',
+                                                        itemStyle: {
+                                                            color: '#da9527',
+                                                        },
+                                                        label : {
+                                                            fontSize: 12,
+                                                            color: '#da9527',
+                                                        },
+                                                        emphasis  :{
+                                                            itemStyle:{
+                                                                color: '#da9527',
+                                                                opacity: 1,
+                                                            },
+                                                        },
+                                                    },
+                                                    {
+                                                        value: 135,
+                                                        name: 'drop03',
+                                                        itemStyle: {
+                                                            color: '#9f9e9e',
+                                                        },
+                                                        label : {
+                                                            fontSize: 12,
+                                                            color: '#9f9e9e',
+                                                        },
+                                                        emphasis  :{
+                                                            itemStyle:{
+                                                                color: '#9f9e9e',
+                                                                opacity: 1,
+                                                            },
+                                                        },
+                                                    },
+                                                    {
+                                                        value: 135,
+                                                        name: 'drop02',
+                                                        itemStyle: {
+                                                            color: '#55a559',
+                                                        },
+                                                        label : {
+                                                            fontSize: 12,
+                                                            color: '#55a559',
+                                                        },
+                                                        emphasis  :{
+                                                            itemStyle:{
+                                                                color: '#55a559',
+                                                                opacity: 1,
+                                                            },
+                                                        },
+                                                    },
+                                                ],
+                                            }
+                                        ]
+                                    };
+                                    myChart2.setOption(option);
+                                    window.addEventListener('resize',function(){
+                                        myChart2.resize();
+                                    });
+                                    myChart2.on('mouseover', 'series', function () {
+                                        $(this).attr('rel', 'event_modal3');
+                                    });
+                                    myChart2.on('click', 'series', function () {
+                                        window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </li>
+                <li class="w_25" >
+                    <div class="dashboard_cont_top">
+                        <h4 class="cont_title" title="Anti Malware 최근 감염된 컴퓨터">
+                            Anti Malware 최근 감염된 컴퓨터
+                        </h4>
+                        <div class="cont_btn_box">
+                            <div class="cont_btn_day fl">
+                                <a href="#" class="on">Daily</a>
+                                <a href="#" class="">Weekly</a>
+                            </div>
+                            <div class="cont_btn fl">
+                                <a href="#" class="cont_btn_link">
+                                    <span class="linktext">메뉴</span>
+                                </a>
+                                <div class="cont_btn_list">
+                                    <ul>
+                                        <li><a href="#">Refresh</a></li>
+                                        <li><a href="#" class="delete">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_top5_box">
+                        <div class="dashboard_top5">
+                            <div class="top5">
+                                <ul>
+                                    <li>
+                                        <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                            <div class="number fl">
+                                                <span>01</span>
+                                            </div>
+                                            <div class="top5_text down fl">
+                                                <dl>
+                                                    <dt>redhat78-96</dt>
+                                                    <dd>8477</dd>
+                                                </dl>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                            <div class="number fl">
+                                                <span>02</span>
+                                            </div>
+                                            <div class="top5_text down fl">
+                                                <dl>
+                                                    <dt>ET policy gnu/linux yum User-agent outABCET policy gnu/linux yum User-agent outABC-cc</dt>
+                                                    <dd>8477</dd>
+                                                </dl>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                            <div class="number fl">
+                                                <span>03</span>
+                                            </div>
+                                            <div class="top5_text up fl">
+                                                <dl>
+                                                    <dt>redhat79-cc</dt>
+                                                    <dd>8477</dd>
+                                                </dl>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                            <div class="number fl">
+                                                <span>04</span>
+                                            </div>
+                                            <div class="top5_text down fl">
+                                                <dl>
+                                                    <dt>redhat80-cc</dt>
+                                                    <dd>8477</dd>
+                                                </dl>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                            <div class="number fl">
+                                                <span>05</span>
+                                            </div>
+                                            <div class="top5_text up fl">
+                                                <dl>
+                                                    <dt>redhat79-cc</dt>
+                                                    <dd>8477</dd>
+                                                </dl>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick=" window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');">
+                                            <div class="number fl">
+                                                <span>06</span>
+                                            </div>
+                                            <div class="top5_text up fl">
+                                                <dl>
+                                                    <dt>redhat79-cc</dt>
+                                                    <dd>8477</dd>
+                                                </dl>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="w_50" >
+                    <div class="dashboard_cont_top">
+                        <h4 class="cont_title">
+                            Anti Malware 최근 탐지된 바이러스 TOP10
+                        </h4>
+                        <div class="cont_btn_box">
+                            <div class="cont_btn fl">
+                                <a href="#" class="cont_btn_link">
+                                    <span class="linktext">메뉴</span>
+                                </a>
+                                <div class="cont_btn_list">
+                                    <ul>
+                                        <li><a href="#">Refresh</a></li>
+                                        <li><a href="#" class="delete">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_table_box">
+                        <div class="dashboard_table">
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $("#testTb01").dataTable({
+                                        "autoWidth": false,
+                                        "paging": false,
+                                        // "pagingType" : "full_numbers",
+                                        "ordering": false,
+                                        "info": false,
+                                        "filter": false,
+                                        "lengthChange": true,
+                                        "dom": 'rt<"bottom"fip><"clear">',
+                                    });
+                                } );
+                            </script>
+                            <div class="tbl">
+                                <table id="testTb01" class="click">
+                                    <colgroup>
+                                        <col width="20%">
+                                        <col width="12%">
+                                        <col width="12%">
+                                        <col width="8%">
+                                        <col width="auto">
+                                        <col width="53px">
+                                        <col width="20%">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>자산</th>
+                                        <th>출발지</th>
+                                        <th>목적지</th>
+                                        <th>액션</th>
+                                        <th>서명</th>
+                                        <th>위험도</th>
+                                        <th>탐지시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">localhost.localdomain</td>
+                                        <td class="long_w">192.162.2.20</td>
+                                        <td class="long_w">192.168.10.96</td>
+                                        <td class="long_w">allowed</td>
+                                        <td class="long_w">
+                                            dummy signature Trojan012 text text text
+                                        </td>
+                                        <td>1</td>
+                                        <td class="long_w">2020/10/23 14:02:56</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">localhost.localdomain</td>
+                                        <td class="long_w">192.162.2.20</td>
+                                        <td class="long_w">192.168.10.96</td>
+                                        <td class="long_w">allowed</td>
+                                        <td class="long_w">
+                                            dummy signature Trojan012 text text text
+                                        </td>
+                                        <td>1</td>
+                                        <td class="long_w">2020/10/23 14:02:56</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">localhost.localdomain</td>
+                                        <td class="long_w">192.162.2.20</td>
+                                        <td class="long_w">192.168.10.96</td>
+                                        <td class="long_w">allowed</td>
+                                        <td class="long_w">
+                                            dummy signature Trojan012 text text text
+                                        </td>
+                                        <td>1</td>
+                                        <td class="long_w">2020/10/23 14:02:56</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">localhost.localdomain</td>
+                                        <td class="long_w">192.162.2.20</td>
+                                        <td class="long_w">192.168.10.96</td>
+                                        <td class="long_w">allowed</td>
+                                        <td class="long_w">
+                                            dummy signature Trojan012 text text text
+                                        </td>
+                                        <td>1</td>
+                                        <td class="long_w">2020/10/23 14:02:56</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">localhost.localdomain</td>
+                                        <td class="long_w">192.162.2.20</td>
+                                        <td class="long_w">192.168.10.96</td>
+                                        <td class="long_w">allowed</td>
+                                        <td class="long_w">
+                                            dummy signature Trojan012 text text text
+                                        </td>
+                                        <td>1</td>
+                                        <td class="long_w">2020/10/23 14:02:56</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">localhost.localdomain</td>
+                                        <td class="long_w">192.162.2.20</td>
+                                        <td class="long_w">192.168.10.96</td>
+                                        <td class="long_w">allowed</td>
+                                        <td class="long_w">
+                                            dummy signature Trojan012 text text text
+                                        </td>
+                                        <td>1</td>
+                                        <td class="long_w">2020/10/23 14:02:56</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">localhost.localdomain</td>
+                                        <td class="long_w">192.162.2.20</td>
+                                        <td class="long_w">192.168.10.96</td>
+                                        <td class="long_w">allowed</td>
+                                        <td class="long_w">
+                                            dummy signature Trojan012 text text text
+                                        </td>
+                                        <td>1</td>
+                                        <td class="long_w">2020/10/23 14:02:56</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">localhost.localdomain</td>
+                                        <td class="long_w">192.162.2.20</td>
+                                        <td class="long_w">192.168.10.96</td>
+                                        <td class="long_w">allowed</td>
+                                        <td class="long_w">
+                                            dummy signature Trojan012 text text text
+                                        </td>
+                                        <td>1</td>
+                                        <td class="long_w">2020/10/23 14:02:56</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">localhost.localdomain</td>
+                                        <td class="long_w">192.162.2.20</td>
+                                        <td class="long_w">192.168.10.96</td>
+                                        <td class="long_w">allowed</td>
+                                        <td class="long_w">
+                                            dummy signature Trojan012 text text text
+                                        </td>
+                                        <td>1</td>
+                                        <td class="long_w">2020/10/23 14:02:56</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">localhost.localdomain</td>
+                                        <td class="long_w">192.162.2.20</td>
+                                        <td class="long_w">192.168.10.96</td>
+                                        <td class="long_w">allowed</td>
+                                        <td class="long_w">
+                                            dummy signature Trojan012 text text text
+                                            dummy signature Trojan012 text text text
+                                        </td>
+                                        <td>1</td>
+                                        <td class="long_w">2020/10/23 14:02:56</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="w_50" >
+                    <div class="dashboard_cont_top">
+                        <h4 class="cont_title">
+                            Anti Malware 이벤트 트렌드
+                        </h4>
+                        <div class="cont_btn_box">
+                            <div class="cont_btn_day fl">
+                                <a href="#" class="on">Daily</a>
+                                <a href="#" class="">Weekly</a>
+                            </div>
+                            <div class="cont_btn fl">
+                                <a href="#" class="cont_btn_link">
+                                    <span class="linktext">메뉴</span>
+                                </a>
+                                <div class="cont_btn_list">
+                                    <ul>
+                                        <li><a href="#">Refresh</a></li>
+                                        <li><a href="#" class="delete">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_chart_bar_box">
+                        <div id="chart03" class="dashboard_chart_bar">
+                            <script>
+                                $(document).ready(function(){
+                                    var myChart3 = echarts.init(document.getElementById('chart03'));
+                                    option = {
+                                        tooltip: {
+                                            triggerOn : 'mousemove',
+                                            backgroundColor: 'rgba(47,55,66,0.8)',
+                                            borderColor: "#515964",
+                                            transitionDuration: 0,
+                                            textStyle: {
+                                                color : '#bbbbbb',
+                                                fontWeight: 400,
+                                                fontSize : 11,
+                                            },
+                                            position: 'top',
+                                            renderMode : 'html',
+                                            formatter: '2020.11.05 <span style="color: #ed960a">{c}</span>',
+                                        },
+                                        grid : {
+                                            height : '300',
+                                            top : '70',
+                                            bottom : '0',
+                                            left : '100',
+                                            right : '110'
+                                        },
+                                        xAxis: {
+                                            type: 'category',
+                                            name: '(일)',
+                                            nameTextStyle: {
+                                                padding : [25,0,0,0],
+                                            },
+                                            axisLine: {
+                                                lineStyle: {
+                                                    color: '#565d68'
+                                                }
+                                            },
+                                            data: ['2020-10-19','2020-10-20','2020-10-21','2020-10-22','2020-10-23','2020-10-24','2020-10-25']
+                                        },
+                                        yAxis: {
+                                            type: 'value',
+                                            name: '(갯수)',
+                                            nameTextStyle: {
+                                                padding : [0,45,0,0],
+                                            },
+                                            splitLine: {
+                                                show: true,
+                                                lineStyle: {
+                                                    color: '#565d68'
+                                                }
+                                            },
+                                            axisLine: {
+                                                lineStyle: {
+                                                    color: '#565d68'
+                                                }
+                                            },
+                                        },
+                                        series: [{
+                                            data: [20000, 10000, 18000, 8000, 14000, 6000, 15500],
+                                            type: 'bar',
+                                            showSymbol: true,
+                                            barWidth: '45%',
+                                            // itemStyle: {
+                                            //     barBorderRadius: [5,5,0,0],
+                                            // },
+                                            markLine: {
+                                                silent: true,
+                                                data: [{
+                                                    yAxis: 12500
+                                                }],
+                                                symbol : 'none',
+                                                label : {
+                                                    color : '#2196f3',
+                                                },
+                                                lineStyle : {
+                                                    color : '#2196f3',
+                                                },
+                                            },
+                                        }],
+                                        visualMap: {
+                                            show: false,
+                                            top: 10,
+                                            right: 10,
+                                            pieces: [{
+                                                gt: 0,
+                                                lte: 12500,
+                                                color: '#4d5663'
+                                            }, {
+                                                gt: 12500,
+                                                lte: 100000,
+                                                color: '#2196f3'
+                                            },],
+                                        },
+                                        textStyle : {
+                                            color: '#adb0bc',
+                                            fontWeight: 100,
+                                        },
+                                    };
+                                    myChart3.setOption(option);
+                                    window.addEventListener('resize',function(){
+                                        myChart3.resize();
+                                    });
+                                    myChart3.on('mouseover', 'series', function () {
+                                        $(this).attr('rel', 'event_modal3');
+                                    });
+                                    myChart3.on('click', 'series', function () {
+                                        window.open('event_popup_win.html','','width=1201,height=854,location=no,status=no,scrollbars=yes');
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </li>
+                <li class="w_50" >
+                    <div class="dashboard_cont_top">
+                        <h4 class="cont_title">
+                            Anti Malware 이벤트 트렌드
+                        </h4>
+                        <div class="cont_btn_box">
+                            <div class="cont_btn_day fl">
+                                <a href="#" class="on">Daily</a>
+                                <a href="#" class="">Weekly</a>
+                            </div>
+                            <div class="cont_btn fl">
+                                <a href="#" class="cont_btn_link">
+                                    <span class="linktext">메뉴</span>
+                                </a>
+                                <div class="cont_btn_list">
+                                    <ul>
+                                        <li><a href="#">Refresh</a></li>
+                                        <li><a href="#" class="delete">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_chart_treemap_box">
+                        <div id="chart04" class="dashboard_chart_treemap">
+                            <script>
+                                $(document).ready(function(){
+                                    var myChart4 = echarts.init(document.getElementById('chart04'));
+                                    option = {
+                                        series: [{
+                                            itemStyle: {
+                                                borderColor: '#2f3742'
+                                            },
+                                            type: 'treemap',
+                                            width: '100%',
+                                            height: '100%',
+                                            // height: 384,
+                                            roam: false,
+                                            breadcrumb: {
+                                                show: false,
+                                            },
+                                            leafDepth: 10,
+                                            nodeClick: false,
+                                            visibleMin: 300,
+                                            upperLabel: {
+                                                show : true,
+                                                position: 'inside',
+                                                color : '#ddd',
+                                                formatter : '{b}',
+                                            },
+                                            levels: [
+                                                {
+                                                    color: ['#4d67cc', '#4e98d2', '#3faeb8', '#d8a24d', '#6ea870'],
+                                                    colorMappingBy: 'id',
+                                                    colorAlpha : [1, 1],
+                                                    itemStyle: {
+                                                        borderWidth: 0,
+                                                        gapWidth: 3,
+                                                    },
+                                                },
+                                                {
+                                                    colorMappingBy: 'value',
+                                                    colorAlpha : 1,
+                                                    colorSaturation: [0.35, 0.55],
+                                                    itemStyle: {
+                                                        gapWidth: 2,
+                                                        borderColorSaturation: 0.5,
+                                                    },
+                                                    emphasis: {
+                                                        upperLabel: {
+                                                            show : true,
+                                                            position: 'inside',
+                                                            color : '#ddd',
+                                                            formatter : '{b}',
+                                                        },
+                                                    },
+                                                },
+                                                {
+                                                    colorMappingBy: 'value',
+                                                    colorAlpha : [1, 1],
+                                                    colorSaturation : [0,1],
+                                                    itemStyle: {
+                                                        gapWidth: 1,
+                                                        borderColorSaturation: 0.45,
+                                                    },
+                                                    emphasis: {
+                                                        upperLabel: {
+                                                            show : true,
+                                                            position: 'inside',
+                                                            color : '#ddd',
+                                                            formatter : '{b}',
+                                                        },
+                                                    },
+                                                },
+                                            ],
+                                            data: [
+                                                {
+                                                    name: 'Meat / Pou',            // First tree
+                                                    value: 50,
+                                                    id: 'someid-1',
+                                                    children: [
+                                                        {
+                                                            name: 'nodeAa1',       // First leaf of first tree
+                                                            value: 10,
+                                                            id: 'someid-1',
+                                                        },
+                                                        {
+                                                            name: 'nodeAb2',       // Second leaf of first tree
+                                                            value: 6
+                                                        },
+                                                        {
+                                                            name: 'nodeAb3',       // Second leaf of first tree
+                                                            value: 4
+                                                        },
+                                                        {
+                                                            name: 'nodeAb4',       // Second leaf of first tree
+                                                            value: 9
+                                                        },
+                                                        {
+                                                            name: 'nodeAb5',       // Second leaf of first tree
+                                                            value: 5
+                                                        },
+                                                        {
+                                                            name: 'nodeAb6',       // Second leaf of first tree
+                                                            value: 20
+                                                        },
+                                                    ]
+                                                },
+                                                {
+                                                    name: 'Beverages',            // Second tree
+                                                    value: 20,
+                                                    children: [
+                                                        {
+                                                            name: 'Teas',       // Son of first tree
+                                                            value: 20,
+                                                        },
+                                                        {
+                                                            name: 'Beers',       // Son of first tree
+                                                            value: 20,
+                                                        },
+                                                    ]
+                                                },
+                                                {
+                                                    name: 'Meat / Pou',            // First tree
+                                                    value: 70,
+                                                    id: 'someid-2',
+                                                    children: [
+                                                        {
+                                                            name: 'nodeAa1',       // First leaf of first tree
+                                                            value: 10,
+                                                            id: 'someid-2',
+                                                        },
+                                                        {
+                                                            name: 'nodeAb2',       // Second leaf of first tree
+                                                            value: 6
+                                                        },
+                                                        {
+                                                            name: 'nodeAb3',       // Second leaf of first tree
+                                                            value: 4
+                                                        },
+                                                        {
+                                                            name: 'nodeAb4',       // Second leaf of first tree
+                                                            value: 9
+                                                        },
+                                                        {
+                                                            name: 'nodeAb5',       // Second leaf of first tree
+                                                            value: 5
+                                                        },
+                                                        {
+                                                            name: 'nodeAb6',       // Second leaf of first tree
+                                                            value: 20
+                                                        },
+                                                    ]
+                                                },
+                                                {
+                                                    name: 'Dairy Products',            // Second tree
+                                                    value: 30,
+                                                    children: [
+                                                        {
+                                                            name: 'Teas',       // Son of first tree
+                                                            value: 20,
+                                                        },
+                                                        {
+                                                            name: 'Beers',       // Son of first tree
+                                                            value: 20,
+                                                        },
+                                                    ]
+                                                },
+                                                {
+                                                    name: 'Condiments',            // Second tree
+                                                    value: 40,
+                                                    children: [
+                                                        {
+                                                            name: 'Teas',       // Son of first tree
+                                                            value: 20,
+                                                        },
+                                                        {
+                                                            name: 'Beers',       // Son of first tree
+                                                            value: 20,
+                                                        },
+                                                    ]
+                                                },
+                                                {
+                                                    name: 'Seafood',            // Second tree
+                                                    value: 50,
+                                                    children: [
+                                                        {
+                                                            name: 'Teas',       // Son of first tree
+                                                            value: 20,
+                                                        },
+                                                        {
+                                                            name: 'Beers',       // Son of first tree
+                                                            value: 20,
+                                                        },
+                                                    ]
+                                                },
+                                                {
+                                                    name: 'Produce',            // Second tree
+                                                    value: 60,
+                                                    children: [
+                                                        {
+                                                            name: 'Teas',       // Son of first tree
+                                                            value: 20,
+                                                        },
+                                                        {
+                                                            name: 'Beers',       // Son of first tree
+                                                            value: 20,
+                                                        },
+                                                    ]
+                                                },
+                                            ],
+                                            tooltip: {
+                                                triggerOn : 'mousemove',
+                                                backgroundColor: 'rgba(47,55,66,0.8)',
+                                                borderColor: "#515964",
+                                                transitionDuration: 0,
+                                                textStyle: {
+                                                    color : '#bbbbbb',
+                                                    fontWeight: 400,
+                                                    fontSize : 11,
+                                                },
+                                                position: 'top',
+                                                renderMode : 'html',
+                                                formatter: '2020.11.05 <span style="color: #fdfa01">{b}</span>',
+                                            },
+                                        }],
+                                    };
+                                    myChart4.setOption(option);
+                                    window.addEventListener('resize',function(){
+                                        myChart4.resize();
+                                    });
+                                    myChart4.on('click', 'series', function () {
+                                        window.open('event_popup_win3.html','','width=869,height=700,location=no,status=no,scrollbars=yes');
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </li>
+                <li class="w_50" >
+                    <div class="dashboard_cont_top">
+                        <h4 class="cont_title">
+                            무결성 최근 이벤트 TOP10
+                        </h4>
+                        <div class="cont_btn_box">
+                            <div class="cont_btn_day fl">
+                                <a href="#" class="on">Daily</a>
+                                <a href="#" class="">Weekly</a>
+                            </div>
+                            <div class="cont_btn fl">
+                                <a href="#" class="cont_btn_link">
+                                    <span class="linktext">메뉴</span>
+                                </a>
+                                <div class="cont_btn_list">
+                                    <ul>
+                                        <li><a href="#">Refresh</a></li>
+                                        <li><a href="#" class="delete">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_table_box">
+                        <div class="dashboard_table">
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $("#testTb02").dataTable({
+                                        "autoWidth": false,
+                                        "paging": false,
+                                        // "pagingType" : "full_numbers",
+                                        "ordering": false,
+                                        "info": false,
+                                        "filter": false,
+                                        "lengthChange": true,
+                                        "dom": 'rt<"bottom"fip><"clear">',
+                                    });
+                                } );
+
+                            </script>
+                            <div class="tbl">
+                                <table id="testTb02" class="click">
+                                    <colgroup>
+                                        <col width="45%">
+                                        <col width="25%">
+                                        <col width="30%">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>자산</th>
+                                        <th>파일종류</th>
+                                        <th>파일명</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">redhat76-cc</td>
+                                        <td class="long_w">16</td>
+                                        <td class="long_w">/etc/cron</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">redhat76-cc</td>
+                                        <td class="long_w">16</td>
+                                        <td class="long_w">/etc/cron</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">redhat76-cc</td>
+                                        <td class="long_w">16</td>
+                                        <td class="long_w">/etc/cron</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">redhat76-cc</td>
+                                        <td class="long_w">16</td>
+                                        <td class="long_w">/etc/cron</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">redhat76-cc</td>
+                                        <td class="long_w">16</td>
+                                        <td class="long_w">/etc/cron</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">redhat76-cc</td>
+                                        <td class="long_w">16</td>
+                                        <td class="long_w">/etc/cron</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">redhat76-cc</td>
+                                        <td class="long_w">16</td>
+                                        <td class="long_w">/etc/cron</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">redhat76-cc</td>
+                                        <td class="long_w">16</td>
+                                        <td class="long_w">/etc/cron</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">redhat76-cc</td>
+                                        <td class="long_w">16</td>
+                                        <td class="long_w">/etc/cron</td>
+                                    </tr>
+                                    <tr onclick="window.open('event_popup_win4.html','','width=1023,height=737,location=no,status=no,scrollbars=yes');">
+                                        <td class="long_w">redhat76-cc</td>
+                                        <td class="long_w">16</td>
+                                        <td class="long_w">/etc/cron</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="w_25" >
+                    <div class="dashboard_cont_top">
+                        <h4 class="cont_title" title="Anti Malware 최근 감염된 컴퓨터">
+                            Anti Malware 최근 감염된 컴퓨터
+                        </h4>
+                        <div class="cont_btn_box">
+                            <div class="cont_btn_day fl">
+                                <a href="#" class="on">Daily</a>
+                                <a href="#" class="">Weekly</a>
+                            </div>
+                            <div class="cont_btn fl">
+                                <a href="#" class="cont_btn_link">
+                                    <span class="linktext">메뉴</span>
+                                </a>
+                                <div class="cont_btn_list">
+                                    <ul>
+                                        <li><a href="#">Refresh</a></li>
+                                        <li><a href="#" class="delete">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_top5_box">
+                        <div class="cont_loading">
+                            <div class="loading_box">
+                                <div class="img_box">
+                                    <img src="assets/images/loading.gif"/>
+                                </div>
+                                <p class="loading04">
+                                    <span>L</span>
+                                    <span>o</span>
+                                    <span>a</span>
+                                    <span>d</span>
+                                    <span>i</span>
+                                    <span>n</span>
+                                    <span>g</span>
+                                    <span>.</span>
+                                    <span>.</span>
+                                    <span>.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="w_50" >
+                    <div class="dashboard_cont_top">
+                        <h4 class="cont_title">
+                            Anti Malware 이벤트 트렌드
+                        </h4>
+                        <div class="cont_btn_box">
+                            <div class="cont_btn_day fl">
+                                <a href="#" class="on">Daily</a>
+                                <a href="#" class="">Weekly</a>
+                            </div>
+                            <div class="cont_btn disabled fl">
+                                <a href="#" class="cont_btn_link">
+                                    <span class="linktext">메뉴</span>
+                                </a>
+                                <div class="cont_btn_list">
+                                    <ul>
+                                        <li><a href="#">Refresh</a></li>
+                                        <li><a href="#" class="delete">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_chart_line_box">
+                        <div class="no_data">
+                            <p><span>No Data</span> 불러들일 데이터가 없습니다.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="w_25" >
+                    <div class="dashboard_cont_top">
+                        <h4 class="cont_title">
+                            Anti Malware 이벤트 트렌드
+                        </h4>
+                        <div class="cont_btn_box">
+                            <div class="cont_btn_day fl">
+                                <a href="#" class="on">Daily</a>
+                                <a href="#" class="">Weekly</a>
+                            </div>
+                            <div class="cont_btn disabled fl">
+                                <a href="#" class="cont_btn_link">
+                                    <span class="linktext">메뉴</span>
+                                </a>
+                                <div class="cont_btn_list">
+                                    <ul>
+                                        <li><a href="#">Refresh</a></li>
+                                        <li><a href="#" class="delete">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_chart_line_box">
+                        <div class="cont_loading">
+                            <div class="loading_box">
+                                <div class="img_box">
+                                    <img src="assets/images/loading.gif"/>
+                                </div>
+                                <p class="loading04">
+                                    <span>L</span>
+                                    <span>o</span>
+                                    <span>a</span>
+                                    <span>d</span>
+                                    <span>i</span>
+                                    <span>n</span>
+                                    <span>g</span>
+                                    <span>.</span>
+                                    <span>.</span>
+                                    <span>.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="no_data">
+                            <p><span>No Data</span> 불러들일 데이터가 없습니다.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>color</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/font.css">
+
+    <!-- 추가 css -->
+    <link rel="stylesheet" href="../../css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+
+    <!-- jQuery 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <!-- jQuery UI 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-ui.js"></script>
+    <!-- js -->
+    <script type="text/javascript" charset="utf-8" src="../../js/common.js"></script>
+
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <style>
+        .tit { display:inline-block; margin:30px 0 10px; font-size:16px; }
+        .tit::after { content:""; display:inline-block; width:100%; height:2px; background:var(--primary); vertical-align:super; }
+        .color-wrap .sub-tit { margin-bottom:10px; }
+        .color-list + .sub-tit { margin-top:20px; }
+        .color-list > li { display:inline-block; width:160px; border-radius:20px; box-shadow:0 6px 6px #00000029; }
+        .color-list > li + li { margin-left:10px; }
+        .color-list li .color { width:100%; height:108px; border-radius:20px 20px 0 0; }
+        .color-list li .txt { padding:4px 12px; }
+        .color-list li .txt li:first-child { font-weight:500; color:var(--title); }
+        .color-list li .txt li { padding:3px 0; font-size:13px; font-weight:400; color:#757575; }
+    </style>
+</head>
+
+<body>
+    <div id="SGIM_wrap" class="mini_nav">
+        <!-- S: side nav -->
+        <!-- E: side nav -->
+        <!-- S: container -->
+        <div id="container" style="padding:0 !important;">
+            <!-- S: header -->
+            <!-- E: header -->
+            <!-- S: content -->
+            <div class="content" style="border-radius:10px; margin:20px; padding:20px;">
+                <h2>color</h2>
+                <p class="tit">Primary Color</p>
+                <div class="color-wrap">
+                    <ul class="color-list">
+                        <li>
+                            <div class="color" style="background:var(--primary);"></div>
+                            <ul class="txt">
+                                <li>Primary</li>
+                                <li>#F9AF1C</li>
+                                <li>RGB 37 173 152</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="tit">UI Color</p>
+                <div class="color-wrap">
+                    <p class="sub-tit">Semantic Color</p>
+                    <ul class="color-list">
+                        <li>
+                            <div class="color" style="background:var(--false);"></div>
+                            <ul class="txt">
+                                <li>경고/부정</li>
+                                <li>#FF0000</li>
+                                <li>RGB 255 0 0</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--true);"></div>
+                            <ul class="txt">
+                                <li>긍정,성공</li>
+                                <li>#23AC3D</li>
+                                <li>RGB 88 108 253</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--info);"></div>
+                            <ul class="txt">
+                                <li>알림, 중요정보</li>
+                                <li>#F76900</li>
+                                <li>RGB 247 105 0</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p class="sub-tit">Background</p>
+                    <ul class="color-list">
+                        <li>
+                            <div class="color" style="background:var(--Body);"></div>
+                            <ul class="txt">
+                                <li>Body</li>
+                                <li>#F3F5F7</li>
+                                <li>RGB 243 247 247</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--table-th);"></div>
+                            <ul class="txt">
+                                <li>테이블 TH</li>
+                                <li>#EDEDED</li>
+                                <li>RGB 248 248 248</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--white);"></div>
+                            <ul class="txt">
+                                <li>White</li>
+                                <li>#FFFFFF</li>
+                                <li>RRGB 255 255 255</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p class="sub-tit">Text</p>
+                    <ul class="color-list">
+                        <li>
+                            <div class="color" style="background:var(--title);"></div>
+                            <ul class="txt">
+                                <li>Title</li>
+                                <li>#222222</li>
+                                <li>RGB 34 34 34</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--content);"></div>
+                            <ul class="txt">
+                                <li>Content</li>
+                                <li>#454545</li>
+                                <li>RGB 70 70 70</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--secondary);"></div>
+                            <ul class="txt">
+                                <li>Secondary</li>
+                                <li>#757575</li>
+                                <li>RGB 255 255 255</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--text-disabled);"></div>
+                            <ul class="txt">
+                                <li>Disabled</li>
+                                <li>#999999</li>
+                                <li>RGB 153 153 153</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p class="sub-tit">Border</p>
+                    <ul class="color-list">
+                        <li>
+                            <div class="color" style="background:var(--border-d);"></div>
+                            <ul class="txt">
+                                <li>Normal</li>
+                                <li>#EEEEEE</li>
+                                <li>RGB 238 238 238</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--border-disabled);"></div>
+                            <ul class="txt">
+                                <li>Disabled, Table</li>
+                                <li>#AAB0B8</li>
+                                <li>RGB 170 176 184</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p class="sub-tit">List-border</p>
+                    <ul class="color-list">
+                        <li>
+                            <div class="color" style="background:var(--secondary);"></div>
+                            <ul class="txt">
+                                <li>Disabled, Table</li>
+                                <li>#757575</li>
+                                <li>RGB 255 255 255</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p class="sub-tit">Button</p>
+                    <ul class="color-list">
+                        <li>
+                            <div class="color" style="background:var(--primary);"></div>
+                            <ul class="txt">
+                                <li>Main</li>
+                                <li>#27AD98</li>
+                                <li>RGB 39 173 152</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--btn-hover);"></div>
+                            <ul class="txt">
+                                <li>Hover</li>
+                                <li>#138170</li>
+                                <li>RGB 19 119 112</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--white); border:1px solid var(--border-d)"></div>
+                            <ul class="txt">
+                                <li>Line</li>
+                                <li>#DDDDDD</li>
+                                <li>RGB 221 221 221</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--white);  border:1px solid var(--line-hover);"></div>
+                            <ul class="txt">
+                                <li>Hover</li>
+                                <li>#797979</li>
+                                <li>RGB 121 121 121</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--button-disabled);"></div>
+                            <ul class="txt">
+                                <li>Disabled</li>
+                                <li>#EEEEEE</li>
+                                <li>RGB 238 238 238</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="color" style="background:var(--disabled-line-bg);"></div>
+                            <ul class="txt">
+                                <li>Disabled-line-bg</li>
+                                <li>#FCFCFC</li>
+                                <li>RGB 252 252 252</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p class="sub-tit">Form</p>
+                    <ul class="color-list">
+                        <li>
+                            <div class="color" style="background:var(--sub-select);"></div>
+                            <ul class="txt">
+                                <li>Pagenum/sub select</li>
+                                <li>#F8FAFB</li>
+                                <li>RGB 248 250 251</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- E: content -->
+            <!-- S: footer -->
+            <div class="footer">
+                <p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+            </div>
+            <!-- E: footer -->
+        </div>
+        <div class="scroll_btns" style="display:none">
+            <button class="btn_toTheTop"></button>
+            <button class="btn_toThebottom"></button>
+        </div>
+        <script>
+            $("body").on("mousewheel", function (e) {
+                var wheel = e.originalEvent.wheelDelta;
+
+                if (wheel > 0) {
+                    //스크롤 올릴때
+                } else {
+                    //스크롤 내릴때
+                    $(".scroll_btns").show();
+                }
+            });
+            $(window).scroll(function () {
+                var scrollValue = $(document).scrollTop();
+                if (scrollValue > 65) {
+                    $(".list_btn_stk").addClass("btnarea");
+                } else {
+                    $(".list_btn_stk").removeClass("btnarea");
+                }
+            });
+        </script>
+
+        <!-- s : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+        <script>
+            $(document).ready(function(){
+        
+                $('.accordion').on('click',  function() {
+                    $(this).toggleClass("tr_open");
+                });
+            });
+
+        </script>	
+        <!-- e : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+    </div>
+</body>
+
+</HTML>

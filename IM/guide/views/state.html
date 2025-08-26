@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>state</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/font.css">
+
+    <!-- 추가 css -->
+    <link rel="stylesheet" href="../../css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+
+    <!-- jQuery 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <!-- jQuery UI 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-ui.js"></script>
+    <!-- js -->
+    <script type="text/javascript" charset="utf-8" src="../../js/common.js"></script>
+
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <style>
+        h2 { font-size:30px; }
+        .tit { display:block; margin:20px 0; padding:10px 5px; font-size:16px; background-color:#6ebda8; color:#fff; }
+        .extension { margin-top:20px; }
+        .mandatxt_box > div,
+        .tooltip_box > div { display:inline-block; margin-top:20px; margin-right:20px; }
+        .dash_box.grid {display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+        .dash_box.grid .as-is p,
+        .dash_box.grid .to-be p {text-align:center; font-weight:500; font-size:18px;}
+        .dash_box.grid ul {display:grid; grid-template-columns:1fr 1fr; padding:10px; border-radius:10px; border:1px solid #DDDDDD;}
+        .dash_box.grid ul li {margin:10px 0;}
+
+        .as-is .icon_list,.as-is .icon_pgs {display:inline-block;width:20px;height:18px;margin-right:5px;}
+        .as-is .icon_list{background:url('../../img/common/icon_list.png') no-repeat 0 0; -webkit-mask:none;
+        mask:none;}
+        .as-is .icon_pgs{background:url('../../img/common/icon_InProgress.gif') no-repeat 0 0; -webkit-mask:none;
+        mask:none;}
+        .as-is .icon_list.idisabled{background-position-y:-18px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.icheck{background-position-y:-36px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.iwarning{background-position-y:-54px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.stop_cancel{background-position-y:-54px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.stop_error{background-position-y:-54px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.deleted{background-position-y:-18px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.none{background-position-y:-72px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.editable_expired{background-position-y:-90px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.editable_disabled{background-position-y:-90px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.disable{background-position-y:-90px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.sv_connect{background-position-y:-108px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.sv_connecterror{background-position-y:-54px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.sv_disconnect{background-position-y:-126px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.editable_locked{background-position-y:-144px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.sv_connect_error{background-position-y:-162px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.connection_compl{background-position-y:-180px; -webkit-mask:none;
+            mask:none;}
+        .as-is .icon_list.connection_error{background-position-y:-198px; -webkit-mask:none;
+            mask:none;}
+        .as-is .status .icon_list {vertical-align:text-bottom;}
+        /* .icon_received {display:inline-block;width:14px;height:14px;background:url(../img/common/icon_received.png) no-repeat 0 0;background-size:14px;} */
+        .as-is .icon_pgs.inprogress_create{background-position-y:-36px; -webkit-mask:none; mask:none;}
+        .as-is .icon_pgs.inprogress_pending{background-position-y:-18px; -webkit-mask:none; mask:none;}
+        .as-is .icon_pgs.inprogress_delete{background-position-y:-54px; -webkit-mask:none; mask:none;}
+        .as-is .icon_pgs.inprogress_ing{background-position-y:-72px; -webkit-mask:none; mask:none;}
+
+        .dash_box.grid .to-be ul li {margin:11px 0;}
+        .to-be .icon_list,
+        .to-be .icon_list {width:16px; height: 16px;}
+    </style>
+</head>
+
+<body>
+    <div id="SGIM_wrap" class="mini_nav">
+        <!-- S: side nav -->
+        <!-- E: side nav -->
+        <!-- S: container -->
+        <div id="container" style="padding:0 !important;">
+            <!-- S: header -->
+            <!-- E: header -->
+            <!-- S: content -->
+            <div class="content" style="border-radius:10px; margin:20px; padding:20px; background-color:#fff;">
+                <section>
+                    <p class="tit">상태 아이콘</p>
+                    <div class="dash_box grid" style="padding:10px;">
+                        <div class="as-is">
+                            <p>as-is</p>
+                            <ul>
+                                <li><i class="icon_list none"></i>상태없음</li>
+                                <li><i class="icon_list sv_connect"></i>연결됨</li>
+                                <li><i class="icon_list sv_disconnect"></i>연결끊김</li>
+                                <li><i class="icon_list icheck"></i>생성</li>
+                                <li><i class="icon_list checkCircle"></i>정상</li>
+                                <li><i class="icon_list iwarning"></i>작업중 오류</li>
+                                <li><i class="icon_list sv_connect_error"></i>접속오류</li>
+                                <li><i class="icon_list connection_compl"></i>수집완료</li>
+                                <li><i class="icon_list connection_error"></i>수집오류</li>
+                                <li><i class="icon_list idisabled"></i>삭제</li>
+                                <li><i class="icon_list idisabled"></i>삭제됨</li>
+                                <li><i class="icon_list disabled"></i>비활성</li>
+                                <li><i class="icon_list disabled"></i>활성화</li>
+                                <li><i class="icon_list locked"></i>잠금</li>
+                                <li><i class="icon_pgs icheck"></i>생성 진행중</li>
+                                <li><i class="icon_pgs inprogress_pending"></i>수정 진행중</li>
+                                <li><i class="icon_pgs inprogress_create"></i>수정 작업중</li>
+                                <li><i class="icon_pgs inprogress_ing"></i>작업 보류중</li>
+                                <li><i class="icon_pgs inprogress_delete"></i>삭제 진행중</li>
+                            </ul>
+                        </div>
+                        <div class="to-be">
+                            <p>to-be</p>
+                            <ul>
+                                <li><i class="icon_list none"></i>상태없음</li>
+                                <li><i class="icon_list sv_connect"></i>연결됨</li>
+                                <li><i class="icon_list sv_disconnect"></i>연결끊김</li>
+                                <li><i class="icon_list icheck"></i>생성</li>
+                                <li><i class="icon_list checkCircle"></i>정상</li>
+                                <li><i class="icon_list connection_error"></i>작업중 오류</li>
+                                <li><i class="icon_list connection_error"></i>접속오류</li>
+                                <li><i class="icon_list connection_compl"></i>수집완료</li>
+                                <li><i class="icon_list connection_error"></i>수집오류</li>
+                                <li><i class="icon_list idisabled"></i>삭제</li>
+                                <li><i class="icon_list idisabled"></i>삭제됨</li>
+                                <li><i class="icon_list disabled"></i>비활성</li>
+                                <li><i class="icon_list bolt"></i>활성화</li>
+                                <li><i class="icon_list locked"></i>잠금</li>
+                                <li><i class="icon_pgs icheck"></i>생성 진행중</li>
+                                <li><i class="icon_pgs inprogress_pending"></i>수정 진행중</li>
+                                <li><i class="icon_pgs shippingcart_edit"></i>수정 작업중</li>
+                                <li><i class="icon_pgs inprogress_ing"></i>작업 보류중</li>
+                                <li><i class="icon_pgs progress_del"></i>삭제 진행중</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="tit">table contents</p>
+                    <div class="dash_box" style="padding:10px;">
+                        <div class="extension">
+                            <span><i class="icon_ff pdf"></i></span>
+                            <span><i class="icon_ff excel"></i></span>
+                            <span><i class="icon_ff word"></i></span>
+                            <span><i class="icon_ff csv"></i></span>
+                            <span><i class="icon_ff hwp"></i></span>
+                            <span><i class="icon_ff text"></i></span>
+                            <span><i class="icon_ff ppx"></i></span>
+                            <span><i class="icon_ff sl_ff pdf"></i></span>
+                            <span><i class="icon_ff sl_ff excel"></i></span>
+                            <span><i class="icon_ff sl_ff word"></i></span>
+                            <span><i class="icon_ff sl_ff csv"></i></span>
+                            <span><i class="icon_ff sl_ff hwp"></i></span>
+                            <span><i class="icon_ff sl_ff text"></i></span>
+                            <span><i class="icon_ff sl_ff ppx"></i></span>
+                        </div>
+                        <div class="mandatxt_box">
+                            <div class="bluetxt">
+                                <span class="mandatxt"><i></i>위임됨</span>
+                            </div>
+                            <div class="bluetxt">
+                                <span class="madna_ed"><i></i>위임함</span>
+                            </div>
+                        </div>
+                        <div style="margin-top:20px;">
+                            <button class="btnstl trcolor">TRUE</button>
+                            <button class="btnstl fcolor">TRUE</button>
+                        </div>
+                    </div>
+                    <p class="tit">라벨</p>
+                    <div class="dash_box" style="padding:10px;">
+                        <p style="display:inline-block; padding-bottom:0;" class="apply_tit grbox"><span>시스템 그룹</span></p>
+                        <p style="display:inline-block; padding-bottom:0;" class="apply_tit ppbox"><span>시스템 계정</span></p>
+                        <p style="display:inline-block; padding-bottom:0;" class="apply_tit blbox"><span>시스템</span></p>
+                        <p style="display:inline-block; padding-bottom:0;" class="apply_tit orgbox"><span>역할</span></p>
+                        <p style="display:inline-block;" class="txtbg yelltxt">진행중 - 클라우드</p>
+                        <p style="display:inline-block;" class="status txtbg yelltxt"><i class="icon_list"></i>대기상태</p>
+                    </div>
+                    <p class="tit">info</p>
+                    <div class="dash_box" style="padding:10px;">
+                        <p class="req_txt inbl">설명문구 들어갑니다.</p>
+                        <p class="req_txt org" style="padding-left:10px; margin-bottom:10px;">경고문구 들어갑니다.</p>
+                        <p class="dupli_check redtxt"><i></i>이름 중복 입니다.</p>
+                        <p class="dupli_check bluetxt"><i></i>사용가능합니다.</p>
+                    </div>
+                </section>
+            </div>
+            <!-- E: content -->
+            <!-- S: footer -->
+            <!-- E: footer -->
+        </div>
+        <div class="scroll_btns" style="display:none">
+            <button class="btn_toTheTop"></button>
+            <button class="btn_toThebottom"></button>
+        </div>
+        <script>
+            $("body").on("mousewheel", function (e) {
+                var wheel = e.originalEvent.wheelDelta;
+
+                if (wheel > 0) {
+                    //스크롤 올릴때
+                } else {
+                    //스크롤 내릴때
+                    $(".scroll_btns").show();
+                }
+            });
+            $(window).scroll(function () {
+                var scrollValue = $(document).scrollTop();
+                if (scrollValue > 65) {
+                    $(".list_btn_stk").addClass("btnarea");
+                } else {
+                    $(".list_btn_stk").removeClass("btnarea");
+                }
+            });
+        </script>
+
+        <!-- s : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+        <script>
+            $(document).ready(function(){
+        
+                $('.accordion').on('click',  function() {
+                    $(this).toggleClass("tr_open");
+                });
+            });
+
+        </script>	
+        <!-- e : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+    </div>
+</body>
+
+</HTML>

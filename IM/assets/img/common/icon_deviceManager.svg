@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" fill="none" stroke="#121212" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon_deviceManager" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(-0.5 1.5)">
+      <path id="pass8" d="M74.339,163.819l1.6-1.438a3.733,3.733,0,0,1,2.653-.953l.4.017a3.733,3.733,0,0,1,2.014.694h3.148a1.189,1.189,0,0,1,0,2.378h-4.37" transform="translate(-69.536 -150.675)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass7" d="M117.521,144.323l2.007-1.243,1.7-1.739a2.035,2.035,0,0,1,1.453-.611.559.559,0,0,1,.5.8l-1.83,3.368a1.527,1.527,0,0,1-.5.548l-2.349,1.871a2.874,2.874,0,0,1-1.349.5l-8.244.827" transform="translate(-101.748 -131.394)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass6" d="M4,178.332l3.85-1.962,3.591,6.294L8.369,185.33" transform="translate(-4 -164.599)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass5" d="M147.542,7.5l-.229-.557a10.153,10.153,0,0,0,.487-1.278l-.707-.705a9.636,9.636,0,0,0-1.255.513l-.556-.23A10.129,10.129,0,0,0,144.723,4h-1a9.655,9.655,0,0,0-.524,1.251l-.555.229a10.224,10.224,0,0,0-1.278-.488l-.706.708a9.678,9.678,0,0,0,.513,1.255l-.229.556a10.326,10.326,0,0,0-1.248.557v1a9.565,9.565,0,0,0,1.251.525l.229.555a10.3,10.3,0,0,0-.488,1.277l.707.707a9.779,9.779,0,0,0,1.254-.514l.557.231a10.041,10.041,0,0,0,.56,1.246h1a9.586,9.586,0,0,0,.524-1.251l.557-.23a10.261,10.261,0,0,0,1.276.489l.707-.706a9.616,9.616,0,0,0-.514-1.255l.229-.556a10.2,10.2,0,0,0,1.248-.56v-1A9.585,9.585,0,0,0,147.542,7.5ZM145.7,8.548a1.458,1.458,0,1,1-1.46-1.456h0A1.46,1.46,0,0,1,145.7,8.548Z" transform="translate(-130.431 -4)" fill="none" stroke="#27ad98" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="pass4" d="M326.566,19.25a3.676,3.676,0,0,0-.744-5.146h0" transform="translate(-303.844 -13.414)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass3" d="M309,32.917a2.446,2.446,0,0,0-.5-3.423" transform="translate(-287.707 -27.753)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass2" d="M75.978,14.1h0a3.676,3.676,0,0,0-.744,5.146" transform="translate(-69.688 -13.414)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass1" d="M100.043,29.493a2.446,2.446,0,0,0-.5,3.423" transform="translate(-92.57 -27.752)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

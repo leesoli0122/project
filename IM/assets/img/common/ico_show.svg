@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(-2 -2)" fill="none" stroke="#000" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="ico_show" transform="translate(2 2)" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(0.416 0.833)">
+      <path id="pass02" d="M10.783,13.394a9.723,9.723,0,0,0,9.283-5.947A9.723,9.723,0,0,0,10.783,1.5,9.723,9.723,0,0,0,1.5,7.447,9.722,9.722,0,0,0,10.783,13.394Z" transform="translate(-1.5 1.417)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass01" d="M20.688,11.129a2.577,2.577,0,1,1-2.577-2.577A2.577,2.577,0,0,1,20.688,11.129Z" transform="translate(-8.827 -2.266)"/>
+    </g>
+  </g>
+</svg>

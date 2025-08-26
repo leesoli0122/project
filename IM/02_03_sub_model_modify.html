@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="ONSD_wrap">
+		<div id="container">
+			<div class="content">
+				<p class="fm_tit">ONSD MODEL 생성/편집</p>
+				<form class="form_stl">
+					<dl class="form_list">
+						<dt class="form_tit"><label for="modelType">종류(Type)</label></dt>
+						<dd class="form_txt">
+							<SELECT class="form_contrl" id="modelType">
+								<option>DB</option>
+								<option>DB</option>
+								<option>DB</option>
+								<option>DB</option>
+							</SELECT>
+							<p class="req_txt">※ 설명문구 들어갑니다.</p>
+						</dd>
+						<dt class="form_tit">제조사</dt>
+						<dd class="form_txt">RedHat</dd>
+						<dt class="form_tit">모델명</dt>
+						<dd class="form_txt"><input type="text" name="" class="form_contrl diss" id="modelName" placeholder="CentOS" readonly="readonly"></dd>
+						<dt class="form_tit"><label for="onsdName">이름</label></dt>
+						<dd class="form_txt"><input type="text" name="" class="form_contrl" id="onsdName"><!--<span class="dupli_check redtxt"><i></i>이름 중복 입니다.</span>-->
+							<span class="dupli_check bluetxt"><i></i>사용가능합니다.</span></dd>
+						<dt class="form_tit">체크박스</dt>
+						<dd class="form_txt">
+							<div class="cl_both check2">
+								<div class="f_l">
+									<p><input type="checkbox" name="" id="ck01" class="check_stl"><label for="ck01" class="check_stl_lab"> 체크01</label></p>
+								</div>
+								<div class="f_l">
+									<p><input type="checkbox" name="" id="ck02" class="check_stl"><label for="ck02" class="check_stl_lab"> 체크02</label></p>
+								</div>
+								<div class="f_l">
+									<p><input type="checkbox" name="" id="ck03" class="check_stl"><label for="ck03" class="check_stl_lab"> 체크03</label></p>
+								</div>
+							</div>
+						</dd>
+						<dt class="form_tit">뤠디오버튼</dt>
+						<dd class="form_txt">
+							<div class="cl_both check2">
+								<div class="f_l">
+									<p><input type="radio" name="rd" id="rd01" class="radio_stl"><label for="rd01" class="radio_stl_lab"> 한다</label></p>
+								</div>
+								<div class="f_l">
+									<p><input type="radio" name="rd" id="rd02" class="radio_stl"><label for="rd02" class="radio_stl_lab"> 안한다</label></p>
+								</div>
+							</div>
+						</dd>
+						<dt class="form_tit"><label for="modelExplain">설명</label></dt>
+						<dd class="form_txt"><textarea class="form_contrl" id="modelExplain"></textarea></dd>
+					</dl>
+				</form>
+				<div class="btn_box align_right">
+					<div class="confirm_popup">
+						<a href="" class="blue btn_save">저장</a>
+						<div class="save_alert" style="display:none">
+							<div class="arrow"></div>
+							<p>저장하시겠습니까?</p>
+							<div class="btn_box">
+								<a href="" class="blue">저장</a>
+								<a href="" class="skyblue cancel">취소</a>
+							</div>
+						</div>
+					</div>
+					<a href="" class="skyblue">취소</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

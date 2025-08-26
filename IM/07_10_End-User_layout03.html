@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<a class="menu_close_btn"></a>
+			<div class="nav_inner">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="assets/img/common/logo.png"><!-- 이미지 경로 및 이미지 변경-->
+					</a>
+				</div>
+				<div class="nav_tab">
+					<a href="" class="on">사용자</a>
+					<a href="" class="">관리자</a>
+				</div>
+				<!-- s: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li><a href="" class=""><i class="Home"></i><span>HOME</span></a></li>
+						<li><a href="" class="depth_menu"><i class="MyProfiles"></i><span>내 정보</span></a>
+							<ul>
+								<li><a href="">기본 정보</a></li>
+								<li><a href="" class="on">인증/암호 관리</a></li>
+								<li><a href="">권한 위임</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="MyAuth"></i><span>권한 신청</span></a><ul>
+								<li><a href="">시스템/자원 관리</a></li>
+								<li><a href="">역할(Role)관리</a></li>
+							</ul>
+						</li>
+						<li><a href=""><i class="MyRequest"></i><span>요청 관리</span></a></li>
+						<li><a href=""><i class="MyApproval"></i><span>승인 관리</span></a></li>
+						<li><a href=""><i class="MyMessage"></i><span>메시지 확인</span></a></li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard  ICAM V2.0</p>
+					<!-- e: copyright 추가 -->
+				</div>
+				<!-- e: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+			</div>
+		</div>
+		<div id="container" class="">
+			<!-- s : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="header no_navlink">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>WELCOME!</h1>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><span>user01</span></a></li>
+					<li class="timer"><i></i><span><em>00:15:00</em> 후 접속 끊김</span><button class="time_ref" title="세션 시간 새로고침"></button></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>기타알람</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_menualdown"><a id="guide_manualDown"></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<!-- e : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="home_lyt">
+				<!-- s: wid50, greybg 삭제 -->
+				<div class="dash_box">
+					<p class="home_d_tit">Title</p>
+					<div class="w-4card">
+						<div class="i_n_box">
+							<div class="h_i_w">
+								<i></i>
+							</div>
+							<div class="clickPointer"><!-- [20250728] clickPointer 추가 -->
+								<p class="h_i_w_tit">보유 OS 계정</p>
+								<p class="h_bl_num">5</p>
+							</div>
+						</div>
+						<div class="i_n_box">
+							<div class="h_i_w pwd">
+								<i></i>
+							</div>
+							<div class="clickPointer"><!-- [20250728]  clickPointer 추가 -->
+								<p class="h_i_w_tit">비밀번호 변경된 os계정</p>
+								<p class="h_bl_num">5</p>
+							</div>
+						</div>
+						<div class="i_n_box">
+							<div class="h_i_w task">
+								<i></i>
+							</div>
+							<div class="h_i_type">
+								<div class="flx clickPointer"><!-- [20250728]  clickPointer 추가 -->
+									<p class="h_i_w_tit">업무</p>
+									<p class="h_bl_num">10</p>
+								</div>
+								<div class="txt_of">
+									<p class="tasklist_txt">기이이인 업무, 기이이이이인 업무, 매우기이이이인 업무, 엄청나게 매우 긴 업무, 길고기이이이인 업무리스트 </p>
+								</div>
+							</div>
+						</div>
+						<div class="i_n_box">
+							<div class="h_i_w req">
+								<i></i>
+							</div>
+							<div class="h_i_type flx"><!-- flx 추가 -->
+								<div class="flx">
+									<p class="h_i_w_tit">결재수신</p>
+									<p class="h_bl_num">5</p>
+								</div>
+								<div class="flx">
+									<p class="h_i_w_tit">신청한 건수</p>
+									<p class="h_bl_num">5</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dash_box">
+					<p class="home_d_tit">Title</p>
+					<div class="tbl_list">
+						<table class="default_tbl">
+							<thead>
+								<tr>
+									<th class="tbl_num_wid">NO.</th>
+									<th>종류</th>
+									<th>제조사</th>
+									<th>모델명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>1</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>2</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>3</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>4</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>5</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- e: wid50, greybg 삭제 -->
+			</div>
+			<div class="home_lyt">
+				<!-- s: wid50 삭제 -->
+				<div class="dash_box">
+					<p class="home_d_tit">Title</p>
+					<div class="tbl_list">
+						<table class="default_tbl">
+							<thead>
+								<tr>
+									<th class="tbl_num_wid">NO.</th>
+									<th>종류</th>
+									<th>제조사</th>
+									<th>모델명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>1</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>2</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>3</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>4</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>5</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="d_list_tt f_ro">
+							<p class="list_tt_tx">전체 <em>13</em>건</p><!-- "건" em 밖으로 옮김 -->
+							<a class="line s_btn_more">더보기</a><!-- line 추가 -->
+						</div>
+					</div>
+				</div>
+				<div class="dash_box">
+					<p class="home_d_tit">Title</p>
+					<div class="d_list_tt f_ro02">
+						<p class="list_tt_tx"><em>5</em>건 / 전체 <em>13</em>건</p><!-- "건" em 밖으로 옮김 -->
+						<a class="line s_btn_more">더보기</a>
+					</div>
+					<div class="tbl_list">
+						<table class="default_tbl">
+							<thead>
+								<tr>
+									<th class="tbl_num_wid">NO.</th>
+									<th>종류</th>
+									<th>제조사</th>
+									<th>모델명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>1</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>2</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>3</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>4</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>5</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- e: wid50 삭제 -->
+			</div>
+			<!-- nav로 이동 <div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div> -->
+		</div>
+	</div>
+</body>
+</HTML>

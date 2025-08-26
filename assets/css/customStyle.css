@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+/* 보안 정책 CSS */
+.th_default_policy { width: 100%; height: 28px; line-height:28px; display:inline-block; }
+.policy.default_policy_edit { min-width: 0px; float:right; margin-right:15%; width: 24px; }
+.tmp { height: 50px; }
+
+/* 보안정책 > 파일무결성/실행파일통제 CSS */
+.modal.securitypolicy .modal_cont .file_edit:after, 
+.modal.securitypolicy .modal_cont .file_edit>li>dl:after{display:block;clear:both;content:""}
+.modal.securitypolicy .modal_cont .file_edit>li>dl dt{color:#444;font-size:14px;font-weight:400;margin-bottom:5px}
+.modal.securitypolicy .modal_cont .file{margin-top:20px;height:368px}
+.modal.securitypolicy .modal_cont .file,
+.modal.securitypolicy .modal_cont .file_edit,
+.modal.securitypolicy .modal_cont .file_edit>li>dl{*zoom:1}
+.modal.securitypolicy .modal_cont .file_edit>li:first-child{width:calc(15% - 5px);float:left}
+.modal.securitypolicy .modal_cont .file_edit>li:nth-child(2){width:calc(67% - 5px);float:left}
+.modal.securitypolicy .modal_cont .file_edit>li:nth-child(3){display:none;width:calc(16% - 5px);float:left; text-align: right;}
+.modal.securitypolicy .modal_cont .file_edit>li+li{margin-left:10px}
+.modal.securitypolicy .modal_cont .file_edit>li>dl+dl{margin-top:20px}
+.modal.securitypolicy .modal_cont .file_add_btn{display:block;width:100%;height:34px;line-height:34px;text-align:center;color:#fff;font-size:15px;font-weight:400;background:#666979;border-radius:4px;margin:10px 0}
+.modal.securitypolicy .modal_cont .file_add_btn:hover{background-color:#545663}
+
+/* 보안정책 > Malware_신규 CSS */
+.modal.securitypolicy .modal_cont .malware_add_btn{display:block;width:100%;height:34px;line-height:34px;text-align:center;color:#fff;font-size:15px;font-weight:400;background:#666979;border-radius:4px;margin:10px 0}
+.modal.securitypolicy .modal_cont .malware_add_btn:hover{background-color:#545663}
+
+/* 보안정책 > 서비스제어 CSS */
+.modal.securitypolicy .modal_cont .pamacl_edit:after,
+.modal.securitypolicy .modal_cont .pamacl_edit>li>dl:after {
+	display: block;
+	clear: both;
+	content: ""
+}
+.modal.securitypolicy .modal_cont .pamacl_edit>li>dl dt {
+	color: #444;
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 5px
+}
+.modal.securitypolicy .modal_cont .pamacl_edit,
+.modal.securitypolicy .modal_cont .pamacl_edit>li>dl { *zoom: 1 }
+.modal.securitypolicy .modal_cont .pamacl_edit>li { width: calc(100% - 5px); float: left }
+.modal.securitypolicy .modal_cont .pamacl_edit>li+li { margin-left: 10px }
+.modal.securitypolicy .modal_cont .pamacl_edit>li>dl+dl { margin-left: 1px }
+.modal.securitypolicy .modal_cont .pamacl_edit>li>dl.sd { float: left; width: calc(10% - 1px) }
+.modal.securitypolicy .modal_cont .pamacl_edit>li>dl.hd { float: left; width: calc(13% - 1px) }
+.modal.securitypolicy .modal_cont .pamacl_edit>li>dl.ta { float: left; width: calc(32% - 1px) }
+.modal.securitypolicy .modal_cont .pamacl_edit>li>dl.tb { float: left; width: calc(19% - 1px) }
+.modal.securitypolicy .modal_cont .pamacl_add_btn { display: block; width: 100%; height: 34px; line-height: 34px; text-align: center; color: #fff; font-size: 15px; font-weight: 400; background: #666979; border-radius: 4px; margin: 10px 0 }
+.modal.securitypolicy .modal_cont .pamacl_add_btn:hover { background-color: #545663 }
+
+/* 수동 검사 */
+.modal.scan_progress {
+	width: 480px;	
+}
+
+.modal.scan_progress progress {
+	width: 80%;	
+	box-shadow: none;	
+}
+
+.modal.scan_progress .modal_cont{
+	text-align: left;
+	-webkit-box-shadow: none;
+}
+
+.modal.scan_progress .modal_cont.progress{
+	background-color: rgba(0,0,0,0);
+	height: 60px;
+	text-align: center;
+}
+
+.modal.scan_progress .modal_cont.desc ul > li{	
+
+}
+
+
+/* 이벤트 조회 페이지 CSS */
+.addEventBtn {display:block;width:65px;height:50px;border-radius:6px;background:#666979;color:#fff;font-size:15px;font-weight:400;padding:7px 16px;line-height:18px;margin-left:4px;cursor: pointer;} 
+.removex {display: block; content: ""; background: url(../images/spr_global_icon.png) no-repeat; background-position: 24.237% 13.051%; width: 10px; height: 10px;}
+.win_popup.packet {min-height: 679px !important; overflow-y: hidden !important;}
+.packet_box ul li>ul.hex li>span {text-align:center;}
+
+/* 감사 상세 CSS */
+.auditoff { text-decoration:line-through }
+.audit_btn.auditoff { background-color: #808080; border: 1px solid #808080; } 
+
+/* 보안정책 > 정책편집 > 수정 CSS */
+.tbl table>tbody>tr>td .rule_align_up{display:block;font-size:0;text-indent:-9999px;position:relative}
+.tbl table>tbody>tr>td .rule_align_up:after{display:block;content:"";background: url('../images/spr_global_icon.png') no-repeat -313px -48px;width: 13px;height: 8px;left:49%;top:47%;margin:-5px;position:absolute;}
+.tbl table>tbody>tr>td .rule_align_up:hover:after{background: url('../images/spr_global_icon.png') no-repeat -334px -48px;}
+.tbl table>tbody>tr>td .rule_align_down{display:block;font-size:0;text-indent:-9999px;position:relative}
+.tbl table>tbody>tr>td .rule_align_down:after{display:block;content:"";background: url('../images/spr_global_icon.png') no-repeat -355px -47px;width: 13px;height: 8px;left:49%;top:47%;margin:-5px;position:absolute;}
+.tbl table>tbody>tr>td .rule_align_down:hover:after{background: url('../images/spr_global_icon.png') no-repeat -376px -47px}
+.tbl table>tbody>tr>td .rule_edit{display:block;font-size:0;position:relative}
+.tbl table>tbody>tr>td .rule_edit:after{display:block;content:"";background:url(../images/spr_global_icon.png) no-repeat;background-position:53% -11px;width:15px;height:15px;position:absolute;left:49%;top:47%;margin:-5px}
+.tbl table>tbody>tr>td .rule_edit:hover:after{background-position:57.1% -11px}
+.modal.securitypolicy .modal_cont .policy_add{width: 100%; float: left; padding: 10px; display:block;}
+.modal.securitypolicy .modal_cont .policy_edit{width: 50%; float: left; padding: 10px; display:none;}
+.modal.securitypolicy .modal_cont .rule_edit_cancel_btn{display:block;width:100%;height:34px;line-height:34px;text-align:center;color:#000000;font-size:15px;font-weight:400;background: #fff;border: 1px solid #ced4da;border-radius:4px;margin:10px 0}
+.modal.securitypolicy .modal_cont .rule_edit_cancel_btn:hover{background:#fcfcfc;}
+
+/* 스위치 CSS (w3schools) */
+/* The switch - the box around the slider */
+.switch { position: relative; display: inline-block; width: 60px; height: 34px; }
+/* Hide default HTML checkbox */
+.switch input { opacity: 0; width: 0; height: 0;}
+/* The slider */
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; -webkit-transition: .4s; transition: .4s; }
+.slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; -webkit-transition: .4s; transition: .4s; }
+input:checked + .slider { background-color: #545663; }
+input:checked + .slider:before { -webkit-transform: translateX(26px); -ms-transform: translateX(26px); transform: translateX(26px); }
+/* Rounded sliders */
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+
+/* 보안정책 > 정책이력 */
+.modal.securitypolicy .modal_cont.assete .right .ips_rule,
+.modal.securitypolicy .modal_cont.assete .right .firewall,
+.modal.securitypolicy .modal_cont.assete .right .pamacl,
+.modal.securitypolicy .modal_cont.assete .right .file { height: 310px; }
+
+/* 보안정책 > 정책이력 > 실행파일통제 CSS */
+.modal.securitypolicy .modal_cont.assete .right .file .white_black_list { text-align: right; display:none; }
+.modal.securitypolicy .modal_cont.assete .right .file .white_black_list span { font-size: 15px; color:#666979; }
+.modal.securitypolicy .modal_cont.assete .right .file .white_black_list .select_list { display:inline-block;background:url(../images/spr_global_icon.png) no-repeat; background-position: 20.1% 13.051%; width: 15px; height: 15px; }
+
+/* AlertList > Tab */
+.t5_alertlist_search_bottom ul li .tab_box>a .count dl dd.up,.event_search_warp .searchtime .datetimepicker_box .datetimepicker_min_from, .event_search_warp .searchtime .datetimepicker_box .datetimepicker_start_from{ position:relative }
+.t5_alertlist_search_bottom ul{ width:1182px; margin:0 auto; padding:14px 0; *zoom:1 }
+.t5_alertlist_search_bottom ul li .tab_box>a .count:after,.t5_alertlist_search_bottom ul:after,.alertlist_search_top .alertlist_btn_box:after,.status_box:after,.status_box_all h3:after,.status_box_all>ul li dl:after,.status_box_all>ul:after,.status_box_list_bottom>ul li .mlist_box .list_btn:after,.status_box_list_bottom>ul li .mlist_box .list_btn>a dl:after,.status_box_list_bottom>ul:after,.status_box_list_top .status_box_btn:after,.status_box_list_top:after,.tbl .dataTables_wrapper .bottom:after,.tit_wrap:after{ display:block; clear:both; content:"" }
+.t5_alertlist_search_bottom ul li{ float:left; width:calc(20% - 8px) }
+.t5_alertlist_search_bottom ul li+li{ margin-left:8px }
+.t5_alertlist_search_bottom ul li .tab_box{ width:100%; background:#f7f8fa; border:2px solid #dbdcf0; border-radius:4px }
+.t5_alertlist_search_bottom ul li .tab_box.on,.t5_alertlist_search_bottom ul li .tab_box:hover{ border:2px solid #22aec7 }
+.t5_alertlist_search_bottom ul li .tab_box.on{ background:#fff }
+.t5_alertlist_search_bottom ul li .tab_box>a{ display:block; width:100%; height:100%; padding:20px 20px }
+.t5_alertlist_search_bottom ul li .tab_box>a h3{ font-family:'Noto Sans KR',sans-serif; color:#444; font-size:17px; font-weight:400 }
+.t5_alertlist_search_bottom ul li .tab_box>a .count{ *zoom:1; margin-top:10px }
+.t5_alertlist_search_bottom ul li .tab_box>a .count dl{ float:left; width:60% }
+.t5_alertlist_search_bottom ul li .tab_box>a .count dl+dl{ width:40% }
+.t5_alertlist_search_bottom ul li .tab_box>a .count dl dt{ color:#8c92b4; font-size:12px; font-weight:400 }
+.t5_alertlist_search_bottom ul li .tab_box>a .count dl dd{ color:#444; font-size:17px; font-weight:400 }
+.t5_alertlist_search_bottom ul li .tab_box>a .count dl dd.up:after,.ui-resizable-e:after{ display:block; content:""; background:url(../images/spr_global_icon.png) no-repeat; width:10px; height:13px; background-position:9.153% 23.68%; position:absolute; top:5px; right:0 }
+.t5_alertlist_search_bottom ul li div.action,.status_box_list_bottom>ul li .mlist_box+.mlist_box{ margin-top:6px }
+.t5_alertlist_search_bottom ul li div.action .btn{ height:23px; line-height:21px; font-size:12px }
+
+.t6_alertlist_search_bottom ul li .tab_box>a .count dl dd.up,.event_search_warp .searchtime .datetimepicker_box .datetimepicker_min_from, .event_search_warp .searchtime .datetimepicker_box .datetimepicker_start_from{ position:relative }
+.t6_alertlist_search_bottom ul{ width:1240px; margin:0 auto; padding:14px 0; *zoom:1 }
+.t6_alertlist_search_bottom ul li .tab_box>a .count:after,.t6_alertlist_search_bottom ul:after,.alertlist_search_top .alertlist_btn_box:after,.status_box:after,.status_box_all h3:after,.status_box_all>ul li dl:after,.status_box_all>ul:after,.status_box_list_bottom>ul li .mlist_box .list_btn:after,.status_box_list_bottom>ul li .mlist_box .list_btn>a dl:after,.status_box_list_bottom>ul:after,.status_box_list_top .status_box_btn:after,.status_box_list_top:after,.tbl .dataTables_wrapper .bottom:after,.tit_wrap:after{ display:block; clear:both; content:"" }
+.t6_alertlist_search_bottom ul li{ float:left; width:calc(16.666% - 8px) }
+.t6_alertlist_search_bottom ul li+li{ margin-left:8px }
+.t6_alertlist_search_bottom ul li .tab_box{ width:100%; background:#f7f8fa; border:2px solid #dbdcf0; border-radius:4px }
+.t6_alertlist_search_bottom ul li .tab_box.on,.t6_alertlist_search_bottom ul li .tab_box:hover{ border:2px solid #22aec7 }
+.t6_alertlist_search_bottom ul li .tab_box.on{ background:#fff }
+.t6_alertlist_search_bottom ul li .tab_box>a{ display:block; width:100%; height:100%; padding:20px 20px }
+.t6_alertlist_search_bottom ul li .tab_box>a h3{ font-family:'Noto Sans KR',sans-serif; color:#444; font-size:17px; font-weight:400 }
+.t6_alertlist_search_bottom ul li .tab_box>a .count{ *zoom:1; margin-top:10px }
+.t6_alertlist_search_bottom ul li .tab_box>a .count dl{ float:left; width:60% }
+.t6_alertlist_search_bottom ul li .tab_box>a .count dl+dl{ width:40% }
+.t6_alertlist_search_bottom ul li .tab_box>a .count dl dt{ color:#8c92b4; font-size:12px; font-weight:400 }
+.t6_alertlist_search_bottom ul li .tab_box>a .count dl dd{ color:#444; font-size:17px; font-weight:400 }
+.t6_alertlist_search_bottom ul li .tab_box>a .count dl dd.up:after,.ui-resizable-e:after{ display:block; content:""; background:url(../images/spr_global_icon.png) no-repeat; width:10px; height:13px; background-position:9.153% 23.68%; position:absolute; top:5px; right:0 }
+.t6_alertlist_search_bottom ul li div.action,.status_box_list_bottom>ul li .mlist_box+.mlist_box{ margin-top:6px }
+.t6_alertlist_search_bottom ul li div.action .btn{ height:23px; line-height:21px; font-size:12px }
+
+/* Event Packet */
+ul.hex li.num span { width : 23.5px; }
+ul.name li.num span { width : 13.5px; }
+
+/* Dashboard */
+.top5_tname {
+	text-overflow: ellipsis; 
+	white-space:nowrap; 
+	overflow:hidden;
+}
+
+.tbl_longname {
+	text-overflow: ellipsis; 
+	white-space:nowrap; 
+	overflow:hidden;
+}
+
+.txt_veritcal {
+	margin-bottom: 5px;
+	width: 120px;
+}

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.ui-jqgrid [role="row"] [role="gridcell"], .ui-jqgrid [role="row"] [role="columnheader"] div{overflow:auto!important;}
+.ui-jqgrid [role="row"] [role="gridcell"]::-webkit-scrollbar ,
+.ui-jqgrid [role="row"] [role="columnheader"] div::-webkit-scrollbar {height:6px;}
+.ui-jqgrid [role="row"] [role="gridcell"]::-webkit-scrollbar-track, 
+.ui-jqgrid [role="row"] [role="columnheader"] div::-webkit-scrollbar-track {background:#eee;}
+.ui-jqgrid [role="row"] [role="gridcell"]::-webkit-scrollbar-thumb,
+.ui-jqgrid [role="row"] [role="columnheader"] div::-webkit-scrollbar-thumb{background:#bbb;}
+.ui-jqgrid [role="row"] [role="gridcell"]::-webkit-scrollbar-thumb:window-inactive,
+.ui-jqgrid [role="row"] [role="columnheader"] div::-webkit-scrollbar-thumb:window-inactive {background:rgba(100,100,100,0.4);}

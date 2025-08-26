@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<a class="menu_close_btn"></a>
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+					</a>
+				</div>
+				<div class="nav_tab">
+					<a href="" class="on">사용자</a>
+					<a href="" class="">관리자</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class=""><i class="Home"></i><span>HOME</span></a></li>
+					<li><a href="" class="depth_menu on"><i class="MyProfile"></i><span>내 정보</span></a>
+						<ul style="display:block">
+							<li><a href="">기본 정보</a></li>
+							<li><a href="" class="on">인증/암호 관리</a></li>
+							<li><a href="">권한 위임</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="MyRole"></i><span>역할 관리</span></a></li>
+					<li><a href=""><i class="MySystem"></i><span>시스템/자원 관리</span></a></li>
+					<li><a href=""><i class="MyRequest"></i><span>요청 처리</span></a></li>
+					<li><a href=""><i class="MyApproval"></i><span>승인 처리</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container" class="firstPage">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>WELCOME!</h1>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> <span>user01</span></a></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="welcomeWrap">
+				<div class="left_wrap">
+					<div class="dash_box user_profile">
+						<p class="pf_img"><img src="img/common/user.png"></p>
+						<div class="pf_btns_left">
+							<a href="" class="pf_btns icon_myauth" title="권한 위임"></a>
+							<a href="" class="pf_btns icon_mypw" title="암호관리"></a>
+						</div>
+						<a href="" title="내 정보 수정" class="pf_btns icon_mymodify"></a>
+						<div class="pf_name">
+							<p class="user_name">User01<span>사용자</span></p>
+							<p class="user_position"><span>End-User</span></p>
+						</div>
+						<div>
+							<div class="tab_wrap">
+								<ul class="tab_list">
+									<li><a href="" class="on">역할</a></li>
+									<li><a href="">시스템</a></li>
+								</ul>
+								<div class="tab_btns">
+									<a href="" title="reqest" class="btn_req"></a>
+									<a href="" class="btn_more">더보기</a>
+								</div>
+							</div>
+							<div class="tbl_list">
+								<table class="default_tbl">
+									<thead>
+										<tr>
+											<th class="tbl_num_wid">NO.</th>
+											<th>종류</th>
+											<th>제조사</th>
+											<th>모델명</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>1</th>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+										</tr>
+										<tr>
+											<th>2</th>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right_wrap">
+					<div class="dash_box">
+						<p class="dash_tit">요청 사항 진행 상태<a href="" class="btn_more">더보기</a></p>
+						<div class="tbl_list scroll">
+							<table class="default_tbl">
+								<thead>
+									<tr>
+										<th class="tbl_num_wid">NO.</th>
+										<th>종류</th>
+										<th>제조사</th>
+										<th>모델명</th>
+										<th>이름</th>
+										<th>설명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>1</th>
+										<td>OS</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+										<td>Linux 표준모델</td>
+									</tr>
+									<tr>
+										<th>2</th>
+										<td>OS</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+										<td>Linux 표준모델</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="dash_box">
+						<p class="dash_tit">승인 처리 내역<a href="" class="btn_more">더보기</a></p>
+						<div class="tbl_list scroll">
+							<table class="default_tbl">
+								<thead>
+									<tr>
+										<th class="tbl_num_wid">NO.</th>
+										<th>종류</th>
+										<th>제조사</th>
+										<th>모델명</th>
+										<th>이름</th>
+										<th>설명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>1</th>
+										<td>OS</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+										<td>Linux 표준모델</td>
+									</tr>
+									<tr>
+										<th>2</th>
+										<td>OS</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+										<td>Linux 표준모델</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+		<div class="layer_popup is_visible" id="update_popup">
+			<div class="bg"></div>
+			<div class="popup_wrap pf_edit">
+				<div class="popup_title">
+					<h3>프로필편집</h3>
+					<a class="btn_close">닫기</a>
+				</div>
+				<div class="popup_content">
+					<div class="pf_edit_box">
+						<div class="edit_left">
+							<p class="file_upload"><a href="" class="shadow">이미지업로드</a><span class="file_name">data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIx.jpg</span></p>
+							<div class="pf_bg"></div>
+						</div>
+						<div class="edit_right">
+							<div class="edit_ctrl">
+								<div>
+									<p class="edit_tit">Preview</p>
+									<div class="pv_img"><div class="i"></div></div>
+								</div>
+								<div>
+									<p class="edit_tit">Zoom</p>
+									<ul class="cl_both edit_btn_list">
+										<li class="f_l"><button title="축소" class="edit_btn_stl"><span></span></button></li>
+										<li class="f_l txt_zoom"><p class="edit_btn_stl">100%</p></li>
+										<li class="f_l"><button title="확대" class="edit_btn_stl"><span class="icon_zoom_in"></span></button></li>
+									</ul>
+								</div>
+								<div>
+									<p class="edit_tit">Move</p>
+									<ul class="cl_both edit_btn_list">
+										<li class="f_l"><button title="왼쪽이동" class="edit_btn_stl"><span class="icon_m_left"></span></button></li>
+										<li class="f_l"><button title="오른쪽이동" class="edit_btn_stl"><span class="icon_m_right"></span></button></li>
+										<li class="f_l"><button title="위로이동" class="edit_btn_stl"><span class="icon_m_up"></span></button></li>
+										<li class="f_l"><button title="아래로이동" class="edit_btn_stl"><span class="icon_m_down"></span></button></li>
+									</ul>
+								</div>
+								<div>
+									<p class="edit_tit">Transform</p>
+									<ul class="cl_both edit_btn_list">
+										<li class="f_l"><button title="-45도회전" class="edit_btn_stl"><span class="icon_rotate_rv"></span></button></li>
+										<li class="f_l"><button title="45도회전" class="edit_btn_stl"><span class="icon_rotate"></span></button></li>
+										<li class="f_l"><button title="좌우반전" class="edit_btn_stl"><span class="icon_scalex"></span></button></li>
+										<li class="f_l"><button title="위아래반전" class="edit_btn_stl"><span class="icon_scaley"></span></button></li>
+									</ul>
+								</div>
+							</div>
+							<div class="btn_box">
+								<a href="" class="blue">저장</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

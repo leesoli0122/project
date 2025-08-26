@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 34 34">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_15552" data-name="사각형 15552" width="34" height="34" transform="translate(-0.329 0.189)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="icon_adjst" transform="translate(0.329 -0.189)" clip-path="url(#clip-path)">
+    <g id="그룹_840" data-name="그룹 840" transform="translate(2.171 0.689)">
+      <line id="선_248" data-name="선 248" y2="10.767" transform="translate(26.217 1.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="선_249" data-name="선 249" y2="9.91" transform="translate(26.217 22.014)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="선_250" data-name="선 250" x2="4.516" transform="translate(23.96 16.783)" fill="none" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="선_251" data-name="선 251" y2="5.21" transform="translate(3.757 1.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="선_252" data-name="선 252" y2="15.466" transform="translate(3.757 16.457)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="선_253" data-name="선 253" x2="4.516" transform="translate(1.5 11.226)" fill="none" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="선_254" data-name="선 254" y2="17.019" transform="translate(14.988 1.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="선_255" data-name="선 255" y2="3.657" transform="translate(14.988 28.267)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line id="선_256" data-name="선 256" x2="4.515" transform="translate(12.73 23.035)" fill="none" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

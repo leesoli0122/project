@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="IMwrap">
+		<!-- 로그인 -->
+		<div id="login_wrap" class="row2">
+			<div class="logo_box">
+				<div class="logo">
+					<img src="assets/img/common/logo_for.svg"><!--[2025] 경로 및 이미지 변경-->
+				</div>
+			</div>
+			<div class="login_exps">
+				<div class="">
+					<!-- s: 로그인 텍스트 추가 -->
+					<p class="login_tit">Login</p>
+					<!-- e: 로그인 텍스트 추가 -->
+					<div class="tn_slt">
+						<button class="fm_tit">Tenant<span class="tab_arrow open"></span></button> 
+						<ul class="slt_list" style="display:none">
+							<li>Tenant name</li>
+							<li>Tenant11111111</li>
+							<li>ZeroTrust</li>
+							<li>Tenant234</li>
+						</ul>
+					</div>
+					<div class="login_input">
+						<p class="userID">
+							<label for="user_id">아이디</label><input type="text" name="" id="user_id" class="form_contrl" placeholder="ID">
+						</p>
+						<p class="userPWD fas-w">
+							<label for="user_pw">비밀번호</label>
+							<input type="text" name="" id="user_pw" class="form_contrl" placeholder="Password">
+							<i class="fas hide"></i>
+						</p>
+						<div class="dupli_check redtxt">
+							<i></i> <span class="txt">본인 확인을 위해서 아이디와 암호를 입력하시기 바랍니다. 사용자 아이디는 계정/인증 중앙관리 시스템(ICAM)에 등록되어 있어야합니다.</span>
+						</div>
+					</div>
+					<div class="btn_box login_btn">
+						<!-- s: class 변경 -->
+						<a class="primary">로그인</a><!--[2025] primary로 변경-->
+						<!-- e: class 변경 -->
+					</div>
+					<div class="login_btmmsg">
+						<div class="msgstl"><p>하단 메시지</p></div>
+					</div>
+					<div class="security_pledge">
+						<div class="balloonStl2">
+							<p class="bluetxt">보안서약이 안되어있으면 로그인 후 강제 서약됩니다.</p>
+							<button class="btn_del">닫기</button>
+						</div>
+						<div class="flx pledge_btns">
+							<!-- s: class 변경 및 devide 주석 -->
+							<button class="btnstl basic">보안서약 확인</button>
+							<div class="flx txtbtns_devide">
+								<button class="line">신규등록</button>
+								<!-- <span class="devide"></span> -->
+								<button class="line">사용신청</button>
+							</div>
+							<!-- e: class 변경 및 devide 주석 -->
+						</div>
+					</div>
+				</div>
+				<div class="login_exps_right"><!--[2025] login_exps_right 추갸-->
+					<div class="login_notice">
+						<!-- s: 공지사항 텍스트 추가 -->
+						<p>공지사항</p>
+						<!-- e: 공지사항 텍스트 추가 -->
+						<ul class="notice_list">
+							<li>
+								<a href="">&middot; 계정관리 솔루션 관련 공지사항입니다 공지사항입니다.</a>
+							</li>
+							<li>
+								<a href="">&middot; 계정관리 솔루션 관련 공지사항입니다.</a>
+							</li>
+							<li>
+								<a href="">&middot; 계정관리 솔루션 관련 공지사항입니다.</a>
+							</li>
+						</ul>
+					</div>
+					<div class="cl_down_wrap">
+						<p class="cl_txt"><span></span><em>Client Download</em></p>
+						<!-- s: <i class="download"></i> 삭제 -->
+						<div class="client_down_list">
+							<button class="clientBtn AMClient"><i class="icon_client"></i>AM Client</button>
+							<button class="clientBtn OTP"><i class="icon_client"></i>OTP</button>
+							<button class="clientBtn FIDO"><i class="icon_client"></i>FIDO</button>
+							<button class="clientBtn UEM"><i class="icon_client"></i>UEM</button>
+						</div>
+						<!-- e: <i class="download"></i> 삭제 -->
+					</div>
+				</div>
+			</div>
+			<!-- 푸터 -->
+			<div id="footer">
+				<p class="copy"><img src="img/common/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

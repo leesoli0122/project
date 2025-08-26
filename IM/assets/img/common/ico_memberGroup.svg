@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(-2 -0.671)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ico_memberGroup" transform="translate(2 0.671)" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(1.316 4.375)">
+      <path id="pass6" d="M18.06,5.518a2.044,2.044,0,1,1-2.046-2.044A2.044,2.044,0,0,1,18.06,5.518Z" transform="translate(-7.368 1.393)" fill="#454545"/>
+      <path id="pass5" d="M18.052,16.617A5.957,5.957,0,0,0,16.472,12.4a3.293,3.293,0,0,1-4.5,0A5.956,5.956,0,0,0,10.4,16.617c0,.167.006.333.018.5h7.62C18.045,16.95,18.052,16.785,18.052,16.617Z" transform="translate(-5.577 -3.232)" fill="#454545"/>
+      <path id="pass4" d="M28.693,2.544A2.044,2.044,0,1,1,26.647.5a2.044,2.044,0,0,1,2.046,2.044Z" transform="translate(-12.824 -0.5)" fill="#454545"/>
+      <path id="pass3" d="M25.109,14.14h4.5c.011-.164.018-.33.018-.5a5.955,5.955,0,0,0-1.579-4.214,3.293,3.293,0,0,1-4.5,0,5.967,5.967,0,0,0-.636.822" transform="translate(-11.98 -5.125)" fill="#454545"/>
+      <path id="pass2" d="M4.071,2.543A2.044,2.044,0,1,1,6.115,4.588,2.044,2.044,0,0,1,4.071,2.543Z" transform="translate(-2.286 -0.5)" fill="#454545"/>
+      <path id="pass1" d="M7.216,10.251a5.967,5.967,0,0,0-.636-.822,3.293,3.293,0,0,1-4.5,0A5.956,5.956,0,0,0,.5,13.643c0,.167.006.333.018.5h4.5" transform="translate(-0.5 -5.125)" fill="#454545"/>
+    </g>
+  </g>
+</svg>

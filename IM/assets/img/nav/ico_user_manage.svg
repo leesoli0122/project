@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(-8 -7.5)" fill="#b621ff" opacity="0.62"/>
+    </clipPath>
+  </defs>
+  <g id="ico_user_manage" transform="translate(7.5 16) rotate(-90)" clip-path="url(#clip-path)">
+    <g id="icon" transform="translate(15.719 -6.219) rotate(90)">
+      <circle id="타원_106" data-name="타원 106" cx="5.029" cy="5.029" r="5.029" transform="translate(3.565 0.719)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_743" data-name="패스 743" d="M3,52.252A7.9,7.9,0,0,1,10.877,45a6.4,6.4,0,0,1,5.466,2.5" transform="translate(-2.281 -34.224)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="pass" d="M6.832,6.025V4.02A2.57,2.57,0,0,1,9.6,1.5a2.569,2.569,0,0,1,2.766,2.52V6.025" transform="translate(7.37 7.563)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <rect id="box" width="9.145" height="7.959" rx="3.98" transform="translate(12.396 13.877)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="line" y2="1.863" transform="translate(16.969 16.926)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

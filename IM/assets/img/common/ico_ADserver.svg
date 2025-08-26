@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(0.25 -0.403)" fill="none" stroke="#999" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="ico_db" transform="translate(-0.25 0.403)" clip-path="url(#clip-path)">
+    <g id="db" transform="translate(3.016 -0.637)">
+      <path id="pass10" d="M3.359,20.635C2.216,21.2,1.523,21.926,1.5,22.717c0,.011,0,.022,0,.033,0,1.834,3.63,3.321,8.106,3.321s8.1-1.487,8.105-3.321h0c0-.012,0-.022,0-.033-.017-.707-.573-1.361-1.507-1.9" transform="translate(-0.766 -8.253)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass9" d="M28.128,24.055h0c0,.011,0,.021,0,.033Z" transform="translate(-11.183 -9.591)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass8" d="M1.5,24.055v.033c0-.012,0-.023,0-.033Z" transform="translate(-0.766 -9.591)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass7" d="M1.5,24.109v6.008c0,1.834,3.63,3.321,8.106,3.321s8.105-1.487,8.105-3.321A1.141,1.141,0,0,0,17.7,30l.007-5.888" transform="translate(-0.766 -9.612)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass6" d="M28.131,24.109Z" transform="translate(-11.186 -9.612)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="line2" x2="1.846" transform="translate(7.808 20.971)" fill="none" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass5" d="M17.707,4.788C17.663,2.97,14.055,1.5,9.606,1.5S1.548,2.97,1.5,4.788c0,.012,0,.022,0,.033,0,1.834,3.63,3.321,8.106,3.321s8.1-1.487,8.105-3.32h0C17.712,4.81,17.708,4.8,17.707,4.788Z" transform="translate(-0.766 -0.766)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass4" d="M28.128,6.9h0c0,.011,0,.022,0,.033Z" transform="translate(-11.183 -2.879)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass3" d="M1.5,6.9v.033c0-.012,0-.022,0-.033Z" transform="translate(-0.766 -2.879)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass2" d="M1.5,6.956v6.009c0,1.834,3.63,3.32,8.106,3.32s8.105-1.487,8.105-3.32a1.143,1.143,0,0,0-.007-.121l.007-5.888" transform="translate(-0.766 -2.901)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass1" d="M28.131,6.956Z" transform="translate(-11.186 -2.901)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="lien1" x2="1.846" transform="translate(7.808 10.529)" fill="none" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!-- 비번찾기 -->
+	<div id="SGIM_PwFind">
+		<div class="pw_find_header">
+			<h1>비밀번호 찾기</h1>
+		</div>
+		<div class="pw_find_wrap">
+			<div class="pw_find_cont">
+				<p class="pw_find_tit">비밀번호 찾는 방법 선택</p>
+				<p class="infotxt">사용자 아이디를 입력해주세요.</p><!--[2025] infotxt으로 변경-->
+				<!-- s: dl dt dd로 변경, bul_dot 추가 -->
+				<dl class="pw_find_input bul_dot">
+					<dt><label for="">사용자 ID</label></dt>
+					<dd><input type="text" name="" class="form_contrl"></dd>
+					
+				</dl>
+				<ul class="pw_findway">
+					<li class="form_txt"><input type="radio" name="PWFIND" id="PWFIND01" class="radio_stl" checked>
+						<label for="PWFIND01" class="radio_stl_lab2">
+							<i></i>등록된 email로 임시 비밀번호 전달
+						</label>
+					</li>
+					<li class="form_txt"><input type="radio" name="PWFIND" id="PWFIND02" class="radio_stl"><label for="PWFIND02" class="radio_stl_lab2"><i></i>등록된 전화로 임시 비밀번호 전달</label></li>
+					<li class="form_txt"><input type="radio" name="PWFIND" id="PWFIND03" class="radio_stl"><label for="PWFIND03" class="radio_stl_lab2"><i></i>등록한 Q&A로 비밀번호 찾기</label></li>
+				</ul>
+				<div class="btn_box cl_both">
+					<div class="f_r">
+						<!-- s: class 변경 -->
+						<a href="" class="primary">다음</a>
+						<a href="" class="line">취소</a>
+						<!-- e: class 변경-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 푸터 -->
+		<div id="footer"><!--[2025] 푸터 위치 변경-->
+			<p class="copy"><img src="img/common/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+		</div>
+	</div>
+</body>
+</HTML>

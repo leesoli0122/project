@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>tab</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/font.css">
+
+    <!-- 추가 css -->
+    <link rel="stylesheet" href="../../css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+
+    <!-- jQuery 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <!-- jQuery UI 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-ui.js"></script>
+    <!-- js -->
+    <script type="text/javascript" charset="utf-8" src="../../js/common.js"></script>
+
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <style>
+        h2 { font-size:30px; }
+        .tit { display:block; margin:20px 0; padding:10px 5px; font-size:16px; background-color:#6ebda8; color:#fff; }
+    </style>
+</head>
+
+<body>
+    <div id="SGIM_wrap" class="mini_nav">
+        <!-- S: side nav -->
+        <!-- E: side nav -->
+        <!-- S: container -->
+        <div id="container" style="padding:0 !important;">
+            <!-- S: header -->
+            <!-- E: header -->
+            <!-- S: content -->
+            <div class="content" style="border-radius:10px; margin:20px; padding:20px; background-color:#fff;">
+                <h2>tab</h2>
+                <section>
+                    <p class="tit">Type A : tab_wrap</p>
+                    <div class="tab_wrap">
+                        <ul class="tab_list">
+                            <li><a href="" class="on">시스템 계정 현황<span class="new_org">N</span></a></li>
+                            <li><a href="">비인가 계정 현황</a></li>
+                            <li><a href="">계정 사용 현황<span class="new_org">N</span></a></li>
+                        </ul>
+                    </div>
+                    <p class="tit">Type A - a : cont_in_tab</p>
+                    <div class="tab_wrap cont_in_tab">
+                        <ul class="tab_list">
+                            <li><a href="" class="on">서버 목록</a></li>
+                            <li><a href="">접근 권한</a></li>
+                            <li><a href="">암호 조회</a></li>
+                            <li><a href="">명령어 신청</a></li>
+                        </ul>
+                    </div>
+                    <p class="tit">Type B : mini_tab</p>
+                    <div class="mini_tab moveup">
+                        <ul class="mtab_list">
+                            <li><a class="on">하위댑스01</a></li>
+                            <li><a class="">하위댑스02</a></li>
+                            <li><a class="">하위댑스03</a></li>
+                            <li><a class="">하위댑스04</a></li>
+                            <li><a class="">하위댑스05</a></li>
+                        </ul>
+                    </div>
+                    <p class="tit">Type C : tree_menu_box</p>
+                    <div class="flx tree_menu_area">
+                        <div class="tree_menu_box">
+                            <div class="tree_menu_tab flx">
+                                <button class="on">그룹</button>
+                                <button>OS타입</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- E: content -->
+            <!-- S: footer -->
+            <div class="footer">
+                <p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+            </div>
+            <!-- E: footer -->
+        </div>
+        <div class="scroll_btns" style="display:none">
+            <button class="btn_toTheTop"></button>
+            <button class="btn_toThebottom"></button>
+        </div>
+        <script>
+            $("body").on("mousewheel", function (e) {
+                var wheel = e.originalEvent.wheelDelta;
+
+                if (wheel > 0) {
+                    //스크롤 올릴때
+                } else {
+                    //스크롤 내릴때
+                    $(".scroll_btns").show();
+                }
+            });
+            $(window).scroll(function () {
+                var scrollValue = $(document).scrollTop();
+                if (scrollValue > 65) {
+                    $(".list_btn_stk").addClass("btnarea");
+                } else {
+                    $(".list_btn_stk").removeClass("btnarea");
+                }
+            });
+        </script>
+
+        <!-- s : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+        <script>
+            $(document).ready(function(){
+        
+                $('.accordion').on('click',  function() {
+                    $(this).toggleClass("tr_open");
+                });
+            });
+
+        </script>	
+        <!-- e : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+    </div>
+</body>
+
+</HTML>

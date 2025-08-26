@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(1 0.592)" fill="none" stroke="#121212" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="사각형_15831" data-name="사각형 15831" width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ico_Network" transform="translate(-1 -0.592)" clip-path="url(#clip-path)">
+    <g id="그룹_1016" data-name="그룹 1016" transform="translate(1 0.592)">
+      <g id="그룹_1015" data-name="그룹 1015" clip-path="url(#clip-path-2)">
+        <path id="패스_744" data-name="패스 744" d="M12,2.423A9.577,9.577,0,0,0,2.423,12H8.631C8.631,6.71,10.139,2.423,12,2.423Z" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="패스_745" data-name="패스 745" d="M8.631,12H2.423A9.577,9.577,0,0,0,12,21.577h0C10.139,21.577,8.631,17.29,8.631,12Z" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="패스_746" data-name="패스 746" d="M21.526,11.021A9.578,9.578,0,0,0,12,2.423c1.44,0,2.67,2.572,3.151,6.189" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="패스_747" data-name="패스 747" d="M14.873,6.992C14.281,4.251,13.216,2.423,12,2.423c-1.86,0-3.37,4.287-3.37,9.577H9.958" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="패스_748" data-name="패스 748" d="M20.841,15.937a4.19,4.19,0,0,0-.126-1.01L22,13.991l-1.009-1.748-1.452.645a4.217,4.217,0,0,0-1.751-1.008L17.62,10.3H15.6l-.168,1.579a4.213,4.213,0,0,0-1.75,1.011l-1.452-.645-1.009,1.748,1.285.936a4.111,4.111,0,0,0,0,2.02l-1.285.936,1.009,1.748,1.452-.645A4.213,4.213,0,0,0,15.435,20l.168,1.579h2.018L17.789,20a4.213,4.213,0,0,0,1.75-1.011l1.452.645L22,17.88l-1.285-.936A4.215,4.215,0,0,0,20.841,15.937Zm-4.23,1.8a1.8,1.8,0,1,1,1.8-1.8,1.8,1.8,0,0,1-1.8,1.8Z" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

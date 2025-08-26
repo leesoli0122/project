@@ -1,0 +1,1672 @@
+@use 'variable' as *;
+
+/*---------------------------------------------
+	#기본 레이아웃
+---------------------------------------------*/
+body {
+    // min-width:1600px;
+    height:100%;
+    background:$body;
+    overflow:auto;
+    * {
+        font-family:"S-CoreDream";
+        @include title ($font13, $font-w-r, $content);
+        box-sizing:border-box;
+    }
+}
+
+/*---------------------------------------------
+    #로그인 레이아웃
+---------------------------------------------*/
+/***************** login *****************/
+#IMwrap {
+    display: flex;
+    flex-direction: column;
+    min-height:100vh;
+    background-color:#F9FBFD;
+    #login_wrap {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width:393px;
+        width:$wh100;
+        margin:200px auto 0;
+        padding-top:0;
+        &.column2 {
+            max-width:912px;
+        }
+        &.column2, &.row2 {
+            margin:155px auto 0;
+        }
+    }
+    .logo {
+        img {
+            @include wh ($wh100,$wh100);
+        }
+    }
+    .login_tit {
+        padding-bottom:20px;
+        @include title (35px, $font-w-b, $title);
+        line-height:1;
+    }
+    .login_exps { //[20250806] 수정
+        &>div:has(.login_notice) {
+            padding:20px 21px;
+            border-radius:20px;
+            background-color:$primary;
+        }
+    }
+    .login_input {
+        padding-top:40px;
+        $idPws: "id_input", "pw_input", "userID", "userPWD";
+        @each $idPwl in $idPws {
+            .#{$idPwl} {
+                position:relative;
+                label {
+                    top:12px;
+                    left:14px;
+                    @include wh(20px,20px);
+                    @include mask($text-disabled);
+                }
+            }
+        }
+        p {
+            padding-bottom:0;
+            margin-bottom:10px;
+        }
+        .id_input, .userID {
+            label {
+                -webkit-mask-image:$icoMember;
+                mask-image:$icoMember;
+            }
+        }
+        .pw_input, .userPWD {
+            label {
+                -webkit-mask-image:url("../img/common/icon_locked2.svg");
+                mask-image:url("../img/common/icon_locked2.svg");
+            }
+            .fas {
+                transform:translateY(-50%);
+                right:14px;
+                @include wh (20px, 20px);
+                padding-top:0;
+                margin:0;
+                &::before {
+                    content:"";
+                    display:inline-block;
+                    @include icon (20px,20px);
+                    background-image:url("../img/common/ico_login_show.svg");
+                }
+                &.hide {
+                    &::before {
+                        background-image:url("../img/common/ico_login_hide.svg");
+                        background-position:unset;
+                    }
+                }
+            }
+        }
+        .pw_input {
+            margin-bottom:0;
+        }
+        .form_contrl {
+            padding-left:40px;
+            &.form_warning {
+                border-color:$false;
+            }
+        }
+        .warning_txt {
+            position:relative;;
+            padding:0 22px 0 22px;
+            font-size:$font12;
+            color:$false;
+            word-break: keep-all;
+            &::before {
+                content:"";
+                position:absolute;
+                left:0;
+                display:inline-block;
+                @include wh(18px,18px);
+                @include mask($false);
+                -webkit-mask-image:$icoInfo;
+                mask-image:$icoInfo;
+            }
+        }
+        .dupli_check {
+            padding-top:0;
+            .txt {
+                color:$false;
+            }
+        }
+    }
+    #footer {
+        width:$wh100;
+        padding-top:0;
+        margin-top:auto;
+        .copy {
+            color:$text-disabled;
+            span {
+                @extend .copy;
+            }
+        }
+    }
+
+    .tn_slt {
+        &+.login_input {
+            padding-top:0;
+        }
+    }
+}
+
+/***************** column2 *****************/
+#IMwrap {
+    .column2 {
+        .logo {
+            img {
+                @include wh ($wh100, $wh100);
+            }
+        }
+        .login_exps {
+            gap:50px;
+            margin-top:53px;
+            padding-top:0;
+            border:0;
+            border-radius:0;
+            &>div:has(.login_notice) { //[20250806] 수정
+                max-width:438px;
+                width:$wh100;
+                padding:30px;
+                border-radius:20px;
+                background-color:$primary;
+            }
+        }
+    }
+    /* 왼쪽 */
+    .tn_slt {
+        padding-bottom:10px;
+        .fm_tit {
+            height:45px;//[20250724] 추가
+            border:1px solid $default;
+            font-weight:$font-w-r;
+            color:$title;
+            background-color:$white;
+            .tab_arrow {
+                right:10px;
+                transform:translateY(-50%) rotate(-180deg);
+                @include wh (24px,24px);
+                margin:0;
+                @include mask ($text-disabled);
+                -webkit-mask-image:$icoAccordion;
+                mask-image:$icoAccordion;
+                &.open {
+                    transform:translateY(-50%);
+                }
+            }
+        }
+        .slt_list {
+            top:42px;
+            &.tenant { //[20250724] 추가
+                left:0;
+                width:$wh100;
+            }
+        }
+    }
+    .login_btmmsg {
+        margin-top:10px;
+        padding:21px 20px;
+        border:$borderD;
+        border-radius:6px;
+        background-color:$body;
+        .msgstl {
+            height:$wh100;
+            p {
+                position:relative;
+                padding-left:34px;
+                font-size:$font14;
+                text-align:left;
+                &::before {
+                    content:"";
+                    @include topCenter ($left: 0);
+                    display:inline-block;
+                    @include icon (24px,24px);
+                    background-image:url("../img/common/ico_msg.svg");
+                }
+            }
+        }
+    }
+    .security_pledge {
+        flex-direction: column-reverse;
+        row-gap:12px;
+        width:$wh100;
+        margin-top:26px;
+        padding:0;
+        border:0;
+        border-radius:0;
+        background-color:transparent;
+        .balloonStl2 {
+            position:unset;
+            justify-content:space-between;
+            padding:4px 5px 4px 13px;
+            border:0;
+            border-radius:10px;
+            background-color:#D6E9FF;
+            box-shadow:unset;
+            .bluetxt {
+                @include title ($font12, $font-w-r, $blue);
+            }
+            .btn_del {
+                @include wh (24px, 24px);
+                @include mask ($blue);
+                -webkit-mask-image:$iconClose;
+                mask-image:$iconClose;
+                background-image:none;
+            }
+        }
+    }
+    /* 오른쪽 */
+    .login_notice {
+        padding:0;
+        margin-bottom:0;
+        background-color:transparent;
+        &>p {
+            padding-bottom:22px;
+            @include title ($font18, $font-w-b, $white);
+        }
+        .notice_list {
+            li {
+                padding:0 0 13px;
+                &:last-child {
+                    padding:0;
+                }
+                a {
+                    width:$wh100;
+                    font-size:$font14;
+                    font-weight:$font-w-r;
+                    &:hover {
+                        text-decoration:unset;
+                    }
+                }
+            }
+        }
+    }
+    .cl_txt {
+        padding:20px 0;
+        em {
+            padding:0 16px;
+            @include title ($font14, $font-w-r, $white);
+            background-color:$primary;
+        }
+    }
+    .client_down_list {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+        .clientBtn {
+            flex-direction:column;
+            height:auto; //[20250724] 추가
+            margin-top:0;
+            padding:12px 0 7px;
+            font-size:$font16;
+            &.AMClient {
+                border:0;
+                color:$content;
+                .icon_client {
+                    @include icon(60px,40px);
+                    background-image:url("../img/common/ico_am.svg");
+                }
+            }
+            &.OTP {
+                border:0;
+                color:$content;
+                .icon_client {
+                    @include icon(60px,40px);
+                    background-image:url("../img/common/ico_otp.svg");
+                    background-position:unset;
+                }
+            }
+            &.FIDO {
+                border:0;
+                color:$content;
+                .icon_client {
+                    @include icon(60px,45px);
+                    background-image:url("../img/common/ico_uem.svg");
+                    background-position:unset;
+                }
+            }
+            &.UEM {
+                border:0;
+                color:$content;
+                .icon_client {
+                    @include icon(60px,45px);
+                    background-image:url("../img/common/ico_fido.svg");
+                    background-position:unset;
+                }
+            }
+        }
+    }
+}
+
+/***************** row2 *****************/
+#IMwrap {
+    .row2 {
+        .login_exps_right {
+            margin-bottom:98px;
+        }
+        .client_down_list {
+            grid-template-columns:1fr;
+            .clientBtn {
+                flex-direction:row;
+                justify-content:center;
+                column-gap:5px;
+                padding:8px 0 7px;
+                font-size:$font14;
+                &.AMClient {
+                    .icon_client {
+                        @include wh(45px,30px);
+                    }
+                }
+                &.OTP {
+                    .icon_client {
+                        @include wh(45px,30px);
+                    }
+                }
+                &.FIDO {
+                    .icon_client {
+                        @include wh(40px,30px);
+                    }
+                }
+                &.UEM {
+                    .icon_client {
+                        @include wh(40px,30px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/***************** [20250724] 추가 버튼 *****************/
+#IMwrap {
+    .pledge_btns {
+        flex-direction:column;
+        gap:10px;
+    }
+    .txtbtns_devide {
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:4px;
+        button {
+            flex:1;
+            max-width:calc(33.333% - 10px);
+            min-width:115px;
+            margin:0;
+        }
+        .devide {
+            display:none;
+        }
+    }
+}
+/*---------------------------------------------
+    #비밀번호 찾기 레이아웃
+---------------------------------------------*/
+#SGIM_PwFind {
+    margin:155px auto 0;
+    .pw_find_header {
+        position:unset;
+        margin-bottom:40px;
+        background-image:none;
+        h1 {
+            @include title(35px, $font-w-b, $title);
+            text-align:center;
+        }
+    }
+    .pw_find_wrap {
+        border-radius:30px;
+    }
+    .pw_find_cont {
+        padding:30px;
+        .pw_find_tit {
+            padding:0 0 11px;
+            border-bottom:0;
+            @include title(20px, $font-w-b, $title);
+        }
+        .infotxt {
+            padding-top:0;
+            padding-bottom:10px;
+            border-bottom:1px solid $title;
+            font-size:$font12;
+            color:$secondary;
+        }
+        .pw_reset {
+            padding:30px 15px;
+            .bul_dot {
+                padding-top:0;
+                margin-top:12px;
+                &>dt {
+                    margin-bottom:0;
+                    &::before {
+                        left:0;
+                    }
+                }
+                dd {
+                    width:$wh100;
+                }
+            }
+        }
+        .form_contrl {
+            max-width:unset;
+            width:$wh100;
+            height:45px;
+        }
+        .btn_box {
+            border-top:0;
+        }
+        .align_center {
+            padding:0 15px;
+            a {
+                width:$wh100;
+                margin-bottom:15px;
+            }
+        }
+        // QnA로 암호 찾기
+        .pw_qna {
+            padding:30px 15px 0;
+            li {
+                padding:0 0 10px;
+                border-bottom:0;
+                &:last-child {
+                    padding-bottom:0;
+                }
+                .form_contrl {
+                    height:30px;
+                }
+            }
+        }
+        .q_txt {
+            padding-bottom:10px;
+            span {
+                font-weight:$font-w-r;
+                color:$primary;
+            }
+        }
+        // 암호 초기화 전달 화면
+        .pw_find_input {
+            display:flex;
+            align-items:center;
+            padding:30px 15px 20px;
+            &.bul_dot {
+                &>dt {
+                    margin-bottom:0;
+                    &::before {
+                        left:0;
+                    }
+                }
+                dd {
+                    width:$wh100;
+                }
+            }
+            dt {
+                width:160px;
+            }
+            dd {
+                width:$wh100;
+            }
+        }
+        .pw_findway {
+            padding:30px 26px;
+            border-top:0;
+            border-radius:6px;
+            background-color:$body;
+            li {
+                padding:0 0 10px;
+                &:last-child {
+                    padding-bottom:0;
+                }
+                .radio_stl {
+                    &:checked + label.radio_stl_lab2 {
+                        color:$content;
+                    }
+                }
+                label {
+                    font-weight:$font-w-r;
+                    color:$text-disabled;
+                }
+            }
+        }
+    }
+    #footer {
+        position:unset;
+        padding-top:40px;
+    }
+}
+
+/*---------------------------------------------
+    #헤더 레이아웃
+---------------------------------------------*/
+#SGIM_wrap {
+    &.mini_nav {
+        .nav_header {
+            padding-bottom:20px;
+        }
+        .nav {
+            .nav_wrap {
+                &>p {
+                    display:none;
+                }
+            }
+        }
+        .nav_list {
+            &>li {
+                a {
+                    padding:16px 18px 24px 21px;
+                    &.depth_menu {
+                        &::after {
+                            display:none;
+                        }
+                    }
+                    i {
+                        left:12px;
+                    }
+                    &.on {
+                        &+.open {
+                            top:-7px;
+                            padding:10px;
+                            margin:0;
+                            border-radius:6px;
+                            background-color:$primary;
+                            box-shadow:1px 1px 6px rgba(0, 0, 0, 0.3254901961);
+                            li {
+                                border-bottom:0;
+                            }
+                            a {
+                                color:$white;
+                                opacity:0.8;
+                                &::after {
+                                    background-color:$white;
+                                    opacity:0.8;
+                                }
+                                &:hover {
+                                    font-weight:$font-w-b;
+                                    opacity:1;
+                                    &::after {
+                                        opacity:1;
+                                    }
+                                }
+                            }
+                            &::before {
+                                content:"";
+                                position:absolute;
+                                left:-4px;
+                                top:21px;
+                                transform:rotate(45deg);
+                                display:block;
+                                @include wh (13px,17px);
+                                border-radius:3px;
+                                background-color:$primary;
+                            }
+                        }
+                    }
+                }
+                ul {
+                    display:none;
+                    li {
+                        padding:10px;
+                        a {
+                            padding:0;
+                        }
+                    }
+                }
+            }
+        }
+        #container {
+            padding-left:0;
+            margin-left:70px;
+        }
+        .header {
+            .btn_lnb {
+                a {
+                    left:21px;
+                }
+            }
+        }
+        .scrollPrss {
+            padding-left:70px;
+        }
+    }
+    .nav {
+        width:240px;
+        border-right:$borderD;
+        box-shadow:none;
+        .nav_inner {
+            border-right:$borderD;
+            background-color:#F9FBFD;
+            &:has(.nav_tab) {
+                .nav_wrap {
+                    height:calc($wh100 - 108px);
+                }
+            }
+        }
+    }
+    .nav_header {
+        position:sticky;
+        top:0;
+        @include flexsb();
+        padding:15px 10px 16px;
+        border-bottom:1px solid $text-disabled;
+        background-color:$white;
+        z-index:1;
+        .logo {
+            @include wh (171px, 28px);
+            img {
+                @include wh ($wh100,$wh100);
+            }
+        }
+    }
+    .nav_tab {
+        a {
+            padding:18px 0 11px;
+            border:0;
+            border-bottom:$borderD;
+            border-radius:0;
+            @include title ($font14, $font-w-r, $content);
+            background-color:#F9FBFD;
+            &.on {
+                border-radius:0;
+                border-bottom:2px solid $primary;
+                font-weight:$font-w-m;
+                color:$primary;
+            }
+        }
+    }
+    .nav_wrap {
+        height:calc($wh100 - 60px);
+        p {
+            display:block;
+            padding:0 20px;
+            @include title ($font12, $font-w-m, $text-disabled);
+            line-height:18px;
+            text-align:center;
+            white-space: normal;
+        }
+    }
+    .nav_list {
+        min-height:calc($wh100 - 82px);
+        padding:0 10px 10px;
+        > li {
+            margin-top:10px;
+            > a{
+                padding:12px 20px 12px 42px;
+                border-left:0;
+                border-radius:10px;
+                &.on {
+                    border-top:0;
+                    border-left-color: transparent;
+                    color:$white;
+                    background-color:$primary;
+                    i {
+                        background-color:$white;
+                    }
+                    span {
+                        color:$white;
+                    }
+                    &::after {
+                        transform: translateY(-50%) rotate(180deg);
+                        background-color:$primary;
+                    }
+                }
+                &:hover {
+                    box-shadow:none;
+                    color:$primary;
+                }
+                &::after {
+                    content:none;
+                }
+                i {
+                    top:8px;
+                    left:12px;
+                    @include wh (24px,24px);
+                    @include mask ($content);
+                    background-image:none;
+                    &.UserMangement {
+                        -webkit-mask-image:url("../img/nav/nav_user.svg");
+                        mask-image:url("../img/nav/nav_user.svg");
+                    }
+                    &.ResourceMangement {
+                        -webkit-mask-image:url("../img/nav/nav_resource.svg");
+                        mask-image:url("../img/nav/nav_resource.svg");
+                    }
+                    &.ServerZoneMangement {
+                        -webkit-mask-image:url("../img/nav/nav_server.svg");
+                        mask-image:url("../img/nav/nav_server.svg");
+                    }
+                    &.RoleManagement {
+                        -webkit-mask-image:url("../img/nav/nav_role.svg");
+                        mask-image:url("../img/nav/nav_role.svg");
+                    }
+                    &.AccessPolicyManagement {
+                        -webkit-mask-image:url("../img/nav/nav_access.svg");
+                        mask-image:url("../img/nav/nav_access.svg");
+                    }
+                    &.SynchronizeManagment {
+                        -webkit-mask-image:url("../img/nav/nav_synchronize.svg");
+                        mask-image:url("../img/nav/nav_synchronize.svg");
+                    }
+                    &.AuditingReport {
+                        -webkit-mask-image:url("../img/nav/nav_auditing.svg");
+                        mask-image:url("../img/nav/nav_auditing.svg");
+                    }
+                    &.SGIMManagement {
+                        -webkit-mask-image:url("../img/nav/nav_management.svg");
+                        mask-image:url("../img/nav/nav_management.svg");
+                    }
+                    &.WorkflowManagement {
+                        -webkit-mask-image:url("../img/nav/nav_workflow.svg");
+                        mask-image:url("../img/nav/nav_workflow.svg");
+                    }
+                    &.PolicyMangement {
+                        -webkit-mask-image:url("../img/nav/nav_policy.svg");
+                        mask-image:url("../img/nav/nav_policy.svg");
+                    }
+                    &.RequestApproveManagement { //[20250723] 추가
+                        -webkit-mask-image:url("../img/nav/nav_workflow.svg");
+                        mask-image:url("../img/nav/nav_workflow.svg");
+                    }
+                    &.Home { //[20250724] 추가
+                        -webkit-mask-image:url("../img/nav/ico_home.svg");
+                        mask-image:url("../img/nav/ico_home.svg");
+                    }
+                    &.MyProfiles { //[20250724] 추가
+                        -webkit-mask-image:url("../img/nav/ico_my.svg");
+                        mask-image:url("../img/nav/ico_my.svg");
+                    }
+                    &.MyAuth { //[20250724] 추가
+                        -webkit-mask-image:url("../img/nav/ico_myauth.svg");
+                        mask-image:url("../img/nav/ico_myauth.svg");
+                    }
+                    &.MyApprove { //[20250724] 추가
+                        -webkit-mask-image:url("../img/nav/ico_approve_manage.svg");
+                        mask-image:url("../img/nav/ico_approve_manage.svg");
+                    }
+                    &.MyMessage { //[20250724] 추가
+                        -webkit-mask-image:url("../img/nav/ico_mail.svg");
+                        mask-image:url("../img/nav/ico_mail.svg");
+                    }
+                    &.PAMManagement { //[20250805] 추가
+                        -webkit-mask-image:url("../img/nav/ico_user_manage.svg");
+                        mask-image:url("../img/nav/ico_user_manage.svg");
+                    }
+                    &.DevicePasswordPolicy { //[20250805] 추가
+                        -webkit-mask-image:url("../img/nav/ico_mon_view.svg");
+                        mask-image:url("../img/nav/ico_mon_view.svg");
+                    }
+                    &.PartnerManagement { //[20250805] 추가
+                        -webkit-mask-image:url("../img/nav/ico_Partner.svg");
+                        mask-image:url("../img/nav/ico_Partner.svg");
+                    }
+                }
+                span {
+                    font-size:$font13;
+                    font-weight:$font-w-m;
+                    line-height:1.5;
+                }
+            }
+            ul {
+                // [20250729] margin:10px 0 0;
+                border:0;
+                border-radius:11px;
+                background-color:transparent;
+                li {
+                    padding:8px 10px 7px 14px;
+                    border-bottom:$borderD;
+                    a{
+                        position:relative;
+                        padding:0;
+                        font-weight:$font-w-m;
+                        color:$text-disabled;
+                        line-height:17px;
+                        &:hover {
+                            color:$primary;
+                            background-color:transparent;
+                            opacity:1;
+                        }
+                        &::after {
+                            @include content(16px,16px);
+                            position:absolute;
+                            @include topCenter ($right: 0);
+                            display:inline-block;
+                            @include mask($text-disabled);
+                            -webkit-mask-image:$icoArrow;
+                            mask-image:$icoArrow;
+                        }
+                        &.on {
+                            color:$primary;
+                            background-color:transparent;
+                            &::after {
+                                background-color:$primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header {
+        padding:18px 20px 18px 24px;
+        height:60px;
+        border-bottom:1px solid $text-disabled;
+        background:$white;
+        $Hbtns: "btn_lnb", "btn_lnb_m";
+
+        @each $Hbtn in $Hbtns {
+            .#{$Hbtn} {
+                a {
+                    display:inline-block;
+                    @include icon(24px, 24px);
+                    background-image:url("../img/common/menu.svg");
+                }
+            }
+        }
+        .btn_lnb {
+            a {
+                top:18px;
+                left:205px;
+            }
+        }
+        .btn_lnb_m {
+            a {
+                display:none;
+            }
+        }
+        .header_title {
+            display:inline-block;
+            padding:0;
+            line-height:24px;
+            .link_depth {
+                padding-top:0;
+                li {
+                    height:24px;
+                    a {
+                        @include title ($font13, $font-w-r, $secondary);
+                        line-height:26px;
+                        &::after {
+                            content:none;
+                        }
+                    }
+                    &::before {
+                        @include content(16px,16px);
+                        display:inline-block;
+                        @include mask ($secondary);
+                        -webkit-mask-image:$icoArrow;
+                        mask-image:$icoArrow;
+                    }
+                    &:last-child {
+                        a {
+                            color:$title;
+                        }
+                        span {
+                            color:$title;
+                        }
+                        &::before {
+                            background-color:$title;
+                        }
+                    }
+                    &:first-child {
+                        a {
+                            display:inline-block;
+                            @include wh(24px, 24px);
+                            @include mask($secondary);
+                            font-size:0;
+                            -webkit-mask-image:url("../img/common/home.svg");
+                            mask-image:url("../img/common/home.svg");
+                        }
+                        &::before {
+                            content:none;
+                        }
+                    }
+                }
+            }
+        }
+        .gl_nav {
+            @include topCenter ($right: 20px);
+            display:inline-flex;
+            align-items:center;
+            width:auto;
+            font-size:0;
+            li {
+                display:inline-block;
+                padding-left:10px;
+                font-size:0;
+                &.btn_modetrans { //[20250730] 추가
+                    a {
+                        padding:0 8px 0 10px;
+                        background:$primary;
+                        box-shadow:none;
+                        i {
+                            @include wh(16px,16px);
+                            display:inline-block;
+                            @include mask ($white);
+                            -webkit-mask-image:$icoArrow;
+                            mask-image:$icoArrow;
+                        }
+                    }
+                }
+                &.timer{
+                    position:relative;
+                    padding-right:10px;
+                    &::after {
+                        @include content(1px,60px);
+                        position:absolute;
+                        top:-18px;
+                        right:0;
+                        display:inline-block;
+                        background-color:$border-d;
+                    }
+                    span {
+                        padding-left:0;
+                        color:$title;
+                        line-height:24px;
+                        em {
+                            padding-left:20px;
+                            color:$primary;
+                        }
+                    }
+                    .time_ref {
+                        display:inline-block;
+                        @include wh(24px, 24px);
+                        padding:0;
+                        margin-top:0;
+                        border:0;
+                        @include mask($primary);
+                        -webkit-mask-image:url("../img/common/icon_refresh.svg");
+                        mask-image:url("../img/common/icon_refresh.svg");
+                        background-image:none;
+                    }
+                    i {
+                        @extend .time_ref;
+                        position:absolute;
+                        top:3px;
+                        @include wh (16px, 16px);
+                        -webkit-mask-image:url("../img/common/ico_time.svg");
+                        mask-image:url("../img/common/ico_time.svg");
+                    }
+                }
+                &.btn_menualdown,
+                &.btn_logout {
+                    a {
+                        @include wh(24px,24px);
+                        @include mask($primary);
+                        margin-top:0;
+                        background-image:none;
+                        &::before {
+                            content: none;
+                        }
+                    }
+                }
+                &.btn_alim {
+                    &>a {
+                        @include icon (24px,24px);
+                        margin-top:0;
+                        background-image:url("../img/common/icon-alarm.svg");
+                        &>span {
+                            display:none;
+                            line-height:20px;
+                            color:$white;
+                            background-color:#F76900;
+                        }
+                    }
+                }
+                &.btn_menualdown {
+                    a {
+                        -webkit-mask-image:url("../img/common/icon_download.svg");
+                        mask-image:url("../img/common/icon_download.svg");
+                    }
+                }
+                &.btn_logout {
+                    a {
+                        -webkit-mask-image:url("../img/common/icon_logout.svg");
+                        mask-image:url("../img/common/icon_logout.svg");
+                    }
+                }
+                &.btn_top_user a {
+                    @include wh (auto, auto);
+                    font-weight:$font-w-r;
+                    color:$title;
+                    background:none;
+                }
+                &>a {
+                    line-height:24px;
+                }
+            }
+        }
+        .balloon {
+            border:$borderC;
+            border-radius:6px;
+            &::before {
+                top:-6px;
+                right:72px;
+                border-bottom:0;
+            }
+            &.alim_toast {
+                right:-66px;
+                left:auto;
+                .newalim_txt {
+                    em {
+                        color:$primary;
+                    }
+                }
+            }
+        }
+        .alim_pop {
+            top:58px;
+            right:-69px;
+            left:auto;
+            .alim_pop_wrap {
+                .alim_top {
+                    padding:24px 24px 8px;
+                    border-bottom:0;
+                    span {
+                        @include title ($font16, $font-w-b, $title);
+                    }
+                    .alim_clear {
+                        top:unset;
+                        right:24px;
+                        bottom:0;
+                        padding:0;
+                        @include title($font14,$font-w-r,$content);
+                        line-height:unset;
+                    }
+                }
+                .alim_list {
+                    padding:0 20px 0 14px;
+                    li {
+                        display:block;
+                        padding:0;
+                        margin-top:10px;
+                        border:$borderD;
+                        border-radius:9px;
+                        a {
+                            padding:11px 7px 11px 30px;
+                            font-weight:$font-w-r;
+                            line-height:16px;
+                            color:$content;
+                            background-color:transparent;
+                            .icon_alim {
+                                top:10px;
+                                left:7px;
+                            }
+                        }
+                        &.no_msg {
+                            position:relative;
+                            padding:50px 7px 11px;
+                            text-align:center;
+                            line-height:normal;
+                            color:$text-disabled;
+                            &::before {
+                                display:inline-block;
+                                @include content(24px, 24px);
+                                position:absolute;
+                                top:15px;
+                                left:50%;
+                                transform:translateX(-50%);
+                                background: url("../img/common/icon-nodata.svg") no-repeat  center / cover;
+                            }
+                            a {
+                                padding:0;
+                                color:$text-disabled;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &+.i-card_wrap {
+            margin:94px 24px 0;
+        }
+    }
+}
+
+/*---------------------------------------------
+    #컨텐츠
+    content 안에 search 들어갈 때에는 padding 없음
+---------------------------------------------*/
+#SGIM_wrap {
+    #container { //[20250724] 수정
+        padding-left:0;
+        margin-left:240px;
+        background:$body;
+        .dash_wrap {
+            min-height:calc(100vh - 100px);
+            height:$wh100;
+            margin:80px 24px 0 !important;
+            border:$borderD;
+            border-radius:20px;
+            font-size:0;
+            background:$white;
+        }
+        .cont_wrap {
+            gap:10px;
+            margin:64px 4px 0;
+            padding:0;
+            background:$body;
+            .content:not(.cnt_lyt_sc .content) {
+                width:calc((84% - 8px) / 2);
+                height:auto;//[20250807] 추가
+                padding:20px 0;
+                margin-top:0;
+                .tab_wrap {//[20250808] 수정
+                    &.cont_in_tab:not(.mini_search + .tab_wrap.cont_in_tab) {
+                        padding-top:0;
+                    }
+                }
+            }
+            .content {
+                min-height:calc(100vh - 70px);
+                height:auto;//[20250731] 추가
+                margin:0;
+                border:$borderC;
+                border-radius:3px;
+                .default_tbl tbody tr td {
+                    border:0;
+                    line-height:34px;
+                }
+                .btn_box {//[20250804] 추가
+                    padding:0 20px 10px;
+                }
+            }
+        }
+        .content {
+            height:$wh100;
+            margin:84px 0 0 ;
+            box-shadow:unset;
+            min-height:calc(100vh - 100px);
+            margin:80px 24px 20px;
+            padding:20px 24px;
+            border:$borderD;
+            border-radius:20px;
+            &:has(.sych_mnt_wrap) {
+                padding:20px;
+            }
+            .tbl_list {
+                padding:0 0 20px;
+            }
+            &:has(.search_wrap:not(.pcs_ctg_wrap .search_wrap)){//[20250729] 수정
+                min-height:calc(100vh - 70px);
+                margin:60px 0 0 ;
+                padding:20px 0 0; //[20250812] 수정
+                border:0;
+                border-radius:0;
+                .topPrss { //[20250806] 추가
+                    padding:0 24px;
+                    &:has(.flx_cell:only-child) {
+                        .longPrss {
+                            position:unset;
+                            margin:0;
+                        }
+                        .movbtn {
+                            display:none;
+                        }
+                    }
+                }
+                .btn_box {//[20250806] 추가
+                    //[20250812] padding:0 24px 10px;
+                    &.tit_in_btn {
+                        padding:0;
+                    }
+                }
+                .tbl_list:not(.move_wrap .tbl_list) {
+                    padding:0 24px;
+                }
+                .tbl_btm { //[20250731] 수정
+                    padding-top:20px;
+                }
+                a.fm_tit { //[20250805] 추가
+                    margin:20px 24px 0;
+                }
+                .form_stl { //[20250805] 추가
+                    padding:0 24px;
+                }
+            }
+            &.scroll {
+                height:$wh100;
+                max-height:741px;
+                overflow-y:auto;
+                .tab_wrap {
+                    padding-top:0;
+                }
+                .tbl_list { //table
+                    padding:0 0 10px;
+                    margin:0 20px;
+                    overflow-x:auto;
+                }
+                .tbl_btm, .mini_paging { //table 아래 pagination
+                    padding:10px 20px 20px;
+                }
+            }
+            &.tab_cont {
+                margin-top:20px;
+                .t_cont_in {
+                    padding:0;
+                }
+            }
+            &+.cnt_lyt_sc {
+                .content {
+                    width:$wh100;
+                    padding:20px 0;
+                    margin-top:0;
+                    &.scroll {
+                        height:$wh100;
+                        min-height:auto;
+                        // max-height:624px;
+                        max-height:calc(100vh - 191px);
+                    }
+                    .tab_wrap {
+                        &.cont_in_tab {
+                            padding:0 24px 16px;
+                        }
+                    }
+                    .btn_box {
+                        padding:0 24px 10px;
+                    }
+                    .form_wrap {
+                        padding:0 20px;
+                    }
+                }
+                .i-card_wrap {
+                    padding-bottom:4px;
+                    .dash_box {
+                        border-radius:3px;
+                    }
+                }
+            }
+            &.ch_password_cont {
+                min-height:auto;
+                &+.content {
+                    margin-top:0;
+                    min-height:auto;
+                }
+                .form_stl {
+                    .form_contrl {
+                        width:270px;
+                    }
+                }
+                .form_tbl li:last-child .form_txt {
+                    border-bottom:0;
+                }
+            }
+        }
+        .i-card_wrap {
+            &+.content {
+                margin-top:0;//[20250807]수정
+                &:has(.search_wrap) {
+                    padding:20px 24px;
+                    border:$borderD;
+                    border-radius:20px;
+                }
+                &:has(.search_wrap:not(.pcs_ctg_wrap .search_wrap)){//[20250807] 추가
+                    margin-top:0;
+                }
+            }
+            &+.content:has(.search_wrap:not(.pcs_ctg_wrap .search_wrap)) {
+                margin-top:0;//[20250811]추가
+            }
+        }
+    }
+}
+
+#ONSD_wrap {
+    .content {
+        padding:30px 24px 0;//[20250729] 변경
+        .con_tit {
+            padding-left: 24px;
+        }
+    }
+}
+
+/*---------------------------------------------
+    #팝업 레이아웃
+---------------------------------------------*/
+/***************** side popup - detail_view *****************/
+.detail_view {
+    top:60px;
+    width:40%;//[20250804] 추가
+    height:calc($wh100 - 60px);
+    padding:10px 20px 20px;
+    border:1px solid $border-d;
+    border-radius:13px 0 0 13px;
+    box-shadow:0 3px 6px #00000016;
+    // 팝헤더
+    .dtv_top {
+        padding:10px 0 10px 6px;
+        border-bottom-color:$title;
+        background-color:transparent;
+        .title {
+            @include title ($font18, $font-w-b, $title);
+        }
+        .btn_close {
+            top:6px;
+            @include icon(30px, 30px);
+            background-color:transparent;
+            background-image:$iconClose;
+        }
+    }
+    // cont
+    .dtv_cont {
+        padding:0;
+        .view_list {
+            padding-bottom:0;
+        }
+    }
+    .dtv_cont_wrap {
+        .btn_box {
+            border-top:$borderC;
+        }
+    }
+}
+
+/***************** side popup - wd_detail *****************/
+.wd_detail {
+    padding:10px 20px 20px;
+    border:1px solid $border-d;
+    border-radius:13px;
+    box-shadow:0 3px 6px #00000016;
+    // 헤더
+    .wd_tit {
+        height:auto;
+        padding:10px 0 10px 6px;
+        border-bottom-color:$title;
+        border-radius:13px 0 0;
+        background-color:transparent;
+        .title {
+            @include title ($font18, $font-w-b, $title);
+        }
+        .btn_close {
+            top:6px;
+            @include icon(30px, 30px);
+            background-color:transparent;
+            background-image:$iconClose;
+        }
+    }
+}
+
+/***************** center popup *****************/
+.layer_popup {
+    &.is_visible {
+        background-color:rgba(34,34,34, 0.16);
+    }
+    .popup_wrap {
+        border-radius:30px;
+        &.poptable {
+            .popup_content {
+                padding:31px 26px 3px;
+            }
+        }
+        &.poptable02 {
+            .default_tbl {
+                border-bottom:0;
+                tbody {
+                    th {
+                        padding:0;
+                    }
+                }
+            }
+        }
+        &.toast_popup {
+            max-width:307px;
+            margin:24em auto;
+        }
+    }
+    .popup_title {
+        padding:18px 27px 14px;
+        border-bottom-color:$btn-disabled;
+        border-radius:30px 30px 0 0;
+        background-color:$body;
+        h3 {
+            @include title ($font16, $font-w-b, $title);
+        }
+        .btn_close {
+            top:12px;
+            right:20px;
+            @include icon(30px, 30px);
+            background-color:transparent;
+            background-image:$iconClose;
+        }
+    }
+    .popup_content {
+        .move_tbl {
+            border-bottom:0;
+        }
+        .tbl_list {
+            max-height:338px;
+            height:$wh100;
+            padding-bottom:0;
+            border-top:$borderC;
+            border-bottom:$borderC;
+            overflow-y:auto;
+            .default_tbl {
+                border:0;
+            }
+            thead {
+                tr {
+                    th {
+                        border-top:0;
+                    }
+                }
+            }
+            tr {
+                &:last-child {
+                    th,td {
+                        border-bottom:0;
+                    }
+                }
+            }
+        }
+        .form_stl {
+            padding:22px 0 0;
+            margin:0;
+            .form_tbl {
+                padding:0;
+            }
+        }
+        .move_wrap {
+            align-items:stretch;
+            &+ .btn_box {
+                padding-top:10px;
+            }
+        }
+        .moved_tit { //[20250805] 추가
+            margin:10px 0;
+            border:0;
+            border-bottom:1px solid $title;
+            border-radius:0;
+            font-weight:$font-w-b;
+            background-color:unset;
+        }
+        .moved_list { //[20250805] 추가
+            border:0;
+        }
+        .form_txt {//[20250806] 추가
+            .moved_box {
+                .moved_tit {
+                    padding:10px 6px;
+                    background-color:unset;
+                }
+            }
+        }
+    }
+    .btn_box { //[20250804] 수정
+        padding-top:30px;
+    }
+    .test_result {
+        &.loading {
+            height:50px;
+            line-height:50px;
+            background-color:#252D4A;
+            .loader {
+                @include wh (16px,16px);
+                margin-top:16px;
+                margin-right:3px;
+                border:3px solid $white;
+                border-top:3px solid #252D4A;
+                animation:loadspin 1s linear infinite;
+            }
+        }
+    }
+    .test_exc {
+        padding:50px 0 30px;
+    }
+    .output_wrap {
+        .tit {
+            position:relative;
+            padding-top:11px;
+            padding-left:10px;
+            &::before {
+                @include content (3px, 3px);
+                position:absolute;
+                top:17px;
+                left:0;
+                display:inline-block;
+                border-radius:50%;
+                background:$content;
+            }
+        }
+        .output_box {
+            margin-top:11px;
+            border-radius:6px;
+            font-size:$font14;
+            font-weight:$font-w-m;
+            background-color:#252C4A;
+        }
+    }
+}
+
+/***************** toast_popup *****************/
+.toast_popup {
+    border-radius:34px;
+    .popup_content {
+        padding:40px 24px;
+    }
+    .toast_check {
+        position:relative;
+        padding:9px 0;
+        @include title ($font16,$font-w-b,$title);
+        &:has(span) {
+            padding-top:69px;
+        }
+        span {
+            position:absolute;
+            top:0;
+            left:50%;
+            transform:translateX(-50%);
+            display:block;
+            @include icon(50px,50px);
+            background-image:url("../img/common/ico_ok.svg");
+        }
+        &.fail {
+            span {
+                background-image:url("../img/common/ico_erro.svg");
+                background-position:unset;
+            }
+        }
+        &.warning {
+            span {
+                @include mask($info);
+                -webkit-mask-image:url("../img/common/ico_warning.svg");
+                mask-image:url("../img/common/ico_warning.svg");
+            }
+        }
+    }
+    .toast_msg {
+        margin-top:9px;
+        padding-bottom:20px;
+        p {
+            font-size:$font14;
+        }
+    }
+    .errcode_box {
+        margin-bottom:0;
+        border-radius:6px;
+        background-color:$body;
+    }
+    .btn_errcode {
+        .errcode_dt_btn {
+            @include flexsb();
+            width:$wh100;
+            padding:15px;
+            @include title ($font14, $font-w-r, $content);
+            span {
+                @include wh(24px,24px);
+                @include mask($title);
+                -webkit-mask-image:$icoAccordion;
+                mask-image:$icoAccordion;
+                background-position:unset;
+                background-image:none;
+            }
+            &.open {
+                span {
+                    transform:rotate(-180deg);
+                }
+            }
+        }
+    }
+    .btn_box {
+        padding:0;
+    }
+}
+
+/*---------------------------------------------
+    #미디어쿼리
+---------------------------------------------*/
+@media screen and (max-width: 1550px) {
+    .monitoring_flx {
+        .mod_stl {
+            width:calc(50% - 5px);
+        }
+    }
+
+}
+@media screen and (max-width: 768px) {
+    #SGIM_wrap {
+        #container {
+            margin-left:0;
+            .cont_wrap {
+                margin:0 4px;
+                padding:64px 0 0;
+                .content {
+                    margin:0;
+                }
+            }
+            .content {
+                margin: 20px 16px 0 16px;
+            }
+            .header {
+                padding-left:44px;
+                .btn_lnb {
+                    a {
+                        display:none;
+                    }
+                }
+                .btn_lnb_m {
+                    a {
+                        top:18px;
+                        left:10px;
+                        display:inline-block;
+                        background-position:unset;
+                    }
+                }
+                .gl_nav {
+                    top:auto;
+                    transform:none;
+                }
+            }
+            &.show_nav {
+                .btn_lnb_m {
+                    a {
+                        left:200px;
+                        border-radius:0;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>grid</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+    <!-- 기존 css -->
+	<link rel="stylesheet" type="text/css" href="../../css/monitoring_style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../../css/common.css"> -->
+	<link rel="stylesheet" type="text/css" href="../../css/font.css">
+    
+    <!-- 추가 css -->
+    <link rel="stylesheet" href="../../assets/css/index.css">
+
+    <!-- jQuery 라이브러리 -->
+	<script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <!-- js -->
+	<script type="text/javascript" charset="utf-8" src="../../js/common.js"></script>
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="../../assets/img/common/logo.png">
+					</a>
+                    <div class="btn_lnb"><a>메뉴</a></div>
+					<!-- <div class="btn_lnb_m"><a>모바일메뉴</a></div> -->
+				</div>
+				<div class="nav_tab">
+					<a href="" class="">사용자</a>
+					<a href="" class="on">관리자</a>
+				</div>
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li><a href="" class="depth_menu"><i class="UserMangement"></i><span>사용자 정보 관리</span></a>
+							<ul>
+								<li><a href="">사용자 관리</a></li>
+								<li><a href="" class="on">그룹정보 관리</a></li>
+								<li><a href="">조직정보 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="ResourceMangement"></i><span>시스템(자원) 관리</span></a>
+							<ul>
+								<li><a href="">시스템</a></li>
+								<li><a href="">시스템 그룹</a></li>
+								<li><a href="">시스템 계정</a></li>
+								<li><a href="">시스템 특권권한 관리</a></li>
+								<li><a href="">시스템 정책설정 관리</a></li>
+								<li><a href="">End point/장치 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="ServerZoneMangement"></i><span>서비스 영역 관리</span></a>
+							<ul>
+								<li><a href="">테넌트 관리</a></li>
+								<li><a href="">서버 영역 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="RoleMangement"></i><span>역할 관리</span></a>
+							<ul>
+								<li><a href="">내부역할 관리</a></li>
+								<li><a href="">자원 접근 역할 관리</a></li>
+								<li><a href="">역할 배포 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="PolicyMangement"></i><span>접근 정책/서비스 관리</span></a>
+							<ul>
+								<li><a href="">Agent/API 관리</a></li>
+								<li><a href="">인증 서버/서비스 관리</a></li>
+								<li><a href="">인증 정책 관리</a></li>
+								<li><a href="">접근 서버/서비스 관리</a></li>
+								<li><a href="">접근 정책 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="SynchronizeManagment"></i><span>수집/배포 관리</span></a>
+							<ul>
+								<li><a href="">수집/배포 대시보드</a></li>
+								<li><a href="">수집 정책 관리</a></li>
+								<li><a href="">배포 정책 관리</a></li>
+								<li><a href="">배포 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="WorkflowManagement"></i><span>결재/승인 관리</span></a>
+							<ul>
+								<li><a href="">워크플로우 관리</a></li>
+								<li><a href="">요청/승인 관리</a></li>
+								<li><a href="">결재 권한 위임</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AuditingReport"></i><span>모니터링 및 감사/보고서</span></a>
+							<ul>
+								<li><a href="">모니터링 대시보드</a></li>
+								<li><a href="">감사 로그 조회</a></li>
+								<li><a href="">보고서 관리</a></li>
+								<li><a href="">메시지 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class=""><i class="System"></i><span>SGIM 설정</span></a>
+						</li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard  ICAM V2.0</p>
+					<!-- e: copyright 추가 -->
+				</div>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header">
+				<div class="header_title">
+					<ol class="link_depth">
+						<li class="home"><a href="">HOME</a></li>
+						<li><a href="">사용자 정보관리 관리</a></li>
+						<li><a href="">사용자 관리</a></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><span>시스템관리자 (ztadimin)</span></a></li>
+					<li class="timer"><i></i><span><em>00:15:00</em> 후 접속 끊김</span><button class="time_ref" title="세션 시간 새로고침"></button></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>기타알람</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_menualdown"><a href="">down</a>
+						<div class="balloon alim_pop down_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>menual</span>
+								</div>
+								<ul class="alim_list">
+									<li><a><i class="icon_menual"></i>menual download 01</a></li>
+									<li><a><i class="icon_menual"></i>menual download 02</a></li>
+									<li><a><i class="icon_menual"></i>menual download 03</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="btn_logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<div class="monitoring_wrap">
+				<div class="monitoring_flx">
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">CPU 사용 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="data_cht_row">
+								<div class="wid50">
+									<dl class="data_cht_info">
+										<dt>사용가능한 프로세스</dt>
+										<dd>16</dd>
+									</dl>
+									<dl class="data_cht_info">
+										<dt>프로세스 점유율</dt>
+										<dd>4.21%</dd>
+									</dl>
+									<dl class="data_cht_info">
+										<dt>시스템 점유율</dt>
+										<dd>5%</dd>
+									</dl>
+								</div>
+								<!-- 게이지 챠트 -->
+								<div class="gauge_box wid50">
+									<canvas id="view-gauge" width="180px" height="180px">
+							        </canvas>
+							        <ul class="gauge-legend">
+							        	<li class="min">0</li>
+							        	<li class="max">100</li>
+							        </ul>
+							        <div class="preview-textfield"><em>50</em>%</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">CPU 사용 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="data_cht_row">
+								<!-- 게이지 챠트 -->
+								<div class="wid50 gauge_box">
+									<canvas id="view-gauge02" width="180px" height="180px">
+							        </canvas>
+							        <ul class="gauge-legend">
+							        	<li class="min">0</li>
+							        	<li class="max">100</li>
+							        </ul>
+							        <div class="preview-textfield" style="padding-top:6px"><span class="gg_opt">메모리</span><em>12</em>%</div>
+								</div>
+								<div class="wid50 gauge_box">
+									<canvas id="view-gauge03" width="180px" height="180px">
+							        </canvas>
+							        <ul class="gauge-legend">
+							        	<li class="min">0</li>
+							        	<li class="max">100</li>
+							        </ul>
+							        <!-- 주의"bg-yel" 경고"bg-red" 클래스 --> 
+							        <div class="preview-textfield bg-yel" style="padding-top:6px"><span class="gg_opt">스왑공간</span><em>70</em>%</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">디스크 사용 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="hrz_bar_lyt">
+								<div class="hrz_bar_legend">
+									<p class="legend_name">Disk1</p>
+									<p class="legend_info">D:/</p>
+								</div>
+								<div class="hrz_bar_inner">
+									<div class="bar_chart_bg">
+										<div class="bar_value disk01"></div>
+									</div>
+									<p class="bar_dtail">3,7206.0GB 중 6,682.6GB 사용 가능</p>
+								</div>
+							</div>
+							<div class="hrz_bar_lyt">
+								<div class="hrz_bar_legend">
+									<p class="legend_name">Disk2</p>
+									<p class="legend_info">E:/</p>
+								</div>
+								<div class="hrz_bar_inner">
+									<div class="bar_chart_bg">
+										<div class="bar_value disk02"></div>
+									</div>
+									<p class="bar_dtail">3,7206.0GB 중 6,682.6GB 사용 가능</p>
+								</div>
+							</div>
+							<div class="hrz_bar_lyt">
+								<div class="hrz_bar_legend">
+									<p class="legend_name">Disk3</p>
+									<p class="legend_info">F:/</p>
+								</div>
+								<div class="hrz_bar_inner">
+									<div class="bar_chart_bg">
+										<div class="bar_value disk03"></div>
+									</div>
+									<p class="bar_dtail">3,7206.0GB 중 6,682.6GB 사용 가능</p>
+								</div>
+							</div>
+							<style type="text/css">
+								.bar_value.disk01 {animation:barchart01 .8s ease-out forwards;}
+								.bar_value.disk02 {animation:barchart02 .8s ease-out forwards;}
+								.bar_value.disk03 {animation:barchart03 .8s ease-out forwards;}
+								@keyframes barchart01 {
+									0% {width: 0%}
+									100% {width:10%}
+								}
+								@keyframes barchart02 {
+									0% {width: 0%}
+									100% {width:20%}
+								}
+								@keyframes barchart03 {
+									0% {width: 0%}
+									100% {width:40%}
+								}
+							</style>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">기본 타이틀<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="mod_cont_df gn_info_mod">
+								<dl>
+									<dt>Option1</dt>
+									<dd>text text</dd>
+								</dl>
+								<dl>
+									<dt>Option2</dt>
+									<dd>text text </dd>
+								</dl>
+								<dl>
+									<dt>Option3</dt>
+									<dd>text<br />text </dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">사용자<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="data_ico_mod">
+								<div class="data_ico_lyt">
+									<div class="icon_mnt">
+										<i class="mnt_user"></i>
+									</div>
+									<dl class="data_txt_stl">
+										<dt>총 사용</dt>
+										<dd>37</dd>
+									</dl>
+								</div>
+								<div class="data_detail_info">
+									<dl>
+										<dt>활성</dt>
+										<dd>16</dd>
+									</dl>
+									<dl>
+										<dt>잠금</dt>
+										<dd>1</dd>
+									</dl>
+									<dl>
+										<dt>비활성</dt>
+										<dd>15</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">사용자<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="data_ico_mod">
+								<div class="data_ico_lyt">
+									<div class="icon_mnt">
+										<i class="mnt_server"></i>
+									</div>
+									<dl class="data_txt_stl">
+										<dt>총 계정</dt>
+										<dd>111</dd>
+									</dl>
+								</div>
+								<div class="data_detail_info">
+									<dl>
+										<dt>활성</dt>
+										<dd>16</dd>
+									</dl>
+									<dl>
+										<dt>잠금</dt>
+										<dd>1</dd>
+									</dl>
+									<dl>
+										<dt>비활성</dt>
+										<dd>15</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">시스템 계정 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="data_ico_mod">
+								<div class="data_ico_lyt">
+									<div class="icon_mnt">
+										<i class="mnt_system"></i>
+									</div>
+									<dl class="data_txt_stl">
+										<dt>총 계정</dt>
+										<dd>371</dd>
+									</dl>
+								</div>
+								<div class="data_detail_info">
+									<dl>
+										<dt>활성</dt>
+										<dd>238</dd>
+									</dl>
+									<dl>
+										<dt>잠금</dt>
+										<dd>133</dd>
+									</dl>
+									<dl>
+										<dt>비활성</dt>
+										<dd>15</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">비인가 계정 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="data_ico_mod">
+								<div class="data_ico_lyt">
+									<div class="icon_mnt">
+										<i class="mnt_unauthorized"></i>
+									</div>
+									<dl class="data_txt_stl">
+										<dt>총 계정</dt>
+										<dd>54</dd>
+									</dl>
+								</div>
+								<div class="data_detail_info">
+									<dl>
+										<dt>활성</dt>
+										<dd>5</dd>
+									</dl>
+									<dl>
+										<dt>잠금</dt>
+										<dd>49</dd>
+									</dl>
+									<dl>
+										<dt>비활성</dt>
+										<dd>0</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">서버 접속체크 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="data_ico_mod">
+								<div class="data_ico_lyt">
+									<div class="icon_mnt">
+										<i class="mnt_connect"></i>
+									</div>
+									<dl class="data_txt_stl">
+										<dt>총 합계</dt>
+										<dd>15</dd>
+									</dl>
+								</div>
+								<div class="data_detail_info">
+									<dl>
+										<dt>통신성공</dt>
+										<dd>6</dd>
+									</dl>
+									<dl>
+										<dt>정보갱신 성공</dt>
+										<dd>7</dd>
+									</dl>
+									<dl>
+										<dt class="redtxt">정보갱신 실패</dt>
+										<dd class="redtxt">4</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">등록된 업무/역할<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="data_ico_mod flx no_dt_info">
+								<div class="data_ico_lyt">
+									<div class="icon_mnt">
+										<i class="mnt_task"></i>
+									</div>
+									<dl class="data_txt_stl">
+										<dt>업무</dt>
+										<dd>63</dd>
+									</dl>
+								</div>
+								<div class="data_ico_lyt">
+									<div class="icon_mnt">
+										<i class="mnt_role"></i>
+									</div>
+									<dl class="data_txt_stl">
+										<dt>역할</dt>
+										<dd>5</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">네트워크 사용 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="use_onoff_mod">
+								<div class="use_onoff_stl on">
+									<p class="use_onoff_icon"><i class="icon_networkuse"></i></p>
+									<p class="use_name_txt">NETWORK name</p>
+								</div>
+								<div class="use_onoff_stl">
+									<p class="use_onoff_icon"><i class="icon_networkuse"></i></p>
+									<p class="use_name_txt">NETWORK 01</p>
+								</div>
+								<div class="use_onoff_stl">
+									<p class="use_onoff_icon"><i class="icon_networkuse"></i></p>
+									<p class="use_name_txt">NETWORK 02</p>
+								</div>
+								<div class="use_onoff_stl">
+									<p class="use_onoff_icon"><i class="icon_networkuse"></i></p>
+									<p class="use_name_txt">NETWORK 03</p>
+								</div>
+								<div class="use_onoff_stl on">
+									<p class="use_onoff_icon"><i class="icon_networkuse"></i></p>
+									<p class="use_name_txt">NETWORK 04</p>
+								</div>
+								<div class="use_onoff_stl on">
+									<p class="use_onoff_icon"><i class="icon_networkuse"></i></p>
+									<p class="use_name_txt">NETWORK 05</p>
+								</div>
+								<div class="use_onoff_stl">
+									<p class="use_onoff_icon"><i class="icon_networkuse"></i></p>
+									<p class="use_name_txt">NETWORK 06</p>
+								</div>
+								<div class="use_onoff_stl">
+									<p class="use_onoff_icon"><i class="icon_networkuse"></i></p>
+									<p class="use_name_txt">NETWORK 07</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">인증 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="data_acce_lyt">
+								<dl class="data_txt_stl">
+									<dt>로그인</dt>
+									<dd>
+										<em class="bluetxt">19</em><span>/422</span>
+									</dd>
+								</dl>
+								<dl class="data_txt_stl">
+									<dt>비밀번호 초기화</dt>
+									<dd>
+										<em class="bluetxt">2</em><span>/32</span>
+									</dd>
+								</dl>
+								<dl class="data_txt_stl">
+									<dt>시스템 로그인 오류</dt>
+									<dd>
+										<em class="orttxt">20</em>
+									</dd>
+								</dl>
+								<dl class="data_txt_stl">
+									<dt>접근거부</dt>
+									<dd>
+										<em class="orttxt">2</em>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">정책 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="tab_wrap">
+								<ul class="tab_list">
+									<li><a class="on">수집 및 배포</a></li>
+									<li><a>인증 정책</a></li>
+									<li><a>역할 정책</a></li>
+								</ul>
+							</div>
+							<!-- 3칸으로 쓰고싶을때 "data_col3클래스 추가" -->
+							<div class="data_acce_lyt data_col3">
+								<dl class="data_txt_stl">
+									<dt>인증(Login)</dt>
+									<dd>12</dd>
+								</dl>
+								<dl class="data_txt_stl">
+									<dt>인증(허용)</dt>
+									<dd>4</dd>
+								</dl>
+								<dl class="data_txt_stl">
+									<dt>암호 정책</dt>
+									<dd>7</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">서버 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="tab_wrap">
+								<ul class="tab_list">
+									<li><a class="on">관리대상서버 <span class="tab_stt">0</span></a></li>
+									<li><a>연동서버 <span class="tab_stt">0</span></a></li>
+									<li><a>인사시스템 <span class="tab_stt">0</span></a></li>
+									<li><a>기타서버 <span class="tab_stt">0</span></a></li>
+								</ul>
+							</div>
+							<!-- 데이터 많을 때 폰트크기 줄임 클래스data_sml 추가-->
+							<div class="data_acce_lyt data_col3 data_sml">
+								<dl class="data_txt_stl">
+									<dt>Linux</dt>
+									<dd>0</dd>
+								</dl>
+								<dl class="data_txt_stl">
+									<dt>IBM-AIX</dt>
+									<dd>0</dd>
+								</dl>
+								<dl class="data_txt_stl">
+									<dt>Solaris</dt>
+									<dd>0</dd>
+								</dl>
+								<dl class="data_txt_stl">
+									<dt>HP-UX</dt>
+									<dd>0</dd>
+								</dl>
+								<dl class="data_txt_stl">
+									<dt>Windows</dt>
+									<dd>0</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">업무별 계정 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<button class="shadow btn_r_absl">최근 데이터 조회<i class="icon_search"></i></button>
+							<div class="d-chart">
+								<!-- 챠트 -->
+							</div>
+						</div>
+					</div>
+					<div class="mod_stl">
+						<div class="mod_tit">
+							<p class="mod_tit_txt">
+								<a href="">그룹 현황<i class="btn_more"></i></a>
+							</p>
+						</div>
+						<div class="mod_cont">
+							<div class="chart_info_lyt">
+								<dl class="data_total data_cht_info">
+									<dt>총 역할</dt>
+									<dd>16</dd>
+								</dl>
+								<div class="flx">
+									<dl class="data_cht_info">
+										<dt>생성</dt>
+										<dd class="bluetxt">4</dd>
+									</dl>
+									<dl class="data_cht_info">
+										<dt>삭제</dt>
+										<dd class="orttxt">7</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="d-chart">
+								<!-- 챠트 -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dash_contrl show">
+					<button class="btn_dbcontrl"></button>
+					<div class="contrl_wrap">
+						<div class="contrl_tit">
+							<p>대시보드 컨트롤러</p>
+							<button class="text icon_reset">초기화</button>
+						</div>
+						<div class="contrl_cont">
+							<ul class="contrl_list">
+								<li>
+									<p class="stxt">사용자</p>
+									<p class="tg_sch_stl">
+										<input type="checkbox" class="tg_sch" id="dbcontrl01" name="" checked="checked">
+										<label for="dbcontrl01" class="tg_sch_lab"></label>
+									</p>
+								</li>
+								<li>
+									<p class="stxt">서버현황</p>
+									<p class="tg_sch_stl">
+										<input type="checkbox" class="tg_sch" id="dbcontrl02" name="" checked="checked">
+										<label for="dbcontrl02" class="tg_sch_lab"></label>
+									</p>
+								</li>
+								<li>
+									<p class="stxt">일일서버</p>
+									<p class="tg_sch_stl">
+										<input type="checkbox" class="tg_sch" id="dbcontrl03" name="" checked="checked">
+										<label for="dbcontrl03" class="tg_sch_lab"></label>
+									</p>
+								</li>
+								<li>
+									<p class="stxt">계정현황</p>
+									<p class="tg_sch_stl">
+										<input type="checkbox" class="tg_sch" id="dbcontrl04" name="" checked="checked">
+										<label for="dbcontrl04" class="tg_sch_lab"></label>
+									</p>
+								</li>
+								<li>
+									<p class="stxt">비인가 계정</p>
+									<p class="tg_sch_stl">
+										<input type="checkbox" class="tg_sch" id="dbcontrl05" name="" checked="checked">
+										<label for="dbcontrl05" class="tg_sch_lab"></label>
+									</p>
+								</li>
+								<li>
+									<p class="stxt">등록된 업무</p>
+									<p class="tg_sch_stl">
+										<input type="checkbox" class="tg_sch" id="dbcontrl06" name="" checked="checked">
+										<label for="dbcontrl06" class="tg_sch_lab"></label>
+									</p>
+								</li>
+								<li>
+									<p class="stxt">결제현황</p>
+									<p class="tg_sch_stl">
+										<input type="checkbox" class="tg_sch" id="dbcontrl07" name="" checked="checked">
+										<label for="dbcontrl07" class="tg_sch_lab"></label>
+									</p>
+								</li>
+								<li>
+									<p class="stxt">위임업무</p>
+									<p class="tg_sch_stl">
+										<input type="checkbox" class="tg_sch" id="dbcontrl08" name="" checked="checked">
+										<label for="dbcontrl08" class="tg_sch_lab"></label>
+									</p>
+								</li>
+							</ul>
+							<div class="btn_box">
+								<button class="primary">상태저장</button>
+								<button class="line ctrl_close">닫기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="../../img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 게이지 챠트 -->
+	<script src="../../js/gauge.min.js"></script>
+	<script src="../../js/gauge.js"></script>
+
+</body>
+</HTML>

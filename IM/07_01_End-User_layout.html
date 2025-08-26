@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<a class="menu_close_btn"></a>
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+					</a>
+				</div>
+				<div class="nav_tab">
+					<a href="" class="on">사용자</a>
+					<a href="" class="">관리자</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class=""><i class="Home"></i><span>HOME</span></a></li>
+					<li><a href="" class="depth_menu"><i class="MyProfiles"></i><span>내 정보</span></a>
+						<ul style="k">
+							<li><a href="">기본 정보</a></li>
+							<li><a href="" class="on">장비 관리</a></li>
+							<li><a href="">접속 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="MyAuth"></i><span>권한(자원) 관리</span></a>
+						<ul style="">
+							<li><a href="">보우 권한/자원</a></li>
+							<li><a href="">신청하기</a></li>
+							<li><a href="">신청 목록</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="MyApprove"></i><span>승인 관리</span></a>
+						<ul style="">
+							<li><a href="">승인 목록</a></li>
+							<li><a href="">결재 권한 위임</a></li>
+							<li><a href="">위임 목록</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="MyMessage"></i><span>메시지 확인</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container" class="firstPage">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>WELCOME!</h1>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> <span>user01</span></a></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:block;">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="welcomeWrap">
+				<div class="left_wrap">
+					<div class="dash_box user_profile">
+						<p class="pf_img"><img src="img/common/user.png"></p>
+						<div class="pf_btns_left">
+							<a href="" class="pf_btns icon_myauth" title="권한 위임"></a>
+							<a href="" class="pf_btns icon_mypw" title="암호관리"></a>
+						</div>
+						<a href="" title="내 정보 수정" class="pf_btns icon_mymodify"></a>
+						<div class="pf_name">
+							<p class="user_name">User01<span>사용자</span></p>
+							<p class="user_position"><span>End-User</span></p>
+						</div>
+						<div>
+							<div class="tab_wrap">
+								<ul class="tab_list">
+									<li><a href="" class="on">역할</a></li>
+									<li><a href="">시스템</a></li>
+								</ul>
+								<div class="tab_btns">
+									<a href="" title="reqest" class="btn_req"></a>
+									<a href="" class="btn_more">더보기</a>
+								</div>
+							</div>
+							<div class="tbl_list">
+								<table class="default_tbl">
+									<thead>
+										<tr>
+											<th class="tbl_num_wid">NO.</th>
+											<th>종류</th>
+											<th>제조사</th>
+											<th>모델명</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>1</th>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+										</tr>
+										<tr>
+											<th>2</th>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right_wrap">
+					<div class="dash_box">
+						<p class="dash_tit">요청 사항 진행 상태<a href="" class="btn_more">더보기</a></p>
+						<div class="tbl_list scroll">
+							<table class="default_tbl">
+								<thead>
+									<tr>
+										<th class="tbl_num_wid">NO.</th>
+										<th>종류</th>
+										<th>제조사</th>
+										<th>모델명</th>
+										<th>이름</th>
+										<th>설명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>1</th>
+										<td>OS</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+										<td>Linux 표준모델</td>
+									</tr>
+									<tr>
+										<th>2</th>
+										<td>OS</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+										<td>Linux 표준모델</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="dash_box">
+						<p class="dash_tit">승인 처리 내역<a href="" class="btn_more">더보기</a></p>
+						<div class="tbl_list scroll">
+							<table class="default_tbl">
+								<thead>
+									<tr>
+										<th class="tbl_num_wid">NO.</th>
+										<th>종류</th>
+										<th>제조사</th>
+										<th>모델명</th>
+										<th>이름</th>
+										<th>설명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>1</th>
+										<td>OS</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+										<td>Linux 표준모델</td>
+									</tr>
+									<tr>
+										<th>2</th>
+										<td>OS</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+										<td>Linux 표준모델</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>
