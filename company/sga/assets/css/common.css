@@ -60,7 +60,7 @@
 
 body { min-width:1600px; background:#121212; color:#fff; overflow-y:hidden; }
 body * {  font-family:"S-CoreDream"; font-size:13px; }
-body > section{ margin-top:50px; height:calc(100% - 70px); top:-13px; }
+body > section{ margin:50px 0 0 70px; height:calc(100% - 70px); top:-13px; }/* 2025 margin 수정 */
 body.win_popup > section{ top:0; }
 .sub{ min-height:100%; }
 .mCSB_container{ width:100% !important; }
@@ -178,8 +178,19 @@ a.logo_link { display:inline-block; margin-right:20px; width:115px; height:48px;
 
 
 /**left menu**/
-header.header_box {  display:grid; align-items:center; position:fixed; top:75px; left:10px; bottom:15px; width:60px; height:auto; background:var(--btn--color-dark); border-radius:10px;   }
+header.header_box {  display:grid; position:fixed; top:0; left:0; bottom:0; width:60px; height:auto; background:var(--btn--color-dark); } /* 2025 수정 */
 header.header_box.on{ width:250px; background:#184385; box-shadow:2px 0px 6px 2px #1a53ab; }
+
+/* S: 2025 추가 */
+.header_box ~ .top_cont { left:60px; width:calc(100% - 60px); }
+.header_box .menu_btn { position:relative; margin:20px auto 0; width:100%; height:20px; text-align:center; cursor:pointer; }
+.header_box .menu_btn .menu { margin-top:5px; width:24px; height: 2px; background-color:#FFFFFF; opacity:.7; }
+.header_box .menu_btn .menu::after,
+.header_box .menu_btn .menu::before { content:""; position:absolute; left:50%; transform:translateX(-50%); display:inline-block; width:24px; height: 2px; background-color:#FFFFFF; }
+.header_box .menu_btn .menu::after { bottom:0;}
+.header_box .menu_btn .menu::before { top:0; }
+/* E: 2025 추가 */
+
 .header_box nav .lnb>li { padding:0 10px; margin-bottom:10px; opacity:.65; }
 .header_box nav .lnb>li.active { opacity:1; }
 .header_box nav .lnb>li:last-child { margin-bottom:0; }
@@ -193,6 +204,13 @@ header.header_box.on{ width:250px; background:#184385; box-shadow:2px 0px 6px 2p
 .header_box nav .lnb>li>a.menu04:after { background:url("../images/common/gnb_icon4.png") no-repeat center; }
 .header_box nav .lnb>li>a.menu05:after { background:url("../images/common/gnb_icon6.png") no-repeat center; }
 .header_box nav .lnb>li>a.menu06:after { background:url("../images/common/gnb_icon5.png") no-repeat center; }
+
+/* S: 2025 추가 */
+.header_box.on .menu_btn { text-align:right; }
+.header_box.on .menu_btn .menu { margin-right:10px; }
+.header_box.on .menu_btn .menu::after,
+.header_box.on .menu_btn .menu::before { left:auto; right:10px; transform:none; }
+/* E: 2025 추가 */
 
 .header_box.on nav .lnb>li>a>span { height:40px; line-height:40px; padding-left:40px; font-weight:500;  }
 .header_box.on nav .lnb>li.has_children>a>span:before,
@@ -398,7 +416,6 @@ input[type=radio]+label:before { width:16px; height:16px; border:1px solid var(-
 background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='3.2' cy='3.2' r='3.2' fill='%23666873'/%3E%3C/svg%3E"); }
 input[type=radio]:checked+label:before { background-color:var(--btn-color-blue); border:1px solid var(--btn-color-blue);
 background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='3.2' cy='3.2' r='3.2' fill='%23fff'/%3E%3C/svg%3E"); }
-}
 
 
 /**select**/
@@ -475,7 +492,7 @@ h4.tit{ padding:0 0 15px; }
 h4.tit,
 .alertlist_search_cont_tit h4,
 .securitypolicy_cont_tit h4,
-.alertlist_cont_box .alertlist_top h3,
+.alertlist_cont_box .alertlist_top h3
 { display:inline-block; font-size:16px !important; font-weight:600 !important; background:transparent; color:#fff; }
 .configuration_box .col02 .set_opt_tit h3 a{ font-size:16px !important; font-weight:600 !important; background:transparent; color:#fff; }
 h5.tit, .label{ font-weight:500; color:var(--none-color); text-align:left; font-size:13px; }
@@ -1091,7 +1108,7 @@ span.center{
 .computer_box .sc_info_box.image_scan > div{ position:relative; max-width:200px; }
 .computer_box .sc_info_box.image_scan > div.scanstatus { max-width:250px; }
 .computer_box .sc_info_box div:first-child::after { display:none; }
-.computer_box > .sc_info { height:auto; cus }
+.computer_box > .sc_info { height:auto; }
 .computer_box > .sc_info p { width:100%; text-align:right; }
 .computer_box > .sc_info p:last-child{ padding-bottom:20px; text-align:left; }
 .computer_box > .sc_info,
@@ -2016,8 +2033,7 @@ webkit-mask-image: url("../images/common/ico_arr.svg");background-color:var(--no
 	body section .dashboard_main, body section .sub {
 		width:auto; min-width: 1220px;
 	}
-)
+}
 
 
 .bt_w{ border-bottom:1px solid #fff !important;   }
-
