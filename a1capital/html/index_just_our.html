@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>로니오(에이원캐피탈) | app worklist</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keyword" content="">
+    <meta name="description" content="ia, worklist">
+    <meta name="author" content="kys">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="../resources/css/worklist.css" />
+    <script src="./resources/js/lib/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="container">
+
+            <div class="header">
+                <h1>로니오(에이원캐피탈) - app worklist</h1>
+                <ul>
+                    <li>프로젝트 기간 : 2024.02.26 ~ (퍼블 투입)</li>
+                    <!-- <li><span id="delCnt"></span> / <span id="compCnt"></span> (loan / renewal)</li> -->
+                    <li>
+                        <h3>전체페이지 나온 이후 수정진척률 확인용</h3>
+                        <span id="wipCnt"></span> (남은 화면 수)
+                    </li>
+                    <li><span id="totCnt"></span> (총 본수)</li>
+                    <li style="margin-bottom:30px;">
+                </ul>
+                <div class="progressArea"></div>
+
+                <dl>
+                    <dt>메모사항</dt>
+                    <dd></ㅇd>
+                </dl>
+            </div>
+
+            <div class="cont">
+                <!-- s: 가이드 -->
+                <div class="guide" style="display:none">
+                    <h3 class="tit">가이드</h3>
+                    <summary></summary>
+                    <table style="display:table;">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="8%">
+                            <col width="22%">
+                            <col width="15%">
+                            <col width="10%">
+                            <col width="*">
+                            <col width="10%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">분류</th>
+                                <th scope="col">설명</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">추가 작업 필요</th>
+                                <th scope="col">작업 진행 사항</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="../guide/html/color.html"
+                                    target="_blank">pc 가이드확인</a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="../mobile/html/index.html"
+                                    target="_blank">모바일 worklist</a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 가이드 -->
+
+				<!-- s: 메인 -->
+                <div class="guide">
+                    <h3 class="tit">메인/메뉴</h3>
+                    <summary></summary>
+                    <table style="display:table;">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>메인</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="./main/LONIO-PC-MAN-00.html" target="_blank">LONIO-PC-MAN-00</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-11</td>
+                                <td class="state ok"></td>
+                                <td>main.css변경->주석표시</td>
+                            </tr>
+                            <tr>
+                                <td>메뉴</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="./menu/LONIO-PC-MAN-001.html" target="_blank">LONIO-PC-MAN-001</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-11</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 메인 -->
+
+                <!-- s: 대출신청 -->
+                <div class="guide">
+                    <h3 class="tit">대출신청</h3>
+                    <summary></summary>
+                    <table style="display:table;">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="5">신용대출</td>
+                                <td>대출약관동의</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CRDLN/LONIO-PC-CRDLN-001.html" target="_blank">LONIO-PC-CRDLN-001</a></td>
+                                <td>윤은정</td>
+                                <td>2024-02-27</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>실명인증</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CRDLN/LONIO-PC-CRDLN-002.html" target="_blank">LONIO-PC-CRDLN-002</a></td>
+                                <td>윤은정/이솔</td>
+                                <td>2024-02-28</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>적합성·적정성</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CRDLN/LONIO-PC-CRDLN-003.html" target="_blank">LONIO-PC-CRDLN-003</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.12</td>
+                                <td></td>
+                                <td>전체동의 스크립트 확인필요-완료</td>
+                             </tr>
+                             <tr>
+                                <td>대출신청서 작성</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CRDLN/LONIO-PC-CRDLN-004.html" target="_blank">LONIO-PC-CRDLN-004</a></td>
+                                <td>윤은정/이솔</td>
+                                <td>2024-03-12</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                             </tr>
+							 <tr class="last">
+                                <td>대출신청서 완료</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CRDLN/LONIO-PC-CRDLN-005.html" target="_blank">LONIO-PC-CRDLN-005</a></td>
+                                <td>윤은정/이솔</td>
+                                <td>2024-03-12</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                             </tr>
+                             <!-- <tr>
+                                <td rowspan="5">자동차담보대출</td>
+                                <td>대출약관동의</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                                         </tr>
+                                                         <tr>
+                                <td>실명인증</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                                         </tr>
+                                                         <tr>
+                                <td>적합성·적정성</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td>대출신청서 작성</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr class="last">
+                                <td>대출신청서 완료</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td rowspan="5">추가/재대출</td>
+                                <td>대출약관동의</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                                         </tr>
+                                                         <tr>
+                                <td>실명인증</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                                         </tr>
+                                                         <tr>
+                                <td>적합성·적정성</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td>대출신청서 작성</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr class="last">
+                                <td>대출신청서 완료</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr> -->
+                             
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 대출신청 -->
+
+                <!-- s: 대출안내 -->
+
+                <div class="guide">
+                    <h3 class="tit">대출안내</h3>
+                    <summary></summary>
+                    <table style="display:table;">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="5">대출안내</td>
+                                <td>대출상품</td>
+                                <td>신용대출</td>
+                                <td class="fileName"><a href="./LNINF/LONIO-PC-LNINF-001.html" target="_blank">LONIO-PC-LNINF-001</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-13</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+							<tr>
+                                <td>대출상품</td>
+                                <td>자동차담보대출</td>
+                                <td class="fileName"><a href="./LNINF/LONIO-PC-LNINF-002.html" target="_blank">LONIO-PC-LNINF-002</a></td>
+                                <td>윤은정</td>
+                                <td>2024-02-29</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>대출신청절차</td>
+                                <td></td>
+                                <td class="fileName"><a href="./LNINF/LONIO-PC-LNAPSTP-001.html" target="_blank">LONIO-PC-LNAPSTP-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.13</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">대출계산기</td>
+                                <td>대출계산</td>
+                                <td class="fileName"><a href="./LNINF/LONIO-PC-LNCLR-001.html" target="_blank">LONIO-PC-LNCLR-001</a></td>
+                                <td>윤은정</td>
+                                <td>2024-03-05</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                             </tr>
+                             <tr class="last">
+                                <td>이자계산</td>
+                                <td class="fileName"><a href="./LNINF/LONIO-PC-LNCLR-002.html" target="_blank">LONIO-PC-LNCLR-002</a></td>
+                                <td>윤은정</td>
+                                <td>2024-03-05</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 대출안내 -->
+
+                 <!-- s: 고객센터 -->
+                 <div class="guide">
+                    <h3 class="tit">고객센터</h3>
+                    <summary></summary>
+                    <table style="display:table;">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+							<tr>
+                                <td rowspan="2">금융서비스</td>
+                                <td rowspan="2">대출진행조회</td>
+                                <td>안내</td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-MW-LNPRG-001.html" target="_blank">LONIO-MW-LNPRG-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.14</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+							<tr>
+                                <td>결과</td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-MW-LNPRG-002.html" target="_blank">LONIO-MW-LNPRG-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.14</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+							<tr>
+                                <td rowspan="3">조회동의확인</td>
+                                <td>실명 및 본인 확인</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-PC-CNFINQ-001.html" target="_blank">LONIO-PC-CNFINQ-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.14</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>적합성·적정성</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-PC-CNFINQ-002.html" target="_blank">LONIO-PC-CNFINQ-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.14</td>
+                                <td class="state ok"></td>
+                                <td>전체동의 스크립틔 확인필요-완료</td>
+                            </tr>
+                            <tr>
+                                <td>조회동의확인(본인인증 완료)</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-PC-CNFINQ-003.html" target="_blank">LONIO-PC-CNFINQ-003</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.14</td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+							<tr>
+                                <td rowspan="3">금융소비자보호</td>
+                                <td>이용제공현황</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-PC-STPRVS-001.html" target="_blank">LONIO-PC-STPRVS-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.18</td>
+                                <td></td>
+                                <td>화면이 두개가 나와서 여쭤보고 시작<br>화면명 확인 필요-완료</td>
+							</tr>
+							<tr>
+                                <td rowspan="2">전화권유판매원 조회</td>
+                                <td>조회</td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-PC-TELAST-001.html" target="_blank">LONIO-PC-TELAST-001</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.18</td>
+                                <td></td>
+                                <td>나의상담내역조회 화면명과 같음 확인필요(LONIO-PC-INQMC-003으로 예비 변경)-완료</td>
+							</tr>
+							<tr>
+                                <td>검색결과</td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-PC-TELAST-002.html" target="_blank">LONIO-PC-TELAST-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.18</td>
+                                <td></td>
+                                <td>나의상담내역조회 화면명과 같음 확인필요(LONIO-PC-INQMC-003으로 예비 변경)-완료</td>
+							</tr>
+                            <tr class="last">
+                                <td>자주묻는 질문</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-PC-FAQ-001.html" target="_blank">LONIO-PC-FAQ-001</a></td>
+                                <td>윤은정</td>
+                                <td>24-03-06</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="last">
+                                <td rowspan="2">나의상담내역조회</td>
+                                <td>고객 정보 입력</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-PC-INQMC-001.html" target="_blank">LONIO-PC-INQMC-001</a></td>
+                                <td>윤은정</td>
+                                <td>24-03-06</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>조회결과</td>
+                                <td></td>
+                                <td class="fileName"><a href="./CUSTOMER/LONIO-PC-INQMC-002.html" target="_blank">LONIO-PC-INQMC-002</a></td>
+                                <td>이솔</td>
+                                <td>2024.03.14</td>
+                                <td></td>
+                                <td>전화권유판매원조회 화면명과 같음 확인필요-완료</td>
+                             </tr>
+                             <!-- <tr class="last">
+                                <td>부채증명발급</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td>/</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr class="last">
+                                <td>납입이자조회</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td>/</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td>전화권유판매원 조회</td>
+                                <td>정보입력</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td>/</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr class="last">
+                                <td></td>
+                                <td>view</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td>/</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td>이용제공현황</td>
+                                <td>본인정보 이용·제공 조회</td>
+                                <td>조회하기</td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td>/</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr class="">
+                                <td></td>
+                                <td>마케팅 목적 이용 제공</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td>/</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr class="last">
+                                <td></td>
+                                <td>신용정보 제공사실 조회</td>
+                                <td>신청서 양식 다운로드 버튼</td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td>/</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr class="last">
+                                <td></td>
+                                <td>대출계약철회안내</td>
+                                <td></td>
+                                <td class="fileName"><a href="javascript:void(0);" target="_blank"></a></td>
+                                <td>/</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                             </tr> -->
+                             
+                             
+                             
+                             
+
+                             
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 대출안내 -->
+
+                  <!-- s: 회사소개 -->
+                  <div class="guide">
+                    <h3 class="tit">회사소개</h3>
+                    <summary></summary>
+                    <table style="display:table;">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="last">
+                                <td>인사말</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-GRT-001.html" target="_blank">LONIO-PC-GRT-001</a></td>
+                                <td>윤은정</td>
+                                <td>2024-02-29</td>
+                                <td></td>
+                                <td>이미지 넣기-완료</td>
+                            </tr>
+                            <tr class="last">
+                                <td>회사개요</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-CPOVR-001.html" target="_blank">LONIO-PC-CPOVR-001</a></td>
+                                <td>윤은정</td>
+                                <td>2024-03-04</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="last">
+                                <td>연혁</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-CPHST-001.html" target="_blank">LONIO-PC-CPHST-001</a></td>
+                                <td>윤은정</td>
+                                <td>2024-03-04</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="last">
+                                <td>조직도</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-ORGCHR-001.html" target="_blank">LONIO-PC-ORGCHR-001</a></td>
+                                <td>윤은정</td>
+                                <td>2024-03-04</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr class="last">
+                                <td>CI/BI소개</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-INTR-001.html" target="_blank">LONIO-PC-INTR-001</a></td>
+                                <td>윤은정</td>
+                                <td>2024-03-04</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr class="last">
+                                <td>경영공시</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-MNGANN-001.html" target="_blank">LONIO-PC-MNGANN-001</a></td>
+                                <td>윤은정</td>
+                                <td>2024-03-04</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td rowspan="4">A1소식</td>
+                                <td rowspan="2">사회공헌</td>
+                                <td>list</td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-SCLCNT-001.html" target="_blank">LONIO-PC-SCLCNT-001</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-14</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td>view</td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-SCLCNT-002.html" target="_blank">LONIO-PC-SCLCNT-002</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-14</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td rowspan="2">회사소식</td>
+                                <td>list</td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-CPNWS-001.html" target="_blank">LONIO-PC-CPNWS-001</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-14</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td class="last">view</td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-CPNWS-002.html" target="_blank">LONIO-PC-CPNWS-002</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-14</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+							 <tr>
+                                <td rowspan="3">오시는길</td>
+                                <td>본점</td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-MAP-001.html" target="_blank">LONIO-PC-MAP-001</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-14</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+							 <tr>
+                                <td>영등포</td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-MAP-002.html" target="_blank">LONIO-PC-MAP-002</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-15</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+							 <tr>
+                                <td>부산</td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-MAP-003.html" target="_blank">LONIO-PC-MAP-003</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-15</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td rowspan="2">공지사항</td>
+                                <td>list</td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-NTC-001.html" target="_blank">LONIO-PC-NTC-001</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-15</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             <tr>
+                                <td>view</td>
+                                <td></td>
+                                <td class="fileName"><a href="./COMPANY/LONIO-PC-NTC-002.html" target="_blank">LONIO-PC-NTC-002</a></td>
+                                <td>이솔</td>
+                                <td>2024-03-15</td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 회사소개 -->
+
+
+               
+            </div>
+        </section>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            var fromDate = [],
+                toDate = [],
+                dateGap = [];
+
+            var totCnt, wipCnt = 0, compCnt = 0;
+
+            pjState();
+
+            // var headerH = $(".container .header").outerHeight();
+
+            //alert(headerH);
+            // $(".container .cont").css("margin-top", headerH + "px");
+
+
+            function pjState() {
+                $(".page table tbody tr").each(function (i, e) {
+                    // fromDate[i] = new Date($(".fromDate").eq(i).text());
+                    // toDate[i] = new Date($(".toDate").eq(i).text());
+                    // dateGap[i] = Math.ceil((toDate[i].getTime() - fromDate[i].getTime()) / (1000 * 3600 * 24));
+
+                    // dateGap[i] >= 0 ? $(".state").eq(i).text("완료").closest("tr").addClass("comp") : $(".state").eq(i).text(""); 기존소스 - 시작날짜 없는 화면의 진척률 파악 위해 아래와 같이 임시 수정(종료날짜만 입력하면 완료 상태로 처리)
+                    
+                    !!($(".toDate").eq(i).text()) ? $(".state").eq(i).text("완료").closest("tr").addClass("comp") : $(".state").eq(i).text("");
+
+                    ($(".state").eq(i).text() == "완료") ? compCnt++ : wipCnt++;
+
+                });
+
+                var allpage = $(".page table tbody tr").length; //전체
+                var Nonpage = $('tr.Non').length; //제외
+                var Okpage = $('tr.comp').length; //완료
+                totCnt = $(".page table tbody tr").length;
+
+                compCnt = Okpage; //완료본수
+                test = allpage - Nonpage; //실질적인화면수
+                wipCnt = totCnt - compCnt - Nonpage; //남은본수
+
+                $("#totCnt").text(totCnt); //전체
+                $("#wipCnt").text(wipCnt);  //남은본수
+                $("#compCnt").text(compCnt); //완료
+                $("#delCnt").text(Nonpage); //제외
+
+                $(".progressArea > span").animate({ "width": (compCnt / test) * 100 + "%" }, 1500);
+                // $(".progressArea > span").after("종합 진척률 : " + Math.floor((compCnt / test) * 100) + "%"); 2023-07-14 수정 진척률로 변경 전 백업
+                $(".progressArea > span").after("수정 진척률 : " + Math.floor((compCnt / test) * 100) + "%");
+            }
+
+            /* list toggle */
+            $('.guide .tit').addClass('on');
+            $('.guide .tit').on('click', function () {
+                $(this).toggleClass('on');
+            })
+        });
+    </script>
+</body>
+
+</html>

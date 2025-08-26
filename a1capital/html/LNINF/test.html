@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Option</title>
+    <style>
+        .btn-select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .select-list {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .select-list ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .select-list ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="select-wrap">
+        <button class="btn-select">태어난 해</button>
+        <div class="select-list">
+            <ul>
+                <li><button type="button">옵션1</button></li>
+                <li><button type="button">옵션2</button></li>
+                <li><button type="button">옵션3</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnSelect = document.querySelector('.btn-select');
+            const selectList = document.querySelector('.select-list');
+
+            // 버튼 클릭 시 옵션 리스트 토글
+            btnSelect.addEventListener('click', function() {
+                selectList.classList.toggle('show');
+            });
+
+            // 각 옵션 클릭 시 해당 텍스트를 버튼에 표시하고 리스트 숨기기
+            selectList.querySelectorAll('button').forEach(function(option) {
+                option.addEventListener('click', function() {
+                    const selectedOption = option.innerText;
+                    btnSelect.innerText = selectedOption;
+                    selectList.classList.remove('show');
+                });
+            });
+
+            // 외부 영역 클릭 시 리스트 숨기기
+            document.addEventListener('click', function(event) {
+                if (!btnSelect.contains(event.target)) {
+                    selectList.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

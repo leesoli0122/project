@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="google-site-verification" content="HI1VRv52jKP4RiLlhaGCR7H7wTqHAy-V0AhKzr91CC4" />
+	<meta name="naver-site-verification" content="6b1cc643b202cf98e54633ec8fbfc40beefc87dd" />
+	<title> 로니오! </title>
+	<meta name="author" content="에이원대부캐피탈 - 대부대출 ">
+	<meta name="keywords" content="대부대출,직장인대출,자영업자대출,자동차담보대출,개인회생,소액대출,당일대출,신용대출,회파복,신복위,파산,에이원대부캐피탈,로니오">
+	<meta name="description" content="대부대출,직장인대출,자영업자대출,자동차담보대출,개인회생,소액대출,당일대출,신용대출,회파복,신복위,파산,에이원대부캐피탈,로니오">
+
+	<meta property="og:locale" content="ko_KR">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="에이원대부캐피탈 - 대부대출 ">
+	<meta property="og:description" content="대부대출,직장인대출,자영업자대출,자동차담보대출,개인회생,소액대출,당일대출,신용대출,회파복,신복위,파산,에이원대부캐피탈,로니오">
+
+	<meta property="og:url" content="https://www.a1capital.co.kr">
+	<meta property="og:site_name" content="에이원대부캐피탈 - 대부대출 ">
+
+	<link href="../../resources/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/content.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="../../resources/js/jquery.js"></script>
+    <script type="text/javascript" src="../../resources/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/jquery.easing.js"></script>
+    <script type="text/javascript" src="../../resources/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../resources/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/cm.jQuery.ui.js"></script>
+
+    <script>
+        $(document).ready(function(){
+			// 메뉴와 서브메뉴 요소들을 변수로 지정
+			var gnb = $('#gnb');
+			var subGnb = gnb.find('.sub-gnb-wrap');
+
+			// 메뉴에 마우스가 들어가거나 포커스가 들어왔을 때
+			gnb.on('mouseenter focusin', function() {
+				// 서브메뉴와 네비게이션 배경을 슬라이드 다운하여 보여줌
+				subGnb.stop().slideDown(300);
+				$('.nav-bg').stop().slideDown(300).css('display', 'block');
+			});
+
+			// 메뉴를 벗어나거나 포커스가 빠져나갔을 때
+			gnb.on('mouseleave focusout', function() {
+				// 메뉴와 서브메뉴 모두 포커스를 잃었을 때 서브메뉴를 닫음
+				if (!gnb.is(':focus') && !subGnb.find(':focus').length) {
+					subGnb.stop().slideUp(300);
+					$('.nav-bg').stop().slideUp(300);
+				}
+			});
+
+			// 서브메뉴의 메뉴 아이템에 포커스가 들어왔을 때
+			subGnb.find('li.menu').on('focusin', function() {
+				// 네비게이션 배경을 보여줌
+				$('.nav-bg').stop().slideDown(300).css('display', 'block');
+			});
+
+			// 서브메뉴에서 포커스가 빠져나갔을 때
+			subGnb.find('li.menu').on('focusout', function() {
+				// 메뉴에 포커스가 없으면 네비게이션 배경을 닫음
+				if (!gnb.find(':focus').length) {
+					$('.nav-bg').stop().slideUp(300);
+				}
+			});
+
+			// 메뉴 아이템을 클릭했을 때
+			$('.menu > a.after').click(function(){
+				var isOpen = $(this).hasClass("on");
+				$('.menu > a.after').removeClass('on');
+				$('menu').stop().slideUp(300);
+				// 클릭한 아이템에 따라 서브메뉴를 열고 닫음
+				if (!isOpen) {
+					$(this).addClass("on");
+					$('menu').stop().slideDown(300);
+				}
+			});
+		});
+    </script>
+
+</head>
+
+<body>
+
+    <div class="skip_nav">
+        <a href="#container">컨텐츠 바로가기</a>
+      </div>
+
+    <div class="wrap">
+
+		<header id="header">
+            <div class="top">
+                <div>
+                    <h1><a href="../main.html">로니오</a></h1>
+                    <p>(주)에이원대부캐피탈 2016-금감원-0013(대부업)</p>
+                    <div class="btn-wrap">
+                        <a href="#none" class="text-btn">사이트맵</a>
+                    </div>
+                </div>
+            </div>
+            <nav id="gnb"><!-- #gnb -->
+                <ul class="flex col-4"> <!--gnb-->
+                    <li> <!-- dept1 -->
+                        <a href="javascript:void(0);"><span>대출신청</span></a>
+                        <div class="sub-gnb-wrap"><!-- inner-menu -->
+                            <ul>
+                                <li class="menu"><a href="javascript:void(0);">신용대출</a></li><!-- dept2 -->
+                                <li class="menu"><a href="javascript:void(0);">자동차 담보대출</a></li>
+                                <li class="menu"><a href="javascript:void(0);">추가 / 재대출</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><span>대출안내</span></a>
+                        <div class="sub-gnb-wrap">
+                            <ul>
+                                <li class="menu"><a href="javascript:void(0);">대출상품</a></li>
+                                <li class="menu"><a href="javascript:void(0);">대출신청절차</a></li>
+                                <li class="menu">
+                                    <a href="javascript:void(0);" class="after">대출계산기</a>
+                                    <ul class="smenu">
+                                        <li><a href="javascript:void(0);">대출계산</a></li>
+                                        <li><a href="javascript:void(0);">이자계산</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><span>고객센터</span></a>
+                        <div class="sub-gnb-wrap">
+                            <ul>
+                                <li class="menu">
+                                    <a href="javascript:void(0);" class="after">금융서비스</a>
+                                    <ul class="smenu">
+                                        <li><a href="javascript:void(0);">대출진행조회</a></li>
+                                        <li><a href="javascript:void(0);">납입이자조회</a></li>
+                                        <li><a href="javascript:void(0);">대출계약철회안내</a></li>
+                                        <li><a href="javascript:void(0);">조회동의확인</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu">
+                                    <a href="javascript:void(0);" class="after">서류관련 서비스</a>
+                                    <ul class="smenu">
+                                        <li><a href="javascript:void(0);">부채등명발급</a></li>
+                                        <li><a href="javascript:void(0);">서류자동화</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu">
+                                    <a href="javascript:void(0);" class="after">금융소비자보호</a>
+                                    <ul class="smenu">
+                                        <li><a href="javascript:void(0);">이용제공현황</a></li>
+                                        <li><a href="javascript:void(0);">전화권유판매원조회</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu">
+                                    <a href="javascript:void(0);" class="after">고객상담</a>
+                                    <ul class="smenu">
+                                        <li><a href="javascript:void(0);">자주하는질문</a></li>
+                                        <li><a href="javascript:void(0);">나의상담내역조회</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><span>회사소개</span></a>
+                        <div class="sub-gnb-wrap">
+                            <ul>
+                                <li class="menu">
+                                    <a href="javascript:void(0);" class="after">A1소개</a>
+                                    <ul class="smenu">
+                                        <li><a href="javascript:void(0);">인사말</a></li>
+                                        <li><a href="javascript:void(0);">회사개요</a></li>
+                                        <li><a href="javascript:void(0);">연혁</a></li>
+                                        <li><a href="javascript:void(0);">조직도</a></li>
+                                        <li><a href="javascript:void(0);">CI/BI소개</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu"><a href="javascript:void(0);">경영공시</a></li>
+                                <li class="menu">
+                                    <a href="javascript:void(0);" class="after">A1소식</a>
+                                    <ul class="smenu">
+                                        <li><a href="javascript:void(0);">사회공헌</a></li>
+                                        <li><a href="javascript:void(0);">회사소식</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu">
+                                    <a href="javascript:void(0);" class="after">오시는길</a>
+                                    <ul class="smenu">
+                                        <li><a href="javascript:void(0);">본점</a></li>
+                                        <li><a href="javascript:void(0);">영등포</a></li>
+                                        <li><a href="javascript:void(0);">부산</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu"><a href="javascript:void(0);">공지사항</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="nav-bg">배경</div>
+            </nav>
+        </header>
+        <div id="container" class="mainWrap">
+        </div>
+		<!-- <div data-include-path="../include/footer.html"></div> -->
+    </div>
+
+</body> 
+</html>
+

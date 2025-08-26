@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>퍼블가이드 | font</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keyword" content="">
+<meta name="description" content="button">
+<meta name="author" content="joahreum">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link rel="stylesheet" type="text/css" href="../asset/css/guide.css"/>
+<link rel="stylesheet" type="text/css" href="../asset/css/lib/shCoreDefault.css" />
+<link rel="stylesheet" type="text/css" href="../../resources/css/reset.css"/>
+<script src="../asset/js/lib/XRegExp.js"></script>
+<script src="../asset/js/lib/shCore.js"></script>
+<script src="../asset/js/lib/shBrushJScript.js"></script>
+<script src="../asset/js/lib/shBrushXml.js"></script>
+<script src="../asset/js/lib/shBrushCss.js"></script>
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../resources/js/default.js"></script>
+<script type="text/javascript" src="../../js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.easing.js"></script>
+<script type="text/javascript" src="../../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/cm.jQuery.ui.js"></script>
+
+<script type="text/javascript"> SyntaxHighlighter.all();</script>
+	<script>
+		$(document).ready(function(){
+			$(".btn-pagenation > li > a").on("click",function(){
+				$(".btn-pagenation > li").removeClass("on");
+				$(this).parent("li").addClass("on");
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="wrapper">
+	<!-- s: aside -->
+	<article class="aside">
+		<div class="header">		
+			<h1><a href="../index.html">로니오</a></h1>
+			<button type="button" class="btn-mainnav"><span>Menu</span></button>
+		</div>
+		<nav class="main-nav">
+			<ul>
+				<li><a href="#">웹퍼블리싱가이드</a></li>
+				<li><a href="./color.html">Color</a></li>
+				<li><a href="./font.html">Font</a></li>
+				<li><a href="./layout.html">Layout</a></li>
+				<li><a href="./input.html" class="on">Input</a></li>
+				<li><a href="./checkbox.html">Checkbox</a></li>
+				<li><a href="./select.html">select</a></li>
+				<li><a href="./radio.html">Radio</a></li>					
+				<li><a href="./button.html">Button</a></li>								
+				<!--<li><a href="#">Tooltip</a></li>-->
+				<li><a href="./popup.html">popup/alert</a></li>
+				<li><a href="./tab.html">Tab</a></li>
+				<li><a href="./step.html">step</a></li>
+				<li><a href="./acordion.html">Acordion</a></li>
+				<li><a href="./table.html" class="">table</a></li>
+				<li><a href="./list.html" class="">Acordion</a></li>
+				<li><a href="#">프로그래스</a></li>
+				<!--<li><a href="#none">Popup</a></li>
+				<li><a href="#none">Web Accessibility</a></li> -->
+			</ul>
+			</ul>
+		</nav>
+	</article>
+	<!-- e: aside -->
+	
+	<!-- s: content -->
+	<article class="content">
+		<div class="sub-header">
+			<h2>Input</h2>
+		</div>
+		<div class="container">
+			<div class="wrap">
+				<div class="contentsWrap">
+					<div class="contents guide">
+						<h2>&middot; input basic</h2>
+						<div class="code">
+							<section class="form-wrap">
+								<div class="form-group">
+									<label for="">타이틀</label>
+									<input id="" type="text" name="" class="form-control" placeholder="성명" value="로니오">
+								</div>
+
+								<div class="form-group">
+									<label for="">disabled</label>
+									<input id="" type="text" name="" class="form-control" placeholder="성명" value="disabled" disabled>
+								</div>
+
+								<div class="form-group won">
+									<label for="">금액이 붙을경우</label>
+									<input id="" type="tel" name="" class="form-control" placeholder="금액입력" value="">
+								</div>
+
+								<div class="form-group">
+									<label for="">검색</label>
+									<div class="btn">
+										<input id="" type="search" name="" class="form-control" placeholder="검색" value="">
+										<div class="btn-wrap">
+											<button class="btn icon search">검색</button>
+										</div>
+									</div>
+									
+
+								</div>
+
+								<div class="form-group">
+									<label for="">인풋박스 + 버튼</label>
+									<div class="btn">
+										<input id="" type="text" name="" class="form-control" placeholder="" value="">
+										<div class="btn-wrap">
+											<button class="btn small btn-primary">확인</button>
+										</div>
+									</div>
+									
+								</div>
+
+								<div class="form-group invalid"><!--invalid시 invalid 클래스 적용 필요-->
+									<label for="">이메일</label>
+									<input id="" type="email" name="" class="form-control" placeholder="이메일을 입력해주세요">
+								</div>
+
+								<div class="form-group">
+									<label for="">날짜</label>
+									<input id="" type="date" name="" class="form-control" placeholder="날짜를 입력해주세요">
+								</div>
+
+
+								<div class="form-group">
+									<label for="">생년월일</label>
+									<div class="form-row birthday">
+										<div class="col">
+											<input id="" type="tel" name="" class="form-control" maxlength="3" placeholder="">
+										</div>
+										<div class="col">
+											<input id="" type="tel" name="" class="form-control" maxlength="4" placeholder="">
+										</div>
+										<div class="col">
+											<input id="" type="tel" name="" class="form-control" maxlength="4" placeholder="">
+										</div>
+									</div>
+								</div>
+
+
+								<div class="form-group">
+									<label for="">연락처 및 사업자등록번호 활용</label>
+									<div class="form-row col3 flex num">
+										<div class="col">
+											<input id="" type="tel" name="" class="form-control" maxlength="3" placeholder="">
+										</div>
+										<div class="col">
+											<input id="" type="tel" name="" class="form-control" maxlength="4" placeholder="">
+										</div>
+										<div class="col">
+											<input id="" type="tel" name="" class="form-control" maxlength="4" placeholder="">
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="">휴대폰 인증</label>
+									<div class="form-row col2 flex tel">
+										<div class="col w150">
+											<select>
+												<option value="SKT">SKT</option>
+												<option value="">KT</option>
+												<option value="">LGU+</option>
+												<option value="">알뜰 SKT</option>
+												<option value="">알뜰KT</option>
+												<option value="">알뜰 LGU+</option>
+											</select>
+										</div>
+										<div class="col">
+											<input id="" type="tel" name="" class="form-control" maxlength="4" placeholder="-없이 번호만 입력하세요">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="col btn">
+											<input id="" type="number" class="form-control" placeholder="인증번호 입력">
+											<div class="btn-wrap">
+												<button class="btn small btn-primary">인증번호요청</button>
+											</div>
+											
+										</div>
+									</div>	
+								</div>
+
+								<div class="form-group">
+									<label for="">타이틀 보조 문구가 있을경우</label>
+									<input id="" type="text" name="" class="form-control" placeholder="성명" value="로니오">
+									<div class="info-txt-wrap">
+										<p class="info">영문, 숫자, 특수문자를 조합한 8~12자리를 입력해 주세요</p>
+									</div>
+								</div>
+
+								<div class="form-group failed">
+									<label for="">에러 타이틀</label>
+									<input id="" type="text" name="" class="form-control" placeholder="성명" value="로니오">
+									<div class="info-txt-wrap fail">
+										<p class="info">영문, 숫자, 특수문자를 조합한 8~12자리를 입력해 주세요</p>
+									</div>
+								</div>
+
+							</section>
+							<pre class="brush:js html-script:true;" style="background:#fff;display:inline-block; float:left; width:100%; ">
+								<section class="form-wrap">
+									<div class="form-group">
+										<label for="">타이틀</label>
+										<input id="" type="text" name="" class="form-control" placeholder="성명" value="로니오">
+									</div>
+	
+									<div class="form-group won">
+										<label for="">금액이 붙을경우</label>
+										<input id="" type="tel" name="" class="form-control" placeholder="금액입력" value="">
+									</div>
+	
+									<div class="form-group btn">
+										<label for="">검색</label>
+										<input id="" type="search" name="" class="form-control" placeholder="검색" value="">
+										<div class="btn-wrap">
+											<button class="btn icon search">검색</button>
+										</div>
+	
+									</div>
+	
+									<div class="form-group btn">
+										<label for="">인풋박스 + 버튼</label>
+										<input id="" type="text" name="" class="form-control" placeholder="" value="">
+										<div class="btn-wrap">
+											<button class="btn small btn-primary">확인</button>
+										</div>
+									</div>
+	
+									<div class="form-group invalid"><!--invalid시 invalid 클래스 적용 필요-->
+										<label for="">이메일</label>
+										<input id="" type="email" name="" class="form-control" placeholder="이메일을 입력해주세요">
+									</div>
+	
+									<div class="form-group">
+										<label for="">날짜</label>
+										<input id="" type="date" name="" class="form-control" placeholder="날짜를 입력해주세요">
+									</div>
+	
+	
+									<div class="form-group">
+										<label for="">생년월일</label>
+										<div class="form-row birthday">
+											<div class="col">
+												<input id="" type="tel" name="" class="form-control" maxlength="3" placeholder="">
+											</div>
+											<div class="col">
+												<input id="" type="tel" name="" class="form-control" maxlength="4" placeholder="">
+											</div>
+											<div class="col">
+												<input id="" type="tel" name="" class="form-control" maxlength="4" placeholder="">
+											</div>
+										</div>
+									</div>
+	
+	
+									<div class="form-group">
+										<label for="">연락처 및 사업자등록번호 활용</label>
+										<div class="form-row col3 flex num">
+											<div class="col">
+												<input id="" type="tel" name="" class="form-control" maxlength="3" placeholder="">
+											</div>
+											<div class="col">
+												<input id="" type="tel" name="" class="form-control" maxlength="4" placeholder="">
+											</div>
+											<div class="col">
+												<input id="" type="tel" name="" class="form-control" maxlength="4" placeholder="">
+											</div>
+										</div>
+									</div>
+	
+									<div class="form-group">
+										<label for="">휴대폰 인증</label>
+										<div class="form-row col2 flex tel">
+											<div class="col w150">
+												<select>
+													<option value="SKT">SKT</option>
+													<option value="">KT</option>
+													<option value="">LGU+</option>
+													<option value="">알뜰 SKT</option>
+													<option value="">알뜰KT</option>
+													<option value="">알뜰 LGU+</option>
+												</select>
+											</div>
+											<div class="col">
+												<input id="" type="tel" name="" class="form-control" maxlength="4" placeholder="-없이 번호만 입력하세요">
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="col btn">
+												<input id="" type="number" class="form-control" placeholder="인증번호 입력">
+												<button class="btn small btn-primary">인증번호요청</button>
+											</div>
+										</div>	
+									</div>
+	
+									<div class="form-group">
+										<label for="">타이틀 보조 문구가 있을경우</label>
+										<input id="" type="text" name="" class="form-control" placeholder="성명" value="로니오">
+										<div class="info-txt-wrap">
+											<p class="info">영문, 숫자, 특수문자를 조합한 8~12자리를 입력해 주세요</p>
+										</div>
+									</div>
+	
+									<div class="form-group failed">
+										<label for="">에러 타이틀</label>
+										<input id="" type="text" name="" class="form-control" placeholder="성명" value="로니오">
+										<div class="info-txt-wrap fail">
+											<p class="info">영문, 숫자, 특수문자를 조합한 8~12자리를 입력해 주세요</p>
+										</div>
+									</div>
+	
+								</section>
+							</pre>
+						</div>
+
+
+						<h2>&middot; input line</h2>
+						<div class="code contents-wrap">
+							<section class="form-wrap">
+								<div class="form-group line">
+									<label for="">타이틀</label>
+									<input id="" type="text" name="" class="form-control" placeholder="성명" value="로니오">
+								</div>
+							</section>
+							<pre class="brush:js html-script:true;" style="background:#fff;display:inline-block; float:left; width:100%; ">
+								<section class="form-wrap">
+									<div class="form-group line">
+										<label for="">타이틀</label>
+										<input id="" type="text" name="" class="form-control" placeholder="" value="">
+									</div>
+								</section>
+							</pre>
+						</div>
+
+
+						
+
+
+						
+			
+			
+					
+					</div>
+			
+			
+			
+		
+				</div>
+			</div>
+		</div>
+	</article>
+
+
+
+	<!-- content // -->
+</div>
+</body>
+</html>

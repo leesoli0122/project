@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="google-site-verification" content="HI1VRv52jKP4RiLlhaGCR7H7wTqHAy-V0AhKzr91CC4" />
+	<meta name="naver-site-verification" content="6b1cc643b202cf98e54633ec8fbfc40beefc87dd" />
+	
+	
+	<link href="../../resources/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../../resources/css/content.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+
+    
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.easing.js"></script>
+    <script type="text/javascript" src="../../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/cm.jQuery.ui.js"></script>
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+    // 전체 동의 체크박스 처리
+    $('.terms-area').on('click', '.chk-all .check.all', function() {
+        var isChecked = $(this).is(':checked');
+        $(this).closest('.terms-area').find('input[type="checkbox"]').prop('checked', isChecked);
+    });
+
+    // 개별 체크박스 및 레벨3 체크박스 상태 변경 시
+    $('.terms-area').on('change', 'input[type="checkbox"]:not(.chk-all .check.all)', function() {
+        var $termsArea = $(this).closest('.terms-area');
+        updateCheckAllState($termsArea);
+    });
+
+    // 레벨2의 .check.all 클릭 시 레벨3 체크박스 상태 변경
+    $('.terms-area').on('change', '.etc.level3 input[type="checkbox"]', function() {
+        var $level2Fieldset = $(this).closest('.level2').find('> fieldset .check.all');
+        var $level3Checkboxes = $(this).closest('.etc.level3').find('input[type="checkbox"]');
+        var isAnyChecked = $level3Checkboxes.is(':checked');
+        
+        $level2Fieldset.prop('checked', isAnyChecked);
+        
+        var $termsArea = $(this).closest('.terms-area');
+        updateCheckAllState($termsArea);
+    });
+
+    // 팝업 제어
+    $('[terms-pop]').on('click', function() {
+        var popupId = $(this).attr('terms-pop');
+        $('#' + popupId).toggle();
+    });
+
+    $('.btn-layer-close, .btn-primary').on('click', function() {
+        $(this).closest('.layerpopup').hide();
+
+        // 현재 닫힌 팝업의 ID를 가져옵니다.
+        var popupId = $(this).closest('.layerpopup').attr('id');
+
+        // 해당 팝업 ID를 terms-pop 속성으로 가지는 체크박스를 찾아 선택을 해제합니다.
+        $('input[type="checkbox"][terms-pop="' + popupId + '"]').prop('checked', false);
+    });
+
+    function updateCheckAllState($termsArea) {
+        var allCheckboxes = $termsArea.find('input[type="checkbox"]:not(.chk-all .check.all)').length;
+        var checkedCheckboxes = $termsArea.find('input[type="checkbox"]:not(.chk-all .check.all):checked').length;
+        $termsArea.find('.chk-all .check.all').prop('checked', allCheckboxes === checkedCheckboxes);
+
+        // 레벨2 체크박스 상태 업데이트
+        $termsArea.find('.level2').each(function() {
+            var totalLevel2 = $(this).find('.etc.level3 input[type="checkbox"]').length;
+            var checkedLevel2 = $(this).find('.etc.level3 input[type="checkbox"]:checked').length;
+            $(this).find('> fieldset .check.all').prop('checked', checkedLevel2 > 0);
+        });
+    }
+});
+
+    </script>
+        
+        
+        
+        
+</head>
+
+<body>
+
+    <div class="skip" style="display:none;">
+        <button type="button" class="btn" data-href="#container"><span>본문 바로가기</span></button>
+    </div>
+    
+    <div class="wrap banner-wrap">
+        <div data-include-path="../include/header.html"></div>
+            <div id="container">
+                <form>
+                    <div class="terms-area">
+    
+                        <div class="terms-wrap level1 chk-all">
+                            <fieldset>
+                                <input type="checkbox" id="allChk01" name="allChk01" value="" class="check all">
+                                <label for="allChk01"><span>약관에 모두 동의할게요</span></label>
+                            </fieldset>
+                        </div>
+                
+                        <div class="terms-wrap level2">
+                            <fieldset>
+                                <input type="checkbox" id="chkEach01" name="check" value="" class="check" terms-pop="termsPop01" checked>
+                                <label for="chkEach01"><span>1-1</span></label>
+                            </fieldset>
+                        </div>
+    
+                        <div class="terms-wrap level2">
+                            <fieldset>	
+                                <input type="checkbox" id="chkEach02" name="check" value="" class="check" checked>
+                                <label for="chkEach02"><span>1-2</span></label>
+                            </fieldset>
+                        </div>
+    
+                        <div class="terms-wrap level2">
+                            <fieldset>
+                                <input type="checkbox" id="chkEach03" name="check" value="" class="check all" checked>
+                                <label for="chkEach03"><span>1-3</span></label>
+                            </fieldset>
+                            <div class="etc level3">
+                                <div class="terms-wrap">
+                                    <input type="checkbox" id="svcCheck01" name="check" value="" class="check" checked>
+                                    <label for="svcCheck01">문자</label>
+                                </div>
+                                <div class="terms-wrap">
+                                    <input type="checkbox" id="svcCheck02" name="check" value="" class="check">
+                                    <label for="svcCheck02">이메일</label>
+                                </div>
+                                <div class="terms-wrap">
+                                    <input type="checkbox" id="svcCheck03" name="check" value="" class="check">
+                                    <label for="svcCheck03">전화</label>
+                                </div>
+                                <div class="terms-wrap">
+                                    <input type="checkbox" id="svcCheck04" name="check" value="" class="check">
+                                    <label for="svcCheck04">DM</label>
+                                </div>
+                            </div>   
+    
+                        </div>
+    
+                        
+                    </div>
+                    
+                    <div class="terms-area">
+    
+                        <div class="terms-wrap level1 chk-all">
+                            <fieldset>
+                                <input type="checkbox" id="allChk101" name="allChk101" value="" class="check all">
+                                <label for="allChk101"><span>2약관에 모두 동의할게요</span></label>
+                            </fieldset>
+                        </div>
+                
+                        <div class="terms-wrap level2">
+                            <fieldset>
+                                <input type="checkbox" id="chkEach101" name="check" value="" class="check">
+                                <label for="chkEach101"><span>1-1</span></label>
+                            </fieldset>
+                        </div>
+    
+                        <div class="terms-wrap level2">
+                            <fieldset>	
+                                <input type="checkbox" id="chkEach102" name="check" value="" class="check">
+                                <label for="chkEach102"><span>1-2</span></label>
+                            </fieldset>
+                        </div>
+    
+                        <div class="terms-wrap level2">
+                            <fieldset>
+                                <input type="checkbox" id="chkEach103" name="check" value="" class="check all">
+                                <label for="chkEach103"><span>1-3</span></label>
+                            </fieldset>
+                            <div class="etc level3">
+                                <div class="terms-wrap">
+                                    <input type="checkbox" id="svcCheck101" name="check" value="" class="check">
+                                    <label for="svcCheck101">문자</label>
+                                </div>
+                                <div class="terms-wrap">
+                                    <input type="checkbox" id="svcCheck102" name="check" value="" class="check">
+                                    <label for="svcCheck102">이메일</label>
+                                </div>
+                                <div class="terms-wrap">
+                                    <input type="checkbox" id="svcCheck103" name="check" value="" class="check">
+                                    <label for="svcCheck103">전화</label>
+                                </div>
+                                <div class="terms-wrap">
+                                    <input type="checkbox" id="svcCheck104" name="check" value="" class="check">
+                                    <label for="svcCheck104">DM</label>
+                                </div>
+                            </div>   
+    
+                        </div>
+    
+                        
+                    </div> 
+                  
+                </form>
+                <div id="termsPop01" class="layerpopup laypop-all" tabindex="0">
+                    <div class="content-wrap">
+                        <div class="pop-header">
+                            <h3 class="pop-title">타이틀</h3>
+                            <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                        </div>
+                        <div class="ly-scroll-con">
+                           <!---->
+                           약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />
+                           약관내용<br />
+                           
+                           <!---->
+                        </div>
+                        <div class="bottom-btn-wrap">
+                            <div class="btn-wrap">
+                                <a href="#none" class="btn btn-primary" data-focus="btn-layer-close">확인하였습니다.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+           
+    </div>
+    <!-- 팜업모음 -->
+    <div id="termsPop01" class="layerpopup laypop-all" tabindex="0">
+        <div class="content-wrap">
+            <div class="pop-header">
+                <h3 class="pop-title">타이틀</h3>
+                <button type="button" name="button" class="btn-layer-close">닫기</button>
+            </div>
+            <div class="ly-scroll-con">
+               <!---->
+               약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />약관내용<br />
+               약관내용<br />
+               
+               <!---->
+            </div>
+            <div class="bottom-btn-wrap">
+                <div class="btn-wrap">
+                    <a href="#none" class="btn btn-primary" data-focus="btn-layer-close">확인하였습니다.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- //팝업모음 -->
+
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+	<script>
+        window.addEventListener('load', function() {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+    <!-- 인크루드 퍼블용 스크립트 :  개발에서는 사용안함-->
+
+</body> 
+</html>
+

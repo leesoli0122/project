@@ -1,0 +1,139 @@
+<header class="headerWrap">
+    <div class="top">
+        <p>(주)에이원대부캐피탈 2016-금감원-0013(대부업)</p>
+    </div>
+    <div class="gnb">
+        <a href="javascript:void(0);" onClick="history.go(-1)" class="btn-prev">이전</a>
+        <h1 class="center">로니오!</h1>
+        <a href="../MAIN/NONIO-MW-MAN-001.html" class="btn-home">홈</a>
+        <a href="javascript:void(0)" class="btn-menu">메뉴</a>
+    </div>
+</header>
+<div id="menuWrap" class="">
+    <div class="menu-wrap">
+        <div class="all-menu-wrap">
+            <div class="all-menu-info">
+                <div class="all-menu-header">
+                    <p class="logo-w">로니오</p>
+                    <a href="javascript:void(0);" class="btn-menu-close">닫기</a>
+                </div>
+                <div class="top-menu">
+                    <ul class="top-icon">
+                        <li><a href="../CRDLN/LONIO-MW-CRDLN-001.html">대출신청</a></li>
+                        <li><a href="../CNFINQ/LONIO-MW-CNFINQ-001.html">조회동의</a></li>-
+                        <li><a href="../DCMATM/LONIO-MW-DCMATM-001.html">서류자동화</a></li>
+                        <li><a href="../BRNINF/LONIO-MW-BRNINF-001.html">지점안내</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-menu-info">
+                <div class="tab-slidemenu">
+                    <ul>
+                        <li class="on"><a href="javascript:void(0);">대출신청</a></li>
+                        <li><a href="javascript:void(0);">대출안내</a></li>
+                        <li><a href="../CNFINQ/LONIO-MW-CNFINQ-001.html">조회동의</a></li>
+                        <li><a href="../DCMATM/LONIO-MW-DCMATM-001.html">서류자동화</a></li>
+                        <li><a href="../DCMATM/LONIO-MW-DCMATM-005.html">지점안내</a></li>
+                    </ul>
+                    <a href="tel:1566-0700" class="btn-customer">
+                        고객센터
+                        <em>1566-0700</em>
+                    </a>
+                </div>
+                <div class="all-menu-area">
+                    <div class="scroll-left-wrap">
+                        <ul class="menuArea">
+                            <li class="1 on">
+                                <ul class="depth">
+                                    <li class="on"><a href="../CRDLN/LONIO-MW-CRDLN-001.html" data-focus="1">신용대출</a></li>
+                                    <li><a href="../CRDLN/LONIO-MW-CRDLN-001.html" data-focus="2">자동차대출</a></li>
+                                </ul>
+                            </li>
+                            <li class="2">
+                                <ul class="depth">
+                                    <li class=""><a href="../LNPRD/LONIO-MW-LNPRD-002.html" data-focus="1">대출상품</a></li>
+                                    <li class=""><a href="../LNAPSTP/LONIO-MW-LNAPSTP-001.html" data-focus="2">대출신청절차</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 퍼블확인용 - 개발에서는 사용하지 않습니다.  -->
+<script>
+$(document).ready(function() {
+
+    function getFileName(url) {
+        return url.substring(url.lastIndexOf('/') + 1);
+    }
+    const currentPage = getFileName(window.location.pathname);
+    const pageTitleMappings = {
+        // 헤더 타이틀을 위한 부분
+        '대출신청': [
+            'LONIO-MW-CRDLN-001.html',
+            'LONIO-MW-CRDLN-002.html',
+            'LONIO-MW-CRDLN-003.html',
+            'LONIO-MW-CRDLN-004.html'
+        ],
+        '대출상품': [
+            'LONIO-MW-LNPRD-002.html',
+            'LONIO-MW-LNPRD-001.html'
+        ],
+        '대출신청절차': [
+            'LONIO-MW-LNAPSTP-001.html',
+            'LONIO-MW-LNAPSTP-002.html',
+            'LONIO-MW-LNAPSTP-003.html'
+        ],
+        '대출진행조회': [
+            'LONIO-MW-LNPRG-001.html',
+            'LONIO-MW-LNPRG-003.html'
+        ],
+        '조회동의': [
+            'LONIO-MW-CNFINQ-001.html',
+            'LONIO-MW-CNFINQ-002.html',
+            'LONIO-MW-CNFINQ-003.html'
+        ],
+        '서류자동화': [
+            'LONIO-MW-DCMATM-001.html',
+            'LONIO-MW-DCMATM-002.html',
+            'LONIO-MW-DCMATM-003.html',
+            'LONIO-MW-DCMATM-004.html',
+            'LONIO-MW-DCMATM-005.html',
+            'LONIO-MW-DCMATM-006.html',
+            'LONIO-MW-DCMATM-007.html'
+        ],
+        '지점안내': [
+            'LONIO-MW-BRNINF-001.html'
+        ]
+    };
+    Object.keys(pageTitleMappings).forEach(title => {
+        pageTitleMappings[title].forEach(file => {
+            if (currentPage === file) {
+                $("header .gnb h1").text(title);
+            }
+        });
+ });
+    
+/**전체메뉴**/
+$('.gnb .btn-menu').on('click', function() {
+    $('#menuWrap').addClass('menu-open');
+});
+$('#menuWrap .btn-menu-close').on('click', function() {
+    $('#menuWrap').removeClass('menu-open');
+});
+
+$('.tab-slidemenu > ul > li').on('click', function() {
+    $('.tab-slidemenu > ul > li').removeClass('on');
+    $(this).addClass('on');
+    $('.scroll-left-wrap .menuArea > li').removeClass('on');
+    var index = $(this).index();
+    $('.scroll-left-wrap .menuArea > li').eq(index).addClass('on');
+});
+});
+</script>
+<!-- 퍼블확인용 - 개발에서는 사용하지 않습니다.  -->

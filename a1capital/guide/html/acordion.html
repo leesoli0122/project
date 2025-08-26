@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>퍼블가이드 | button</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keyword" content="">
+<meta name="description" content="button">
+<meta name="author" content="joahreum">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<link rel="stylesheet" type="text/css" href="../asset/css/guide.css"/>
+<link rel="stylesheet" type="text/css" href="../asset/css/lib/shCoreDefault.css" />
+<link rel="stylesheet" type="text/css" href="../../resources/css/reset.css"/>
+<script src="../asset/js/lib/XRegExp.js"></script>
+<script src="../asset/js/lib/shCore.js"></script>
+<script src="../asset/js/lib/shBrushJScript.js"></script>
+<script src="../asset/js/lib/shBrushXml.js"></script>
+<script src="../asset/js/lib/shBrushCss.js"></script>
+
+<script type="text/javascript" src="../../re/resources/js/jquery.js"></script>
+<script type="text/javascript" src="../../js/resources/common.js"></script>
+<script type="text/javascript" src="../../js/resources/ui.js"></script>
+<script type="text/javascript" src="../../js/resources/jquery.easing.min.js"></script>
+<script type="text/javascript" src="../../js/resources/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/resources/jquery.easing.js"></script>
+<script type="text/javascript" src="../../js/resources/jquery.cookie.js"></script>
+<script type="text/javascript" src="../../js/resources/cm.jQuery.ui.js"></script>
+
+<script type="text/javascript"> SyntaxHighlighter.all();</script>
+	<script>
+		$(document).ready(function(){
+			$(".btn-pagenation > li > a").on("click",function(){
+				$(".btn-pagenation > li").removeClass("on");
+				$(this).parent("li").addClass("on");
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="wrapper">
+	<!-- s: aside -->
+	<article class="aside">
+		<div class="header">		
+			<h1><a href="../index.html" class="logo">로니오</a></h1>
+			<button type="button" class="btn-mainnav"><span>Menu</span></button>
+		</div>
+		<nav class="main-nav">
+			<ul>
+				<li><a href="#">웹퍼블리싱가이드</a></li>
+				<li><a href="./color.html">Color</a></li>
+				<li><a href="./font.html">Font</a></li>
+				<li><a href="./layout.html">Layout</a></li>
+				<li><a href="./input.html">Input</a></li>
+				<li><a href="./checkbox.html">Checkbox</a></li>
+				<li><a href="./select.html">select</a></li>
+				<li><a href="./radio.html">Radio</a></li>					
+				<li><a href="./button.html">Button</a></li>								
+				<!--<li><a href="#">Tooltip</a></li>-->
+				<li><a href="./popup.html">popup/alert</a></li>
+				<li><a href="./tab.html">Tab</a></li>
+				<li><a href="./step.html">step</a></li>
+				<li><a href="./acordion.html" class="on">Acordion</a></li>
+				<li><a href="./table.html" class="">table</a></li>
+				<li><a href="./list.html" class="">Acordion</a></li>
+				<li><a href="#">프로그래스</a></li>
+				<!--<li><a href="#none">Popup</a></li>
+				<li><a href="#none">Web Accessibility</a></li> -->
+			</ul>
+		</nav>
+	</article>
+	<!-- e: aside -->
+	
+	<!-- s: content -->
+	<article class="content">
+		<div class="sub-header">
+			<h2>Acordion</h2>
+		</div>
+		<div class="container">
+			<div class="wrap">
+				<div class="contentsWrap">
+					<div class="contents guide">
+						<h2>&middot; 아코디언</h2>
+						<div class="code">
+							<section class="form-wrap">
+
+                                <div class="accordion-cont-wrap">
+                                    <div class="accordion-item">
+                                        <div class="accordion">
+                                            <button type="button" class="btn-accordion">타이틀</button>
+                                            <div class="accordion-cont">
+                                                내용
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+            
+                            </section>
+
+							<pre class="brush:js html-script:true;" style="background:#fff;display:inline-block; float:left; width:100%; ">
+								
+							</pre>
+						</div>
+
+
+
+
+
+						
+						
+					</div>
+			
+			
+			
+		
+				</div>
+			</div>
+		</div>
+	</article>
+
+
+	<!-- content // -->
+</div>
+</body>
+</html>
