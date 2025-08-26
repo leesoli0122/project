@@ -1,0 +1,501 @@
+<!-- <style>
+	#menuWrap { background:none;; }
+	#menuWrap.on:before { content:''; z-index:-1; position:fixed; left:0; top:0; display:inline-block; width:100%; height:100%; background: #000; opacity: 0.3;  }
+	.all-menu-wrap { width:80%; height:100%; position:absolute; right:0; background:#FFFFFF; }
+</style> -->
+<!-- s:menuWrap -->
+<div class="menuWrap">
+	<div class="all-menu-wrap">
+		<div class="all-menu-info">
+			<div class="all-menu-header">
+				<div class="left-menu">
+					<p>전체메뉴</p>
+				</div>
+				<div class="right-menu">
+					<a onclick="" class="btn-menu-close">닫기</a>
+				</div>
+			</div>
+
+			<div class="login-wrap menu login">
+				<div class="login-tit user-m-img">
+					<p class="tit"><strong>안녕하세요,홍길동님!</strong></p>
+					<p class="text">리스크관리팀</p>
+				</div>
+				<div class="btn-cont-wrap">
+					<a href="../login/ORIX-APP-LGN-001_1.html" class="btn logout-text">로그아웃</a>
+				</div>
+			</div>
+		</div>
+		<div class="top-menu">
+			<ul class="top-icon">
+				<li class="alarm"><a href="#none"><em class="alarm-flag"></em><span>알림(<span>0</span>)</a></li><!--D:count-flag 알림 있을 경우-->
+				<li class="progress"><a href="../mypage/ORIX-APP-LPS-001.html">여신진행현황</a></li>
+				<li class="car"><a href="../scndCar/ORIX-APP-PRI-001.html">차량시세조회</a></li>
+				<li class="document-sub"><a href="../mypage/ORIX-APP-MYP-030.html">서류제출</a></li>
+				<!--<li class="banking"><a href="../IVF/ORIX-APP-IVF-001.html">재고금융신청</a></li>--><!--[D]:중고매매상일 때-->
+				<!--<li class="goods"><a href="../RFA/ORIX-APP-RFA-001.html">영업결재</a></li>--><!--[D]:임직원일 때-->
+				<!--<li class="visit-sale"><a href="../IDS/ORIX-APP-IDS-001.html">방문판매사전안내</a></li>--> <!--[D]:임직원일 때-->
+
+			</ul>
+		</div>
+	
+		<div class="tab-slidemenu bg-bor">
+			<ul>
+				<li><a href="#none">심사결과조회</a></li>
+				<li><a href="#none">여신진행현황</a></li>
+				<li><a href="#none">전체실적조회</a></li>
+				<li><a href="#none">송금요청</a></li>
+			</ul>
+		</div>
+		<div class="all-menu-area">
+			<div class="scroll-left-wrap">
+				<ul class="menuArea">
+					<li class="on"><a href="#none" data-focus="1">중고차</a></li>
+					<li><a href="#none" data-focus="2" >재고금융</a></li>
+					<li><a href="#none" data-focus="3">신차</a></li>
+					<li><a href="#none"  data-focus="4">일반설비</a></li>
+					<li><a href="#none"  data-focus="5">건설기계/상용</a></li>
+					<li><a href="#none"  data-focus="6">취급실적조회</a></li>
+					<li><a href="#none"  data-focus="7">마이페이지</a></li>
+					<li><a href="#none"  data-focus="8">공지사항</a></li>
+					<li><a href="#none"  data-focus="9">push 알림</a></li>
+					<li><a href="#none"  data-focus="10">금융계산기</a></li>
+					<li><a href="#none"  data-focus="11">신용조회관리</a></li>
+					<li><a href="#none"  data-focus="12">품의결재</a></li>
+					<li><a href="#none"  data-focus="13">방문판매사전안내 </a></li>
+				</ul>
+			</div>
+			<div class="scroll-wrap">
+				<ul class="listArea">
+					<li class="1 on">
+						<ul class="depth">
+							<li><a href="../scndCar/ORIX-APP-CRC-001.html">신용조회요청</a></li>
+							<li><a href="../scndCar/ORIX-APP-CTR-001.html">신용조회 결과</a></li>
+							<li><a href="../scndCar/ORIX-APP-RTR-001.html">심사결과 조회</a></li>
+							<li><a href="../scndCar/ORIX-APP-COA-001.html">약정체결</a></li>
+							<li><a href="../scndCar/ORIX-APP-RER-001.html">송금요청</a></li>
+							<li><a href="../scndCar/ORIX-APP-PRI-001.html">차량시세조회</a></li>
+							<li><a href="../scndCar/ORIX-APP-ACH-001.html">차량사고이력조회</a></li>
+							<li><a href="../scndCar/ORIX-APP-USC-081.html">매매상사검색</a></li>
+						</ul>
+					</li>
+					<li class="2">
+						<ul class="depth">
+							<li><a href="../IVF/ORIX-APP-IVF-001.html">재고금융신청</a></li>
+							<li><a href="#">차량시세조회</a></li>
+						</ul>
+					</li>
+					<li class="3">
+						<ul class="depth">
+							<li><a href="#"  onclick="openPopup('menuPopup')">신차</a></li>
+						</ul>
+					</li>
+					<li class="4">
+						<ul class="depth">
+							<li><a href="#" onclick="openPopup('menuPopup')">일반기계안내</a></li>
+						</ul>
+					</li>
+					<li class="5">
+						<ul class="depth">
+							<li><a href="#" onclick="openPopup('menuPopup')">건설기계안내</a></li>
+						</ul>
+					</li>
+					<li class="6">
+						<ul class="depth">
+							<li><a href="../EAI/ORIX-APP-EAI-001.html">나의실적조회</a></li>
+							<li><a href="../EAI/ORIX-APP-EAT-001.html">전체실적조회</a></li>
+						</ul>
+					</li>
+					<li class="7">
+						<ul class="depth">
+							<li><a href="../mypage/ORIX-APP-LPS-001.html">여신진행현황</a></li>
+							<li><a href="../mypage/ORIX-APP-MYP-030.html">서류제출</a></li>
+							<li><a href="../mypage/ORIX-APP-MYP-041.html">비밀번호변경</a></li>
+						</ul>
+					</li>
+					<li class="8">
+						<ul class="depth">
+							<li><a href="../notice/ORIX-APP-NTC-001.html">공지사항</a></li>
+						</ul>
+					</li>
+					<li class="9">
+						<ul class="depth">
+							<li><a href="../notice/ORIX-APP-PSH-001.html">Push 알림</a></li>
+						</ul>
+					</li>
+					<li class="10">
+						<ul class="depth">
+							<li><a href="../calculator/ORIX-APP-FNC-001.html">금융계산기</a></li>
+						</ul>
+					</li>
+					<li class="11">
+						<ul class="depth">
+							<li><a href="../CRA/ORIX-APP-CRA-001.html">신용조회요청</a></li>
+							<li><a href="../CRA/ORIX-APP-CRR-001.html">신용조회결과</a></li>
+							<li><a href="../CRA/ORIX-APP-RKA-001.html">대체키발급 등록</a></li>
+						</ul>
+					</li>
+					<li class="12">
+						<ul class="depth">
+							<li><a href="../RFA/ORIX-APP-RFA-001.html">영업결재</a></li>
+							<li><a href="../RFA/ORIX-APP-RFS-001.html">수기심사승인</a></li>
+						</ul>
+					</li>
+					<li class="13">
+						<ul class="depth">
+							<li><a href="../IDS/ORIX-APP-IDS-001.html">사전안내</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div id="all-menu-view" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close" >
+		<div class="pop-header none-bor">
+			<h2 class="pop-title">전체메뉴</h2>
+			<a class="btn-back" onclick="backKeyAction();"><span class="blind">이전페이지 이동하기</span></a>
+			<button type="button" name="button" class="btn-layer-close" onclick="closePopup('lyPullPop')">닫기</button>
+		</div>
+		<div class="pop-con-wrap">
+			<div class="default-wrap">
+				<div class="search-area">
+					<div class="form-wrap">
+						<div class="input">
+							<input type="search" title="" id="test1" class="" name="" value="" placeholder="검색어를 입력하세요." required="">
+						</div>
+						<button type="button" class="btn-search">검색</button>
+						<button type="button" class="btn-delete">검색어 삭제</button>
+					</div>
+				</div>
+				<div class="tab-slidemenu">
+					<ul>
+						<li><a href="#myBanking" data-focus="myBanking">마이뱅킹</a></li>
+						<li><a href="#lone" data-focus="lone">대출</a></li>
+						<li><a href="#deposit" data-focus="deposit">예적금</a></li>
+						<li><a href="#quickSev" data-focus="quickSev">빠른 서비스</a></li>
+						<li><a href="#setting" data-focus="setting">설정</a></li>
+						<li><a href="#customer" data-focus="customer">고객센터</a></li>
+						<li><a href="#certification" data-focus="certification">인증/보안</a></li>
+						<li><a href="#accident" data-focus="accident">사고신고</a></li>
+					</ul>
+				
+				</div>
+				<div class="listmenu-box all">
+					<ul id="myBanking">
+						<li class="tit">마이뱅킹</li>
+						<li><a href="#none">전계좌 조회</a></li>
+						<li><a href="#none">이체</a></li>
+						<li><a href="#none">이체결과조회</a></li>
+						<li><a href="#none">자동이체</a></li>
+						<li><a href="#none">자동이체관리</a></li>
+					</ul>
+					<ul id="lone">
+						<li class="tit">마이뱅킹2</li>
+						<li><a href="#none">전계좌 조회</a></li>
+						<li><a href="#none">이체</a></li>
+						<li><a href="#none">이체결과조회</a></li>
+						<li><a href="#none">자동이체</a></li>
+						<li><a href="#none">자동이체관리</a></li>
+					</ul>
+					<ul id="deposit">
+						<li class="tit">마이뱅킹3</li>
+						<li><a href="#none">전계좌 조회</a></li>
+						<li><a href="#none">이체</a></li>
+						<li><a href="#none">이체결과조회</a></li>
+						<li><a href="#none">자동이체</a></li>
+						<li><a href="#none">자동이체관리</a></li>
+					</ul>
+					<ul id="quickSev">
+						<li class="tit">마이뱅킹4</li>
+						<li><a href="#none">전계좌 조회</a></li>
+						<li><a href="#none">이체</a></li>
+						<li><a href="#none">이체결과조회</a></li>
+						<li><a href="#none">자동이체</a></li>
+						<li><a href="#none">자동이체관리</a></li>
+					</ul>
+					<ul id="setting">
+						<li class="tit">마이뱅킹5</li>
+						<li><a href="#none">전계좌 조회</a></li>
+						<li><a href="#none">이체</a></li>
+						<li><a href="#none">이체결과조회</a></li>
+						<li><a href="#none">자동이체</a></li>
+						<li><a href="#none">자동이체관리</a></li>
+					</ul>
+					<ul id="customer">
+						<li class="tit">마이뱅킹6</li>
+						<li><a href="#none">전계좌 조회</a></li>
+						<li><a href="#none">이체</a></li>
+						<li><a href="#none">이체결과조회</a></li>
+						<li><a href="#none">자동이체</a></li>
+						<li><a href="#none">자동이체관리</a></li>
+					</ul>
+					<ul id="certification">
+						<li class="tit">마이뱅킹7</li>
+						<li><a href="#none">전계좌 조회</a></li>
+						<li><a href="#none">이체</a></li>
+						<li><a href="#none">이체결과조회</a></li>
+						<li><a href="#none">자동이체</a></li>
+						<li><a href="#none">자동이체관리</a></li>
+					</ul>
+					<ul id="accident">
+						<li class="tit">마이뱅킹8</li>
+						<li><a href="#none">전계좌 조회</a></li>
+						<li><a href="#none">이체</a></li>
+						<li><a href="#none">이체결과조회</a></li>
+						<li><a href="#none">자동이체</a></li>
+						<li><a href="#none">자동이체관리</a></li>
+					</ul>
+				
+				</div>
+				
+			</div>
+		</div>
+	</div> -->
+
+	<!-- <div id="customer-view" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close">
+		<div class="pop-header none-bor">
+			<h2 class="pop-title">고객센터</h2>
+			<a class="btn-back" onclick="backKeyAction();"><span class="blind">이전페이지 이동하기</span></a>
+			<button type="button" name="button" class="btn-layer-close" onclick="closePopup('lyPullPop')">닫기</button>
+		</div>
+		<div class="pop-con-wrap">
+			<div class="default-wrap mt40">
+				<p class="gnb-tit">고객님 무엇을 도와드릴까요?</p>
+				<div class="listmenu-box">
+					<ul>
+						<li><a href="#none">공지사항</a></li>
+						<li><a href="#none">자주묻는 질문</a></li>
+						<li><a href="#none">전자민원신청</a></li>
+						<li><a href="#none">영업점 안내</a></li>
+					</ul>
+
+					<ul>
+						<li class="tit">이용자 유의사항</li>
+						<li><a href="#none">전자금융거래이용자 유의사항</a></li>
+						<li><a href="#none">스마트폰 금융거래 유의사항</a></li>
+						<li><a href="#none">보이스피싱 피해예방 유의사항</a></li>
+					</ul>
+
+					<ul>
+						<li class="tit">이용안내</li>
+						<li><a href="#none">이용시간 안내</a></li>
+						<li><a href="#none">상담원 연결</a></li>
+					</ul>
+
+					<ul>
+						<li class="tit">금융소비자보호</li>
+						<li><a href="#none">이용약관</a></li>
+						<li><a href="#none">전자금융이용약관</a></li>
+						<li><a href="#none">개인정보처리방침</a></li>
+						<li><a href="#none">위법계약해지권</a></li>
+					</ul>
+
+					<ul>
+						<li><a href="#none">증명서발급신청</a></li>
+					</ul>
+
+				
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div id="security-view" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close">
+		<div class="pop-header none-bor">
+			<h2 class="pop-title">인증/보안</h2>
+			<a class="btn-back" onclick="backKeyAction();"><span class="blind">이전페이지 이동하기</span></a>
+			<button type="button" name="button" class="btn-layer-close" onclick="closePopup('lyPullPop')">닫기</button>
+		</div>
+		<div class="pop-con-wrap">
+			<div class="default-wrap mt40">
+				<p class="gnb-tit">고객님의 정보를 확실히 보호할게요</p>
+				<div class="listmenu-box">
+					<ul>
+						<li><a href="#none">공동인증서안내</a></li>
+					</ul>
+
+					<ul>
+						<li class="tit">공동인증서</li>
+						<li><a href="#none">공동인증서 가져오기</a></li>
+						<li><a href="#none">공동인증서 내보내기</a></li>
+						<li><a href="#none">공동인증서 관리</a></li>
+					</ul>
+
+					<ul>
+						<li class="tit">타기관 인증서</li>
+						<li><a href="#none">타기관 인증서 등록</a></li>
+						<li><a href="#none">타기관 인증서 해제</a></li>
+					</ul>
+
+					<ul>
+						<li class="tit">전자금융사기예방서비스</li>
+						<li><a href="#none">단말기지정서비스 가입</a></li>
+						<li><a href="#none">단말기지정서비스 조회/해지</a></li>
+						<li><a href="#none">추가인증서비스 가입</a></li>
+						<li><a href="#none">추가인증서비스 변경</a></li>
+						<li><a href="#none">인증 예외서비스 등록</a></li>
+					</ul>
+
+					<ul>
+						<li class="tit">간편비밀번호</li>
+						<li><a href="#none">등록/재등록</a></li>
+						<li><a href="#none">해지</a></li>
+					</ul>
+
+					<ul>
+						<li class="tit">패턴인증</li>
+						<li><a href="#none">등록/재등록</a></li>
+						<li><a href="#none">해지</a></li>
+					</ul>
+
+					<ul>
+						<li class="tit">바이오인증</li>
+						<li><a href="#none">등록/재등록</a></li>
+						<li><a href="#none">해지</a></li>
+					</ul>
+
+					<ul>
+						<li><a href="#none">mOTP 설정/재설정</a></li>
+					</ul>
+
+					<ul>
+						<li><a href="#none">타기관 OTP 등록/변경</a></li>
+					</ul>
+
+					<ul>
+						<li><a href="#none">OTP 보정</a></li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div id="accident-view" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close">
+		<div class="pop-header none-bor">
+			<h2 class="pop-title">사고신고</h2>
+			<a class="btn-back" onclick="backKeyAction();"><span class="blind">이전페이지 이동하기</span></a>
+			<button type="button" name="button" class="btn-layer-close" onclick="closePopup('lyPullPop')">닫기</button>
+		</div>
+		<div class="pop-con-wrap">
+			<div class="default-wrap mt40">
+				<p class="gnb-tit">신고하실 항목을 선택하세요</p>
+				<div class="listmenu-box">
+					<ul>
+						<li><a href="#none">통장/인감 사고신고</a></li>
+					</ul>
+
+					<ul>
+						<li><a href="#none">보안카드/OTP사고신고</a></li>
+					</ul>
+
+					<ul>
+						<li class="tit">현금카드 사고신고</li>
+						<li><a href="#none">사고신고</a></li>
+						<li><a href="#none">내역조회</a></li>
+					</ul>
+
+					<ul>
+						<li><a href="#none">OTP사고회복</a></li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</div> -->
+	
+</div>
+<!-- e:menuWrap -->
+
+<div id="menuPopup" class="layerpopup layer-up" tabindex="0">
+    <div class="content-wrap">
+        <div class="pop-header">
+            <div class="pop-title pop-header-img"><img src="../../resources/images/header/header_logo.png" alt="오릭스캐피탈 로고"></div>
+            <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        </div>
+        <div class="ly-cont-wrap">
+            <p class="sub-title">현재 준비중인 메뉴입니다.<br>빠른 시일 내에 서비스 제공하도록 하겠습니다.</p>
+        </div>
+        <div class="btn-wrap">
+            <a href="#none" class="btn btn-primary confirm">확인</a>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+		
+/** 전체 메뉴 **/
+// function publeInit(){
+// 	$('.btn-menu').off('click');
+// 	$('.btn-menu').click(function(){
+// 		$('#menuWrap').addClass('menu-open');
+// 		$('body').addClass('no-scroll');
+// 	});
+
+// 	$('.btn-menu-close').off('click');
+// 	$('.btn-menu-close').click(function(){
+// 		$('#menuWrap').removeClass('menu-open');
+// 		$('body').removeClass('no-scroll');
+// 	});
+
+// 	makeBackEvent(function(){
+// 		runScript(function(){
+// 			history.fo(-1);
+// 		});
+// 	});
+// }
+
+// $('.menuArea > li > a').off('click');
+// $('menuArea > li > a').click(function(){
+// 	var $this = $(this).parent('li');
+// 	target = $(this).attr('data-focus');
+// 	$('.menuArea > li').remveClass('on');
+// 	$('.listArea > li').removeClass('on');
+
+// 	$this.addClass('on');
+// 	$('.listArea > li.'+target).addClass('on');
+
+// 	$('.scroll-wrap').scrollTop(0);
+// });
+
+
+
+// menu open, close
+$(document).ready(function() {
+	$('.btn-menu').on('click', function(ｅ) {
+		ｅ.stopPropagation();
+		$('#menuWrap').addClass('menu-open');
+		// $('#menuWrap').addClass('on')
+		$('body').addClass('no-scroll');
+		// $('.alarm-flag').addClass('shake-horizontal')
+	});
+
+	$('.btn-menu-close').on('click', function(e){
+		e.stopPropagation();
+		$('#menuWrap').removeClass('menu-open');
+		// $('#menuWrap').removeClass('on')
+		$('body').removeClass('no-scroll');
+		// $('.alarm-flag').removeClass('shake-horizontal')
+	});
+
+	$(".menuArea > li > a").on("click", function (e) {
+		e.stopPropagation();
+		var $this = $(this).parent("li");
+		target = $(this).attr("data-focus");
+
+		$(".menuArea > li").removeClass("on");
+		$(".listArea > li").removeClass("on");
+
+		$this.addClass("on");
+		$(".listArea > li."+target).addClass("on");
+
+		$(".scroll-wrap").scrollTop(0);
+	});
+});
+
+
+</script>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ORIX Capital</title>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="ORIX Capital keywords" />
+    <meta name="description" content="ORIX Capital description" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../resources/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../../resources/favicon.png" />
+    
+    <link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../resources/css/lib/renewal.css">
+    <link rel="stylesheet" href="../../resources/css/lib/default.css">
+    <link rel="stylesheet" href="../../resources/css/ui/jquery-ui.css">
+    <link rel="stylesheet" href="../../resources/css/ui/datepicker.css">
+    
+    <script type="text/javascript" src="../../resources/js/ui/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/jquery-1.12.4.min.js"></script>
+    <script  type="text/javascript" src="../../resources/js/ui/jquery-ui-1.12.1.js"></script>
+
+    <script type="text/javascript" src="../../resources/js/lib/default.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/datepicker.js"></script>
+</head>
+
+
+<body>
+    <div class="wrap">
+        <!-- //header -->
+        <div id="headerWrap">
+			<script>
+			$(document).ready(function(){
+				document.charset="euc-kr";
+				$("#headerWrap").load("../include/inc_header.html");
+			});
+			</script>
+        </div>
+        <!-- s:menuWrap -->
+        <div id="menuWrap">
+            <script>
+            $(document).ready(function(){
+                document.charset="euc-kr";
+                $("#menuWrap").load("../include/inc_all_menu.html");
+            });
+            </script>
+        </div>
+        <!-- e:menuWrap -->
+        <form>
+            <div class="contents-wrap">
+                <section class="form-wrap">
+                    <div class="form-group">
+                        <label for="">성명</label>
+                        <input id="" type="text" name="" class="form-control" placeholder="성명" invalid>
+                    </div>
+                    <div class="form-group">
+                        <label for="">valid</label>
+                        <input id="" type="text" name="" class="form-control" placeholder="성명" value="오릭스">
+                    </div>
+                    <div class="form-group invalid"><!--invalid시 invalid 클래스 적용 필요-->
+                        <label for="">invalid</label>
+                        <input id="" type="text" name="" class="form-control" placeholder="성명">
+                        <div class="info-txt-wrap dp-none"> <!--dp-none은 invalid 필요할 경우 기본으로 적용 필요 -->
+                            <p class="info">영문, 숫자, 특수문자를 조합한 8~12자리를 입력해 주세요</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">이메일</label>
+                        <input id="emailInput" type="text" name="" class="form-control"  placeholder="이메일을 입력해 주세요">
+                        <div id="emailList"></div>
+                        <div class="info-txt-wrap">
+                            <p class="info">영문, 숫자, 특수문자를 조합한 8~12자리를 입력해 주세요</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Disalbed</label>
+                        <input id="" type="text" name="" class="form-control" placeholder="성명" disabled><!--disalbed-->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Readonly</label>
+                        <input id="" type="text" name="" class="form-control" placeholder="성명" readonly><!--readonly-->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">select</label>
+                        <input id="" type="text" name="" class="form-control select" placeholder="select" onclick="openPopup('lySel')"><!--select 클래스 추가 및 onclick 팝업 추가하기-->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Disabled select</label>
+                        <input id="" type="text" name="" class="form-control select" placeholder="select" disabled><!--disalbed-->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">주민등록번호</label>
+                        <div class="form-row">
+                            <div class="col">
+                                <input id="" type="number" class="form-control" maxlength="6" placeholder="">
+                            </div>
+                            <div class="input-hyphen">-</div>
+                            <div class="col">
+                                <input id="" type="password" class="form-control" maxlength="7" placeholder="●●●●●●●">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">주민등록번호 뒷자리 번호 1하나만 노출일 경우</label>
+                        <div class="form-row">
+                            <div class="col">
+                                <input id="" type="number" class="form-control" maxlength="6" name="" value="" placeholder="" required="">
+                            </div>
+                            <div class="input-hyphen">-</div>
+                            <div class="col">
+                                <input id="" type="tel" class="form-control jumin" maxlength="1" placeholder="●" name="" value="" required="">
+                                <span class="jumintext">●●●●●●</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">방문 예정 일자</label>
+                        <div class="form-row" >
+                            <div class="col">
+                                <input id="" type="text" class="form-control datepicker" placeholder=""  inputmode="none"><!--readonly-->
+                            </div>
+                            <div class="col">
+                                <input id="" type="text" class="form-control select" placeholder="시간 선택" onclick="openPopup('lySel4')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">휴대폰 번호</label>
+                        <div class="form-row">
+                            <div class="col-3">
+                                <input id="" type="text" class="form-control select"  placeholder="통신사"  onclick="openPopup('lySel1')">
+                            </div>
+                            <div class="col">
+                                <input id="" type="tel" name="" class="form-control" maxlength="11" placeholder="- 없이 숫자만 입력">
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="">아이디</label>
+                        <input id="" type="text" class="form-control" placeholder="아이디를 입력해 주세요">
+                    </div>
+                    <div class="form-group">
+                        <label for="">비밀번호</label>
+                        <input id="" type="password" class="form-control" placeholder="비밀번호를 입력해 주세요">
+                    </div>
+                    <div class="form-group">
+                        <label for="">비밀번호 확인</label>
+                        <input id="" type="password" class="form-control" placeholder="비밀번호 확인해주세요">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">금액</label>
+                        <div class="amount">
+                            <input id="" type="amount" class="form-control amount-num"  placeholder="금액을 입력해 주세요" inputmode="numeric"><!--inputmode="numeric" : 세자리 수마다 콤마 적용-->
+                            <span class="amount-txt">원</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amount">개월 - 팝업일 경우</label>
+                        <div class="amount">
+                            <input type="number" class="form-control amount-num" id="amount" placeholder="기간을 입력해 주세요"  onclick="openPopup('lySel5')">
+                            <span class="amount-txt">개월</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">개월 - 입력일 경우 -> [type="number"]로 갈 경우 스크립트와 oninput 추가 필요, [type="tel"]일 경우 불필요</label>
+                        <div class="amount">
+                            <input type="number" class="form-control amount-num" id="amount" placeholder="기간을 입력해 주세요"  maxlength="4" oninput="maxLengthCheck(this)">
+                            <span class="amount-txt">개월</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">%</label>
+                        <div class="amount">
+                            <input type="number" class="form-control amount-num" id="amount" placeholder="예상 금리를 입력해 주세요">
+                            <span class="amount-txt">%</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">휴대폰 번호</label>
+                        <div class="form-row">
+                            <div class="col-3">
+                                <input id="" type="text" class="form-control select" placeholder="통신사" onclick="openPopup('lySel1')">
+                            </div>
+                            <div class="col">
+                                <input id="" type="tel" name="" class="form-control" maxlength="11" placeholder="- 없이 숫자만 입력">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input id="" type="number" class="form-control" placeholder="인증번호 입력">
+                            </div>
+                            <button class="btn btn-txt" type="button">인증번호요청</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group" >
+                        <label for="" class="essential">고객 선택</label><!--essential 필수일 경우-->
+                        <div class="form-row" onclick="openPopup('lySel3')">
+                            <div class="col">
+                                <input id="" type="text" class="form-control" placeholder="제조사 선택" >
+                            </div>
+                            <button class="btn btn-txt" type="button">선택</button>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label for="" class="essential">검색</label><!--essential 필수일 경우-->
+                        <div class="form-row">
+                            <div class="col">
+                                <input id="" type="text" class="form-control" placeholder="이름을 입력해 주세요">
+                            </div>
+                            <button class="btn btn-txt search-img" type="button">검색</button>
+                            <button class="btn btn-txt research" type="button">초기화</button>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- <section class="form-wrap">
+                    <div class="form-group address line">
+                        <div class="input">
+                            <span class="address-num">12347</span>
+                            <span class="address-text">서울특별시 서초구 매헌로 16 (하이브랜드) 1518호</span>
+                        </div>
+                        <div class="btn-cont-wrap right">
+                            <button class="btn btn-research" type="button">재검색</button>
+                        </div>
+                    </div>
+                    <div class="form-group address line">
+                        <div class="input">
+                            <span class="address-num">12347</span>
+                            <span class="address-text">서울특별시 서초구 매헌로 16 (하이브랜드) 1518호</span>
+                        </div>
+                        <div class="btn-cont-wrap right">
+                            <button class="btn btn-research" type="button">재검색</button>
+                        </div>
+                    </div>
+                </section> -->
+                
+                <section class="form-wrap">
+                    <div class="form-group radio-buttons">
+                        <label for="radio-1" class="radio-button">
+                            <input type="radio" id="radio-1" name="terms">
+                            <span class="custom-radio"></span>
+                            <span class="text">1학기</span>
+                        </label>
+                        <label for="radio-2" class="radio-button">
+                            <input type="radio" id="radio-2" name="terms">
+                            <span class="custom-radio"></span>
+                            <span class="text">2학기</span>
+                        </label>
+                        <label for="radio-3" class="radio-button">
+                            <input type="radio" id="radio-3" name="terms" disabled>
+                            <span class="custom-radio"></span>
+                            <span class="text">추가학기</span>
+                        </label>
+                    </div>
+                </section>
+                
+                <section class="form-wrap">
+                    <div class="form-group check-buttons">
+                        <label for="check-1" class="check-button">
+                            <input type="checkbox" id="check-1" name="terms">
+                            <span class="custom-check"></span>
+                            <span class="text">1학기</span>
+                        </label>
+                        <label for="check-2" class="check-button">
+                            <input type="checkbox" id="check-2" name="terms">
+                            <span class="custom-check"></span>
+                            <span class="text">2학기</span>
+                        </label>
+                        <label for="check-3" class="check-button">
+                            <input type="checkbox" id="check-3" name="terms" disabled>
+                            <span class="custom-check"></span>
+                            <span class="text">추가학기</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="essential">내용</label><!--essential 필수일 경우-->
+                        <textarea id="myTextarea" type="text" title="성명" class="inp" name="" placeholder="내용을 입력해 주세요" maxlength="" required=""></textarea>
+                    </div>
+                </section>
+
+            </div>
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap">
+                    <button type="button" class="btn btn-close">그만하기</button>
+                    <button type="button" class="btn btn-primary">다음</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+</html>
+
+<!--//통신사 선택-->
+<div id="lySel1" class="layerpopup layer-up" tabindex="0">
+    <div class="content-wrap">
+        <div class="pop-header">
+            <h2 class="pop-title">통신사 선택</h2>
+            <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        </div>
+        <div class="ly-scroll-con ly-select">
+            <ul class="ly-select-list">
+                <li><button>SKT</button></li>
+                <li><button>KT</button></li>
+                <li><button>LG</button></li>
+                <li><button>알뜰폰 SK</button></li>
+                <li><button>알뜰폰 KT</button></li>
+                <li><button>알뜰폰 LG</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--통신사 선택//-->
+
+
+<!--//개월 선택-->
+<div id="lySel5" class="layerpopup layer-up" tabindex="0">
+    <div class="content-wrap">
+        <div class="pop-header">
+            <h2 class="pop-title">개월 선택</h2>
+            <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+        </div>
+        <div class="ly-scroll-con ly-select">
+            <ul class="ly-select-list">
+                <li><button>24</button></li>
+                <li><button>36</button></li>
+                <li><button>48</button></li>
+                <li><button>60 </button></li>
+                <li><button>72</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--개월 선택//-->
+
+
+<script>
+    // 브라우저 maxlength설정
+function maxLengthCheck(object) {
+    if (object.value.length > object.maxLength)
+        object.value = object.value.slice(0, object.maxLength);
+};
+</script>
+
+<style>
+
+</style>
