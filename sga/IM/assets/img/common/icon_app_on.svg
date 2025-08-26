@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="36" height="36" transform="translate(0.078 1)" fill="none" stroke="#999" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon_app_on" transform="translate(-0.078 -1)" clip-path="url(#clip-path)">
+    <g id="app" transform="translate(7.578 2.5)">
+      <path id="pass" d="M1.5,23.488V5.852A4.352,4.352,0,0,1,5.852,1.5H17.793a4.352,4.352,0,0,1,4.352,4.352V29.368a4.351,4.351,0,0,1-4.352,4.352H5.852a4.349,4.349,0,0,1-3.077-1.275A4.336,4.336,0,0,1,1.5,29.368V23.488" transform="translate(-1.5 -1.5)" fill="#27ad98"/>
+      <line id="line" x2="3.441" transform="translate(8.602 5.006)" fill="none" stroke="#cbf0ea" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+						<span>Admin</span>
+					</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class="depth_menu"><i class="icon_userg"></i><span>사용자 관리</span></a>
+						<ul>
+							<li><a href="">사용자</a></li>
+							<li><a href="" class="on">사용자 그룹</a></li>
+							<li><a href="">조직 그룹</a></li>
+							<li><a href="">대량 등록</a></li>
+							<li><a href="">자가 등록</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_stg"></i><span>시스템 관리</span></a>
+						<ul>
+							<li><a href="">조정 및 배포</a></li>
+							<li><a href="">시스템(자원)</a></li>
+							<li><a href="">시스템(자원) 그룹</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+						<ul>
+							<li><a href="">역할</a></li>
+							<li><a href="">조정 정책</a></li>
+							<li><a href="">배포 정책</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+						<ul>
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_report"></i><span>감사 및 보고서</span></a>
+						<ul>
+							<li><a href="">모니터링</a></li>
+							<li><a href="">감사</a></li>
+							<li><a href="">보고서</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_property"></i><span>속성관리</span></a>
+						<ul>
+							<li><a href="">사용자 정보</a></li>
+							<li><a href="">사용자그룹 정보</a></li>
+							<li><a href="">조직 정보</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="on"><i class="icon_connector"></i><span>Connector</span></a></li>
+					<li><a href="" class=""><i class="icon_onsd"></i><span>ONSD Entry</span></a></li>
+					<li><a href="" class=""><i class="icon_workflow"></i><span>워크플로우</span></a></li>
+					<li><a href="" class="depth_menu"><i class="icon_system"></i><span>시스템</span></a>
+						<ul>
+							<li><a href="">관리자</a></li>
+							<li><a href="">저장소 관리</a></li>
+							<li><a href="">서비스 모듈 관리</a></li>
+							<li><a href="">스케줄 관리</a></li>
+							<li><a href="">CMS</a></li>
+							<li><a href="">환경 설정</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>사용자 관리</h1>
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">시스템 관리</a></li>
+						<li><span>상세</span></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> user01</a></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<p class="fm_tit">Upload Jar File</p>
+				<div class="form_stl">
+					<dl class="form_list">
+						<dt class="form_tit"><label for="connectorName">Connector Name</label></dt>
+						<dd class="form_txt"><input type="text" name="" class="form_contrl" id="connectorName">
+						</dd>
+						<dt class="form_tit"><label for="jarFile">Jar File Path</label></dt>
+						<dd class="form_txt">
+							<input type="text" name="" class="form_contrl" id="jarFile">
+							<button class="shadow">Browse</button>
+							<button class="shadow">Upload</button>
+						</dd>
+						<dt class="form_tit"><label for="Version">Version</label></dt>
+						<dd class="form_txt"><input type="text" name="" class="form_contrl" id="Version">
+						</dd>
+					</dl>
+				</div>
+				<div class="output_wrap">
+					<p class="tit pdt16">Log For Uploading</p>
+					<div class="output_box">
+						Uploading…<br />
+						parsing..<br />
+						ONSD Model : 5<br />
+						ONSD Model Action : 20<br />
+						Add new 3 model(s) and 10 action(s)<br />
+						Updated(Version-up) 2 model(s) and 20 action(s)<br />
+						Restart connector master<br />
+						Success
+					</div>
+				</div>
+				<div class="btn_box cl_both">
+					<div class="f_r">
+						<div class="confirm_popup">
+							<a href="" class="blue btn_save">저장</a>
+							<div class="save_alert_wrap" style="display:none">
+								<div class="bg"></div>
+								<div class="save_alert">
+									<div class="arrow"></div>
+									<p>저장하시겠습니까?</p>
+									<div class="btn_box">
+										<a href="" class="blue">저장</a>
+										<a href="" class="skyblue cancel">취소</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a href="" class="skyblue">취소</a>
+					</div>					
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

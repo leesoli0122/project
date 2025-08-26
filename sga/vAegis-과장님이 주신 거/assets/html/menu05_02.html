@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>메뉴 권한 설정 - Aegis</title>
+    <meta charset="UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- TODO: search engine info -->
+    <meta name="robots" content="Aegis" />
+    <meta name="keywords" content="Aegis" />
+    <meta name="title" content="Aegis" />
+    <meta name="description" content="Aegis" />
+
+    <!-- TODO: social url link image -->
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Aegis">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="cloudVM.png">
+    <meta property="og:description" content="Aegis 입니다.">
+
+    <!-- TODO: favicon -->
+    <link rel="icon" href="favicon.png" type="favicon.png" />
+
+    <!-- TODO: import -->
+    <link rel="stylesheet" href="../css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/lib/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../css/lib/datatables.css">
+    <link rel="stylesheet" href="../css/lib/datatables.css">
+    <link rel="stylesheet" href="../css/lib/select.dataTables.css">
+    <link rel="stylesheet" href="../css/lib/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../css/lib/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../css/lib/jstree.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="../js/lib/moment.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/bootstrap-datetimepicker.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="../js/lib/echarts.js"></script>
+    <script src="../js/lib/jquery.nice-select.js"></script>
+    <script src="../js/lib/select.dataTables.js"></script>
+    <script src="../js/lib/datatables.js"></script>
+    <script src="../js/lib/dataTables.colReorder.js"></script>
+    <script src="../js/lib/dataTables.rowReorder.js"></script>
+    <script src="../js/lib/dataTables.buttons.min.js"></script>
+    <script src="../js/lib/sweetalert.js"></script>
+    <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="../js/lib/jquery.scrollbar.js"></script>
+    <script src="../js/lib/jstree.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<body>
+<h1>CloudVM ADMIN</h1>
+<div class="skip_navigation">
+    <ul>
+        <li>
+            <a href="#Content" class="go_content">본문 바로가기</a>
+        </li>
+        <li>
+            <a href="#Gnb">메뉴 바로가기</a>
+        </li>
+    </ul>
+</div>
+<header class="header_box">
+    <div class="logo_box">
+        <a href="/" class="logo_link">
+            <div class="logo_hidden_box">
+                <img src="../images/logo.png"/>
+            </div>
+        </a>
+    </div>
+    <nav>
+        <ul class="lnb">
+            <li>
+                <a href="menu01.html" class="menu01">
+                    <span>대시보드</span>
+                </a>
+            </li>
+            <li>
+                <a href="menu02.html" class="menu02">
+                    <span>경보</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu03">
+                    <span>이벤트</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu03_01.html"><span>방화벽</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_02.html"><span>IPS</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_03.html"><span>Malware</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_04.html"><span>파일 무결성</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_05.html"><span>실행 파일 통제</span></a>
+                    </li>
+                    <li>
+                        <a href="menu03_06.html"><span>서비스 제어</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu04">
+                    <span>자산</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu04_01.html"><span>자산 현황</span></a>
+                    </li>
+                    <li>
+                        <a href="menu04_02.html"><span>자산 관리</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu06">
+                    <span>탐지룰</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu06.html"><span>탐지 룰 관리</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu05">
+                    <span>설정</span>
+                </a>
+                <ul class="depth2">
+                    <li>
+                        <a href="menu05_01.html"><span>사용자 관리</span></a>
+                    </li>
+                    <li>
+                        <a href="menu05_02.html"><span>권한 설정</span></a>
+                    </li>
+                    <li>
+                        <a href="menu05_03.html"><span>사이트 이용 설정</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+
+
+<article class="top_cont">
+    <div class="location">
+        <ul>
+            <li>Home</li>
+            <li>Configuration</li>
+            <li>메뉴 권한 설정</li>
+        </ul>
+        <h2>메뉴 권한 설정</h2>
+    </div>
+    <div class="user_box">
+        <div class="user_info">
+            <a href="#" class="user_info_link">
+                <p class="user">Hello, <span>redcastle</span></p>
+            </a>
+            <div class="user_info_list">
+                <ul>
+                    <li><a href="#" rel="user_modal" class="modalLoad">내정보</a></li>
+                    <li><a href="menu05_01.html">사용자관리</a></li>
+                    <li class="logout"><a href="main.html">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="top_dashboard disabled">
+            <a href="#" class="top_dashboard_link" disabled="disabled">
+                <span class="linktext">사용자 정보 버튼</span>
+            </a>
+        </div>
+<!--        <div class="top_dashboard">-->
+<!--            <a href="#" class="top_dashboard_link">-->
+<!--                <span class="linktext">사용자 정보 버튼</span>-->
+<!--            </a>-->
+<!--        </div>-->
+        <div class="top_dashboard_list">
+            <ul>
+                <li><a href="#" rel="dashboard_save" class="modalLoad">공용 대시 보드 등록</a></li>
+                <li><a href="#" rel="dashboard_view_modal" class="modalLoad">모든 대시보드 보기</a></li>
+                <li><a href="#" rel="dashboard_view_modal" class="modalLoad">저장된 대시보드 보기</a></li>
+                <li><a href="#" rel="dashboard_edit_save" class="modalLoad">공용 대시보드 수정</a></li>
+                <li><a href="#">대시보드 저장</a></li>
+                <li><a href="#">대시보드 삭제</a></li>
+            </ul>
+        </div>
+    </div>
+</article>
+
+<!--  modal :: 내정보 팝업  -->
+<div class="modal small" id="user_modal">
+    <div class="modal_header">
+        <h3>내정보</h3>
+    </div>
+    <div class="modal_body">
+        <div class="modal_cont">
+            <dl>
+                <dt>
+                    <span>사용자 권한</span>
+                </dt>
+                <dd>
+                    <div class="sel_box">
+                        <select class="popup_sel disabled">
+                            <option>Super Admin</option>
+                            <option>Admin</option>
+                            <option>Operator</option>
+                            <option>Viewer</option>
+                        </select>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User ID</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" readonly="" value="aptcastle" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>Password</dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="password" placeholder="기존 비밀번호를 입력해 주세요." name="required">
+                    </div>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="password" placeholder="신규 비밀번호를 입력해 주세요." name="required">
+                    </div>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="password" placeholder="신규 비밀번호를 다시한번 입력해 주세요." name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User Name</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="사용자의 이름을 입력해주세요." value="auditcastle Maker" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User Phone</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="연락처를 입력해 주세요." value="010-0000-0000" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>User Email</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="이메일를 입력해 주세요." value="auditcastle@sgacorp.co.kr" name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>Company</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="회사명을 입력해 주세요." name="required">
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>Address</span>
+                </dt>
+                <dd>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="주소를 입력해주세요." name="required">
+                    </div>
+                    <div class="ipt_box">
+                        <input class="no_radius" type="text" placeholder="상세주소를 입력하세요." name="required">
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="modal_footer">
+        <div class="btn_wrap">
+            <a href="#" class="btn grey close">취소</a>
+            <a href="#" class="btn">수정</a>
+        </div>
+    </div>
+    <div class="modal_controller">
+        <a href="#" class="close">close</a>
+    </div>
+</div>
+<section class="configuration_page mscrollbar">
+    <div class="sub">
+        <div class="configuration_box">
+        <div class="configuration_btm_con">
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    /* Formatting function for row details - modify as you need */
+                    $('#testTb3').DataTable({
+                        "autoWidth": false,
+                        "paging": false,
+                        "pagingType": "full_numbers",
+                        "ordering": false,
+                        "info": false,
+                        "filter": false,
+                        "lengthChange": false,
+                        "language": {
+                            "info": "<span>_PAGE_</span> - _PAGES_ / _MAX_",
+                        },
+                        "buttons": [
+                            {
+                                tag: 'a',
+                                text: '저장',
+                                className: 'btn',
+                                action: function ( e, dt, node, config ) {
+
+                                }
+                            },
+                        ],
+                        "dom": '<"top"Blf>rt<"bottom"ip><"clear">',
+                        // "pageLength": '14',
+                    });
+                    $('.sel_box select').niceSelect();
+                });
+            </script>
+            <div class="tbl">
+                <table id="testTb3" class="hover">
+                    <colgroup>
+                        <col width="16.66%">
+                        <col width="16.66%">
+                        <col width="16.66%">
+                        <col width="16.66%">
+                        <col width="16.66%">
+                        <col width="16.66%">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>1차 메뉴</th>
+                        <th>2차 메뉴</th>
+                        <th>Super Admin</th>
+                        <th>Admin</th>
+                        <th>Operator</th>
+                        <th>Viewer</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>대시보드</td>
+                        <td>대시보드</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01" readonly="readonly" checked="checked">
+                                <label for="check01"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02" value="">
+                                <label for="check02"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03" value="">
+                                <label for="check03"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04" value="">
+                                <label for="check04"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Alert</td>
+                        <td>Alert List</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01_01" readonly="readonly" checked="checked">
+                                <label for="check01_01"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02_01" value="">
+                                <label for="check02_01"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03_01" value="">
+                                <label for="check03_01"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04_01" value="">
+                                <label for="check04_01"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Event</td>
+                        <td>Firewall</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01_02" readonly="readonly" checked="checked">
+                                <label for="check01_02"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02_02" value="">
+                                <label for="check02_02"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03_02" value="">
+                                <label for="check03_02"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04_02" value="">
+                                <label for="check04_02"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>IPS</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01_03" readonly="readonly" checked="checked">
+                                <label for="check01_03"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02_03" value="">
+                                <label for="check02_03"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03_03" value="">
+                                <label for="check03_03"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04_03" value="">
+                                <label for="check04_03"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Malware</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01_04" readonly="readonly" checked="checked">
+                                <label for="check01_04"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02_04" value="">
+                                <label for="check02_04"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03_04" value="">
+                                <label for="check03_04"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04_04" value="">
+                                <label for="check04_04"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>파일무결성</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01_05" readonly="readonly" checked="checked">
+                                <label for="check01_05"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02_05" value="">
+                                <label for="check02_05"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03_05" value="">
+                                <label for="check03_05"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04_05" value="">
+                                <label for="check04_05"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Computer</td>
+                        <td>Cloud Status</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01_06" readonly="readonly" checked="checked">
+                                <label for="check01_06"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02_06" value="">
+                                <label for="check02_06"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03_06" value="">
+                                <label for="check03_06"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04_06" value="">
+                                <label for="check04_06"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Cloud Manager</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01_07" readonly="readonly" checked="checked">
+                                <label for="check01_07"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02_07" value="">
+                                <label for="check02_07"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03_07" value="">
+                                <label for="check03_07"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04_07" value="">
+                                <label for="check04_07"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Configuration</td>
+                        <td>사용자관리</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01_08" readonly="readonly" checked="checked">
+                                <label for="check01_08"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02_08" value="">
+                                <label for="check02_08"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03_08" value="">
+                                <label for="check03_08"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04_08" value="">
+                                <label for="check04_08"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>권한설정</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01_09" readonly="readonly" checked="checked">
+                                <label for="check01_09"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02_09" value="">
+                                <label for="check02_09"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03_09" value="">
+                                <label for="check03_09"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04_09" value="">
+                                <label for="check04_09"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>사이트 이용설정</td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check01_10" readonly="readonly" checked="checked">
+                                <label for="check01_10"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check02_10" value="">
+                                <label for="check02_10"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check03_10" value="">
+                                <label for="check03_10"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chk_box">
+                                <input type="checkbox" name="checkbox_list" id="check04_10" value="">
+                                <label for="check04_10"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+						<span>Admin</span>
+					</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class=""><i class="icon_user"></i><span>사용자</span></a></li>
+					<li><a href=""><i class="icon_userg"></i><span>사용자 그룹</span></a></li>
+					<li><a href=""><i class="icon_om"></i><span>조직관리</span></a></li>
+					<li><a href="" class="on"><i class="icon_system"></i><span>시스템</span></a></li>
+					<li><a href=""><i class="icon_stg"></i><span>시스템 그룹</span></a></li>
+					<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+						<ul style="display: none;">
+							<li><a href="">역할</a></li>
+							<li><a href="" class="on">규칙 관리</a></li>
+							<li><a href="">계산식 관리</a></li>
+							<li><a href="">이벤트 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+						<ul style="display: none;">
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="icon_monitor"></i><span>모니터링</span></a></li>
+					<li><a href=""><i class="icon_report"></i><span>리포트</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header no_navlink">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>시스템 관리</h1>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> <span>user01</span></a></li>
+					<li class="time"><i></i><span>2020-09-11 15:35:00</span></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>기타알람</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="flx cont_wrap">
+				<div class="content">
+					<div class="worker_ch_area flx">
+						<div class="worker_ch_box">
+							<button class="skyblue">작업자 선택</button>
+							<p class="worker_name">홍길동</p>
+						</div>
+						<p class="req_txt inbl">미 선택시 신청자가 작업자</p>
+					</div>
+					<div class="tab_wrap cont_in_tab">
+						<ul class="tab_list">
+							<li><a href="" class="on">서버 목록</a></li>
+							<li><a href="">접근 권한</a></li>
+							<li><a href="">암호 조회</a></li>
+							<li><a href="">명령어 신청</a></li>
+						</ul>
+					</div>
+					<div class="tree_menu_wrap">
+						<div class="search_box mini_search">
+							<input type="text" placeholder="검색어를 입력해주세요" class="search_inputbox" />
+							<button class="btn_search" type="submit">검색</button>
+						</div>
+						<div class="flx tree_menu_area">
+							<div class="tree_menu_box">
+								<div class="tree_menu_tab flx">
+									<button class="on">그룹</button>
+									<button>OS타입</button>
+								</div>
+								<div class="tree_menu_tl">
+									<ul class="tree_menu_inner">
+										<li>
+											<a><i class="icon_tree folder open"></i><span>Root</span></a>
+											<ul>
+												<li>
+													<a><i class="icon_tree folder"></i><span>최고관리자</span></a>
+												</li>
+												<li>
+													<a><i class="icon_tree folder"></i><span>관리자</span></a>
+												</li>
+												<li>
+													<a><i class="icon_tree folder"></i><span>헬프데스크</span></a>
+												</li>
+												<li>
+													<a class="on"><i class="icon_tree iuser"></i><span>매니저</span></a>
+												</li>
+												<li>
+													<a><i class="icon_tree iuser"></i><span>일반사용자</span></a>
+												</li>
+												<li>
+													<a><i class="icon_tree file"></i><span>JWT사용자</span></a>
+												</li>
+												<li>
+													<a><i class="icon_tree file"></i><span>익명사용자</span></a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mini_tbl pg_m_tbl">
+								<table class="default_tbl scroll">
+									<thead>
+										<tr>
+											<th class="check_list"><input type="checkbox" name="" id="list00" class="check_stl"><label for="list00" class="check_stl_lab"></label></th>
+											<th>서버</th>
+											<th>호스트</th>
+											<th>IP address</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list01" class="check_stl"><label for="list01" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr class="on">
+											<td class="check_list"><input type="checkbox" name="" id="list03" class="check_stl" checked><label for="list03" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list04" class="check_stl"><label for="list04" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="pagination mini_paging">
+									<ul>
+										<li>
+											<a href="" class="first diss"><span></span>처음</a>
+										</li>
+										<li>
+											<a href="" class="prev diss"><span></span>이전</a>
+										</li>
+										<li class="currentpage">
+											<p><em>1</em> / 5</p>
+										</li>
+										<li>
+											<a href="" class="next"><span></span>다음</a>
+										</li>
+										<li>
+											<a href="" class="last"><span></span>마지막</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="align_right">
+							<button class="btnstl skyblue arrow">선택추가<i></i></button>
+							<button class="btnstl shadow arrow">전체추가<i></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="tab_wrap cont_in_tab">
+						<ul class="tab_list">
+							<li><a href="">서버 목록</a></li>
+							<li><a href="">접근 권한</a></li>
+							<li><a href="">암호 조회</a></li>
+							<li><a href="" class="on">명령어 신청</a></li>
+						</ul>
+					</div>
+					<div class="comm_wd">
+						<div class="comm_row">
+							<div class="comm_row_num">
+								<p class="t">1</p>
+							</div>
+							<div class="comm_in">
+								<p class="t">cd config/</p>
+							</div>
+						</div>
+						<div class="comm_row">
+							<div class="comm_row_num">
+								<p class="t">2</p>
+							</div>
+							<div class="comm_in">
+								<p class="t">cp /tmp/server-configdir/</p>
+							</div>
+						</div>
+						<div class="comm_row">
+							<div class="comm_row_num">
+								<p class="t">3</p>
+							</div>
+							<div class="comm_in">
+								<p class="t">ls</p>
+							</div>
+						</div>
+						<div class="comm_row">
+							<div class="comm_row_num">
+								<p class="t">4</p>
+							</div>
+							<div class="comm_in">
+								<p class="t">mkdir</p>
+							</div>
+						</div>
+						<div class="comm_row">
+							<div class="comm_row_num">
+								<p class="t">5</p>
+							</div>
+							<div class="comm_in fbdd">
+								<p class="t">KILL</p>
+								<div class="deny_allow">
+									<i class="mini_da deny"></i><p>차단</p>
+									<i class="mini_arr"></i>
+									<i class="mini_da allow"></i><p>허용</p>
+								</div>
+								<button class="btn_comm_del" title="지우기"></button>
+							</div>
+						</div>
+						<div class="comm_row">
+							<div class="comm_row_num">
+								<p class="t">6</p>
+							</div>
+							<div class="comm_in">
+								<p class="t">cat</p>
+							</div>
+						</div>
+						<div class="comm_row">
+							<div class="comm_row_num">
+								<p class="t">7</p>
+							</div>
+							<div class="comm_in">
+								<p class="t">lsattr</p>
+							</div>
+						</div>
+						<div class="comm_row">
+							<div class="comm_row_num">
+								<p class="t">8</p>
+							</div>
+							<div class="comm_in">
+								<p class="t">chattr</p>
+							</div>
+						</div>
+						<div class="comm_row">
+							<div class="comm_row_num">
+								<p class="t">9</p>
+							</div>
+							<div class="comm_in">
+								<p class="t">cd config/</p>
+							</div>
+						</div>
+						<div class="comm_row">
+							<div class="comm_row_num">
+								<p class="t">10</p>
+							</div>
+							<div class="comm_in">
+								<p class="t">cd config/</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+
+</body></html>

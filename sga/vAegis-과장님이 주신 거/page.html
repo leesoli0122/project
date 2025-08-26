@@ -1,0 +1,228 @@
+<html lang="ko" class="chrome">
+
+<head>
+	<title>대시보드 - Aegis</title>
+	<meta charset="UTF-8" http-equiv="Content-Type">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- TODO: search engine info -->
+	<meta name="robots" content="Aegis">
+	<meta name="keywords" content="Aegis">
+	<meta name="title" content="Aegis">
+	<meta name="description" content="Aegis">
+
+	<!-- TODO: social url link image -->
+	<meta property="og:url" content="">
+	<meta property="og:title" content="Aegis">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="">
+	<meta property="og:description" content="Aegis 홈페이지입니다.">
+
+	<!-- TODO: favicon -->
+	<link rel="icon" href="./assets/images/favicon.png" type="image/png">
+
+	<!-- TODO: import -->
+	<link rel="stylesheet" href="./assets/css/lib/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/lib/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="./assets/css/lib/datatables.css?v=2023091410">
+	<link rel="stylesheet" href="./assets/css/lib/select.dataTables.css?v=2023091410">
+	<link rel="stylesheet" href="./assets/css/lib/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="./assets/css/lib/jquery.scrollbar.css">
+	<link rel="stylesheet" href="./assets/css/lib/jstree.css">
+	<link rel="stylesheet" href="./assets/css/reset.css?v=2023091410"><!--//jung 추가-->
+	<link rel="stylesheet" href="./assets/css/style.css?v=2023091410">
+	<link rel="stylesheet" href="./assets/css/json-viewer.css">
+	<link rel="stylesheet" href="./assets/css/common.css?v=2023091410"><!--//jung 추가-->
+
+	<script src="./assets/js/lib/jquery-1.12.4.min.js?v=2023091410"></script>
+	<script src="./assets/js/lib/jquery-ui.js"></script>
+	<script src="./assets/js/lib/jquery.min.js?v=2023091410"></script>
+	<script src="./assets/js/lib/bootstrap.min.js"></script>
+	<script src="./assets/js/lib/moment.js"></script>
+	<script src="./assets/js/lib/bootstrap-datetimepicker.js"></script>
+	<script src="./assets/js/lib/jquery-ui.js?v=2023091410"></script>
+	<script src="./assets/js/lib/echarts.js?v=2023091410"></script>
+	<script src="./assets/js/lib/jquery.nice-select.js?v=2023091410"></script>
+	<script src="./assets/js/lib/select.dataTables.js?v=2023091410"></script>
+	<script src="./assets/js/lib/datatables.js?v=2023091410"></script>
+	<script src="./assets/js/lib/dataTables.colReorder.js?v=2023091410"></script>
+	<script src="./assets/js/lib/dataTables.rowReorder.js?v=2023091410"></script>
+	<script src="./assets/js/lib/dataTables.buttons.min.js?v=2023091410"></script>
+	<script src="./assets/js/lib/sweetalert.js"></script>
+	<script src="./assets/js/lib/jquery.mCustomScrollbar.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+	<script src="./assets/js/lib/jquery.scrollbar.js"></script>
+	<script src="./assets/js/lib/jstree-3.3.11.js"></script>
+	<script src="./assets/js/scripts.js?v=2023091410"></script>
+
+	<script src="./js/common/define.js?v=2023091410"></script>
+	<script src="./js/common/basic_common.js?v=2023091410"></script>
+	<script src="./js/common/cf_common.js?v=2023091410"></script>
+	<script src="./js/common/event_common.js?v=2023091410"></script>
+	<script src="./js/common/json-viewer.js?v=2023091410"></script>
+	<script src="./js/common/expansion_common.js?v=2023091410"></script>
+
+
+	<script src="./js/common/page_common.js?v=2023091410"></script>
+
+	<script src="./js/service/dashboards/dashboardChart.js?v=2023091410"></script>
+	<script src="./js/service/dashboards/dashboard.js?v=2023091410"></script>
+
+	<!-- 230103 Image Security 추가 -->
+	<script src="./js/service/dashboards/imageSecurity/dashboardScanStatus.js?v=2023091410"></script>
+	<script src="./js/service/dashboards/clusterCompliance/dashboardClusterComplianceChart.js?v=2023091410"></script>
+</head>
+
+<body style="overflow: inherit;">
+
+	<h1>Aegis ADMIN</h1>
+	<div class="skip_navigation">
+		<ul>
+			<li>
+				<a href="#Content" class="go_content">본문 바로가기</a>
+			</li>
+			<li>
+				<a href="#Gnb">메뉴 바로가기</a>
+			</li>
+		</ul>
+	</div>
+    <style>
+        header.header_box.on {width: 250px;background: #184385;box-shadow: 2px 0px 6px 2px #1a53ab;left: 0;top: 50px;box-shadow: none;border-radius:0;}
+        .header_box.on .menu_btn {top:10px;right:12px;}
+        .header_box .menu_btn {position:absolute;top:15px;right:12px;}
+        .header_box .menu_btn:hover {cursor:pointer;}
+        .header_box .menu_btn .menu {width:36px;height:36px;background-color:white;}
+        .header_box .menu_btn .menu::before,
+        .header_box .menu_btn .menu::after {content:"";display:inline-block;position:absolute;width:24px;height:2px;background-color:white;}
+        .header_box .menu_btn .menu::before {top:8px;}
+        .header_box .menu_btn .menu::after {bottom:8px;}
+        .header_box nav {margin-top:0;}
+    </style>
+
+	<header class="header_box">
+		<div class="menu_btn">
+            <div class="menu"></div>
+        </div>
+		<nav>
+			<ul class="lnb">
+				<!-- 대시보드 -->
+				<li class="active"><a href="./dashboard.do" class="menu01"><span>대시보드</span></a></li>
+				<!-- 이벤트 모니터링 -->
+
+				<li class=""><a href="./eventMonitoring.do" class="menu02"><span>이벤트 모니터링</span></a></li>
+				<!-- 이벤트 조회 --> <!-- 230118 이벤트 모니터링(cAegis) 추가 -->
+				<li class="has_children"><a href="#" class="menu03"><span>이벤트 조회</span></a>
+					<ul class="depth2">
+						<li class="has_children"><a href="#" class="menu03_1"><span>호스트 이벤트</span></a>
+							<ul class="depth3">
+								<!-- 호스트 이벤트 -->
+								<li><a href="./eventFirewall.do" class=""><span>방화벽</span></a></li>
+								<li><a href="./eventIPS.do" class=""><span>침입방지시스템</span></a></li>
+								<li><a href="./eventMalware.do" class=""><span>멀웨어</span></a></li>
+								<li><a href="./eventFileInt.do" class=""><span>파일 무결성</span></a></li>
+								<li><a href="./eventFileCtl.do" class=""><span>실행 파일 통제</span></a></li>
+								<li><a href="./eventPamAcl.do" class=""><span>서비스 제어</span></a></li>
+							</ul>
+						</li>
+						<li class="has_children"><a href="#" class="menu03_2"><span>클러스터 이벤트</span></a>
+							<ul class="depth3">
+								<!-- 클러스터 아벤트 -->
+								<li><a href="./eventContainerSecurity.do" class=""><span>컨테이너 이벤트</span></a></li>
+								<li><a href="./eventWorkload.do" class=""><span>컨테이너 워크로드 실행제어</span></a></li>
+								<li><a href="./eventContainerImageControl.do" class=""><span>컨테이너 이미지 실행제어</span></a>
+								</li>
+								<li><a href="./eventImageSecurity.do" class=""><span>컨테이너 이미지 스캔</span></a></li>
+								<li><a href="./eventCompliance.do" class=""><span>클러스터 규정준수 스캔</span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<!-- ?? -->
+
+				<!-- 스캔 --> <!-- 230220 스캔 카테고리 추가(멀웨어는 vaegis 멀웨어 통합검사로 잠시 대체) -->
+				<li class="has_children"><a href="#" class="menu04"><span>스캔</span></a>
+					<ul class="depth2">
+						<li><a href="./complianceScan.do" class=""><span>클러스터 규정 준수</span></a></li>
+						<li><a href="./imageScan.do" class=""><span>컨테이너 이미지</span></a></li>
+						<li><a href="./cloudScan.do" class=""><span>호스트 안티 멀웨어</span></a></li>
+						<li><a href="./vulnerability.do" class=""><span>호스트 취약성</span></a></li>
+					</ul>
+				</li>
+				<!-- 정책관리 -->
+				<li class="has_children"><a href="#" class="menu06"><span>정책 관리</span></a>
+					<ul class="depth2">
+						<li class="has_children"><a href="#" class="menu06_1"><span>호스트 정책</span></a>
+							<ul class="depth3">
+								<li><a href="./securityPolicy.do" class=""><span>탐지 룰 관리</span></a></li>
+							</ul>
+						</li>
+						<li class="has_children"><a href="#" class="menu06_2"><span>클러스터 정책</span></a>
+							<ul class="depth3">
+								<li><a href="./policyContainerSecurity.do" class=""><span>컨테이너 이벤트</span></a></li>
+								<li><a href="./policyWorkload.do" class=""><span>컨테이너 워크로드 실행제어</span></a></li>
+								<li><a href="./policyImageSecurity.do" class=""><span>컨테이너 이미지 스캔</span></a></li>
+								<li><a href="./policyComplianceScan.do" class=""><span>클러스터 규정준수 스캔</span></a></li>
+							</ul>
+						</li>
+						<li><a href="./cloudManager.do" class=""><span>자산 관리</span></a></li>
+						<li><a href="./userManager.do" class=""><span>사용자 관리</span></a></li>
+						<li><a href="./auditList.do" class=""><span>감사 로그</span></a></li>
+
+
+					</ul>
+				</li>
+				<!-- 환경설정 -->
+				<li class="has_children"><a href="#" class="menu05"><span>환경 설정</span></a>
+					<ul class="depth2">
+						<li><a href="./authManager.do" class=""><span>메뉴 권한 설정</span></a></li>
+						<li><a href="./siteManager.do" class=""><span>사이트 이용 설정</span></a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<article class="top_cont">
+		<a href="./dashboard.do" class="logo_link">
+			<div class="logo_hidden_box">
+				<img src="./assets/images/common/img_aegis.png">
+			</div>
+		</a>
+		<div class="location">
+			<ul>
+				<li>Home</li>
+				<li>대시보드</li>
+			</ul>
+		</div>
+		<h2>대시보드</h2>
+		<div class="user_box">
+			<div class="user_info">
+				<a href="#" class="user_info_link">
+					<p class="user">Hello, <span id="currentUserId" title="eunjung">윤은정</span></p>
+				</a>
+				<div class="user_info_list">
+					<ul>
+						<li><a href="#" rel="user_modal" class="modalLoad">내정보</a></li>
+						<li><a href="#" rel="tf_modal" class="modalLoad">2차인증</a></li>
+						<li class="logout"><a href="javascript:cf_serviceCall100002();">로그아웃</a></li>
+					</ul>
+				</div>
+			</div><!--//user_info-->
+			<div class="top_dashboard">
+				<a href="#" class="top_dashboard_link">
+					<span class="linktext">사용자 정보 버튼</span>
+				</a>
+			</div>
+			<div class="top_dashboard_list">
+				<ul id="topContList">
+					<li><a href="#" onclick="javascript: lf_saveEventFunc();">대시보드 저장</a></li>
+				</ul>
+			</div>
+		</div>
+	</article><!--//top_cont-->
+</body>
+
+</html>

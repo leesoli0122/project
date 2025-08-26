@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header enduser_nav">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+					</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class=""><i class="icon_home"></i><span>HOME</span></a></li>
+					<li><a href="" class="depth_menu on"><i class="icon_myinfo"></i><span>내 정보</span></a>
+						<ul style="display:block">
+							<li><a href="">기본 정보</a></li>
+							<li><a href="" class="on">인증/암호 관리</a></li>
+							<li><a href="">권한 위임</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="icon_rolemg"></i><span>역할 관리</span></a></li>
+					<li><a href=""><i class="icon_systemmg"></i><span>시스템/자원 관리</span></a></li>
+					<li><a href=""><i class="icon_req"></i><span>요청 처리</span></a></li>
+					<li><a href=""><i class="icon_approval"></i><span>승인 처리</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>역할 요청</h1>
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">역할 관리</a></li>
+						<li><span>역할 요청</span></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> <span>user01</span></a></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="move_wrap">
+					<div class="move_box">
+						<div class="search_box mini_search">
+							<input type="text" placeholder="검색어를 입력해주세요" class="search_inputbox" />
+							<button class="btn_search" type="submit">검색</button>
+						</div>
+						<div class="move_tbl scroll">
+							<table class="default_tbl">
+								<thead>
+									<tr>
+										<th class="sort_column">
+											<div class="">시스템/자원<span class="ascanding"></span></div>
+										</th>
+										<th class="sort_column">
+											<div class="">종류<span class="ascanding"></span></div>
+										</th>
+										<th class="sort_column">
+											<div class="">승인필요<span class="ascanding"></span></div>
+										</th>
+										<th class="sort_column">
+											<div class="">설명<span class="ascanding"></span></div>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>member1234</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>설명문구 설명문구 설명문구</td>
+									</tr>
+									<tr>
+										<td>member1234</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+									</tr>
+									<tr class="selected">
+										<td>system01</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+									</tr>
+									<tr>
+										<td>member1234</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+									</tr>
+									<tr>
+										<td>member1234</td>
+										<td>RedHat</td>
+										<td>data1</td>
+										<td>CentOS(1503)</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="pagination mini_paging">
+							<ul>
+								<li>
+									<a href="" class="first diss"><span></span>처음</a>
+								</li>
+								<li>
+									<a href="" class="prev diss"><span></span>이전</a>
+								</li>
+								<li class="currentpage">
+									<p><em>1</em> / 1</p>
+								</li>
+								<li>
+									<a href="" class="next diss"><span></span>다음</a>
+								</li>
+								<li>
+									<a href="" class="last diss"><span></span>마지막</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="moved_box">
+						<p class="moved_tit">선택한 시스템/자원</p>
+						<div class="moved_list scroll">
+							<div class="form_stl">
+								<dl class="form_list noline">
+									<dt class="form_tit">시스템 이름</dt>
+									<dd class="form_txt">system01</dd>
+									<dt class="form_tit">Account ID</dt>
+									<dd class="form_txt"><input type="text" name="" class="form_contrl"></dd>
+									<dt class="form_tit">Password</dt>
+									<dd class="form_txt"><input type="Password" name="" class="form_contrl"></dd>
+									<dt class="form_tit">Password Confirm</dt>
+									<dd class="form_txt"><input type="Password" name="" class="form_contrl"></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="fm_tit pdt16"></p>
+				<div class="form_stl">
+					<dl class="form_list">
+						<dt class="form_tit"><label for="tarea01">요청사유</label></dt>
+						<dd class="form_txt">
+							<textarea class="form_contrl mini" id="tarea01"></textarea>
+						</dd>
+						<dt class="form_tit">기한</dt>
+						<dd class="form_txt">
+							<div class="form_date">
+								<input type="text" class="form_contrl date_ctl" value="2019-10-11" readonly="readonly">
+								<span> ~ </span>
+								<input type="text" class="form_contrl date_ctl" value="2019-10-18" readonly="readonly">
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<div class="btn_box cl_both">
+					<div class="f_r">
+						<a href="" class="blue btn_save">신청</a>
+						<a href="" class="skyblue">취소</a>
+					</div>				
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

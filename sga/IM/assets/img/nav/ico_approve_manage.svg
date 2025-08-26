@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(-4.287 -3.522)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="ico_approve_manage" transform="translate(4.287 3.522)" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(-5.702 -4.333)">
+      <circle id="round" cx="4.18" cy="4.18" r="4.18" transform="translate(6.065 2.812)" fill="none" stroke="#454545" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="pass03" d="M14.294,20.723H2.448c-.015-.34-.033-.68-.033-1.02,0-.14,0-.274.008-.414A12.133,12.133,0,0,1,5.53,11.209a1.372,1.372,0,0,1,.117-.124.424.424,0,0,0,.078.061,6.676,6.676,0,0,0,4.344,1.749,1.419,1.419,0,0,0,.182.008,1.436,1.436,0,0,0,.182-.008,6.694,6.694,0,0,0,4.342-1.749.458.458,0,0,0,.074-.057c.041.041.083.083.117.124q.233.26.45.532" transform="translate(0 0.857)" fill="none" stroke="#454545" stroke-width="1.5"/>
+      <path id="pass02" d="M13.34,20.708a5.491,5.491,0,1,1,3.783,1.511,5.475,5.475,0,0,1-3.783-1.511" transform="translate(0.955 0.873)" fill="none" stroke="#454545" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="pass01" d="M14.711,15.984l2.1,2.766,1.962-4.627" transform="translate(1.274 1.172)" fill="none" stroke="#454545" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

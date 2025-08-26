@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(-3.644 -0.125)" fill="#f0f" opacity="0.217"/>
+    </clipPath>
+  </defs>
+  <g id="ico_service" transform="translate(0.125 20.356) rotate(-90)" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(17.356 0.875) rotate(90)">
+      <path id="pass03" d="M20.966,26.241a1.974,1.974,0,1,1-1.977-1.972A1.975,1.975,0,0,1,20.966,26.241Z" transform="translate(-7.98 -11.01)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="pass02" d="M5.448,26.258a1.974,1.974,0,1,1-1.976-1.972A1.975,1.975,0,0,1,5.448,26.258Z" transform="translate(-1.5 -11.017)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="pass01" d="M36.883,26.223a1.974,1.974,0,1,1-1.976-1.973A1.974,1.974,0,0,1,36.883,26.223Z" transform="translate(-14.629 -11.002)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <rect id="box" width="13.976" height="6.211" rx="3.106" transform="translate(4.139)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="line3" x2="0.004" y2="6.446" transform="translate(11.036 6.455)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="line2" y1="0.006" x2="4.502" transform="translate(13.581 14.999)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="line1" y1="0.006" x2="4.501" transform="translate(4.19 15.01)" fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

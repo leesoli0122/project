@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>SGIM</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <!-- s : 추가 -->
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+    <!-- e : 추가 -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://test.co.kr/respond.min.js"></script>
+    <![endif]-->
+    <!--[if (gte IE 7)&(lte IE 8)]>
+      <script
+        type="text/javascript"
+        src="http://test.co.kr/respond.min.js"
+      ></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="SGIM_wrap" class="mini_nav">
+		<div class="nav">
+			<div class="nav_inner">
+				<div class="nav_header">
+					<a href="" class="logo">
+					<img src="assets/img/common/logo.png" /><!--[2025] 이미지 경로 및 이미지 변경-->
+					<span>Admin</span>
+					</a>
+				</div>
+				<!-- s: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li>
+						<a href="" class=""
+							><i class="icon_user"></i><span>사용자</span></a
+						>
+						</li>
+						<li>
+						<a href=""><i class="icon_userg"></i><span>사용자 그룹</span></a>
+						</li>
+						<li>
+						<a href=""><i class="icon_om"></i><span>조직관리</span></a>
+						</li>
+						<li>
+						<a href="" class="on"
+							><i class="icon_system"></i><span>시스템</span></a
+						>
+						</li>
+						<li>
+						<a href=""><i class="icon_stg"></i><span>시스템 그룹</span></a>
+						</li>
+						<li>
+						<a href="" class="depth_menu"
+							><i class="icon_pm"></i><span>정책 관리</span></a
+						>
+						<ul>
+							<li><a href="">역할</a></li>
+							<li><a href="" class="on">규칙 관리</a></li>
+							<li><a href="">계산식 관리</a></li>
+							<li><a href="">이벤트 관리</a></li>
+						</ul>
+						</li>
+						<li>
+						<a href="" class="depth_menu"
+							><i class="icon_cm"></i><span>인증/인가 관리</span></a
+						>
+						<ul>
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+						</li>
+						<li>
+						<a href=""><i class="icon_monitor"></i><span>모니터링</span></a>
+						</li>
+						<li>
+						<a href=""><i class="icon_report"></i><span>리포트</span></a>
+						</li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>
+						SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard ICAM
+						V2.0
+					</p>
+					<!-- e: copyright 추가 -->
+				</div>
+				<!-- e: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+			</div>
+		</div>
+		<div id="container">
+			<!-- s : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="header">
+			<div class="btn_lnb"><a>메뉴</a></div>
+			<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+			<div class="header_title">
+				<ol class="link_depth">
+				<li><a href="">HOME</a></li>
+				<li><a href="">시스템 관리</a></li>
+				<li><span>생성</span></li>
+				</ol>
+			</div>
+			<ul class="gl_nav">
+				<li class="btn_top_user"><a href="">user01</a></li>
+				<li class="timer">
+				<i></i><span><em>00:15:00</em> 후 접속 끊김</span
+				><button class="time_ref" title="세션 시간 새로고침"></button>
+				</li>
+				<li class="btn_alim">
+				<a href="">alim<span>13</span></a>
+				<div class="balloon alim_pop" style="display: none">
+					<div class="alim_pop_wrap">
+					<div class="alim_top">
+						<span>새 알림</span>
+						<button class="alim_clear">모든 알림 지우기</button>
+					</div>
+					<ul class="alim_list">
+						<!-- s: class 변경 -->
+						<li>
+						<a><i class="icon_alim icon_caution"></i>경고!</a>
+						</li>
+						<li>
+						<a
+							><i class="icon_alim icon_message"></i>나한테만 오는
+							알람메세지이이이이 두줄일때 다음줄로 넘어갑니다
+						</a>
+						</li>
+						<li>
+						<a
+							><i class="icon_alim icon_notice"></i>전체적인
+							알람공지</a
+						>
+						</li>
+						<li>
+						<a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a>
+						</li>
+						<li>
+						<a><i class="icon_alim icon_caution"></i>메일왔네요</a>
+						</li>
+						<li>
+						<a><i class="icon_alim icon_caution"></i>기타알람</a>
+						</li>
+						<!-- e: class 변경 -->
+					</ul>
+					<div class="allAlim">
+						<!-- s: class 변경 -->
+						<a href="" class="basic icon_plus">모두 보기</a>
+						<!-- e: class 변경 -->
+					</div>
+					</div>
+				</div>
+				</li>
+				<li class="btn_menualdown"><a id="guide_manualDown"></a></li>
+				<li class="btn_logout"><a href="">logout</a></li>
+			</ul>
+			</div>
+			<!-- e : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="content">
+			<div class="topPrss">
+				<div class="inner_topPrss">
+					<div class="detail_process">
+						<ul class="flx">
+						<li class="flx_cell process_comple">
+							<span class="s_num">1</span>기본 정보
+						</li>
+						<li class="flx_cell process_comple">
+							<span class="s_num">2</span>서버 정보
+						</li>
+						<li class="flx_cell process_comple">
+							<span class="s_num">3</span>사용자 속성
+						</li>
+						<li class="flx_cell process_comple">
+							<span class="s_num">4</span>그룹 속성
+						</li>
+						<li class="flx_cell process_comple">
+							<span class="s_num">5</span>조직 속성
+						</li>
+						<li class="flx_cell process_current">
+							<span class="s_num">6</span>배포 정책
+						</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- s: 공통때문에 레이아웃구성 다시잡음 -->
+			<ul class="info_wrap">
+				<li>
+				<dl class="bul_dot">
+					<dt>시간 인가</dt>
+					<dd>
+					<input
+						type="checkbox"
+						name=""
+						id="polCheck"
+						class="check_stl"
+					/>
+					<label for="polCheck" class="check_stl_lab">시간 인가</label>
+					</dd>
+				</dl>
+				</li>
+				<li>
+				<dl class="bul_dot">
+					<dt class="inb">TimeZone</dt>
+					<dd>
+					<input
+						type="text"
+						name=""
+						class="form_contrl"
+						id="onsdName"
+						placeholder=""
+					/>
+					</dd>
+				</dl>
+				</li>
+			</ul>
+			<div class="list_stl">
+				<div class="move_box">
+				<p class="moved_tit">시간 인가</p>
+				<div class="calender_ui_wrap">
+					<table class="calender_tbl">
+					<thead>
+						<tr>
+						<td>
+							<div class="cld_weekday">
+							<table class="cld_weekday_tbl">
+								<tbody>
+								<tr>
+									<td style="width: 50px">
+									</td>
+									<td class="redtxt">일</td>
+									<td>월</td>
+									<td>화</td>
+									<td>수</td>
+									<td>목</td>
+									<td>금</td>
+									<td>토</td>
+								</tr>
+								</tbody>
+							</table>
+							</div>
+						</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td>
+							<div class="cld_col">
+							<table class="cld_col_tbl">
+								<tbody>
+								<tr>
+									<td class="cld_time_list">
+									<ul>
+										<li>
+										<span class="cld_time_sp">01:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">02:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">03:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">04:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">05:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">06:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">07:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">08:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">09:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">10:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">11:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">12:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">13:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">14:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">15:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">16:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">17:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">18:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">19:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">20:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">21:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">22:00</span>
+										</li>
+										<li>
+										<span class="cld_time_sp">23:00</span>
+										</li>
+										<li></li>
+									</ul>
+									</td>
+									<td>
+									<div>
+										<table class="time_sch">
+										<tbody>
+											<tr>
+											<td>
+												<div class="week_time_schedule_col">
+												<ul>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+												</ul>
+												</div>
+											</td>
+											<td>
+												<div class="week_time_schedule_col">
+												<ul>
+													<li class="dashline">
+													<div
+														class="week_time_schedule"
+														style="height: 21px"
+													>
+														<p class="time_txt">
+														00:00 ~ 00:30
+														</p>
+														<button
+														class="small_delbtn"
+														></button>
+													</div>
+													</li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+												</ul>
+												</div>
+											</td>
+											<td>
+												<div class="week_time_schedule_col">
+												<ul>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+												</ul>
+												</div>
+											</td>
+											<td>
+												<div class="week_time_schedule_col">
+												<ul>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline">
+													<div
+														class="week_time_schedule"
+														style="height: 121px"
+													>
+														<p class="time_txt">
+														06:00 ~ 09:00
+														</p>
+														<div class="mini_popup">
+														<div class="popup_title">
+															<p class="title_txt">
+															수요일
+															</p>
+															<!-- <a class="btn_close"
+															>닫기</a
+															> -->
+														</div>
+														<div
+															class="popup_content"
+														>
+															<div>
+															<div
+																class="flx fm_list"
+															>
+																<select
+																class="form_contrl"
+																>
+																<option>
+																	06:00
+																</option>
+																<option>
+																	06:30
+																</option>
+																<option>
+																	07:00
+																</option>
+																<option>
+																	07:30
+																</option>
+																</select>
+																<span class="hypn"
+																>-</span
+																>
+																<select
+																class="form_contrl"
+																>
+																<option>
+																	06:00
+																</option>
+																<option>
+																	06:30
+																</option>
+																<option>
+																	07:00
+																</option>
+																<option>
+																	07:30
+																</option>
+																</select>
+															</div>
+															<div class="fm_list">
+																<input
+																type="checkbox"
+																name=""
+																id="alltime"
+																class="check_stl"
+																/>
+																<label
+																for="alltime"
+																class="check_stl_lab"
+																>종일</label
+																>
+															</div>
+															</div>
+															<div
+															class="btn_box"
+															>
+															<a
+																href=""
+																class="line"
+																>일정삭제</a
+															>
+															<a
+																href=""
+																class="primary"
+																>저장</a
+															>
+															</div>
+														</div>
+														</div>
+														<button
+														class="small_delbtn"
+														></button>
+													</div>
+													</li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+												</ul>
+												</div>
+											</td>
+											<td>
+												<div class="week_time_schedule_col">
+												<ul>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li>
+													<div
+														class="week_time_schedule"
+														style="height: 261px"
+													>
+														<p class="time_txt">
+														11:30 ~ 18:00
+														</p>
+														<button
+														class="small_delbtn"
+														></button>
+													</div>
+													</li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+												</ul>
+												</div>
+											</td>
+											<td>
+												<div class="week_time_schedule_col">
+												<ul>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+												</ul>
+												</div>
+											</td>
+											<td>
+												<div class="week_time_schedule_col">
+												<ul>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+													<li class="dashline"></li>
+													<li></li>
+												</ul>
+												</div>
+											</td>
+											</tr>
+										</tbody>
+										</table>
+									</div>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+							</div>
+						</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+			<!-- e: 공통때문에 레이아웃구성 다시잡음 -->
+			<div class="btn_box cl_both">
+				<div class="f_l"></div>
+				<div class="f_r">
+					<!-- s: class 변경 -->
+					<a href="" class="basic2">이전</a>
+					<div class="confirm_popup">
+						<a href="" class="primary btn_save">저장</a>
+						<div class="save_alert" style="display: none">
+						<div class="arrow"></div>
+						<p>저장하시겠습니까?</p>
+						<div class="btn_box">
+							<a href="" class="primary">저장</a>
+							<a href="" class="line cancel">취소</a>
+						</div>
+						</div>
+					</div>
+					<a href="" class="line">취소</a>
+					<!-- e: class 변경 -->
+				</div>
+			</div>
+			</div>
+			<!-- nav로 이동 <div class="footer">
+					<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+				</div> -->
+		</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>index - vAegis</title>
+    <meta charset="UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- TODO: search engine info -->
+    <meta name="robots" content="CloudVM" />
+    <meta name="keywords" content="CloudVM" />
+    <meta name="title" content="CloudVM" />
+    <meta name="description" content="CloudVM" />
+
+    <!-- TODO: social url link image -->
+    <meta property="og:url" content="">
+    <meta property="og:title" content="CloudVM">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="cloudVM.png">
+    <meta property="og:description" content="CloudVM 홈페이지입니다.">
+
+    <!-- TODO: favicon -->
+    <link rel="icon" href="favicon.png" type="favicon.png" />
+
+    <!-- TODO: import -->
+    <link rel="stylesheet" href="/assets/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/lib/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/assets/css/lib/datatables.css">
+    <link rel="stylesheet" href="/assets/css/lib/select.dataTables.css">
+    <link rel="stylesheet" href="/assets/css/lib/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="/assets/css/lib/jquery.scrollbar.css">
+    <link rel="stylesheet" href="/assets/css/lib/jstree.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/common.css">
+
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="/assets/js/lib/moment.js"></script>
+    <script src="/assets/js/lib/bootstrap.min.js"></script>
+    <script src="/assets/js/lib/bootstrap-datetimepicker.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="/assets/js/lib/echarts.js"></script>
+    <script src="/assets/js/lib/jquery.nice-select.js"></script>
+    <script src="/assets/js/lib/select.dataTables.js"></script>
+    <script src="/assets/js/lib/datatables.js"></script>
+    <script src="/assets/js/lib/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/lib/sweetalert.js"></script>
+    <script src="/assets/js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="/assets/js/lib/jquery.scrollbar.js"></script>
+    <script src="/assets/js/lib/jstree.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+</head>
+<body class="mscrollbar">
+<style>
+    table tbody tr td{
+        color: #666;
+    }
+    table tbody tr a{
+        color: #666;
+        text-decoration: underline;
+    }
+    table tbody tr a:hover,
+    table tbody tr.completion a:hover{
+        color: #2e6fd4;
+    }
+    table tbody tr.completion th{
+        color: #e5e5e5;
+    }
+    table tbody tr.completion td{
+        color: #e5e5e5;
+    }
+    table tbody tr.completion td a{
+        color: #e5e5e5;
+    }
+</style>
+<div style="width: 100%; padding: 50px;">
+    <div class="title" style="padding-bottom: 20px; font-size: 25px; color: #e5e5e5">
+        vAegis 가이드
+    </div>
+    <div class="tbl">
+        <table class="">
+            <colgroup>
+                <col style="width:15%;">
+                <col style="width:15%;">
+                <col style="width:15%;">
+                <col style="width:18%;">
+                <col style="width:auto;">
+                <col style="width:10%;">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>1depth</th>
+                <th>2depth</th>
+                <th>3depth</th>
+                <th>url</th>
+                <th>비고</th>
+                <th>진행상황</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- 로그인 -->
+            <tr class="completion">
+                <th>로그인</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="main.html" target="_blank">main.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.13</td>
+            </tr>
+            <!-- 알럿 -->
+            <tr class="completion">
+                <th>알럿 예시</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="alert.html" target="_blank">alert.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.13</td>
+            </tr>
+            <!-- 전체 로딩 -->
+            <tr class="completion">
+                <th>전체 로딩</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="loading.html" target="_blank">loading.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.13</td>
+            </tr>
+            <!-- 대시보드 -->
+            <tr class="completion">
+                <th rowspan="4">대시보드</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="menu01.html" target="_blank">menu01.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.31</td>
+            </tr>
+            <tr class="completion">
+                <td>새창열기</td>
+                <td></td>
+                <td>
+                    <a href="dashboard_popup_win.html" target="_blank">dashboard_popup_win.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.31</td>
+            </tr>
+            <tr class="completion">
+                <td>윈도우 팝업 1</td>
+                <td></td>
+                <td>
+                    <a href="event_popup_win3.html" target="_blank">event_popup_win3.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.13</td>
+            </tr>
+            <tr class="completion">
+                <td>윈도우 팝업2</td>
+                <td></td>
+                <td>
+                    <a href="event_popup_win4.html" target="_blank">event_popup_win4.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.13</td>
+            </tr>
+            <!-- ALERTS -->
+            <tr class="completion">
+                <th>경보</th>
+                <td>경보</td>
+                <td></td>
+                <td>
+                    <a href="menu02.html" target="_blank">menu02.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.31</td>
+            </tr>
+            <!-- 이벤트 -->
+            <tr class="completion">
+                <th rowspan="7">이벤트</th>
+                <td>방화벽</td>
+                <td></td>
+                <td>
+                    <a href="menu03_01.html" target="_blank">menu03_01.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.28</td>
+            </tr>
+            <tr class="completion">
+                <td>IPS</td>
+                <td></td>
+                <td>
+                    <a href="menu03_02.html" target="_blank">menu03_02.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.25</td>
+            </tr>
+            <tr class="completion">
+                <td>MALWARE</td>
+                <td></td>
+                <td>
+                    <a href="menu03_03.html" target="_blank">menu03_03.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.25</td>
+            </tr>
+            <tr class="completion">
+                <td>파일 무결성</td>
+                <td></td>
+                <td>
+                    <a href="menu03_04.html" target="_blank">menu03_04.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.25</td>
+            </tr>
+            <tr class="completion">
+                <td>실행 파일 통제</td>
+                <td></td>
+                <td>
+                    <a href="menu03_05.html" target="_blank">menu03_05.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.25</td>
+            </tr>
+            <tr class="completion">
+                <td>서비스 제어</td>
+                <td></td>
+                <td>
+                    <a href="menu03_06.html" target="_blank">menu03_06.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.25</td>
+            </tr>
+            <tr class="completion">
+                <td>장비 검색 팝업</td>
+                <td></td>
+                <td>
+                    <a href="event_popup_win0.html" target="_blank">event_popup_win0.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.28</td>
+            </tr>
+            <!-- Computer -->
+            <tr class="completion">
+                <th rowspan="2">자산</th>
+                <td>자산 현황</td>
+                <td></td>
+                <td>
+                    <a href="menu04_01.html" target="_blank">menu04_01.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.03</td>
+            </tr>
+            <tr class="completion">
+                <td>자산 관리</td>
+                <td></td>
+                <td>
+                    <a href="menu04_02.html" target="_blank">menu04_02.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.25</td>
+            </tr>
+            <!-- 탐지 룰 -->
+            <tr class="completion">
+                <th rowspan="9">탐지 룰</th>
+                <td>탐지 룰 관리</td>
+                <td></td>
+                <td>
+                    <a href="menu06.html" target="_blank">menu06.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.14</td>
+            </tr>
+            <tr class="completion">
+                <td rowspan="4">정책이력 윈도우 팝업</td>
+                <td>IPS/AntiMalware</td>
+                <td>
+                    <a href="securitypolicy_popup_win.html" target="_blank">securitypolicy_popup_win.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.14</td>
+            </tr>
+            <tr class="completion">
+                <td>방화벽</td>
+                <td>
+                    <a href="securitypolicy_popup_win2.html" target="_blank">securitypolicy_popup_win2.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.14</td>
+            </tr>
+            <tr class="completion">
+                <td>파일무결성/실행 파일 통제</td>
+                <td>
+                    <a href="securitypolicy_popup_win3.html" target="_blank">securitypolicy_popup_win3.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.14</td>
+            </tr>
+            <tr class="completion">
+                <td>서비스 제어</td>
+                <td>
+                    <a href="securitypolicy_popup_win4.html" target="_blank">securitypolicy_popup_win4.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.14</td>
+            </tr>
+            <tr class="completion">
+                <td rowspan="4">정책편집 윈도우 팝업</td>
+                <td>IPS/AntiMalware</td>
+                <td>
+                    <a href="securitypolicy_popup_win5.html" target="_blank">securitypolicy_popup_win5.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.28</td>
+            </tr>
+            <tr class="completion">
+                <td>방화벽</td>
+                <td>
+                    <a href="securitypolicy_popup_win6.html" target="_blank">securitypolicy_popup_win6.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.28</td>
+            </tr>
+            <tr class="completion">
+                <td>파일무결성/실행 파일 통제</td>
+                <td>
+                    <a href="securitypolicy_popup_win7.html" target="_blank">securitypolicy_popup_win7.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.28</td>
+            </tr>
+            <tr class="completion">
+                <td>서비스 제어</td>
+                <td>
+                    <a href="securitypolicy_popup_win8.html" target="_blank">securitypolicy_popup_win8.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.28</td>
+            </tr>
+            <!-- Configuration -->
+            <tr class="completion">
+                <th rowspan="3">설정</th>
+                <td>사용자 관리</td>
+                <td></td>
+                <td>
+                    <a href="menu05_01.html" target="_blank">menu05_01.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.09</td>
+            </tr>
+            <tr class="completion">
+                <td>권한설정</td>
+                <td></td>
+                <td>
+                    <a href="menu05_02.html" target="_blank">menu05_02.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.25</td>
+            </tr>
+            <tr class="completion">
+                <td>사이트 이용 설정</td>
+                <td></td>
+                <td>
+                    <a href="menu05_03.html" target="_blank">menu05_03.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.25</td>
+            </tr>
+            <!-- 팝업 윈도우 -->
+            <tr class="completion">
+                <th>팝업 윈도우</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="event_popup_win.html" target="_blank">event_popup_win.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.31</td>
+            </tr>
+            <!-- 상세 윈도우 팝업 -->
+            <tr class="completion">
+                <th>상세 윈도우 팝업</th>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="event_popup_win2.html" target="_blank">event_popup_win2.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.09.03</td>
+            </tr>
+            <!-- 애러 -->
+            <tr class="completion">
+                <th rowspan="2">애러</th>
+                <td>1</td>
+                <td></td>
+                <td>
+                    <a href="error.html" target="_blank">error.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.25</td>
+            </tr>
+            <tr class="completion">
+                <td>2</td>
+                <td></td>
+                <td>
+                    <a href="error2.html" target="_blank">error2.html</a>
+                </td>
+                <td>완료</td>
+                <td>2021.08.25</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

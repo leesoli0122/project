@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+						<span>Admin</span>
+					</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class=""><i class="icon_user"></i><span>사용자</span></a></li>
+					<li><a href=""><i class="icon_userg"></i><span>사용자 그룹</span></a></li>
+					<li><a href=""><i class="icon_om"></i><span>조직관리</span></a></li>
+					<li><a href="" class="on"><i class="icon_system"></i><span>시스템</span></a></li>
+					<li><a href=""><i class="icon_stg"></i><span>시스템 그룹</span></a></li>
+					<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+						<ul>
+							<li><a href="">역할</a></li>
+							<li><a href="" class="on">규칙 관리</a></li>
+							<li><a href="">계산식 관리</a></li>
+							<li><a href="">이벤트 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+						<ul>
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="icon_monitor"></i><span>모니터링</span></a></li>
+					<li><a href=""><i class="icon_report"></i><span>리포트</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>시스템 관리</h1>
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">시스템 관리</a></li>
+						<li><span>생성</span></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> user01</a></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="en_us"><i></i>English(US)</a></li>
+							<li><a class="en_us"><i></i>中文(简体)</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="topPrss">
+					<div class="inner_topPrss">
+						<div class="longPrss">
+							<div class="detail_process">
+								<ul class="flx">
+									<li class="flx_cell process_comple">기본 정보</li>
+									<li class="flx_cell process_warning">서버 정보</li>
+									<li class="flx_cell process_comple">사용자 속성</li>
+									<li class="flx_cell process_current"><span class="s_num">4</span>그룹 속성</li>
+									<li class="flx_cell process_activ"><span class="s_num">5</span>조직 속성</li>
+									<li class="flx_cell"><span class="s_num">6</span>조정 정책</li>
+									<li class="flx_cell"><span class="s_num">7</span>조정 정책</li>
+									<li class="flx_cell"><span class="s_num">8</span>조정 정책</li>
+									<li class="flx_cell"><span class="s_num">9</span>조정 정책</li>
+									<li class="flx_cell"><span class="s_num">10</span>조정 정책</li>
+									<li class="flx_cell"><span class="s_num">11</span>조정 정책</li>
+									<li class="flx_cell"><span class="s_num">12</span>조정 정책</li>
+								</ul>
+							</div>
+						</div>
+						<div class="balloon pcs_bl">
+							<p class="newalim_txt">필수입력값 미입력</p>
+						</div>
+						<button class="movbtn diss"></button>
+						<button class="movbtn prev"></button>
+					</div>
+				</div>
+				<!-- 화살표없는 <div class="topPrss">
+					<div class="inner_topPrss">
+						<div class="detail_process">
+							<ul class="flx">
+								<li class="flx_cell process_comple">기본 정보</li>
+								<li class="flx_cell process_warning">서버 정보</li>
+								<li class="flx_cell process_comple">사용자 속성</li>
+								<li class="flx_cell process_current"><span class="s_num">4</span>그룹 속성</li>
+								<li class="flx_cell process_activ"><span class="s_num">5</span>조직 속성</li>
+								<li class="flx_cell"><span class="s_num">6</span>조정 정책</li>
+							</ul>
+						</div>
+						<div class="balloon pcs_bl">
+							<p class="newalim_txt">필수입력값 미입력</p>
+						</div>
+					</div>
+				</div> -->
+				<div class="btn_box cl_both">
+					<div class="f_l">
+					</div>
+					<div class="f_r">
+						<a href="" class="white diss">이전</a>
+						<a href="" class="navy">다음</a>
+						<a href="" class="blue">저장</a>
+						<a href="" class="skyblue">취소</a>
+					</div>					
+				</div>
+				<a class="fm_tit pdt16">스케줄러 셋팅<span class="tab_arrow open"></span></a>
+				<!--<div class="btn_box border_btm">
+					<button class="shadow">정책 추가</button>
+				</div>-->
+				<div class="form_stl">
+					<ul class="form_tbl">
+						<li>
+							<div class="form_tit"><label for="onsdName">이름</label></div>
+							<div class="form_txt"><input type="text" name="" class="form_contrl" id="onsdName" placeholder="LinuxRecon">
+								<!--<span class="dupli_check redtxt"><i></i>이름 중복 입니다.</span>-->
+								<!--
+								<span class="dupli_check bluetxt"><i></i>사용가능합니다.</span>-->
+								<div class="loader"></div>
+							</div>
+						</li>
+						<li>
+							<div class="form_tit">Status</div>
+							<div class="form_txt">
+								<div class="cl_both check2">
+									<div class="f_l">
+										<div><input type="radio" name="rd" id="rd01" class="radio_stl"><label for="rd01" class="radio_stl_lab">Enable</label></div>
+									</div>
+									<div class="f_l">
+										<div><input type="radio" name="rd" id="rd02" class="radio_stl"><label for="rd02" class="radio_stl_lab">Disable</label></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="form_tit">정책 설정</div>
+							<div class="form_txt">
+								<div class="flx_box">
+									<p class="mr20">
+										<input type="checkbox" name="" id="policycheck01" class="check_stl">
+										<label for="policycheck01" class="check_stl_lab">사용자 정보 통합 사용자 정보에 반영(조정)</label>
+									</p>
+									<div class="cl_both check2">
+										<div class="f_l">
+											<div><input type="radio" name="policyradio01" id="policy01" class="radio_stl"><label for="policy01" class="radio_stl_lab">유일(단일)</label></div>
+										</div>
+										<div class="f_l">
+											<div><input type="radio" name="policyradio01" id="policy02" class="radio_stl"><label for="policy02" class="radio_stl_lab">다중 정보 취합</label></div>
+										</div>
+									</div>
+								</div>
+								<div class="flx_box">
+									<p class="mr20">
+										<input type="checkbox" name="" id="policycheck02" class="check_stl">
+										<label for="policycheck02" class="check_stl_lab">그룹 정보 통합 사용자 정보에 반영(조정)</label>
+									</p>
+									<div class="cl_both check2">
+										<div class="f_l">
+											<div><input type="radio" name="policyradio02" id="policy03" class="radio_stl"><label for="policy03" class="radio_stl_lab">유일(단일)</label></div>
+										</div>
+										<div class="f_l">
+											<div><input type="radio" name="policyradio02" id="policy04" class="radio_stl"><label for="policy04" class="radio_stl_lab">다중 정보 취합</label></div>
+										</div>
+									</div>
+								</div>
+								<div class="flx_box">
+									<p class="mr20">
+										<input type="checkbox" name="" id="policycheck03" class="check_stl">
+										<label for="policycheck03" class="check_stl_lab">조직 정보 통합 사용자 정보에 반영(조정)</label>
+									</p>
+									<div class="cl_both check2">
+										<div class="f_l">
+											<div><input type="radio" name="policyradio03" id="policy05" class="radio_stl"><label for="policy05" class="radio_stl_lab">유일(단일)</label></div>
+										</div>
+										<div class="f_l">
+											<div><input type="radio" name="policyradio03" id="policy06" class="radio_stl"><label for="policy06" class="radio_stl_lab">다중 정보 취합</label></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="form_tit"><label for="modelExplain">설명</label></div>
+							<div class="form_txt"><textarea class="form_contrl" id="modelExplain"></textarea></div>
+						</li>
+						<li>
+							<div class="form_tit"><label for="select06">실시간/배치</label></div>
+							<div class="form_txt">
+								<SELECT class="form_contrl" id="select06">
+									<option>실시간</option>
+									<option>실시간</option>
+									<option>실시간</option>
+									<option>실시간</option>
+								</SELECT>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<a class="fm_tit pdt16">스케줄러 셋팅<span class="tab_arrow"></span></a>
+				<div class="form_stl">
+					<ul class="form_tbl">
+						<li>
+							<div class="form_tit"><label for="onsdName02">이름</label></div>
+							<div class="form_txt"><input type="text" name="" class="form_contrl" id="onsdName02" placeholder="LinuxRecon"></div>
+						</li>
+						<li>
+							<div class="form_tit"><label for="select05">종류</label></div>
+							<div class="form_txt">
+								<SELECT class="form_contrl" id="select05">
+									<option>General</option>
+									<option>General</option>
+									<option>General</option>
+									<option>General</option>
+								</SELECT>
+							</div>
+						</li>
+						<li>
+							<div class="form_tit"><label for="select06">Executed Class</label></div>
+							<div class="form_txt">
+								<SELECT class="form_contrl middle" id="select06">
+									<option>kr.co.sgni.im.reconciliation.ReconcileExecuteSchedulerController</option>
+									<option>kr.co.sgni.im.reconciliation.ReconcileExecuteSchedulerController</option>
+									<option>kr.co.sgni.im.reconciliation.ReconcileExecuteSchedulerController</option>
+									<option>kr.co.sgni.im.reconciliation.ReconcileExecuteSchedulerController</option>
+								</SELECT>
+							</div>
+						</li>
+						<li>
+							<div class="form_tit"><label for="select06">Executed Class Executed Class</label></div>
+							<div class="form_txt">
+								<SELECT class="form_contrl large" id="select06">
+									<option>kr.co.sgni.im.reconciliation.ReconcileExecuteSchedulerController</option>
+									<option>kr.co.sgni.im.reconciliation.ReconcileExecuteSchedulerController</option>
+									<option>kr.co.sgni.im.reconciliation.ReconcileExecuteSchedulerController</option>
+									<option>kr.co.sgni.im.reconciliation.ReconcileExecuteSchedulerController</option>
+								</SELECT>
+							</div>
+						</li>
+						<li>
+							<div class="form_tit"><label for="select07">설명</label></div>
+							<div class="form_txt"><textarea class="form_contrl" id="modelExplain"></textarea></div>
+						</li>
+						<li>
+							<div class="form_tit"><label for="select06">실행 기간</label></div>
+							<div class="form_txt">
+								<SELECT class="form_contrl" id="select06">
+									<option>항상</option>
+									<option>항상</option>
+									<option>항상</option>
+									<option>항상</option>
+								</SELECT>
+							</div>
+						</li>
+						<li>
+							<div class="form_tit">기한</div>
+							<div class="form_txt">
+								<div class="form_date">
+									<input type="text" class="form_contrl date_ctl" value="2019-10-11" readonly="readonly">
+									<span> ~ </span>
+									<input type="text" class="form_contrl date_ctl" value="2019-10-18" readonly="readonly">
+								</div>
+								<div class="calendarUI">
+									<div class="calendar_month flx">
+										<button class="prev"></button>
+										<div class="month_slt flx">
+											<select class="form_contrl year">
+												<option>2023</option>
+												<option>2024</option>
+												<option>2025</option>
+												<option>2026</option>
+											</select>
+											<p>.</p>
+											<select class="form_contrl day">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option>10</option>
+												<option>11</option>
+												<option>12</option>
+											</select>
+										</div>
+										<button class="next"></button>
+									</div>
+									<div class="calendar_minitbl">
+										<div class="day_weeks flx">
+											<p>일</p>
+											<p>월</p>
+											<p>화</p>
+											<p>수</p>
+											<p>목</p>
+											<p>금</p>
+											<p>토</p>
+										</div>
+										<div class="weeksTbl">
+											<div class="week_row">
+												<div><button class="btn_weekday">1</button></div>
+												<div><button class="btn_weekday">2</button></div>
+												<div><button class="btn_weekday">3</button></div>
+												<div><button class="btn_weekday">4</button></div>
+												<div><button class="btn_weekday">5</button></div>
+												<div><button class="btn_weekday">6</button></div>
+												<div><button class="btn_weekday">7</button></div>
+											</div>
+											<div class="week_row">
+												<div><button class="btn_weekday">8</button></div>
+												<div><button class="btn_weekday">9</button></div>
+												<div class="on_range"><button class="btn_weekday on">10</button></div>
+												<div class="on_range"><button class="btn_weekday">11</button></div>
+												<div class="on_range"><button class="btn_weekday">12</button></div>
+												<div class="on_range"><button class="btn_weekday">13</button></div>
+												<div class="on_range"><button class="btn_weekday">14</button></div>
+											</div>
+											<div class="week_row">
+												<div class="on_range"><button class="btn_weekday">15</button></div>
+												<div class="on_range"><button class="btn_weekday">16</button></div>
+												<div class="on_range"><button class="btn_weekday">17</button></div>
+												<div class="on_range"><button class="btn_weekday">18</button></div>
+												<div class="on_range"><button class="btn_weekday">19</button></div>
+												<div class="on_range"><button class="btn_weekday on">20</button></div>
+												<div><button class="btn_weekday">21</button></div>
+											</div>
+											<div class="week_row">
+												<div><button class="btn_weekday">22</button></div>
+												<div><button class="btn_weekday">23</button></div>
+												<div><button class="btn_weekday">24</button></div>
+												<div><button class="btn_weekday">25</button></div>
+												<div><button class="btn_weekday">26</button></div>
+												<div><button class="btn_weekday">27</button></div>
+												<div><button class="btn_weekday">28</button></div>
+											</div>
+											<div class="week_row">
+												<div><button class="btn_weekday">29</button></div>
+												<div><button class="btn_weekday">30</button></div>
+												<div><button class="btn_weekday">31</button></div>
+												<div class="btn_weekday"></div>
+												<div class="btn_weekday"></div>
+												<div class="btn_weekday"></div>
+												<div class="btn_weekday"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="form_tit"><label for="select06">주기 기간</label></div>
+							<div class="form_txt">
+								<SELECT class="form_contrl" id="select06">
+									<option>Daily</option>
+									<option>Daily</option>
+									<option>Daily</option>
+									<option>Daily</option>
+								</SELECT>
+							</div>
+						</li>
+						<li>
+							<div class="form_tit"><label for="select06">Run At</label></div>
+							<div class="form_txt">
+								<input type="text" class="form_contrl" name="" placeholder="12:00">
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="btn_box cl_both">
+					<div class="f_l">
+					</div>
+					<div class="f_r">
+						<a href="" class="white">이전</a>
+						<a href="" class="navy">다음</a>
+						<a href="" class="blue">저장</a>
+						<a href="" class="skyblue">취소</a>
+					</div>					
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

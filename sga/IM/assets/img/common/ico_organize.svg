@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(-1.886 -2.384)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ico_organize" transform="translate(1.886 2.384)" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(2.614 0.449)">
+      <path id="pass2" d="M15.348,2.241A2.241,2.241,0,1,1,13.1,0a2.241,2.241,0,0,1,2.243,2.241Z" transform="translate(-5.183 0)" fill="#454545"/>
+      <path id="pass1" d="M15.685,13.55a6.532,6.532,0,0,0-1.732-4.621,3.612,3.612,0,0,1-4.933,0A6.531,6.531,0,0,0,7.289,13.55c0,.184.007.366.02.545h8.357c.013-.18.02-.362.02-.545" transform="translate(-3.566 -4.035)" fill="#454545"/>
+      <line id="line4" x2="13.022" transform="translate(1.352 11.866)" fill="none" stroke="#454545" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="line3" y2="2.639" transform="translate(1.352 11.866)" fill="none" stroke="#454545" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="line2" y2="2.639" transform="translate(7.738 12.192)" fill="none" stroke="#454545" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="line1" y2="2.639" transform="translate(14.374 11.866)" fill="none" stroke="#454545" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <circle id="round3" cx="1.103" cy="1.103" r="1.103" transform="translate(0 15.735)" fill="none" stroke="#454545" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <circle id="round2" cx="1.103" cy="1.103" r="1.103" transform="translate(6.818 15.735)" fill="none" stroke="#454545" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <circle id="round1" cx="1.103" cy="1.103" r="1.103" transform="translate(13.271 15.735)" fill="none" stroke="#454545" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

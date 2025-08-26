@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>progress</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/font.css">
+
+    <!-- 추가 css -->
+    <link rel="stylesheet" href="../../css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+
+    <!-- jQuery 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <!-- jQuery UI 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-ui.js"></script>
+    <!-- js -->
+    <script type="text/javascript" charset="utf-8" src="../../js/common.js"></script>
+
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <style>
+        h2 { font-size:30px; }
+        .tit { display:block; margin:20px 0; padding:10px 5px; font-size:16px; background-color:#6ebda8; color:#fff; }
+        .check-wrap > div { display:inline-block; margin-right:10px; }
+        .info_text { margin-top:10px; padding:10px; border-radius:14px; background:#ffd582; }
+        .info_text li { margin-bottom:5px; }
+        .info_text li:last-child { margin-bottom:0; }
+    </style>
+</head>
+
+<body>
+    <div id="SGIM_wrap" class="mini_nav">
+        <!-- S: side nav -->
+        <!-- E: side nav -->
+        <!-- S: container -->
+        <div id="container" style="padding:0 !important;">
+            <!-- S: header -->
+            <!-- E: header -->
+            <!-- S: content -->
+            <div class="content" style="border-radius:10px; margin:20px; padding:20px; background-color:#fff;">
+                <h2>progress</h2>
+                <ul class="info_text">
+                    <li>
+                        <p style="font-weight:500;">경고 표시</p>
+                        <ul>
+                            <li>'process_warning' class를 넣기</li>
+                        </ul>
+                    </li>
+                </ul>
+                <section>
+                    <p class="tit">기본 process</p>
+                    <div class="topPrss">
+                        <div class="inner_topPrss">
+                            <div class="detail_process">
+                                <ul class="flx">
+                                    <li class="flx_cell process_comple"><span class="s_num">1</span>기본 정보</li>
+                                    <li class="flx_cell process_current"><span class="s_num">2</span>서버 정보</li>
+                                    <li class="flx_cell process_activ"><span class="s_num">3</span>사용자 속성</li>
+                                    <li class="flx_cell warning"><span class="s_num">4</span>그룹 속성</li>
+                                    <li class="flx_cell"><span class="s_num">5</span>조직 속성</li>
+                                    <li class="flx_cell"><span class="s_num">6</span>조정 정책</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tit">2단계</p>
+                    <div class="topPrss">
+                        <div class="inner_topPrss">
+                            <div class="detail_process">
+                                <ul class="flx">
+                                    <li class="flx_cell process_comple"><span class="s_num">1</span>기본 정보</li>
+                                    <li class="flx_cell process_current"><span class="s_num">2</span>서버 정보</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tit">1단계</p>
+                    <div class="topPrss">
+                        <div class="inner_topPrss">
+                            <div class="detail_process">
+                                <ul class="flx">
+                                    <li class="flx_cell process_current"><span class="s_num">1</span>기본 정보</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tit">longPrss</p>
+                    <div class="topPrss">
+                        <div class="inner_topPrss">
+                            <div class="longPrss">
+                                <!-- s: s_num 추가 -->
+                                <div class="detail_process">
+                                    <ul class="flx">
+                                        <li class="flx_cell process_comple"><span class="s_num">1</span>기본 정보</li>
+                                        <li class="flx_cell process_comple process_warning"><span class="s_num">2</span>서버 정보</li>
+                                        <li class="flx_cell process_comple"><span class="s_num">3</span>사용자 속성</li>
+                                        <li class="flx_cell process_current"><span class="s_num">4</span>그룹 속성</li>
+                                        <li class="flx_cell process_activ"><span class="s_num">5</span>조직 속성</li>
+                                        <li class="flx_cell"><span class="s_num">6</span>조정 정책</li>
+                                        <li class="flx_cell"><span class="s_num">7</span>조정 정책</li>
+                                        <li class="flx_cell"><span class="s_num">8</span>조정 정책</li>
+                                        <li class="flx_cell"><span class="s_num">9</span>조정 정책</li>
+                                        <li class="flx_cell"><span class="s_num">10</span>조정 정책</li>
+                                        <li class="flx_cell"><span class="s_num">11</span>조정 정책</li>
+                                        <li class="flx_cell"><span class="s_num">12</span>조정 정책</li>
+                                    </ul>
+                                </div>
+                                <!-- e: s_num 추가 -->
+                            </div>
+                            <div class="balloon pcs_bl">
+                                <p class="newalim_txt">필수입력값 미입력</p>
+                            </div>
+                            <button class="movbtn diss"></button>
+                            <button class="movbtn prev"></button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- E: content -->
+            <!-- S: footer -->
+            <!-- E: footer -->
+        </div>
+        <div class="scroll_btns" style="display:none">
+            <button class="btn_toTheTop"></button>
+            <button class="btn_toThebottom"></button>
+        </div>
+        <script>
+            $("body").on("mousewheel", function (e) {
+                var wheel = e.originalEvent.wheelDelta;
+
+                if (wheel > 0) {
+                    //스크롤 올릴때
+                } else {
+                    //스크롤 내릴때
+                    $(".scroll_btns").show();
+                }
+            });
+            $(window).scroll(function () {
+                var scrollValue = $(document).scrollTop();
+                if (scrollValue > 65) {
+                    $(".list_btn_stk").addClass("btnarea");
+                } else {
+                    $(".list_btn_stk").removeClass("btnarea");
+                }
+            });
+        </script>
+
+        <!-- s : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+        <script>
+            $(document).ready(function(){
+        
+                $('.accordion').on('click',  function() {
+                    $(this).toggleClass("tr_open");
+                });
+            });
+
+        </script>	
+        <!-- e : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+    </div>
+</body>
+
+</HTML>

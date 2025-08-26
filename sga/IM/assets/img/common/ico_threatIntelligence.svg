@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" fill="none" stroke="#999" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="ico_threatIntelligence" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(0.5 0.5)">
+      <path id="패스_596" data-name="패스 596" d="M11.5,1h-1a7,7,0,0,0-7,7v.969L1,13.5a.979.979,0,0,0,.959,1H2a2.374,2.374,0,0,1,1.5.636V17a1.469,1.469,0,0,0,1.437,1.5H8s1,0,1,1.5v4H19.5V21.5" transform="translate(-1 -1)" fill="none" stroke="#999" stroke-linejoin="round" stroke-width="1"/>
+      <path id="패스_597" data-name="패스 597" d="M33,1H27a2,2,0,0,0-2,2V7.5a2,2,0,0,0,2,2v2h6v-2a2,2,0,0,0,2-2V3A2,2,0,0,0,33,1Z" transform="translate(-13 -1)" fill="none" stroke="#27ad98" stroke-linejoin="round" stroke-width="1"/>
+      <circle id="타원_98" data-name="타원 98" cx="1" cy="1" r="1" transform="translate(14 2.5)" fill="none" stroke="#27ad98" stroke-linejoin="round" stroke-width="1"/>
+      <circle id="타원_99" data-name="타원 99" cx="1" cy="1" r="1" transform="translate(18 2.5)" fill="none" stroke="#27ad98" stroke-linejoin="round" stroke-width="1"/>
+      <line id="선_277" data-name="선 277" y1="2.5" transform="translate(16 8)" fill="none" stroke="#27ad98" stroke-linejoin="round" stroke-width="1"/>
+      <line id="선_278" data-name="선 278" y1="2.5" transform="translate(18 8)" fill="none" stroke="#27ad98" stroke-linejoin="round" stroke-width="1"/>
+      <line id="선_279" data-name="선 279" x2="1" transform="translate(16.5 6)" fill="none" stroke="#27ad98" stroke-linejoin="round" stroke-width="1"/>
+      <path id="패스_598" data-name="패스 598" d="M30,25v1.5a.489.489,0,0,1-.479.5H25.5a.489.489,0,0,0-.5.479V29.5" transform="translate(-13 -13)" fill="none" stroke="#999" stroke-linejoin="round" stroke-width="1"/>
+      <path id="패스_599" data-name="패스 599" d="M38,29h3a.489.489,0,0,1,.5.479V31.5" transform="translate(-19.5 -15)" fill="none" stroke="#999" stroke-linejoin="round" stroke-width="1"/>
+      <circle id="타원_100" data-name="타원 100" cx="1" cy="1" r="1" transform="translate(11 16.5)" fill="none" stroke="#999" stroke-linejoin="round" stroke-width="1"/>
+      <circle id="타원_101" data-name="타원 101" cx="1" cy="1" r="1" transform="translate(16 16.5)" fill="none" stroke="#999" stroke-linejoin="round" stroke-width="1"/>
+      <circle id="타원_102" data-name="타원 102" cx="1" cy="1" r="1" transform="translate(21 16.5)" fill="none" stroke="#999" stroke-linejoin="round" stroke-width="1"/>
+      <line id="선_280" data-name="선 280" y1="1.5" transform="translate(17 15)" fill="none" stroke="#999" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

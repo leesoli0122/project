@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(1 1)" fill="none" stroke="#121212" stroke-width="1.5"/>
+    </clipPath>
+  </defs>
+  <g id="ico_roleLane" transform="translate(-1 -1)" clip-path="url(#clip-path)">
+    <g id="그룹_1136" data-name="그룹 1136" transform="translate(-1.5 -2.7)">
+      <path id="패스_1027" data-name="패스 1027" d="M24,10.2H6v2H24Z" fill="#51c4c4"/>
+      <path id="패스_1028" data-name="패스 1028" d="M10,14.2H6v4h4Z" fill="#51c4c4"/>
+      <path id="패스_1029" data-name="패스 1029" d="M17,14.2H13v4h4Z" fill="#51c4c4"/>
+      <path id="패스_1030" data-name="패스 1030" d="M24,14.2H20v4h4Z" fill="#51c4c4"/>
+      <path id="패스_1031" data-name="패스 1031" d="M24,19.2H6v2H24Z" transform="translate(0 1)" fill="#51c4c4"/>
+    </g>
+  </g>
+</svg>

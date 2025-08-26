@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>정책 추가 (IPS) - Aegis</title>
+    <meta charset="UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- TODO: search engine info -->
+    <meta name="robots" content="Aegis" />
+    <meta name="keywords" content="Aegis" />
+    <meta name="title" content="Aegis" />
+    <meta name="description" content="Aegis" />
+
+    <!-- TODO: social url link image -->
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Aegis">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="cloudVM.png">
+    <meta property="og:description" content="Aegis 입니다.">
+
+    <!-- TODO: favicon -->
+    <link rel="icon" href="favicon.png" type="favicon.png" />
+
+    <!-- TODO: import -->
+    <link rel="stylesheet" href="../css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/lib/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../css/lib/datatables.css">
+    <link rel="stylesheet" href="../css/lib/datatables.css">
+    <link rel="stylesheet" href="../css/lib/select.dataTables.css">
+    <link rel="stylesheet" href="../css/lib/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../css/lib/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../css/lib/jstree.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="../js/lib/moment.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/bootstrap-datetimepicker.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="../js/lib/echarts.js"></script>
+    <script src="../js/lib/jquery.nice-select.js"></script>
+    <script src="../js/lib/select.dataTables.js"></script>
+    <script src="../js/lib/datatables.js"></script>
+    <script src="../js/lib/dataTables.colReorder.js"></script>
+    <script src="../js/lib/dataTables.rowReorder.js"></script>
+    <script src="../js/lib/dataTables.buttons.min.js"></script>
+    <script src="../js/lib/sweetalert.js"></script>
+    <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="../js/lib/jquery.scrollbar.js"></script>
+    <script src="../js/lib/jstree.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<body class="win_popup rec mscrollbar">
+<section>
+    <h4>
+        정책 추가 (IPS)
+    </h4>
+    <div class="popup_view_cont">
+        <div class="securitypolicy_popup_box">
+            <div class="securitypolicy_top">
+                <h5>revision 정보</h5>
+                <div class="securitypolicy_top_info">
+                    <dl>
+                        <dt>revision</dt>
+                        <dd>
+                            <div class="rev">
+                                <div>rev 362</div>
+                                <div class="info nol" title="기본정책">기본정책</div>
+                                <div class="info pol" title="정책적용됨">정책적용됨</div>
+                                <a href="#" class="btn bline rev_list_btn">
+                                    <span>대상 선택</span>
+                                </a>
+                                <ul class="rev_list mscrollbar">
+                                    <li>
+                                        <a href="#">
+                                            <div class="rev fl">
+                                                <div>rev 362</div>
+                                                <div class="info nol" title="기본정책">기본정책</div>
+                                                <div class="info pol" title="정책적용됨">정책적용됨</div>
+                                            </div>
+                                            <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="rev fl">
+                                                <div>rev 362</div>
+                                                <div class="info ind" title="개별정책">개별정책</div>
+                                                <div class="info pol" title="정책적용됨">정책적용됨</div>
+                                            </div>
+                                            <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="rev fl">
+                                                <div>rev 362</div>
+                                                <div class="info nol" title="기본정책">기본정책</div>
+                                                <div class="info pol none" title="정책적용안됨">정책적용안됨</div>
+                                            </div>
+                                            <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="rev fl">
+                                                <div>rev 362</div>
+                                                <div class="info ind" title="개별정책">개별정책</div>
+                                                <div class="info pol none" title="정책적용안됨">정책적용안됨</div>
+                                            </div>
+                                            <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="rev fl">
+                                                <div>rev 362</div>
+                                                <div class="info nol none" title="기본정책없음">기본정책없음</div>
+                                                <div class="info ind none" title="개별정책없음">개별정책없음</div>
+                                                <div class="info pol none" title="정책적용안됨">정책적용안됨</div>
+                                            </div>
+                                            <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="rev fl">
+                                                <div>rev 362</div>
+                                                <div class="info ind none" title="개별정책없음">개별정책없음</div>
+                                                <div class="info pol none" title="정책적용안됨">정책적용안됨</div>
+                                            </div>
+                                            <p class="fl"><span>12</span>대 / 생성시간 : <span>2020-11-06 12:23</span> / 등록 사용자 : <span>이종화</span>(<span>jonghlee</span>) / <span>2020년 4분기 정기 업데이트 담당자 : 오인수 사원</span></p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>사용자 및 생성시간</dt>
+                        <dd><span>redcastle</span> / <span>2021-05-10 11:37:21</span></dd>
+                    </dl>
+                    <dl>
+                        <dt>변경 사항</dt>
+                        <dd>
+                            <div class="ipt_box">
+                                <input class="no_radius" type="text" placeholder="변경사항을 입력하여 주십시오." name="required">
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="securitypolicy_btn">
+                    <div class="sel_box fr">
+                        <select class="mid">
+                            <option value="ips" selected="selected">ON</option>
+                            <option value="firewall">OFF</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="securitypolicy_bottom">
+                <h5>룰 편집</h5>
+                <div class="securitypolicy_bottom_info">
+                    <div class="ips_rule edit">
+                        <textarea>alert http $EXTERNAL_NET any -> $HTTP_SERVERS any (msg:"ET WEB_SPECIFIC_APPS Gazi&#10;alert dns $HOME_NET any -> any any (msg:"ET INFO DYNAMIC_DNS Query to a Suspicious&#10;alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET CURRENT_EVENTS Metasploit&#10;# alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET WEB_CLIENT PDF With eval&#10;alert http $EXTERNAL_NET any -> $HTTP_SERVERS any (msg:"ET WEB_SPECIFIC_APPS WordP&#10;alert tcp $EXTERNAL_NET any -> $HOME_NET 5900:5920 (msg:"ET SCAN Potential VNC Sca&#10;alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"ET TROJAN ProxyBox -roxyBotCom&#10;alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET TROJAN [PTsecurity] W32/Rod&#10;alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET WEB_SERVER Possible SQL Inj&#10;# alert tls $EXTERNAL_NET 443 -> $HOME_NET any (msg:"ET TROJAN ABUSE.CH SSL Blackl&#10;alert http $EXTERNAL_NET any -> $HTTP_SERVERS any (msg:"ET WEB_SPECIFIC_APPS The A&#10;alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET EXPLOIT Possible Redirect t&#10;alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"ET EXPLOIT DLink DNS 320 emot&#10;alert http $EXTERNAL_NET any -> $HTTP_SERVERS any (msg:"ET WEB_SPECIFIC_APPS Rialt&#10;# alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"ET TROJAN Spyeye Data Exfiltr&#10;alert tcp [5.103.132.68,5.103.61.111,5.104.90.29,51.103.128.189,51.103.129.145,51.&#10;alert tcp $EXTERNAL_NET 32768:61000 -> $HOME_NET 1024:65535 (msg:"ET INFO SOCKSv5&#10;alert http $EXTERNAL_NET any -> $HTTP_SERVERS any (msg:"ET WEB_SPECIFIC_APPS TEDE&#10;alert dns $HOME_NET any -> any any (msg:"ET INFO DNS Query Domain .bit"; dns_query&#10;alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"ET TROJAN Observed Malicious SS&#10;# alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS (msg:"ET SPECIFIC_A</textarea>
+                    </div>
+                    <div class="equiplist_search">
+                        <div class="search_cont">
+                            <div class="sel_box fl">
+                                <select class="">
+                                    <option value="1" selected="selected">000.000.000.000</option>
+                                    <option value="11">000.000.000.000</option>
+                                    <option value="2">000.000.000.000</option>
+                                    <option value="12">000.000.000.000</option>
+                                    <option value="3">000.000.000.000</option>
+                                    <option value="4">000.000.000.000</option>
+                                    <option value="5">000.000.000.000</option>
+                                    <option value="6">000.000.000.000</option>
+                                </select>
+                            </div>
+                            <div class="ipt_box fl">
+                                <input type="text" placeholder="장비를 검색하여 주십시오" name="required">
+                                <a href="#" class="">장비 검색</a>
+                            </div>
+                        </div>
+                        <a href="#" class="btn grey">검색 초기화</a>
+                    </div>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            tbl ();
+                        } );
+                        $(window).resize(function() {
+                            tbl ();
+                        });
+                        function tbl () {
+                            if (window.matchMedia('(min-height: 0) and (max-height: 850px)').matches){
+                                $("#testTb1").dataTable({
+                                    "autoWidth": false,
+                                    "paging": false,
+                                    "scrollY": "222px",
+                                    "scrollCollapse": true,
+                                    "pagingType" : "full_numbers",
+                                    "ordering": false,
+                                    "info": true,
+                                    "filter": false,
+                                    "lengthChange": true,
+                                    "pageResize": true,
+                                    "destroy": true,
+                                    "language": {
+                                        "info": "<span>_MAX_</span>",
+                                    },
+                                    "dom": '<"stt"i>rt<"bottom"f><"clear">',
+                                });
+                            }else {
+                                $("#testTb1").dataTable({
+                                    "autoWidth": false,
+                                    "paging": false,
+                                    "scrollY": "370px",
+                                    "scrollCollapse": true,
+                                    "pagingType" : "full_numbers",
+                                    "ordering": false,
+                                    "info": true,
+                                    "filter": false,
+                                    "lengthChange": true,
+                                    "pageResize": true,
+                                    "destroy": true,
+                                    "language": {
+                                        "info": "<span>_MAX_</span>",
+                                    },
+                                    "dom": '<"stt"i>rt<"bottom"f><"clear">',
+                                });
+                            }
+                            $('.dataTables_scrollBody').mCustomScrollbar();
+                        }
+                    </script>
+                    <div class="tbl">
+                        <table id="testTb1" class="click">
+                            <colgroup>
+                                <col width="8%">
+                                <col width="25%">
+                                <col width="auto">
+                                <col width="35%">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="all_checkbox" id="chk00" value="">
+                                        <label for="chk00"></label>
+                                    </div>
+                                </th>
+                                <th>장비IP</th>
+                                <th>장비명</th>
+                                <th>비고</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check01" value="">
+                                        <label for="check01"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None</td>
+                                <td class="long_w tl">None</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check02" value="">
+                                        <label for="check02"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">192.168.2.10</td>
+                                <td class="long_w tl">General</td>
+                                <td class="long_w tl">General</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check03" value="">
+                                        <label for="check03"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">MG 인재개발_1</td>
+                                <td class="long_w tl">MG 인재개발_1</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check04" value="">
+                                        <label for="check04"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">192.168.2.10</td>
+                                <td class="long_w tl">MG 인재개발_2</td>
+                                <td class="long_w tl">MG 인재개발_2</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check05" value="">
+                                        <label for="check05"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">None2</td>
+                                <td class="long_w tl">None2</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check06" value="">
+                                        <label for="check06"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">192.168.2.10</td>
+                                <td class="long_w tl">General2</td>
+                                <td class="long_w tl">General2</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check07" value="">
+                                        <label for="check07"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">MG 인재개발_12</td>
+                                <td class="long_w tl">MG 인재개발_12</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check08" value="">
+                                        <label for="check08"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">192.168.2.10</td>
+                                <td class="long_w tl">MG 인재개발_22</td>
+                                <td class="long_w tl">MG 인재개발_22</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check09" value="">
+                                        <label for="check09"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">000.000.000.000</td>
+                                <td class="long_w tl">MG 인재개발_13</td>
+                                <td class="long_w tl">MG 인재개발_13</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="chk_box">
+                                        <input type="checkbox" name="checkbox_list" id="check10" value="">
+                                        <label for="check10"></label>
+                                    </div>
+                                </td>
+                                <td class="long_w tl">192.168.2.10</td>
+                                <td class="long_w tl">MG 인재개발_23</td>
+                                <td class="long_w tl">MG 인재개발_23</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="securitypolicy_btn">
+                    <div class="btn_wrap fr">
+                        <a href="#" class="btn">업데이트</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

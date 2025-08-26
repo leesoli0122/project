@@ -1,0 +1,20 @@
+/* 접근제어(PAM) 관리 - 시스템 특권권한관리 */
+.pcs_ctg_wrap .pcs_ctg_nxt .list_btn { padding:0 0 20px;}
+#SGIM_wrap #container .content .tbl_list {padding:0 0 20px;}
+.tbl_btm {padding:0 24px 20px}
+
+/* 접근제어(PAM) 관리 - 암호변경 규칙관리 */
+#SGIM_wrap #container .content:has(.search_wrap:not(.pcs_ctg_wrap .search_wrap)) .tbl_list:not(.move_wrap .tbl_list) {padding:0 24px;}
+.tbl_btm { padding:0 24px 20px;}
+
+/* 결재/승인 관리 - 워크플로우 관리, 다른 메뉴들도 */
+#SGIM_wrap #container .content:has(.search_wrap:not(.pcs_ctg_wrap .search_wrap)) .tbl_list:not(.move_wrap .tbl_list) {padding:0 24px;}
+.tbl_btm { padding:0 24px 20px;}
+
+/* 수집/배포 - 수집 정책 관리 */
+#SGIM_wrap #container .content:has(.search_wrap:not(.pcs_ctg_wrap .search_wrap)) .tbl_list:not(.move_wrap .tbl_list) {padding:0 24px;}
+.tbl_btm { padding:0 24px 20px;}
+
+/* 수집/배포 - 배포 정책 관리 */
+#SGIM_wrap #container .content:has(.search_wrap:not(.pcs_ctg_wrap .search_wrap)) .tbl_list:not(.move_wrap .tbl_list) {padding:0 24px;}
+.tbl_btm { padding:0 24px 20px;}

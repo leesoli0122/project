@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_15474" data-name="사각형 15474" width="24" height="24" transform="translate(-9.59 -8)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ico_mod" transform="translate(9.59 8)" clip-path="url(#clip-path)">
+    <path id="패스_449" data-name="패스 449" d="M.82,8A.82.82,0,0,1,.24,6.6L2.84,4,.24,1.4A.82.82,0,0,1,1.4.24L4.58,3.42a.821.821,0,0,1,0,1.16L1.4,7.76A.818.818,0,0,1,.82,8" transform="translate(0.41)" fill="#405d8e"/>
+  </g>
+</svg>

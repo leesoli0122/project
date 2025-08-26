@@ -1,0 +1,842 @@
+@use 'variable' as *;
+
+/*---------------------------------------------
+	#상단 버튼
+    #tit_in_btn: absolute
+---------------------------------------------*/
+.list_btn {
+    position:unset;
+    padding:20px 24px;
+    .opttxt {
+        font-weight:$font-w-r;
+        color:$title;
+    }
+    &.list_btn_stk {//[20250731] 추가
+        &.btnarea {
+            padding:20px 24px;
+            border-bottom:0;
+        }
+    }
+}
+.btn_box {
+    padding:0 0 10px;
+    &.tit_in_btn {
+        .ref {
+            @include icon(30px,30px);
+            padding:0;
+            background-image:url("../img/common/ico_refresh.svg");
+            background-size:85%;
+        }
+    }
+}
+
+$btns: ".btn_box a", ".btn_box button", ".list_btn button", "button";
+
+@each $btn in $btns {
+    #{$btn} {//[20250724] 수정
+        height:30px;
+        padding:0 10px;
+        margin:0 4px 0 0;//[20250729] 추가
+        border-radius:6px;
+        font-size:$font13;
+        &.big {
+            height:38px;
+            font-size:$font14;
+            font-weight:$font-w-m;
+            line-height:38px;
+        }
+        &:last-child {
+            margin-right:0;
+        }
+    }
+}
+
+.list_btn, .btn_box, .list_left_btn, .list_right_btn, .f_r, .f_l { //[20250729] 추가
+    font-size:0;
+}
+
+
+
+/*---------------------------------------------
+	#기본
+---------------------------------------------*/
+/* im 기본 */
+.basic {
+    border:1px solid $basic;
+    border-radius:6px;
+    font-size:$font13;
+    line-height:28px;
+    background-color:$basic;
+    &:focus-visible {
+        border:1px solid #0A153C;
+        background-color:#0A153C;
+    }
+    &:hover {
+        background-color:#0A153C;
+    }
+    // icon 들어갈 때
+    &.btn_condition_add {
+        padding:0 10px 0 3px;
+        i {
+            @include wh (18px,18px);
+            margin-right:2px;
+            @include mask ($white);
+            -webkit-mask-image:url("../img/common/icon_plus_s.svg");
+            mask-image:url("../img/common/icon_plus_s.svg");
+            -webkit-mask-size:90%;
+            mask-size:90%;
+            background-position:center;
+        }
+    }
+    &.icon_setting {
+        padding:0;
+        margin:0;
+        background-image:none;
+        &::before {
+            content:"";
+            display:block;
+            @include wh (10px,10px);
+            margin-left:2px;
+            @include mask ($white);
+            -webkit-mask-image:url("../img/common/icon_setting.svg");
+            mask-image:url("../img/common/icon_setting.svg");
+        }
+    }
+}
+
+.basic2 {
+    border:1px solid $basic2;
+    border-radius:6px;
+    font-size:$font13;
+    line-height:28px;
+    background-color:$basic2;
+    &:focus-visible {
+        border:1px solid #0A153C;
+        background-color:#0A153C;
+    }
+}
+
+/* big */
+.primary {
+    border:$borderP;
+    color:$white;
+    line-height:28px;
+    background-color:$primary;
+    // focus
+    &:focus-visible {
+        border:1px solid $btn-hover;
+        background-color:$btn-hover;
+    }
+    &.btn_dropdown {
+        padding-right:30px;
+        background:$icoAccordion no-repeat right 4px center $primary;
+    }
+    &.arrow {
+        i {
+            @include wh (16px, 16px);
+            background:$icoAccordion no-repeat right center $primary;
+            transform:rotate(270deg);
+        }
+    }
+    &:hover {
+        background-color:$btn-hover;
+    }
+    &:disabled { //[20250728] 추가
+        border:0;
+    }
+}
+
+/*---------------------------------------------
+	#line
+---------------------------------------------*/
+.line {
+    padding-bottom:0;
+    border:$borderD;
+    border-radius:6px;
+    font-size:$font13;
+    color:$content;
+    line-height:28px;
+    background-color:$white;
+    // focus
+    &:focus-visible {
+        color:$title;
+    }
+    &.btn_dropdown {
+        padding:0 30px 0 10px;
+        padding-bottom:0;
+        background:$icoAccordion no-repeat right 4px center $white;
+    }
+    &.diss,&:disabled { //[20250723] 추가
+        border:1px solid $btn-disabled;
+        color:$text-disabled;
+        background-color:$disabled-line-bg !important;
+        cursor:auto;
+        &:hover {
+            border:1px solid $btn-disabled;
+            color:$text-disabled;
+            background-color:$disabled-line-bg !important;
+            cursor:auto;
+        }
+    }
+    &:hover {
+        border:1px solid $line-hover;
+    }
+}
+
+/*---------------------------------------------
+	#diss : disabled
+---------------------------------------------*/
+.diss {//[20250723] 수정
+    border:1px solid $btn-disabled;
+    color:$text-disabled;
+    background-color:$btn-disabled;
+    &:hover {
+        background-color:$btn-disabled;
+    }
+}
+
+/*---------------------------------------------
+	#button에 icon 있을 경우
+    #그 외 버튼
+---------------------------------------------*/
+table {
+    .btnstl {
+        padding:0 14px;
+        line-height:26px;
+    }
+}
+.btnstl {
+    padding:0 14px;
+    border-radius:6px;
+    &.list_upload {
+        i {
+            @include icon(16px, 16px);
+            background-image:url("../img/common/ico_upload.svg");
+            background-position:unset;
+        }
+    }
+    &.arrow { //[20250807] 추가
+        i {
+            @include wh (16px,16px);
+            @include mask($title);
+            -webkit-mask-image:$icoArrow;
+            mask-image:$icoArrow;
+        }
+        &.basic {
+            i {
+                background-color:$white;
+            }
+        }
+    }
+}
+button, a {
+    color:$white;
+    font-weight:$font-w-m;
+    &.icon {
+        display:inline-flex;
+        align-items:center;
+        column-gap:2px;
+        padding:0 14px 0 8px;
+        i {
+            display:inline-block;
+            @include wh (24px, 24px);
+            margin-bottom: 2px;
+            &.checkout {
+                @include mask($title);
+                -webkit-mask-image:$iconClose;
+                mask-image:$iconClose;
+            }
+            &.checkin {
+                @include mask($title);
+                -webkit-mask-image:$icoCheckS;
+                mask-image:$icoCheckS;
+            }
+            &.icon_setting {
+                @include mask($title);
+                -webkit-mask-image:url("../img/common/icon_setting.svg");
+                mask-image:url("../img/common/icon_setting.svg");
+                background-image:none;
+                -webkit-mask-size: 80%;
+                mask-size: 80%;
+            }
+            &.icon_applylist {
+                margin:0;
+                background: url("../img/common/ico_m_list.svg")no-repeat center / $wh100;
+            }
+            &.icon_reset {
+                font-size:0;
+                @include mask($title);
+                -webkit-mask-image:$icoReset;
+                mask-image:$icoReset;
+                -webkit-mask-size: 100%;
+                mask-size: 100%;
+                background-image:none;
+                &::before {
+                    content:none;
+                }
+            }
+        }
+        &.icon_reset {
+            @include wh (30px, 30px);
+            padding:6px;
+            font-size:0;
+            background:$icoReset no-repeat center/auto $white;
+            &::before {
+                content:none;
+            }
+        }
+        &.close {
+            @include wh (30px, 30px);
+            padding:3px;
+            font-size:0;
+            background:$iconClose no-repeat center/auto $white;
+        }
+        &.bottom {
+            @include wh (30px,30px);
+            padding:0;
+            font-size:0;
+            background:$iconClose no-repeat center/auto;
+        }
+        &.mo_del,
+        &.mo_add {
+            @include icon (30px,30px);
+            background-image:url("../img/common/prev.svg");
+            background-position:unset;
+        }
+        &.mo_add {
+            transform:scale(-1);
+        }
+        &.n_text {
+            padding:0 2px;
+            font-size:0;
+            i {
+                margin-bottom:0;
+                mask-size:100%;
+            }
+        }
+    }
+    &.diss {//[20250723] 수정
+        cursor:auto;
+        border:1px solid $btn-disabled;
+        color:$text-disabled !important;
+        background-color:$btn-disabled;
+        i {
+            background-color:$text-disabled !important;
+        }
+    }
+    &.normal {
+        display:inline-block;
+        padding:6px 12px;
+        border:1px solid $default;
+        border-radius:6px;
+        font-weight:$font-w-r;
+        color:$content;
+        line-height:16px;
+        background-color:$white;//[20250723]수정
+        &.on {
+            padding:6px 12px 6px 6px;
+            border:$borderP;
+            background-color:#EDFFFC;//[20250723]수정
+            &::before {
+                content:"";
+                display:inline-block;
+                @include wh (16px, 16px);
+                @include mask($primary);
+                -webkit-mask-image:$icoCheckS;
+                mask-image:$icoCheckS;
+            }
+            color:$primary;
+        }
+        &.diss {
+            background-color:$disabled-line-bg;
+        }
+    }
+    /* 테이블 안 토글 버튼 */
+    &.icon_arrow_open {
+        display:inline-block;
+        @include wh (16px, 16px);
+        padding:0;
+        @include mask($content);
+        -webkit-mask-image:url("../img/common/icon_arrow_open.svg");
+        mask-image:url("../img/common/icon_arrow_open.svg");
+    }
+    &.icon_arrow_close {
+        @extend .icon_arrow_open;
+        transform:rotate(180deg);
+    }
+    &.icon_arrow_none {
+        @extend .icon_arrow_open;
+        -webkit-mask-image:$icoArrowNone;
+        mask-image:$icoArrowNone;
+    }
+    /* 텍스트 + 아이콘 */
+    &.text {
+        position:relative;
+        padding:0 14px 0 24px;
+        font-size:13px;
+        color:$title;
+        &::before {
+            content:"";
+            display:inline-block;
+            position:absolute;
+            left:0;
+            top:1px;
+            @include icon(24px,24px);
+        }
+        &.icon_reset {
+            &::before {
+                background-image:$icoReset;
+                transform:scaleX(-1);
+            }
+        }
+    }
+    &.s_btn_more {
+        height:28px;
+        padding:0 20px 0 10px;//[20250808] 수정
+        background-size:16px;//[20250808] 추가
+    }
+    &:focus-visible, &:focus {
+        outline-color:$title;
+    }
+}
+
+button {
+    &:disabled {//[20250723] 추가
+        color:$text-disabled;
+        border:1px solid $btn-disabled;
+        background-color:$btn-disabled !important;
+        cursor:auto;
+        i {
+            background-color:$text-disabled !important;
+        }
+        &:hover {
+            background-color:$btn-disabled !important;//[20250730] 수정
+            color:$text-disabled; //[20250807] 추가
+            cursor:auto;
+        }
+    }
+}
+
+/* 옵션 */
+.default_addel_btn {
+    .btn_option {
+        right:unset;
+        @extend %btn_option30;
+        &::after {
+            @extend %positon_center;
+            @include wh (24px,24px);
+            margin:0;
+            @include mask ($white);
+            -webkit-mask-image: url("../img/common/btn_add.svg");
+            mask-image: url("../img/common/btn_add.svg");
+            background-position:center;
+        }
+        &.btn_del_option {
+            &::after {
+                -webkit-mask-image: url("../img/common/btn_minus.svg");
+                mask-image: url("../img/common/btn_minus.svg");
+                background-position:center;
+            }
+        }
+        &.btn_test {
+            &::after {
+                width:24px;
+                margin:0;
+                -webkit-mask-image: url("../img/common/btn_special.svg");
+                mask-image: url("../img/common/btn_special.svg");
+                background-position:center;
+            }
+        }
+    }
+}
+
+/* close */
+$closes: "detail_search_btn i", "small_delbtn", "sych_mnt_toast .btn_close";
+
+@each $close in $closes {
+    .#{$close} {
+        @include wh (16px,16px);
+        @include mask($title);
+        -webkit-mask-image:$iconClose;
+        mask-image:$iconClose;
+        background-image:none;
+    }
+}
+
+/* add button */
+.btn_columnadd {
+    @extend %btn_columnadd;
+    span {
+        padding-right:30px;
+        @include title ($font16, $font-w-m, $title);
+        line-height:45px;
+        .btn_option {
+            right:0;
+            transform:translateY(-50%);
+            margin-top:0;
+            @include wh(24px,24px);
+            border:none;
+            border-radius:6px;
+            background-color:$basic;
+            &::after {
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                @include icon(16px,16px);
+                background-image:$iconBtnAdd;
+                background-position:center;
+            }
+        }
+    }
+}
+
+/* 더보기+ button */
+.allAlim {
+    padding:20px 0;
+    text-align:center;
+    a {
+        &.icon_plus {
+            display:inline-block;
+            padding:0 23px 0 14px;
+            line-height:28px;
+            color:$white;
+            background:url("../img/common/icon_plus.svg")no-repeat center right 4px;
+            background-color:$basic;
+        }
+    }
+}
+
+/* detail_open 안에 button */
+.btns_detail {
+    ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 15px;
+        li {
+            position:relative;
+            @include wh (30px, 30px);
+            border:$borderD;
+            border-radius:6px;
+            background:none;
+            a {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                @include icon(24px, 24px);
+                background-image:$icoFileEdit;
+                &.del {
+                    background-image:$icoTrash;
+                    background-position:center;
+                }
+                &.test {
+                    background-image:url("../img/common/ico_code.svg");
+                    background-position:center;
+                }
+            }
+        }
+    }
+}
+
+/* treem_btn */
+.treem_btn {
+    color:$content;
+}
+
+/* btn_dtail */
+.btn_dtail {
+    @include wh(30px, 30px);
+    border:$borderD;
+    .btn_dtail_arrow {
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        @include wh(24px, 24px);
+        @include mask($title);
+        background-size:contain;
+        -webkit-mask-image:$icoAccordion;
+        mask-image:$icoAccordion;
+    }
+    &.on {
+        border:1px solid $basic;
+        background-color:$basic;
+        .btn_dtail_arrow {
+            top:50%;
+            background-position:unset;
+            background-color:$white;
+            transform:translate(-50%,-50%) rotate(180deg);
+        }
+    }
+}
+
+/* scroll button */
+.scroll_btns {
+    bottom:55px;
+    z-index:100;
+}
+
+/* 상세보기 */
+.btn_detailview {
+    @include wh (16px,16px);
+    @include mask($title);
+    -webkit-mask-image:$icoDocument;
+    mask-image:$icoDocument;
+    -webkit-mask-size:auto;
+    mask-size:auto;
+    background-image:none;
+    &.on {
+        background-color:$primary;
+    }
+}
+
+/* 로그인 */
+.btn_box  {
+    &.login_btn {
+        a {
+            height:45px;
+            font-size:$font16;
+            font-weight:$font-w-b;
+            line-height:45px;
+        }
+    }
+    .diss {
+        border:1px solid $btn-disabled;
+        color:$text-disabled;
+        background-color:$btn-disabled;//[20250723]수정
+        &:hover {//[20250723] 추가
+            background-color:$btn-disabled;
+        }
+    }
+}
+
+/* [20250807] 알럿창 버튼 */
+.dg-btn {
+    &.dg-btn--ok {
+        background-color:$primary;
+        .dg-btn-content {
+            span {
+                color:$white;
+            }
+        }
+    }
+    &.dg-btn--cancel {
+        border:$borderD;
+        border-radius:6px;
+        font-size:$font13;
+        color:$content;
+        background-color:$white;
+    }
+}
+/*---------------------------------------------
+	#search button
+---------------------------------------------*/
+.search_box {
+    .btn_search {
+        @include topCenter ($right: 110px);
+        display:inline-block;
+        @include wh (24px, 24px);
+        padding:0;
+        @include mask($text-disabled);
+        -webkit-mask-image:$icoBtn;
+        mask-image:$icoBtn;
+    }
+    &.mini_search {
+        .btn_search {
+            @extend .btn_search;
+            right:10px;
+            @include wh(16px,16px);
+            padding:0;
+        }
+    }
+    .btn_detail_search{
+        @include topCenter ($right: 9px);
+        display:inline-block;
+        @include wh (auto, 36px);
+        padding:7px 20px 6px;
+        border-radius:7px;
+        color:$white;
+        line-height:16px;
+        background:none;//[20250723] 추가
+        background-color:$primary;//[20250723]수정
+        &:hover {
+            background-color:$btn-hover;
+        }
+        &:disabled {//[20250811] 추가
+            color:$text-disabled;
+        }
+    }
+}
+
+.btn_box,.list_right_btn {
+    .icon_reset {
+        padding:6px 12px 6px 6px;
+        line-height:16px;
+        &::before {
+            @include content(16px,16px);
+            display:inline-block;
+            @include mask($title);
+            -webkit-mask-image:$icoReset;
+            mask-image:$icoReset;
+        }
+    }
+    .primary {
+        font-weight:$font-w-m;
+    }
+}
+.list_right_btn {
+    .icon_reset {
+        position:relative;
+        &::before {
+            position:absolute;
+            top:1px;
+            left:7px;
+            @include wh(24px,24px);
+            -webkit-mask-size:90%;
+            mask-size:90%;
+            background-color:$white;
+        }
+        &.basic {
+            padding-left:31px;
+        }
+    }
+}
+
+/*---------------------------------------------
+	#pagination
+---------------------------------------------*/
+.pagination {
+    ul {
+        gap:4px;
+        li {
+            @include wh(auto, 30px);
+            a {
+                display:inline-block;
+                @include wh (38px, 30px);
+                padding:0;
+                border:1px solid $default;
+                border-radius:6px;
+                @include title ($font12, $font-w-r, $content);
+                line-height:30px;
+                text-align:center;
+                span {
+                    display:inline-block;
+                    margin:0;
+                    background:none;
+                    transform:translate(-50%, -50%);
+                }
+                &.next {
+                    @include wh (30px, 30px);
+                    padding:2px;
+                    overflow:hidden;
+                    span {
+                        display:inline-block;
+                        @include wh (24px, 24px);
+                        @include mask($text-disabled);
+                        -webkit-mask-image:url("../img/common/ico_prev.svg");
+                        mask-image:url("../img/common/ico_prev.svg");
+                        background-position:unset;
+                    }
+                }
+                &.last {
+                    @include wh (30px, 30px);
+                    padding:2px;
+                    overflow:hidden;
+                    span {
+                        @include wh (24px, 24px);
+                        @include mask($text-disabled);
+                        -webkit-mask-image:url("../img/common/ico_pprev.svg");
+                        mask-image:url("../img/common/ico_pprev.svg");
+                        background-position:unset;
+                    }
+                }
+                &.prev {
+                    @include wh (30px, 30px);
+                    @extend .next;
+                    transform:rotate(-180deg);
+                }
+                &.first {
+                    @include wh (30px, 30px);
+                    @extend .last;
+                    transform:rotate(180deg);
+                }
+            }
+            .diss {
+                background-color:$btn-disabled;
+                &:hover {
+                    background-color:$btn-disabled;
+                }
+            }
+            .on {
+                border-color:$primary !important;
+                background-color:$primary !important;
+            }
+        }
+    }
+    &.mini_paging {
+        position:relative;//[20250814] 추가
+        padding-top:20px;//[20250814] 추가
+        ul {
+            gap:0;
+            li {
+                &.currentpage {
+                    @include wh(auto, auto);
+                    em {
+                        color:$primary;
+                    }
+                }
+                &.page_select { //[20250807] 추가
+                    position:absolute;
+                    right:0;
+                }
+                a {
+                    background-color:transparent;//[20250805] 추가
+                    &.prev {
+                        @extend .next;
+                        transform:rotate(180deg);
+                    }
+                    &.next {
+                        @include wh (30px, 30px);
+                        padding:2px;
+                        overflow:hidden;
+                        span {
+                            display:inline-block;
+                            @include wh (24px, 24px);
+                            @include mask($text-disabled);
+                            -webkit-mask-image:url("../img/common/prev.svg");
+                            mask-image:url("../img/common/prev.svg");
+                            background-position:unset;
+                        }
+                    }
+                    &.last {
+                        @include wh (30px, 30px);
+                        padding:2px;
+                        overflow:hidden;
+                        span {
+                            @include wh (24px, 24px);
+                            @include mask($text-disabled);
+                            -webkit-mask-image:url("../img/common/prevv.svg");
+                            mask-image:url("../img/common/prevv.svg");
+                            background-position:unset;
+                        }
+                    }
+                    &.diss {
+                        background-color:transparent;
+                        span {
+                            background-color:$list-border;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*---------------------------------------------
+	#개발 디자인 입힌 후 추가 작업
+---------------------------------------------*/
+// [20250814]
+.file_btns {
+    button {
+        background-color:$white;
+    }
+}

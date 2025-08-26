@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="assets/img/common/logo.png"><!--[2025] 이미지 경로 및 이미지 변경-->
+						<span>Admin</span>
+					</a>
+				</div>
+				<!-- s: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li><a href="" class=""><i class="icon_user"></i><span>사용자</span></a></li>
+						<li><a href=""><i class="icon_userg"></i><span>사용자 그룹</span></a></li>
+						<li><a href=""><i class="icon_om"></i><span>조직관리</span></a></li>
+						<li><a href="" class="on"><i class="icon_system"></i><span>시스템</span></a></li>
+						<li><a href=""><i class="icon_stg"></i><span>시스템 그룹</span></a></li>
+						<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+							<ul>
+								<li><a href="">역할</a></li>
+								<li><a href="" class="on">규칙 관리</a></li>
+								<li><a href="">계산식 관리</a></li>
+								<li><a href="">이벤트 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+							<ul>
+								<li><a href="">인증 관리</a></li>
+								<li><a href="">인가 관리</a></li>
+								<li><a href="">암호 정책 관리</a></li>
+							</ul>
+						</li>
+						<li><a href=""><i class="icon_monitor"></i><span>모니터링</span></a></li>
+						<li><a href=""><i class="icon_report"></i><span>리포트</span></a></li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard  ICAM V2.0</p>
+					<!-- e: copyright 추가 -->
+				</div>
+				<!-- e: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+			</div>
+		</div>
+		<div id="container">
+			<!-- s : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">시스템 관리</a></li>
+						<li><span>생성</span></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href="">user01</a></li>
+					<li class="timer"><i></i><span><em>00:15:00</em> 후 접속 끊김</span><button class="time_ref" title="세션 시간 새로고침"></button></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a></li>
+					<li class="btn_menualdown"><a id="guide_manualDown"></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<!-- e : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="content">
+				<div class="topPrss">
+					<div class="inner_topPrss">
+						<div class="detail_process">
+							<ul class="flx">
+								<li class="flx_cell process_comple"><span class="s_num">1</span>기본 정보</li>
+								<li class="flx_cell process_comple"><span class="s_num">2</span>접속 정보</li>
+								<li class="flx_cell process_current"><span class="s_num">6</span>서버 연동</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="btn_box cl_both">
+					<!-- s: class 변경 -->
+					<div class="f_l">
+						<a href="" class="line">서버 연동 실행</a>
+					</div>
+					<div class="f_r">
+						<a href="" class="line">수정</a>
+						<span class="divide"></span>
+						<a href="" class="basic2">이전</a>
+						<a href="" class="basic">다음</a>
+						<span class="divide"></span>
+						<a href="" class="primary">확인</a>
+					</div>
+					<!-- e: class 변경 -->
+				</div>
+				<ul class="info_wrap">
+					<!-- s: bul_dot 추가 -->
+					<li>
+						<dl class="bul_dot">
+							<dt>시작시간</dt>
+							<dd>2022. 08. 23 08:00:00</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="bul_dot">
+							<dt>종료시간</dt>
+							<dd>2022. 08. 24 08:00:00</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="bul_dot">
+							<dt>진행시간</dt>
+							<dd> 
+								<p class="txtbg yelltxt">진행중 - 클라우드</p>
+								<!-- 
+								<p class="txtbg graytxt">NONE</p>
+								<p class="txtbg yelltxt">진행중</p>
+								<p class="txtbg greentxt">성공</p>
+								<p class="txtbg yelltxt">진행중 - 포트확인</p>
+								<p class="txtbg redtxt">정지</p>
+								<p class="txtbg redtxt">실패</p>
+								<p class="txtbg orttxt">에러</p>-->
+							</dd>
+						</dl>
+					</li>
+					<!-- e: bul_dot 추가 -->
+				</ul>
+				<div class="move_wrap list_stl">
+					<div class="move_box">
+						<div class="moved_tit">
+							미등록
+							<div class="btn_box tit_in_btn">
+								<button class="line ref">새로고침</button><!--[2025] line으로 변경-->
+							</div>
+						</div>
+						<div class="moved_list">
+							<div class="svz_list_stl">
+								<div class="svz_list_ul">
+									<div class="svz_info">
+										<p class="svz_info_ip">172.24.0.101</p>
+										<!-- s: bul_dot, checkCircle 추가 sv_connect 삭제-->
+										<dl class="svz_info_dtl bul_dot">
+											<dt>서버상태</dt>
+											<dd><i class="icon_list checkCircle"></i>정상</dd>
+										</dl>
+										<!-- e: bul_dot 추가 -->
+									</div>
+									<div class="svz_slt_btn">
+										<select class="form_contrl">
+											<option>Protocol</option>
+											<option>Protocol</option>
+											<option>Protocol</option>
+											<option>Protocol</option>
+										</select>
+										<button class="btn_retry" title="재시도"></button>
+									</div>
+								</div>
+								<div class="svz_list_ul">
+									<div class="svz_info">
+										<p class="svz_info_ip">172.24.0.101</p>
+										<!-- s: bul_dot, checkCircle 추가 sv_connect 삭제-->
+										<dl class="svz_info_dtl bul_dot">
+											<dt>서버상태</dt>
+											<dd><i class="icon_list checkCircle"></i>정상</dd>
+										</dl>
+										<!-- e: bul_dot 추가 -->
+									</div>
+									<div class="svz_slt_btn">
+										<select class="form_contrl">
+											<option>Protocol</option>
+											<option>Protocol</option>
+											<option>Protocol</option>
+											<option>Protocol</option>
+										</select>
+										<button class="btn_retry" title="재시도"></button>
+									</div>
+								</div>
+								<div class="svz_list_ul">
+									<div class="svz_info">
+										<p class="svz_info_ip">172.24.0.101</p>
+										<!-- s: bul_dot, checkCircle 추가 sv_connect 삭제-->
+										<dl class="svz_info_dtl bul_dot">
+											<dt>서버상태</dt>
+											<dd><i class="icon_list checkCircle"></i>정상</dd>
+										</dl>
+										<!-- e: bul_dot 추가 -->
+									</div>
+									<div class="svz_slt_btn">
+										<select class="form_contrl">
+											<option>Protocol</option>
+											<option>Protocol</option>
+											<option>Protocol</option>
+											<option>Protocol</option>
+										</select>
+										<button class="btn_retry" title="재시도"></button>
+									</div>
+								</div>
+								<div class="svz_list_ul">
+									<div class="svz_info">
+										<p class="svz_info_ip">172.24.0.101</p>
+										<!-- s: bul_dot, checkCircle 추가 sv_connect 삭제-->
+										<dl class="svz_info_dtl bul_dot">
+											<dt>서버상태</dt>
+											<dd><i class="icon_list checkCircle"></i>정상</dd>
+										</dl>
+										<!-- e: bul_dot 추가 -->
+									</div>
+									<div class="svz_slt_btn">
+										<select class="form_contrl">
+											<option>Protocol</option>
+											<option>Protocol</option>
+											<option>Protocol</option>
+											<option>Protocol</option>
+										</select>
+										<button class="btn_retry" title="재시도"></button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pagination mini_paging">
+							<ul>
+								<li>
+									<a href="" class="first diss"><span></span>처음</a>
+								</li>
+								<li>
+									<a href="" class="prev diss"><span></span>이전</a>
+								</li>
+								<li class="currentpage">
+									<p><em>1</em> / 1</p>
+								</li>
+								<li>
+									<a href="" class="next diss"><span></span>다음</a>
+								</li>
+								<li>
+									<a href="" class="last diss"><span></span>마지막</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="moved_box">
+						<p class="moved_tit">등록 완료</p>
+						<div class="move_tbl scroll"><!--[2025] scroll 추가(필요 없으면 삭제)-->
+							<div class="tbl_list">
+								<table class="default_tbl">
+									<thead>
+										<tr>
+											<th class="tbl_num_wid"></th>
+											<th class="check_list"><input type="checkbox" name="" id="list00" class="check_stl"><label for="list00" class="check_stl_lab"></label></th>
+											<th class="sort_column">
+												<div class="">종류<span class="ascanding"></span></div>
+											</th>
+											<th class="sort_column">
+												<div class="">제조사<span class="ascanding"></span></div>
+											</th>
+											<th class="sort_column">
+												<div class="">모델명<span class="ascanding"></span></div>
+											</th>
+											<th class="sort_column">
+												<div class="">이름<span class="ascanding"></span></div>
+											</th>
+											<th class="sort_column">
+												<div class="">설명<span class="ascanding"></span></div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>1</th>
+											<td class="check_list"><input type="checkbox" name="" id="list01" class="check_stl"><label for="list01" class="check_stl_lab"></label></td>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+											<td>CentOS(1503)</td>
+											<td>Linux 표준모델</td>
+										</tr>
+										<tr>
+											<th>2</th>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+											<td>CentOS(1503)</td>
+											<td>Linux 표준모델</td>
+										</tr>
+										<tr>
+											<th>3</th>
+											<td class="check_list"><input type="checkbox" name="" id="list03" class="check_stl"><label for="list03" class="check_stl_lab"></label></td>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+											<td>CentOS(1503)</td>
+											<td>Linux 표준모델</td>
+										</tr>
+										<tr>
+											<th>4</th>
+											<td class="check_list"><input type="checkbox" name="" id="list04" class="check_stl"><label for="list04" class="check_stl_lab"></label></td>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+											<td>CentOS(1503)</td>
+											<td>Linux 표준모델</td>
+										</tr>
+										<tr>
+											<th>5</th>
+											<td class="check_list"><input type="checkbox" name="" id="list05" class="check_stl"><label for="list05" class="check_stl_lab"></label></td>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+											<td>CentOS(1503)</td>
+											<td>Linux 표준모델</td>
+										</tr>
+										<tr>
+											<th>6</th>
+											<td class="check_list"><input type="checkbox" name="" id="list06" class="check_stl"><label for="list06" class="check_stl_lab"></label></td>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+											<td>CentOS(1503)</td>
+											<td>Linux 표준모델</td>
+										</tr>
+										<tr>
+											<th>7</th>
+											<td class="check_list"><input type="checkbox" name="" id="list07" class="check_stl"><label for="list07" class="check_stl_lab"></label></td>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+											<td>CentOS(1503)</td>
+											<td>Linux 표준모델</td>
+										</tr>
+										<tr>
+											<th>8</th>
+											<td class="check_list"><input type="checkbox" name="" id="list08" class="check_stl"><label for="list08" class="check_stl_lab"></label></td>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+											<td>CentOS(1503)</td>
+											<td>Linux 표준모델</td>
+										</tr>
+										<tr>
+											<th>9</th>
+											<td class="check_list"><input type="checkbox" name="" id="list09" class="check_stl"><label for="list09" class="check_stl_lab"></label></td>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+											<td>CentOS(1503)</td>
+											<td>Linux 표준모델</td>
+										</tr>
+										<tr>
+											<th>10</th>
+											<td class="check_list"><input type="checkbox" name="" id="list10" class="check_stl"><label for="list10" class="check_stl_lab"></label></td>
+											<td>OS</td>
+											<td>RedHat</td>
+											<td>data1</td>
+											<td>CentOS(1503)</td>
+											<td>Linux 표준모델</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="pagination mini_paging">
+							<ul>
+								<li>
+									<a href="" class="first diss"><span></span>처음</a>
+								</li>
+								<li>
+									<a href="" class="prev diss"><span></span>이전</a>
+								</li>
+								<li class="currentpage">
+									<p><em>1</em> / 1</p>
+								</li>
+								<li>
+									<a href="" class="next diss"><span></span>다음</a>
+								</li>
+								<li>
+									<a href="" class="last diss"><span></span>마지막</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- nav로 이동 <div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div> -->
+		</div>
+	</div>
+</body>
+</HTML>

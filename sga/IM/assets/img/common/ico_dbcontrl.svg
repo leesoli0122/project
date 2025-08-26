@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(-2 -2)" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </clipPath>
+  </defs>
+  <g id="ico_dbcontrl" transform="translate(2 2)" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(0.833 0.833)">
+      <line id="line06" x1="8.726" transform="translate(9.755 16.726)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="line05" x1="7.768" transform="translate(10.713 9.155)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="line04" x1="8.726" transform="translate(9.755 1.583)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="line03" x1="3.508" transform="translate(3.51 16.726)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="pass02" d="M3.083,31.422A1.583,1.583,0,1,0,4.666,33,1.582,1.582,0,0,0,3.083,31.422Z" transform="translate(-1.5 -16.278)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="line02" x1="6.921" transform="translate(0.097 9.155)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="pass01" d="M18.127,16.461A1.538,1.538,0,1,0,19.665,18,1.538,1.538,0,0,0,18.127,16.461Z" transform="translate(-8.952 -8.889)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="line01" x1="3.508" transform="translate(3.51 1.583)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <circle id="round" cx="1.583" cy="1.583" r="1.583" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

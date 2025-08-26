@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SecureGuard Prime</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/am/common.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<!-- 헤더 -->
+		<div id="header">
+			<div class="gnb">
+				<h1 class="logo"><a href="">Secureguard Prime</a></h1>
+				<p class="btn_tree"><a href="">그룹보기</a></p>
+				<!-- 1024사이즈일때 전체카테고리 -->
+				<p class="btn_allcategory"><a href=""><i class="icon">전체카테고리보기</i></a></p> <!--팝업창열리면 a 클래스 on 추가-->
+				<!-- 유저관련버튼 -->
+				<ul class="user_area">
+					<li class="btn_user"><a href=""><i class="icon">정보변경</i></a></li>
+					<li class="btn_alam"><a href=""><i class="icon">알림</i><span>2</span></a></p></li>
+					<li class="btn_logout"><a href=""><i class="icon">로그아웃</i></a></li>
+				</ul>				
+			</div>
+			<!-- 1280사이즈일때 왼쪽메뉴 -->
+			<div class="lnb_wrap">
+				<div class="user_info">
+					<p class="profile_img"><img src="img/am/img_profile.png" alt="프로필이미지"></p>
+					<div class="text_info">
+						<p class="user_id">ADMIN</p>
+						<dl>
+							<dt class="icon_logintime">로그인시간</dt>
+							<dd>2016.12.20 09:46:56</dd>
+							<dt class="icon_account">접속계정</dt>
+							<dd>192.168.0.131</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="main_menu nav_icon">
+					<ul>
+						<li><a href=""><em class="icon_home"></em>HOME</a></li>
+						<li class="on"><a href=""><em class="icon_mng"></em>관리<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="" class="on">시스템</a></li> 
+								<li><a href="">계정</a></li>
+								<li><a href="">사용자</a></li>
+								<li><a href="">그룹</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_access"></em>접근제어<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">접속조회</a></li>
+								<li><a href="">이벤트조회</a></li>
+								<li><a href="">정책설정</a></li>
+								<li><a href="">정책모델</a></li>
+								<li><a href="">명령어</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_workflow"></em>워크플로우<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">요청문서함</a></li>
+								<li><a href="">결재문서함</a></li>
+								<li><a href="">결재선</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_schedule"></em>작업&amp;스케줄<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">작업</a></li>
+								<li><a href="">스케줄</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_report02"></em>보고서<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">관리</a></li>
+								<li><a href="">워크플로우</a></li>
+								<li><a href="">접근제어</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_report"></em>감사<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">사용자</a></li>
+								<li><a href="">서비스</a></li>
+								<li><a href="">무결성</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_setting"></em>설정<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">환경</a></li>
+								<li><a href="">권한</a></li>
+								<li><a href="">메뉴</a></li>
+								<li><a href="">대시보드</a></li>
+								<li><a href="">연동</a></li>
+								<li><a href="">코드</a></li>
+								<li><a href="">라이선스</a></li>
+								<li><a href="">공지사항</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 전체카테고리 -->
+			<div class="nav_allcategory nav_icon" style="display:none">
+				<ul>
+					<li class="on"><a href=""><em class="icon_mng"></em>관리</a>
+						<ul>
+							<li><a href="">시스템</a></li>
+							<li><a href="">계정</a></li>
+							<li><a href="">사용자</a></li>
+							<li><a href="">그룹</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_access"></em>접근제어</a>
+						<ul>
+							<li><a href="">접속조회</a></li>
+							<li><a href="">이벤트조회</a></li>
+							<li><a href="">정책설정</a></li>
+							<li><a href="">정책모델</a></li>
+							<li><a href="">명령어</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_workflow"></em>워크플로우</a>
+						<ul>
+							<li><a href="">요청문서함</a></li>
+							<li><a href="">결재문서함</a></li>
+							<li><a href="">결재선</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_schedule"></em>작업&amp;스케줄</a>
+						<ul>
+							<li><a href="">작업</a></li>
+							<li><a href="">스케줄</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_report02"></em>보고서<span class="menu_arrow"></span></a>
+						<ul>
+							<li><a href="">관리</a></li>
+							<li><a href="">워크플로우</a></li>
+							<li><a href="">접근제어</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_report"></em>감사<span class="menu_arrow"></span></a>
+						<ul>
+							<li><a href="">사용자</a></li>
+							<li><a href="">서비스</a></li>
+							<li><a href="">무결성</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_setting"></em>설정</a>
+						<ul>
+							<li><a href="">환경</a></li>
+							<li><a href="">권한</a></li>
+							<li><a href="">메뉴</a></li>
+							<li><a href="">대시보드</a></li>
+							<li><a href="">연동</a></li>
+							<li><a href="">코드</a></li>
+							<li><a href="">라이선스</a></li>
+							<li><a href="">공지사항</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 트리 -->
+			<div class="tree_wrap" style="left:-242px">
+				<div class="tab">
+					<ul>
+						<li><a href="">시스템</a></li>
+						<li><a href="">계정</a></li>
+						<li><a href="" class="on">사용자</a></li>
+					</ul>
+				</div>
+				<div class="tree_box">
+					<p>
+						<select class="form_contrl">
+							<option value="">그룹별</option>
+							<option value="">그룹별2</option>
+							<option value="">그룹별3</option>
+						</select>
+					</p>
+					<div class="tree_view">
+						<ul>
+							<li>
+								<a href=""><span class="icon_folder_open"></span>root</a>
+								<ul>
+									<li><a href=""><span class="icon_folder_open"></span>QA서버</a>
+										<ul>
+											<li><a href=""><span class="icon_file"></span>운영</a></li>
+											<li><a href=""><span class="icon_file"></span>개발</a></li>
+										</ul>
+									</li>
+									<li><a href=""><span class="icon_folder_close"></span>네트워크그룹</a></li>
+									<li><a href=""><span class="icon_folder_open"></span>Server</a>
+										<ul>
+											<li><a href=""><span class="icon_file"></span>서버그룹</a></li>
+											<li><a href=""><span class="icon_file"></span>시연용시스템</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 본문 -->
+		<div id="container">
+			<div class="content">
+				<div class="title_box">
+					<h2>환경</h2>
+					<ol class="link_depth">
+						<li class="icon_home"><a href="">HOME</a></li>
+						<li><a href="">설정</a></li>
+						<li><a href="">환경</a></li>
+					</ol>
+				</div>
+				<div class="tab_wrap tab02">
+					<ul class="tab_menu">
+						<li><a href="">운영환경</a></li>
+						<li><a href="" class="on">사용자</a></li>
+						<li><a href="">인증</a></li>
+						<li><a href="">알림</a></li>
+						<li><a href="">워크플로우</a></li>
+						<li><a href="">화면표시</a></li>
+						<li><a href="">로그</a></li>
+						<li><a href="">라이선스</a></li>
+					</ul>
+					<div class="tab_in pd24">
+						<form id="" name="" method="" action="" class="form_wrap">
+							<fieldset>
+								<legend>사용자 환경 수정</legend>
+								<dl class="input_form long_label"><!-- 인풋타이틀이 길때 long_label추가 
+									****************************
+									필수항목 표시 해당 dt에 "s_required" class추가, 설명문구 추가시 input 옆에  p class "req_txt" 추가-->
+									<dt class="s_required"><label for="configUser01">아이디 최소 길이</label></dt>
+									<dd><input type="text" name="" id="configUser01" class="form_contrl" value="5">
+									</dd>
+									<dt class="s_required"><label for="configUser02">비밀번호 최소 길이</label></dt>
+									<dd><input type="text" name="" id="configUser02" class="form_contrl" value="8"><p class="req_txt">※ 8자 이상 영문 대문자 1자, 영소문자 1자, 숫자1자 특수문자 1자 포함 조건 중 4가지가 만족해야합니다.</p></dd>
+									<dt class="s_required"><label for="configUser03">비밀번호 암호화</label></dt>
+									<dd><select name="" id="configUser03" class="form_contrl">
+										<option value="">SHA-512</option>
+										<option value="">기타</option>
+										<option value="">SHA-512</option>
+										<option value="">기타</option>
+										<option value="">SHA-512</option>
+									</select><p class="req_txt">※ 8자 이상 영문 대문자 1자, 영소문자 1자, 숫자1자 특수문자 1자 포함 조건 중 4가지가 만족해야합니다.</p></dd>
+									<dt><label for="configUser04">비밀번호 변경주기</label></dt>
+									<dd>
+										<table class="form_tbl">
+											<tr>
+												<th><label for="tblinput01">사용자 ID</label></th>
+												<td><input type="text" name="" id="tblinput01" class="form_contrl">
+												<p class="req_txt">※ 설명문구입니다.</p></td>
+											</tr>
+											<tr class="s_required">
+												<th>
+													<label for="tblinput02">비밀번호 변경주기</label>
+												</th>
+												<td>
+													<select name="" id="tblinput02" class="form_contrl">
+														<option value="">SHA-512</option>
+														<option value="">기타</option>
+														<option value="">SHA-512</option>
+														<option value="">기타</option>
+														<option value="">SHA-512</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<label for="tblinput02_1">비밀번호 변경주기</label>
+												</th>
+												<td>
+													<div class="add_iput">
+														<input type="text" name="" class="form_contrl" id="tblinput02_1">
+														<a class="addel_btn">
+															<i></i>
+														</a>
+													</div>
+													<div class="add_iput">
+														<input type="text" name="" class="form_contrl" id="tblinput02_1">
+														<a class="addel_btn">
+															<i></i>
+														</a>
+														<a class="addel_btn del">
+															<i></i>
+														</a>
+													</div>
+													<div class="add_iput">
+														<input type="text" name="" class="form_contrl" id="tblinput02_1">
+													</div>
+													<div class="add_iput">
+														<a class="addel_btn">
+															<i></i>
+														</a>
+														<a class="addel_btn del">
+															<i></i>
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="tblinput03">사용자 ID</label></th>
+												<td><textarea id="tblinput03" name="" rows="" cols="" class="form_contrl"></textarea>
+												<p class="req_txt">※ 8자 이상 영문 대문자 1자, 영소문자 1자, 숫자1자 특수문자 1자 포함 조건 중 4가지가 만족해야합니다.</p></td>
+											</tr>
+										</table>
+									</dd>
+									<dt><label for="configUser05">비밀번호 영대문자 포함 개수</label></dt>
+									<dd><input type="text" name="" id="configUser05" class="form_contrl" value="1"></dd>
+									<dt><label for="configUser06">비밀번호 영소문자 포함 개수</label></dt>
+									<dd><input type="text" name="" id="configUser06" class="form_contrl" value="1"></dd>
+									<dt><label for="configUser07">비밀번호 숫자 포함 개수</label></dt>
+									<dd><input type="text" name="" id="configUser07" class="form_contrl" value="1"></dd>
+									<dt><label for="configUser08">비밀번호 특수문자 포함 개수</label></dt>
+									<dd><input type="text" name="" id="configUser08" class="form_contrl" value="1"></dd>
+									<dt><label for="configUser09">비밀번호 포함 조건 최소 만족 개수</label></dt>
+									<dd><input type="text" name="" id="configUser09" class="form_contrl" value="4"></dd>
+									<dt><label for="configUser10">비밀번호 동일 문자 연속입력 허용</label></dt>
+									<dd><select name="" id="configUser10" class="form_contrl wid100">
+										<option value="">불가</option>
+										<option value="">허용</option>
+									</select></dd>
+									<dt><label for="configUser11">비밀번호 연속 문자 사용 제한</label></dt>
+									<dd><select name="" id="configUser11" class="form_contrl wid100">
+										<option value="">불가</option>
+										<option value="">허용</option>
+									</select></dd>
+									<dt><label for="configUser12">비밀번호 재사용 방지 횟수</label></dt>
+									<dd><input type="text" name="" id="configUser12" class="form_contrl" value="2"></dd>
+									<dt><label for="configUser13">비밀번호 초기화 문자</label></dt>
+									<dd><input type="text" name="" id="configUser13" class="form_contrl" value="!@#"></dd>
+									<dt><label for="configUser14">로그인 실패 잠금 횟수</label></dt>
+									<dd><input type="text" name="" id="configUser14" class="form_contrl" value="5"></dd>
+								</dl>
+								<dl class="check_radio_form checkbox_style long_label">
+									<dt><em>공통</em> 사용여부</dt>
+									<dd>
+										<p><input type="radio" name="sg_noti_use_yn" id="sg_noti_use_yn1" value=""><label for="sg_noti_use_yn1">사용</label></p>
+										<p><input type="radio" name="sg_noti_use_yn" id="sg_noti_use_yn2" value=""><label for="sg_noti_use_yn2">미사용</label></p>
+									</dd>
+									<dt><em>공통</em> 발송방법</dt>
+									<dd>
+										<p><input type="checkbox" name="sg_noti_method" value="SMS" id="sg_noti_method1"><label for="sg_noti_method1">SMS</label></p>
+										<p><input type="checkbox" name="sg_noti_method" value="E-MAIL" id="sg_noti_method2"><label for="sg_noti_method2">E-MAIL</label></p>
+										<p><input type="checkbox" name="sg_noti_method" value="MESSENGER" id="sg_noti_method3"><label for="sg_noti_method3">MESSENGER</label></p>
+									</dd>
+									<dt><em>공통</em> 발송방법</dt>
+									<dd>
+										<p><input type="checkbox" name="sg_noti_method" value="SMS" id="sg_noti_method1"><label for="sg_noti_method1">SMS</label></p>
+										<p><input type="checkbox" name="sg_noti_method" value="E-MAIL" id="sg_noti_method2"><label for="sg_noti_method2">E-MAIL</label></p>
+										<p><input type="checkbox" name="sg_noti_method" value="MESSENGER" id="sg_noti_method3"><label for="sg_noti_method3">MESSENGER</label></p>
+									</dd>
+									<dt>프로토콜</dt>
+									<dd>
+										<div>
+											<div class="chck_in_inp">
+												<p><input type="checkbox" name="sg_noti_method" value="SSH" id="protocol01"><label for="protocol01">SSH</label>
+												</p>
+												<p><input type="text" class="form_contrl" name="" placeholder="PORT 번호">
+												</p>
+											</div>
+											<div class="chck_in_inp">
+												<p><input type="checkbox" name="sg_noti_method" value="TELNET" id="protocol02"><label for="protocol02">TELNET</label></p>
+												<p><input type="text" class="form_contrl" name="" placeholder="PORT 번호">
+												</p>
+											</div>
+											<div class="chck_in_inp">
+												<p><input type="checkbox" name="sg_noti_method" value="FTP" id="protocol04"><label for="protocol04">FTP</label></p>
+												<p><input type="text" class="form_contrl" name="" placeholder="PORT 번호">
+												</p>
+											</div>
+											<div class="chck_in_inp">
+												<p><input type="checkbox" name="sg_noti_method" value="SFTP" id="protocol05"><label for="protocol05">SFTP</label></p>
+												<p><input type="text" class="form_contrl" name="" placeholder="PORT 번호">
+												</p>
+											</div>
+											<div class="chck_in_inp">
+												<p><input type="checkbox" name="sg_noti_method" value="RDP" id="protocol06"><label for="protocol06">RDP</label></p>
+												<p><input type="text" class="form_contrl" name="" placeholder="PORT 번호">
+												</p>
+											</div>
+											<div class="chck_in_inp">
+												<p><input type="checkbox" name="sg_noti_method" value="FTP" id="protocol07"><label for="protocol07">FTP(Active)</label></p>
+												<p><input type="text" class="form_contrl" name="" placeholder="PORT 번호">
+												</p>
+											</div>
+											<div class="chck_in_inp">
+												<p><input type="checkbox" name="sg_noti_method" value="VNC" id="protocol08"><label for="protocol08">VNC</label></p>
+												<p><input type="text" class="form_contrl" name="" placeholder="PORT 번호">
+												</p>
+											</div>
+											<div class="chck_in_inp">
+												<p><input type="checkbox" name="sg_noti_method" value="HTTPS" id="protocol09"><label for="protocol09">HTTPS</label></p>
+												<p><input type="text" class="form_contrl" name="" placeholder="PORT 번호">
+												</p>
+											</div>
+											<div class="chck_in_inp">
+												<p><input type="checkbox" name="sg_noti_method" value="HTTP" id="protocol10"><label for="protocol10">HTTP</label></p>
+												<p><input type="text" class="form_contrl" name="" placeholder="PORT 번호">
+												</p>
+											</div>
+										</div>
+										<div class="req_txt" style="padding-top:0;clear:both"> ※ 프로토콜 선택 시, 각 프로토콜의 기본 포트로 시스템 서비스에 등록됩니다.</div>
+									</dd>
+
+								</dl>
+							</fieldset>
+							<div class="btn_box">
+								<button type="submit" class="violet btn_detail_save">저장</button>				
+								<div class="save_alert center" style="display:none">
+									<div class="arrow"></div>
+									<p>저장하시겠습니까?</p>
+									<div class="btn_box">
+										<a href="" class="violet">저장</a>
+										<a href="" class="grey cancel">취소</a>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- 푸터 -->
+			<div id="footer">
+				<p class="copy"><img src="img/am/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>

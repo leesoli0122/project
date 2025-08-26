@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+						<span>Admin</span>
+					</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class=""><i class="icon_user"></i><span>사용자</span></a></li>
+					<li><a href=""><i class="icon_userg"></i><span>사용자 그룹</span></a></li>
+					<li><a href=""><i class="icon_om"></i><span>조직관리</span></a></li>
+					<li><a href="" class="on"><i class="icon_system"></i><span>시스템</span></a></li>
+					<li><a href=""><i class="icon_stg"></i><span>시스템 그룹</span></a></li>
+					<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+						<ul>
+							<li><a href="">역할</a></li>
+							<li><a href="" class="on">규칙 관리</a></li>
+							<li><a href="">계산식 관리</a></li>
+							<li><a href="">이벤트 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+						<ul>
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="icon_monitor"></i><span>모니터링</span></a></li>
+					<li><a href=""><i class="icon_report"></i><span>리포트</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>역할 관리</h1>
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">시스템 관리</a></li>
+						<li><span>생성</span></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> user01</a></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="media_wrap">
+					<div class="play_view">
+						<!-- media영역 -->
+					</div>
+					<div class="player_contrl">
+						<div class="slider">
+							<p class="blue_slider"><span class="handle"></span></p>
+						</div>
+						<div class="playerbtn cl_both">
+							<div class="f_l">
+								<button class="icon_back">이전 감사로 이동</button>
+								<!--<button class="icon_play">재생</button>-->
+								<button class="icon_pause">일시정지</button>
+								<button class="icon_next">다음 감사로 이동</button>
+								<button class="speed" title="재생속도">X1</button>
+								<!-- 접속차단추가 -->
+								<button class="icon_blocking" title="접속차단">접속차단</button>
+								<ul class="speed_btn">
+									<li><a href="" class="on">x1</a></li>
+									<li><a href="">x2</a></li>
+									<li><a href="">x4</a></li>
+									<li><a href="">x16</a></li>
+								</ul>
+								<p class="time"><span>00:00:00</span> / <span>00:00:22</span></p>
+							</div>
+							<div class="f_r">
+								<p class="totaltime"><span>00:00:00</span> / <span>00:00:22</span></p>
+								<button class="icon_inputlist" title="상세조회">상세조회</button>
+							</div>
+						</div>
+					</div>
+					<div class="command_box">
+						<p class="top_txt">입력명령어<button>전체재생</button></p>
+						<!--<p class="no_list">기록된 정보가 없습니다.</p> -->
+						<ul class="command_list">
+							<li>INIT3<em class="playing">재생중</em><span>2017.02.07 14:20:00</span></li>
+							<li>INIT3<span>2017.02.07 14:20:00</span><i class="icon_warning" title=""></i></li>
+							<li>INIT3<span>2017.02.07 14:20:00</span><i class="icon_warning reconfirm" title="재확인"></i></li>
+							<li>INIT3<span>2017.02.07 14:20:00</span><i class="icon_warning addatc" title="추가인증"></i></li>
+							<li>INIT3<span>2017.02.07 14:20:00</span><i class="icon_warning commandblock" title="명령어 차단"></i></li>
+							<li>INIT3<span>2017.02.07 14:20:00</span><i class="icon_warning sessionblock" title="세션차단"></i></li>
+						</ul>
+					</div>
+				</div>
+				<ul class="info_wrap">
+					<li>
+						<dl>
+							<dt>요청ID</dt>
+							<dd>RQ01</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>요청이름</dt>
+							<dd>Request for role</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>종류</dt>
+							<dd>Role</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Status</dt>
+							<dd>In progress</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Start Date</dt>
+							<dd>2019. 01. 01</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>End Date</dt>
+							<dd>2019. 12. 31</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Assigned to</dt>
+							<dd>Jane Doe</dd>
+						</dl>
+					</li>
+				</ul>
+				<div class="btn_box cl_both">
+					<div class="f_l">
+						<a href="" class="white">이전</a>
+					</div>
+					<div class="f_r">
+						<div class="confirm_popup">
+							<a href="" class="blue btn_save">저장</a>
+							<div class="save_alert" style="display:none">
+								<div class="arrow"></div>
+								<p>저장하시겠습니까?</p>
+								<div class="btn_box">
+									<a href="" class="blue">저장</a>
+									<a href="" class="skyblue cancel">취소</a>
+								</div>
+							</div>
+						</div>
+						<a href="" class="skyblue">취소</a>
+					</div>				
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

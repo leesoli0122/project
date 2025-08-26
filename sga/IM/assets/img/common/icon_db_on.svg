@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="36" height="36" transform="translate(-48.422 -0.403)" fill="none" stroke="#999" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon_db_on" transform="translate(48.422 0.403)" clip-path="url(#clip-path)">
+    <g id="db" transform="translate(5.5 0.347)">
+      <path id="pass7" d="M1.5,24.109v9.012c0,2.751,5.445,4.981,12.159,4.981s12.158-2.23,12.158-4.981a1.712,1.712,0,0,0-.011-.18l.011-8.833" transform="translate(-49.5 -4.464)" fill="#27ad98"/>
+      <line id="line2" x2="2.769" transform="translate(-37.389 29.355)" fill="none" stroke="#cbf0ea" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass10" d="M4.289,20.635c-1.714.85-2.754,1.937-2.782,3.123,0,.016-.006.033-.006.05,0,2.75,5.445,4.981,12.159,4.981s12.157-2.23,12.158-4.981h0c0-.017-.005-.033-.006-.049-.026-1.06-.859-2.042-2.261-2.844" transform="translate(-49.5 -4.163)" fill="#47c9b5"/>
+      <path id="pass2" d="M1.5,6.956v9.013c0,2.75,5.445,4.98,12.159,4.98s12.158-2.23,12.158-4.98a1.714,1.714,0,0,0-.011-.181l.011-8.832" transform="translate(-49.5 -1.974)" fill="#27ad98"/>
+      <line id="lien1" x2="2.769" transform="translate(-37.389 14.693)" fill="none" stroke="#cbf0ea" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass5" d="M25.811,6.432C25.745,3.7,20.333,1.5,13.659,1.5S1.572,3.7,1.506,6.432c0,.017-.006.033-.006.05,0,2.751,5.445,4.981,12.159,4.981s12.157-2.23,12.158-4.98h0C25.817,6.465,25.812,6.448,25.811,6.432Z" transform="translate(-49.5 -1.5)" fill="#47c9b5"/>
+    </g>
+  </g>
+</svg>

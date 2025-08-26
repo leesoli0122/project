@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="ico_home" clip-path="url(#clip-path)">
+    <path id="img" d="M10.726.562.75,9.375V23.443H8.035V16.069h5.382v7.374H20.7V9.375Z" transform="translate(1.273 -0.083)" fill="none" stroke="#454545" stroke-linejoin="bevel" stroke-width="1.5"/>
+  </g>
+</svg>

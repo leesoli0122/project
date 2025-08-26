@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_15478" data-name="사각형 15478" width="16" height="16" transform="translate(1241 1144)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="사각형_15440" data-name="사각형 15440" width="5" height="5" transform="translate(-6 -6)" fill="none" stroke="#ffc105" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="ico_reject" transform="translate(-1241 -1144)" clip-path="url(#clip-path)">
+    <g id="그룹_719" data-name="그룹 719" transform="translate(-1.613 -1.113)">
+      <g id="그룹_663" data-name="그룹 663" transform="translate(1244.113 1146.613)">
+        <rect id="사각형_15448" data-name="사각형 15448" width="9.775" height="10.774" transform="translate(1 1)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="1"/>
+        <path id="패스_434" data-name="패스 434" d="M5.549,6.255h0Z" transform="translate(-3.108 -2.948)" fill="#fff" stroke="#fff" stroke-width="1"/>
+        <line id="선_142" data-name="선 142" x2="6.895" transform="translate(2.44 5.307)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="1"/>
+        <line id="선_143" data-name="선 143" x2="6.895" transform="translate(2.438 7.258)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="1"/>
+        <path id="패스_436" data-name="패스 436" d="M5.549,13.577h0Z" transform="translate(-3.108 -5.982)" fill="#fff" stroke="#fff" stroke-width="1"/>
+        <path id="패스_440" data-name="패스 440" d="M6.895,0" transform="translate(2.438 8.595)" fill="none" stroke="#fff" stroke-width="1"/>
+        <path id="패스_439" data-name="패스 439" d="M6.161,0" transform="translate(1.941 9.545)" fill="none" stroke="#fff" stroke-width="1"/>
+      </g>
+      <circle id="타원_77" data-name="타원 77" cx="3.418" cy="3.418" r="3.418" transform="translate(1250.5 1153.5)" fill="#fff" stroke="#ffc105" stroke-linejoin="round" stroke-width="1"/>
+      <g id="그룹_648" data-name="그룹 648" transform="translate(1257 1160)" clip-path="url(#clip-path-2)">
+        <line id="선_140" data-name="선 140" x2="2" y2="2" transform="translate(-4 -4)" fill="none" stroke="#ffc105" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line id="선_141" data-name="선 141" x1="2" y2="2" transform="translate(-4 -4)" fill="none" stroke="#ffc105" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

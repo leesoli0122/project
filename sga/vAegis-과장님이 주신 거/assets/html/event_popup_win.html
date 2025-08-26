@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>방화벽 이벤트 - Aegis</title>
+    <meta charset="UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- TODO: search engine info -->
+    <meta name="robots" content="Aegis" />
+    <meta name="keywords" content="Aegis" />
+    <meta name="title" content="Aegis" />
+    <meta name="description" content="Aegis" />
+
+    <!-- TODO: social url link image -->
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Aegis">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="cloudVM.png">
+    <meta property="og:description" content="Aegis 입니다.">
+
+    <!-- TODO: favicon -->
+    <link rel="icon" href="favicon.png" type="favicon.png" />
+
+    <!-- TODO: import -->
+    <link rel="stylesheet" href="../css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/lib/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../css/lib/datatables.css">
+    <link rel="stylesheet" href="../css/lib/datatables.css">
+    <link rel="stylesheet" href="../css/lib/select.dataTables.css">
+    <link rel="stylesheet" href="../css/lib/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../css/lib/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../css/lib/jstree.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="../js/lib/moment.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/bootstrap-datetimepicker.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="../js/lib/echarts.js"></script>
+    <script src="../js/lib/jquery.nice-select.js"></script>
+    <script src="../js/lib/select.dataTables.js"></script>
+    <script src="../js/lib/datatables.js"></script>
+    <script src="../js/lib/dataTables.colReorder.js"></script>
+    <script src="../js/lib/dataTables.rowReorder.js"></script>
+    <script src="../js/lib/dataTables.buttons.min.js"></script>
+    <script src="../js/lib/sweetalert.js"></script>
+    <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="../js/lib/jquery.scrollbar.js"></script>
+    <script src="../js/lib/jstree.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<body class="win_popup2 mscrollbar">
+<section class="pub">
+    <h3>방화벽 이벤트</h3>
+    <div class="popup_view_cont">
+        <div class="view_title">
+            <dl>
+                <dt>검색기간</dt>
+                <dd>20201014 11:00:00 ~ 20201014 11:59:59</dd>
+            </dl>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                /* Formatting function for row details - modify as you need */
+                $('#testTb3').DataTable({
+                    "autoWidth": false,
+                    "paging": true,
+                    "pagingType": "full_numbers",
+                    "ordering": false,
+                    "info": true,
+                    "filter": false,
+                    "lengthChange": false,
+                    "language": {
+                        "info": "<span>_PAGE_</span> - _PAGES_ / _MAX_",
+                    },
+                    "dom": 'rt<"bottom"fip><"clear">',
+                    "pageLength": '50',
+                });
+            });
+        </script>
+        <div class="tbl">
+            <table id="testTb3" class="click">
+                <colgroup>
+                    <col width="52px">
+                    <col width="auto">
+                    <col width="15%">
+                    <col width="15%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="15%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>자산</th>
+                    <th>출발지</th>
+                    <th>목적지</th>
+                    <th>프로토콜</th>
+                    <th>액션</th>
+                    <th>탐지시간</th>
+                </tr>
+                </thead>
+                <tbody>
+<!--                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">-->
+<!--                    <td class="long_w">20</td>-->
+<!--                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>-->
+<!--                    <td class="long_w">192.162.2.20</td>-->
+<!--                    <td class="long_w">192.168.10.96</td>-->
+<!--                    <td class="long_w">TCP</td>-->
+<!--                    <td class="long_w">blocked</td>-->
+<!--                    <td class="long_w">2020/10/23 14:02:56</td>-->
+<!--                </tr>-->
+<!--                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">-->
+<!--                    <td class="long_w">19</td>-->
+<!--                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>-->
+<!--                    <td class="long_w">192.162.2.20</td>-->
+<!--                    <td class="long_w">192.168.10.96</td>-->
+<!--                    <td class="long_w">TCP</td>-->
+<!--                    <td class="long_w">blocked</td>-->
+<!--                    <td class="long_w">2020/10/23 14:02:56</td>-->
+<!--                </tr>-->
+<!--                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">-->
+<!--                    <td class="long_w">18</td>-->
+<!--                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>-->
+<!--                    <td class="long_w">192.162.2.20</td>-->
+<!--                    <td class="long_w">192.168.10.96</td>-->
+<!--                    <td class="long_w">TCP</td>-->
+<!--                    <td class="long_w">blocked</td>-->
+<!--                    <td class="long_w">2020/10/23 14:02:56</td>-->
+<!--                </tr>-->
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">17</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">16</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">15</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">14</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">13</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">12</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">11</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">10</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">9</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">8</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">7</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">6</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">5</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">4</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">3</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">2</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                <tr onclick="window.open('event_popup_win2.html','','width=869,height=700,location=no,status=no,scrollbars=yes');">
+                    <td class="long_w">1</td>
+                    <td class="long_w tl">redhat78-96 (192.168.10.96)</td>
+                    <td class="long_w">192.162.2.20</td>
+                    <td class="long_w">192.168.10.96</td>
+                    <td class="long_w">TCP</td>
+                    <td class="long_w">blocked</td>
+                    <td class="long_w">2020/10/23 14:02:56</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

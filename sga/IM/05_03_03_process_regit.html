@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+						<span>Admin</span>
+					</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class=""><i class="icon_user"></i><span>사용자</span></a></li>
+					<li><a href=""><i class="icon_userg"></i><span>사용자 그룹</span></a></li>
+					<li><a href=""><i class="icon_om"></i><span>조직관리</span></a></li>
+					<li><a href="" class="on"><i class="icon_system"></i><span>시스템</span></a></li>
+					<li><a href=""><i class="icon_stg"></i><span>시스템 그룹</span></a></li>
+					<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+						<ul>
+							<li><a href="">역할</a></li>
+							<li><a href="" class="on">규칙 관리</a></li>
+							<li><a href="">계산식 관리</a></li>
+							<li><a href="">이벤트 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+						<ul>
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="icon_monitor"></i><span>모니터링</span></a></li>
+					<li><a href=""><i class="icon_report"></i><span>리포트</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>시스템 관리</h1>
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">시스템 관리</a></li>
+						<li><span>생성</span></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> user01</a></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="topPrss">
+					<div class="inner_topPrss">
+						<div class="detail_process">
+							<ul class="flx">
+								<li class="flx_cell process_comple"><span class="s_num">1</span>기본 정보</li>
+								<li class="flx_cell process_comple"><span class="s_num">2</span>서버 정보</li>
+								<li class="flx_cell process_current"><span class="s_num">3</span>사용자 속성</li>
+								<li class="flx_cell process_activ"><span class="s_num">4</span>그룹 속성</li>
+								<li class="flx_cell"><span class="s_num">5</span>조직 속성</li>
+								<li class="flx_cell"><span class="s_num">6</span>조정 정책</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="form_stl">
+					<dl class="form_list">
+						<dt class="form_tit"><label for="select01">User Object(Table)</label></dt>
+						<dd class="form_txt">
+							<SELECT class="form_contrl" id="select01">
+								<option>USER_INFO</option>
+								<option>USER_INFO</option>
+								<option>USER_INFO</option>
+								<option>USER_INFO</option>
+							</SELECT>
+							<p class="req_txt">※ 설명문구 들어갑니다.</p>
+						</dd>
+						<dt class="form_tit"><label for="select02">Key Field</label></dt>
+						<dd class="form_txt">
+							<SELECT class="form_contrl" id="select02">
+								<option>USER_ID</option>
+								<option>USER_ID</option>
+								<option>USER_ID</option>
+								<option>USER_ID</option>
+							</SELECT>
+						</dd>
+						<dt class="form_tit"><label for="select03">Attribute Mappings</label></dt>
+						<dd class="form_txt">
+							<SELECT class="form_contrl" id="select03">
+								<option>Using Formula</option>
+								<option>Using Formula</option>
+								<option>Using Formula</option>
+								<option>Using Formula</option>
+							</SELECT>
+						</dd>
+						<dt class="form_tit"><label for="CLNAME">Class Name</label></dt>
+						<dd class="form_txt">
+							<input type="text" name="CLNAME" class="form_contrl">
+							<button class="shadow">업로드</button>
+							<button class="shadow">샘플다운로드</button>
+						</dd>
+						<dt class="form_tit"><label for="CLNAME">Class Name</label></dt>
+						<dd class="form_txt">
+							<input type="text" name="CLNAME" class="form_contrl">
+							<button class="shadow flx"><i class="icon_sgim"></i>자동생성</button>
+							<button class="shadow flx"><i class="icon_google_auth"></i>자동생성</button>
+						</dd>
+					</dl>
+				</div>
+				<div class="list_btn pdt16">
+					<div class="list_left_btn">
+						<button class="shadow btn_reverse"></button>
+					</div>
+				</div>
+				<div class="tbl_list">
+					<table class="default_tbl">
+						<thead>
+							<tr>
+								<th>SGIM Attribute</th>
+								<th>SGIM Attribute</th>
+								<th>Target Attribute</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<SELECT class="form_contrl" id="">
+										<option>User ID</option>
+										<option>User ID</option>
+										<option>User ID</option>
+										<option>User ID</option>
+									</SELECT>
+								</td>
+								<td>
+									<input type="text" class="form_contrl" name="">
+								</td>
+								<td>
+									<SELECT class="form_contrl" id="">
+										<option>USER_ID</option>
+										<option>USER_ID</option>
+										<option>USER_ID</option>
+										<option>USER_ID</option>
+									</SELECT>
+								</td>
+								<td class="btns_detail btns01"><ul>
+									<li>
+										<a title="삭제" class="del"></a>
+									</li>
+								</ul></td>
+							</tr>
+							<tr>
+								<td>
+									<SELECT class="form_contrl" id="">
+										<option>Password</option>
+										<option>Password</option>
+										<option>Password</option>
+										<option>Password</option>
+									</SELECT>
+								</td>
+								<td>
+									<input type="text" class="form_contrl" name="">
+								</td>
+								<td>
+									<SELECT class="form_contrl" id="">
+										<option>USER_PW</option>
+										<option>USER_PW</option>
+										<option>USER_PW</option>
+										<option>USER_PW</option>
+									</SELECT>
+								</td>
+								<td class="btns_detail btns01"><ul>
+									<li>
+										<a title="삭제" class="del"></a>
+									</li>
+								</ul></td>
+							</tr>
+							<tr>
+								<td>
+									<SELECT class="form_contrl" id="">
+										<option>Full Name</option>
+										<option>Full Name</option>
+										<option>Full Name</option>
+										<option>Full Name</option>
+									</SELECT>
+								</td>
+								<td>
+									<input type="text" class="form_contrl" name="" placeholder="CONCAT(%FN%, %LN%)">
+								</td>
+								<td>
+									<SELECT class="form_contrl" id="">
+										<option>NONE</option>
+										<option>NONE</option>
+										<option>NONE</option>
+										<option>NONE</option>
+									</SELECT>
+								</td>
+								<td class="btns_detail btns01"><ul>
+									<li>
+										<a title="삭제" class="del"></a>
+									</li>
+								</ul></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="btn_box align_right">
+					<a href="" class="blue">추가</a>
+				</div>
+				<p class="fm_tit pdt16"></p>
+				<div class="form_stl">
+					<dl class="form_list">
+						<dt class="form_tit"><label for="tarea01">Mapping Conditions</label></dt>
+						<dd class="form_txt">
+							<textarea class="form_contrl mini" id="tarea01"></textarea>
+							<button class="shadow vta_top">Condition Generator</button>
+						</dd>
+						<dt class="form_tit"><label for="tarea02">Search Condition</label></dt>
+						<dd class="form_txt"><textarea class="form_contrl mini" id="tarea02"></textarea></dd>
+					</dl>
+				</div>
+				<div class="btn_box cl_both">
+					<div class="f_l">
+						<a href="" class="white">이전</a>
+					</div>
+					<div class="f_r">
+						<a href="" class="blue">다음</a>
+						<a href="" class="skyblue">취소</a>
+					</div>					
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

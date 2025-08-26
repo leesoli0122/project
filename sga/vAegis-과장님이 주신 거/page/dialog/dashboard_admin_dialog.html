@@ -1,0 +1,41 @@
+
+<script src="../../js/service/dialog/dashboardAdmin.js"></script>
+
+<div class="modal wide" id="dashboard_view_modal">
+    <div class="modal_header">
+        <h3>모든 대시보드 불러오기</h3>
+    </div>
+    <div class="modal_body">
+        <div class="modal_cont">
+            <div class="tbl row10">
+                <table id="dashboardAdminTable" class="click">
+                    <colgroup>
+                        <col width="20%">
+                        <col width="35%">
+                        <col width="auto">
+                        <col width="10%">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>대시보드명</th>
+                        <th>설명</th>
+                        <th>타입</th>
+                        <th>생성자</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr onclick="javascript: lf_dashboardAdminClkTable(this);" style="display: none;">
+                        <td class="long_w"></td>
+                        <td class="long_w tl"></td>
+                        <td class="long_w tl"></td>
+                        <td class="long_w"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal_controller">
+        <a href="#" class="close">close</a>
+    </div>
+</div>

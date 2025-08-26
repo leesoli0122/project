@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SecureGuard AM V8.0</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/am/common.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<!-- 헤더 -->
+		<div id="header">
+			<div class="gnb">
+				<h1 class="logo"><a href="">Secureguard AM</a><p class="logo_settxt">운영망</p></h1>
+				<p class="btn_tree"><a href="">그룹보기</a></p>
+				<!-- 1024사이즈일때 전체카테고리 -->
+				<p class="btn_allcategory"><a href=""><i class="icon">전체카테고리보기</i></a></p> <!--팝업창열리면 a 클래스 on 추가-->
+				<!-- 유저관련버튼 -->
+				<ul class="user_area">
+					<li class="btn_user"><a href=""><i class="icon">정보변경</i></a></li>
+					<li class="btn_PMSSO"><a href="" title="PM-SSO"><i class="icon">PM-SSO</i></a></li>
+					<li class="btn_PMsync"><a href="" title="PM 동기화"><i class="icon"></i></a></li>
+					<li class="btn_server"><a href=""><i class="icon">서버상태</i></a></li>
+					<li class="btn_download"><a href=""><i class="icon">다운로드</i></a></li>
+					<li class="btn_alam"><a href="" class=""><i class="icon">알림</i><span>2</span></a></p></li>
+					<li class="btn_logout"><a href=""><i class="icon">로그아웃</i></a></li>
+				</ul>				
+			</div>
+			<!-- 1280사이즈일때 왼쪽메뉴 -->
+			<div class="lnb_wrap">
+				<div class="user_info">
+					<p class="profile_img"><img src="img/am/img_profile.png" alt="프로필이미지"></p>
+					<div class="text_info">
+						<p class="user_id">ADMIN</p>
+						<dl>
+							<dt class="icon_logintime">로그인시간</dt>
+							<dd>2016.12.20 09:46:56</dd>
+							<dt class="icon_account">접속계정</dt>
+							<dd>192.168.0.131</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="main_menu nav_icon">
+					<ul>
+						<li><a href=""><em class="icon_home"></em>HOME</a></li>
+						<li class="on"><a href=""><em class="icon_mng"></em>관리<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="" class="on">시스템</a></li> 
+								<li><a href="">계정</a></li>
+								<li><a href="">사용자</a></li>
+								<li><a href="">그룹</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_access"></em>접근제어<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">접속조회</a></li>
+								<li><a href="">이벤트조회</a></li>
+								<li><a href="">정책설정</a></li>
+								<li><a href="">정책모델</a></li>
+								<li><a href="">명령어</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_imlink"></em>IM 연동</a></li>
+						<li><a href=""><em class="icon_workflow"></em>워크플로우<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">요청문서함</a></li>
+								<li><a href="">결재문서함</a></li>
+								<li><a href="">결재선</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_schedule"></em>작업/스케줄<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">작업</a></li>
+								<li><a href="">스케줄</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_report"></em>감사/보고서<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">감사</a></li>
+								<li><a href="">관리</a></li>
+								<li><a href="">워크플로우</a></li>
+								<li><a href="">접근제어</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_setting"></em>설정<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">환경</a></li>
+								<li><a href="">권한</a></li>
+								<li><a href="">메뉴</a></li>
+								<li><a href="">대시보드</a></li>
+								<li><a href="">연동</a></li>
+								<li><a href="">코드</a></li>
+								<li><a href="">라이선스</a></li>
+								<li><a href="">공지사항</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 트리 -->
+			<div class="tree_wrap" style="left:-242px">
+				<div class="tab">
+					<ul>
+						<li><a href="">시스템</a></li>
+						<li><a href="">계정</a></li>
+						<li><a href="" class="on">사용자</a></li>
+					</ul>
+				</div>
+				<div class="tree_box">
+					<p>
+						<select class="form_contrl">
+							<option value="">그룹별</option>
+							<option value="">그룹별2</option>
+							<option value="">그룹별3</option>
+						</select>
+					</p>
+					<div class="tree_view">
+						<ul>
+							<li>
+								<a href=""><span class="icon_folder_open"></span>root</a>
+								<ul>
+									<li><a href=""><span class="icon_folder_open"></span>QA서버</a>
+										<ul>
+											<li><a href=""><span class="icon_file"></span>운영</a></li>
+											<li><a href=""><span class="icon_file"></span>개발</a></li>
+										</ul>
+									</li>
+									<li><a href=""><span class="icon_folder_close"></span>네트워크그룹</a></li>
+									<li><a href=""><span class="icon_folder_open"></span>Server</a>
+										<ul>
+											<li><a href=""><span class="icon_file"></span>서버그룹</a></li>
+											<li><a href=""><span class="icon_file"></span>시연용시스템</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 전체카테고리 -->
+			<div class="nav_allcategory nav_icon" style="display:none">
+				<ul>
+					<li class="on"><a href=""><em class="icon_mng"></em>관리</a>
+						<ul>
+							<li><a href="">시스템</a></li>
+							<li><a href="">계정</a></li>
+							<li><a href="">사용자</a></li>
+							<li><a href="">그룹</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_access"></em>접근제어</a>
+						<ul>
+							<li><a href="">접속조회</a></li>
+							<li><a href="">이벤트조회</a></li>
+							<li><a href="">정책설정</a></li>
+							<li><a href="">정책모델</a></li>
+							<li><a href="">명령어</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_workflow"></em>워크플로우</a>
+						<ul>
+							<li><a href="">요청문서함</a></li>
+							<li><a href="">결재문서함</a></li>
+							<li><a href="">결재선</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_schedule"></em>작업/스케줄</a>
+						<ul>
+							<li><a href="">작업</a></li>
+							<li><a href="">스케줄</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_report"></em>감사/보고서</a>
+						<ul>
+							<li><a href="">감사</a></li>
+							<li><a href="">관리</a></li>
+							<li><a href="">워크플로우</a></li>
+							<li><a href="">접근제어</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_setting"></em>설정</a>
+						<ul>
+							<li><a href="">환경</a></li>
+							<li><a href="">권한</a></li>
+							<li><a href="">메뉴</a></li>
+							<li><a href="">대시보드</a></li>
+							<li><a href="">연동</a></li>
+							<li><a href="">코드</a></li>
+							<li><a href="">라이선스</a></li>
+							<li><a href="">공지사항</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 서버상태 -->
+			<div class="layer_serverstatus" style="display:none">
+				<ul>
+					<li>
+						<dl>
+							<dt>Host</dt>
+							<dd><span class="host_txt">am.dev1234567891012345568</span></dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>IP</dt>
+							<dd>192.1.168.52</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Status</dt>
+							<dd class="stb_txt status_normal">Master</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Status</dt>
+							<dd class="stb_txt status_standby">Standby</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Status</dt>
+							<dd class="stb_txt status_normal">Standalone</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Status</dt>
+							<dd class="stb_txt status_down">Down</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Status</dt>
+							<dd class="stb_txt status_unknown">Unknown</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+			<!-- 메뉴얼 다운리스트 -->
+			<div class="layer_menual" style="display:none">
+				<ul>
+					<li><a href=""><i class="icon_menual"></i>클라이언트</a></li>
+					<li><a href=""><i class="icon_menual"></i>관리자 메뉴얼</a></li>
+					<li><a href=""><i class="icon_menual"></i>일반 메뉴얼</a></li>
+				</ul>
+			</div>
+			<!-- 알림 -->
+			<div class="layer_alim" style="display:none">
+				<ul>
+					<li><a href=""><i class="icon_notice"></i>공지사항 <span><em>9</em>건</span></a></li>
+					<li><a href=""><i class="icon_pmcomple"></i>결재완료 <span><em>0</em>건</span></a></li>
+					<li><a href=""><i class="icon_pmreq"></i>결재요청 <span><em>10</em>건</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 본문 -->
+		<div id="container">
+			<div class="content">
+				<div class="title_box">
+					<h2>시스템목록</h2>
+					<ol class="link_depth">
+						<li><a href="">관리</a></li>
+						<li><a href="">시스템</a></li>
+					</ol>
+				</div>
+				<div class="tbl_area pd24">
+					<div class="search_box">
+						<input type="text" placeholder="검색어를 입력해주세요" class="search_inputbox" />
+						<button class="btn_search" type="submit">검색</button>
+						<button class="btn_detail_search" type="submit">상세검색</button>
+					</div>
+					<form class="detail_search_wrap" style="display:none">
+						<p class="detail_search_btn">상세검색<i>닫기</i></p>
+						<div class="search_column4">
+							<div class="col">
+								<dl>
+									<dt><label for="detail01">시스템명</label></dt>
+									<dd><input type="text" name="" id="detail01" class="form_contrl"></dd>
+								</dl>
+								<dl>
+									<dt><label for="detail02">OS 구분</label></dt>
+									<dd><select name="" id="detail02" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+								<dl>
+									<dt><label for="detail03">변경방법</label></dt>
+									<dd><select name="" id="detail03" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+							</div>
+							<div class="col">
+								<dl>
+									<dt><label for="detail04">IP</label></dt>
+									<dd><input type="text" name="" id="detail04" class="form_contrl"></dd>
+								</dl>
+								<dl>
+									<dt><label for="detail05">도메인</label></dt>
+									<dd><input type="text" name="" id="detail05" class="form_contrl"></dd>
+								</dl>
+								<dl>
+									<dt><label for="detail06">계정 그룹</label></dt>
+									<dd><select name="" id="detail06" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+							</div>
+							<div class="col">
+								<dl>
+									<dt><label for="detail07">패스워드암호화</label></dt>
+									<dd><select name="" id="detail07" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+								<dl>
+									<dt><label for="detail08">계정명</label></dt>
+									<dd><input type="text" name="" id="detail08" class="form_contrl"></dd>
+								</dl>
+								<dl>
+									<dt>관리자ID</dt>
+									<dd class="txt">admin</dd>
+								</dl>
+							</div>
+							<div class="col">
+								<dl>
+									<dt><label for="detail09">조회건수</label></dt>
+									<dd><input type="text" name="" id="detail09" class="form_contrl"></dd>
+								</dl>
+								<dl>
+									<dt><label for="detail10">계정구분</label></dt>
+									<dd><select name="" id="detail10" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+								<dl>
+									<dt><label for="detail11">비전</label></dt>
+									<dd><select name="" id="detail11" class="form_contrl">
+										<option value="">전체</option>
+										<option value="">222</option>
+										<option value="">333</option>
+										<option value="">444</option>
+										<option value="">555</option>
+									</select></dd>
+								</dl>
+							</div>
+						</div>
+						<!-- box2클래스 추가하여 기간검색과 버튼클래스를 포함시킴. -->
+						<div class="box2">
+							<div class="search_date">
+								<p class="checkbox_style"><input type="checkbox" name="menuuse" id="menuuse1" value="" checked="checked"><label for="menuuse1">변경일시</label></p>
+								<p class="checkbox_style"><input type="checkbox" name="menuuse" id="menuuse1" value="" checked="checked"><label for="menuuse1">변경일시</label></p>
+								<p class="checkbox_style"><input type="checkbox" name="menuuse" id="menuuse1" value="" checked="checked"><label for="menuuse1">변경일시</label></p>
+							</div>
+							<div class="search_date">
+								<p class="checkbox_style"><input type="checkbox" name="menuuse" id="menuuse1" value="" checked="checked"><label for="menuuse1">변경일시</label></p>
+								<div class="form_date">
+									<input type="text" name="" id="" class="form_contrl date_ctl" placeholder="2017.03.14" readonly="readonly"><input type="text" name="" id="" class="form_contrl ml"><span>~</span><input type="text" name="" id="" class="form_contrl date_ctl" placeholder="2017.03.21" readonly="readonly"><input type="text" name="" id="" class="form_contrl ml">
+								</div>
+							</div>
+							<div class="search_date">
+								<p class="checkbox_style"><input type="checkbox" name="menuuse" id="menuuse1" value="" checked="checked"><label for="menuuse1">변경일시</label></p>
+								<div class="form_date">
+									<input type="text" name="" id="" class="form_contrl date_ctl" placeholder="2017.03.14" readonly="readonly"><input type="text" name="" id="" class="form_contrl ml"><span>~</span><input type="text" name="" id="" class="form_contrl date_ctl" placeholder="2017.03.21" readonly="readonly"><input type="text" name="" id="" class="form_contrl ml">
+								</div>
+							</div>
+							<div class="search_date">
+								<p class="checkbox_style"><input type="checkbox" name="menuuse" id="menuuse1" value="" checked="checked"><label for="menuuse1">변경일시</label></p>
+								<div class="form_date">
+									<input type="text" name="" id="" class="form_contrl date_ctl" placeholder="2017.03.14" readonly="readonly"><input type="text" name="" id="" class="form_contrl ml"><span>~</span><input type="text" name="" id="" class="form_contrl date_ctl" placeholder="2017.03.21" readonly="readonly"><input type="text" name="" id="" class="form_contrl ml">
+								</div>
+							</div>
+							<p class="btn_box">
+								<a href="" class="white">초기화</a>
+								<a href="" class="violet">검색</a>
+							</p>
+						</div>
+					</form>
+					<div class="list_btn">
+						<div class="list_left_btn">
+							<!-- 드롭다운 버튼위에 dropdown_box클래스로 감싸주세요! -->
+							<div class="dropdown_box">
+								<button class="btn_work shadow">작업</button>
+								<ul class="dropdown_btn" style="display:none">
+									<li><a href="" class="btn_add">시스템추가</a></li>
+									<li><a href="" class="btn_del">시스템삭제</a></li>
+									<li>
+										<div class="flx dr_i_b">
+											<input type="text" name="" class="form_contrl" placeholder="직접입력">
+											<button class="small_btn darkgrey">저장</button>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="list_right_btn">
+							<button class="btn_sortini shadow"><i></i>초기화</button>
+							<button class="btn_column shadow"><i></i>컬럼설정</button>
+							<button class="btn_refresh shadow"><i></i>새로고침</button>
+						</div>
+					</div>
+					<div class="tbl_btm tbltop">
+						<div class="page_info">1-10/50</div>
+						<div class="pagination">
+							<ul>
+								<li><a href="" class="first diss"><span></span>첫페이지</a></li>
+								<li><a href="" class="prev diss"><span></span>이전</a></li>
+								<li><a href="">1</a></li>
+								<li><a href="" class="on">2</a></li>
+								<!--
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								-->
+								<li><a href="" class="next"><span></span>다음</a></li>
+								<li><a href="" class="last"><span></span>마지막페이지</a></li>
+							</ul>
+						</div>
+						<div class="page_select">
+							<select class="form_contrl">
+								<option value="">10</option>
+								<option value="">25</option>
+								<option value="">50</option>
+								<option value="">100</option>
+								<option value="">9999</option>
+							</select>
+						</div>
+					</div>
+					<div class="tbl_list tab_in_tbl">
+						<table class="default_tbl">
+							<thead>
+								<tr class="dt_head">
+									<th></th>
+									<th>시스템명</th>
+									<th>IP</th>
+									<th>시스템 구분</th>
+									<th>OS구분</th>
+									<th>인코딩</th>
+									<th>등록일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td><button class="icon_btn"><i class="i_updown"></i></button> <button class="icon_btn"><i class="i_updown idown"></i></button></td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf"></i>서버</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>윈도우</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_groupuser"></i>서버</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>renewal</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_groupuser"></i>서버</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="bg_gray">
+									<th scope="row">3</th>
+									<td>휴</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_groupaccount"></i>서버</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="bg_yel">
+									<th scope="row">4</th>
+									<td>만료</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_account"></i>서버</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td><i class="icon_file file_pdf">pdf</i></td>
+								</tr>
+								<tr class="bg_org">
+									<th scope="row">5</th>
+									<td>차단</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_groupsystem"></i>서버</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td><i class="icon_file file_html">html</i> <i class="icon_file file_pdf">pdf</i> <i class="icon_file file_docx">docx</i> <i class="icon_file file_xlsx">xlsx</i></td>
+								</tr>
+								<tr class="bg_blue">
+									<th scope="row">6</th>
+									<td>로그인</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_system"></i>서버</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="bg_red">
+									<th scope="row">7</th>
+									<td>관리자세션차단</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_groupuser"></i>서버</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td><span class="err_al">PLUGIN</span><span>SSH</span><span>TELNET</span><span>FTP</span></td>
+								</tr>
+								<tr class="">
+									<th scope="row">8</th>
+									<td>로그인</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_comm"></i>명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="">
+									<th scope="row">9</th>
+									<td>관리자세션차단</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="alram1">
+									<th scope="row">10</th>
+									<td>접근 통제</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="alram2">
+									<th scope="row">11</th>
+									<td>세션 kill</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="alram3">
+									<th scope="row">12</th>
+									<td>로그인 실패</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="alram4">
+									<th scope="row">13</th>
+									<td>명령어 통제</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="alram5">
+									<th scope="row">14</th>
+									<td>정상 로그인</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="alram6">
+									<th scope="row">15</th>
+									<td>개인정보 보호-경보</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="event1">
+									<th scope="row">16</th>
+									<td>로그인-통제</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="event2">
+									<th scope="row">17</th>
+									<td>명령어 통제</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="event3">
+									<th scope="row">18</th>
+									<td>개인정보 보호-경보</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="event4">
+									<th scope="row">19</th>
+									<td>비밀번호 오류 사용 경보</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+								<tr class="event5">
+									<th scope="row">20</th>
+									<td> OTP 인증실패</td>
+									<td>192.168.0.222</td>
+									<td><i class="icon_wkf icon_grpcomm"></i>그룹 명령어</td>
+									<td>Linux</td>
+									<td>UTF-8</td>
+									<td>2016.12.14 14:31:04</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tbl_btm">
+						<div class="page_info">1-10/50</div>
+						<div class="pagination">
+							<ul>
+								<li><a href="" class="first diss"><span></span>첫페이지</a></li>
+								<li><a href="" class="prev diss"><span></span>이전</a></li>
+								<li><a href="">1</a></li>
+								<li><a href="" class="on">2</a></li>
+								<!--
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								-->
+								<li><a href="" class="next"><span></span>다음</a></li>
+								<li><a href="" class="last"><span></span>마지막페이지</a></li>
+							</ul>
+						</div>
+						<div class="page_select">
+							<select class="form_contrl">
+								<option value="">10</option>
+								<option value="">25</option>
+								<option value="">50</option>
+								<option value="">100</option>
+								<option value="">9999</option>
+							</select>
+						</div>
+					</div>
+					<div class="list_btn">
+						<div class="list_left_btn">
+							<button class="btn_add shadow"><i></i>시스템 추가</button>
+							<button class="btn_del shadow"><i></i>시스템 삭제</button>
+							<div class="dropdown_box">
+								<button class="btn_work shadow">내려받기</button>
+								<ul class="dropdown_btn" style="display:none">
+									<li><a href="" class="btn_add">excel</a></li>
+									<li><a href="" class="btn_del">PDF</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="list_right_btn">
+							<button class="btn_column shadow"><i></i>컬럼설정</button>
+							<button class="btn_refresh shadow"><i></i>새로고침</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 푸터 -->
+			<div id="footer">
+				<p class="copy"><img src="img/am/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+			</div>
+		</div>
+		<div class="layer_popup column_setting">
+			<div class="bg"></div>
+			<div class="popup_wrap">
+				<div class="popup_title">
+					<h3>조회 컬럼 설정</h3>
+					<a href="" class="btn_close">닫기</a>
+				</div>
+				<div class="popup_content">
+					<ul class="checkbox_style">
+						<li><input type="checkbox" name="" id="column1" value=""><label for="column1">시스템명</label></li>
+						<li><input type="checkbox" name="" id="column2" value=""><label for="column2">IP</label></li>
+						<li><input type="checkbox" name="" id="column3" value=""><label for="column3">시스템구분</label></li>
+						<li><input type="checkbox" name="" id="column4" value=""><label for="column4">OS구분</label></li>
+						<li><input type="checkbox" name="" id="column5" value=""><label for="column5">인코딩</label></li>
+						<li><input type="checkbox" name="" id="column6" value=""><label for="column6">설명</label></li>
+						<li><input type="checkbox" name="" id="column7" value=""><label for="column7">등록방법</label></li>
+						<li><input type="checkbox" name="" id="column8" value=""><label for="column8">등록일</label></li>
+					</ul>
+					<div class="search_date">
+						<div class="form_date">
+							<input type="text" name="" id="" class="form_contrl date_ctl" placeholder="2017.03.14" readonly="readonly"><span>~</span><input type="text" name="" id="" class="form_contrl date_ctl" placeholder="2017.03.21" readonly="readonly">
+						</div>
+					</div>
+					<div class="btn_box">
+						<div class="f_l">
+							<a href="" class="white">기본설정 복원</a>
+						</div>
+						<div class="f_r">
+							<a href="" class="violet">적용</a>
+							<a href="" class="grey close">닫기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layer_popup system_add">
+			<div class="bg"></div>
+			<div class="popup_wrap">
+				<div class="popup_title">
+					<h3>시스템접속정보 추가</h3>
+					<a href="" class="btn_close">닫기</a>
+				</div>
+				<div class="popup_content">
+					<dl>
+						<dt><label for="info01">접속정보명</label></dt>
+						<dd><input type="text" name="" id="info01" class="form_contrl" placeholder="접속정보명"></dd>
+						<dt><label for="info02">접속정보 구분</label></dt>
+						<dd><select name="" id="info02" class="form_contrl">
+							<option value="">Active Directory</option>
+							<option value="">Active Directory</option>
+							<option value="">Active Directory</option>
+							<option value="">Active Directory</option>
+							<option value="">Active Directory</option>
+						</select></dd>
+						<dt><label for="info03">접속모드</label></dt>
+						<dd><select name="" id="info03" class="form_contrl">
+							<option value="">RDP</option>
+							<option value="">RDP</option>
+							<option value="">RDP</option>
+							<option value="">RDP</option>
+							<option value="">RDP</option>
+						</select></dd>
+						<dt><label for="info04">접속포트</label></dt>
+						<dd>
+							<div class="flx checkbox_style">
+								<p><input type="checkbox" name="sg_noti_content" value="" id="sg_noti_content3"><label for="sg_noti_content3">결재 요청</label></p>
+								<p><input type="checkbox" name="sg_noti_content" value="" id="sg_noti_content4"><label for="sg_noti_content4">결재 완료</label></p>
+							</div>
+						</dd>
+						<dt><label for="info05">도메인</label></dt>
+						<dd>
+							<div class="flx checkbox_style">
+								<p><input type="radio" name="sg_noti_use_yn" id="sg_noti_use_yn1" value=""><label for="sg_noti_use_yn1">사용</label></p>
+								<p><input type="radio" name="sg_noti_use_yn" id="sg_noti_use_yn2" value=""><label for="sg_noti_use_yn2">미사용</label></p>
+							</div>	
+						</dd>
+						<dt><label for="info06">테스트</label></dt>
+						<dd><textarea name="" id="info06" class="form_contrl"></textarea></dd>
+					</dl>
+					<div class="btn_box">
+						<div class="dropdown_box">
+							<button href="" class="shadow btn_drdown">샘플파일 다운로드</button>
+							<ul class="dropdown_btn" style="display: none;">
+								<li>
+									<a href="" >file1</a>
+								</li>
+								<li>
+									<a href="" >file2</a>
+								</li>
+								<li>
+									<a href="" >file3</a>
+								</li>
+							</ul>
+						</div>
+						<a href="" class="violet btn_save_add">추가</a>
+						<div class="save_alert" style="display:none">
+							<div class="arrow"></div>
+							<p>저장하시겠습니까?</p>
+							<div class="btn_box">
+								<a href="" class="violet">저장</a>
+								<a href="" class="grey cancel">취소</a>
+							</div>
+						</div>
+						<a href="" class="grey close">닫기</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list_pop" style="display:none;position:absolute;z-index:500;left:526px;top:353px">
+			<ul>
+				<li><a href="">시스템</a></li>
+				<li><a href="" class="depth">시스템2</a></li>
+				<li><a href="" class="depth">시스템 서비스</a>
+					<ul>
+						<li><a href="">서비스서비스1</a></li>
+						<li><a href="">서비스2</a></li>
+						<li><a href="">서비스3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>

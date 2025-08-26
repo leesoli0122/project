@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반 도넛 차트</title>
+    <script src="../../assets/js/lib/d3.v7.js"></script>
+    <script src="../../assets/js/lib/d3.v7.min.js"></script>
+</head>
+<body>
+    <svg id="chart" width="200" height="150"></svg>
+
+    <script>
+        const width = 200;
+        const height = 200;
+        const startAngle = -Math.PI / 1.2;
+        const endAngle = Math.PI / 1.2;
+        const percentage = 0.05;
+
+        const svg = d3.select("#chart")
+            .attr("width", width)
+            .attr("height", height);
+
+        const arc = d3.arc()
+            .innerRadius(50)
+            .outerRadius(60)
+            .startAngle(startAngle)
+            .cornerRadius(5);
+
+        svg.append("path")
+            .datum({ endAngle: endAngle })
+            .attr("d", arc)
+            .attr("fill", "#cccccc")
+            .attr("stroke", "#aaaaaa")
+            .attr("transform", "translate(100,100)");
+
+        const foreground = svg.append("path")
+            .datum({ endAngle: startAngle })
+            .attr("d", arc)
+            .attr("fill", "orange")
+            .attr("stroke", "orange")
+            .attr("stroke-width", "1")
+            .attr("stroke-linecap", "round")
+            .attr("transform", "translate(100,100)");
+
+        // 중앙 퍼센트 텍스트 뒷배경 원 추가
+        svg.append("circle")
+            .attr("cx", 100)
+            .attr("cy", 100)
+            .attr("r", 38)
+            .style("padding", "20px")
+            .attr("fill", "#fd59"); // 베이지색 배경
+
+        const text = svg.append("text")
+            .attr("x", 100)
+            .attr("y", 105)
+            .attr("text-anchor", "middle")
+            .attr("font-size", "18px")
+            .attr("fill", "orange")
+            .text("0.00%");
+
+        svg.append("text")
+            .attr("x", 100)
+            .attr("y", 100)
+            .attr("text-anchor", "middle")
+            .attr("font-size", "14px")
+            .attr("fill", "#888");
+
+        svg.append("text")
+            .attr("x", 75)
+            .attr("y", 165)
+            .attr("text-anchor", "middle")
+            .attr("fill", "#888")
+            .attr("font-size", "12px")
+            .text("0");
+
+        svg.append("text")
+            .attr("x", 125)
+            .attr("y", 165)
+            .attr("text-anchor", "middle")
+            .attr("fill", "#888")
+            .attr("font-size", "12px")
+            .text("100");
+
+        foreground.transition()
+            .duration(1000)
+            .attrTween("d", function (d) {
+                const interpolate = d3.interpolate(d.endAngle, startAngle + (endAngle - startAngle) * percentage);
+                return function (t) {
+                    d.endAngle = interpolate(t);
+                    return arc(d);
+                };
+            });
+
+        text.transition()
+            .duration(1000)
+            .tween("text", function () {
+                const interpolate = d3.interpolateNumber(0, percentage);
+                return function (t) {
+                    text.text(interpolate(t).toFixed(2) + "%");
+                };
+            });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/workflow_style.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="assets/img/common/logo.png"><!--[2025] 이미지 경로 및 이미지 변경-->
+						<span>Admin</span>
+					</a>
+				</div>
+				<!-- s: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li><a href="" class=""><i class="icon_user"></i><span>사용자</span></a></li>
+						<li><a href=""><i class="icon_userg"></i><span>사용자 그룹</span></a></li>
+						<li><a href=""><i class="icon_om"></i><span>조직관리</span></a></li>
+						<li><a href="" class="on"><i class="icon_system"></i><span>시스템</span></a></li>
+						<li><a href=""><i class="icon_stg"></i><span>시스템 그룹</span></a></li>
+						<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+							<ul>
+								<li><a href="">역할</a></li>
+								<li><a href="" class="on">규칙 관리</a></li>
+								<li><a href="">계산식 관리</a></li>
+								<li><a href="">이벤트 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+							<ul>
+								<li><a href="">인증 관리</a></li>
+								<li><a href="">인가 관리</a></li>
+								<li><a href="">암호 정책 관리</a></li>
+							</ul>
+						</li>
+						<li><a href=""><i class="icon_monitor"></i><span>모니터링</span></a></li>
+						<li><a href=""><i class="icon_report"></i><span>리포트</span></a></li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard  ICAM V2.0</p>
+					<!-- e: copyright 추가 -->
+				</div>
+				<!-- e: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+			</div>
+		</div>
+		<div id="container">
+			<!-- s: header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">시스템 관리</a></li>
+						<li><span>생성</span></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href="">user01</a></li>
+					<li class="timer">
+						<i></i>
+						<span><em>00:15:00</em> 후 접속 끊김</span>
+						<button class="time_ref" title="세션 시간 새로고침"></button>
+					</li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>기타알람</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_menualdown"><a id="guide_manualDown"></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<!-- e: header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="content">
+				<div class="topPrss">
+					<div class="inner_topPrss">
+						<div class="detail_process">
+							<ul class="flx">
+								<li class="flx_cell process_comple"><span class="s_num">1</span>기본 정보</li>
+								<li class="flx_cell process_comple"><span class="s_num">2</span>서버 정보</li>
+								<li class="flx_cell process_comple"><span class="s_num">3</span>사용자 속성</li>
+								<li class="flx_cell process_comple"><span class="s_num">4</span>그룹 속성</li>
+								<li class="flx_cell process_comple"><span class="s_num">5</span>조직 속성</li>
+								<li class="flx_cell process_current"><span class="s_num">6</span>조정 정책</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="btn_box cl_both">
+					<div class="f_l">
+					</div>
+					<div class="f_r">
+						<!-- s: class 변경 -->
+						<a href="" class="line">되돌리기</a>
+						<a href="" class="basic">확인</a>
+						<a href="" class="line">취소</a>
+						<a href="" class="primary">저장</a>
+						<!-- e: class 변경 -->
+					</div>
+				</div>
+				<div class="wf_designer_box">
+					<div class="p-rl wf_name">
+						<div class="flx fm-dft">
+							<p class="form_tit"><label id="">Name</label></p>
+							<p class="form_txt"><input type="text" name="" class="form_contrl"></p>
+						</div>
+						<div class="wf_ds_btns">
+							<button class="" title="워크플로우 수정"></button>
+							<button class="dt_modfy" title="전역변수 수정"></button>
+						</div>
+					</div>
+					<div class="wf_btns_wrap">
+						<div class="flx wf_ds_dragbtns">
+							<div>
+								<button class="sqbtn roleLane"></button>
+								<p class="sqbt_txt">Role Lane</p>
+							</div>
+							<div>
+								<button class="sqbtn itaskBox"></button>
+								<p class="sqbt_txt">Task Box</p>
+							</div>
+							<div>
+								<button class="sqbtn termination"></button>
+								<p class="sqbt_txt">Termination</p>
+							</div>
+							<div>
+								<button class="sqbtn Connector"></button>
+								<p class="sqbt_txt">Connector</p>
+							</div>
+							<div>
+								<div class="rs_line apply"></div>
+								<p class="sqbt_txt">신청</p>
+							</div>
+							<div>
+								<div class="rs_line succl"></div>
+								<p class="sqbt_txt">완료</p>
+							</div>
+							<div>
+								<div class="rs_line approl"></div>
+								<p class="sqbt_txt">승인완료</p>
+							</div>
+							<div>
+								<div class="rs_line waitl"></div>
+								<p class="sqbt_txt">승인대기</p>
+							</div>
+							<div>
+								<div class="rs_line reject"></div>
+								<p class="sqbt_txt">반려</p>
+							</div>
+							<div>
+								<div class="rs_line cancel"></div>
+								<p class="sqbt_txt">취소</p>
+							</div>
+							<div>
+								<div class="rs_line errl"></div>
+								<p class="sqbt_txt">오류</p>
+							</div>
+						</div>
+						<div class="screen_ctl flx">
+							<!-- s: line 추가 -->
+							<button class="screenbtn fitOn line">Fit on Screen</button>
+							<button class="screenbtn acSize line">Actual Size</button>
+							<button class="screenbtn zoomin line"></button>
+							<button class="screenbtn zoomout line"></button>
+							<!-- e: line 추가 -->
+						</div>
+					</div>
+					<div class="role_lane_wrap">
+						<div class="">
+							<p style="line-height:1.5;border-top:1px solid #dbdbdb;padding-bottom:10px">워크플로우 디자인 요소모음</p>
+							<div class="inb se_cir">S</div>
+							<div class="inb se_cir">E</div>
+							<div class="inb tmn_cir"></div>
+							<div class="inb taskBox_df"></div>
+							<div class="inb taskBox">
+								<p class="task_name">task name</p>
+								<div class="taskflx">
+									<div class="lc_cond">
+										<i></i>
+									</div>
+									<div class="task_elm">
+										<div class="tasks json"></div>
+										<div class="tasks apicall"></div>
+										<div class="tasks sms"></div>
+									</div>
+								</div>
+							</div>
+							<div class="inb taskBox">
+								<p class="task_name">task name</p>
+								<div class="taskflx">
+									<div class="lc_cond">
+										<i></i>
+									</div>
+									<div class="task_elm">
+										<div class="tasks json"></div>
+										<div class="tasks apicall"></div>
+										<div class="tasks sms"></div>
+									</div>
+								</div>
+							</div>
+							<div class="inb conditionBox bluebox"><p>NotFoundManager</p></div>
+							<div class="inb conditionBox pupplebox"><p>NotFoundManager12456556</p></div>
+							<div style="margin-top:15px">Task 종류 :
+								<div class="task_elm">
+									<div class="tasks"></div>
+									<div class="tasks in_form"></div>
+									<div class="tasks ex_form"></div>
+									<div class="tasks in_db"></div>
+									<div class="tasks ex_db"></div>
+									<div class="tasks exURL"></div>
+									<div class="tasks json"></div>
+									<div class="tasks apicall"></div>
+									<div class="tasks sms"></div>
+									<div class="tasks messenger"></div>
+									<div class="tasks web_Call"></div>
+									<div class="tooltip_b">
+										<p class="tooltip_txt">내부 신청 객체</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="lanebox blue_lane">
+							<div class="lane_tit blue_lane_tit">
+								<p class="txt_vtcrl">System</p>
+							</div>
+						</div>
+						<div class="lanebox green_lane">
+							<div class="lane_tit green_lane_tit">
+								<p class="txt_vtcrl">Role_1Role_1Role_1Role_1</p>
+							</div>
+						</div>
+					</div>
+					<div class="wf_post_t">
+						<div class="moved_tit minitit tab_wrap">
+							<ul class="tab_list">
+								<li>
+									<a href="">Tracking information</a>
+								</li>
+								<li>
+									<a href="" class="on">Approve List</a>
+								</li>
+							</ul>
+						</div>
+						<div class="minitbl_scr scroll"><!--[2025] scroll 추가-->
+							<table class="default_tbl minitbl">
+								<thead>
+									<tr>
+										<th class="tbl_num_wid"></th>
+										<th>Task ID</th>
+										<th>Task Code</th>
+										<th>Create Date</th>
+										<th>Finish Date</th>
+										<th>Last Run On</th>
+										<th>Launched By</th>
+										<th>Receiver</th>
+										<th>Requester</th>
+										<th>Run Count</th>
+										<th>Status</th>
+										<th>is Last</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>1</th>
+										<td>1049</td>
+										<td>EndTask</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>1001@1002</td>
+										<td>System</td>
+										<td>System</td>
+										<td>0</td>
+										<td>Completed</td>
+										<td>true</td>
+									</tr>
+									<tr>
+										<th>2</th>
+										<td>1049</td>
+										<td>EndTask</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>1001@1002</td>
+										<td>System</td>
+										<td>System</td>
+										<td>0</td>
+										<td>Completed</td>
+										<td>true</td>
+									</tr>
+									<tr>
+										<th>3</th>
+										<td>1049</td>
+										<td>EndTask</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>1001@1002</td>
+										<td>System</td>
+										<td>System</td>
+										<td>0</td>
+										<td>Completed</td>
+										<td>true</td>
+									</tr>
+									<tr>
+										<th>4</th>
+										<td>1049</td>
+										<td>EndTask</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>1001@1002</td>
+										<td>System</td>
+										<td>System</td>
+										<td>0</td>
+										<td>Completed</td>
+										<td>true</td>
+									</tr>
+									<tr>
+										<th>5</th>
+										<td>1049</td>
+										<td>EndTask</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>1001@1002</td>
+										<td>System</td>
+										<td>System</td>
+										<td>0</td>
+										<td>Completed</td>
+										<td>true</td>
+									</tr>
+									<tr>
+										<th>6</th>
+										<td>1049</td>
+										<td>EndTask</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>1001@1002</td>
+										<td>System</td>
+										<td>System</td>
+										<td>0</td>
+										<td>Completed</td>
+										<td>true</td>
+									</tr>
+									<tr>
+										<th>7</th>
+										<td>1049</td>
+										<td>EndTask</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>2014.06.11 11:42:16</td>
+										<td>1001@1002</td>
+										<td>System</td>
+										<td>System</td>
+										<td>0</td>
+										<td>Completed</td>
+										<td>true</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="btn_box cl_both">
+					<div class="f_l">
+					</div>
+					<div class="f_r">
+						<!-- s: class 변경 -->
+						<a href="" class="line">되돌리기</a>
+						<a href="" class="basic">확인</a>
+						<a href="" class="line">취소</a>
+						<a href="" class="primary">저장</a>
+						<!-- e: class 변경 -->
+					</div>
+				</div>
+			</div>
+			<!-- nav로 이동<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div> -->
+		</div>
+	</div>
+</body>
+</HTML>

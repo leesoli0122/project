@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.ui-jqgrid [role="row"] [role="gridcell"], 
+.ui-jqgrid [role="row"] [role="columnheader"] div{
+	overflow-x:auto!important;
+	overflow-y:hidden!important; 
+	-ms-overflow-style:-ms-autohiding-scrollbar;
+	-ms-scrollbar-highlight-color:rgba(187, 187, 187, 0.0);
+	-ms-scrollbar-face-color:rgba(238, 238, 238, 0.1);
+	-ms-scrollbar-arrow-color:rgba(187, 187, 187, 0.4);
+	-ms-scrollbar-base-color:rgba(255, 255, 255, 0.0);	
+	-ms-scrollbar-track-color:rgba(255, 255, 255, 0.0);
+}

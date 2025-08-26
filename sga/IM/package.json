@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "sass": "^1.86.0"
+  },
+  "name": "im",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "scss": "sass --watch IM/assets/css/scss:IM/assets/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

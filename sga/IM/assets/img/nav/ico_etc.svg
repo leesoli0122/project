@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(1 0.592)" fill="none" stroke="#121212" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="ico_etc" transform="translate(-1 -0.592)" clip-path="url(#clip-path)">
+    <g id="ico_etc-2" data-name="ico_etc" transform="translate(11.805 8.789)">
+      <circle id="round" cx="11" cy="11" r="11" transform="translate(-9.805 -7.197)" fill="rgba(0,0,0,0)" stroke="#121212" stroke-miterlimit="10" stroke-width="1"/>
+      <g id="Kebab">
+        <circle id="round3" cx="0.99" cy="0.99" r="0.99" fill="#121212"/>
+        <circle id="round2" cx="0.99" cy="0.99" r="0.99" transform="translate(0 2.609)" fill="#121212"/>
+        <circle id="round1" cx="0.99" cy="0.99" r="0.99" transform="translate(0 5.217)" fill="#121212"/>
+      </g>
+    </g>
+  </g>
+</svg>

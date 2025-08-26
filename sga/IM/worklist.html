@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SGA UX/UI worklist</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="SGA UX/UI" />
+	<meta name="description" content="" />
+    <meta name="viewport" content="width=device-width">
+
+	<!-- 일반 Favicon 설정 -->
+	<link rel="icon" href="./guide/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="./guide/favicon.ico" type="image/x-icon" />
+
+    <!-- css -->
+	<link rel="stylesheet" type="text/css" href="./guide/css/pub-worklist.css"/>
+    <!-- javascript -->
+    <script src="./guide/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./guide/js/jquery.form.min.js"></script>
+	<style>
+	.header .etc { color:yellowgreen; }
+	.cont table {
+		display: none;
+	}
+
+	.cont .tit {
+		cursor: pointer;
+	}
+
+	.cont .tit.on ~ table {
+		display: table;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrapper pc">
+		<section class="ifr_view">
+			<iframe id="iframe" width="100%" height="100%" src="./button.html"></iframe>
+		</section>
+		<section class="container">
+
+			<div class="header">
+				<h1>SGA UX/UI</h1>
+				<ul class="stateArea">
+					<li><strong>진행상테 :</strong></li>
+					<li class="typeCommon"><span>공통</span></li>
+					<li class="typeIng"><span>진행 중</span></li>
+					<li class="typeComp"><span>완료</span></li>
+					<li class="typeNon"><span>삭제</span></li>
+				</ul>
+				<ul class="stateCnt">
+					<li>총 <span id="totCnt"></span>개</li>
+					<li>작업중 <span id="progressCnt"></span>개</li>
+					<li>완료 <span id="compCnt"></span>개</li>
+				</ul>
+				<ul class="etc">
+					<li>테이블 열 진행 클래스(tr에 적용) : 완료 [comp], 비활성화 [non], 진행중 [ing]</li>
+					<li style="color:yellow;">비어있는 아이콘은 나중에 넣을 예정</li>
+				</ul>
+			</div>
+
+			<div class="cont guide">
+				<h3 class="tit on">common</h3>
+				<table>
+					<summary></summary>
+					<caption></caption>
+					<colgroup>
+						<col width="8%"><col width="8%"><col width="8%"><col width="6%">
+						<col width="6%"><col width="10%"><col width="8%"><col width="6%">
+						<col width="15%"><col width="*">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">depth1</th>
+							<th scope="col">depth2</th>
+							<th scope="col">depth3</th>
+							<th scope="col">depth4</th>
+							<th scope="col" class="fileName">화면ID</th>
+							<th scope="col">형태</th>
+							<th scope="col">담당</th>
+							<th scope="col">상태</th>
+							<th scope="col">사용 소스</th>
+							<th scope="col">비고</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="Gcomp">
+							<td>레이아웃</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/layout.html" target="_blank">layout.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="Gcomp">
+							<td>grid</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/grid.html" target="_blank">grid.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="Gcomp">
+							<td>menu</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/menu.html" target="_blank">menu.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td style="font-weight:700;">1뎁스 클릭시 2뎁스 보이게 작업<br/>2뎁스 페이지링크 후 2뎁스 메뉴박스 숨김<br/>이유 : 컨텐츠화면 가려짐 효과 있습니다.</td>
+						</tr>
+						<tr class="Gcomp">
+							<td>treemenu</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/treemenu.html" target="_blank">treemenu.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="Gcomp">
+							<td rowspan="2">list</td>
+							<td>list1</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/list.html" target="_blank">list.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="Gcomp">
+							<td>list2</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/list2.html" target="_blank">list2.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="Gcomp">
+							<td>table</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/table.html" target="_blank">table.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="Gcomp">
+							<td>form</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/form.html" target="_blank">form.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="Gcomp">
+							<td>button</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/button.html" target="_blank">button.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="Gcomp">
+							<td>tab</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/tab.html" target="_blank">tab.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="Gcomp">
+							<td>progress</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/progress.html" target="_blank">progress.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="Gcomp">
+							<td>state</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/state.html" target="_blank">state.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<!-- <tr class="comp">
+							<td>color</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/guide/views/color.html" target="_blank">color.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: index.css<br><br><b>*스크립트 클래스 :: <br></b></td>
+							<td></td>
+						</tr> -->
+					</tbody>
+				</table>
+			</div>
+
+			<div class="cont page">
+				<h3 class="tit on">worklist</h3>
+				<table>
+					<summary></summary>
+					<caption></caption>
+					<colgroup>
+						<col width="8%"><col width="14%"><col width="14%"><col width="4%">
+						<col width="15%"><col width="4%"><col width="4%"><col width="7%">
+						<col width="15%"><col width="*">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">대분류</th>
+							<th scope="col">파일명</th>
+							<th scope="col">depth3</th>
+							<th scope="col">depth4</th>
+							<th scope="col" class="fileName">화면ID</th>
+							<th scope="col">날짜</th>
+							<th scope="col">담당</th>
+							<th scope="col">상태</th>
+							<th scope="col">수정 내용</th>
+							<th scope="col">디자인 요청 내용</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="comp">
+							<td>header, nav</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="javascript:void(0)" target="_blank"></a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.13]<br>메뉴 오른쪽 border 넣기, 시계 아이콘 정렬, 타이머 리셋 아이콘 옆 선 나누기</td>
+							<td></td>
+						</tr>
+						<tr class="comp">
+							<td rowspan="3">로그인 페이지</td>
+							<td>login</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/login.html" target="_blank">login.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>기본 로그인 화면</td>
+						</tr>
+						<tr class="comp">
+							<td>01_06_02_login_ZTAforICAM_column2</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/01_06_02_login_ZTAforICAM_column2.html" target="_blank">01_06_02_login_ZTAforICAM_column2</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>해당 내용이 모두 들어가도록 디자인 필요(가로버전)</td>
+						</tr>
+						<tr class="comp">
+							<td>01_06_01_login_ZTAforICAM</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/01_06_01_login_ZTAforICAM.html" target="_blank">01_06_01_login_ZTAforICAM</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>세로버전</td>
+						</tr>
+
+						<tr class="comp">
+							<td>로딩</td>
+							<td>08_loading</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/08_loading.html" target="_blank">08_loading.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>중앙에 회전하는 원 부분만 확인</td>
+						</tr>
+
+                        <tr class="comp">
+							<td rowspan="2">기타화면</td>
+							<td>06_404error</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/06_404error.html" target="_blank">06_404error.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>404페이지</td>
+						</tr>
+						<tr class="Gcomp">
+							<td>06_wating</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/06_waiting.html" target="_blank">06_wating.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>테넌트 이동 화면</td>
+						</tr>
+
+                        <tr class="comp">
+							<td rowspan="2">신청화면</td>
+							<td>15_02_systemgroup_tree_layout_filelist</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/15_02_systemgroup_tree_layout_filelist.html" target="_blank">15_02_systemgroup_tree_layout_filelist.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.13]<br>오른쪽 content 하단에 스크롤 없애기, body scroll 없애기, 파일첨부 스크롤 그대로 사용, input 너비 100%, footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>시스템 트리 선택 후 신청 화면</td>
+						</tr>
+						<tr class="comp">
+							<td>15_01_systemgroup_tree_layout</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/15_01_systemgroup_tree_layout.html" target="_blank">15_01_systemgroup_tree_layout.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.13]<br> 테이블 안에 라벨 및 테이블 너미 수정, footer 삭제<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>시스템 트리 선택 후 시청 화면</td>
+						</tr>
+
+						<tr class="comp">
+							<td>결재목록</td>
+							<td>07_08_End-User_apply</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/07_08_End-User_apply.html" target="_blank">07_08_End-User_apply.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>결재 항목 리스트</td>
+						</tr>
+
+						<tr class="comp">
+							<td>결재내용 확인</td>
+							<td>09_table_style02</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/09_table_style02.html" target="_blank">09_table_style02.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.13]<br>scrollPrss 삭제(fixed 되어 있었음)<br>[2025.05.14]<br>테이블 상단 보더 다시 잡음, table 보더 양쪽 없앰, footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>기본 결재 화면</td>
+						</tr>
+
+                        <tr class="comp">
+							<td rowspan="4">결재선</td>
+							<td>03_09_layerPopup_detailview</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_09_layerPopup_detailview.html" target="_blank">03_09_layerPopup_detailview.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>결재 시 수신/위임 하는 아이콘 확인</td>
+						</tr>
+						<tr class="comp">
+							<td>11_02_workflow_2line</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/11_02_workflow_2line.html" target="_blank">11_02_workflow_2line.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>테이블 th 안에 center정렬, footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>결재가 두라인 이상으로 될 경우의 화면</td>
+						</tr>
+						<tr class="comp">
+							<td>11_02_1_workflow_2line_multi</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/11_02_1_workflow_2line_multi.html" target="_blank">11_02_1_workflow_2line_multi.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>여러 사람의 결재가 필요할 시의 화면</td>
+						</tr>
+						<tr class="comp">
+							<td>11_01_workflow</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/11_01_workflow.html" target="_blank">11_01_workflow.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>기본 결재선 확인</td>
+						</tr>
+
+                        <tr class="comp">
+							<td rowspan="8">기본폼</td>
+							<td>05_03_01_proccess_regit</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_03_01_process_regit.html" target="_blank">05_03_01_proccess_regit.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>footer 삭제 nav로 이동 예정, 프로그래스 숫자 정렬<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>기본 input 등 확인. 저장/확인 등의 버튼 확인</td>
+						</tr>
+						<tr class="comp">
+							<td>05_03_05_process_regit</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_03_05_process_regit.html" target="_blank">05_03_05_process_regit.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.16]<br>footer 삭제 nav로 이동 예정, bul_dot 추가<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>상단 탭 확인. 중간중간 로딩하는 원이나 하단 기한 부분 확인. 새로운속성추가 부분</td>
+						</tr>
+						<tr class="comp">
+							<td>03_09_layerPopup_detailview</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_09_layerPopup_detailview.html" target="_blank">03_09_layerPopup_detailview.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>우측 디테일 확인용</td>
+						</tr>
+						<tr class="comp">
+							<td>15_04_Access_policy_management</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/15_04_Access_policy_management.html" target="_blank">15_04_Access_policy_management.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>ETC 아이콘 나중에<br>[2025.05.14]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료<br>[2025.05.30]<br>height 다른 모니터에서 확인 필요</td>
+							<td>여러 시스템 분류별로 확인하는 화면</td>
+						</tr>
+						<tr class="comp">
+							<td>15_05_DBMS</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/15_05_DBMS.html" target="_blank">15_05_DBMS.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>ETC 아이콘 나중에<br>[2025.05.14]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>DB시스템의 확인 화면(여러 시스템 분류별 확인 2)</td>
+						</tr>
+						<tr class="comp">
+							<td>05_03_02_process_regit</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_03_02_process_regit.html" target="_blank">05_03_02_process_regit.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>footer 삭제 nav로 이동 예정, input 너비 100%로 변경<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>접속정보 화면. 파일 업로드/다운로드 화면</td>
+						</tr>
+						<tr class="comp">
+							<td>10_01_layout_modify</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/10_01_layout_modify.html" target="_blank">10_01_layout_modify.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>footer 삭제 nav로 이동 예정, input 너비 변경<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td></td>
+						</tr>
+						<tr class="comp">
+							<td>05_03_10_process_category</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_03_10_process_category.html" target="_blank">05_03_10_process_category.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>좌측에 항목이 있는 상세 페이지</td>
+						</tr>
+
+                        <tr class="comp">
+							<td rowspan="2">ONSD 디자이너 폼</td>
+							<td>04_01_sub_action_tree</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/04_01_sub_action_tree.html" target="_blank">04_01_sub_action_tree.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>이동이나 움직이는 부분은 코딩으로 처리</td>
+						</tr>
+                        <tr class="comp">
+							<td>04_02_sub_action_tree</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/04_02_sub_action_tree.html" target="_blank">04_02_sub_action_tree.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.16]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>이동이나 움직이는 부분은 코딩으로 처리</td>
+						</tr>
+
+                        <tr class="comp">
+							<td rowspan="7">표</td>
+							<td>02_01_sub_list</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/02_01_sub_list.html" target="_blank">02_01_sub_list.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>값이 있을 경우의 표</td>
+						</tr>
+                        <tr class="comp">
+							<td>02_01_sub_list_nodata</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/02_01_sub_list_nodata.html" target="_blank">02_01_sub_list_nodata.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>값이 있을 경우의 표</td>
+						</tr>
+                        <tr class="comp">
+							<td>10_03_table_tab</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/10_03_table_tab.html" target="_blank">10_03_table_tab.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.16]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>기본 표. 상단 탭이 있을 경우, 새로운 내용이 있을경우 아이콘. 메시지 확인 UI확인.<br><br>비고: nav,header 부분 보류</td>
+						</tr>
+                        <tr class="comp">
+							<td>10_02_tabUI</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/10_02_tabUI.html" target="_blank">10_02_tabUI.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.16]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>테이블 상단에 유형별로 정리하는 탭 UI</td>
+						</tr>
+                        <tr class="comp">
+							<td>03_09_layerPopup_detailview</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_09_layerPopup_detailview.html" target="_blank">03_09_layerPopup_detailview.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>표 내부 버튼 등 확인. 상태 부분의 아이콘 확인</td>
+						</tr>
+                        <tr class="comp">
+							<td>02_02_sub_list_detail</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/02_02_sub_list_detail.html" target="_blank">02_02_sub_list_detail.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>좌측 화살표 버튼을 눌러 표 상세내용을 확인하는 용</td>
+						</tr>
+                        <tr class="comp">
+							<td>05_01_layout</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_01_layout.html" target="_blank">05_01_layout.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>스크롤 했을 때 버튼 움직임 삭제, 스크롤 버튼 z-index 수정, footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>내부의 아이콘 확인.(파일 등)</td>
+						</tr>
+
+                        <tr class="comp">
+							<td rowspan="3">작은표</td>
+							<td>05_06_list2</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_06_list2.html" target="_blank">05_06_list2.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.16]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>작은표 두가지, 좌측/우측에 내용을 옮기는 용</td>
+						</tr>
+                        <tr class="comp">
+							<td>03_08_layerPopup_table02</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_08_layerPopup_table02.html" target="_blank">03_08_layerPopup_table02.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>작은표 두가지, 좌측/우측에 내용을 옮기는 용</td>
+						</tr>
+                        <tr class="comp">
+							<td>05_03_08_process_regit</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_03_08_process_regit.html" target="_blank">05_03_08_process_regit.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.14]<br>테이블 오른쪽 padding값 수정,footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>수정일 때에는 위 리스트 폼을 보여주고, 상세내용일 때는 이 화면을 보여줌. 상단 헤더도 참조</td>
+						</tr>
+
+                        <tr class="comp">
+							<td>메뉴 이동 화면</td>
+							<td>05_03_07_process_regit</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_03_07_process_regit.html" target="_blank">05_03_07_process_regit.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.16]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>권한을 위한 메뉴 이동 화면. 메뉴 하위도 선택/수정 되게 해야됨. 일반적인 tree구조가 두가지 있다고 보면 됩니다.</td>
+						</tr>
+
+                        <tr class="comp">
+							<td>트리폼</td>
+							<td>05_05_02_tree_module</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_05_02_tree_module.html" target="_blank">05_05_02_tree_module.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.16]<br>footer 삭제 nav로 이동 예정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>기본 트리 폼(좌측트리).</td>
+						</tr>
+
+                        <tr class="comp">
+							<td>메시지 디자인(표 포함)</td>
+							<td>05_09_alim_list</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_09_alim_list.html" target="_blank">05_09_alim_list.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.23]<br>copyright, nav로 이동 완료<br>[2025.06.17]<br>알림 아이콘 2개 누락</td>
+							<td>메시지 내용 디자인</td>
+						</tr>
+
+                        <tr class="comp">
+							<td>모니터링(기본)</td>
+							<td>05_08_01_monitoring_new</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_08_01_monitoring_new.html" target="_blank">05_08_01_monitoring_new.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.22]<br>gauge.js 수정<br>[2025.05.23]<br>copyright, nav로 이동 완료</td>
+							<td>모니터링의 경우 차트로 인해 해당 html 외 추가적인 부분이 있습니다.</td>
+						</tr>
+
+                        <tr class="comp">
+							<td rowspan="4">모니터링(조정배포)</td>
+							<td>13_01_synchronize_monitoring</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/13_01_synchronize_monitoring.html" target="_blank">13_01_synchronize_monitoring.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.05.26]sych_mnt_toast 아직 작업 안됨</td>
+							<td>조정배포 확인용</td>
+						</tr>
+                        <tr class="comp">
+							<td>13_02_synchronize_monitoring_setting</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/13_02_synchronize_monitoring_setting.html" target="_blank">13_02_synchronize_monitoring_setting.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>조정배포 수정시</td>
+						</tr>
+                        <tr class="comp">
+							<td>18_01_ICAM_dashboard</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/18_01_ICAM_dashboard.html" target="_blank">18_01_ICAM_dashboard.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>ICAM ZTA용 대시보드 확인용</td>
+						</tr>
+                        <tr class="comp">
+							<td>18_02_ICAM_dashboard_setting</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/18_02_ICAM_dashboard_setting.html" target="_blank">18_02_ICAM_dashboard_setting.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>ICAM ZTA용 대시보드 수정용</td>
+						</tr>
+
+                        <tr class="comp">
+							<td rowspan="2">서버존</td>
+							<td>12_01_server_zone</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/12_01_server_zone.html" target="_blank">12_01_server_zone.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>상단 탭 화면</td>
+						</tr>
+                        <tr class="comp">
+							<td>12_02_server_zone_list</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/12_02_server_zone_list.html" target="_blank">12_02_server_zone_list.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>서버존 수집/확인 UI</td>
+						</tr>
+
+                        <tr class="comp">
+							<td>상단 시스템 목록 중 일부를 클릭하여 상세 정보 확인</td>
+							<td>13_03_synchronize_card_table</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/13_03_synchronize_card_table.html" target="_blank">13_03_synchronize_card_table.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+
+                        <tr class="comp">
+							<td>인가 폼</td>
+							<td>05_03_09_calender_time_table</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_03_09_calender_time_table.html" target="_blank">05_03_09_calender_time_table.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[2025.06.12]<br>공통때문에 레이아웃구성은 다시잡음</td>
+							<td></td>
+						</tr>
+
+                        <tr class="comp">
+							<td>암호확인팝업</td>
+							<td>07_06_End-User_passwordInfo</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/07_06_End-User_passwordInfo.html" target="_blank">07_06_End-User_passwordInfo.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>안전정도 부분 팝업만 확인</td>
+						</tr>
+
+                        <tr class="comp">
+							<td rowspan="2">사용자 홈 화면</td>
+							<td>07_09_End-user_layout02</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/07_09_End-User_layout02.html" target="_blank">07_09_End-user_layout02.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td rowspan="2">두가지를 합해서 사용하고 있음.<br><br>
+                                요청사항 : 현재 항목의 css가 flex로 되어있어서 좌우간 이동만 자유로운데, <br>
+                                가능하면 grid css를 사용해서 사용자 임의로 사이즈 조절이나 위치조정이 자유롭게 되면 좋을 것 같습니다.<br></td>
+						</tr>
+                        <tr class="comp">
+							<td>07_10_End-user_layout03</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/07_10_End-user_layout03.html" target="_blank">07_10_End-user_layout03.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+						</tr>
+
+                        <tr class="Gcomp">
+							<td rowspan="7">팝업</td>
+							<td>03_08_layerPopup_table.html</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_08_layerPopup_table.html" target="_blank">03_08_layerPopup_table.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>기본 표 팝업</td>
+						</tr>
+                        <tr class="Gcomp">
+							<td>03_08_layerPopup_table02</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_08_layerPopup_table02.html" target="_blank">03_08_layerPopup_table02.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>기본 표 팝업</td>
+						</tr>
+                        <tr class="Gcomp">
+							<td>03_05_layerPopup_saveSuccess</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_05_layerPopup_saveSuccess.html" target="_blank">03_05_layerPopup_saveSuccess.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>: 저장 성공 팝업(아이콘 등 확인)</td>
+						</tr>
+                        <tr class="Gcomp">
+							<td>03_06_layerPopup_saveFail</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_06_layerPopup_saveFail.html" target="_blank">03_06_layerPopup_saveFail.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>: 저장 실패 팝업(실패이유 등)</td>
+						</tr>
+                        <tr class="Gcomp">
+							<td>03_07_layerPopup_warning</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_07_layerPopup_warning.html" target="_blank">03_07_layerPopup_warning.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>:경고 팝업(일부 작업 경고 팝업) / 자세히 보기 시 하단 내용 확인</td>
+						</tr>
+                        <tr class="Gcomp">
+							<td>03_04_layerPopup_Integrityfailed</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_04_layerPopup_Integrityfailed.html" target="_blank">03_04_layerPopup_Integrityfailed.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td> : 팝업 내부 폼 있을 경우</td>
+						</tr>
+                        <tr class="Gcomp">
+							<td>03_03_layerPopup_test</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/03_03_layerPopup_test.html" target="_blank">03_03_layerPopup_test.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>: 커넥션 테스트 팝업</td>
+						</tr>
+                        
+                        <tr class="Gcomp">
+                            <td rowspan="3">비밀번호 찾기 화면</td>
+							<td>01_05_PW_find_reset</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/01_05_PW_find_reset.html" target="_blank">01_05_PW_find_reset.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>: 기본 비밀번호 찾기 화면</td>
+						</tr>
+                        <tr class="Gcomp">
+							<td>01_04_PW_find_Q&A</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/01_04_PW_find_Q&A.html" target="_blank">01_04_PW_find_Q&A.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>: Question & Answer 로 암호를 찾을 경우</td>
+						</tr>
+                        <tr class="Gcomp">
+							<td>01_03_PW_find</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/01_03_PW_find.html" target="_blank">01_03_PW_find.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td> : 암호 초기화 전달 화면</td>
+						</tr>
+                        
+                        <tr class="">
+                            <td rowspan="9">워크플로우</td>
+							<td rowspan="5">workflow로 시작하는 jpg 파일 </td>
+							<td>workflow_디폴트.jpg</td>
+							<td></td>
+							<td class="fileName"><a href="../IM/workflow_디폴트.jpg" target="_blank">workflow_디폴트.jpg</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td rowspan="5">: 기본 workflow의 디자인 구성 jpg.</td>
+						</tr>
+                        <tr class="">
+							<td>workflow_상세보기.jpg</td>
+							<td></td>
+							<td class="fileName"><a href="../IM/workflow_상세보기.jpg" target="_blank">workflow_상세보기.jpg</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+						</tr>
+                        <tr class="">
+							<td>workflow_상세팝업.jpg</td>
+							<td></td>
+							<td class="fileName"><a href="../IM/workflow_상세팝업.jpg" target="_blank">workflow_상세팝업.jpg</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+						</tr>
+                        <tr class="">
+							<td>workflow_완료화면.jpg</td>
+							<td></td>
+							<td class="fileName"><a href="../IM/workflow_완료화면.jpg" target="_blank">workflow_완료화면.jpg</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+						</tr>
+                        <tr class="">
+							<td>workflow_task-icon-정리.jpg</td>
+							<td></td>
+							<td class="fileName"><a href="../IM/workflow_task-icon-정리.jpg" target="_blank">workflow_task-icon-정리.jpg</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+						</tr>
+                        <tr class="comp">
+							<td>11_03_workflow_designer</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/11_03_workflow_designer.html" target="_blank">11_03_workflow_designer.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+                        <tr class="comp">
+							<td>11_06_workflow_designer_detail_conditionEditor</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/11_06_workflow_designer_detail_conditionEditor.html" target="_blank">11_06_workflow_designer_detail_conditionEditor.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>: 컨디션 에디터 디자인</td>
+						</tr>
+                        <tr class="comp">
+							<td>11_05_workflow_designer_detail</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/11_05_workflow_designer_detail.html" target="_blank">11_05_workflow_designer_detail.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>: 상세정보 디자인</td>
+						</tr>
+                        <tr class="comp">
+							<td>11_04_workflow_designer_table</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/11_04_workflow_designer_table.html" target="_blank">11_04_workflow_designer_table.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td> : 워크플로우 상세 태스크 확인 화면</td>
+						</tr>
+
+                        <tr class="comp">
+                            <td>달력/날짜</td>
+							<td>05_02_03_process_step_modify</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/05_02_03_process_step_modify.html" target="_blank">05_02_03_process_step_modify.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+
+                        <tr class="comp">
+                            <td rowspan="2">장치스코어 화면</td>
+							<td>14_01_scorelist</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/14_01_scorelist.html" target="_blank">14_01_scorelist.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td> : 기본 목록 확인</td>
+						</tr>
+                        <tr class="comp">
+							<td>14_02_scorelist_modify</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/14_02_scorelist_modify.html" target="_blank">14_02_scorelist_modify.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>: 수정화면</td>
+						</tr>
+
+                        <tr class="comp">
+                            <td>라이선스화면(상단 상태창)</td>
+							<td>16_license</td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="../IM/16_license.html" target="_blank">16_license.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td></td>
+						</tr>
+
+                        <tr class="">
+                            <td>그 외 기본적인 부분</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="" target="_blank"></a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td></td>
+							<td>헤더/메뉴 등 부분은 각 html을 확인</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			/*---------------------------------------------
+				ready, load
+			---------------------------------------------*/
+			// 모든 리소스(이미지 등)가 로드된 후 fnPreload()를 호출하여 초기화
+			$(window).on('load', function(){
+				fnPreload();
+			});
+			
+			/*---------------------------------------------
+				preload, init
+			---------------------------------------------*/
+			/* preload */
+			function fnPreload(){
+				tableStateManager.init();
+			}
+
+			/*---------------------------------------------
+				tableStateManager 모듈 정의
+			---------------------------------------------*/
+			var tableStateManager = (function() {
+				// 날짜 관련 배열 (필요시 활용)
+				var fromDate = [],
+					toDate   = [],
+					dateGap  = [];
+
+				// 상태별 개수 변수
+				var progressCnt = 0,   // 진행 중 개수
+					compCnt     = 0,   // 완료 개수
+					delCnt      = 0;   // 삭제 개수
+
+				return {
+					// 테이블 각 행의 상태를 업데이트하는 함수
+					updateStates: function(){
+
+						// 호출 시마다 카운트 초기화
+						progressCnt = 0;
+						compCnt = 0;
+						delCnt = 0;
+						
+						$(".cont table tbody tr").each(function() {
+							var $row = $(this);
+							var $stateCell = $row.find(".state");
+							
+							if ($row.hasClass("non")) {
+								$stateCell.html("<span>삭제</span>");
+								delCnt++;
+							} else if ($row.hasClass("ing")) {
+								$stateCell.html("<span>진행 중</span>");
+								progressCnt++;
+							} else if ($row.hasClass("comp")) {
+								$stateCell.html("<span>완료(메뉴 제외)</span>");
+								compCnt++;
+							} else if ($row.hasClass("Gcomp")) {
+								$stateCell.html("<span>완료</span>");
+								compCnt++;
+							} else {
+								$stateCell.text("");
+							}
+						});
+
+					},
+
+					// 상태별 카운트를 업데이트
+					updateCounts: function(){
+						var totCnt = $(".page table tbody tr").length + $(".guide table tbody tr").length; // 전체 행 개수
+						$("#compCnt").text(compCnt);
+						$("#totCnt").text(totCnt);
+						$("#progressCnt").text(progressCnt);
+					},
+					// 레이아웃(마진) 조정
+					adjustLayout: function(){
+						var headerH = $(".container .header").outerHeight();
+						$(".container .guide").css("margin-top", headerH + "px");
+					},
+				
+					// 전체 초기화: 상태 업데이트, 카운트 갱신, 레이아웃 조정 실행
+					init: function() {
+						// 반환된 객체의 메서드를 호출
+						this.updateStates();
+						this.updateCounts();
+						this.adjustLayout();
+					},
+					// 상태와 카운트만 갱신
+					update: function() {
+						this.updateStates();
+						this.updateCounts();
+					}
+				};
+			})();
+
+			/**
+			 * #테이블 토글
+			 **/
+			var tableListToggle = function(el) {
+				var $el = $(el);
+				return {
+					open: function() {
+						$el.addClass('on')
+					},
+					close: function() {
+						$el.removeClass('on')
+					},
+					toggle: function() {
+						if ($el.hasClass('on')) {
+							this.close();
+						} else {
+							this.open();
+						}
+					}
+				};
+			};
+
+			//event
+			$(document).on('click', '.cont .tit', function() {
+				tableListToggle(this).toggle();
+			});
+			
+
+		});
+		</script>
+		
+</body>
+</html>

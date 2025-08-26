@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/font.css">
+
+    <!-- 추가 css -->
+    <link rel="stylesheet" href="../../css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+
+    <!-- jQuery 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <!-- jQuery UI 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-ui.js"></script>
+    <!-- js -->
+    <script type="text/javascript" charset="utf-8" src="../../js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<!--s: 이미지 경로 및 이미지 변경-->
+					<a href="" class="logo">
+						<img src="../../assets/img/common/logo.png">
+					</a>
+					<!--e: 이미지 경로 및 이미지 변경-->
+				</div>
+				<div class="nav_tab">
+					<a href="" class="">사용자</a>
+					<a href="" class="on">관리자</a>
+				</div>
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li><a href="" class="depth_menu"><i class="UserMangement"></i><span>사용자 정보 관리</span></a>
+							<ul>
+								<li><a href="">사용자 관리</a></li>
+								<li><a href="" class="on">그룹정보 관리</a></li>
+								<li><a href="">조직정보 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="ResourceMangement"></i><span>시스템(자원) 관리</span></a>
+							<ul>
+								<li><a href="">시스템</a></li>
+								<li><a href="">시스템 그룹</a></li>
+								<li><a href="">시스템 계정</a></li>
+								<li><a href="">시스템 특권권한 관리</a></li>
+								<li><a href="">시스템 정책설정 관리</a></li>
+								<li><a href="">End point/장치 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="ServerZoneMangement"></i><span>서비스 영역 관리</span></a>
+							<ul>
+								<li><a href="">테넌트 관리</a></li>
+								<li><a href="">서버 영역 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="RoleManagement"></i><span>역할 관리</span></a>
+							<ul>
+								<li><a href="">내부역할 관리</a></li>
+								<li><a href="">자원 접근 역할 관리</a></li>
+								<li><a href="">역할 배포 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AccessPolicyManagement"></i><span>접근 정책/서비스 관리</span></a>
+							<ul>
+								<li><a href="">Agent/API 관리</a></li>
+								<li><a href="">인증 서버/서비스 관리</a></li>
+								<li><a href="">인증 정책 관리</a></li>
+								<li><a href="">접근 서버/서비스 관리</a></li>
+								<li><a href="">접근 정책 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="SynchronizeManagment"></i><span>수집/배포 관리</span></a>
+							<ul>
+								<li><a href="">수집/배포 대시보드</a></li>
+								<li><a href="">수집 정책 관리</a></li>
+								<li><a href="">배포 정책 관리</a></li>
+								<li><a href="">배포 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="PAMManagement"></i><span>접근제어(PAM) 관리</span></a>
+							<ul>
+								<li><a href="">시스템 특권권한관리</a></li>
+								<li><a href="">작업 이력 조회</a></li>
+								<li><a href="">암호변경 규칙관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="DevicePasswordPolicy"></i><span>장치 암호관리</span></a>
+							<ul>
+								<li><a href="">암호변경 정책</a></li>
+								<li><a href="">네트워크 장치 조회/관리</a></li>
+								<li><a href="">배치 기록 관리</a></li>
+								<li><a href="">작업 이력 조회</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="RequestApproveManagement"></i><span>결재/승인 관리</span></a>
+							<ul>
+								<li><a href="">워크플로우 관리</a></li>
+								<li><a href="">요청/승인 관리</a></li>
+								<li><a href="">결재 권한 위임</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AuditingReport"></i><span>모니터링 및 감사/보고서</span></a>
+							<ul>
+								<li><a href="">모니터링 대시보드</a></li>
+								<li><a href="">감사 로그 조회</a></li>
+								<li><a href="">보고서 관리</a></li>
+								<li><a href="">메시지 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class=""><i class="SGIMManagement"></i><span>SGIM 설정</span></a>
+						</li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard  ICAM V2.0</p>
+					<!-- e: copyright 추가 -->
+				</div>
+			</div>
+		</div>
+		<div id="container">
+			<!-- s : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">역할관리</a></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_modetrans"><a href="">사용자 모드<i></i></a></li>
+					<li class="btn_top_user"><a href=""><span>시스템관리자(ztadimin)</span></a></li>
+					<li class="timer"><i></i><span><em>00:15:00</em> 후 접속 끊김</span><button class="time_ref" title="세션 시간 새로고침"></button></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>기타알람</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_menualdown"><a id="guide_manualDown"></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<!-- e : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="content only">
+                내용내용내용
+			</div>
+			<!-- nav로 이동 <div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div> -->
+		</div>
+		<div class="scroll_btns" style="display:none">
+			<button class="btn_toTheTop"></button>
+			<button class="btn_toThebottom"></button>
+		</div>
+		<script>
+			$("body").on("mousewheel", function (e) {
+			  var wheel = e.originalEvent.wheelDelta;
+
+			  if (wheel > 0) {
+			  	//스크롤 올릴때
+			  } else {
+			    //스크롤 내릴때
+			    $(".scroll_btns").show();
+			  }
+			});
+			// $(window).scroll(function () { 
+			// 	var scrollValue = $(document).scrollTop(); 
+			//     if (scrollValue > 65){
+			//     	$(".list_btn_stk").addClass("btnarea");
+			//     } else {
+			//     	$(".list_btn_stk").removeClass("btnarea");
+			//     }
+			// });
+		</script>
+	</div>
+</body>
+</HTML>

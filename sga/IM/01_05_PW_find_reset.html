@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!-- 비번찾기 -->
+	<div id="SGIM_PwFind">
+		<div class="pw_find_header">
+			<h1>비밀번호 찾기</h1>
+		</div>
+		<div class="pw_find_wrap">
+			<div class="pw_find_cont">
+				<p class="pw_find_tit">비밀번호 재설정</p>
+				<p class="infotxt">새로운 비밀번호를 입력해주세요.</p>
+				<div class="pw_reset">
+					<dl class="bul_dot"><!--[2025] bul_dot 추가-->
+						<dt><label for="resetPW">새 비밀번호<label></dt>
+						<dd><input type="password" name="" id="resetPW" class="form_contrl"></dd>
+					</dl>
+					<dl class="bul_dot"><!--[2025] bul_dot 추가-->
+						<dt><label for="resetPWC"> 비밀번호 확인</label></dt>
+						<dd><input type="password" name="" id="resetPWC" class="form_contrl"></dd>
+					</dl>
+				</div>
+				<div class="btn_box cl_both">
+					<!-- s: 구조 변경 -->
+					<div class="align_center"><!--[2025] f_l 삭제, align_center으로 변경-->
+						<a href="" class="big primary">저장</a><!--[2025] primary으로 변경, big 추가-->
+					</div>
+					<div class="f_r">
+						<!-- s: class 변경 -->
+						<a href="" class="basic2">이전</a><!--[2025] basic2로 변경-->
+						<a href="" class="line">취소</a><!--[2025] line으로 변경-->
+						<!-- e: class 변경 -->
+					</div>
+					<!-- e: 구조 변경 -->
+				</div>
+			</div>
+		</div>
+		<!-- 푸터 -->
+		<div id="footer"><!--[2025] 푸터 위치 변경-->
+			<p class="copy"><img src="img/common/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+		</div>
+	</div>
+</body>
+</HTML>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner scroll">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="img/common/logo_186x30.png">
+						<span>Admin</span>
+					</a>
+				</div>
+				<ul class="nav_list">
+					<li><a href="" class=""><i class="icon_user"></i><span>사용자</span></a></li>
+					<li><a href=""><i class="icon_userg"></i><span>사용자 그룹</span></a></li>
+					<li><a href=""><i class="icon_om"></i><span>조직관리</span></a></li>
+					<li><a href="" class="on"><i class="icon_system"></i><span>시스템</span></a></li>
+					<li><a href=""><i class="icon_stg"></i><span>시스템 그룹</span></a></li>
+					<li><a href="" class="depth_menu"><i class="icon_pm"></i><span>정책 관리</span></a>
+						<ul style="display: none;">
+							<li><a href="">역할</a></li>
+							<li><a href="" class="on">규칙 관리</a></li>
+							<li><a href="">계산식 관리</a></li>
+							<li><a href="">이벤트 관리</a></li>
+						</ul>
+					</li>
+					<li><a href="" class="depth_menu"><i class="icon_cm"></i><span>인증/인가 관리</span></a>
+						<ul style="display: none;">
+							<li><a href="">인증 관리</a></li>
+							<li><a href="">인가 관리</a></li>
+							<li><a href="">암호 정책 관리</a></li>
+						</ul>
+					</li>
+					<li><a href=""><i class="icon_monitor"></i><span>모니터링</span></a></li>
+					<li><a href=""><i class="icon_report"></i><span>리포트</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container">
+			<div class="header no_navlink">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<h1>시스템 관리</h1>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><img src="img/common/top_user.png"> <span>user01</span></a></li>
+					<li class="time"><i></i><span>2020-09-11 15:35:00</span></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<li><a><i></i>경고!</a></li>
+									<li><a><i></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i></i>전체적인 알람공지</a></li>
+									<li><a><i></i>SMS문자왔숑</a></li>
+									<li><a><i></i>메일왔네요</a></li>
+									<li><a><i></i>기타알람</a></li>
+								</ul>
+								<div class="allAlim">
+									<a href="" class="btn_allAlim">모두 보기 ></a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_logout"><a href="">logout</a></li>
+					<li class="lang_wrap"><a href="">KR</a>
+						<ul class="lang_pop balloon" style="display:none">
+							<li><a class="kr_lang"><i></i>한국어</a></li>
+							<li><a class="us_lang"><i></i>English</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="flx cont_wrap">
+				<div class="content">
+					<div class="worker_ch_area flx">
+						<div class="worker_ch_box">
+							<button class="skyblue">작업자 선택</button>
+							<p class="worker_name">홍길동</p>
+						</div>
+						<p class="req_txt inbl">※ 미 선택시 신청자가 작업자</p>
+					</div>
+					<div class="tab_wrap cont_in_tab">
+						<ul class="tab_list">
+							<li><a href="" class="on">서버 목록</a></li>
+							<li><a href="">접근 권한</a></li>
+							<li><a href="">암호 조회</a></li>
+							<li><a href="">명령어 신청</a></li>
+						</ul>
+					</div>
+					<div class="tree_menu_wrap">
+						<div class="search_box mini_search">
+							<input type="text" placeholder="검색어를 입력해주세요" class="search_inputbox" />
+							<button class="btn_search" type="submit">검색</button>
+						</div>
+						<div class="flx tree_menu_area">
+							<div class="tree_menu_box">
+								<div class="tree_menu_tab flx">
+									<button class="on">그룹</button>
+									<button>OS타입</button>
+								</div>
+								<div class="tree_menu_tl">
+									<ul class="tree_menu_inner">
+										<li>
+											<a><i class="icon_tree folder_open"></i><span>Root</span></a>
+											<ul>
+												<li>
+													<a><i class="icon_tree folder"></i><span>최고관리자</span></a>
+												</li>
+												<li>
+													<a><i class="icon_tree folder"></i><span>관리자</span></a>
+												</li>
+												<li>
+													<a><i class="icon_tree folder"></i><span>헬프데스크</span></a>
+												</li>
+												<li>
+													<a class="on"><i class="icon_tree iuser"></i><span>매니저</span></a>
+												</li>
+												<li>
+													<a><i class="icon_tree iuser"></i><span>일반사용자</span></a>
+												</li>
+												<li>
+													<a><i class="icon_tree file"></i><span>JWT사용자</span></a>
+												</li>
+												<li>
+													<a><i class="icon_tree file"></i><span>익명사용자</span></a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mini_tbl pg_m_tbl">
+								<table class="default_tbl scroll">
+									<thead>
+										<tr>
+											<th class="check_list"><input type="checkbox" name="" id="list00" class="check_stl"><label for="list00" class="check_stl_lab"></label></th>
+											<th>서버</th>
+											<th>호스트</th>
+											<th>IP address</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list01" class="check_stl"><label for="list01" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr class="on">
+											<td class="check_list"><input type="checkbox" name="" id="list03" class="check_stl" checked><label for="list03" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list04" class="check_stl"><label for="list04" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+										<tr>
+											<td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+											<td>서버</td>
+											<td>호스트</td>
+											<td>172.24.128.222</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="pagination mini_paging">
+									<ul>
+										<li>
+											<a href="" class="first diss"><span></span>처음</a>
+										</li>
+										<li>
+											<a href="" class="prev diss"><span></span>이전</a>
+										</li>
+										<li class="currentpage">
+											<p><em>1</em> / 5</p>
+										</li>
+										<li>
+											<a href="" class="next"><span></span>다음</a>
+										</li>
+										<li>
+											<a href="" class="last"><span></span>마지막</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="align_right">
+							<button class="btnstl skyblue arrow">선택추가<i></i></button>
+							<button class="btnstl shadow arrow">전체추가<i></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="tab_wrap cont_in_tab">
+						<ul class="tab_list">
+							<li><a href="" class="on">서버 목록</a></li>
+							<li><a href="">접근 권한</a></li>
+							<li><a href="">암호 조회</a></li>
+							<li><a href="">명령어 신청</a></li>
+						</ul>
+					</div>
+					<div class="tbl_list">
+						<table class="default_tbl">
+							<thead>
+								<tr>
+									<th class="check_list"><input type="checkbox" name="" id="list00" class="check_stl"><label for="list00" class="check_stl_lab"></label></th>
+									<th class="sort_column">
+										<div class="">종류<span class="ascanding"></span></div>
+									</th>
+									<th class="sort_column">
+										<div class="">제조사<span class="ascanding"></span></div>
+									</th>
+									<th class="sort_column">
+										<div class="">모델명<span class="ascanding"></span></div>
+									</th>
+									<th></th>
+									<th class="sort_column">
+										<div class="">이름<span class="ascanding"></span></div>
+									</th>
+									<th class="sort_column">
+										<div class="">설명<span class="ascanding"></span></div>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="check_list"><input type="checkbox" name="" id="list04" class="check_stl"><label for="list04" class="check_stl_lab"></label></td>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>승인됨<span class="mandatxt"><i></i>위임함</span></td>
+									<td><i class="icon_list"></i>정상</td>
+									<td>CentOS(1503)</td>
+									<td><i class="icon_list sv_connect"></i>연결됨</td>
+								</tr>
+								<tr>
+									<td class="check_list"><input type="checkbox" name="" id="list05" class="check_stl"><label for="list05" class="check_stl_lab"></label></td>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>승인됨<span class="mandatxt madna_ed"><i></i>위임됨</span></td>
+									<td><i class="icon_pgs inprogress_create"></i>수정 작업중</td>
+									<td>CentOS(1503)</td>
+									<td><i class="icon_list sv_disconnect"></i>연결끊김</td>
+								</tr>
+								<tr>
+									<td class="check_list"><input type="checkbox" name="" id="list06" class="check_stl"><label for="list06" class="check_stl_lab"></label></td>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+									<td><i class="icon_pgs inprogress_pending"></i>수정 진행중</td>
+									<td>CentOS(1503)</td>
+									<td><i class="icon_list locked"></i>잠금</td>
+								</tr>
+								<tr>
+									<td class="check_list"><input type="checkbox" name="" id="list07" class="check_stl"><label for="list07" class="check_stl_lab"></label></td>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+									<td><i class="icon_pgs inprogress_ing"></i>작업 보류중</td>
+									<td>CentOS(1503)</td>
+									<td><i class="icon_list sv_connect_error"></i>접속오류</td>
+								</tr>
+								<tr>
+									<td class="check_list"><input type="checkbox" name="" id="list07" class="check_stl"><label for="list07" class="check_stl_lab"></label></td>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+									<td><i class="icon_list iwarning"></i>작업중 오류</td>
+									<td>CentOS(1503)</td>
+									<td><i class="icon_list connection_compl"></i>수집완료</td>
+								</tr>
+								<tr>
+									<td class="check_list"><input type="checkbox" name="" id="list08" class="check_stl"><label for="list08" class="check_stl_lab"></label></td>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+									<td><i class="icon_list disabled"></i>비활성</td>
+									<td>CentOS(1503)</td>
+									<td><i class="icon_list connection_error"></i>수집오류</td>
+								</tr>
+								<tr>
+									<td class="check_list"><input type="checkbox" name="" id="list09" class="check_stl"><label for="list09" class="check_stl_lab"></label></td>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+									<td><i class="icon_pgs inprogress_delete"></i>삭제 진행중</td>
+									<td>CentOS(1503)</td>
+									<td>Linux 표준모델</td>
+								</tr>
+								<tr>
+									<td class="check_list"><input type="checkbox" name="" id="list10" class="check_stl"><label for="list10" class="check_stl_lab"></label></td>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+									<td><i class="icon_list idisabled"></i>삭제됨</td>
+									<td>CentOS(1503)</td>
+									<td>Linux 표준모델</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tbl_btm">
+						<div class="page_info">1-10/50</div>
+						<div class="pagination">
+							<ul>
+								<li><a href="" class="first diss"><span></span>첫페이지</a></li>
+								<li><a href="" class="prev diss"><span></span>이전</a></li>
+								<li><a href="">1</a></li>
+								<li><a href="" class="on">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="" class="next"><span></span>다음</a></li>
+								<li><a href="" class="last"><span></span>마지막페이지</a></li>
+							</ul>
+						</div>
+						<div class="page_select">
+							<select class="form_contrl">
+								<option value="">10</option>
+								<option value="">25</option>
+								<option value="">50</option>
+								<option value="">100</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<button class="btnstl skyblue">선택삭제</button>
+						<button class="btnstl shadow">선택다운로드</button>
+					</div>
+					<div>
+						<p class="fm_tit">신청 상세</p>
+						<div class="form_stl">
+							<ul class="form_tbl noline">
+								<li>
+									<div class="form_tit"><label for="onsdName">신청 역할</label></div>
+									<div class="form_txt"><input type="text" name="" class="form_contrl" id="onsdName" placeholder="">
+									</div>
+								</li>
+								<li>
+									<div class="form_tit"><label for="select07">신청사유<i class="i_req"></i></label></div>
+									<div class="form_txt">
+										<textarea class="form_contrl" id="modelExplain"></textarea>
+										<div class="ducheck_bl"><span class="dupli_check redtxt"><i></i>필수 입력 값 입니다.</span></div>
+									</div>
+								</li>
+								<li>
+									<div class="form_tit"><label for="select07">파일첨부</label></div>
+									<div class="form_txt">
+										<div class="file_upload_wrap">
+											<div class="file_upload_btns">
+												<button class="btnstl shadow">파일선택</button>
+												<button class="btnstl navy list_upload"><i></i>목록 업로드</button>
+											</div>
+											<div class="file_upload_box upload_list scroll">
+												<ul>
+													<li>
+														<button class="btn_del"></button>
+														<i class="icon_ff sl_ff word"></i>
+														<p>file name.doc</p>
+														<p class="file_size">84kb</p>
+													</li>
+													<li>
+														<button class="btn_del"></button>
+														<i class="icon_ff sl_ff word"></i>
+														<p>file name223424r.doc</p>
+														<p class="file_size">84kb</p>
+													</li>
+													<li>
+														<button class="btn_del"></button>
+														<i class="icon_ff sl_ff word"></i>
+														<p>file name.doc</p>
+														<p class="file_size">84kb</p>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<p class="fm_tit">예상 결재선</p>
+						<div class="workflow_box scroll">
+							<div class="workflow_wrap">
+								<div class="s_e_w">
+									<div class="nav_circle">
+										<i class="i_start"></i>
+									</div>
+									<p class="wf_nm">박지민<span>신청자</span></p>
+								</div>
+								<div class="wf_arrow">
+									<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0)">
+										<path d="M0.82 8C0.61 8 0.4 7.92 0.24 7.76C-0.08 7.44 -0.08 6.92 0.24 6.6L2.84 4L0.24 1.4C-0.08 1.08 -0.08 0.56 0.24 0.24C0.56 -0.08 1.08 -0.08 1.4 0.24L4.58 3.42C4.9 3.74 4.9 4.26 4.58 4.58L1.4 7.76C1.24 7.92 1.03 8 0.82 8Z" fill="#505B6E"/>
+										</g>
+										<defs>
+										<clipPath id="clip0">
+										<rect width="4.82" height="8" fill="white"/>
+										</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="">
+									<div class="wf_card apv_comple">
+										<div class="wf_state">
+											<i></i>
+										</div>
+										<div class="wf_detail">
+											<p class="wf_state_txt"><em>승인완료</em> / 2021.01.24</p>
+											<p class="wf_nm">민윤기 과장 <span>보안팀</span></p>
+											<div class="wf_op_info">
+												<p>Tel : 010-1234-5678</p>
+												<p>E-mail : kik@sgni.co.kr</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="wf_arrow">
+									<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0)">
+										<path d="M0.82 8C0.61 8 0.4 7.92 0.24 7.76C-0.08 7.44 -0.08 6.92 0.24 6.6L2.84 4L0.24 1.4C-0.08 1.08 -0.08 0.56 0.24 0.24C0.56 -0.08 1.08 -0.08 1.4 0.24L4.58 3.42C4.9 3.74 4.9 4.26 4.58 4.58L1.4 7.76C1.24 7.92 1.03 8 0.82 8Z" fill="#505B6E"/>
+										</g>
+										<defs>
+										<clipPath id="clip0">
+										<rect width="4.82" height="8" fill="white"/>
+										</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="">
+									<div class="wf_card proceeding">
+										<div class="wf_state">
+											<i></i>
+										</div>
+										<div class="wf_detail">
+											<p class="wf_state_txt"><em>승인프로세스 진행중</em></p>
+											<p class="wf_nm">김태형 부장 <span>보안팀</span></p>
+											<div class="wf_op_info">
+												<p>Tel : 010-1234-5678</p>
+												<p>E-mail : handsome@sgni.co.kr</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="wf_arrow">
+									<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0)">
+										<path d="M0.82 8C0.61 8 0.4 7.92 0.24 7.76C-0.08 7.44 -0.08 6.92 0.24 6.6L2.84 4L0.24 1.4C-0.08 1.08 -0.08 0.56 0.24 0.24C0.56 -0.08 1.08 -0.08 1.4 0.24L4.58 3.42C4.9 3.74 4.9 4.26 4.58 4.58L1.4 7.76C1.24 7.92 1.03 8 0.82 8Z" fill="#505B6E"/>
+										</g>
+										<defs>
+										<clipPath id="clip0">
+										<rect width="4.82" height="8" fill="white"/>
+										</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="">
+									<div class="wf_card mandate">
+										<div class="wf_state">
+											<i></i>
+										</div>
+										<div class="wf_detail">
+											<p class="wf_state_txt"><em>위임됨</em></p>
+											<p class="wf_nm">전정국 본부장 <span>보안팀</span></p>
+											<div class="wf_op_info">
+												<p>Tel : 010-1234-5678</p>
+												<p>E-mail : jungkuk@sgni.co.kr</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="wf_arrow">
+									<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0)">
+										<path d="M0.82 8C0.61 8 0.4 7.92 0.24 7.76C-0.08 7.44 -0.08 6.92 0.24 6.6L2.84 4L0.24 1.4C-0.08 1.08 -0.08 0.56 0.24 0.24C0.56 -0.08 1.08 -0.08 1.4 0.24L4.58 3.42C4.9 3.74 4.9 4.26 4.58 4.58L1.4 7.76C1.24 7.92 1.03 8 0.82 8Z" fill="#505B6E"/>
+										</g>
+										<defs>
+										<clipPath id="clip0">
+										<rect width="4.82" height="8" fill="white"/>
+										</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="">
+									<div class="wf_card error">
+										<div class="wf_state">
+											<i></i>
+										</div>
+										<div class="wf_detail">
+											<p class="wf_state_txt"><em>에러</em><button class="shadow">결재재시도</button></p>
+											<div class="wf_op_info">
+												<p>2021-04-06 09:53:20</p>
+											</div>
+											<p class="wf_nm">얇은귀 연우 (laim)</p>
+										</div>
+									</div>
+								</div>
+								<div class="wf_arrow">
+									<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0)">
+										<path d="M0.82 8C0.61 8 0.4 7.92 0.24 7.76C-0.08 7.44 -0.08 6.92 0.24 6.6L2.84 4L0.24 1.4C-0.08 1.08 -0.08 0.56 0.24 0.24C0.56 -0.08 1.08 -0.08 1.4 0.24L4.58 3.42C4.9 3.74 4.9 4.26 4.58 4.58L1.4 7.76C1.24 7.92 1.03 8 0.82 8Z" fill="#505B6E"/>
+										</g>
+										<defs>
+										<clipPath id="clip0">
+										<rect width="4.82" height="8" fill="white"/>
+										</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="">
+									<div class="wf_card autopay">
+										<div class="wf_state">
+											<i></i>
+										</div>
+										<div class="wf_detail">
+											<p class="wf_state_txt"><em>기안자 자동결재</em></p>
+											<p class="wf_nm">얇은귀 연우 (laim)</p>
+											<div class="wf_op_info">
+												<p>보안팀</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="wf_arrow">
+									<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0)">
+										<path d="M0.82 8C0.61 8 0.4 7.92 0.24 7.76C-0.08 7.44 -0.08 6.92 0.24 6.6L2.84 4L0.24 1.4C-0.08 1.08 -0.08 0.56 0.24 0.24C0.56 -0.08 1.08 -0.08 1.4 0.24L4.58 3.42C4.9 3.74 4.9 4.26 4.58 4.58L1.4 7.76C1.24 7.92 1.03 8 0.82 8Z" fill="#505B6E"/>
+										</g>
+										<defs>
+										<clipPath id="clip0">
+										<rect width="4.82" height="8" fill="white"/>
+										</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="">
+									<div class="wf_card reject">
+										<div class="wf_state">
+											<i></i>
+										</div>
+										<div class="wf_detail">
+											<p class="wf_state_txt"><em>반려됨</em> / 2021.01.24</p>
+											<p class="wf_nm">제이홉 이사 <span>보안팀</span></p>
+											<div class="wf_op_info">
+												<p>Tel : 010-1234-5678</p>
+												<p>E-mail : hope@sgni.co.kr</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="wf_arrow dasharrow">
+									<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0)">
+										<path d="M0.82 8C0.61 8 0.4 7.92 0.24 7.76C-0.08 7.44 -0.08 6.92 0.24 6.6L2.84 4L0.24 1.4C-0.08 1.08 -0.08 0.56 0.24 0.24C0.56 -0.08 1.08 -0.08 1.4 0.24L4.58 3.42C4.9 3.74 4.9 4.26 4.58 4.58L1.4 7.76C1.24 7.92 1.03 8 0.82 8Z" fill="#9da5b1"/>
+										</g>
+										<defs>
+										<clipPath id="clip0">
+										<rect width="4.82" height="8" fill="white"/>
+										</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="">
+									<div class="wf_card emty">
+										<p class="wf_nm">프로젝트 팀장</p>
+									</div>
+								</div>
+								<div class="wf_arrow dasharrow">
+									<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0)">
+										<path d="M0.82 8C0.61 8 0.4 7.92 0.24 7.76C-0.08 7.44 -0.08 6.92 0.24 6.6L2.84 4L0.24 1.4C-0.08 1.08 -0.08 0.56 0.24 0.24C0.56 -0.08 1.08 -0.08 1.4 0.24L4.58 3.42C4.9 3.74 4.9 4.26 4.58 4.58L1.4 7.76C1.24 7.92 1.03 8 0.82 8Z" fill="#9da5b1"/>
+										</g>
+										<defs>
+										<clipPath id="clip0">
+										<rect width="4.82" height="8" fill="white"/>
+										</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="s_e_w">
+									<div class="nav_circle">
+										<i class="i_end"></i>
+									</div>
+									<p class="wf_nm">신청완료<span>2021.01.25</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+
+</body></html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.5" height="6" viewBox="0 0 14.5 6">
+  <g id="branch" transform="translate(2 -4)">
+    <line id="line" x2="9" transform="translate(-1.5 7)" fill="none" stroke="#999" stroke-linecap="round" stroke-width="1"/>
+    <circle id="round" cx="3" cy="3" r="3" transform="translate(6.5 4)" fill="#999"/>
+  </g>
+</svg>

@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery-ui.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="ONSD_wrap">
+		<div id="container">
+			<div class="content">
+				<p class="con_tit">CentOS 7</p>
+				<div class="action_tree_wrap">
+					<div class="action_tree_top cl_both">
+						<div class="form_stl f_l">
+							<dl class="form_list noline">
+								<dt class="form_tit"><label for="action">Action</label></dt>
+								<dd class="form_txt">
+									<SELECT class="form_contrl" id="action">
+										<option>Account Create</option>
+										<option>Account Create</option>
+										<option>Account Create</option>
+										<option>Account Create</option>
+									</SELECT>
+								</dd>
+							</dl>
+						</div>
+						<!-- s: class 변경 -->
+						<div class="btn_box f_r">
+							<a href="" class="primary">저장</a>
+							<a href="" class="basic2">삭제</a>
+							<a href="" class="line">취소</a>
+						</div>
+						<!-- e: class 변경 -->
+					</div>
+					<div class="action_builder">
+						<div class="action_type scroll">
+							<ul>
+								<li class="btn_connect"><a><i></i>접속</a>
+									<ul>
+										<li><a>Telnet</a></li>
+										<li><a>Telnet SSH</a></li>
+										<li><a>RDP</a></li>
+										<li><a>DB-Oracle</a></li>
+										<li><a>DB-MS-SQL</a></li>
+									</ul>
+								</li>
+								<li class="btn_gather"><a><i></i>수집</a>
+									<ul>
+										<li><a>수집</a></li>
+										<li><a>Home folder Check</a></li>
+										<li><a>Group Check</a></li>
+										<li><a>ORG Check</a></li>
+									</ul>
+								</li>
+								<li class="btn_execute"><a><i></i>실행</a>
+									<ul>
+										<li><a>실행</a></li>
+										<li><a>오류처리</a></li>
+									</ul>
+								</li>
+								<li class="btn_disconnect"><a><i></i>접속종료</a></li>
+							</ul>
+						</div>
+						<div class="action_list scroll">
+							<div class="transper_bg"></div>
+							<a title="설명문구 추가/수정" class="btn_desc">설명문구 추가/수정</a>
+							<ul class="entry-sort">
+								<li>
+								<div class="entrybox entry_connect">
+									<div class="entry_top cl_both">
+										<!-- s: f_l 삭제 -->
+										<ul class="cl_both">
+											<li class="entry-wrap">
+												<a class="entry_name">Telnet connection
+												<button title="옵션추가" class="btn_option"></button></a>
+												<ul class="option_list balloon" style="display:none">
+												<li><a>Time Out</a></li>
+												<li><a>Retry</a></li>
+												<li><a>사용자 스위치 사용</a></li>
+											</ul>
+											</li>
+											<li>
+												<a class="add_option option01">Time Out
+												<button title="옵션삭제" class="btn_option"></button></a>
+											</li>
+											<li>
+												<a class="add_option option02">Retry<button title="옵션삭제" class="btn_option"></button></a>
+											</li>
+											<li>
+												<a class="add_option option03">사용자 스위치 사용<button title="옵션삭제" class="btn_option"></button></a>
+											</li>
+										</ul>
+										<a title="엔트리 정보입력/수정" class=" btn_entry_desc"></a>
+										<a class="btn_entry_del" title="엔트리삭제"></a>
+										<!-- e: f_l 삭제 -->
+									</div>
+									<div class="entry_setting setting01" style="display:none">
+										<!-- s: dl 구조 수정 및 bul_dot 추가 -->
+										<div class="form_stl">
+											<dl class="form_list noline bul_dot">
+												<dt class="form_tit"><label for="IPAddr">IP Address</label></dt>
+												<dd class="form_txt">
+													<SELECT class="form_contrl" id="IPAddr">
+														<option>[Received.ipaddr]</option>
+														<option>[Received.ipaddr]</option>
+														<option>[Received.ipaddr]</option>
+														<option>[Received.ipaddr]</option>
+													</SELECT>
+													<span class="balloon entry_help" style="display:none">도움말입니다.</span>
+												</dd>
+											</dl>
+											<dl class="form_list noline bul_dot">
+												<dt class="form_tit"><label for="conPort">Port</label></dt>
+												<dd class="form_txt">
+													<SELECT class="form_contrl" id="conPort">
+														<option>[Received.conPort]</option>
+														<option>[Received.conPort]</option>
+														<option>[Received.conPort]</option>
+														<option>[Received.conPort]</option>
+													</SELECT>
+													<a class="btn_entry_help" title="도움말"></a>
+													<span class="balloon entry_help02" style="display:none">도움말입니다.도움말입니다.</span>
+												</dd>
+											</dl>
+											<dl class="form_list noline bul_dot">
+												<dt class="form_tit"><label for="conAccNm">Login ID</label></dt>
+												<dd class="form_txt">
+													<SELECT class="form_contrl" id="conAccNm">
+														<option>[Received.conAccNm]</option>
+														<option>[Received.conAccNm]</option>
+														<option>[Received.conAccNm]</option>
+														<option>[Received.conAccNm]</option>
+													</SELECT>
+												</dd>
+											</dl>
+											<dl class="form_list noline bul_dot">
+												<dt class="form_tit"><label for="conAccPwd">Login PWD</label></dt>
+												<dd class="form_txt">
+													<SELECT class="form_contrl" id="conAccPwd">
+														<option>[Received.conAccPwd]</option>
+														<option>[Received.conAccPwd]</option>
+														<option>[Received.conAccPwd]</option>
+														<option>[Received.conAccPwd]</option>
+													</SELECT>
+												</dd>
+											</dl>
+										</div>
+										<!-- e: dl 구조 수정 -->
+									</div>
+									<div class="entry_setting setting02" style="display:none">
+										<!-- s: dl 구조 수정 및 bul_dot 추가 -->
+										<div class="form_stl">
+											<dl class="form_list noline bul_dot">
+												<dt class="form_tit"><label for="comm">Command</label></dt>
+												<dd class="form_txt">
+													<input type="text" name="" class="form_contrl" id="comm" placeholder="su">
+												</dd>
+											</dl>
+											<dl class="form_list noline bul_dot">
+												<dt class="form_tit"><label for="accNm">Login ID</label></dt>
+												<dd class="form_txt">
+													<SELECT class="form_contrl" id="accNm">
+														<option>[Received.accNm]</option>
+														<option>[Received.accNm]</option>
+														<option>[Received.accNm]</option>
+														<option>[Received.accNm]</option>
+													</SELECT>
+												</dd>
+											</dl>
+											<dl class="form_list noline bul_dot">
+												<dt class="form_tit"><label for="accPwd">Login PWD</label></dt>
+												<dd class="form_txt">
+													<SELECT class="form_contrl" id="accPwd">
+														<option>[Received.accPwd]</option>
+														<option>[Received.accPwd]</option>
+														<option>[Received.accPwd]</option>
+														<option>[Received.accPwd]</option>
+													</SELECT>
+												</dd>
+											</dl>
+										</div>
+										<!-- e: dl 구조 수정 및 bul_dot 추가 -->
+									</div>
+									<div class="entry_setting setting03" style="display:none">
+										<div class="form_stl">
+											<dl class="form_list noline bul_dot"><!--[2025] bul_dpt 추가-->
+												<dt class="form_tit"><label for="waittime">대기 시간(mSEC)</label></dt>
+												<dd class="form_txt">
+													<input type="text" name="" class="form_contrl" id="waittime" placeholder="1000">
+												</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="entry_setting setting04" style="display:none">
+										<!-- s: dl 구조 수정 및 bul_dot 추가 -->
+										<div class="form_stl">
+											<dl class="form_list noline bul_dot">
+												<dt class="form_tit"><label for="repeat01">반복 회수</label></dt>
+												<dd class="form_txt">
+													<input type="text" name="" class="form_contrl" id="repeat01" placeholder="5">
+												</dd>
+											</dl>
+											<dl class="form_list noline bul_dot">
+												<dt class="form_tit"><label for="repeat02">반복 간격(mSEC)</label></dt>
+												<dd class="form_txt">
+													<input type="text" name="" class="form_contrl" id="repeat02" placeholder="3000">
+												</dd>
+											</dl>
+											<dl class="form_list noline bul_dot">
+												<dt class="form_tit"><label for="repeat03">반복 간격 증가</label></dt>
+												<dd class="form_txt">
+													<input type="checkbox" name="" id="ck01" class="check_stl"><label for="ck01" class="check_stl_lab"> 반복 간격 증가</label>
+												</dd>
+											</dl>
+										</div>
+										<!-- e: dl 구조 수정 및 bul_dot 추가 -->
+									</div>
+								</div>
+								<div class="ac_depth">
+									<div class="entrybox entry_gather">
+										<div class="entry_top">
+											<ul class="cl_both f_l">
+												<li class="f_l">
+													<a class="add_option option01">실행 조건<button title="옵션삭제" class="btn_option"></button></a>
+												</li>
+												<li class="entry-wrap f_l">
+													<a class="entry_name">Home Directory Check<button title="옵션추가" class="btn_option"></button></a>
+													<ul class="option_list balloon" style="display:none">
+														<li><a>실행 조건</a></li>
+														<li><a>수집 조건</a></li>
+													</ul>
+												</li>
+												</li>
+												<li class="f_l">
+													<a class="add_option option02">수집조건<button title="옵션삭제" class="btn_option"></button></a>
+												</li>
+											</ul>
+											<a class="btn_entry_del" title="엔트리삭제"></a>
+										</div>
+										<div class="entry_setting setting01" style="display:none">
+											<div class="form_stl">
+												<dl class="form_list noline bul_dot"><!--[2025] bul_dpt 추가-->
+													<dt class="form_tit"><label for="">종류(Type)</label></dt>
+													<dd class="form_txt">
+														<SELECT class="form_contrl" id="">
+															<option>변수 조건(Var Condition)</option>
+															<option>변수 조건(Var Condition)</option>
+															<option>변수 조건(Var Condition)</option>
+															<option>변수 조건(Var Condition)</option>
+														</SELECT>
+													</dd>
+												</dl>
+												<ul class="cl_both form_row">
+													<li class="f_l">
+														<SELECT class="form_contrl" id="">
+															<option>[Received.tarAccHome]</option>
+															<option>[Received.tarAccHome]</option>
+															<option>[Received.tarAccHome]</option>
+															<option>[Received.tarAccHome]</option>
+														</SELECT>
+													</li>
+													<li class="f_l">
+														<SELECT class="form_contrl" id="">
+															<option>Is not null</option>
+															<option>Is not null</option>
+															<option>Is not null</option>
+															<option>Is not null</option>
+														</SELECT>
+													</li>
+													<li class="f_l">
+														<SELECT class="form_contrl" id="">
+															<option></option>
+															<option></option>
+															<option></option>
+															<option></option>
+														</SELECT>
+													</li>
+													<li class="f_l">
+														<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+													</li>
+													<li class="f_l">
+														<ul class="cl_both adddel_bts">
+															<li class="f_l"><a title="추가" class="btn_option"></a></li>
+															<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="entry_setting setting02" style="display:none">
+											<div class="form_stl">
+												<!-- s: dl 구조 수정 및 bul_dot 추가 -->
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="">Command</label></dt>
+													<dd class="form_txt">
+														<ul class="cl_both form_row">
+															<li class="f_l">
+																<input type="text" class="form_contrl" name="" placeholder="ls">
+															</li>
+															<li class="f_l cdt_btn">
+																<div class="btn_box">
+																	<a class="line">조건추가</a><!--[2025] line으로 변경-->
+																</div>
+																<div class="balloon cdt_box" style="display:none">
+																	<div class="btn_box">
+																		<!-- s: class 변경 -->
+																		<a class="basic diss">조건 전체삭제</a>
+																		<!-- e: class 변경 -->
+																	</div>
+																	<ul class="cl_both form_row">
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+																		</li>
+																		<li class="f_l">
+																			<ul class="cl_both adddel_bts">
+																				<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																				<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																			</ul>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="f_l">
+																<ul class="cl_both adddel_bts">
+																	<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																	<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																</ul>
+															</li>
+														</ul>
+														<ul class="cl_both form_row">
+															<li class="f_l">
+																<SELECT class="form_contrl" id="">
+																	<option>[Received.accAccHome]</option>
+																	<option>[Received.accAccHome]</option>
+																	<option>[Received.accAccHome]</option>
+																	<option>[Received.accAccHome]</option>
+																</SELECT>
+															</li>
+															<li class="f_l cdt_btn">
+																<div class="btn_box">
+																	<a class="line">조건수정</a><!--[2025] line으로 변경-->
+																</div>
+																<div class="balloon cdt_box" style="display:none">
+																	<div class="btn_box">
+																		<a class="line">조건 전체삭제</a><!--[2025] line으로 변경-->
+																	</div>
+																	<ul class="cl_both form_row">
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+																		</li>
+																		<li class="f_l">
+																			<ul class="cl_both adddel_bts">
+																				<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																				<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																			</ul>
+																		</li>
+																	</ul>
+																	<ul class="cl_both form_row">
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+																		</li>
+																		<li class="f_l">
+																			<ul class="cl_both adddel_bts">
+																				<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																				<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																			</ul>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="f_l">
+																<ul class="cl_both adddel_bts">
+																	<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																	<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																</ul>
+															</li>
+														</ul>
+													</dd>
+												</dl>
+												<dl class="form_list noline topline bul_dot">
+													<dt class="form_tit"><label for="">실행결과 수집</label></dt>
+													<dd class="form_txt">
+														<input type="checkbox" name="" id="ck02" class="check_stl"><label for="ck02" class="check_stl_lab"> 결과수집</label>
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="">결과 판단 기준</label></dt>
+													<dd class="form_txt">
+														<SELECT class="form_contrl" id="">
+															<option>변수 조건(Var Condition)</option>
+															<option>변수 조건(Var Condition)</option>
+															<option>변수 조건(Var Condition)</option>
+															<option>변수 조건(Var Condition)</option>
+														</SELECT>
+													</dd>
+												</dl>
+												<!-- e: dl 구조 수정 및 bul_dot 추가 -->
+												<ul class="cl_both form_row">
+													<li class="f_l">
+														<SELECT class="form_contrl" id="">
+															<option>[Output.NextLine]</option>
+															<option>[Output.NextLine]</option>
+															<option>[Output.NextLine]</option>
+															<option>[Output.NextLine]</option>
+														</SELECT>
+													</li>
+													<li class="f_l">
+														<SELECT class="form_contrl" id="">
+															<option>StartsWith</option>
+															<option>StartsWith</option>
+															<option>StartsWith</option>
+															<option>StartsWith</option>
+														</SELECT>
+													</li>
+													<li class="f_l">
+														<SELECT class="form_contrl" id="">
+															<option>ls: cannot access</option>
+															<option>ls: cannot access</option>
+															<option>ls: cannot access</option>
+															<option>ls: cannot access</option>
+														</SELECT>
+													</li>
+													<li class="f_l">
+														<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+													</li>
+													<li class="f_l">
+														<ul class="cl_both adddel_bts">
+															<li class="f_l"><a title="추가" class="btn_option"></a></li>
+															<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="entry_setting setting03" style="display:none">
+											<div class="form_stl">
+												<p class="entry_txt bul_dot">수집 값(변수 정의)</p>
+												<ul class="cl_both form_row">
+													<li class="f_l">
+														<input type="text" class="form_contrl" name="" placeholder="hasHomeFolder">
+													</li>
+													<li class="f_l">
+														<SELECT class="form_contrl" id="">
+															<option>Boolean</option>
+															<option>Boolean</option>
+															<option>Boolean</option>
+															<option>Boolean</option>
+														</SELECT>
+													</li>
+													<li class="f_l txta_wrap">
+														<input type="text" class="form_contrl" name="" placeholder="![GatherCondition.Result]">
+														<a class="btn_txta" title="크게보기"></a>
+														<div class="balloon" style="display:none">
+															<textarea class="form_contrl"></textarea>
+														</div>
+													</li>
+													<li class="f_l cdt_btn">
+														<div class="btn_box">
+															<a class="line">반복수집추가</a><!--[2025] line으로 변경-->
+														</div>
+														<div class="balloon cdt_box coll_box" style="display:none">
+															<div class="form_stl">
+																<dl class="form_list noline bul_dot"><!--[2025] bul_dpt 추가-->
+																	<dt class="form_tit"><label for="repeat03">반복 수집</label></dt>
+																	<dd class="form_txt">
+																		<input type="checkbox" name="" id="ck03" class="check_stl"><label for="ck03" class="check_stl_lab"> 반복 수집 여부</label>
+																	</dd>
+																</dl>
+															</div>
+															<p class="entry_txt topline">종료 조건</p>
+															<ul class="cl_both form_row">
+																<li class="f_l">
+																	<SELECT class="form_contrl" id="">
+																		<option>[Output.NextLine]</option>
+																		<option>[Output.NextLine]</option>
+																		<option>[Output.NextLine]</option>
+																		<option>[Output.NextLine]</option>
+																	</SELECT>
+																</li>
+																<li class="f_l">
+																	<SELECT class="form_contrl" id="">
+																		<option>Is Empty</option>
+																		<option>Is Empty</option>
+																		<option>Is Empty</option>
+																		<option>Is Empty</option>
+																	</SELECT>
+																</li>
+																<li class="f_l">
+																	<SELECT class="form_contrl" id="">
+																		<option></option>
+																		<option></option>
+																		<option></option>
+																		<option></option>
+																	</SELECT>
+																</li>
+																<li class="f_l">
+																	<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+																</li>
+																<li class="f_l">
+																	<ul class="cl_both adddel_bts">
+																		<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																		<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																	</ul>
+																</li>
+															</ul>
+														</div>
+													</li>
+													<li class="f_l">
+														<ul class="cl_both adddel_bts">
+															<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+														</ul>
+													</li>
+												</ul>
+												<ul class="cl_both form_row">
+													<li class="f_l">
+														<input type="text" class="form_contrl" name="" placeholder="hasHomeFolder">
+													</li>
+													<li class="f_l">
+														<SELECT class="form_contrl" id="">
+															<option>Boolean</option>
+															<option>Boolean</option>
+															<option>Boolean</option>
+															<option>Boolean</option>
+														</SELECT>
+													</li>
+													<li class="f_l txta_wrap">
+														<input type="text" class="form_contrl" name="" placeholder="![GatherCondition.Result]">
+														<a class="btn_txta" title="크게보기"></a>
+														<div class="balloon" style="display:none">
+															<textarea class="form_contrl"></textarea>
+														</div>
+													</li>
+													<li class="f_l cdt_btn">
+														<div class="btn_box">
+															<a class="line">반복수집삭제</a><!--[2025] line으로 변경-->
+														</div>
+														<div class="balloon cdt_box coll_box" style="display:none">
+															<div class="form_stl">
+																<dl class="form_list noline bul_dot"><!--[2025] bul_dot 추가-->
+																	<dt class="form_tit"><label for="repeat03">반복 수집</label></dt>
+																	<dd class="form_txt">
+																		<input type="checkbox" name="" id="ck04" class="check_stl" checked="checked"><label for="ck04" class="check_stl_lab"> 반복 수집 여부</label>
+																	</dd>
+																</dl>
+															</div>
+															<p class="entry_txt topline">종료 조건</p>
+															<ul class="cl_both form_row">
+																<li class="f_l">
+																	<SELECT class="form_contrl" id="">
+																		<option>[Output.NextLine]</option>
+																		<option>[Output.NextLine]</option>
+																		<option>[Output.NextLine]</option>
+																		<option>[Output.NextLine]</option>
+																	</SELECT>
+																</li>
+																<li class="f_l">
+																	<SELECT class="form_contrl" id="">
+																		<option>Is Empty</option>
+																		<option>Is Empty</option>
+																		<option>Is Empty</option>
+																		<option>Is Empty</option>
+																	</SELECT>
+																</li>
+																<li class="f_l">
+																	<SELECT class="form_contrl" id="">
+																		<option></option>
+																		<option></option>
+																		<option></option>
+																		<option></option>
+																	</SELECT>
+																</li>
+																<li class="f_l">
+																	<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+																</li>
+																<li class="f_l">
+																	<ul class="cl_both adddel_bts">
+																		<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																		<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																	</ul>
+																</li>
+															</ul>
+														</div>
+													</li>
+													<li class="f_l">
+														<ul class="cl_both adddel_bts">
+															<li class="f_l"><a title="추가" class="btn_option"></a></li>
+															<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="entrybox entry_execute">
+										<div class="entry_top">
+											<ul class="cl_both f_l">
+												<li class="f_l">
+													<a class="add_option option01">실행 대기<button title="옵션삭제" class="btn_option"></button></a>
+												</li>
+												<li class="entry-wrap f_l">
+													<a class="entry_name">User add command<button title="옵션추가" class="btn_option"></button></a>
+													<ul class="option_list balloon" style="display:none">
+														<li><a>실행 대기</a></li>
+														<li><a>실행 조건</a></li>
+														<li><a>완료 대기</a></li>
+													</ul>
+												</li>
+												</li>
+												<li class="f_l">
+													<a class="add_option option02">완료대기<button title="옵션삭제" class="btn_option"></button></a>
+												</li>
+											</ul>
+											<a class="btn_entry_del" title="엔트리삭제"></a>
+										</div>
+										<div class="entry_setting setting01" style="display:none">
+											<div class="form_stl">
+												<!-- s: dl 구조 수정 및 bul_dot 추가 -->
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="execute01">종류(Type)</label></dt>
+													<dd class="form_txt">
+														<ul class="cl_both form_row">
+															<li class="f_l">
+																<SELECT class="form_contrl" id="execute01">
+																	<option>입력 준비 상태</option>
+																	<option>입력 준비 상태</option>
+																	<option>입력 준비 상태</option>
+																	<option>입력 준비 상태</option>
+																</SELECT>
+															</li>
+															<li class="f_l">
+																<input type="text" name="" class="form_contrl" id="" placeholder="추가 값 입력">
+															</li>
+														</ul>
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit">대기 시간</dt>
+													<dd class="form_txt">
+														<input type="checkbox" name="" id="exe03" class="check_stl"><label for="exe03" class="check_stl_lab"> 대기 최대 시간 설정</label>
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="execute02">대기 시간(mSEC)</label></dt>
+													<dd class="form_txt">
+														<input type="text" name="" class="form_contrl" id="execute02" placeholder="300000">
+													</dd>
+												</dl>
+												<!-- e: dl 구조 수정 및 bul_dot 추가 -->
+											</div>
+										</div>
+										<div class="entry_setting setting02" style="display:none">
+											<div class="form_stl">
+												<!-- s: bul_dot 추가 -->
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="">Command</label></dt>
+													<dd class="form_txt">
+														<ul class="cl_both form_row">
+															<li class="f_l">
+																<input type="text" class="form_contrl" name="" placeholder="useradd">
+															</li>
+															<li class="f_l cdt_btn">
+																<div class="btn_box">
+																	<a class="line">조건추가</a><!--[2025] line으로 변경-->
+																</div>
+																<div class="balloon cdt_box" style="display:none">
+																	<div class="btn_box">
+																		<a class="basic btn_nopd diss">조건 전체삭제</a><!--[2025] basic으로 변경-->
+																	</div>
+																	<ul class="cl_both form_row">
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+																		</li>
+																		<li class="f_l">
+																			<ul class="cl_both adddel_bts">
+																				<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																				<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																			</ul>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="f_l">
+																<ul class="cl_both adddel_bts">
+																	<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																	<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																</ul>
+															</li>
+														</ul>
+														<ul class="cl_both form_row">
+															<li class="f_l">
+																<SELECT class="form_contrl" id="">
+																	<option>[Received.tarAccNm]</option>
+																	<option>[Received.tarAccNm]</option>
+																	<option>[Received.tarAccNm]</option>
+																	<option>[Received.tarAccNm]</option>
+																</SELECT>
+															</li>
+															<li class="f_l cdt_btn">
+																<div class="btn_box">
+																	<a class="line">조건수정</a><!--[2025] line으로 변경-->
+																</div>
+																<div class="balloon cdt_box" style="display:none">
+																	<div class="btn_box">
+																		<a class="line">조건 전체삭제</a><!--[2025] line으로 변경-->
+																	</div>
+																	<ul class="cl_both form_row">
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+																		</li>
+																		<li class="f_l">
+																			<ul class="cl_both adddel_bts">
+																				<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																				<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																			</ul>
+																		</li>
+																	</ul>
+																	<ul class="cl_both form_row">
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+																		</li>
+																		<li class="f_l">
+																			<ul class="cl_both adddel_bts">
+																				<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																				<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																			</ul>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="f_l">
+																<ul class="cl_both adddel_bts">
+																	<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																	<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																</ul>
+															</li>
+														</ul>
+														<ul class="cl_both form_row">
+															<li class="f_l">
+																<SELECT class="form_contrl" id="">
+																	<option>-u [Received.tarAccUid]</option>
+																	<option>-u [Received.tarAccUid]</option>
+																	<option>-u [Received.tarAccUid]</option>
+																	<option>-u [Received.tarAccUid]</option>
+																</SELECT>
+															</li>
+															<li class="f_l cdt_btn">
+																<div class="btn_box">
+																	<a class="line">조건수정</a><!--[2025] line으로 변경-->
+																</div>
+																<div class="balloon cdt_box" style="display:none">
+																	<div class="btn_box">
+																		<a class="line">조건 전체삭제</a><!--[2025] line으로 변경-->
+																	</div>
+																	<ul class="cl_both form_row">
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+																		</li>
+																		<li class="f_l">
+																			<ul class="cl_both adddel_bts">
+																				<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																				<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																			</ul>
+																		</li>
+																	</ul>
+																	<ul class="cl_both form_row">
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																				<option>[Received.tarAccHome]</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																				<option>Is not null</option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<SELECT class="form_contrl" id="">
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																				<option></option>
+																			</SELECT>
+																		</li>
+																		<li class="f_l">
+																			<input type="text" name="" class="form_contrl s_frm" placeholder="and">
+																		</li>
+																		<li class="f_l">
+																			<ul class="cl_both adddel_bts">
+																				<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																				<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																			</ul>
+																		</li>
+																	</ul>
+																</div>
+															</li>
+															<li class="f_l">
+																<ul class="cl_both adddel_bts">
+																	<li class="f_l"><a title="추가" class="btn_option"></a></li>
+																	<li class="f_l"><a title="삭제" class="btn_option btn_del_option"></a></li>
+																</ul>
+															</li>
+														</ul>
+													</dd>
+												</dl>
+												<!-- e: bul_dot 추가 -->
+											</div>
+										</div>
+										<div class="entry_setting setting03" style="display:none">
+											<div class="form_stl">
+												<!-- s: dl 구조 수정 및 bul_dot 추가 -->
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="execute01">종류(Type)</label></dt>
+													<dd class="form_txt">
+														<ul class="cl_both form_row">
+															<li class="f_l">
+																<SELECT class="form_contrl" id="execute01">
+																	<option>입력 준비 상태</option>
+																	<option>입력 준비 상태</option>
+																	<option>입력 준비 상태</option>
+																	<option>입력 준비 상태</option>
+																</SELECT>
+															</li>
+															<li class="f_l">
+																<input type="text" name="" class="form_contrl" id="" placeholder="추가 값 입력">
+															</li>
+														</ul>
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit">대기 시간</dt>
+													<dd class="form_txt">
+														<input type="checkbox" name="" id="exe03" class="check_stl"><label for="exe03" class="check_stl_lab"> 대기 최대 시간 설정</label>
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="execute02">대기 시간(mSEC)</label></dt>
+													<dd class="form_txt">
+														<input type="text" name="" class="form_contrl" id="execute02" placeholder="300000">
+													</dd>
+												</dl>
+												<!-- e: dl 구조 수정 및 bul_dot 추가 -->
+											</div>
+										</div>
+									</div>
+									<div class="entrybox entry_execute_err">
+										<div class="entry_top">
+											<ul class="cl_both f_l">
+												<li class="f_l">
+													<a class="add_option">실행 조건<button title="옵션삭제" class="btn_option"></button></a>
+												</li>
+												<li class="entry-wrap f_l">
+													<a class="entry_name">GID check-Error return<button title="옵션추가" class="btn_option"></button></a>
+													<ul class="option_list balloon" style="display:none">
+														<li><a>실행 대기</a></li>
+														<li><a>실행 조건</a></li>
+														<li><a>완료 대기</a></li>
+													</ul>
+												</li>
+											</ul>
+											<a class="btn_entry_del" title="엔트리삭제"></a>
+										</div>
+										<div class="entry_setting setting01" style="display:none">
+											<div class="form_stl">
+												<!-- s: dl 구조 수정 및 bul_dot 추가 -->
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="error01">Error Code</label></dt>
+													<dd class="form_txt">
+														<input type="text" name="" class="form_contrl" id="error01" placeholder="-32111">
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="error02">Error Message</label></dt>
+													<dd class="form_txt">
+														<textarea class="form_contrl"></textarea>
+													</dd>
+												</dl>
+												<!-- e: dl 구조 수정 및 bul_dot 추가 -->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="entrybox entry_disconnect">
+									<div class="entry_top">
+										<ul class="cl_both">
+											<li class="entry-wrap f_l">
+												<a class="entry_name">Telnet disconnection</a>
+											</li>
+										</ul>
+										<a class="btn_entry_del" title="엔트리삭제"></a>
+									</div>
+									<div class="entry_setting setting01" style="display:none">
+										<div class="">
+											<input type="checkbox" name="" id="disct" class="check_stl"><label for="disct" class="check_stl_lab"> Connection 재사용</label>
+										</div>
+									</div>
+								</div>
+								</li>
+								<li>
+									<div class="entrybox entry_connect">
+										<div class="entry_top cl_both">
+											<ul class="cl_both f_l">
+												<li class="entry-wrap f_l">
+													<a class="entry_name">Telnet connection
+													<button title="옵션추가" class="btn_option"></button></a>
+													<ul class="option_list balloon" style="display:none">
+													<li><a>Time Out</a></li>
+													<li><a>Retry</a></li>
+													<li><a>사용자 스위치 사용</a></li>
+												</ul>
+												</li>
+												<li class="f_l">
+													<a class="add_option option01">Time Out
+													<button title="옵션삭제" class="btn_option"></button></a>
+												</li>
+												<li class="f_l">
+													<a class="add_option option02">Retry<button title="옵션삭제" class="btn_option"></button></a>
+												</li>
+												<li class="f_l">
+													<a class="add_option option03">사용자 스위치 사용<button title="옵션삭제" class="btn_option"></button></a>
+												</li>
+											</ul>
+											<a title="엔트리 정보입력/수정" class="f_l btn_entry_desc"></a>
+											<a class="btn_entry_del" title="엔트리삭제"></a>
+										</div>
+										<div class="entry_setting setting01" style="display:none">
+											<div class="form_stl">
+												<!-- s: dl 구조 수정 및 bul_dot 추가 -->
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="IPAddr">IP Address</label></dt>
+													<dd class="form_txt">
+														<SELECT class="form_contrl" id="IPAddr">
+															<option>[Received.ipaddr]</option>
+															<option>[Received.ipaddr]</option>
+															<option>[Received.ipaddr]</option>
+															<option>[Received.ipaddr]</option>
+														</SELECT>
+														<span class="balloon entry_help" style="display:none">도움말입니다.</span>
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="conPort">Port</label></dt>
+													<dd class="form_txt">
+														<SELECT class="form_contrl" id="conPort">
+															<option>[Received.conPort]</option>
+															<option>[Received.conPort]</option>
+															<option>[Received.conPort]</option>
+															<option>[Received.conPort]</option>
+														</SELECT>
+														<a class="btn_entry_help" title="도움말"></a>
+														<span class="balloon entry_help02" style="display:none">도움말입니다.도움말입니다.</span>
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="conAccNm">Login ID</label></dt>
+													<dd class="form_txt">
+														<SELECT class="form_contrl" id="conAccNm">
+															<option>[Received.conAccNm]</option>
+															<option>[Received.conAccNm]</option>
+															<option>[Received.conAccNm]</option>
+															<option>[Received.conAccNm]</option>
+														</SELECT>
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="conAccPwd">Login PWD</label></dt>
+													<dd class="form_txt">
+														<SELECT class="form_contrl" id="conAccPwd">
+															<option>[Received.conAccPwd]</option>
+															<option>[Received.conAccPwd]</option>
+															<option>[Received.conAccPwd]</option>
+															<option>[Received.conAccPwd]</option>
+														</SELECT>
+													</dd>
+												</dl>
+												<!-- e: dl 구조 수정 및 bul_dot 추가 -->
+											</div>
+										</div>
+										<div class="entry_setting setting02" style="display:none">
+											<div class="form_stl">
+												<!-- s: dl 구조 수정 및 bul_dot 추가 -->
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="comm">Command</label></dt>
+													<dd class="form_txt">
+														<input type="text" name="" class="form_contrl" id="comm" placeholder="su">
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="accNm">Login ID</label></dt>
+													<dd class="form_txt">
+														<SELECT class="form_contrl" id="accNm">
+															<option>[Received.accNm]</option>
+															<option>[Received.accNm]</option>
+															<option>[Received.accNm]</option>
+															<option>[Received.accNm]</option>
+														</SELECT>
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="accPwd">Login PWD</label></dt>
+													<dd class="form_txt">
+														<SELECT class="form_contrl" id="accPwd">
+															<option>[Received.accPwd]</option>
+															<option>[Received.accPwd]</option>
+															<option>[Received.accPwd]</option>
+															<option>[Received.accPwd]</option>
+														</SELECT>
+													</dd>
+												</dl>
+												<!-- e: dl 구조 수정 및 bul_dot 추가 -->
+											</div>
+										</div>
+										<div class="entry_setting setting03" style="display:none">
+											<div class="form_stl">
+												<dl class="form_list noline bul_dot"><!--[2025] bul_dot으로 변경-->
+													<dt class="form_tit"><label for="waittime">대기 시간(mSEC)</label></dt>
+													<dd class="form_txt">
+														<input type="text" name="" class="form_contrl" id="waittime" placeholder="1000">
+													</dd>
+												</dl>
+											</div>
+										</div>
+										<div class="entry_setting setting04" style="display:none">
+											<div class="form_stl">
+												<!-- s: dl 구조 수정 및 bul_dot 추가 -->
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="repeat01">반복 회수</label></dt>
+													<dd class="form_txt">
+														<input type="text" name="" class="form_contrl" id="repeat01" placeholder="5">
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="repeat02">반복 간격(mSEC)</label></dt>
+													<dd class="form_txt">
+														<input type="text" name="" class="form_contrl" id="repeat02" placeholder="3000">
+													</dd>
+												</dl>
+												<dl class="form_list noline bul_dot">
+													<dt class="form_tit"><label for="repeat03">반복 간격 증가</label></dt>
+													<dd class="form_txt">
+														<input type="checkbox" name="" id="ck01" class="check_stl"><label for="ck01" class="check_stl_lab"> 반복 간격 증가</label>
+													</dd>
+												</dl>
+												<!-- e: dl 구조 수정 및 bul_dot 추가 -->
+											</div>
+										</div>
+									</div>
+									<div class="ac_depth"></div>
+									<div class="entrybox entry_disconnect">
+										<div class="entry_top">
+											<ul class="cl_both">
+												<li class="entry-wrap f_l">
+													<a class="entry_name">Telnet disconnection</a>
+												</li>
+											</ul>
+											<a class="btn_entry_del" title="엔트리삭제"></a>
+										</div>
+										<div class="entry_setting setting01" style="display:none">
+											<div class="">
+												<input type="checkbox" name="" id="disct" class="check_stl"><label for="disct" class="check_stl_lab"> Connection 재사용</label>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	  $( function() {
+	    $(".entry-sort").sortable({
+	      revert: true
+	    });
+	    $(".ac_depth").sortable({
+	      revert: true
+	    });
+	  } );		
+	</script>
+</body>
+</HTML>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_15698" data-name="사각형 15698" width="24" height="24" fill="none" stroke="#121212" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon_myauth" clip-path="url(#clip-path)">
+    <circle id="타원_97" data-name="타원 97" cx="3.788" cy="3.788" r="3.788" transform="translate(5.722 2.812)" fill="none" stroke="#121212" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_521" data-name="패스 521" d="M11.528,19.818H2.444c-.015-.308-.03-.616-.03-.924,0-.127,0-.248.007-.375A11,11,0,0,1,5.237,11.2c.034-.039.069-.077.106-.112a.465.465,0,0,0,.071.055,6.051,6.051,0,0,0,3.935,1.585,1.325,1.325,0,0,0,.166.007,1.309,1.309,0,0,0,.166-.007,6.04,6.04,0,0,0,1.847-.339" fill="none" stroke="#121212" stroke-width="1"/>
+    <circle id="타원_98" data-name="타원 98" cx="4.975" cy="4.975" r="4.975" transform="translate(11.633 11.238)" fill="none" stroke="#121212" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_522" data-name="패스 522" d="M14.711,15.809l1.9,2.506,1.778-4.193" fill="none" stroke="#121212" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+{
+    "liveSassCompile.settings.formats": [
+
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "~/.."
+        },
+        // 더 상세하게 설정가능
+        {
+            "format": "expanded",
+            "extensionName": ".min.css",
+            "savePath": "~/.."
+        }
+    ],
+    // 특정폴더를 제외한다. 폴더 내의 모든 sass/scss 파일을 무시한다.
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.includeItems": [
+        "/css/scss/ *.scss"
+    ],
+    "files.insertFinalNewline": false
+}

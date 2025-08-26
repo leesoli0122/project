@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" fill="none" stroke="#999" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="icon_siem" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(1 4)">
+      <path id="pass3" d="M14.136,3.641H10.168L7.7.5H.5V16.11H13.889" transform="translate(-0.5 -0.5)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass2" d="M12.34,7.262V5.3a2.509,2.509,0,0,1,2.7-2.46,2.506,2.506,0,0,1,2.7,2.46V7.262" transform="translate(3.186 0.23)" fill="none" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="pass1" d="M14.88,6.429h1.158a3.885,3.885,0,0,1,0,7.771H14.88a3.885,3.885,0,1,1,0-7.771Z" transform="translate(2.767 1.346)" fill="none" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="line" y2="1.819" transform="translate(18.226 10.75)" fill="none" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

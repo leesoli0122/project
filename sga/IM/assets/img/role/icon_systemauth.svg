@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 34 34">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_15563" data-name="사각형 15563" width="34" height="34" transform="translate(0 0)" fill="none" stroke="#999" stroke-width="1.5"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="사각형_15562" data-name="사각형 15562" width="16" height="21" transform="translate(-1.565 -3.839)" fill="none" stroke="#27ad98" stroke-width="1.5"/>
+    </clipPath>
+  </defs>
+  <g id="icon_systemauth" transform="translate(0 0)" clip-path="url(#clip-path)">
+    <g id="그룹_849" data-name="그룹 849" transform="translate(-1 -1)">
+      <path id="패스_618" data-name="패스 618" d="M23.476,4.473c-.04-1.643-3.3-2.973-7.323-2.973S8.869,2.83,8.829,4.473c0,.009,0,.019,0,.03,0,1.658,3.281,3,7.328,3s7.326-1.343,7.327-3C23.48,4.492,23.476,4.482,23.476,4.473Z" transform="translate(-2.403)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_619" data-name="패스 619" d="M30.633,5.924h0c0,.009,0,.019,0,.03Z" transform="translate(-9.556 -1.451)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_620" data-name="패스 620" d="M8.826,5.924v.03c0-.011,0-.021,0-.03Z" transform="translate(-2.403 -1.451)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_621" data-name="패스 621" d="M8.826,5.969V11.4c0,1.659,3.281,3,7.328,3s7.328-1.344,7.328-3c0-.036,0-.072-.007-.108l.007-5.323" transform="translate(-2.403 -1.466)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_622" data-name="패스 622" d="M30.635,5.969Z" transform="translate(-9.558 -1.466)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="선_261" data-name="선 261" x2="1.668" transform="translate(12.818 10.355)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_623" data-name="패스 623" d="M4.5,25.871V24.043H24.969v1.828" transform="translate(-0.983 -7.395)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="선_262" data-name="선 262" y2="5.188" transform="translate(13.75 13.554)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_624" data-name="패스 624" d="M20.81,33.5A2.112,2.112,0,1,1,18.7,31.386,2.112,2.112,0,0,1,20.81,33.5Z" transform="translate(-4.949 -9.804)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <circle id="타원_95" data-name="타원 95" cx="2.112" cy="2.112" r="2.112" transform="translate(1.5 21.582)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <circle id="타원_96" data-name="타원 96" cx="2.112" cy="2.112" r="2.112" transform="translate(21.776 21.582)" fill="none" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+    <g id="그룹_850" data-name="그룹 850" transform="translate(19.565 16.839)" clip-path="url(#clip-path-2)">
+      <path id="패스_625" data-name="패스 625" d="M8.652,3S7.278,6.218,3,5.6v6.439c.111.374-.382,3.4,5.652,4.9,6.034-1.5,5.541-4.525,5.652-4.9V5.6C10.027,6.218,8.652,3,8.652,3Z" transform="translate(-2.435 -2.347)" fill="#27ad98" stroke="#27ad98" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="패스_626" data-name="패스 626" d="M23,34.942l1.884,1.789L27.522,34" transform="translate(-18.667 -27.506)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

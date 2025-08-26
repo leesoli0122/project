@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="assets/img/common/logo.png"><!--[2025] 이미지 경로 및 이미지 변경-->
+					</a>
+				</div>
+				<div class="nav_tab">
+					<a href="" class="">사용자</a>
+					<a href="" class="on">관리자</a>
+				</div>
+				<!-- s: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li><a href="" class="depth_menu"><i class="UserMangement"></i><span>사용자 관리</span></a>
+							<ul>
+								<li><a href="">사용자</a></li>
+								<li><a href="" class="on">사용자 그룹</a></li>
+								<li><a href="">조직 그룹</a></li>
+								<li><a href="">대량 등록</a></li>
+								<li><a href="">자가 등록</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="ResourceMangement"></i><span>시스템 관리</span></a>
+							<ul>
+								<li><a href="">조정 및 배포</a></li>
+								<li><a href="">시스템(자원)</a></li>
+								<li><a href="">시스템(자원) 그룹</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="ServiceZone"></i><span>서비스 영역</span></a>
+							<ul>
+								<li><a href="">테넌트 관리</a></li>
+								<li><a href="">서버 영역</a></li>
+								<li><a href="">서버 탐지</a></li>
+								<li><a href="">영역별 목록</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="PolicyMangement"></i><span>정책 관리</span></a>
+							<ul>
+								<li><a href="">역할</a></li>
+								<li><a href="">조정 정책</a></li>
+								<li><a href="">배포 정책</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AccessControlPolicy"></i><span>정책제어 정책</span></a>
+							<ul>
+								<li><a href="">PAM 연결 관리</a></li>
+								<li><a href="">접속조회</a></li>
+								<li><a href="">접근권한 관리</a></li>
+								<li><a href="">명령어</a></li>
+								<li><a href="">금지 명령어</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="SynchronizeManagment"></i><span>조정 및 배포</span></a>
+							<ul>
+								<li><a href="">PAM 연결 관리</a></li>
+								<li><a href="">접속조회</a></li>
+								<li><a href="">접근권한 관리</a></li>
+								<li><a href="">명령어</a></li>
+								<li><a href="">금지 명령어</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="icon_pw"></i><span>인증/인가 관리</span></a>
+							<ul>
+								<li><a href="">인증 관리</a></li>
+								<li><a href="">인가 관리</a></li>
+								<li><a href="">암호 정책 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AuditingReport"></i><span>감사 및 보고서 긴 메뉴명입니다</span></a>
+							<ul>
+								<li><a href="">모니터링</a></li>
+								<li><a href="">감사</a></li>
+								<li><a href="">보고서</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AttributeMangement"></i><span>속성관리</span></a>
+							<ul>
+								<li><a href="">사용자 정보</a></li>
+								<li><a href="">사용자그룹 정보</a></li>
+								<li><a href="">조직 정보</a></li>
+							</ul>
+						</li>
+						<li><a href="" class=""><i class="Connector"></i><span>Connector</span></a></li>
+						<li><a href="" class=""><i class="ONSDModel"></i><span>ONSD Entry</span></a></li>
+						<li><a href="" class=""><i class="WorkflowManagement"></i><span>워크플로우</span></a></li>
+						<li><a href="" class="depth_menu"><i class="System"></i><span>시스템</span></a>
+							<ul>
+								<li><a href="">관리자</a></li>
+								<li><a href="">저장소 관리</a></li>
+								<li><a href="">서비스 모듈 관리</a></li>
+								<li><a href="">스케줄 관리</a></li>
+								<li><a href="">CMS</a></li>
+								<li><a href="">환경 설정</a></li>
+							</ul>
+						</li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard  ICAM V2.0</p>
+					<!-- e: copyright 추가 -->
+				</div>
+				<!-- e: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+			</div>
+		</div>
+		<div id="container">
+			<!-- s : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">사용자 관리</a></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><span>user01</span></a></li>
+					<li class="timer">
+						<i></i>
+						<span><em>00:15:00</em> 후 접속 끊김</span>
+						<button class="time_ref" title="세션 시간 새로고침"></button>
+					</li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>기타알람</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_menualdown"><a href="">down</a>
+						<div class="balloon alim_pop down_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>menual</span>
+								</div>
+								<ul class="alim_list">
+									<li><a><i class="icon_menual"></i>menual download 01</a></li>
+									<li><a><i class="icon_menual"></i>menual download 02</a></li>
+									<li><a><i class="icon_menual"></i>menual download 03</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="btn_logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<!-- e : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="content">
+				<div class="sych_mnt_wrap">
+					<button class="line icon btn_set"><i class="icon_setting"></i>표시설정</button><!--[2025] line,icon_setting 추가-->
+					<div class="sync_wrap">
+						<div class="sych_mnt_top">
+							<p>수집</p>
+							<i></i>
+						</div>
+						<div class="sync_system_list">
+							<div class="server_box">
+								<p class="server_box_bg"></p>
+								<div class="server_box_white">
+									<div class="system_name_box">
+										<div class="system_icon HRsystem"></div>
+										<div class="system_name_tit">
+											<p class="system_name">인사시스템</p>
+											<p class="db_pp">LDAP</p>
+										</div>
+										<button class="btn_run_exc" title="수집 즉시실행"></button>
+									</div>
+									<div class="sync_stt">
+										<p class="progress_txt"><i class="loader"></i>수집진행중</p>
+										<div>
+											<p class="sync_ctg_name">사용자 그룹</p>
+											<p class="user_numb">1,013</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="server_box">
+								<p class="server_box_bg"></p>
+								<div class="server_box_white">
+									<div class="system_name_box">
+										<div class="system_icon ADserver"></div>
+										<div class="system_name_tit">
+											<p class="system_name">내부 AD Server</p>
+										</div>
+										<button class="btn_run_exc diss" title="수집 즉시실행"></button>
+									</div>
+									<div class="sync_stt">
+										<p class="progress_txt"><i class="icon_progress icon_timer"></i>00:13:33</p>
+										<!-- 스케줄러:"icon_timer", 메뉴얼:"icon_menualprs", 연동:"icon_interlocking" 클래스로 수정 -->
+										<div>
+											<p class="sync_ctg_name">조직</p>
+											<p class="user_numb">406</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="server_box">
+								<p class="server_box_bg"></p>
+								<div class="server_box_white">
+									<div class="system_name_box">
+										<div class="system_icon ADserver"></div>
+										<div class="system_name_tit">
+											<p class="system_name">인사시스템</p>
+										</div>
+										<button class="btn_run_exc diss" title="수집 즉시실행"></button>
+									</div>
+									<div class="sync_stt">
+										<p class="progress_txt"><i class="icon_progress icon_realtime"></i>00:13:33</p>
+										<div>
+											<p class="sync_ctg_name">사용자</p>
+											<p class="user_numb">18</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="syc_server_wrap">
+						<div class="sych_mnt_top">
+							<p>서버</p>
+						</div>
+						<div class="syc_server_list">
+							<div class="server_box_bg"></div>
+							<div class="main_server_box_pd">
+								<div class="main_server_box">
+									<div class="server_info">
+										<div class="server_info_txt">
+											<p class="server_info_name">MseMain</p>
+											<p class="server_info_date">2022.07.20 21:40:30</p>
+										</div>
+										<button class="btn_refsh"></button>
+									</div>
+									<div class="main_server_dt">
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon user"></i>
+												<p class="ms_server_name">사용자</p>
+											</div>
+											<div class="flx">
+												<p class="stt_24h"><span class="plus_cl">+</span> 26 <span class="minus_cl">-</span> 3</p>
+												<p class="user_numb ms_numb">1,419</p>
+											</div>
+										</div>
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon userGroup"></i>
+												<p class="ms_server_name">사용자 그룹</p>
+											</div>
+											<div class="flx">
+												<p class="user_numb ms_numb">54</p>
+											</div>
+										</div>
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon orgzt"></i>
+												<p class="ms_server_name">조직</p>
+											</div>
+											<div class="flx">
+												<p class="stt_24h"><span class="plus_cl">+</span> 3</p>
+												<p class="user_numb ms_numb">1,419</p>
+											</div>
+										</div>
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon personalPolicy"></i>
+												<p class="ms_server_name">개인 정책</p>
+											</div>
+											<div class="flx">
+												<p class="stt_24h"><span class="plus_cl">+</span> 15 <span class="minus_cl">-</span> 43</p>
+												<p class="user_numb ms_numb">3,586</p>
+											</div>
+										</div>
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon systemNum"></i>
+												<p class="ms_server_name">시스템 수</p>
+											</div>
+											<div class="flx">
+												<p class="user_numb ms_numb">455</p>
+											</div>
+										</div>
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon accountNum"></i>
+												<p class="ms_server_name">계정 수</p>
+											</div>
+											<div class="flx">
+												<p class="stt_24h"><span class="plus_cl">+</span> 87 <span class="minus_cl">-</span> 12</p>
+												<p class="user_numb ms_numb">10,356</p>
+											</div>
+										</div>
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon device"></i>
+												<p class="ms_server_name">장치</p>
+											</div>
+											<div class="flx">
+												<p class="user_numb ms_numb">3</p>
+											</div>
+										</div>
+									</div>
+									<div class="ms_server_lcstt">
+										<p>V1.0.0 R3 | 라이선스 활성</p>
+									</div>
+								</div>
+							</div>
+							<!-- 이중화서버 끊기면 "rdd_server_wrap" 클래스 옆에 "disct" 클래스로 변경 -->
+							<div class="rdd_server_wrap disct">
+								<div class="rdd_server_box">
+									<div class="rdd_server_stt_icon">연결됨</div>
+									<div class="server_info">
+										<div class="server_info_txt">
+											<p class="server_info_name">MseMain01</p>
+											<p class="server_info_date">2022.07.20 21:40:30</p>
+										</div>
+										<button class="btn_refsh"></button>
+									</div>
+								</div>
+							</div>
+							<div class="rdd_server_wrap connect">
+								<div class="rdd_server_box">
+									<div class="rdd_server_stt_icon">연결끊김</div>
+									<div class="server_info">
+										<div class="server_info_txt">
+											<p class="server_info_name">MseMain02</p>
+											<p class="server_info_date">2022.07.20 21:40:30</p>
+										</div>
+										<div class="msv_loading">
+											<div class="loader"></div>
+										</div>
+									</div>
+								</div>
+							</div> 
+						</div>
+						<div class="queue_wrap">
+							<div class="queue_box">
+								<div class="queue_tit"></div>
+								<div class="queue_flow"></div>
+							</div>
+						</div>
+					</div>
+					<div class="dstb_wrap">
+						<div class="sych_mnt_top">
+							<i></i>
+							<p>배포</p>
+						</div>
+						<div class="dstb_system_list">
+							<div class="server_box">
+								<p class="server_box_bg"></p>
+								<div class="server_box_white">
+									<div class="system_name_box">
+										<div class="system_icon AMsystem"></div>
+										<div class="system_name_tit flx">
+											<p class="system_name">접근제어시스템접근제어시스템접근제어시스템접근제어시스템</p>
+											<p class="errtxt"><i></i> 2</p>
+										</div>
+										<button class="btn_refsh_s"></button>
+									</div>
+									<div class="dstb_stt">
+										<!-- s: bul_dot 추가 -->
+										<dl class="flx bul_dot">
+											<dt>사용자</dt>
+											<dd class="user_numb">1,419</dd>
+										</dl>
+										<dl class="flx bul_dot">
+											<dt>시스템 수</dt>
+											<dd class="user_numb">402</dd>
+										</dl>
+										<dl class="flx bul_dot">
+											<dt>개인정책</dt>
+											<dd class="user_numb">402</dd>
+										</dl>
+										<dl class="flx bul_dot">
+											<dt>계정 수</dt>
+											<dd class="user_numb">10,356</dd>
+										</dl>
+										<!-- e: bul_dot 추가 -->
+									</div>
+								</div>
+							</div>
+							<div class="server_box">
+								<p class="server_box_bg"></p>
+								<div class="server_box_white">
+									<div class="system_name_box">
+										<div class="cloud_icon GoogleCloud"></div>
+										<div class="system_name_tit flx">
+											<p class="system_name">Google Cloud</p>
+										</div>
+										<button class="btn_refsh_s"></button>
+									</div>
+									<div class="dstb_stt">
+										<!-- s: bul_dot 추가 -->
+										<dl class="flx bul_dot">
+											<dt>시스템 수</dt>
+											<dd class="user_numb">230</dd>
+										</dl>
+										<dl class="flx bul_dot">
+											<dt>계정 수</dt>
+											<dd class="user_numb">5,134</dd>
+										</dl>
+										<!-- s: bul_dot 추가 -->
+									</div>
+								</div>
+							</div>
+							<div class="server_box">
+								<p class="server_box_bg"></p>
+								<div class="server_box_white">
+									<div class="system_name_box">
+										<div class="system_icon OSSystem"></div>
+										<div class="system_name_tit flx">
+											<p class="system_name">OS System</p>
+											<p class="errtxt tra_err"><i></i> 5</p>
+										</div>
+										<div class="server_loading">
+											<div class="loader"></div>
+										</div>
+									</div>
+									<div class="dstb_stt">
+										<!-- s: bul_dot 추가 -->
+										<dl class="flx bul_dot">
+											<dt>사용자</dt>
+											<dd class="user_numb">255</dd>
+										</dl>
+										<dl class="flx bul_dot">
+											<dt>계정 수</dt>
+											<dd class="user_numb">5,222</dd>
+										</dl>
+										<!-- e: bul_dot 추가 -->
+									</div>
+								</div>
+							</div>
+							<div class="server_box">
+								<p class="server_box_bg"></p>
+								<div class="server_box_white">
+									<div class="system_name_box">
+										<div class="system_icon Application"></div>
+										<div class="system_name_tit flx">
+											<p class="system_name">Application</p>
+										</div>
+										<button class="btn_refsh_s"></button>
+									</div>
+									<div class="dstb_stt">
+										<!-- s: bul_dot 추가 -->
+										<dl class="flx bul_dot">
+											<dt>사용자</dt>
+											<dd class="user_numb">1,419</dd>
+										</dl>
+										<dl class="flx bul_dot">
+											<dt>시스템 수</dt>
+											<dd class="user_numb">402</dd>
+										</dl>
+										<dl class="flx bul_dot">
+											<dt>개인정책</dt>
+											<dd class="user_numb">3,586</dd>
+										</dl>
+										<!-- e: bul_dot 추가 -->
+									</div>
+								</div>
+							</div>
+							<div class="server_box">
+								<p class="server_box_bg"></p>
+								<div class="server_box_white">
+									<div class="system_name_box">
+										<div class="system_icon DBconnectaccount"></div>
+										<div class="system_name_tit flx">
+											<p class="system_name">DB 접속 계정</p>
+										</div>
+										<button class="btn_refsh_s"></button>
+									</div>
+									<div class="dstb_stt">
+										<!-- s: bul_dot 추가 -->
+										<dl class="flx bul_dot">
+											<dt>사용자</dt>
+											<dd class="user_numb">5</dd>
+										</dl>
+										<dl class="flx bul_dot">
+											<dt>계정 수</dt>
+											<dd class="user_numb">4</dd>
+										</dl>
+										<dl class="flx bul_dot">
+											<dt>시스템 수</dt>
+											<dd class="user_numb">21</dd>
+										</dl>
+										<!-- e: bul_dot 추가 -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sych_mnt_toast">
+						<div class="err_toast">
+							<div class="flx">
+								<p class="icon_err"></p>
+								<div class="sych_mnt_toast_detail">
+									<p>접근제어 시스템 배포오류 : <em>2</em></p>
+									<p>OS System 접속오류 : <em>5</em></p>
+									<p>결재오류 : <em>1</em></p>
+								</div>
+							</div>
+							<button class="btn_close"></button>
+						</div>
+						<div class="warning_toast">
+							<div class="flx">
+								<p class="icon_warning"></p>
+								<div class="sych_mnt_toast_detail">
+									<p>비인가 생성 계정 : <em>15</em></p>
+									<p>OS System 접속오류 : <em>5</em></p>
+									<p>결재오류 : <em>1</em></p>
+								</div>
+							</div>
+							<button class="btn_close"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- nav로 이동 <div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div> -->
+		</div>
+	</div>
+</body>
+</HTML>

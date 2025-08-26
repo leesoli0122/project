@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SecureGuard Prime</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/am/common.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<!-- 로그인 -->
+		<div id="login_wrap">
+			<p class="logo"><img src="img/am/logo.png"></p>
+			<div class="login_input">
+				<p class="otp_input"><label for="user_OTP"><em>OTP</em> 인증번호를 입력해주세요.</label><input type="text" name="" id="user_OTP" class="form_contrl" placeholder="OTP 인증 번호"></p>
+			</div>
+			<p class="btn_box login_btn"><a class="violet">로그인</a></p>
+			<div class="otp_btn_box">
+				<div class="box2">
+					<p class="f_l wid50">OTP를 등록하시려면</p>
+					<p class="f_r wid50 btn_box"><a href="" class="white">OTP 등록하기</a></p>
+				</div>
+				<div class="box2">
+					<p class="f_l wid50">WEB OTP를 사용하시려면</p>
+					<p class="f_r wid50 btn_box"><a href="" class="white">WEB OTP</a></p>
+				</div>
+			</div>
+		<!-- 푸터 -->
+			<div id="footer">
+				<p class="copy"><img src="img/am/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>

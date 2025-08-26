@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<div class="nav_inner">
+				<div class="nav_header">
+					<!--s: 이미지 경로 및 이미지 변경-->
+					<a href="" class="logo">
+						<img src="assets/img/common/logo.png">
+					</a>
+					<!--e: 이미지 경로 및 이미지 변경-->
+				</div>
+				<div class="nav_tab">
+					<a href="" class="">사용자</a>
+					<a href="" class="on">관리자</a>
+				</div>
+				<!-- s: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li><a href="" class="depth_menu"><i class="UserMangement"></i><span>사용자 관리</span></a>
+							<ul>
+								<li><a href="">사용자</a></li>
+								<li><a href="" class="on">사용자 그룹</a></li>
+								<li><a href="">조직 그룹</a></li>
+								<li><a href="">대량 등록</a></li>
+								<li><a href="">자가 등록</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="ResourceMangement"></i><span>시스템 관리</span></a>
+							<ul>
+								<li><a href="">조정 및 배포</a></li>
+								<li><a href="">시스템(자원)</a></li>
+								<li><a href="">시스템(자원) 그룹</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="ServiceZone"></i><span>서비스 영역</span></a>
+							<ul>
+								<li><a href="">테넌트 관리</a></li>
+								<li><a href="">서버 영역</a></li>
+								<li><a href="">서버 탐지</a></li>
+								<li><a href="">영역별 목록</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="PolicyMangement"></i><span>정책 관리</span></a>
+							<ul>
+								<li><a href="">역할</a></li>
+								<li><a href="">조정 정책</a></li>
+								<li><a href="">배포 정책</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AccessControlPolicy"></i><span>정책제어 정책</span></a>
+							<ul>
+								<li><a href="">PAM 연결 관리</a></li>
+								<li><a href="">접속조회</a></li>
+								<li><a href="">접근권한 관리</a></li>
+								<li><a href="">명령어</a></li>
+								<li><a href="">금지 명령어</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="SynchronizeManagment"></i><span>조정 및 배포</span></a>
+							<ul>
+								<li><a href="">PAM 연결 관리</a></li>
+								<li><a href="">접속조회</a></li>
+								<li><a href="">접근권한 관리</a></li>
+								<li><a href="">명령어</a></li>
+								<li><a href="">금지 명령어</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="icon_pw"></i><span>인증/인가 관리</span></a>
+							<ul>
+								<li><a href="">인증 관리</a></li>
+								<li><a href="">인가 관리</a></li>
+								<li><a href="">암호 정책 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AuditingReport"></i><span>감사 및 보고서 긴 메뉴명입니다</span></a>
+							<ul>
+								<li><a href="">모니터링</a></li>
+								<li><a href="">감사</a></li>
+								<li><a href="">보고서</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="AttributeMangement"></i><span>속성관리</span></a>
+							<ul>
+								<li><a href="">사용자 정보</a></li>
+								<li><a href="">사용자그룹 정보</a></li>
+								<li><a href="">조직 정보</a></li>
+							</ul>
+						</li>
+						<li><a href="" class=""><i class="Connector"></i><span>Connector</span></a></li>
+						<li><a href="" class=""><i class="ONSDModel"></i><span>ONSD Entry</span></a></li>
+						<li><a href="" class=""><i class="WorkflowManagement"></i><span>워크플로우</span></a></li>
+						<li><a href="" class="depth_menu"><i class="System"></i><span>시스템</span></a>
+							<ul>
+								<li><a href="">관리자</a></li>
+								<li><a href="">저장소 관리</a></li>
+								<li><a href="">서비스 모듈 관리</a></li>
+								<li><a href="">스케줄 관리</a></li>
+								<li><a href="">CMS</a></li>
+								<li><a href="">환경 설정</a></li>
+							</ul>
+						</li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard  ICAM V2.0</p>
+					<!-- e: copyright 추가 -->
+				</div>
+				<!-- e: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+			</div>
+		</div>
+		<div id="container">
+			<!-- s : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+						<li><a href="">역할관리</a></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><span>user01</span></a></li>
+					<li class="timer">
+						<i></i>
+						<span><em>00:15:00</em> 후 접속 끊김</span>
+						<button class="time_ref" title="세션 시간 새로고침"></button>
+					</li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>기타알람</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_menualdown"><a href="">down</a>
+						<div class="balloon alim_pop down_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>menual</span>
+								</div>
+								<ul class="alim_list">
+									<li><a><i class="icon_menual"></i>menual download 01</a></li>
+									<li><a><i class="icon_menual"></i>menual download 02</a></li>
+									<li><a><i class="icon_menual"></i>menual download 03</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="btn_logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<!-- e : header_title 내용 수정 및 gl_nav 수정 -->
+			<!-- s: only 추가 -->
+			<div class="content only">
+			<!-- e: only 추가 -->
+				<div class="sych_mnt_wrap ICAM_board_wrap">
+					<div class="secure_score">
+						<button class="simple_scoring">
+							<p class="donut exellent"><em>90</em></p>
+							<!-- 점수별 클래스 6단계 
+								"exellent","good","safe","weak","danger","worst" -->
+						</button>
+						<div class="secure_score_box">
+							<div class="secure_score_tit">
+								<p class="tit">Trust Score</p>
+								<p class="sub">뫄뫄의 보안점수 입니다.</p>
+							</div>
+							<div class="score_progress">
+								<div class="score_numb">
+									<p>90<span>/100</span></p>
+								</div>
+								<div class="progress_bar">
+									<div class="pgBar">
+										<p class="picker">
+											<!-- s: size 조절 및 색상 변경 -->
+											<svg width="14" height="12" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M5 8L0.669873 0.499999L9.33013 0.5L5 8Z" fill="#222222"/>
+											</svg>
+											<!-- e: size 조절 및 색상 변경 -->
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="score_rst">
+								<p class="icon_stt"></p>
+								<p class="stt_txt">Exellent !</p>
+							</div>
+						</div>
+					</div>
+					<!-- s: class 변경 -->
+					<button class="line icon btn_set"><i class="icon_setting"></i>표시설정</button>
+					<!-- e: class 변경 -->
+					<div class="left_wrap">
+						<div class="icam_b_list">
+							<p class="icam_pp">Source</p>
+							<div class="icam_b_stl">
+								<div class="sicam_name_box">
+									<div class="sicam_icon ActLog"></div>
+									<div class="sicam_name_tit">
+										<p class="sicam_name">Activity log</p>
+									</div>
+									<button class="server_loading">
+										<div class="loader"></div>
+									</button>
+								</div>
+							</div>
+							<div class="icam_b_stl">
+								<div class="sicam_name_box">
+									<div class="sicam_icon ThreatIntelli"></div>
+									<div class="sicam_name_tit">
+										<p class="sicam_name">Threat Intelligence</p>
+									</div>
+									<button class="btn_refsh_s">
+									</button>
+								</div>
+							</div>
+							<div class="icam_b_stl">
+								<div class="sicam_name_box">
+									<div class="sicam_icon SIEM"></div>
+									<div class="sicam_name_tit">
+										<p class="sicam_name">SIEM</p>
+									</div>
+									<button class="btn_refsh_s">
+									</button>
+								</div>
+							</div>
+							<div class="icam_b_stl">
+								<div class="sicam_name_box">
+									<div class="sicam_icon HRsystem"></div>
+									<div class="sicam_name_tit">
+										<p class="sicam_name">HR시스템</p>
+										<p class="db_pp">LDAP</p>
+									</div>
+									<button class="btn_refsh_s">
+									</button>
+								</div>
+								<div class="sync_stt">
+									<p class="progress_txt"><i class="icon_progress icon_realtime"></i>00:13:33</p>
+									<div class="sync_stt_dtl">
+										<p class="sync_ctg_name">사용자</p>
+										<p class="user_numb">38</p>
+									</div>
+								</div>
+							</div>
+							<div class="icam_b_stl">
+								<div class="sicam_name_box">
+									<div class="sicam_icon devMng"></div>
+									<div class="sicam_name_tit">
+										<p class="sicam_name">ZTA 장치관리</p>
+										<p class="db_pp">SecurityCenter</p>
+									</div>
+									<button class="btn_refsh_s">
+									</button>
+								</div>
+								<div class="sync_stt">
+									<p class="progress_txt"><i class="icon_progress icon_realtime"></i>00:13:33</p>
+									<div class="sync_stt_dtl">
+										<p class="sync_ctg_name">장치</p>
+										<p class="user_numb">3</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="icam_b_list btm_b_area">
+							<div class="icam_pp flx">
+								<p class="">User Device</p>
+								<p class="icam_pp_s">BYOD + CYOD</p>
+							</div>
+							<div class="icam_b_stl b_stl_s">
+								<div class="sicam_name_box">
+									<div class="sicam_icon_s admins"></div>
+									<div class="sicam_name_tit">
+										<p class="sicam_name">sgimadmin</p>
+									</div>
+									<button class="btn_refsh_s">
+									</button>
+								</div>
+							</div>
+							<div class="icam_b_stl b_stl_s">
+								<div class="sicam_name_box">
+									<div class="sicam_icon_s UEMClient"></div>
+									<div class="sicam_name_tit">
+										<p class="sicam_name">UEM Client</p>
+									</div>
+									<button class="btn_refsh_s">
+									</button>
+								</div>
+							</div>
+							<div class="icam_b_stl b_stl_s">
+								<div class="sicam_name_box">
+									<div class="sicam_icon_s NACClient"></div>
+									<div class="sicam_name_tit">
+										<p class="sicam_name">NAC Client</p>
+									</div>
+									<button class="btn_refsh_s">
+									</button>
+								</div>
+							</div>
+							<div class="icam_b_stl b_stl_s">
+								<div class="sicam_name_box">
+									<div class="sicam_icon_s PAMClient"></div>
+									<div class="sicam_name_tit">
+										<p class="sicam_name">PAM Client</p>
+									</div>
+									<button class="btn_refsh_s">
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="syc_server_wrap">
+						<div class="syc_server_list">
+							<div class="main_server_box_pd">
+								<div class="main_server_box icam_sv_box">
+									<div class="server_info">
+										<div class="server_info_txt">
+											<p class="server_info_name">
+												<!--<img src="img/common/dashboard_logo_ZTAforICAM.svg" alt="SGA ZTA for ICAM">-->
+												<img src="assets/img/common/logo.png" alt="SecureGuard ICAM"></p>
+											<p class="server_info_date">2022.07.20 21:40:30</p>
+										</div>
+										<button class="btn_refsh"></button>
+									</div>
+									<div class="main_server_dt">
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon Auth"></i>
+												<p class="ms_server_name">인증</p>
+											</div>
+											<div class="meth_list">
+												<p class="meth">FIDO</p>
+												<p class="meth">OTP</p>
+												<p class="meth">OpenID</p>
+											</div>
+										</div>
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon user"></i>
+												<p class="ms_server_name">사용자</p>
+											</div>
+											<div class="flx">
+												<p class="user_numb ms_numb">54</p>
+											</div>
+										</div>
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon device"></i>
+												<p class="ms_server_name">장치</p>
+											</div>
+											<div class="flx">
+												<p class="user_numb ms_numb">3</p>
+											</div>
+										</div>
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon personalPolicy"></i>
+												<p class="ms_server_name">정책</p>
+											</div>
+											<div class="scoring_use">
+												<p class="policy_score"><!-- 사용하지 않으면 "policy_score" 옆에 "policy_score_x" 클래스 추가  --></p>
+												<p class="user_numb ms_numb">6</p>
+											</div>
+										</div>
+										<div class="main_server_dt_info">
+											<div class="flx">
+												<i class="ms_server_icon distb"></i>
+												<p class="ms_server_name">배포</p>
+											</div>
+											<div class="flx">
+												<p class="user_numb ms_numb">5</p>
+											</div>
+										</div>
+									</div>
+									<div class="ms_server_lcstt">
+										<p>V1.0.0 R3</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="btm_icam_fw">
+							<div class="fw_list">
+								<div class="fw_dt">
+									<p class="icon_fw fw_NAC"></p>
+									<p class="fw_name">NAC</p>
+								</div>
+								<div class="fw_dt">
+									<p class="icon_fw fw_fw"></p>
+									<p class="fw_name">F/W</p>
+								</div>
+								<div class="fw_dt">
+									<p class="icon_fw fw_VPN"></p>
+									<p class="fw_name">VPN</p>
+								</div>
+							</div>
+							<div class="icam_b_list">
+								<p class="icam_pp">접근제어 시스템</p>
+								<div class="icam_b_stl b_stl_s err">
+									<div class="sicam_name_box">
+										<div class="sicam_icon_s PAMGateway"></div>
+										<div class="sicam_name_tit">
+											<p class="sicam_name">PAM Gateway</p>
+										</div>
+										<button class="btn_refsh_s">
+										</button>
+									</div>
+								</div>
+								<div class="icam_b_stl b_stl_s">
+									<div class="sicam_name_box">
+										<div class="sicam_icon_s DBAM"></div>
+										<div class="sicam_name_tit">
+											<p class="sicam_name">DB 접근제어</p>
+										</div>
+										<button class="btn_refsh_s">
+										</button>
+									</div>
+								</div>
+								<div class="icam_b_stl b_stl_s">
+									<div class="sicam_name_box">
+										<div class="sicam_icon_s WebEAM"></div>
+										<div class="sicam_name_tit flx">
+											<p class="sicam_name">Web EAM</p>
+											<p class="errtxt"><i></i> 1</p>
+										</div>
+										<button class="btn_refsh_s">
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="icam_b_list">
+						<p class="icam_pp">Enterprise Resource</p>
+						<div class="icam_b_stl">
+							<div class="sicam_name_box">
+								<div class="sicam_icon OSSystem"></div>
+								<div class="sicam_name_tit flx">
+									<p class="sicam_name">OS Account</p>
+								</div>
+								<button class="btn_refsh_s">
+								</button>
+							</div>
+							<div class="dstb_stt">
+								<!-- s: bul_dot 추가 -->
+								<dl class="flx bul_dot">
+									<dt>시스템 수</dt>
+									<dd class="user_numb">255</dd>
+								</dl>
+								<dl class="flx bul_dot">
+									<dt>계정 수</dt>
+									<dd class="user_numb">5,222</dd>
+								</dl>
+								<!-- e: bul_dot 추가 -->
+							</div>
+						</div>
+						<div class="icam_b_stl">
+							<div class="sicam_name_box">
+								<div class="sicam_icon DataBase"></div>
+								<div class="sicam_name_tit flx">
+									<p class="sicam_name">DB</p>
+								</div>
+								<button class="btn_refsh_s">
+								</button>
+							</div>
+							<div class="dstb_stt">
+								<!-- s: bul_dot 추가 -->
+								<dl class="flx bul_dot">
+									<dt>시스템 수</dt>
+									<dd class="user_numb">255</dd>
+								</dl>
+								<dl class="flx bul_dot">
+									<dt>계정 수</dt>
+									<dd class="user_numb">5,222</dd>
+								</dl>
+								<!-- e: bul_dot 추가 -->
+							</div>
+						</div>
+						<div class="icam_b_stl">
+							<div class="sicam_name_box">
+								<div class="sicam_icon application"></div>
+								<div class="sicam_name_tit flx">
+									<p class="sicam_name">Application</p>
+								</div>
+								<button class="btn_refsh_s">
+								</button>
+							</div>
+							<div class="dstb_stt">
+								<!-- s: bul_dot 추가 -->
+								<dl class="flx bul_dot">
+									<dt>시스템 수</dt>
+									<dd class="user_numb">255</dd>
+								</dl>
+								<dl class="flx bul_dot">
+									<dt>계정 수</dt>
+									<dd class="user_numb">5,222</dd>
+								</dl>
+								<!-- e: bul_dot 추가 -->
+							</div>
+						</div>
+						<div class="icam_b_stl">
+							<div class="sicam_name_box">
+								<div class="sicam_icon network"></div>
+								<div class="sicam_name_tit flx">
+									<p class="sicam_name">Network</p>
+								</div>
+								<button class="btn_refsh_s">
+								</button>
+							</div>
+							<div class="dstb_stt">
+								<!-- s: bul_dot 추가 -->
+								<dl class="flx bul_dot">
+									<dt>시스템 수</dt>
+									<dd class="user_numb">255</dd>
+								</dl>
+								<dl class="flx bul_dot">
+									<dt>계정 수</dt>
+									<dd class="user_numb">5,222</dd>
+								</dl>
+								<!-- e: bul_dot 추가 -->
+							</div>
+						</div>
+						<div class="icam_b_stl">
+							<div class="sicam_name_box">
+								<div class="sicam_icon cloud"></div>
+								<div class="sicam_name_tit flx">
+									<p class="sicam_name">Cloud</p>
+								</div>
+								<button class="btn_refsh_s">
+								</button>
+							</div>
+							<div class="dstb_stt">
+								<!-- s: bul_dot 추가 -->
+								<dl class="flx bul_dot">
+									<dt>시스템 수</dt>
+									<dd class="user_numb">255</dd>
+								</dl>
+								<dl class="flx bul_dot">
+									<dt>계정 수</dt>
+									<dd class="user_numb">5,222</dd>
+								</dl>
+								<!-- e: bul_dot 추가 -->
+							</div>
+						</div>
+						<div class="icam_b_stl err">
+							<div class="sicam_name_box">
+								<div class="sicam_icon etcSystem"></div>
+								<div class="sicam_name_tit flx">
+									<p class="sicam_name">기타시스템</p>
+									<p class="errtxt"><i></i> 3</p><!-- 
+									<p class="errtxt tra_err"><i></i> 5</p>-->
+								</div>
+								<button class="btn_refsh_s">
+								</button>
+							</div>
+							<div class="dstb_stt">
+								<!-- s: bul_dot 추가 -->
+								<dl class="flx bul_dot">
+									<dt>시스템 수</dt>
+									<dd class="user_numb">255</dd>
+								</dl>
+								<dl class="flx bul_dot">
+									<dt>계정 수</dt>
+									<dd class="user_numb">5,222</dd>
+								</dl>
+								<!-- e: bul_dot 추가 -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- nav로 이동 <div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div> -->
+		</div>
+	</div>
+</body>
+</HTML>

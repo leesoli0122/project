@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<!-- s : 추가 -->
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<!-- e : 추가 -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="SGIM_wrap" class="">
+		<div class="nav">
+			<a class="menu_close_btn"></a>
+			<div class="nav_inner">
+				<div class="nav_header">
+					<a href="" class="logo">
+						<img src="assets/img/common/logo.png"><!--[2025] 이미지 경로 및 이미지 변경-->
+					</a>
+				</div>
+				<div class="nav_tab">
+					<a href="" class="on">사용자</a>
+					<a href="" class="">관리자</a>
+				</div>
+				<!-- s: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+				<div class="nav_wrap scroll">
+					<ul class="nav_list">
+						<li><a href="" class=""><i class="Home"></i><span>HOME</span></a></li>
+						<li><a href="" class="depth_menu"><i class="MyProfiles"></i><span>내 정보</span></a>
+							<ul>
+								<li><a href="">기본 정보</a></li>
+								<li><a href="" class="on">인증/암호 관리</a></li>
+								<li><a href="">권한 위임</a></li>
+							</ul>
+						</li>
+						<li><a href="" class="depth_menu"><i class="MyAuth"></i><span>권한 신청/관리</span></a><ul>
+								<li><a href="">시스템/자원 관리</a></li>
+								<li><a href="">역할(Role)관리</a></li>
+							</ul>
+						</li>
+						<!-- <li><a href=""><i class="MyRequest"></i><span>요청 관리</span></a></li> -->
+						<li><a href=""><i class="MyApprove"></i><span>승인 관리</span></a></li>
+						<li>
+							<a href=""><i class="PartnerManagement"></i><span>협력사(상주SM) 관리</span></a>
+							<ul>
+								<li><a href="">담당 협력사 관리</a></li>
+							</ul>
+						</li>
+						<li><a href=""><i class="MyMessage"></i><span>메시지 확인</span></a></li>
+					</ul>
+					<!-- s: copyright 추가 -->
+					<p>SGN Copyright 2025 SGN Co., Ltd. All Right Reserved.Secureguard  ICAM V2.0</p>
+					<!-- e: copyright 추가 -->
+				</div>
+				<!-- e: nav_wrap 추가 및 구조변경, scroll 옮김 -->
+			</div>
+		</div>
+		<div id="container" class="">
+			<!-- s : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="header">
+				<div class="btn_lnb"><a>메뉴</a></div>
+				<div class="btn_lnb_m"><a>모바일메뉴</a></div>
+				<div class="header_title">
+					<ol class="link_depth">
+						<li><a href="">HOME</a></li>
+					</ol>
+				</div>
+				<ul class="gl_nav">
+					<li class="btn_top_user"><a href=""><span>user01</span></a></li>
+					<li class="timer"><i></i><span><em>00:15:00</em> 후 접속 끊김</span><button class="time_ref" title="세션 시간 새로고침"></button></li>
+					<li class="btn_alim"><a href="">alim<span>13</span></a>
+						<div class="balloon alim_pop" style="display:none">
+							<div class="alim_pop_wrap">
+								<div class="alim_top">
+									<span>새 알림</span>
+									<button class="alim_clear">모든 알림 지우기</button>
+								</div>
+								<ul class="alim_list">
+									<!-- s: class 변경 -->
+									<li><a><i class="icon_alim icon_caution"></i>경고!</a></li>
+									<li><a><i class="icon_alim icon_message"></i>나한테만 오는 알람메세지이이이이 두줄일때 다음줄로 넘어갑니다 </a></li>
+									<li><a><i class="icon_alim icon_notice"></i>전체적인 알람공지</a></li>
+									<li><a><i class="icon_alim icon_receive"></i>SMS문자왔숑</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>메일왔네요</a></li>
+									<li><a><i class="icon_alim icon_caution"></i>기타알람</a></li>
+									<!-- e: class 변경 -->
+								</ul>
+								<div class="allAlim">
+									<!-- s: class 변경 -->
+									<a href="" class="basic icon_plus">모두 보기</a>
+									<!-- e: class 변경 -->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="btn_menualdown"><a id="guide_manualDown"></a></li>
+					<li class="btn_logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<!-- e : header_title 내용 수정 및 gl_nav 수정 -->
+			<div class="home_lyt hm_alim">
+				<div class="dash_box hm_req"><!--[2025] hm_req 위치 변경-->
+					<p class="hm_icon"><i></i></p>
+					<div class="hm_info">
+						<p class="hm_tit">신청</p>
+						<p class="hm_alimnum"><em>10</em> 건</p>
+					</div>
+				</div>
+				<div class="dash_box hm_appr"><!--[2025] hm_appr 위치 변경-->
+					<p class="hm_icon"><i></i></p>
+					<div class="hm_info">
+						<p class="hm_tit">승인</p>
+						<p class="hm_alimnum"><em>10</em> 건</p>
+					</div>
+				</div>
+				<div class="dash_box hm_msg"><!--[2025] hm_msg 위치 변경-->
+					<p class="hm_icon"><i></i></p>
+					<div class="hm_info">
+						<p class="hm_tit">메세지</p>
+						<p class="hm_alimnum"><em>10</em> 건</p>
+					</div>
+				</div>
+			</div>
+			<div class="i-card_wrap grid"><!--[2025] grid 추가-->
+				<div class="dash_box in_role">
+					<p class="i-card_title">보유 역할</p>
+					<div class="flx i-card_ct">
+						<p class="icon role"><i></i></p>
+						<p class="num_t">1</p>
+					</div>
+				</div>
+				<div class="dash_box in_role">
+					<p class="i-card_title">소속된 사용자 그룹</p>
+					<div class="flx i-card_ct">
+						<p class="icon usergp"><i></i></p><!--[2025] usergp 추가-->
+						<p class="num_t">1</p>
+					</div>
+				</div>
+				<div class="dash_box in_role">
+					<p class="i-card_title">소속된 시스템 그룹</p>
+					<div class="flx i-card_ct">
+						<p class="icon belong"><i></i></p><!--[2025] belong으로 변경-->
+						<p class="num_t">1</p>
+					</div>
+				</div>
+				<div class="dash_box noicon"><!--[2025] noicon 추가-->
+					<p class="i-card_title">보유 시스템</p>
+					<div class="i-card_ct">
+						<dl class="i-card_list">
+							<dt>Windows</dt>
+							<dd>1</dd>
+							<dt>Linux</dt>
+							<dd>10</dd>
+							<dt>기타</dt>
+							<dd>1</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="dash_box noicon"><!--[2025] noicon 추가-->
+					<p class="i-card_title">보유 계정</p>
+					<div class="i-card_ct">
+						<dl class="i-card_list">
+							<dt>개인</dt>
+							<dd>1</dd>
+							<dt>공용</dt>
+							<dd>10</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="dash_box noicon"><!--[2025] noicon 추가-->
+					<p class="i-card_title">패스워드 변경</p>
+					<div class="i-card_ct">
+						<dl class="i-card_list">
+							<dt>개인</dt>
+							<dd>1</dd>
+							<dt>공용</dt>
+							<dd>10</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="aply_box">
+				<div class="dash_box">
+					<div class="aply_box_tit">
+						<p class="home_d_tit">신청함</p>
+						<div class="move_ctrl">
+							<button class="line mo_del diss" title="이전"></button>
+							<button class="line mo_add" title="다음"></button>
+						</div>
+					</div>
+					<div class="aply_box_wrap scroll">
+						<div class="apply_card">
+							<div class="grbox dash_box">
+								<div class="apply_card_w">
+									<p class="apply_tit"><span>시스템 그룹</span>사용 신청</p>	
+								</div>
+								<div class="arrow_apply">
+									<i class="icon_arrapply"></i>
+								</div>
+							</div>
+							<div class="ppbox dash_box">
+								<div class="apply_card_w">
+									<p class="apply_tit"><span>시스템 계정</span>생성 및 사용 신청</p>	
+								</div>
+								<div class="arrow_apply">
+									<i class="icon_arrapply"></i>
+								</div>
+							</div>
+							<div class="blbox dash_box">
+								<div class="apply_card_w">
+									<p class="apply_tit"><span>시스템</span>사용 신청</p>	
+								</div>
+								<div class="arrow_apply">
+									<i class="icon_arrapply"></i>
+								</div>
+							</div>
+							<div class="orgbox dash_box">
+								<div class="apply_card_w">
+									<p class="apply_tit"><span>역할</span>사용 신청</p>	
+								</div>
+								<div class="arrow_apply">
+									<i class="icon_arrapply"></i>
+								</div>
+							</div>
+							<div class="grbox dash_box">
+								<div class="apply_card_w">
+									<p class="apply_tit"><span>시스템 그룹</span>사용 신청</p>	
+								</div>
+								<div class="arrow_apply">
+									<i class="icon_arrapply"></i>
+								</div>
+							</div>
+							<div class="ppbox dash_box">
+								<div class="apply_card_w">
+									<p class="apply_tit"><span>시스템 계정</span>생성 및 사용 신청</p>	
+								</div>
+								<div class="arrow_apply">
+									<i class="icon_arrapply"></i>
+								</div>
+							</div>
+							<div class="blbox dash_box">
+								<div class="apply_card_w">
+									<p class="apply_tit"><span>시스템</span>사용 신청</p>	
+								</div>
+								<div class="arrow_apply">
+									<i class="icon_arrapply"></i>
+								</div>
+							</div>
+							<div class="orgbox dash_box">
+								<div class="apply_card_w">
+									<p class="apply_tit"><span>역할</span>사용 신청</p>	
+								</div>
+								<div class="arrow_apply">
+									<i class="icon_arrapply"></i>
+								</div>
+							</div>
+							<div class="orgbox dash_box">
+								<div class="apply_card_w">
+									<p class="apply_tit"><span>역할</span>사용 신청</p>	
+								</div>
+								<div class="arrow_apply">
+									<i class="icon_arrapply"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="home_lyt">
+				<div class="dash_box"><!--[2025] wid50 삭제-->
+					<p class="home_d_tit">history</p>
+					<div class="tab_wrap">
+						<ul class="tab_list">
+							<li><a href="" class="on">Tab01</a></li>
+							<li><a href="">Tab02</a></li>
+							<li><a href="">Tab03</a></li>
+							<li><a href="">Tab04</a></li>
+						</ul>
+					</div>
+					<div class="tbl_list">
+						<table class="default_tbl">
+							<thead>
+								<tr>
+									<th class="tbl_num_wid">NO.</th>
+									<th>종류</th>
+									<th>제조사</th>
+									<th>모델명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>1</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>2</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>3</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>4</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+								<tr>
+									<th>5</th>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="dash_box"><!--[2025] wid50 삭제, dash_box 추가-->
+					<div class="notice_box">
+						<p class="noti_tit">Notice</p>
+						<p class="recent_notice"><a href="">공지 계정관리솔루션 가이드</a></p>
+						<div class="noti_new">
+							<a>NEW <em>2</em></a>
+						</div>
+					</div>
+					<div class="dash_box home_pfbox">
+						<div class="flx"><!--[2025] flx 추가-->
+							<p class="home_d_tit">My Profile</p>
+							<button class="pf_btns icon_mymodify" title="내 정보 수정"></button>
+						</div>
+						<div class="pf_info_wrap">
+							<dl>
+								<dt>ID</dt>
+								<dd>UserID</dd>
+							</dl>
+							<dl>
+								<dt>허용IP</dt>
+								<dd>213.456.789</dd>
+							</dl>
+							<dl>
+								<dt>Type</dt>
+								<dd>사용자</dd>
+							</dl>
+							<dl>
+								<dt>사용자업무</dt>
+								<dd>개발자</dd>
+							</dl>
+							<dl>
+								<dt>부서</dt>
+								<dd>R&D</dd>
+							</dl>
+							<dl>
+								<dt>직원구분</dt>
+								<dd>대리</dd>
+							</dl>
+						</div>
+						<div class="pf_info_btns align_right"><!--[2025] align_right 추가-->
+							<!-- s: class 변경 -->
+							<button class="line"><i class="icon_myauth"></i>권한위임</button>
+							<button class="line"><i class="icon_mypw"></i>암호관리</button>
+							<!-- e: class 변경 -->
+						</div>
+					</div>
+				</div>
+				<!-- e: wid50 삭제 -->
+			</div>
+			<!-- nav로 이동 <div class="footer">
+				<p><img src="img/common/sgn_logo.png"> ⓒ SGN corp. All Rights Reserved.</p>
+			</div> -->
+		</div>
+	</div>
+</body>
+</HTML>

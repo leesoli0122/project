@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SGIM</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<scriptå type="text/javascript" src="http://test.co.kr/respond.min.js"></scriptå>
+	<![endif]-->
+</head>
+<body>
+	<div id="IMwrap">
+		<!-- 로그인 -->
+		<div id="login_wrap">
+			<div class="logo_box">
+				<div class="logo">
+					<img src="img/common/logo.png">
+				</div>
+			</div>
+			<div class="login_input">
+				<p class="id_input"><label for="user_id">아이디</label><input type="text" name="" id="user_id" class="form_warning form_contrl" placeholder="ID"></p>
+				<!-- 입력창 경고표시 class=form_warning -->
+				<p class="warning_txt">아이디에 허용하지 않는 문자열과 공백이 있습니다. 아이디를 다시 한번 입력해 주세요.</p> <!-- 경고텍스트 blind클래스를 추가하면 텍스트 없어짐 -->
+				<p class="pw_input"><label for="user_pw">비밀번호</label><input type="Password" name="" id="user_pw" class="form_contrl" placeholder="Password"></p>
+			</div>
+			<div class="btn_box login_btn">
+				<a class="gradient">로그인</a>
+			</div>
+			<!-- 푸터 -->
+			<div id="footer">
+				<p class="copy"><img src="img/common/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</HTML>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>SecureGuard AM V8.0</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/am/common.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<!-- 헤더 -->
+		<div id="header">
+			<div class="gnb">
+				<h1 class="logo"><a href="">Secureguard Prime</a></h1>
+				<p class="btn_tree"><a href="">그룹보기</a></p>
+				<!-- 1024사이즈일때 전체카테고리 -->
+				<p class="btn_allcategory"><a href=""><i class="icon">전체카테고리보기</i></a></p> <!--팝업창열리면 a 클래스 on 추가-->
+				<!-- 유저관련버튼 -->
+				<ul class="user_area">
+					<li class="btn_user"><a href=""><i class="icon">정보변경</i></a></li>
+					<li class="btn_alam"><a href=""><i class="icon">알림</i><span>2</span></a></p></li>
+					<li class="btn_logout"><a href=""><i class="icon">로그아웃</i></a></li>
+				</ul>				
+			</div>
+			<!-- 1280사이즈일때 왼쪽메뉴 -->
+			<div class="lnb_wrap">
+				<div class="user_info">
+					<p class="profile_img"><img src="img/am/img_profile.png" alt="프로필이미지"></p>
+					<div class="text_info">
+						<p class="user_id">ADMIN</p>
+						<dl>
+							<dt class="icon_logintime">로그인시간</dt>
+							<dd>2016.12.20 09:46:56</dd>
+							<dt class="icon_account">접속계정</dt>
+							<dd>192.168.0.131</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="main_menu nav_icon">
+					<ul>
+						<li><a href=""><em class="icon_home"></em>HOME</a></li>
+						<li class="on"><a href=""><em class="icon_mng"></em>관리<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="" class="on">시스템</a></li> 
+								<li><a href="">계정</a></li>
+								<li><a href="">사용자</a></li>
+								<li><a href="">그룹</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_access"></em>접근제어<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">접속조회</a></li>
+								<li><a href="">이벤트조회</a></li>
+								<li><a href="">정책설정</a></li>
+								<li><a href="">정책모델</a></li>
+								<li><a href="">명령어</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_workflow"></em>워크플로우<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">요청문서함</a></li>
+								<li><a href="">결재문서함</a></li>
+								<li><a href="">결재선</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_schedule"></em>작업&amp;스케줄<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">작업</a></li>
+								<li><a href="">스케줄</a></li>
+							</ul>
+						</li>
+						<li><a href=""><em class="icon_setting"></em>설정<span class="menu_arrow"></span></a>
+							<ul>
+								<li><a href="">환경</a></li>
+								<li><a href="">권한</a></li>
+								<li><a href="">메뉴</a></li>
+								<li><a href="">대시보드</a></li>
+								<li><a href="">연동</a></li>
+								<li><a href="">코드</a></li>
+								<li><a href="">라이선스</a></li>
+								<li><a href="">공지사항</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 전체카테고리 -->
+			<div class="nav_allcategory nav_icon" style="display:none">
+				<ul>
+					<li class="on"><a href=""><em class="icon_mng"></em>관리</a>
+						<ul>
+							<li><a href="">시스템</a></li>
+							<li><a href="">계정</a></li>
+							<li><a href="">사용자</a></li>
+							<li><a href="">그룹</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_access"></em>접근제어</a>
+						<ul>
+							<li><a href="">접속조회</a></li>
+							<li><a href="">이벤트조회</a></li>
+							<li><a href="">정책설정</a></li>
+							<li><a href="">정책모델</a></li>
+							<li><a href="">명령어</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_workflow"></em>워크플로우</a>
+						<ul>
+							<li><a href="">요청문서함</a></li>
+							<li><a href="">결재문서함</a></li>
+							<li><a href="">결재선</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_schedule"></em>작업&amp;스케줄</a>
+						<ul>
+							<li><a href="">작업</a></li>
+							<li><a href="">스케줄</a></li>
+						</ul>
+					</li>
+					<li class="on"><a href=""><em class="icon_setting"></em>설정</a>
+						<ul>
+							<li><a href="">환경</a></li>
+							<li><a href="">권한</a></li>
+							<li><a href="">메뉴</a></li>
+							<li><a href="">대시보드</a></li>
+							<li><a href="">연동</a></li>
+							<li><a href="">코드</a></li>
+							<li><a href="">라이선스</a></li>
+							<li><a href="">공지사항</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- 트리 -->
+			<div class="tree_wrap" style="left:-242px">
+				<div class="tab">
+					<ul>
+						<li><a href="">시스템</a></li>
+						<li><a href="">계정</a></li>
+						<li><a href="" class="on">사용자</a></li>
+					</ul>
+				</div>
+				<div class="tree_box">
+					<p>
+						<select class="form_contrl">
+							<option value="">그룹별</option>
+							<option value="">그룹별2</option>
+							<option value="">그룹별3</option>
+						</select>
+					</p>
+					<div class="tree_view">
+						<ul>
+							<li>
+								<a href=""><span class="icon_folder_open"></span>root</a>
+								<ul>
+									<li><a href=""><span class="icon_folder_open"></span>QA서버</a>
+										<ul>
+											<li><a href=""><span class="icon_file"></span>운영</a></li>
+											<li><a href=""><span class="icon_file"></span>개발</a></li>
+										</ul>
+									</li>
+									<li><a href=""><span class="icon_folder_close"></span>네트워크그룹</a></li>
+									<li><a href=""><span class="icon_folder_open"></span>Server</a>
+										<ul>
+											<li><a href=""><span class="icon_file"></span>서버그룹</a></li>
+											<li><a href=""><span class="icon_file"></span>시연용시스템</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 본문 -->
+		<div id="container">
+			<div class="content">
+				<div class="title_box">
+					<h2>계정 정책 조회</h2>
+					<ol class="link_depth">
+						<li class="icon_home"><a href="">HOME</a></li>
+						<li><a href="">관리</a></li>
+						<li><a href="">시스템</a></li>
+						<li><a href="">시스템수정</a></li>
+					</ol>
+				</div>
+				<div class="list_detail pd24">
+					<div class="media_wrap">
+						<div class="play_view">
+							<!-- media영역 -->
+						</div>
+						<div class="player_contrl">
+							<div class="slider">
+								<p class="blue_slider"><span class="handle"></span></p>
+							</div>
+							<div class="playerbtn box2">
+								<div class="f_l">
+									<button class="icon_back">이전 감사로 이동</button>
+									<!--<button class="icon_play">재생</button>-->
+									<button class="icon_pause">일시정지</button>
+									<button class="icon_next">다음 감사로 이동</button>
+									<button class="speed" title="재생속도">X1</button>
+									<!-- 접속차단추가 -->
+									<button class="icon_blocking" title="접속차단">접속차단</button>
+									<ul class="speed_btn" style="display:none">
+										<li><a href="" class="on">x1</a></li>
+										<li><a href="">x2</a></li>
+										<li><a href="">x4</a></li>
+										<li><a href="">x16</a></li>
+									</ul>
+									<p class="time"><span>00:00:00</span> / <span>00:00:22</span></p>
+								</div>
+								<div class="f_r">
+									<p class="totaltime"><span>00:00:00</span> / <span>00:00:22</span></p>
+									<button class="icon_inputlist">상세조회 보이기/감추기</button>
+								</div>
+							</div>
+						</div>
+						<div class="command_box scroll">
+							<p class="top_txt">입력명령어<button>전체재생</button></p>
+							<!--<p class="no_list">기록된 정보가 없습니다.</p> -->
+							<ul class="command_list">
+								<li>INIT3<em class="playing">재생중</em><span>2017.02.07 14:20:00</span></li>
+								<li>INIT3<span>2017.02.07 14:20:00</span><i class="icon_warning" title=""></i></li>
+								<li>INIT3<span>2017.02.07 14:20:00</span><i class="icon_warning reconfirm" title="재확인"></i></li>
+								<li>INIT3<span>2017.02.07 14:20:00</span><i class="icon_warning addatc" title="추가인증"></i></li>
+								<li>INIT3<span>2017.02.07 14:20:00</span><i class="icon_warning commandblock" title="명령어 차단"></i></li>
+								<li>INIT3<span>2017.02.07 14:20:00</span><i class="icon_warning sessionblock" title="세션차단"></i></li>
+							</ul>
+						</div>
+					</div>
+					<div class="list_detail_info">
+						<ul class="info_text">
+							<li><dl><dt>접속 프로토콜</dt><dd>SFTP</dd></dl></li>
+							<li><dl><dt>접속 계정</dt><dd>root</dd></dl></li>
+							<li><dl><dt>사용자 IP</dt><dd>192.168.0.150</dd></dl></li>
+							<li><dl><dt>사용자 PORT</dt><dd>38251</dd></dl></li>
+							<li><dl><dt>시스템 IP</dt><dd>192.168.0.151</dd></dl></li>
+							<li><dl><dt>시스템 PORT</dt><dd>22</dd></dl></li>
+							<li><dl><dt>입력건수</dt><dd>15</dd></dl></li>
+							<li><dl><dt>출력건수</dt><dd>15</dd></dl></li>
+							<li><dl><dt>입력 로그 사이즈</dt><dd>375.00 Byte</dd></dl></li>
+							<li><dl><dt>출력 로그 사이즈</dt><dd>13.00 KB</dd></dl></li>
+							<li><dl><dt>전체 로그 사이즈</dt><dd>13.00 KB</dd></dl></li>
+						</ul>
+					</div>
+					<div class="btn_box"> 
+						<a href="" class="white">목록</a>
+					</div>
+				</div>
+			</div>
+			<!-- 푸터 -->
+			<div id="footer">
+				<p class="copy"><img src="img/am/sgn_logo.png" alt="SGN"> &copy; <span>SGN</span> corp. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>이벤트 상세 - vAegis</title>
+    <meta charset="UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- TODO: search engine info -->
+    <meta name="robots" content="vAegis" />
+    <meta name="keywords" content="vAegis" />
+    <meta name="title" content="vAegis" />
+    <meta name="description" content="vAegis" />
+
+    <!-- TODO: social url link image -->
+    <meta property="og:url" content="">
+    <meta property="og:title" content="vAegis">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="cloudVM.png">
+    <meta property="og:description" content="vAegis 입니다.">
+
+    <!-- TODO: favicon -->
+    <link rel="icon" href="favicon.png" type="favicon.png" />
+
+    <!-- TODO: import -->
+    <link rel="stylesheet" href="/assets/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/lib/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/assets/css/lib/datatables.css">
+    <link rel="stylesheet" href="/assets/css/lib/datatables.css">
+    <link rel="stylesheet" href="/assets/css/lib/select.dataTables.css">
+    <link rel="stylesheet" href="/assets/css/lib/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="/assets/css/lib/jquery.scrollbar.css">
+    <link rel="stylesheet" href="/assets/css/lib/jstree.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="/assets/js/lib/moment.js"></script>
+    <script src="/assets/js/lib/bootstrap.min.js"></script>
+    <script src="/assets/js/lib/bootstrap-datetimepicker.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="/assets/js/lib/echarts.js"></script>
+    <script src="/assets/js/lib/jquery.nice-select.js"></script>
+    <script src="/assets/js/lib/select.dataTables.js"></script>
+    <script src="/assets/js/lib/datatables.js"></script>
+    <script src="/assets/js/lib/dataTables.colReorder.js"></script>
+    <script src="/assets/js/lib/dataTables.rowReorder.js"></script>
+    <script src="/assets/js/lib/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/lib/sweetalert.js"></script>
+    <script src="/assets/js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="/assets/js/lib/jquery.scrollbar.js"></script>
+    <script src="/assets/js/lib/jstree.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+</head>
+<body class="win_popup event mscrollbar">
+<section>
+    <h4>
+        이벤트 상세
+    </h4>
+    <div class="popup_view_cont">
+        <div class="tab_box">
+            <div class="tab">
+                <ul class="tab_lst">
+                    <li value="tabMgmt_1" class="open">
+                        <a href="#" class="tab_link">
+                            로그정보
+                        </a>
+                    </li>
+                    <li value="tabMgmt_2">
+                        <a href="#" class="tab_link">
+                            패킷정보
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_wrap download">
+            <a class="btn grey" href="#" download="">다운로드</a>
+        </div>
+        <div id="tabMgmt" class="tab_container">
+            <div class="tabMgmt_1 tab_cont open">
+                <div class="top">
+                    <dl>
+                        <dt>
+                            <span>자산정보</span>
+                        </dt>
+                        <dd>
+                            <div class="ipt_box">
+                                <input class="no_radius" type="text" readonly="" value="(0) agent3-135 (192.168.10.135)" name="required">
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <span>탐지시간</span>
+                        </dt>
+                        <dd>
+                            <div class="ipt_box">
+                                <input class="no_radius" type="text" readonly="" value="2021-08-18 16:52:48" name="required">
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="detail">
+                    <ul class="detail_list">
+                        <li>
+                            <dl>
+                                <dt>출발지 포트</dt>
+                                <dd>58198</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>수정시간</dt>
+                                <dd>2021-03-02 16:22:36</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>시그니처 ID</dt>
+                                <dd>100000001</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>목적지 포트</dt>
+                                <dd>22</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>위험도</dt>
+                                <dd>3</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>클라이언트 Byte</dt>
+                                <dd>0</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>수집시간</dt>
+                                <dd>2021-03-02 16:22:34</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>발생시간</dt>
+                                <dd>2021-03-02T16:22:45.304709+0900</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>플로우 시작 시간</dt>
+                                <dd>2021-03-02T16:22:45.304709+0900</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>rev</dt>
+                                <dd>0</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>프로토콜</dt>
+                                <dd>TCP</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>클라이언트 패킷</dt>
+                                <dd>0</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>장비IP</dt>
+                                <dd>192.168.10.135</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>장비ID</dt>
+                                <dd>E1612332433161</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>플로우 ID</dt>
+                                <dd>2038618705471045</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>이벤트타입</dt>
+                                <dd>alert</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>GID</dt>
+                                <dd>1</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>서버 패킷</dt>
+                                <dd>1</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>탐지명</dt>
+                                <dd>deny 192.168.10.136</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>분류</dt>
+                                <dd></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>서버 Byte</dt>
+                                <dd>60</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tabMgmt_2 tab_cont">
+                <div class="top">
+                    <dl>
+                        <dt>
+                            <span>자산정보</span>
+                        </dt>
+                        <dd>
+                            <div class="ipt_box">
+                                <input class="no_radius" type="text" readonly="" value="(0) agent3-135 (192.168.10.135)" name="required">
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <span>탐지시간</span>
+                        </dt>
+                        <dd>
+                            <div class="ipt_box">
+                                <input class="no_radius" type="text" readonly="" value="2021-08-18 16:52:48" name="required">
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>body</dt>
+                        <dd>
+                            <div class="ipt_box">
+                                <textarea>ThisLeftData.ByteToASCIICode.</textarea>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="bottom">
+                    <div class="packet_box mscrollbar">
+                        <ul>
+                            <li>
+                                <ul class="binary">
+                                    <li>0000</li>
+                                    <li>0010</li>
+                                    <li>0020</li>
+                                    <li>0030</li>
+                                    <li>0040</li>
+                                    <li>0050</li>
+                                    <li>0060</li>
+                                    <li>0070</li>
+                                    <li>0080</li>
+                                    <li>0090</li>
+                                    <li>00a0</li>
+                                    <li>00b0</li>
+                                    <li>00c0</li>
+                                    <li>00d0</li>
+                                    <li>00e0</li>
+                                    <li>00f0</li>
+                                    <li>0100</li>
+                                    <li>01a0</li>
+                                    <li>01b0</li>
+                                    <li>01c0</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="hex">
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                    <li class="num"><span>1A</span><span>2B</span><span>3C</span><span>4D</span><span>5E</span><span>6F</span><span>7G</span><span>8H</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="name">
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                    <li class="num"><span>T</span><span>h</span><span>i</span><span>s</span><span>L</span><span>e</span><span>f</span><span>t</span></li>
+                                    <li class="num"><span>D</span><span>a</span><span>t</span><span>a</span><span>.</span><span>B</span><span>y</span><span>t</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

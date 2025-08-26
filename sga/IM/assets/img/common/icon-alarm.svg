@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(-1)" fill="#27ad98"/>
+    </clipPath>
+  </defs>
+  <g id="icon-alarm" transform="translate(1)" clip-path="url(#clip-path)">
+    <g id="ialarm" transform="translate(-0.392 -0.391)">
+      <path id="pass2" d="M2.967,21.889a1.977,1.977,0,0,1-1.73-2.92L3.37,16.978v-6.42C3.37,5.466,7.508,1,12.225,1s8.854,4.466,8.854,9.558v6.42l2.132,1.991a1.978,1.978,0,0,1-1.73,2.92Z" transform="translate(-0.608 -0.609)" fill="#27ad98"/>
+      <path id="pass" d="M21.956,53.554a2.662,2.662,0,1,0,5.325,0" transform="translate(-13.002 -31.825)" fill="#27ad98"/>
+    </g>
+  </g>
+</svg>

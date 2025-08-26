@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="20" height="20" fill="none" stroke="#121212" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="ico_nac" clip-path="url(#clip-path)">
+    <g id="locked" transform="translate(2.316 2.083)">
+      <path id="pass" d="M6.832,5.407V3.676A2.219,2.219,0,0,1,9.221,1.5a2.218,2.218,0,0,1,2.388,2.176V5.407" transform="translate(-1.614 -1.5)" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect id="box" width="7.895" height="6.872" rx="3.436" transform="translate(3.659 4.158)" fill="#121212" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="line" y2="1.608" transform="translate(7.607 6.79)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line id="선_283" data-name="선 283" x2="6.434" transform="translate(0 14.583)" fill="none" stroke="#121212" stroke-linecap="round" stroke-width="1"/>
+      <line id="선_284" data-name="선 284" y2="2.5" transform="translate(7.607 11.03)" fill="none" stroke="#121212" stroke-width="1"/>
+      <g id="타원_104" data-name="타원 104" transform="translate(6.017 12.917)" fill="#121212" stroke="#121212" stroke-width="1">
+        <circle cx="1.667" cy="1.667" r="1.667" stroke="none"/>
+        <circle cx="1.667" cy="1.667" r="1.167" fill="none"/>
+      </g>
+      <line id="선_285" data-name="선 285" x2="6.434" transform="translate(9.167 14.583)" fill="none" stroke="#121212" stroke-linecap="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

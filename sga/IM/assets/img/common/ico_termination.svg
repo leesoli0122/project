@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="24" height="24" transform="translate(1 1)" fill="none" stroke="#121212" stroke-width="1.5"/>
+    </clipPath>
+  </defs>
+  <g id="ico_termination" transform="translate(-1 -1)" clip-path="url(#clip-path)">
+    <path id="pass" d="M9,0a9,9,0,1,0,9,9A9,9,0,0,0,9,0m3.6,12.6H5.4V5.4h7.2Z" transform="translate(4 4)" fill="#51c4c4"/>
+  </g>
+</svg>

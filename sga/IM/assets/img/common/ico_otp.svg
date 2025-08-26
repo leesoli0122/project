@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="40" viewBox="0 0 60 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="60" height="40" transform="translate(1114 814)" fill="#c78d8d" opacity="0.75"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="pass" d="M21.442.337l-2.491,4h7.1l-2.692,15.5h4.871l2.7-15.5h4.439l3.626-4Zm21.8,3.8h2.149c2.048,0,3.088,1.094,2.734,3.124A3.579,3.579,0,0,1,44.267,10.4H42.154ZM39,.337l-3.39,19.509h4.894l.993-5.719h3.148a8.222,8.222,0,0,0,8.417-6.88c.73-4.191-1.6-6.91-5.731-6.91ZM5.2,10.093c.644-3.718,2.837-6.071,5.571-6.071s4.114,2.353,3.467,6.071-2.825,6.059-5.574,6.059S4.551,13.8,5.2,10.093M11.476,0C5.65,0,1.3,3.881.218,10.093S2.136,20.18,7.965,20.18,18.128,16.311,19.21,10.093,17.3,0,11.476,0Z" transform="translate(0)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.016" y1="1.001" x2="0.07" y2="1.001" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#9e7de9"/>
+      <stop offset="1" stop-color="#674ea0"/>
+    </linearGradient>
+  </defs>
+  <g id="ico_otp" transform="translate(-1114 -814)" clip-path="url(#clip-path)">
+    <g id="img" transform="translate(1116.999 824)" clip-path="url(#clip-path-2)">
+      <rect id="사각형_15734" data-name="사각형 15734" width="54.659" height="20.18" transform="translate(-0.864 0)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

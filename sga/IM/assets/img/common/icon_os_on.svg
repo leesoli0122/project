@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="mask" width="36" height="36" transform="translate(5214 1665)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="icon_os_on" transform="translate(-5214 -1665)" clip-path="url(#clip-path)">
+    <g id="os" transform="translate(5214.981 1665.982)">
+      <circle id="round" cx="17.018" cy="17.018" r="17.018" fill="#27ad98" stroke="#27ad98" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="pass4" d="M34.952,29.18l3.327.572a.705.705,0,0,1,.537.916A12.4,12.4,0,0,1,30.991,38.5a.7.7,0,0,1-.916-.53l-.585-3.327" transform="translate(-9.696 -9.6)" fill="none" stroke="#cbf0ea" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="pass3" d="M11.728,16.891,8.4,16.32a.7.7,0,0,1-.537-.916,12.4,12.4,0,0,1,7.824-7.831.7.7,0,0,1,.916.53l.585,3.327" transform="translate(-2.953 -2.862)" fill="none" stroke="#cbf0ea" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="pass2" d="M31.311,25.034A2.413,2.413,0,0,0,28.9,22.624a1.033,1.033,0,1,1,0-2.066h1.033a.689.689,0,1,0,0-1.377H28.9A2.411,2.411,0,1,0,28.9,24a1.033,1.033,0,0,1,0,2.066H27.179a.689.689,0,1,0,0,1.377H28.9A2.413,2.413,0,0,0,31.311,25.034Z" transform="translate(-8.762 -6.487)" fill="#cbf0ea"/>
+      <path id="pass1" d="M19.9,19.18a2.413,2.413,0,0,0-2.411,2.411v3.444a2.411,2.411,0,0,0,4.821,0V21.591A2.413,2.413,0,0,0,19.9,19.18Zm1.033,5.854a1.033,1.033,0,1,1-2.066,0V21.591a1.033,1.033,0,1,1,2.066,0Z" transform="translate(-5.961 -6.487)" fill="#cbf0ea"/>
+    </g>
+  </g>
+</svg>

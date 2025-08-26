@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>table</title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <!-- 기존 css -->
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/font.css">
+
+    <!-- 추가 css -->
+    <link rel="stylesheet" href="../../css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+
+    <!-- jQuery 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <!-- jQuery UI 라이브러리 -->
+    <script type="text/javascript" src="../../js/jquery-ui.js"></script>
+    <!-- js -->
+    <script type="text/javascript" charset="utf-8" src="../../js/common.js"></script>
+
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <!--[if (gte IE 7)&(lte IE 8)]>
+	<script type="text/javascript" src="http://test.co.kr/respond.min.js"></script>
+	<![endif]-->
+    <style>
+        h2 { font-size:30px; }
+        .tit { display:block; margin:20px 0; padding:10px 5px; font-size:16px; background-color:#6ebda8; color:#fff; }
+        .i_icon > span { margin-right:20px; }
+        .extension { margin-top:20px; }
+        .mandatxt_box > div,
+        .tooltip_box > div { display:inline-block; margin-top:20px; margin-right:20px; }
+    </style>
+</head>
+
+<body>
+    <div id="SGIM_wrap" class="mini_nav">
+        <!-- S: side nav -->
+        <!-- E: side nav -->
+        <!-- S: container -->
+        <div id="container" style="padding:0 !important;">
+            <!-- S: header -->
+            <!-- E: header -->
+            <!-- S: content -->
+            <div class="content" style="border-radius:10px; margin:20px; padding:20px; background-color:#fff;">
+                <h2>table</h2>
+                <section>
+                    <p class="tit">기본 테이블</p>
+                    <div class="tbl_list">
+                        <table class="default_tbl">
+                            <thead>
+                                <tr>
+                                    <th class="tbl_num_wid"></th>
+                                    <th class="check_list"><input type="checkbox" name="" id="list00" class="check_stl"><label for="list00" class="check_stl_lab"></label></th>
+                                    <th></th>
+                                    <th class="sort_column">
+                                        <div class="">종류<span class="ascanding"></span></div>
+                                    </th>
+                                    <th class="sort_column">
+                                        <div class="">제조사<span class="ascanding"></span></div>
+                                    </th>
+                                    <th class="sort_column">
+                                        <div class="">모델명<span class="ascanding"></span></div>
+                                    </th>
+                                    <th class="sort_column">
+                                        <div class="">이름<span class="ascanding"></span></div>
+                                    </th>
+                                    <th class="sort_column">
+                                        <div class="">설명<span class="ascanding"></span></div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td class="check_list"><input type="checkbox" name="" id="list01" class="check_stl"><label for="list01" class="check_stl_lab"></label></td>
+                                    <td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+                                    <td>OS</td>
+                                    <td>RedHat</td>
+                                    <td>data1</td>
+                                    <td>CentOS(1503)</td>
+                                    <td>Linux 표준모델</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td class="check_list"><input type="checkbox" name="" id="list02" class="check_stl"><label for="list02" class="check_stl_lab"></label></td>
+                                    <td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+                                    <td>OS</td>
+                                    <td>RedHat</td>
+                                    <td>data1</td>
+                                    <td>CentOS(1503)</td>
+                                    <td>Linux 표준모델</td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td class="check_list"><input type="checkbox" name="" id="list03" class="check_stl"><label for="list03" class="check_stl_lab"></label></td>
+                                    <td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+                                    <td>OS</td>
+                                    <td>RedHat</td>
+                                    <td>data1</td>
+                                    <td>CentOS(1503)</td>
+                                    <td>Linux 표준모델</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <p class="tit">no data</p>
+                    <div class="tbl_list">
+                        <table class="default_tbl">
+                            <thead>
+                                <tr>
+                                    <th class="check_list"><input type="checkbox" name="" id="list00" class="check_stl"><label for="list00" class="check_stl_lab"></label></th>
+                                    <th></th>
+                                    <th class="sort_column">
+                                        <div class="">종류<span class="ascanding"></span></div>
+                                    </th>
+                                    <th class="sort_column">
+                                        <div class="">제조사<span class="ascanding"></span></div>
+                                    </th>
+                                    <th class="sort_column">
+                                        <div class="">모델명<span class="ascanding"></span></div>
+                                    </th>
+                                    <th class="sort_column">
+                                        <div class="">이름<span class="ascanding"></span></div>
+                                    </th>
+                                    <th class="sort_column">
+                                        <div class="">설명<span class="ascanding"></span></div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- s : 20250804 수정-->
+                                <tr>
+                                    <td colspan="7" class="nodata"><span>데이터가 없습니다.</span></td>
+                                </tr>
+                                <!-- e : 20250804 수정-->
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <p class="tit">tblStl2</p>
+                    <div class="tbl_list">
+                        <table class="default_tbl tblStl2">
+                            <tbody>
+                                <tr>
+                                    <th class="th-bl">사번</th>
+                                    <td>0000</td>
+                                    <th class="th-bl">이름</th>
+                                    <td>홍길동</td>
+                                </tr>
+                                <tr>
+                                    <th class="th-bl">부서</th>
+                                    <td>IT부</td>
+                                    <th class="th-bl">업무</th>
+                                    <td>입금</td>
+                                </tr>
+                                <tr>
+                                    <th class="th-bl">직원분류</th>
+                                    <td>내부직원</td>
+                                    <th class="th-bl">IP</th>
+                                    <td>10.10.10.10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="tit">tblStl2</p>
+                    <div class="tbl_list">
+                        <table class="default_tbl tblStl2">
+                            <tbody>
+                                <tr>
+                                    <th rowspan="8" class="th-bl">변경 요청 정보</th>
+                                    <th style="text-align:center;">항목</th>
+                                    <th style="text-align:center;">변경 전</th>
+                                    <th class="bluetxt" style="text-align:center;">변경 후</th>
+                                </tr>
+                                <tr>
+                                    <td>사용자 구분</td>
+                                    <td>내부직원</td>
+                                    <td>내부직원</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">업무</td>
+                                    <td>-</td>
+                                    <td class="aft_cont">
+                                        <div class="aft_ir">
+                                            <i class="aft_i aft_add"></i>
+                                            인터페이스 - 대외계
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td class="aft_cont">
+                                        <div class="aft_ir">
+                                            <i class="aft_i aft_add"></i>
+                                            인터페이스 - 대내계
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>기간계 - 입금</td>
+                                    <td class="aft_cont">
+                                        <div class="aft_ir">
+                                            <i class="aft_i aft_mod"></i>
+                                            기간계 - 입금
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>기간계 - 보전</td>
+                                    <td class="aft_cont">
+                                        <div class="aft_ir">
+                                            <i class="aft_i aft_mod"></i>
+                                            기간계 - 보전
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>기간계 - 일반지급</td>
+                                    <td class="aft_cont">
+                                        <div class="aft_ir">
+                                            <i class="aft_i aft_mns"></i>
+                                            -
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <p class="tit">dash_box 안에 테이블<span style="color:var(--border-d);"> th 안에 ascanding은 필터링</span></p>
+                    <div class="dash_box">
+                        <div class="tbl_list">
+                            <table class="default_tbl" role="grid">
+                                <caption>운영 체제 및 관련 정보를 제공하는 표</caption>
+                                <colgroup aria-hidden="true">
+                                    <col width="6%">
+                                    <col width="5%">
+                                    <col width="*">
+                                    <col width="*">
+                                    <col width="*">
+                                    <col width="*">
+                                    <col width="*">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="tbl_num_wid">순번</th>
+                                        <th scope="col" class="check_list">
+                                            <input type="checkbox" id="list00" class="check_stl">
+                                            <label for="list00" class="check_stl_lab" aria-label="전체 선택"></label>
+                                        </th>
+                                        <th scope="col" class="sort_column">
+                                            <div>종류<span class="ascanding" aria-hidden="true"></span></div>
+                                        </th>
+                                        <th scope="col" class="sort_column">
+                                            <div>제조사<span class="ascanding" aria-hidden="true"></span></div>
+                                        </th>
+                                        <th scope="col" class="sort_column">
+                                            <div>모델명<span class="ascanding" aria-hidden="true"></span></div>
+                                        </th>
+                                        <th scope="col" class="sort_column">
+                                            <div>이름<span class="ascanding" aria-hidden="true"></span></div>
+                                        </th>
+                                        <th scope="col" class="sort_column">
+                                            <div>설명<span class="ascanding" aria-hidden="true"></span></div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td class="check_list">
+                                            <input type="checkbox" id="list01" class="check_stl">
+                                            <label for="list01" class="check_stl_lab" aria-label="항목 1 선택"></label>
+                                        </td>
+                                        <td>OS</td>
+                                        <td>RedHat</td>
+                                        <td>data1</td>
+                                        <td>CentOS(1503)</td>
+                                        <td>Linux 표준모델</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td class="check_list">
+                                            <input type="checkbox" id="list02" class="check_stl">
+                                            <label for="list02" class="check_stl_lab" aria-label="항목 2 선택"></label>
+                                        </td>
+                                        <td>OS</td>
+                                        <td>RedHat</td>
+                                        <td>data1</td>
+                                        <td>CentOS(1503)</td>
+                                        <td>Linux 표준모델</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <p class="tit">table 안에 accordion / 02_02_sub_list_detail.html</p>
+                    <div class="tbl_list">
+                        <table class="default_tbl">
+                            <colgroup>
+                                <col class="check_list" style="width: 42px;">
+                                <col style="width: 42px;">
+                                <col style="width: 42px;">
+                                <col style="width: 31.2153%;">
+                                <col style="width: 6.07164%;">
+                                <col style="width: 7.80685%;">
+                                <col style="width: 7.80685%;">
+                                <col style="width: 11.2781%;">
+                                <col style="width: 11.2853%;">
+                            </colgroup>
+							<thead>
+								<tr>
+									<th class="tbl_num_wid"></th>
+									<th class="check_list"><input type="checkbox" name="" id="list07" class="check_stl"><label for="list07" class="check_stl_lab"></label></th>
+									<th></th>
+									<th class="sort_column">
+										<div class="">종류<span class="ascanding"></span></div>
+									</th>
+									<th class="sort_column">
+										<div class="">제조사<span class="ascanding"></span></div>
+									</th>
+									<th class="sort_column">
+										<div class="">모델명<span class="ascanding"></span></div>
+									</th>
+									<th></th>
+									<th class="sort_column">
+										<div class="">이름<span class="ascanding"></span></div>
+									</th>
+									<th class="sort_column">
+										<div class="">설명<span class="ascanding"></span></div>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>1</th>
+									<td class="check_list"><input type="checkbox" name="" id="list08" class="check_stl"><label for="list08" class="check_stl_lab"></label></td>
+									<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+									<td class="circleOff"><i class="icon_list"></i>상태없음</td>
+									<td>CentOS(1503)</td>
+									<td><button class="btnstl trcolor">TRUE</button></td>
+								</tr>
+								<tr>
+									<th>2</th>
+									<td class="check_list"><input type="checkbox" name="" id="list09" class="check_stl"><label for="list09" class="check_stl_lab"></label></td>
+									<td class="more_list"><button class="icon_arrow_open">더보기</button></td>
+									<td>OS</td>
+									<td>RedHat</td>
+									<td>data1</td>
+									<td class="plugConnected"><i class="icon_list"></i>연결됨</td>
+									<td>CentOS(1503)</td>
+									<td><button class="btnstl fcolor">FALSE</button></td>
+								</tr>
+							</tbody>
+						</table>
+                    </div>
+                </section>
+            </div>
+            <!-- E: content -->
+            <!-- S: footer -->
+            <!-- E: footer -->
+        </div>
+        <div class="scroll_btns" style="display:none">
+            <button class="btn_toTheTop"></button>
+            <button class="btn_toThebottom"></button>
+        </div>
+        <script>
+            $("body").on("mousewheel", function (e) {
+                var wheel = e.originalEvent.wheelDelta;
+
+                if (wheel > 0) {
+                    //스크롤 올릴때
+                } else {
+                    //스크롤 내릴때
+                    $(".scroll_btns").show();
+                }
+            });
+            $(window).scroll(function () {
+                var scrollValue = $(document).scrollTop();
+                if (scrollValue > 65) {
+                    $(".list_btn_stk").addClass("btnarea");
+                } else {
+                    $(".list_btn_stk").removeClass("btnarea");
+                }
+            });
+        </script>
+
+        <!-- s : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+        <script>
+            $(document).ready(function(){
+        
+                $('.accordion').on('click',  function() {
+                    $(this).toggleClass("tr_open");
+                });
+            });
+
+        </script>	
+        <!-- e : 퍼블확인용 스크립트, 확인후 기존 스크립트로 교체 필요-->
+    </div>
+</body>
+
+</HTML>
