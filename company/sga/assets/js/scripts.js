@@ -217,25 +217,30 @@ function checkAllChecked() {
     });
 }
 
-/*---------------------------------------------
-    2025 메뉴 스크립트 수정
----------------------------------------------*/
 // 메뉴 스크립트
 function lnbEvt() {
+    // S: 2025 스크립트 수정
     $('.menu_btn').on('click', function () {
-        $('.menu_btn').parent().toggleClass('on');
-        $('#sidebarCopyright').css('display', 'block');
-    });
-    $('.menu_btn').on('click', function () {
-        $(this).removeClass('on');
-        if ($('.lnb > li.has_children > .depth2 > li > a').hasClass('on')) {
-            $('.lnb > li.has_children > a').parent().removeClass('active');
-            $('.lnb > li.has_children > .depth2 > li > a.on').parents('li.has_children').addClass('active');
+        const headerBox = $(this).parent();
+        const isCurrentlyOn = headerBox.hasClass('on');
+
+        headerBox.toggleClass('on');
+
+        if (isCurrentlyOn) {
+            headerBox.removeClass('on');
+            if ($('.lnb > li.has_children > .depth2 > li > a').hasClass('on')) {
+                $('.lnb > li.has_children > a').parent().removeClass('active');
+                $('.lnb > li.has_children > .depth2 > li > a.on').parents('li.has_children').addClass('active');
+            } else {
+                $('.lnb > li.has_children > a').parent().removeClass('active');
+            }
+            $('#sidebarCopyright').css('display', 'none');
         } else {
-            $('.lnb > li.has_children > a').parent().removeClass('active');
+            $('#sidebarCopyright').css('display', 'block');
         }
-		$('#sidebarCopyright').css('display', 'none');
     });
+    // E: 2025 스크립트 수정
+
     if ($('.lnb > li > ul').hasClass('depth2')) {
         $('.lnb > li > ul').parent().addClass('has_children');
     }

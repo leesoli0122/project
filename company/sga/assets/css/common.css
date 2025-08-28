@@ -60,7 +60,7 @@
 
 body { min-width:1600px; background:#121212; color:#fff; overflow-y:hidden; }
 body * {  font-family:"S-CoreDream"; font-size:13px; }
-body > section{ margin:50px 0 0 70px; height:calc(100% - 70px); top:-13px; }/* 2025 margin 수정 */
+body > section{ margin-top:50px; height:calc(100% - 70px); top:-13px; }
 body.win_popup > section{ top:0; }
 .sub{ min-height:100%; }
 .mCSB_container{ width:100% !important; }
@@ -178,8 +178,8 @@ a.logo_link { display:inline-block; margin-right:20px; width:115px; height:48px;
 
 
 /**left menu**/
-header.header_box {  display:grid; position:fixed; top:0; left:0; bottom:0; width:60px; height:auto; background:var(--btn--color-dark); } /* 2025 수정 */
-header.header_box.on{ width:250px; background:#184385; box-shadow:2px 0px 4px 4px #184385; } /* 2025 수정 */
+header.header_box {  display:grid; position:fixed; top:0; left:0; bottom:0; width:60px; height:auto; background:var(--btn--color-dark); transition:width .5s } /* 2025 수정 */
+header.header_box.on{ width:250px; background:#184385; box-shadow:2px 0px 4px 4px #184385; transition:width .5s; } /* 2025 수정 */
 
 /* S: 2025 추가 */
 .header_box ~ .top_cont { left:60px; width:calc(100% - 60px); }
