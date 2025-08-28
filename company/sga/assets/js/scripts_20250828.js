@@ -217,16 +217,13 @@ function checkAllChecked() {
     });
 }
 
-/*---------------------------------------------
-    2025 메뉴 스크립트 수정
----------------------------------------------*/
 // 메뉴 스크립트
 function lnbEvt() {
-    $('.menu_btn').on('click', function () {
-        $('.menu_btn').parent().toggleClass('on');
+    $('.lnb').on('mouseenter', function () {
+        $('.lnb').parent().parent().addClass('on');
         $('#sidebarCopyright').css('display', 'block');
     });
-    $('.menu_btn').on('click', function () {
+    $('.header_box').on('mouseleave', function () {
         $(this).removeClass('on');
         if ($('.lnb > li.has_children > .depth2 > li > a').hasClass('on')) {
             $('.lnb > li.has_children > a').parent().removeClass('active');
@@ -248,11 +245,11 @@ function lnbEvt() {
         $(this).parent().siblings('li.has_children').removeClass('active');
         $(this).parent().addClass('active');
         
-        /*
+        /* 
         	mouseenter 없이 페이지 리로딩 시 메뉴가 펼쳐지지 않는 현상
         	클릭 시 무조건 메뉴가 펴지게 끔 해준다
         */
-        $('.lnb').parent().parent().addClass('on');
+        $('.lnb').parent().parent().addClass('on'); 
     });
 
 }
