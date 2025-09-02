@@ -224,20 +224,22 @@ function lnbEvt() {
         const headerBox = $(this).parent();
         const isCurrentlyOn = headerBox.hasClass('on');
 
-        headerBox.toggleClass('on');
+        requestAnimationFrame(() => {
+            if (isCurrentlyOn) {
+                headerBox.removeClass('on');
+                $('#sidebarCopyright').css('display', 'none');
 
-        if (isCurrentlyOn) {
-            headerBox.removeClass('on');
-            if ($('.lnb > li.has_children > .depth2 > li > a').hasClass('on')) {
-                $('.lnb > li.has_children > a').parent().removeClass('active');
-                $('.lnb > li.has_children > .depth2 > li > a.on').parents('li.has_children').addClass('active');
+                if ($('.lnb > li.has_children > .depth2 > li > a').hasClass('on')) {
+                    $('.lnb > li.has_children > a').parent().removeClass('active');
+                    $('.lnb > li.has_children > .depth2 > li > a.on').parents('li.has_children').addClass('active');
+                } else {
+                    $('.lnb > li.has_children > a').parent().removeClass('active');
+                }
             } else {
-                $('.lnb > li.has_children > a').parent().removeClass('active');
+                headerBox.addClass('on');
+                $('#sidebarCopyright').css('display', 'block');
             }
-            $('#sidebarCopyright').css('display', 'none');
-        } else {
-            $('#sidebarCopyright').css('display', 'block');
-        }
+        });
     });
     // E: 2025 스크립트 수정
 
