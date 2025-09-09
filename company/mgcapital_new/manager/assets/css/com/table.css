@@ -1,0 +1,14 @@
+@charset "euc-kr";
+
+body {
+    --table-border:var(--color-d);
+    --table-th:#F8FAFC;
+}
+
+
+table tr { border-bottom:1px solid var(--table-border); }
+table th,
+table td { padding:10px; text-align:center; color:var(--default-color); font-size:var(--font-16); font-weight:var(--font-w-m); text-align:center; }
+table th { height:49px; background:var(--table-th); font-weight:var(--font-w-r); }
+table td { height:72px; }
+.sbject { text-align:left; }

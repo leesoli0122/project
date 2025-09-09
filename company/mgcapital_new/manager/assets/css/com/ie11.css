@@ -1,0 +1,13 @@
+/*---------------------------------------------
+    layout.css
+---------------------------------------------*/
+
+/* 헤더 레이아웃 */
+#headerWrap{  height:63px; background:#172233;  }
+#headerWrap .recent-content{ font-size:16px; color:#fff; }
+#headerWrap .recent-content button { background:#fff; color:#333; font-size:14px; }
+
+
+
+.layerPopup.modal .pop-btm-wrap .btm-btn-area button
+.layerPopup.modal .pop-btm-wrap .btm-btn-area a { margin-left:16px; }

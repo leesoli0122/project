@@ -1,0 +1,143 @@
+@charset "euc-kr";
+
+/* 모바일 폰트 사이즈 기준 [html::18px], 짝수 단위입니다.[짝수 단위로 할 경우 소수점 최대 3자리로 떨어집니다.] */
+:root {
+    --font12: 0.667rem;  
+    --font14: 0.778rem;  
+    --font16: 0.889rem; 
+    --font18: 1rem;      
+    --font20: 1.111rem;  
+    --font22: 1.222rem;  
+    --font24: 1.333rem;  
+    --font26: 1.444rem;  
+    --font28: 1.556rem;  
+    --font30: 1.667rem;  
+    --font32: 1.778rem;  
+    --font34: 1.889rem;  
+    --font36: 2rem;     
+    --font38: 2.111rem;  
+    --font40: 2.222rem; 
+
+    --font-w-b: 600;
+    --font-w-m: 500;
+    --font-w-r: 400;
+    --font-w-l: 300;
+  }
+  
+
+body {
+    
+    --dim: rgba(0, 0, 0, 0.5);
+    --white-dim: rgba(255, 255, 255, 0.5);
+
+    --active: #2392FF;
+
+    --red: #FF0000;
+    --white: #FFFFFF;
+
+
+    /** 기본 색상 **/
+    --primary: #0072BC;
+    --primary-light: #41C7F4;
+    --secondary: #BAD1EC;
+    ----default-color:#757575;
+
+    --border:#E5E5EA;
+
+    --color-1: #111111;
+    --color-2:#222222;
+    --color-3:#333333;
+    --color-45:#454545;
+    --color-6:#666666;
+    --color-75:#757575;
+    --color-9:#999999;
+
+    --color-f:#FFFFFF;
+    --color-fd:#FDFDFD;
+    --color-f8:#F8F8F8;
+    --color-c:#CCCCCC;
+    --color-ab:#ABABAB;
+    --color-e:#EEEEEE;
+    --color-d:#DDDDDD;
+    --color-f6:#F6F6F6;
+    
+
+}
+
+body {
+    
+    --outline: #3ca7ff;
+    --error: var(--red);
+
+
+    /* 필수 정보 */
+    --info-color: var(--primary);
+
+    /* 아이콘 색상 */
+    --ipt-clear: var(--color-c);
+    --ipt-search:var(--color-9);
+    --ipt-file: var(--color-9);
+    --ipt-date: var(--color-9);
+
+    /* 버튼 */
+    --btn-disabled: var(--color-c);
+    --btn-txt-disabled: var(--color-2);
+    --btn-primary: var(--color-2);
+    --btn-secondary: var(--secondary);
+    /* 버튼_하단 */
+    --btm-btn-primary: #6A6A6A;
+    --btm-btn-secondary:#DADFEA;
+
+    /* 폼_인풋 */
+    --ipt-label: var(--color-2);
+    --ipt-txt: var(--color-2);
+    --ipt-txt-placeholder: var(--color-9);
+    --ipt-txt-active: var(--color-2);
+    --ipt-txt-inactive: var(--color-ab);
+    --ipt-border: var(--color-d);
+    --ipt-border-active: var(--active);
+    --ipt-border-inactive:var(--color-c);
+    --ipt-bg-inactive: var(--color-f8);
+
+    /* 폼_라디오/체크박스 */
+    --rc-txt: var(--color-75);
+    --rc-active: var(--active);
+    --rc-txt-inactive: var(--color-ab);
+    --rc-border: var(--color-c);
+    --rc-border-inactive:var(--color-c);
+    --rc-bg-inactive: var(--color-f8);
+
+    /* 폼_토글 */
+    --toggle-bg: var(--color-d);
+
+    /* 폼_커스텀 셀렉트 */
+    --fk-se-ative: #EEF2F9;
+    --fk-se-inactive: var(--color-d);
+    --fk-se-title: var(--color-2);
+
+    /* 아코디언 */
+    --aco-tit: var(--color-2);
+    --aco-border: var(--color-d);
+    --aco-bg:#EEF2F9;
+
+    /* 탭 */
+
+
+    /* 테이블 */
+    --tbl-bg: var(--color-f8);
+    --tbl-border: var(--color-e);
+    --tbl-tit: var(--color-2);
+    --tbl-txt: var(--color-75);
+    --tbl-caption: var(--color-9);
+
+}
+
+
+
+@media (max-width: 768px) {
+
+    body {
+        --btn-primary:var(--active);
+    }
+
+}

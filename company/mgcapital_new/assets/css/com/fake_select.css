@@ -1,0 +1,285 @@
+@charset "euc-kr";
+
+body{
+  --form-label: var(--color-45);
+  --form-label-font-size: var(--font20);
+  --font-label-weight: var(--font-w-m);
+  --from-font-color: var(--color-2);
+  --form-board: var(--color-d);
+  --form-padding: 20px 16px;
+  --form-transition: all 0.2s ease;
+  --form-active: var(--primary);
+
+}
+
+.se-select[data-stove=select] .stove-option-layer .stove-option-scroll .stove-options button.stove-option {
+  width:100%; min-height:50px; margin-bottom:0; padding:15px 20px; border-bottom: 1px solid #ddd; box-sizing: border-box; background-color: #fff; font-size: 18px; text-align: left; }
+.se-select[data-stove=select] .stove-option-layer .stove-option-scroll .stove-options button.stove-option:focus-visible { border: 1px solid #2392ff; }
+.se-select[data-stove=select] .stove-option-layer .stove-option-scroll .stove-options button.stove-option:disabled { color: #aaa; cursor: default; }
+
+/* ==============================
+   Select (±âº» + Ä¿½ºÅÒ)
+============================== */
+.se-select select::-ms-expand { display: none; }
+.se-select select {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 400;
+  border: 1px solid #ddd;
+  background: #fff url("../img/ico-arrow.svg") no-repeat right 8px center/28px;
+  padding: 20px 32px 20px 16px;
+  color: #222;
+}
+.se-select select option {
+  color: #2392ff;
+}
+.se-select select:disabled {
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  background-image: url("../img/ico-arrow.svg");
+  color: #aaa;
+}
+.se-select select:focus {
+  border-color: #333;
+}
+.form-group.user-invalid .se-select select:invalid {
+  color: #ff0000;
+}
+.form-group.user-invalid .se-select select {
+  border: 1px solid #ff0000;
+}
+.se-select[data-stove=select] {
+  position: relative;
+}
+.se-select[data-stove=select] select {
+  visibility: hidden;
+}
+.se-select[data-stove=select] .btn-fake-slt {
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+  max-width: 100%;
+  width: 100%;
+  text-align: left;
+  padding: 20px 36px 20px 16px;
+  font-weight: 400;
+  border: 1px solid #ddd;
+  background: #fff url("../../images/com/svg/ico_se_arrow.svg") no-repeat right 8px center/28px;
+  color: #222;
+  outline: none;
+}
+.se-select[data-stove=select] .btn-fake-slt > * {
+  width: 100%;
+}
+.se-select[data-stove=select] .btn-fake-slt > *:not(.placeholder) {
+  display: none;
+}
+.se-select[data-stove=select] .btn-fake-slt .logo {
+  flex-shrink: 0;
+}
+.se-select[data-stove=select] .btn-fake-slt .placeholder {
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.se-select[data-stove=select] .btn-fake-slt .value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.se-select[data-stove=select] .btn-fake-slt:hover {
+  border: 1px solid #2392ff;
+}
+.se-select[data-stove=select] .btn-fake-slt.selected .placeholder {
+  display: none;
+}
+.se-select[data-stove=select] .btn-fake-slt.selected > * {
+  display: block;
+}
+.se-select[data-stove=select] .btn-fake-slt.disabled {
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  background-image: url("../img/ico-arrow.svg");
+  color: #aaa;
+}
+.se-select[data-stove=select] .btn-fake-slt:focus:not(.disabled) {
+  border-color: #333;
+}
+.se-select[data-stove=select] .on + .btn-fake-slt {
+  border: 1px solid #2392ff;
+  color: #333;
+}
+.se-select[data-stove=select] .stove-dim {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 110;
+}
+.se-select[data-stove=select] .stove-dim.on {
+  display: block;
+}
+.se-select[data-stove=select] .stove-option-layer {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: calc(100% - 55px);
+  padding-top: 60px;
+  background-color: #fff;
+  border-radius: 16px 16px 0 0;
+  transition: bottom 0.2s ease-in-out;
+  z-index: 110;
+}
+.se-select[data-stove=select] .stove-option-layer:focus-visible {
+  border: 1px solid #2392ff;
+  outline-offset: -2px;
+}
+.se-select[data-stove=select] .stove-option-layer.on {
+  bottom: 0;
+}
+.se-select[data-stove=select] .stove-option-layer.va-upshow {
+  bottom: 100%;
+}
+.se-select[data-stove=select] .stove-option-layer .stove-option-scroll {
+  padding-bottom: 40px;
+  overflow-y: auto;
+}
+.se-select[data-stove=select] .stove-option-layer .stove-option-scroll .stove-options {
+  padding: 0 24px;
+}
+.se-select[data-stove=select] .stove-option-layer .stove-option-scroll .stove-options button.stove-option.on, .se-select[data-stove=select] .stove-option-layer .stove-option-scroll .stove-options button.stove-option:hover {
+  background-color: #F2F5F8;
+}
+.se-select[data-stove=select] .stove-option-layer .stove-option-scroll .stove-options button.stove-option + button.stove-option {
+  margin-top: 0;
+}
+.se-select[data-stove=select] .stove-option-layer .stove-options-title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.se-select[data-stove=select] .stove-option-layer button.stove-btn-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: transparent url("../img/ico-close.svg") no-repeat center/40px;
+  cursor: pointer;
+}
+.se-select[data-stove=select] .e-hidden-title {
+  display: none;
+}
+.se-select[data-stove=select].replace select {
+  display: none;
+}
+.se-select[data-stove=select].replace .select-design {
+  display: block;
+}
+.form-group.user-invalid .se-select[data-stove=select] .btn-fake-slt:invalid {
+  color: #ff0000;
+}
+.form-group.user-invalid .se-select[data-stove=select] .btn-fake-slt {
+  border: 1px solid #ff0000;
+}
+.se-select[data-stove=select].bank-list .stove-option-layer .stove-option-scroll .stove-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+.se-select[data-stove=select].bank-list .stove-option-layer .stove-option-scroll .stove-options button.stove-option {
+  position: relative;
+  width: 48%;
+  padding: 10px 10px 10px 40px;
+  border: none;
+}
+.se-select[data-stove=select].bank-list .stove-option-layer .stove-option-scroll .stove-options button.stove-option::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+}
+.se-select[data-stove=select].bank-list .stove-option-layer .stove-option-scroll .stove-options button.stove-option.on {
+  background-color: #F2F5F8;
+  border: #fff;
+}
+.se-select[data-stove=select].bank-list .stove-option-layer .stove-option-scroll .stove-options button.stove-option.on::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  background-color: #2392ff;
+  mask-image: url("../img/ico-check.svg");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: auto 10px;
+  -webkit-mask-image: url("../img/ico-check.svg");
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: auto 10px;
+}
+.se-select[data-stove=select].bank-list .stove-option-layer .stove-option-scroll .stove-options button.stove-option:focus-visible {
+  border: 1px solid #2392ff;
+}
+
+/* -------------------------------------------------
+   Breakpoints
+-------------------------------------------------- */
+/* Mobile (¡Â $sm-max) */
+@media (max-width: 767px) {
+  .se-select select,
+  .se-select[data-stove=select] .btn-fake-slt {
+    padding: 14px 24px 14px 12px;
+  }
+  .se-select[data-stove=select] .stove-option-layer .stove-option-scroll .stove-options button.stove-option {
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    min-height: 44px;
+    cursor: pointer;
+  }
+  .se-select[data-stove=select] .stove-option-layer .stove-option-scroll .stove-options button.stove-option.touch-active {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(0.98);
+    transition: all 0.1s ease;
+  }
+  .se-select[data-stove=select] .stove-option-layer {
+    touch-action: pan-y;
+  }
+  .se-select[data-stove=select] .stove-option-layer .stove-option-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+}
+/* Tablet (¡Ã $md-min and < $lg-min) */
+/* Desktop (¡Ã $lg-min) */
+
+/*# sourceMappingURL=fake_select.css.map */

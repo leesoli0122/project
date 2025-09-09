@@ -1,0 +1,137 @@
+main.contentWrap .tit-wrap {
+  display: flex;
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+main.contentWrap .tit-wrap h3 {
+  display: block;
+  color: #121212;
+  flex-basis: 220px;
+  font-weight: 600;
+  font-size: 24px;
+}
+main.contentWrap .tit-wrap h3 + div {
+  flex-basis: calc(100% - 300px);
+}
+main.contentWrap .tit-wrap h3 + div > div {
+  padding: 20px 0;
+}
+h4 {
+  color: #757575;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 0 7px;
+}
+main.contentWrap .list {
+  display: flex;
+  gap: 80px;
+}
+@media (max-width: 768px) {
+  main.contentWrap .tit-wrap,
+  main.contentWrap .list {
+    flex-direction: column;
+    gap: 10px;
+  }
+  main.contentWrap .tit-wrap h3 {
+    flex-basis: auto;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  .form-content > .form-wrap > .form-group:only-of-type {
+    flex: 1;
+  }
+}
+
+/* 체크박스 스타일 추가 */
+.check-button {
+  display: inline-flex !important;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.check-button span {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* 체크박스 기본 스타일 */
+input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 체크박스 커스텀 디자인 */
+.check-button::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* 체크박스 체크 상태 */
+input[type="checkbox"]:checked + .check-button::before {
+  background-color: #007bff;
+  border-color: #007bff;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 체크박스 포커스 상태 */
+input[type="checkbox"]:focus + .check-button::before {
+  box-shadow: 0 0 0 2px #007bff;
+}
+
+/* 체크박스 호버 상태 */
+.check-button:hover::before {
+  border-color: #007bff;
+}
+
+/* 체크박스 비활성화 상태 */
+input[type="checkbox"]:disabled + .check-button {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+input[type="checkbox"]:disabled + .check-button::before {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+/* 체크박스 컨테이너 */
+.checkbox-container {
+  margin: 20px 0;
+}
+
+.checkbox-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkbox-container li {
+  margin-bottom: 10px;
+}

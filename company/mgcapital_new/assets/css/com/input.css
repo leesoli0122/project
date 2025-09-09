@@ -1,0 +1,70 @@
+@charset "euc-kr";
+
+body{
+  --form-label: var(--color-45);
+  --form-label-font-size: var(--font20);
+  --font-label-weight: var(--font-w-m);
+  --from-font-color: var(--color-2);
+  --form-board: var(--color-d);
+  --form-padding: 20px 16px;
+  --form-transition: all 0.2s ease;
+  --form-active: var(--primary);
+  --form-disabled: var(--color-f6);
+
+  --form-check-font-color:var(--color-75);
+  --form-check-icon:url("../../images/com/svg/ico_checkbox.svg");
+
+}
+
+
+input[type="checkbox"] { position:absolute; width:1px; height:1px; padding:0; clip:rect(0, 0, 0, 0); border:0; }
+input[type="checkbox"] + label { display:inline-block;  padding-left:44px; position:relative; min-height:30px; line-height:30px; color:var(--form-check-font-color); font-weight:var(--font-w-l); font-size:1rem; }
+input[type="checkbox"] + label::before { content:""; display:block; position:absolute; top:0; left:0; width:30px; height:30px; mask-image:var(--form-check-icon); -webkit-mask-image:var(--form-check-icon); background-color:var(--form-board); mask-size:100%; -webkit-mask-size: auto 100%; mask-repeat:no-repeat; -webkit-mask-repeat:no-repeat; }
+input[type="checkbox"]:checked  + label::before { background-color:var(--primary-light);}
+input[type="checkbox"]:checked  + label span { font-weight:var(--font-w-m); color:var(--from-font-color); }
+
+
+
+/* 포커스 링 */
+ul.radio-box input[type="radio"]:focus-visible,
+ul.check-box input[type="checkbox"] :focus-visible,
+div.toggle-box input[type="checkbox"]:focus-visible { outline: 1px solid var( --form-active); }
+
+
+.form-content label { display:block; margin-bottom:16px; font-size:var(--form-label-font-size); color:var(--form-label); font-weight:var(--font-label-weight); }
+.form-content input[type="text"],
+.form-content input[type="password"],
+.form-content input[type="email"],
+.form-content input[type="number"] { height:67px; line-height:65px; }
+.form-content input.form-control,
+.form-content textarea { width:100%; border: 1px solid var(--form-board); padding:var(--form-padding); color:var(--from-font-color); box-sizing:border-box;  }
+.form-content input.form-control:focus,
+.form-content textarea:focus { border-color:var(--form-active); }
+.form-content input:disabled,
+.form-content textarea:disabled { background-color:var(--form-disabled); }
+
+
+
+
+@media (max-width:767px) {
+    main.contentWrap > div { margin:0 auto 60px; padding:0 24px; }
+    main.contentWrap > div { padding:0 24px;}
+    #container > .tab-container,
+    #container > .form-container { padding:54px 0 72px; }
+
+    /**인풋**/
+    .form-content label { margin-bottom:10px; }
+	.form-content input[type="text"],
+	.form-content input[type="password"],
+	.form-content input[type="email"],
+	.form-content input[type="number"] { height:48px; line-height:46px; }
+
+	/**버튼**/
+	.btn-form { padding:12px; height:48px; }
+
+}
+
+@media (min-width: 767px) and (max-width:1023px){
+
+    .form-content > .form-wrap > .form-group:only-of-type { flex: 1; }
+}

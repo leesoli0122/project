@@ -1,0 +1,103 @@
+@charset "euc-kr";
+body {
+  --tab-height: 40px;
+  --tab-font-color: var(--color-75);
+  --tab-font-szie: var(--font22);
+  --tab-bg: var(--color-fd);
+  --tab-border: var(--color-d);
+  --tab-active: var(--active);
+
+  --tab2-background: #f1f2f4;
+
+  --tab3-font-color: var(--color-9);
+  --tab3-active: var(--primary);
+}
+
+/* 스크린 리더 전용 텍스트 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.tab-list {
+  display: flex;
+  margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 72px;
+}
+.tab-container .tab-list.depth1 li.tab-item,
+.tab-container .tab-list.depth3 li.tab-item {
+  flex: 1;
+}
+.tab-container .tab-list.depth1 li.tab-item button {
+  padding: 8px;
+  width: 100%;
+  height: 73px;
+  font-size: var(--font21);
+  background: var(--tab-bg);
+  color: var(--tab-font-color);
+  border: 1px solid var(--tab-border);
+  font-weight: var(--font-w-m);
+}
+.tab-container .tab-list.depth1 li.active button {
+  color: var(--tab-active);
+  border: 2px solid var(--tab-active);
+  background: var(--white);
+  font-weight: var(--font-w-b);
+  box-shadow: 0 0 12px 0 rgba(31, 9, 201, 0.2);
+}
+
+.tab-select-mobile select:focus {
+  outline: 2px solid var(--outline);
+  outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .tab-container .tab-list.depth2 {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    margin-left: -24px;
+    padding-left: 24px;
+    width: calc(100% + 48px);
+  }
+  .tab-container .tab-list.depth3 li.tab-item button {
+    padding: 10px;
+  }
+
+  /* 모바일에서 탭 리스트 숨김 */
+  .tab-list[data-view="pc"] {
+    display: none;
+  }
+
+  /* 모바일에서 select 표시 */
+  .tab-select-mobile[data-view="mo"] {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  /* PC에서 select 숨김 */
+  .tab-select-mobile[data-view="mo"] {
+    display: none;
+  }
+
+  /* PC에서 탭 리스트 표시 */
+  .tab-list[data-view="pc"] {
+    display: flex;
+  }
+}
+
+
+@media (min-width: 768px) {
+
+  
+
+}

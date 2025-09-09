@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="euc-kr" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>폼&gt;샘플&gt;mg캐피탈</title>
+
+    <meta name="keywords" content="MG캐피탈" />
+    <meta name="copyright" content="copyrights 2025 MG캐피탈" />
+    <meta name="description" content="MG캐피탈 리스금융, 할부금융, 스탁론, 기업대출, 장기렌트카, PF대출 등 금융 서비스 제공." />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover" />
+    <meta property="og:image" content="http://gallery2gate.kr/resources/images/common/ui-maeta-img" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="No-Cache" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.mgcap.co.kr/favicon.ico" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/ui-util.css" />
+    
+    <script type="text/javascript" src="../../assets/js/lib/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui-util.js"></script>
+    <!-- (선택) IE11용 폴리필: 안전하게 깔아두면 좋아요 -->
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=Promise,Array.from,Object.assign,Number.isNaN"></script>
+    <script>
+      (function () {
+        var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+        if (isIE11) {
+          // IE11 전용 클래스 추가
+          document.documentElement.className += " ie11";
+          
+          // IE11 전용 CSS 로드
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = '../../assets/css/com/ie11.css';
+          link.charset = 'euc-kr'; // 꼭 지정
+          document.head.appendChild(link);
+        }
+      })();
+    </script>
+  </head>
+
+    <body>
+        <div class="wrap">
+            <!-- S: header -->
+            <header id="headerWrap" class="headerOn"></header>
+
+            <main class="contentWrap">
+                <div class="visual-content step">
+                    <div class="tab-content">
+                        <ul class="step">
+                            <li class="acitve">
+                                <p>
+                                    <em>01</em>
+                                    <span>본인인증</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <em>02</em>
+                                    <span>신청완료</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <h2>
+                        <em>대출상담신청</em>
+                        <span>대출 상담을 신청하시면 빠른 시간안에 상담원이 연락을 드립니다.</span>
+                    </h2>
+                </div><!--//visual-content-->
+                <div id="container">
+                    <section class="tab-container jsTab">
+                        <h3>본인인증 방법</h3>
+                        <ul class="tab-list">
+                            <li class="tab-item active" data-tab="tab1" title="선택됨"><button type="button">휴대전화 인증</button></li>
+                            <li class="tab-item" data-tab="tab2"><button type="button">간편인증</button></li>
+                            <!-- <li class="tab-item" data-tab="tab3"><button type="button">아이핀인증</button></li> -->
+                        </ul>
+                        <div class="tab-content form-content border-b1">
+                            <div id="tab1" class="tab-panel active">
+                                <form id="termsForm">
+                                    <div class="form-group">
+                                        <ul class="check-box terms">
+                                            <li class="check-all-area">
+                                                <input type="checkbox" id="chkAll" />
+                                                <label for="chkAll" class="check-button">
+                                                    <span>전체 약관에 동의합니다.</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="check-required-1" class="chkReq" />
+                                                <label for="check-required-1" class="check-button" data-popup-open="fullPopup1">
+                                                    <span>개인정보 수집&#183;이용&#183;취급위탁 동의</span>
+                                                </label>
+                                                <button title="개인정보 수집&#183;이용&#183;취급위탁 동의 내용보기" type="button" class="modal" data-popup-open="fullPopup1">내용보기</button>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="check-required-2" class="chkReq" />
+                                                <label for="check-required-2" class="check-button" data-popup-open="fullPopup2">
+                                                    <span>본인확인서비스 이용약관</span>
+                                                </label>
+                                                <button title="본인확인서비스 이용약관 내용보기" class="modal" type="button" data-popup-open="fullPopup2">내용보기</button>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="check-required-3" class="chkReq" />
+                                                <label for="check-required-3" class="check-button" data-popup-open="fullPopup3">
+                                                    <span>고유식별정보처리 동의</span>
+                                                </label>
+                                                <button title="고유식별정보처리 동의 내용보기" class="modal" type="button" data-popup-open="fullPopup3">내용보기</button>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="check-required-4" class="chkReq" />
+                                                <label for="check-required-4" class="check-button" data-popup-open="fullPopup4">
+                                                    <span>통신사 이용약관 동의</span>
+                                                </label>
+                                                <button title="통신사 이용약관 동의 내용보기" class="modal" type="button" data-popup-open="fullPopup4">내용보기</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
+                                <div class="form-content">
+                                    <div class="form-wrap">
+                                        <div class="form-group">
+                                            <label for="selectCustom">상품구분 선택</label>
+                                            <div id="selectCustom" class="se-select" data-stove="select" data-uicase="slide">
+                                                <div class="e-hidden-title">상품구분 선택</div>
+                                                <select required="" title="">
+                                                    <option value="" hidden="">상품구분 선택</option>
+                                                    <option value="0">option 00</option>
+                                                    <option value="1">option 01</option>
+                                                    <option value="2">option 02</option>
+                                                    <option value="3" disabled="">option 03</option>
+                                                    <option value="4" disabled="">option 04</option>
+                                                    <option value="9">option 09</option>
+                                                    <option value="10">option 10</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-wrap">
+                                        <div class="form-group">
+                                            <label for="password-input">이름</label>
+                                            <input id="password-input" type="text" name="text" class="form-control" placeholder="내용을 입력해주세요" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tel-input">휴대전화번호</label>
+                                            <input id="tel-input" type="tel" name="text" class="form-control" placeholder="숫자만 입력해주세요" maxlength="13" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab2" class="tab-panel">
+                                <div class="form-content auth">
+                                    <div class="form-group radio">
+                                        <ul class="auth-list">
+                                            <li class="auth1">
+                                                <input type="radio" name="auth" id="auth1" value="" />
+                                                <label for="auth1"><span>공동인증서</span></label>
+                                            </li>
+                                            <li class="auth2">
+                                                <input type="radio" name="auth" id="auth2" value="" />
+                                                <label for="auth2"><span>아이핀 인증</span></label>
+                                            </li>
+                                            <li class="auth3">
+                                                <input type="radio" name="auth" id="auth3" value="" />
+                                                <label for="auth3"><span>PAYCO</span></label>
+                                            </li>
+                                            <li class="auth4">
+                                                <input type="radio" name="auth" id="auth4" value="" />
+                                                <label for="auth4"><span>네이버인증서</span></label>
+                                            </li>
+                                            <li class="auth5">
+                                                <input type="radio" name="auth" id="auth5" value="" />
+                                                <label for="auth5"><span>통신사 PASS</span></label>
+                                            </li>
+                                            <li class="auth6">
+                                                <input type="radio" name="auth" id="auth6" value="" />
+                                                <label for="auth6"><span>카카오인증서</span></label>
+                                            </li>
+                                            <li class="auth7">
+                                                <input type="radio" name="auth" id="auth7" value="" />
+                                                <label for="auth7"><span>토스인증서</span></label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//tab-content-->
+
+                        <!--//form-content-->
+                        <div class="info-content">
+                            <div class="info-wrap">
+                                <h3 class="info-title">
+                                    <span>보이스피싱 피해신고 안내</span>
+                                    <button title="보이스피싱 피해신고란?" class="content-link mo-none" type="button">보이스피싱 피해신고란?</button>
+                                </h3>
+                                <p>
+                                    위의 항목 중 단 하나라도 해당이 된다면 금융사기*보이스피싱)이 의심됩니다. 금융사기 예방을 위해 주변 지인에게 금융사기(보이스피싱) 여부를 확인 받거나, 당행 대표번호
+                                    (0000-0000)로 연락하여 직원에게 상담을 요청하거나 “금융감독원 콜센터(1332” 또는 “경찰청(112”로 신고하시기 바랍니다.
+                                </p>
+                                <div class="form-group radio center">
+                                    <ul class="radio-box">
+                                        <li>
+                                            <input type="radio" id="radio1" name="radio" />
+                                            <label for="radio1" class="radio-button"><span>설명받았음</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="radio2" name="radio" checked="" />
+                                            <label for="radio2" class="radio-button"><span>설명않았음</span></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//info-content-->
+                        <div class="btmWrap button-content">
+                            <div class="button-wrap">
+                                <a herf="javascript:void(0);" class="btn-primary">확인</a>
+                            </div>
+                        </div>
+                        <!--//button-content-->
+                    </section>
+
+                </div><!--//container-->
+                
+            </main>
+
+            <!-- S: footer -->
+            <footer id="footerWrap"></footer>
+        </div>
+    </body>
+</html>

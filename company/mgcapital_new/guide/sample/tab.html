@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="euc-kr" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>탭&gt;샘플&gt;mg캐피탈</title>
+
+    <meta name="keywords" content="MG캐피탈" />
+    <meta name="copyright" content="copyrights 2025 MG캐피탈" />
+    <meta name="description" content="MG캐피탈 리스금융, 할부금융, 스탁론, 기업대출, 장기렌트카, PF대출 등 금융 서비스 제공." />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover" />
+    <meta property="og:image" content="http://gallery2gate.kr/resources/images/common/ui-maeta-img" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="No-Cache" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.mgcap.co.kr/favicon.ico" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/ui-util.css" />
+    <link rel="stylesheet" href="../../assets/css/com/style.css" />
+    
+    <script type="text/javascript" src="../../assets/js/lib/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui-util.js"></script>
+    <!-- (선택) IE11용 폴리필: 안전하게 깔아두면 좋아요 -->
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=Promise,Array.from,Object.assign,Number.isNaN"></script>
+    <script>
+      (function () {
+        var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+        if (isIE11) {
+          // IE11 전용 클래스 추가
+          document.documentElement.className += " ie11";
+          
+          // IE11 전용 CSS 로드
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = '../../assets/css/com/ie11.css';
+          link.charset = 'euc-kr'; // 꼭 지정
+          document.head.appendChild(link);
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <!-- S: header -->
+      <header id="headerWrap" class="headerOn"></header>
+
+      <main class="contentWrap">
+        <div class="visual-content product">
+          <h2>
+            <em>탭메뉴</em>
+            <span
+              >탭메뉴는 동일한 페이지 또는 영역 안에서 유사한 콘텐츠를
+              그룹화하여 섹션 간 이동 시 사용한다.<br />
+              각 탭에는 동일한 중요도의 Peer로 구성되며 다른 탭과 구별되는
+              콘텐츠가 포함되어야 한다.</span
+            >
+          </h2>
+        </div>
+        <div id="container">
+          <section class="tab-container jsTab">
+            <div style="padding: 0 0 20px">
+              <h3>1Depth</h3>
+              <div style="padding: 10px 0 20px">
+                <p>FIXED TABS (모바일에서는 드롭다운 사용)</p>
+                <p>
+                  Fixed tabs는 섹션 개수와 레이블 길이가 고정적일 경우 사용되며,
+                  스크린 넓이에 섹션 개수를 나누어 탭 넓이를 고정 사용한다.
+                </p>
+                <p>
+                  메뉴명이 길어질 경우 두 줄 노출되며 텍스트 레이블에 따라 탭
+                  좌우 패딩 8px 유지하여 중앙정렬한다.
+                </p>
+              </div>
+
+              <ul class="tab-list depth1" data-view="pc">
+                <li class="tab-item active" data-tab="tab1" title="선택됨">
+                  <button type="button">탭1-1</button>
+                </li>
+                <li class="tab-item" data-tab="tab2">
+                  <button type="button">탭1-2</button>
+                </li>
+                <li class="tab-item" data-tab="tab3">
+                  <button type="button">탭1-3</button>
+                </li>
+              </ul>
+              <div class="se-select tab-select-mobile" data-view="mo">
+                <select class="tab-select depth1">
+                  <option value="tab1" selected>탭1-1</option>
+                  <option value="tab2">탭1-2</option>
+                  <option value="tab3">탭1-3</option>
+                </select>
+              </div>
+
+              <div class="tab-content">
+                <div id="tab1" class="tab-panel active">
+                  <p>탭1-1 내용</p>
+                </div>
+                <div id="tab2" class="tab-panel">
+                  <p>탭1-2 내용</p>
+                </div>
+                <div id="tab3" class="tab-panel">
+                  <p>탭1-3 내용</p>
+                </div>
+              </div>
+              <!--//tab-content-->
+            </div>
+          </section>
+          <section class="tab-container jsTab">
+            <div style="padding: 0 0 20px">
+              <h3>2Depth</h3>
+              <div style="padding: 10px 0 20px; font-size: 14px">
+                <p>컨텐츠 전환처럼 명확한 상태 구분이 필요한 경우 사용한다.</p>
+                <p>
+                  PC 환경에서는 탭 개수가 많아질 경우 자동으로 2줄 처리되며,
+                  탭은 좌측 정렬된다.
+                </p>
+              </div>
+
+              <ul class="tab-list depth2">
+                <li class="tab-item active" data-tab="tab2-1" title="선택됨">
+                  <button type="button">탭링크1</button>
+                </li>
+                <li class="tab-item" data-tab="tab2-2">
+                  <button type="button">탭링크2</button>
+                </li>
+                <li class="tab-item" data-tab="tab2-3">
+                  <button type="button">탭링크3</button>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div id="tab2-1" class="tab-panel active">
+                  <p>준비중1</p>
+                </div>
+                <div id="tab2-2" class="tab-panel">
+                  <p>준비중2</p>
+                </div>
+                <div id="tab2-3" class="tab-panel">
+                  <p>준비중3</p>
+                </div>
+              </div>
+              <!--//tab-content-->
+            </div>
+          </section>
+          <section class="tab-container jsTab">
+            <div style="padding: 0 0 20px">
+              <h3>인증방식 선택형</h3>
+              <div style="padding: 10px 0 20px; font-size: 14px">
+                <p>
+                  인증 절차에서 여러 방법 중 하나를 선택할 때 사용하며, 상태
+                  전환과 선택지 제공을 목적으로 한다.
+                </p>
+                <p>
+                  테이블 형태의 구조로 구분되며 각 영역은 스크린 넓이에 섹션
+                  개수를 나누어 탭 넓이를 고정 사용하여 사용자가 직관적으로
+                  비교·선택할 수 있도록 한다.
+                </p>
+              </div>
+
+              <ul class="tab-list depth3">
+                <li class="tab-item active" data-tab="tab3-1" title="선택됨">
+                  <button type="button">탭링크1</button>
+                </li>
+                <li class="tab-item" data-tab="tab3-2">
+                  <button type="button">탭링크2</button>
+                </li>
+                <li class="tab-item" data-tab="tab3-3">
+                  <button type="button">탭링크3</button>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div id="tab3-1" class="tab-panel active">
+                  <p>준비중1</p>
+                </div>
+                <div id="tab3-2" class="tab-panel">
+                  <p>준비중2</p>
+                </div>
+                <div id="tab3-3" class="tab-panel">
+                  <p>준비중3</p>
+                </div>
+              </div>
+              <!--//tab-content-->
+            </div>
+          </section>
+          <!--//button-content-->
+        </div>
+      </main>
+
+      <!-- S: footer -->
+      <footer id="footerWrap"></footer>
+    </div>
+  </body>
+</html>

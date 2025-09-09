@@ -1,0 +1,106 @@
+@charset "euc-kr";
+
+/* 모바일 폰트 사이즈 기준 [html::18px], 짝수 단위입니다.[짝수 단위로 할 경우 소수점 최대 3자리로 떨어집니다.] */
+/* pc */
+@media (min-width: 960px) {
+  /* 헤더*/
+  #headerWrap .top_menu,
+  #headerWrap .btm_menu #gnbFull {
+    display: block;
+  }
+  #headerWrap .inner {
+    padding: 0;
+  }
+  #headerWrap .btm_menu {
+    height: auto;
+  }
+  #skipnavi {
+    display: block;
+  }
+  /* 팝업 */
+  .layerPopup.full,
+  .layerPopup.full.allMenu {
+    display: none;
+  }
+  .layerPopup.full.on,
+  .layerPopup.full.allMenu.on {
+    display: block;
+  }
+  .layerPopup.full.allMenu.on,
+  .layerPopup.full.allMenu {
+    left: 100%;
+  }
+  .layerPopup > .pop-area > .pop-header {
+    border-radius: 10px 10px 0 0;
+  }
+  .layerPopup.full .pop-area,
+  .layerPopup.full.allMenu .pop-area {
+    position: fixed;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+  /* 셀렉트 */
+  .se-select[data-stove=select] div.stove-dim.on,
+  .se-select[data-stove=select] div.stove-option-layer div.stove-options-title,
+  .stove-options-title {
+    display: none;
+  }
+  .se-select[data-stove=select] div.stove-option-layer {
+    position: absolute;
+    top: initial;
+    left: 0px;
+    width: 100%;
+    padding: 0;
+    margin-top: 1px;
+    max-height: 200px;
+    height: initial;
+    border-radius: 0;
+    border: 1px solid #dddddd;
+    border-top: 1px solid #2392ff;
+    overflow: hidden;
+  }
+  .se-select[data-stove=select] div.stove-option-layer,
+  .se-select[data-stove=select] div.stove-option-layer.on {
+    bottom: initial;
+  }
+  .se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll {
+    padding-bottom: 0;
+  }
+  .se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options {
+    padding: 0;
+  }
+  .se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option {
+    padding: 0 1rem;
+    border-radius: 0;
+  }
+  /* 셀렉트_뱅크 */
+  .se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options {
+    display: flex;
+    flex-direction: column;
+  }
+  .se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option {
+    width: 100%;
+    padding: 0px 16px 0px 56px;
+    min-height: 46px;
+  }
+  .se-select[data-stove=select].bank-list.bank-ico div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option::before {
+    left: 22px;
+  }
+  /* datepicker */
+  .ui-datepicker {
+    position: absolute;
+    margin-top: 6px;
+    border-radius: 10px;
+    bottom: initial !important;
+  }
+  .datepicker-container::before {
+    content: none;
+  }
+  /* .ui-state-default, .ui-widget-content .ui-state-default { max-width:auto; } */
+}
+
+/*# sourceMappingURL=media-quary.css.map */
