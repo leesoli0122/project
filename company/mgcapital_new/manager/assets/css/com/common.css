@@ -58,3 +58,5 @@ input.form-control.ipt-pd-r { padding:0 32px 0 15px; }
 /* 퀵메뉴 dim */
 .overlay::before { position: relative;  }
 .overlay.on::before { content: ''; position:fixed; top:0; bottom:0; right:0; left:0; background:rgba(0, 0, 0, 0.65);  z-index: 11; }
+
+/* 관리자 */
