@@ -1,0 +1,170 @@
+@charset "euc-kr";
+
+/* ï¿½ï¿½ ï¿½ï¿½ï¿? */
+.tab-container .tab-list,
+.nested-tab-container .nested-tab-list {
+  display: flex;
+  margin-bottom: 42px;
+}
+.tab-container .tab-list li,
+.nested-tab-container .nested-tab-list li {
+  flex: 1;
+}
+.tab-container .tab-item button,
+.nested-tab-container .nested-tab-item button {
+  width: 100%;
+  padding: 14px 10px 16px;
+  border: 1px solid var(--color-d);
+  border-left-width: none;
+  background: var(--color-f);
+  margin-right: 0;
+  transition: all 0.3s ease; /* all ¼Ó¼ºÀÌ border-topÂÊ¿¡µµ ¿µÇâÀ» Áà¼­ ¼Ó¼ºÀ» Á» ¼¼ºÎÀûÀ¸·Î °¡¾ßÇÒµí ÇÔ */
+}
+.tab-container .tab-item:first-child button,
+.nested-tab-container .nested-tab-item:first-child button {
+  border-left-width: 1px;
+}
+.tab-container .tab-item:hover,
+.nested-tab-container .nested-tab-item:hover {
+  background: #eaeaea;
+}
+
+/* È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ */
+.tab-container .tab-item.active button,
+.nested-tab-container .nested-tab-item.active button {
+  color: var(--active);
+  border-color: var(--active);
+  font-weight: 500;
+}
+
+/* ÅÇ ÄÜÅÙÃ÷ ¿µ¿ª */
+.tab-container .tab-content,
+.nested-tab-container .nested-tab-content {
+  padding: 0;
+  background: #fff;
+}
+.tab-container .tab-panel,
+.nested-tab-container .nested-tab-panel {
+  display: none; /* ±âº»ÀûÀ¸·Î ¼û±è */
+}
+.tab-container .tab-panel.active,
+.nested-tab-container .nested-tab-panel.active {
+  display: block; /* È°¼ºÈ­µÈ ÆÐ³Î¸¸ º¸ÀÌ°Ô ÇÔ */
+}
+
+/* tab_test.html¿ë ½ºÅ¸ÀÏ */
+.tabs .tab-content {
+  display: none;
+}
+.tabs .tab-content.active {
+  display: block;
+}
+.tabs .tab-item li {
+  cursor: pointer;
+}
+.tabs .tab-item li button {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+.tabs .tab-item li.on button {
+  color: var(--active);
+  font-weight: bold;
+}
+
+
+/* Ã¸  Å¸ */
+.nested-tab-container {
+  margin-top: 15px;
+  padding: 10px;
+  background: var(--color-f5);
+}
+/* .nested-tab-container .nested-tab-list { border-bottom: 1px solid #ccc; } */
+.nested-tab-container .nested-tab-item button {
+  font-size: 14px;
+  padding: 8px 15px;
+}
+
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½  */
+.tab-container .swiper-pagination-bullet {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  opacity: 1;
+}
+
+
+.tab-container .swiper-pager {
+  background: var(--white);
+}
+.tab-container .swiper-slide > * {
+  padding: 0 20px 20px;
+}
+.tab-container .swiper-slide > *:first-child {
+  margin-top: 30px;
+}
+
+.tab-container .swiper-horizontal > .swiper-pagination-bullets,
+.tab-container .swiper-pagination-bullets.swiper-pagination-horizontal,
+.tab-container .swiper-pagination-custom,
+.swiper-pagination-fraction {
+  top: 0;
+}
+/* .tab-container .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.tab-container .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet { margin:0 15px 0 0; color:#999999;} */
+.tab-container
+  .swiper-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet:last-child,
+.tab-container
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet:last-child {
+  margin-right: 0;
+}
+
+
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ (ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ .line)*/
+.tab-container .tab-list.line .tab-item.active button {
+    background-color: var(--color-f);
+    border-color: var(--color-d); 
+    border-bottom-color: transparent; 
+    border-top: 2px solid var(--active); 
+    color: var(--active);
+    font-weight: 700;
+}
+.tab-container .tab-list.line .tab-item button {
+    background-color: #fdfdfd; /* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ØµÐ°ï¿½ ï¿½ï¿½ï¿½î¼­ ï¿½ï¿½ï¿½ï¿½ rgbï¿½ï¿½ */
+    border-left: none;
+}
+.tab-container .tab-list.line .tab-item:first-child button {
+    border-left: 1px solid var(--color-d);
+}
+.tab-container .tab-list.line .tab-item:hover {
+    background: none; /* ï¿½Ï´ï¿½ È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç±×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÃµÇ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ */
+}
+/* ¶óÀÎ ³¡(250826) */
+
+.tab-container .swiper-pager.tab-list {
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.tab-container .swiper-pager.tab-list li {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: var(--font16);
+  border: 1px solid var(--color-c);
+  background: var(--color-f5);
+}
+.tab-container .swiper-pager.tab-list li.swiper-pagination-bullet-active {
+  border-color: var(--active);
+  background-color: var(--active);
+  font-weight: 700;
+  color: var(--white);
+}
+.tab-container .swiper-pager.tab-list li.swiper-pagination-bullet-active a {
+  color: var(--white);
+}
+

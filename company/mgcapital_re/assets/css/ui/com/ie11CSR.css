@@ -1,0 +1,268 @@
+@charset "euc-kr";
+
+@media all and (-ms-high-contrast: none) {
+    /* 기본 */
+    body { color: #454545; font-family:"Pretendard"}
+    form, fieldset, legend, input, button, textarea, label { color: #454545; }
+    input, textarea, select { color: #454545; }
+    input.form-control::placeholder,
+    input.form-control::-moz-placeholder,
+    input.form-control::-ms-input-placeholder,
+    textarea::placeholder { color:#999999; }
+
+    /* 공통 */
+    .contentWrap > .visual-content { border-bottom: 1px solid #E5E5EA; }
+
+    h2 > span { font-size: 1rem; color: #757575; }
+    h2 > em { font-size: 2rem; }
+
+    ul.step li > p { background: #E5E5EA; }
+    ul.step li.acitve > p { background: #41C7F4; color: #FFFFFF; }
+    ul.step li > p > em { font-size: 1.111rem; color:#333333; }
+    ul.step li > p > span { font-size: 0.778rem; }
+    ul.step li.acitve > p > em, ul.step li.acitve > p > span { color: #FFFFFF; }
+    ul.step li:before { background: url(../../../images/com/svg/ico_next.svg); }
+
+    h3 { color: #454545; font-size: 1.111rem; font-weight: 500; }
+
+    /* request 페이지 */
+    /* 탭 */
+    .tab-container .tab-item.active button, .nested-tab-container .nested-tab-item.active button { color: #2392FF; border-color: #2392FF; }
+    .tab-container .tab-item button, .nested-tab-container .nested-tab-item button { border: 1px solid #DDDDDD; background: #FFFFFF; }
+
+    /* 약관 */
+    /* 체크박스 */
+    ul.check-box input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    ul.check-box label::before { content: ""; position: absolute; left: 30px; border-radius: 50%; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; background-color: #DDDDDD; }
+    ul.check-box label::after { content: ""; position: absolute; left: 34.5px; top: 50%; transform: translateY(-50%); width: 13px; height: 10px; background: url(../../../images/com/svg/ico_check_white.svg) no-repeat center center; background-size: 100% 100%; }
+    ul.check-box input[type="checkbox"]:checked + label::before { background: #41C7F4; }
+    ul.check-box.terms li.check-all-area input[type="checkbox"] + label { font-weight: 500; }
+
+    ul.check-box.terms li input[type="checkbox"] + label { border: 1px solid #DDDDDD; }
+    ul.radio-box input[type="radio"] + label, ul.check-box input[type="checkbox"] + label { font-weight: 400; }
+
+    /* 내용보기 버튼 */
+    .form-group .modal { background: #FFFFFF; border: 1px solid #EEEEEE; color: #757575; font-size: 0.889rem; }
+
+    /* 상품구분 */
+    div.border-b1 ~ [class$="-content"]:not([class~="button-content"]) {border-top: 1px solid #E5E5EA;}
+
+    .form-group > label { color: #454545; font-size: 1.111rem; font-weight: 500; }
+    .se-select select { font-weight: 400; border: 1px solid #DDDDDD; background-color: #FFFFFF; background-image: url(../../../images/com/svg/ico_se_arrow.svg); color: #222222; }
+    .se-select select option { color: #222222; }
+    .btn-fake-slt { font-weight: 400; border: 1px solid #DDDDDD; background-color: #FFFFFF; background-image: url(../../../images/com/svg/ico_se_arrow.svg); color: #222222; }
+    .btn-fake-slt .placeholder { color: #999999; }
+    .form-group > label { color: #454545; font-size:1.111rem; font-weight: 500; }
+
+    /* 인풋 */
+    input.form-control:valid, .form-group.user-valid input.form-control { color: #222222; }
+    input.form-control, textarea { font-weight: 400; border: 1px solid #DDDDDD; background-color: #FFFFFF; color: #222222; }
+    .form-content > .form-wrap > .form-group + .form-group { margin-left: 40px; }
+
+    /* 보이스피싱 */
+    .info-content > .info-wrap { border: 1px solid #E5E5EA; }
+    .info-content > .info-wrap h3.info-title { font-size: 1.333rem; }
+    .info-content > .info-wrap h3.info-title::before { background-image: url(../../../images/com/svg/ico_info.svg); }
+    .info-content > .info-wrap h3.info-title { font-size: 1.333rem; }
+    .content-link { background: #FFFFFF; border: 1px solid #EEEEEE; color: #999999; font-size: 0.889rem; }
+    .info-content > .info-wrap p { color: #757575; font-size: 0.889rem; }
+    /* ul.radio-box input[type="radio"] { border: 7.5px solid #CCCCCC; background: #FFFFFF; border-radius: 50%; }
+    ul.radio-box input[type="radio"] + label, ul.check-box input[type="checkbox"] + label { font-weight: 400; color: #757575; }
+    ul.radio-box input[type="radio"]:checked { background: #FFFFFF; border: 7.5px solid #41C7F4; } */
+    ul.radio-box input[type="radio"] { position: absolute; opacity: 0; }
+    /* ul.radio-box input[type="radio"] + label { position: relative; padding-left: 30px; cursor: pointer; font-weight: 400; color: #757575; }
+    ul.radio-box input[type="radio"] + label::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; border: 2px solid #ccc; border-radius: 50%; background: #fff; }
+    ul.radio-box input[type="radio"]:checked + label::after { content: ""; position: absolute; left: 4px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: #41C7F4; } */
+
+    /* 버튼 */
+    .button-content .btn-primary { background-color: #6A6A6A; }
+    .btn-primary { color: #FFFFFF; }
+
+/* -------------------------------------------------- 공통 ie11 style end---------------------------------------------------------------------- */
+
+
+/*  IE11 호환 pc  */
+    .social-intro {
+    padding-top: 30px;
+    padding-bottom: 72px;
+    }
+
+    .social-intro h3 {
+        font-size: 1.444rem;
+        font-weight: 500;  
+        color: #222222;    
+        margin-bottom: 24px;
+        line-height: 1.5;
+    }
+    .social-intro h3 em {
+        font-weight: 700;
+    }
+
+    .social-intro p {
+        font-size: 1rem;    
+        color: #666666;     
+        line-height: 1.6;
+        max-width: 800px;
+    }
+
+    .social-list li {
+        border-bottom: 1px solid #E5E5EA;
+    }
+
+    .social-list li a {
+        display: -ms-flexbox; 
+        display: flex; 
+        padding: 25px 0;
+        padding-top: 52px;
+        padding-bottom: 10px;
+    }
+    .social-list li:first-child a {
+        padding-top: 0;
+    }
+
+    .social-list .thumbnail {
+        -ms-flex: 1;
+        flex: 1;
+        height: 150px;
+        background-color: #f0f0f0;
+        -ms-flex-negative: 0; 
+        flex-shrink: 0;
+        margin-right: 30px; 
+    }
+
+    .social-list .text-content {
+        -ms-flex: 1;
+        flex: 1;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-bottom: 10px;
+        position: relative; 
+        min-height: 150px; 
+    }
+
+    .social-list .text-content h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #222222;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .social-list .text-content p {
+        font-size: 1rem;
+        color: #454545;
+        line-height: 1.5;
+        max-height: 3em; 
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .social-list .text-content span {
+        font-size: 0.778rem; 
+        color: #999999;    
+        
+        position: absolute;
+        bottom: 10px; 
+        left: 0;
+    }
+
+    .btn-wrap {
+        padding: 70px 0px 0px 0px;
+        text-align: center;
+    }
+
+    .btn-more {
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+        min-height: 69px;
+        min-width: 220px;
+        padding: 17px 67px;
+        border: 1.5px solid #6a6a6a;
+        color: #454545;
+        font-size: 1.333rem; 
+        font-weight: 400;   
+        line-height: 1.5;
+        background-color: #ffffff;
+    }
+
+    .tab-select-mobile {
+        display: none;
+    }
+    
+    .tab-select-mobile select {
+        -webkit-appearance: none; 
+        -moz-appearance: none;   
+        appearance: none;         
+        width: 100%;
+        height: auto;
+        padding: 16px 40px 16px 16px; 
+        border: 1px solid #DDDDDD;     
+        background-color: #FFFFFF;     
+        color: #222222;                
+        font-size: 1.143rem;
+        font-weight: 400;      
+        line-height: 1.5;      
+        background-image: url('../../../images/com/svg/ico_se_arrow.svg'); 
+        background-repeat: no-repeat;
+        background-size: 28px;
+        background-position: right 8px center;
+    }
+    .tab-select-mobile select::-ms-expand {
+        display: none;
+    }
+}
+
+/* ie 11 CSR 모바일 768 이하 */
+@media all and (max-width: 768px) and (-ms-high-contrast: none), (max-width: 768px) and (-ms-high-contrast: active) {
+    .social-intro {
+        padding-bottom: 35px;
+    }
+    .tab-container .tab-list {
+        display: none;
+    }
+
+    .tab-select-mobile {
+        display: block;
+    }
+
+    .social-intro h3 {
+        font-size: 1.571rem;
+    }
+    .social-intro p {
+        font-size: 1.143rem;
+    }
+    .social-list .text-content h4 {
+        font-size: 1.143rem;
+    }
+
+    .social-list li a {
+        display: block;
+    }
+
+    .social-list .thumbnail {
+        width: 100%;
+        height: 180px;
+        margin-right: 0; 
+        margin-bottom: 15px; 
+    }
+
+    .social-list .text-content {
+        padding: 0;
+        min-height: 0; 
+        position: static; 
+    }
+
+    .social-list .text-content span {
+        position: static; 
+        margin-top: 10px; 
+        text-align: right;
+        display: block; 
+    }
+}
+
+
+
+

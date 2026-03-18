@@ -1,0 +1,154 @@
+.social-intro {
+    padding-top: 30px;
+    padding-bottom: 72px;
+}
+
+.social-intro h3 {
+    font-size: var(--font26); 
+    font-weight: var(--font-w-m); 
+    color: var(--color-2);
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+.social-intro h3 em {
+    font-weight: 700;
+}
+
+.social-intro p {
+    font-size: var(--font18); 
+    color: var(--color-6); 
+    line-height: 1.6;
+    max-width: 800px; /* 최대 넓이 설정해서 줄바꿈 제어 */
+}
+
+
+/* 사회공헌 활동 목록 */
+.social-list li {
+    border-bottom: 1px solid var(--border); 
+}
+
+.social-list li a {
+    display: flex; 
+    gap: 30px; 
+    padding: 25px 0;
+    padding-top: 52px;
+    padding-bottom: 10px;
+}
+.social-list li:first-child a {
+    padding-top: 0;
+}
+
+.social-list .thumbnail {
+    flex: 1;
+    height: 150px;
+    background-color: #f0f0f0; /* 이미지 대체 배경색 */
+    flex-shrink: 0; 
+}
+
+.social-list .text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.social-list .text-content h4 {
+    font-size: var(--font18); 
+    font-weight: 700; /* 따로 변수가 없음 */
+    color: var(--color-2); 
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.social-list .text-content p {
+    font-size: var(--font18); 
+    color: var(--color-45); 
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-bottom: auto;  
+}
+
+.social-list .text-content span {
+    font-size: var(--font14); 
+    color: var(--color-9); 
+}
+
+/* 더보기 버튼 */
+.btn-wrap {
+    padding: 70px 0px 0px 0px;
+    text-align: center;
+}
+
+.btn-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-height: 69px;
+    min-width: 220px;
+    padding: 17px 67px;
+    border: 1.5px solid #6a6a6a; /* 6a6a6a style.css 변수에는 있는데 media-quary.css에 768px 이하일 때 색깔 변경되는 코드가 있어 고정 rgb값 부여 */
+    color: var(--color-45);
+    font-size: var(--font24);
+    font-weight: var(--font-w-r);
+    
+}
+
+.btn-more:hover {
+    background-color: var(--color-f8); /* hover 임시 색깔 */
+}
+
+.tab-select-mobile {
+    display: none;
+}
+
+
+
+/* 반응형 (768px 이하) */
+
+@media screen and (max-width: 768px) {
+    .social-intro {
+        padding-bottom: 35px;
+    }
+    /* .tab-container .tab-list {
+        display: none;
+    } */
+
+    .tab-select-mobile {
+        display: block;
+    
+    }
+
+    .social-intro h3 {
+        font-size: var(--font28); /* 250827 , style변수값에 맞춰서 14px기준 rem 조정 */
+    }
+    
+    
+    .social-list .text-content h4 {
+        font-size: var(--font20); /* 250827 , style변수값에 맞춰서 14px기준 rem 조정 */
+    }
+    .social-list li a {
+        flex-direction: column; 
+        gap: 15px; 
+        padding: 20px 0;
+    }
+
+    .social-list .thumbnail {
+        flex: initial; 
+        width: 100%;
+        height: 180px;
+    }
+
+    .social-list .text-content {
+        padding: 0; 
+    }
+    
+    .social-list .text-content span {
+        margin-top: 10px; 
+        text-align: right;
+    }
+}

@@ -1,0 +1,19 @@
+.sidebar { width: 92px; max-height: 580px; box-sizing: border-box; overflow-y: auto; border-radius: 24px 0 0 24px; background: #fff; box-shadow: -8px 4px 12px 0 rgba(0, 0, 0, 0.05); position: fixed; top: 50%; right: 0; transform: translateY(-50%); z-index: 3; }
+.sidebar::-webkit-scrollbar { display: none; }
+/* 퀵메뉴(타이틀) */
+.sidebar .tit { background-color: #526374; background-image: url("../images/sidebar/ico_quick.gif"); background-repeat: no-repeat; background-position: 50% 40%; background-size: 36px 39px; height: 92px; color: #fff; text-align: center; font-family: "Noto Sans CJK KR"; font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 150%; }
+.sidebar .tit > p { padding: 66px 0 6px 0; }
+/* 메뉴 리스트 */
+.menu-list { margin: 14px 0; color: #757575; text-align: center; font-size: 0.875rem; font-style: normal; font-weight: 400; line-height: 150%; }
+.menu-list > li { width: 92px; height: 92px; background-repeat: no-repeat; background-position: 50% 30%; }
+.menu-list > li > a > p { padding: 59px 0 12px 0; }
+.menu-list > li.loan-history { background-image: url("../images/sidebar/ico_side_1.svg"); }
+.menu-list > li.repayment-schedule { background-image: url("../images/sidebar/ico_side_2.svg"); }
+.menu-list > li.document-issuance { background-image: url("../images/sidebar/ico_side_3.svg"); }
+.menu-list > li.financial-calculator { background-image: url("../images/sidebar/ico_side_4.svg"); }
+.menu-list > li.edit-menu { background-image: url("../images/sidebar/ico_side_5.svg"); }
+
+/* mo */
+@media screen and (max-width: 768px) {
+    .sidebar { display: none; }
+}

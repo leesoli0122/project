@@ -1,0 +1,21 @@
+@charset "euc-kr";
+
+.terms { display: flex; flex-direction: column; flex-wrap: initial;}
+
+ul.check-box.terms { display:flex; flex-wrap:initial; gap:0; }
+ul.check-box.terms li { position: relative; }
+ul.check-box.terms li input[type="checkbox"] { position: absolute; top:50%; left:30px; transform: translateY(-50%); border-radius: 50%; }
+ul.check-box.terms li input[type="checkbox"] + label { padding:21px 30px 22px 75px; width:100%; border:1px solid var(--color-d); border-bottom-width:0; }
+ul.check-box.terms li:last-child input[type="checkbox"] + label { border-bottom-width:1px; }
+/* 전체 동의 */
+ul.check-box.terms li.check-all-area { margin-bottom:32px; border:0; }
+ul.check-box.terms li.check-all-area input[type="checkbox"] + label { padding:23px 30px 22px 75px; border-radius:0; background:#F2F5F8; border:0; font-weight:var( --font-w-m);  }
+ul.check-box.terms li.check-all-area input[type="checkbox"]:checked + label { background:#F2F5F8; }
+/* 전체 동의 제외 체크박스 스타일 */
+/*ul.check-box.terms li:not(.check-all-area) input[type="checkbox"] { border:none; background-color: transparent; }
+ul.check-box.terms li:not(.check-all-area) input[type="checkbox"]:checked::before { background-color:var(--rc-active); }*/
+/* 수신 동의 */
+ul.check-box.terms ul.sub-check-box { display:flex; flex-wrap:wrap; padding:16px; gap:10px; }
+ul.check-box.terms ul.sub-check-box  li input[type="checkbox"] + label { padding:0 0 0 34px; }
+/**내용보기 버튼**/
+ul.check-box.terms li .modal { position:absolute; top:50%; right:30px; transform: translateY(-50%); }

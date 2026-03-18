@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+
+        <meta charset="euc-kr">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>팝업&gt;공통</title>
+      
+        <meta name="keywords" content="????keywords">
+        <meta name="description" content="????description">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+        <meta property="og:image" content="http://gallery2gate.kr/resources/images/common/ui-maeta-img">
+        <meta name="apple-mobile-web-app-status-bar-style" content="white">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta http-equiv="Expires" content="-1">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-Control" content="No-Cache">
+      
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="../../assets/icons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
+        <link rel="shortcut icon" href="../../assets/icons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../assets/icons/apple-touch-icon.png">
+        <link rel="manifest" href="../../assets/icons/site.webmanifest">
+      
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../assets/css/lib/ui-lib.css">
+        <link rel="stylesheet" href="../../assets/css/ui/ui-util.css">
+      
+        <script type="text/javascript" src="../../assets/js/lib/jquery-1.12.4.js"></script>
+        <script type="text/javascript" src="../../assets/js/lib/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/lib/ui_plugin.js"></script>
+        <script type="text/javascript" src="../../assets/js/lib/swiper-bundle.min.js"></script>
+        <script type="module" src="../../assets/js/ui/com/ui-util.js"></script>
+        <script type="text/javascript" src="../../assets/js/ui/terms.js"></script>
+      
+      
+      
+      </head>
+
+<body>
+    
+    <!-- S:wrap -->
+    <div class="wrap">
+
+        <!-- S:headerWrap -->
+        <div id="headerWrap" class="headerOn"></div>
+        <!-- E:headerWrap -->
+
+        <!-- S:contentWrap -->
+        <div class="contentWrap">
+            <div class="contArea">
+                <section class="tit">
+                    [참고]
+                </section>
+
+                <p style="text-align: center; width:100%;">
+                    <span style="font-size:16px; color:#3a80ac;">** modal(pop-header x , pop-tit o ) 제외 모든 팝업 레이아웃은 동일합니다.</span><br><br>
+                    <span style="font-size:14px; color:#61addc;">[ layerPopup + ( full/ btmSheet/ modal/ full + allMenu ) 각 클래스 적용 필요합니다. ]</span>
+                </p>
+
+                <section class="tit">
+                    layerPopup allmenu :: openMenu 메서드
+                </section>
+
+                <p style="text-align: center; width:100%;">
+                    헤더 전체 메뉴 :: openMenu 메서드<br><br>
+                </p>
+
+                <section class="tit">
+                    layerPopup full :: openPopup 메서드
+                </section>
+                
+
+                <div class="btn-area">
+                    <button type="button" class="btn btn-primary" data-popup-open="fullPopup">fullPopup</button>
+                </div>
+
+                <div id="fullPopup" class="layerPopup full fullPopupOn"><!--[D] fullPopupOn 클래스 :: 헤더 스크립트 적용중-->
+                    <div class="pop-area">
+                        <div class="pop-header">
+                            <h2 class="pop-tit">풀팝업</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            <section class="tit">
+                                Lyout Test
+                            </section>
+                            
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary"  data-popup-close="fullPopup" >레이아웃</button>
+                                <button type="button" class="btn btn-primary" data-popup-close="fullPopup">레이아웃</button>
+                            </div>
+                        </div>
+                        <button type="button" name="button" class="btn btn-close right" data-popup-close="fullPopup"><span class="sr-only">닫기</span></button>
+                    </div>
+                </div>
+
+                <section class="tit">
+                    layerPopup btmSheet :: openPopup 메서드
+                </section>
+
+                <div class="btn-area">
+                    <button type="button" class="btn btn-primary" data-popup-open="btmSheetPopup" >btmSheetPopup</button>
+                </div>
+
+                <div id="btmSheetPopup" class="layerPopup btmSheet">
+                    <div class="pop-area">
+                        <div class="pop-header popHeader">
+                            <h2 class="pop-tit left">바텀시트</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            바텀시트 컨텐츠 영역입니다.
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary" data-popup-close="btmSheetPopup" >레이아웃</button>
+                                <button type="button" class="btn btn-primary"  data-popup-close="btmSheetPopup">레이아웃</button>
+                            </div>
+                        </div>
+                        <button type="button" name="button" class="btn btn-close right" data-popup-close="btmSheetPopup" ><span class="sr-only">닫기</span></button>
+                    </div>
+                </div>
+
+                <section class="tit">
+                    layerPopup modal :: openModal 메서드
+                </section>
+
+                <div class="btn-area">
+                    <button type="button" class="btn btn-primary" data-modal-open="modal">modal</button>
+                </div>
+                
+                <div id="modal" class="layerPopup modal">
+                    <div class="pop-area">
+                        <div class="pop-header">
+                            <h2 class="pop-tit left">모달</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            모달 컨텐츠 영역입니다.
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary" data-popup-close="modal">닫기</button>
+                                <button type="button" class="btn btn-primary"  data-popup-close="modal">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="tit">
+                    layerPopup btmSheet_toggleUp ::  메서드 X , 하단 토글업
+                </section>
+
+                <div class="btn-area">
+                    <button type="button" class="btn btn-primary" data-popup-open="samplePopup_ver2" >btmSheet_toggleUp</button>
+                </div>
+
+                <div id="samplePopup_ver2" class="layerPopup full">
+                    <div class="pop-area">
+                        <div class="pop-header popHeader">
+                            <h2 class="pop-tit">샘플 팝업</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            샘플 팝업 컨텐츠 영역입니다.
+                            
+                        </div>
+                        <div id="btmSheetPopup_toggleUp" class="layerPopup btmSheet toggleUp">
+                            <div class="pop-area">
+                                <div class="pop-header popHeader">
+                                    <!-- <h2 class="pop-tit left">바텀시트</h2> -->
+                                    <button type="button" name="button" class="btn btn-close" data-btm-toggle="btmSheetPopup_toggleUp" tabindex="0"><span class="sr-only">닫기</span></button>
+                                </div>
+                                <div class="pop-con-wrap">
+                                    <section class="tit">
+                                        바텀시트 컨텐츠
+                                    </section>
+                                    <section class="tit">
+                                        바텀시트 컨텐츠
+                                    </section>
+                                    <section class="tit">
+                                        바텀시트 컨텐츠
+                                    </section>
+                                    <section class="tit">
+                                        바텀시트 컨텐츠
+                                    </section>
+                                    <section class="tit">
+                                        바텀시트 컨텐츠
+                                    </section>
+                                    <section class="tit">
+                                        바텀시트 컨텐츠
+                                    </section>
+                                    <section class="tit">
+                                        바텀시트 컨텐츠
+                                    </section>
+                                    <section class="tit">
+                                        바텀시트 컨텐츠
+                                    </section>
+                                    <section class="tit">
+                                        바텀시트 컨텐츠
+                                    </section>
+
+                                </div>
+                                <div class="pop-btm-wrap">
+                                    <div class="btm-btn-area">
+                                        <button type="button" class="btn btn-primary">확인</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <button type="button" name="button" class="btn btn-close right"  data-popup-close="samplePopup_ver2"><span class="sr-only">닫기</span></button>
+                    </div>
+                </div>
+
+
+                <section class="tit">
+                    Test.Ver1
+                </section>
+
+                <div class="btn-area">
+                    <button type="button" class="btn btn-primary" data-popup-open="samplePopup" >Test.Ver1</button>
+                </div>
+
+                <div id="samplePopup" class="layerPopup full">
+                    <div class="pop-area">
+                        <div class="pop-header popHeader">
+                            <h2 class="pop-tit">샘플 팝업</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            샘플 팝업 컨텐츠 영역입니다.
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary" data-modal-open="modal_2">레이아웃</button>
+                                <button type="button" class="btn btn-primary"  data-modal-open="modal_2">레이아웃</button>
+                            </div>
+                        </div>
+                        <button type="button" name="button" class="btn btn-close right"  data-popup-close="samplePopup" ><span class="sr-only">닫기</span></button>
+                    </div>
+                </div>
+
+                <div id="modal_2" class="layerPopup modal">
+                    <div class="pop-area">
+                        <div class="pop-header">
+                            <h2 class="pop-tit left">샘플 모달</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            샘플 모달 팝업 컨텐츠 영역입니다.
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary" data-popup-close="modal_2">닫기</button>
+                                <button type="button" class="btn btn-primary" data-popup-close="modal_2">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="tit">
+                    Test.Ver2
+                </section>
+                
+                <div class="btn-area">
+                    <button type="button" class="btn btn-primary"  data-popup-open="samplePopup_2" >Test.Ver2</button>
+                </div>
+
+                <div id="samplePopup_2" class="layerPopup full">
+                    <div class="pop-area">
+                        <div class="pop-header popHeader">
+                            <h2 class="pop-tit">샘플 팝업</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            샘플 팝업 컨텐츠 영역입니다.
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary" data-popup-open="btmSheetPopup_2" >레이아웃</button>
+                                <button type="button" class="btn btn-primary" data-popup-open="btmSheetPopup_2">레이아웃</button>
+                            </div>
+                            <button type="button" name="button" class="btn btn-close right" data-popup-close="samplePopup_2" ><span class="sr-only">닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="btmSheetPopup_2" class="layerPopup btmSheet">
+                    <div class="pop-area">
+                        <div class="pop-header popHeader">
+                            <h2 class="pop-tit left">바텀시트</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            바텀시트 컨텐츠 영역입니다.
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary" data-modal-open="modal_3" >레이아웃</button>
+                                <button type="button" class="btn btn-primary" data-modal-open="modal_3">레이아웃</button>
+                            </div>
+                        </div>
+                        <button type="button" name="button" class="btn btn-close right" data-popup-close="btmSheetPopup_2"><span class="sr-only">닫기</span></button>
+                    </div>
+                </div>
+
+                
+                <div id="modal_3" class="layerPopup modal">
+                    <div class="pop-area">
+                        <div class="pop-header">
+                            <h2 class="pop-tit left">샘플 모달</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            샘플 모달 컨텐츠 영역입니다.
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary" data-popup-close="modal_3" >닫기</button>
+                                <button type="button" class="btn btn-primary" data-popup-close="modal_3" >확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="tit">
+                    Test.Ver3
+                </section>
+
+                <div class="btn-area">
+                    <button type="button" class="btn btn-primary" data-popup-open="samplePopup_3" >Test.Ver3</button>
+                </div>
+
+                <div id="samplePopup_3" class="layerPopup full">
+                    <div class="pop-area">
+                        <div class="pop-header popHeader">
+                            <h2 class="pop-tit">샘플 팝업</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            <div id="select01" class="se-select" data-stove="select" data-uicase="slide">
+                                <div class="e-hidden-title">option hidden title</div>
+                                <select required="" title="">
+                                    <option value="" hidden="">default</option>
+                                    <option value="0">option 00</option>
+                                    <option value="1">option 01</option>
+                                    <option value="2">option 02</option>
+                                    <option value="3" disabled="">option 03</option>
+                                    <option value="4" disabled="">option 04</option>
+                                    <option value="9">option 09</option>
+                                    <option value="10">option 10</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary" data-popup-open="btmSheetPopup_3">레이아웃</button>
+                                <button type="button" class="btn btn-primary" data-popup-open="btmSheetPopup_3">레이아웃</button>
+                            </div>
+                        </div>
+                        <button type="button" name="button" class="btn btn-close right" data-popup-close="samplePopup_3" ><span class="sr-only">닫기</span></button>
+                    </div>
+                </div>
+
+                <div id="btmSheetPopup_3" class="layerPopup btmSheet">
+                    <div class="pop-area">
+                        <div class="pop-header popHeader">
+                            <h2 class="pop-tit left">바텀시트</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            바텀시트 컨텐츠 영역입니다.
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary" data-modal-open="modal_4" >레이아웃</button>
+                                <button type="button" class="btn btn-primary" data-modal-open="modal_4">레이아웃</button>
+                            </div>
+                        </div>
+                        <button type="button" name="button" class="btn btn-close right"  data-popup-close="btmSheetPopup_3" ><span class="sr-only">닫기</span></button>
+                    </div>
+                </div>
+
+                <div id="modal_4" class="layerPopup modal">
+                    <div class="pop-area">
+                        <div class="pop-header">
+                            <h2 class="pop-tit left">샘플 모달</h2>
+                        </div>
+                        <div class="pop-con-wrap">
+                            샘플 모달 팝업 컨텐츠 영역입니다.
+                        </div>
+                        <div class="pop-btm-wrap">
+                            <div class="btm-btn-area">
+                                <button type="button" class="btn btn-secondary" data-popup-close="modal_4" >닫기</button>
+                                <button type="button" class="btn btn-primary"  data-popup-close="modal_4">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--S:btmWrap-->
+            <div class="btmWrap">
+                
+                <div class="btm-btn-area">
+                    <button type="button" class="btn btn-secondary">팝업</button>
+                    <button type="button" class="btn btn-primary">팝업</button>
+                </div>
+
+                <!-- s:footerWrap -->
+                <div id="footerWrap"></div>
+                <!-- e:footerWrap-->
+
+            </div>
+            <!--E:btmWrap-->
+
+            </div>
+            <!-- E:contentWrap -->
+
+    </div>
+    <!-- E:wrap -->
+</body>
+
+
+
+</html>

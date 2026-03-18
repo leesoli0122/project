@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/* 리셋 */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block; }
+body { line-height: 1; }
+ol,ul { list-style: none; }
+blockquote,q { quotes: none; }
+blockquote:before,blockquote:after,q:before,q:after { content: ""; content: none; }
+table { border-collapse: collapse;  border-spacing: 0; }
+a { color: inherit;  text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { margin: 0; padding: 0; border: none; background: none; font: inherit; color: inherit; line-height: normal; cursor: pointer; -webkit-appearance: none; -moz-appearance: none; }
+button:focus { outline: none; }
+button::-moz-focus-inner { border: 0; padding: 0; }
+
+/* 폰트 */
+@font-face {
+    font-family: "MG KFCC L OTF";
+    font-weight: 700;
+    src: local("MG KFCC L OTF Bold"), url("../css/fonts/MG-KFCC-L-OTF-Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: "MG KFCC L OTF";
+    font-weight: 400;
+    src: local("MG KFCC L OTF Regular"), url("../css/fonts/MG-KFCC-L-OTF-Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: 700;
+    src: local('Noto Sans KR Bold'),
+        url('./fonts/NotoSans-Bold.woff') format('woff'),
+        url('./fonts/NotoSansKR-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    src: local('Noto Sans KR Medium'),
+        url('./fonts/NotoSans-Medium.woff') format('woff'),
+        url('./fonts/NotoSansKR-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    src: local('Noto Sans KR Regular'),
+        url('./fonts/NotoSans-Regular.woff') format('woff'),
+        url('./fonts/NotoSansKR-Regular.ttf') format('truetype');
+}
+
+/* common */
+html { font-size: 16px; }
+body { font-family: 'Noto Sans KR'; font-size: 1.125rem; color: #666; line-height: normal; background-color: #fff; word-break: keep-all; }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; color: #333; line-height: normal; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.375rem; }
+p:last-child { margin-bottom: 0; }
+strong, b { color: #454545; font-weight: 700; }
+th,td { font-size: 1rem; border: 1px solid #d7d9dd; padding: 20px 0; text-align: center; }
+th { color: #333; font-weight: 700; }
+td { font-weight: 400; }
+dt { font-weight: 700; color: #333; }
+dd { font-weight: 400; }
+
+/* common(main 기준) */
+.blind { display: none; }
+.color-FFF { color: #fff; }
+.color-333 { color: #333; }
+.container { max-width: 1200px; margin: 0 auto; }
+:root {
+    --header-height: 161px;
+    --max-width: 1200px;
+    --Primary-Color-MG-Blue: #0072BC;
+}
+
+/* mo */
+@media screen and (max-width: 768px) {
+    :root {
+        --header-height: 54px;
+    }
+}

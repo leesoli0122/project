@@ -1,0 +1,324 @@
+@charset "utf-8";
+@use "./style.scss" as *;
+
+/* ==============================
+   변수 선언 (IE11 대응)
+============================== */
+$white: #fff;
+$black: #000;
+
+$ipt-border: #ddd;
+$ipt-border-active: #333;
+$ipt-border-inactive: #ccc;
+$ipt-bg-inactive: #f5f5f5;
+
+$ipt-txt: #222;
+$ipt-txt-active: $active;
+$ipt-txt-placeholder: #999;
+$ipt-txt-inactive: #aaa;
+
+$error:$red;
+$active: $active;
+$outline: $active;
+
+$font18: 18px;
+$font-w-r: 400;
+$font-w-b: 700;
+
+$ico-se-arrow: url('../img/ico-arrow.svg');
+$ico-close: url('../img/ico-close.svg');
+$ico-check: url('../img/ico-check.svg');
+
+$fk-se-inactive: #ddd;
+$fk-se-ative: #F2F5F8;
+$fk-se-title: $color-2;
+
+/* ==============================
+   Mixins & Placeholders
+============================== */
+@mixin focus-ring($color: $outline) {
+  &:focus-visible { border: 1px solid $color; outline-offset: -2px; }
+}
+
+%option-btn {
+  width: 100%;
+  min-height: 50px;
+  margin-bottom: 0;
+  padding: 15px 20px;
+  border-bottom: 1px solid $fk-se-inactive;
+  box-sizing: border-box;
+  background-color: $white;
+  font-size: $font18;
+  text-align: left;
+
+  &:focus-visible { outline: $outline; border: 1px solid $outline; }
+  &:disabled { color: $ipt-txt-inactive; cursor: default; }
+}
+
+/* ==============================
+   Select (기본 + 커스텀)
+============================== */
+.se-select {
+  select::-ms-expand { display: none; }
+
+  select {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: $font-w-r;
+    border: 1px solid $ipt-border;
+    background: $white $ico-se-arrow no-repeat right 8px center / 28px;
+    padding: 20px 32px 20px 16px;
+    color: $ipt-txt;
+
+    option { color: $ipt-txt-active; }
+
+    &:disabled {
+      border: 1px solid $ipt-border-inactive;
+      background-color: $ipt-bg-inactive;
+      background-image: $ico-se-arrow;
+      color: $ipt-txt-inactive;
+    }
+
+    &:focus { border-color: $ipt-border-active; }
+  }
+
+  .form-group.user-invalid & {
+    select:invalid { color: $error; }
+    select { border: 1px solid $error; }
+  }
+
+  &[data-stove=select] {
+    position: relative;
+  
+    select { visibility: hidden; }
+
+    .btn-fake-slt {
+      display: inline-flex;
+      align-items: center;
+      position: absolute;
+      inset: 0;
+      max-width: 100%;
+      width: 100%;
+      text-align: left;
+      padding: 20px 36px 20px 16px;
+      font-weight: $font-w-r;
+      border: 1px solid $ipt-border;
+      background: $white $ico-se-arrow no-repeat right 8px center / 28px;
+      color: $ipt-txt;
+      outline: none;
+
+      > * { width: 100%; }
+      > *:not(.placeholder) { display: none; }
+
+      .logo { flex-shrink: 0; }
+      .placeholder { color: $ipt-txt-placeholder; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+      &:hover { border:1px solid $active; }  
+      &.selected {
+        .placeholder { display: none; }
+        > * { display: block; }
+      }
+
+      &.disabled {
+        border: 1px solid $ipt-border-inactive;
+        background-color: $ipt-bg-inactive;
+        background-image: $ico-se-arrow;
+        color: $ipt-txt-inactive;
+      }
+
+      &:focus:not(.disabled) { border-color: $ipt-border-active; }
+    }
+
+    .on + .btn-fake-slt { border:1px solid $active;  color: $ipt-border-active; }
+  
+    .stove-dim {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: $dim;
+      z-index: 110;
+      &.on { display: block; }
+    }
+
+    .stove-option-layer {
+      position: fixed;
+      left: 0; bottom: -100%;
+      display: flex; flex-direction: column;
+      width: 100%;
+      max-height: calc(100% - 55px);
+      padding-top: 60px;
+      background-color: $white;
+      border-radius: 16px 16px 0 0;
+      transition: bottom 0.2s ease-in-out;
+      z-index: 110;
+
+      @include focus-ring();
+
+      &.on { bottom: 0; }
+      &.va-upshow { bottom: 100%; }
+
+      .stove-option-scroll {
+        padding-bottom: 40px;
+        overflow-y: auto;
+
+        .stove-options {
+          padding: 0 24px;
+
+          button.stove-option {
+            @extend %option-btn;
+
+            &.on, &:hover {
+              background-color: $fk-se-ative;
+              //border: 1px solid $ipt-border-active;
+              //font-weight: $font-w-b;
+            }
+
+            + button.stove-option { margin-top: 0; }
+          }
+        }
+      }
+
+      .stove-options-title {
+        position: absolute;
+        top: 20px; left: 20px;
+        font-size: $font18;
+        font-weight: $font-w-b;
+        color: $fk-se-title;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      }
+
+      button.stove-btn-close {
+        position: absolute;
+        top: 10px; right: 20px;
+        width: 40px; height: 40px;
+        background: transparent $ico-close no-repeat center / 40px;
+        cursor: pointer;
+      }
+    }
+
+    .e-hidden-title { display: none; }
+
+    &.replace {
+      select { display: none; }
+      .select-design { display: block; }
+    }
+
+    .form-group.user-invalid & {
+      .btn-fake-slt:invalid { color: $error; }
+      .btn-fake-slt { border: 1px solid $error; }
+    }
+
+    &.bank-list {
+      .stove-option-layer {
+        .stove-option-scroll {
+          .stove-options {
+            display: flex; flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+
+            button.stove-option {
+              position: relative;
+              width: 48%;
+              padding: 10px 10px 10px 40px;
+              border: none;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 50%; left: 6px;
+                width: 20px; height: 20px;
+                transform: translateY(-50%);
+              }
+
+              &.on {
+                background-color: $fk-se-ative;
+                border: $white;
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                  top: 50%; right: 10px;
+                  width: 20px; height: 20px;
+                  transform: translateY(-50%);
+                  background-color: $active;
+                  mask-image: $ico-check;
+                  mask-position: center;
+                  mask-repeat: no-repeat;
+                  mask-size: auto 10px;
+                  -webkit-mask-image: $ico-check;
+                  -webkit-mask-position: center;
+                  -webkit-mask-repeat: no-repeat;
+                  -webkit-mask-size: auto 10px;
+                }
+              }
+
+              &:focus-visible { border: 1px solid $outline; }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  
+}
+
+
+/* -------------------------------------------------
+   Breakpoints
+-------------------------------------------------- */
+
+/* Mobile (≤ $sm-max) */
+@media (max-width: $sm-max) {
+  .se-select select,
+  .se-select[data-stove=select] .btn-fake-slt { padding:14px 24px 14px 12px; }
+  .se-select[data-stove=select] .stove-option-layer .stove-option-scroll .stove-options button.stove-option { 
+    padding:15px 10px; 
+    margin-bottom:10px; 
+    border:1px solid $fk-se-inactive; 
+    border-radius:6px;
+    
+    // 모바일 터치 최적화
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    
+    // 터치 액티브 상태 스타일
+    &.touch-active {
+      background-color: rgba(0, 0, 0, 0.1);
+      transform: scale(0.98);
+      transition: all 0.1s ease;
+    }
+    
+    // 모바일에서 터치 영역 확대
+    min-height: 44px;
+    cursor: pointer;
+  }
+  
+  // 모바일에서 옵션 레이어 터치 최적화
+  .se-select[data-stove=select] .stove-option-layer {
+    touch-action: pan-y;
+    
+    .stove-option-scroll {
+      -webkit-overflow-scrolling: touch;
+      overflow-scrolling: touch;
+    }
+  }
+}
+
+/* Tablet (≥ $md-min and < $lg-min) */
+@media (min-width: $md-min) and (max-width: #{$lg-min - 1px}) {
+  
+}
+
+/* Desktop (≥ $lg-min) */
+@media (min-width: $lg-min) {
+
+}

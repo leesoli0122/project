@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>MG캐피탈-메인</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- MG캐피탈로 내용 변경(keywords, description, og:image, shortcut icon) -->
+        <meta name="keywords" content="MG캐피탈" />
+        <meta name="description" content="MG캐피탈 설명" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta property="og:image" content="" />
+        <!-- <link rel="shortcut icon" type="image/x-icon" href="../../resources/favicon.ico" /> -->
+
+        <!-- css -->
+        <link href="../resources/css/skipnavi.css" rel="stylesheet" />
+        <link href="../resources/css/header.css" rel="stylesheet" />
+        <link href="../resources/css/sidebar.css" rel="stylesheet" />
+        <link href="../resources/css/main.css" rel="stylesheet" />
+        <link href="../resources/css/footer.css" rel="stylesheet" />
+        <link href="../resources/css/default.css" rel="stylesheet" />
+
+        <!-- js 추가 필요 -->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="../resources/js/main.js"></script>
+    </head>
+    <body>
+        <!-- s: skipnavi(include) -->
+        <div id="skipnavi">
+            <script>
+                $(document).ready(function () {
+                    $("#skipnavi").load("./include/skipnavi.html");
+                });
+            </script>
+        </div>
+        <!-- e: skipnavi(include) -->
+
+        <div id="contentsWrapper">
+            <!-- s: header(include) -->
+            <div id="headerWrapper" class="no-bg">
+                <script>
+                    $(document).ready(function () {
+                        $("#headerWrapper").load("./include/header.html");
+                    });
+                </script>
+            </div>
+            <!-- e: header(include) -->
+
+            <!-- s: sidebar(include) -->
+            <div id="sidebarWrap">
+                <script>
+                    $(document).ready(function () {
+                        $("#sidebarWrap").load("./include/sidebar.html");
+                    });
+                </script>
+            </div>
+            <!-- e: sidebar(include) -->
+
+            <!-- s: main visual section -->
+            <section class="main-visual-section">
+                <div class="main-visual-bg">
+                    <div class="bg-img lease active"></div>
+                    <div class="bg-img financial"></div>
+                    <div class="main-visual-content container">
+                        <div class="toggle-and-slogan">
+                            <!-- 토글 탭 -->
+                            <ul class="toggle-tab">
+                                <li data-value="lease" role="tab" aria-selected="true" tabindex="0">리스상품</li>
+                                <li class="active" data-value="financial" role="tab" aria-selected="false" tabindex="-1">금융상품</li>
+                                <div class="indicator"></div>
+                            </ul>
+
+                            <!-- 타이틀 -->
+                            <div class="slogan-wrapper">
+                                <div class="slogan">
+                                    <p>MG캐피탈에서</p>
+                                    <strong>다양한 리스 · 금융상품을 만나보세요!</strong>
+                                </div>
+                                <p class="sub-slogan">초기 부담금은 작게 보다 효과적인 자금운용관리는 MG캐피탈 리스만의 장점입니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- 링크 -->
+                        <a href="#" class="btn-more">자세히 알아보기</a>
+
+                        <!-- 슬라이드 인디케이터 -->
+                        <div class="slide-indicator">
+                            <div class="progress-bar">
+                                <span></span>
+                            </div>
+                            <div class="slide-info">
+                                <div class="slide-number"><span class="current">1</span>/<span class="total">3</span></div>
+                                <div class="slide-buttons">
+                                    <button class="prev" aria-label="이전"></button>
+                                    <button class="pause" aria-label="정지"></button>
+                                    <button class="next" aria-label="다음"></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 셀렉트 박스(only mo) -->
+                        <div class="select-box">찾으시는 상품을 선택해 주세요</div>
+                    </div>
+                </div>
+
+                <!-- 시작하기 메뉴 -->
+                <div class="start-menu-wrap">
+                    <div class="start-menu container">
+                        <div class="start-menu-tit">
+                            MG CAPITAL<br />
+                            <strong>시작하기</strong>
+                        </div>
+                        <button class="prev-btn disabled"><span class="blind">이전</span></button>
+                        <ul>
+                            <li><a href="#" title="채용공고안내" class="menu-icon icon-1">채용공고안내</a></li>
+                            <li><a href="#" title="상품가입안내" class="menu-icon icon-2">상품가입안내</a></li>
+                            <li><a href="#" title="공동인증안내" class="menu-icon icon-3">공동인증안내</a></li>
+                            <li><a href="#" title="다운로드센터" class="menu-icon icon-4">다운로드센터</a></li>
+                            <li><a href="#" title="원격지원" class="menu-icon icon-5">원격지원</a></li>
+                            <li><a href="#" title="민원신청" class="menu-icon icon-6">민원신청</a></li>
+                        </ul>
+                        <button class="next-btn"><span class="blind">다음</span></button>
+                    </div>
+                </div>
+            </section>
+            <!-- e: main visual section -->
+
+            <!-- s: cards & banner section -->
+            <section class="main-card-banner-section">
+                <ul class="card-list container">
+                    <li class="complaint">
+                        <h3 class="tit">전자민원접수</h3>
+                        <p class="detail">접수부터 처리까지 투명하게, 쉽고 편리하게 이용하세요</p>
+                        <p class="link">바로가기</p>
+                    </li>
+                    <li class="status">
+                        <h3 class="tit">이용현황조회</h3>
+                        <p class="detail">접수부터 처리까지 투명하게, 쉽고 편리하게 이용하세요</p>
+                        <p class="link">바로가기</p>
+                    </li>
+                    <li class="information">
+                        <h3 class="tit">결제정보</h3>
+                        <p class="detail">접수부터 처리까지 투명하게, 쉽고 편리하게 이용하세요</p>
+                        <p class="link">바로가기</p>
+                    </li>
+                    <li class="lien">
+                        <h3 class="tit">담보권해지신청</h3>
+                        <p class="detail">접수부터 처리까지 투명하게, 쉽고 편리하게 이용하세요</p>
+                        <p class="link">바로가기</p>
+                    </li>
+                </ul>
+                <div class="banner-wrap">
+                    <div class="banner-element"></div>
+                    <div class="banner-inner container">
+                        <!-- 텍스트 -->
+                        <div class="text-wrap">
+                            <div class="slogan">
+                                <p>마음까지 시원한 금융,</p>
+                                <p>MG캐피탈이 함께 지켜갑니다.</p>
+                            </div>
+                            <p class="sub-slogan">
+                                변화하는 무더운 여름 일상 속에서도,<br />
+                                고객의 가치와 행복을 지키는 믿음직한 금융파트너가 되겠습니다.
+                            </p>
+                        </div>
+                        <!-- 버튼 -->
+                        <div class="btn-wrapper">
+                            <button class="download-btn" title="구글플레이스토어 새창열기">
+                                <span class="google"></span>
+                                Google Play
+                            </button>
+                            <button class="download-btn" title="앱스토어 새창열기">
+                                <span class="apple"></span>
+                                App Store
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- e: cards & banner section -->
+
+            <!-- s: FAQ section -->
+            <section class="main-faq-section border-bottom">
+                <div class="faq-wrap container">
+                    <ul>
+                        <li class="active">
+                            <p><span></span>고객센터 전화번호가 궁금해요!</p>
+                            <span class="faq-card-btns">
+                                <button>고객센터 연결</button>
+                                <button>지점 안내</button>
+                            </span>
+                        </li>
+                        <li>
+                            <p><span></span>고객센터 전화번호가 궁금해요! 고객센터 전화번호가 궁금해요!</p>
+                            <span class="faq-card-btns">
+                                <button>고객센터 연결</button>
+                                <button>지점 안내</button>
+                            </span>
+                        </li>
+                        <li>
+                            <p><span></span>고객센터 전화번호가 궁금해요!</p>
+                            <span class="faq-card-btns">
+                                <button>고객센터 연결</button>
+                                <button>지점 안내</button>
+                            </span>
+                        </li>
+                        <li>
+                            <p><span></span>고객센터 전화번호가 궁금해요!</p>
+                            <span class="faq-card-btns">
+                                <button>고객센터 연결</button>
+                                <button>지점 안내</button>
+                            </span>
+                        </li>
+                        <li>
+                            <p><span></span>고객센터 전화번호가 궁금해요!</p>
+                            <span class="faq-card-btns">
+                                <button>고객센터 연결</button>
+                                <button>지점 안내</button>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="faq-inner">
+                        <!-- 텍스트 -->
+                        <div class="text-wrap">
+                            <div class="slogan">
+                                <p>필요한 정보를</p>
+                                <p>쉽고 빠르게 확인해보세요!</p>
+                            </div>
+                            <p class="sub-slogan">
+                                꼭 필요한 자료와 자주묻는 질문을 쉽고 빠르게 제공합니다.<br />
+                                신청서 양식부터 금융 이용 가이드까지 한곳에 모았습니다.<br />
+                                필요한 정보를 언제든지 편리하게 확인해보세요.
+                            </p>
+                        </div>
+
+                        <!-- 버튼 -->
+                        <div class="faq-btns">
+                            <a href="#" class="notice">
+                                <p class="title">공지사항</p>
+                                <p class="desc">가장 빠른 소식을 확인해보세요!</p>
+                            </a>
+                            <a href="#" class="archive">
+                                <p class="title">자료실</p>
+                                <p class="desc">다양한 가이드,양식을 확인해보세요!</p>
+                            </a>
+                            <a href="#" class="faq">
+                                <p class="title">자주묻는질문</p>
+                                <p class="desc">고객님들이 자주하는 질문만 모아 놨어요!</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- e: FAQ section -->
+
+            <!-- s: notice section -->
+            <section class="main-notice-section">
+                <div class="notice-wrap container">
+                    <div class="notice-wrap-banner">
+                        <h3>알림존</h3>
+                        <div class="notice-banner"></div>
+                        <div class="swiper-control-wrap">
+                            <div class="swiper-control">
+                                <button class="prev" aria-label="이전"></button>
+                                <div class="swiper-count"><span class="swiper-count-current">1</span>/<span class="swiper-count-total">4</span></div>
+                                <button class="next" aria-label="다음"></button>
+                            </div>
+                            <button class="swiper-auto-button" aria-label="정지"></button>
+                        </div>
+                    </div>
+                    <div class="notice-wrap-list">
+                        <div class="tit">
+                            <h3>공지사항</h3>
+                            <a href="#">바로가기</a>
+                        </div>
+                        <ul>
+                            <li>
+                                <p class="notice-list-tit">SK텔레콤 이용 회원을 위한 피해예방 수칙 안내</p>
+                                <span class="notice-list-sub">2025-04-29</span>
+                            </li>
+                            <li>
+                                <p class="notice-list-tit">SK텔레콤 이용 회원을 위한 피해예방 수칙 안내</p>
+                                <span class="notice-list-sub">2025-04-29</span>
+                            </li>
+                            <li>
+                                <p class="notice-list-tit">SK텔레콤 이용 회원을 위한 피해예방 수칙 안내</p>
+                                <span class="notice-list-sub">2025-04-29</span>
+                            </li>
+                            <li>
+                                <p class="notice-list-tit">SK텔레콤 이용 회원을 위한 피해예방 수칙 안내</p>
+                                <span class="notice-list-sub">2025-04-29</span>
+                            </li>
+                            <li>
+                                <p class="notice-list-tit">SK텔레콤 이용 회원을 위한 피해예방 수칙 안내</p>
+                                <span class="notice-list-sub">2025-04-29</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- e: notice section -->
+
+            <!-- s: notice popup(only mo) -->
+            <div id="noticePopup">
+                <span class="notice-title">SK텔레콤 이용 회원을 위한 피해예방 수칙 안내</span>
+                <button title="닫기"></button>
+            </div>
+            <!-- e: notice popup(only mo) -->
+
+            <!-- s: footer(include) -->
+            <div id="footerWrapper">
+                <script>
+                    $(document).ready(function () {
+                        $("#footerWrapper").load("./include/footer.html");
+                    });
+                </script>
+            </div>
+            <!-- e: footer(include) -->
+        </div>
+    </body>
+</html>

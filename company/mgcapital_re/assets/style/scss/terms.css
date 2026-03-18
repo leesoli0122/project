@@ -1,0 +1,226 @@
+@charset "UTF-8";
+/* ===========================
+   변수 (IE11: CSS 변수 대신 SCSS 변수 사용)
+   =========================== */
+/* ===========================
+   믹스인/유틸
+   =========================== */
+/* 스크린리더 전용(시각 숨김, 접근 가능) - IE 호환 */
+/* 키보드 포커스 표시 - IE11(:focus-visible 미지원 → :focus 사용) */
+/* 플렉스 gap 미지원(IE11) → 컨테이너 음수마진 + 자식 마진 */
+/* ===========================
+   공통 구조
+   =========================== */
+.terms {
+  display: flex;
+  flex-direction: column;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* 약관 리스트 래퍼 (ul.check-box.terms) */
+ul.check-box.terms {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* 개별 항목 */
+ul.check-box.terms li {
+  position: relative;
+}
+
+/* ===========================
+   체크박스 접근성 + 커스텀 UI
+   - input은 시각 숨김(하지만 접근 가능)
+   - label ::before/::after 로 UI 표현
+   =========================== */
+ul.check-box.terms li input[type=checkbox] {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+/* 라벨(전체 클릭영역) */
+ul.check-box.terms li input[type=checkbox] + label {
+  display: block;
+  width: 100%;
+  padding: 21px 30px 22px 75px;
+  border: 1px solid #dcdfe3;
+  border-bottom-width: 0;
+  border-radius: 0;
+  cursor: pointer;
+  position: relative;
+  font-weight: 400;
+  background: #fff;
+  text-align: left;
+}
+
+/* 마지막 li는 바닥선 살리기 */
+ul.check-box.terms > li:last-child input[type=checkbox] + label {
+  border-bottom-width: 1px;
+}
+
+/* 커스텀 체크박스 아이콘 (원형/사각형 선택 가능) */
+ul.check-box.terms li input[type=checkbox] + label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #dcdfe3;
+  border-radius: 50%;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* 체크 마크 */
+ul.check-box.terms li input[type=checkbox]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  transform: translateY(-60%) rotate(45deg);
+  width: 6px;
+  height: 12px;
+  border-right: 3px solid #222;
+  border-bottom: 3px solid #222;
+}
+
+/* IE 백업: 가상 요소가 작동하지 않을 때를 위한 실제 이미지 */
+ul.check-box.terms li input[type=checkbox] + label .checkbox-icon {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid #dcdfe3;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+ul.check-box.terms li input[type=checkbox]:checked + label .checkbox-icon {
+  background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="%23222" stroke-width="2"/><path d="M7 10l2 2 4-4" stroke="%23222" stroke-width="2" fill="none"/></svg>') center/12px no-repeat;
+}
+
+/* 포커스(키보드) - label에 포커스 표시 */
+ul.check-box.terms li input[type=checkbox]:focus + label {
+  outline: 3px solid #0a84ff;
+  outline-offset: 2px;
+}
+
+/* ===========================
+   전체 동의
+   =========================== */
+ul.check-box.terms li.check-all-area {
+  margin-bottom: 32px;
+  border: 0;
+}
+
+ul.check-box.terms li.check-all-area input[type=checkbox] + label {
+  padding: 23px 30px 22px 75px;
+  background: #F2F5F8;
+  border: 0;
+  font-weight: 500;
+}
+
+ul.check-box.terms li.check-all-area input[type=checkbox]:checked + label {
+  background: #F2F5F8;
+}
+
+/* ===========================
+   수신 동의 (하위 체크박스)
+   - gap 미지원 → 믹스인으로 마진 대체
+   =========================== */
+ul.check-box.terms ul.sub-check-box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+  list-style: none;
+  margin: -5px;
+}
+ul.check-box.terms ul.sub-check-box > * {
+  margin: 5px;
+}
+
+/* 하위 체크의 라벨은 좌측 패딩만 */
+ul.check-box.terms ul.sub-check-box li input[type=checkbox] + label {
+  padding: 0 0 0 34px;
+  border: 0;
+  background: transparent;
+}
+
+/* 하위 체크 커스텀 아이콘 */
+ul.check-box.terms ul.sub-check-box li input[type=checkbox] + label::before {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+ul.check-box.terms ul.sub-check-box li input[type=checkbox]:checked + label::after {
+  left: 5px;
+}
+
+/* 하위 체크박스 IE 백업 이미지 */
+ul.check-box.terms ul.sub-check-box li input[type=checkbox] + label .checkbox-icon {
+  left: 0;
+}
+
+/* ===========================
+   내용보기 버튼(모달 트리거)
+   =========================== */
+ul.check-box.terms li .modal {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+
+/* 키보드 포커스 가능하도록 버튼/링크 기본 포커스 표시 강화 */
+ul.check-box.terms li .modal:focus {
+  outline: 3px solid #0a84ff;
+  outline-offset: 2px;
+}
+
+/* ===========================
+   IE11 전용 미세조정 (선택)
+   - 필요시만 사용
+   =========================== */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE11에서 가상 요소가 작동하지 않을 때를 위한 백업 */
+  ul.check-box.terms li input[type=checkbox] + label::before,
+  ul.check-box.terms li input[type=checkbox]:checked + label::after {
+    display: none;
+  }
+  /* 백업 이미지 표시 */
+  ul.check-box.terms li input[type=checkbox] + label .checkbox-icon {
+    display: block !important;
+  }
+  /* IE11에서 transform 기준선 보정이 필요한 경우 */
+  ul.check-box.terms li input[type=checkbox] + label .checkbox-icon,
+  ul.check-box.terms li .modal {
+    top: 50%;
+  }
+  /* outline이 픽셀 깨져 보이면 box-shadow로 대체 */
+  ul.check-box.terms li input[type=checkbox]:focus + label {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.4);
+  }
+  /* IE11에서 border-radius가 깨져 보일 때 */
+  ul.check-box.terms li input[type=checkbox] + label .checkbox-icon {
+    border-radius: 50%;
+  }
+}
+
+/*# sourceMappingURL=terms.css.map */

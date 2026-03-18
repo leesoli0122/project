@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>����>��</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="����keywords" />
+    <meta name="description" content="����description" />
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=no,width=375" />
+    <meta
+      property="og:image"
+      content="http://gallery2gate.kr/resources/images/common/ui-maeta-img"
+    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="No-Cache" />
+
+    <!-- �Ϲ� Favicon ���� -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../../assets/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../../assets/icons/favicon.svg"
+    />
+    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../../assets/icons/site.webmanifest" />
+
+    <link rel="stylesheet" href="../../assets/css/lib/ui-lib.css" />
+    <link rel="stylesheet" href="../../assets/css/ui/ui-util.css" />
+
+    <script
+      type="text/javascript"
+      src="../../assets/js/lib/jquery-1.12.4.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../assets/js/lib/jquery-ui.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../assets/js/lib/ui_plugin.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../assets/js/lib/swiper-bundle.min.js"
+    ></script>
+    <script type="module" src="../../assets/js/ui/com/ui-util.js"></script>
+  </head>
+
+  <body>
+    <!-- S:wrap -->
+    <div class="wrap">
+      <!-- S:headerWrap -->
+      <div id="headerWrap" class="headerOn"></div>
+      <!-- E:headerWrap -->
+
+      <!-- S:contentWrap -->
+      <div class="contentWrap">
+        <div class="contArea">
+          <section class="tit">Tab.Ver1 [��ũ��Ʈ]</section>
+
+          <div class="tab-container jsTab">
+            <!--[D] jsTab Ŭ���� :: ��ũ��Ʈ-->
+            <ul class="tab-list">
+              <li class="tab-item active" data-tab="tab1" title="���õ�">
+                <button type="button">�� 1</button>
+              </li>
+              <li class="tab-item" data-tab="tab2">
+                <button type="button">�� 2</button>
+              </li>
+              <li class="tab-item" data-tab="tab3">
+                <button type="button">�� 3</button>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div id="tab1" class="tab-panel active">
+                <p>�� 1�� ����</p>
+                <!-- �� �ȿ� �� (��ø ��) -->
+                <div class="nested-tab-container nestedJsTab">
+                  <!--[D] nestedJsTab Ŭ���� :: ��ũ��Ʈ-->
+                  <ul class="nested-tab-list">
+                    <li
+                      class="nested-tab-item active"
+                      data-tab="nested1"
+                      title="���õ�"
+                    >
+                      <button type="button">������ 1</button>
+                    </li>
+                    <li class="nested-tab-item" data-tab="nested2">
+                      <button type="button">������� 2</button>
+                    </li>
+                  </ul>
+                  <div class="nested-tab-content">
+                    <div id="nested1" class="nested-tab-panel active">
+                      <p>���� �� 1�� ����</p>
+                    </div>
+                    <div id="nested2" class="nested-tab-panel">
+                      <p>���� �� 2�� ����</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="tab2" class="tab-panel">
+                <p>�� 2�� ����</p>
+              </div>
+              <div id="tab3" class="tab-panel">
+                <p>�� 3�� ����</p>
+              </div>
+            </div>
+          </div>
+
+          <section class="tit">Tab.Ver2 [��ũ��Ʈ] :: Swiper</section>
+
+          <section class="tab-container">
+            <div class="tabs tab-area swiper">
+              <ul class="swiper-pager tab-list"></ul>
+
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">ȭ��Ȯ�ο� : �������� ������ ���� 1</div>
+
+                <div class="swiper-slide">ȭ��Ȯ�ο� : �������� ������ ���� 2</div>
+
+                <div class="swiper-slide">ȭ��Ȯ�ο� : �������� ������ ���� 3</div>
+
+                <div class="swiper-slide">ȭ��Ȯ�ο� : �������� ������ ���� 4</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- E:contentWrap -->
+
+      <!--S:btmWrap-->
+      <div class="btmWrap">
+        <div class="btm-btn-area">
+          <button type="button" class="btn btn-primary">���̾ƿ�</button>
+        </div>
+
+        <!-- s:footerWrap -->
+        <div id="footerWrap"></div>
+        <!-- e:footerWrap-->
+      </div>
+      <!--E:btmWrap-->
+    </div>
+    <!-- E:wrap -->
+  </body>
+
+  <script>
+    $(document).ready(function () {
+      $("#headerWrap").load("../include/inc_header.html");
+      $("#footerWrap").load("../include/inc_footer.html");
+    });
+  </script>
+</html>

@@ -1,0 +1,309 @@
+@charset "UTF-8";
+/* 모바일 폰트 사이즈 기준 [html::18px], 짝수 단위입니다.[짝수 단위로 할 경우 소수점 최대 3자리로 떨어집니다.] */
+.flex-col {
+  display: flex;
+}
+
+/*---------------------------------------------
+	#컨텐츠
+---------------------------------------------*/
+html, body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  -webkit-text-size-adjust: none;
+}
+
+.wrap {
+  padding-right: constant(safe-area-inset-right);
+  padding-left: constant(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-left: env(safe-area-inset-left);
+}
+
+.btmCont {
+  height: 100%;
+}
+
+.button-content {
+  padding-top: 72px;
+  padding-bottom: 140px;
+  text-align: center;
+}
+
+section > .content-block + .content-block {
+  margin-top: 72px;
+}
+
+div.border-b1 ~ [class$=-content] {
+  margin-top: 72px;
+  padding: 54px 0 0;
+  border-top: 1px solid #e5e5ea;
+}
+
+.form-content:last-of-type {
+  padding: 54px 0 52px !important;
+  border-bottom: 1px solid #e5e5ea;
+}
+
+/*---------------------------------------------
+	#skipnavi
+---------------------------------------------*/
+#skipnavi {
+  display: none;
+}
+#skipnavi li a {
+  display: block;
+  font-size: 1rem;
+  width: 100%;
+  position: absolute;
+  top: -10000px;
+  left: 0;
+  text-align: center;
+  z-index: 999999;
+  line-height: 1;
+}
+#skipnavi li a:focus-visible {
+  top: 0;
+  left: 0;
+  font-weight: 600;
+  color: var(--title);
+  background: #EAEAEA;
+  border: 1px solid #bad1ec;
+  padding: 20px 0;
+}
+
+/*---------------------------------------------
+    #headerWrap
+---------------------------------------------*/
+#headerWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 10;
+  background-color: #ffffff;
+}
+#headerWrap > header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+#headerWrap > header .inner {
+  position: relative;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 1rem;
+}
+#headerWrap > header h1.logo > a {
+  display: flex;
+  width: 109px;
+  height: auto;
+}
+#headerWrap > header h1.logo img {
+  object-fit: contain;
+}
+#headerWrap > header h1.tit {
+  font-size: 0.889rem;
+  font-weight: 500;
+}
+#headerWrap > header .btn {
+  width: 40px;
+  height: 40px;
+}
+#headerWrap > header .btn.btn-menu {
+  background: var(--ico-menu) no-repeat 100%/40px auto;
+}
+#headerWrap > header .btn.btn-back {
+  background: var(--ico-back) no-repeat 100%/40px auto;
+}
+#headerWrap .top_menu {
+  height: 48px;
+  line-height: 48px;
+  display: none;
+}
+#headerWrap .top_menu .right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+#headerWrap .top_menu .right > a {
+  position: relative;
+  font-size: var(--font14);
+  color: #757575;
+  padding: 0 1rem;
+}
+#headerWrap .top_menu .right > a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 12px;
+  background-color: #757575;
+}
+#headerWrap .btm_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  line-height: 76px;
+}
+#headerWrap .btm_menu .right {
+  display: flex;
+  align-items: center;
+}
+#headerWrap.on, #headerWrap.transToWhite.on {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+#headerWrap.transToWhite {
+  background-color: transparent;
+}
+
+/*---------------------------------------------
+    #gnbFull .menu-list
+---------------------------------------------*/
+#gnbFull .menu-list {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 40px;
+}
+#gnbFull .menu-list:after {
+  content: "";
+  display: block;
+}
+#gnbFull .menu-list .menu-item {
+  text-align: center;
+  position: relative;
+}
+#gnbFull .menu-list .menu-item > a {
+  position: relative;
+  display: block;
+  padding: 0 0.25rem;
+  font-size: 1.111rem;
+}
+#gnbFull .menu-list .menu-item > a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 10px;
+  background: rgba(2, 134, 111, 0.2);
+  transition: width 0.2s ease;
+}
+#gnbFull .menu-list .menu-item.on > a::after {
+  width: 100%;
+}
+#gnbFull .menu-list .menu-item .menu-sub {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 124px;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid #ddd;
+  background: #fff;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+#gnbFull .menu-list .menu-item .menu-sub .inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+}
+#gnbFull .menu-list .menu-item.on .menu-sub {
+  flex-direction: column;
+  align-items: center;
+}
+
+/*---------------------------------------------
+    #컨텐츠
+---------------------------------------------*/
+main.contentWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-box: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: auto;
+  /**title**/
+}
+main.contentWrap > div {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 52px;
+}
+main.contentWrap .visual-content {
+  padding-top: 72px;
+  padding-bottom: 78px;
+  border-bottom: 1px solid #e5e5ea;
+}
+main.contentWrap h2 > em {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+main.contentWrap h2 > span {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #757575;
+}
+main.contentWrap h3 {
+  display: block;
+  margin-bottom: 24px;
+  color: #454545;
+  font-size: 1.111rem;
+  font-weight: 500;
+}
+main.contentWrap h3.bb-0 {
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  color: #333333;
+  font-size: 1.556rem;
+  font-weight: 600;
+  border-bottom: 1px solid #666666;
+}
+main.contentWrap h5 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+main.contentWrap #container .tab-container {
+  padding: 54px 0 72px;
+}
+main.contentWrap #container .tab-container:first-of-type {
+  padding-top: 72px;
+}
+main.contentWrap #container .form-container {
+  padding: 54px 0 72px;
+}
+main.contentWrap #container .form-container:first-of-type {
+  padding-top: 72px;
+}
+
+@media screen and (max-width: 767px) {
+  main.contentWrap {
+    background: red;
+  }
+}
+
+/*# sourceMappingURL=layout.scss.css.map */

@@ -1,0 +1,159 @@
+.product-container h5 {
+    color: #222;
+}
+.product-container p {
+    color: #666;
+    line-height:150%;
+}
+.product-container .cont > div:first-child p {
+    color: #454545;
+}
+th,td {
+    border-bottom: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+}
+.product-container thead th {
+    background-color: #f4f6f7;
+}
+.product-container tbody td {
+    text-align: center;
+}
+.product-container h5 + table {
+    margin-top: 30px;
+}
+.product-container p + table {
+    margin-top: 20px;
+}
+.product-container table + p {
+    margin-top: 15px;
+}
+.product-container p + p {
+    margin-top: 15px;
+}
+.product-container h5 + p {
+    margin-top: 20px;
+}
+.product-wrap > .cont > div {
+    padding-bottom: 52px;
+}
+
+.tab-container .tab-list.depth2 {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.tab-container .tab-list.depth2 li.tab-item {
+    display: inline-block;
+    flex-grow: 0;
+}
+
+
+.tab-container .tab-list.depth2 li.tab-item button {
+    padding: 8px 12px; 
+    width: auto;
+    border: none;
+    border-radius: 20px;
+    background: #f1f2f4;
+    transition: all 0.3s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    white-space: nowrap;
+}
+
+.tab-container .tab-list.depth2 li.tab-item:hover {
+    background-color: transparent; 
+}
+
+.tab-container .tab-list.depth2 li.tab-item.active button {
+    color: #ffffff;
+    background: #2392ff;
+}
+
+@media (max-width: 767px) {
+    .tab-container .tab-list.depth2 {
+        flex-wrap: nowrap;     
+        gap: 15px;             
+        display: flex !important;
+        visibility: visible !important;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .tab-container .tab-list.depth2::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab-container .tab-list.depth2 li.tab-item {
+        display: inline-block;
+    }
+
+    .tab-container .tab-list.depth2 li.tab-item button {
+        padding: 8px 16px; 
+        white-space: nowrap;
+    }
+}
+
+
+
+/*IE 11 전용 코드*/
+
+/* PC용 IE11 (768px 이상) */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    h2 > em {
+        font-size: 2rem;
+    }
+    h2 > span {
+        font-size: 1rem;
+        color: #757575;
+    }
+    .social-intro p {
+        font-size: 1rem;
+        color: #666666;
+        line-height: 1.6;
+    }
+    .contentWrap > .visual-content {
+        border-bottom: 1px solid #E5E5EA;
+    }
+    .tab-container .tab-list.depth2 li.tab-item button {
+        color: #454545;
+    }
+    .tab-container .tab-list.depth2 li.tab-item {
+        flex-grow: 0;       
+        flex-shrink: 0;     
+        flex-basis: auto;   
+        margin-right: 24px; 
+    }
+    .tab-container .tab-list.depth2 li.tab-item:last-child {
+        margin-right: 0;
+    }
+
+    .product-container th,
+    .product-container td {
+        border-top: 1px solid #dddddd;
+        border-right: 1px solid #dddddd;
+    }
+}
+
+/* 모바일용 IE11 (768px 이하) */
+@media all and (max-width: 768px) and (-ms-high-contrast: none), (max-width: 768px) and (-ms-high-contrast: active) {
+    .tab-container .tab-list.depth2 li.tab-item {
+        margin-right: 15px;
+    }
+
+    .tab-container .tab-list.depth2 li.tab-item:last-child {
+        margin-right: 0;
+    }
+
+    .product-container th,
+    .product-container td {
+        border-top: 1px solid #dddddd;
+        border-right: 1px solid #dddddd;
+    }
+}

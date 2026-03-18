@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* 모바일 폰트 사이즈 기준 [html::18px], 짝수 단위입니다.[짝수 단위로 할 경우 소수점 최대 3자리로 떨어집니다.] */
+.btn-form {
+  padding: 20px 16px;
+  width: 100%;
+  border: 1px solid #999999;
+  color: #757575;
+}
+.btn-form:hover {
+  border-color: #2392ff;
+  color: #2392ff;
+}
+
+.btn-content {
+  padding: 12px;
+  width: 170px;
+  height: 48px;
+  line-height: 14px;
+  background: #222222;
+  color: #ffffff;
+  box-sizing: "border-box";
+}
+.btn-content:hover {
+  background: #0072bc;
+}
+.btn-content:disabled {
+  background: #dddddd;
+  color: #757575;
+}
+
+.btn-terms-modal {
+  padding: 2px 10px 4px;
+  border: 1px solid #eeeeee;
+  color: #757575;
+}
+.btn-terms-modal:hover {
+  border-color: #222222;
+  color: #222222;
+}
+
+/* -------------------------------------------------
+   Breakpoints
+-------------------------------------------------- */
+/* Mobile (≤ $sm-max) */
+@media (max-width: 767px) {
+  .btn-form {
+    padding: 14px 12px;
+  }
+}
+/* Tablet (≥ $md-min and < $lg-min) */
+/* Desktop (≥ $lg-min) */
+
+/*# sourceMappingURL=button.css.map */

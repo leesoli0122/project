@@ -1,0 +1,176 @@
+@charset "euc-kr";
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* # 기본 스타일 및 폰트 (공통)*/
+    body {
+        color: #454545;
+        font-family: "Pretendard";
+    }
+    h3 {
+        color: #454545;
+        font-size: 1.111rem;
+        font-weight: 500;
+    }
+
+    /* 페이지 상단 비주얼 (공통) */
+    .contentWrap > .visual-content {
+        border-bottom: 1px solid #e5e5ea;
+    }
+    h2 > span {
+        font-size: 19px;
+        color: #757575;
+    }
+    h2 > em {
+        font-size: 2.1rem;
+        margin-bottom: 20px;
+    }
+
+    /* ---------------------------------------------테이블 스타일 (전용)---------------------------------------------*/
+    th,
+    td {
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        border-left: 1px solid #dddddd;
+        font-size: 16px !important; /* important 써야 바뀜.. */
+    }
+    thead tr th {
+        background-color: #0072bc;
+        color: #ffffff;
+        font-weight: 700;
+    }
+    tbody tr th {
+        background-color: #f4f6f7;
+        color: #333333;
+        font-weight: 700;
+    }
+    tbody tr td {
+        background-color: #ffffff;
+        color: #666666;
+    }
+    tbody tr.tbl-total-row th {
+        background-color: #2392ff;
+        color: #ffffff;
+    }
+    tbody tr.tbl-total-row td {
+        background-color: #edf9ff;
+    }
+
+    /* 테이블 타이틀 Flexbox 호환성 (전용) */
+    .table-tit {
+        display: -ms-flexbox;
+        -ms-flex-pack: justify;
+        -ms-flex-align: end;
+    }
+    .table-tit h3 {
+        color: #333333;
+        font-weight: 700;
+    }
+    .table-tit span {
+        color: #757575;
+    }
+
+    /* 모바일용 가짜 셀렉트 박스 (공통,상품구분) */
+    .se-select select {
+        font-weight: 400;
+        border: 1px solid #dddddd;
+        background-color: #ffffff;
+        background-image: url(../../../images/com/svg/ico_se_arrow.svg);
+        color: #222222;
+    }
+    .se-select select option {
+        color: #222222;
+    }
+    .btn-fake-slt {
+        font-weight: 400;
+        border: 1px solid #dddddd;
+        background-color: #ffffff;
+        background-image: url(../../../images/com/svg/ico_se_arrow.svg);
+        color: #222222;
+    }
+    .btn-fake-slt .placeholder {
+        color: #999999;
+    }
+
+    .se-select[data-stove="select"] div.stove-option-layer {
+        border: 1px solid #dddddd;
+        bottom: auto; /* IE에서 위치 계산 오류 방지 */
+    }
+    .se-select[data-stove="select"] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option {
+        background-color: #ffffff;
+        font-size: 1rem;
+    }
+    .se-select[data-stove="select"] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option.on,
+    .se-select[data-stove="select"] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option:hover {
+        background-color: #eef2f9;
+        font-weight: 600;
+    }
+
+    /* 하단 공시 안내 영역 (info-wrap) (공통 + 전용) */
+    .info-content > .info-wrap {
+        padding: 24px !important;
+        border: 1px solid #e5e5ea;
+    }
+    .info-content > .info-wrap h3.info-title {
+        font-size: 1.333rem;
+    }
+    .info-content > .info-wrap h3.info-title::before {
+        background-image: url(../../../images/com/ico_info_table.png);
+    }
+    .info-content > .info-wrap p {
+        color: #454545;
+        font-size: 16px;
+    }
+    .table-info-content .btmWrap {
+        display: -ms-flexbox;
+        -ms-flex-align: start;
+    }
+    .table-info-content .btmWrap p {
+        -ms-flex: 1 1 auto;
+        width: auto;
+        text-align: left;
+    }
+    .table-info-content .btmWrap .button-wrap {
+        -ms-flex-negative: 0;
+        padding-left: 20px; 
+    }
+
+    .btn-primary {
+        color: #ffffff;
+    }
+    .table-info-content .button-wrap .btn-primary {
+        max-width: 190px;
+        padding: 0 12px;
+        white-space: nowrap;
+        height: 56px;
+        display: inline-block;
+        text-align: center;
+        background-color: #121212;
+    }
+}
+/* IE11 전용 PC 스타일 끝 */
+
+
+/* IE11 전용 모바일 스타일 (768px 이하) */
+@media all and (max-width: 768px) and (-ms-high-contrast: none), (max-width: 768px) and (-ms-high-contrast: active) {
+    _:-ms-lang(x),
+    .table-info-content .btmWrap {
+        display: block;
+    }
+
+    _:-ms-lang(x),
+    .table-info-content .btmWrap p {
+        text-align: left;
+    }
+
+    _:-ms-lang(x),
+    .table-info-content .button-wrap {
+        text-align: right;
+        padding-top: 24px;
+    }
+    _:-ms-lang(x),
+    .table-info-content .button-content a.btn-primary {
+        width: auto;
+        height: 45px;
+        line-height: 45px;
+    }
+}

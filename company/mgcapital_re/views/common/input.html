@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>怨듯넻>�씤�뭼</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="怨듯넻keywords">
+    <meta name="description" content="怨듯넻description">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=no,width=375">
+    <meta property="og:image" content="http://gallery2gate.kr/resources/images/common/ui-maeta-img">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+
+    <!-- �씪諛� Favicon �꽕�젙 -->
+    <link rel="icon" type="image/png" href="../../assets/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg" />
+    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="../../assets/icons/site.webmanifest" />
+
+    <link rel="stylesheet" href="../../assets/css/lib/ui-lib.css" >
+    <link rel="stylesheet" href="../../assets/css/ui/ui-util.css">
+
+    
+    <script type="text/javascript" src="../../assets/js/lib/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/swiper-bundle.min.js"></script>
+    <script type="module" src="../../assets/js/ui/com/ui-util.js"></script>
+</head>
+
+<body>
+
+    <!-- S:wrap -->
+    <div class="wrap">
+
+        <!-- S:headerWrap -->
+        <div id="headerWrap" class="headerOn"><!--[D] : headerOn �겢�옒�뒪 : �뒪�겕由쏀듃 �쟻�슜 以�-->
+            <script>
+                $(document).ready(function () {
+                    $("#headerWrap").load("../include/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- E:headerWrap -->
+        
+            <!-- S:contentWrap -->
+            <div class="contentWrap">
+                <div class="contArea">
+                    <!-- <form id="myForm"> -->
+                        <section class="tit">
+                            Input Radio/CheckBox/Toggle
+                        </section>
+
+                        <div class="form-group check">
+                            <ul class="check-box">
+                                <li>
+                                    <input type="checkbox" id="check-1" name="checkbox">
+                                    <label for="check-1" class="check-button">
+                                        <span>Check Box OFF</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="check-2" name="checkbox" checked>
+                                    <label for="check-2" class="check-button">
+                                        <span>Check Box ON</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="check-3" name="checkbox" disabled="">
+                                    <label for="check-3" class="check-button">
+                                        <span>Check Box Disabled</span>
+                                    </label>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="form-group radio">
+                            <ul class="radio-box">
+                                <li>
+                                    <input type="radio" id="radio1" name="radio">
+                                    <label for="radio1" class="radio-button"><span>Radio Button1</span></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="radio2" name="radio" checked>
+                                    <label for="radio2" class="radio-button"><span>Radio Button2</span></label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="radio3" name="radio" disabled>
+                                    <label for="radio3" class="radio-button"><span>Radio Button2</span></label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="form-group toggle">
+                            <div class="toggle-box">
+                                <input type="checkbox" id="checkbox01" name="checkbox">
+                                <label for="checkbox01" class="toggle-button"></label>
+                            </div>
+                        </div>
+
+                        <section class="tit">
+                            Input
+                        </section>
+
+                        <div class="form-group user-invalid"><!--[D]: .user-invalid �쑀�슚�븯吏� �븡�쓣 寃쎌슦 -->
+                            <label for="name-input" class="essential">�꽦紐�</label>
+                            <input id="name-input" type="text" name="name" class="form-control" placeholder="�꽦紐�">
+                            <p class="feedback">�쑀�슚�븯吏� �븡�쓣 寃쎌슦 �궗�슜�빀�땲�떎. �쑀�슚�븯吏� �븡�쓣 寃쎌슦 �궗�슜�빀�땲�떎. �쑀�슚�븯吏� �븡�쓣 寃쎌슦 �궗�슜�빀�땲�떎.</p>
+                        </div>
+
+                        <div class="form-group user-valid"><!--[D]: .user-invalid �쑀�슚 �븷 寃쎌슦 -->
+                            <label for="email-input" class="essential">�씠硫붿씪</label>
+                            <input id="email-input" type="email" name="email" class="form-control" placeholder="�씠硫붿씪">
+                            <p class="feedback">�쑀�슚�븷 寃쎌슦 �궗�슜�빀�땲�떎. �쑀�슚�븷 寃쎌슦 �궗�슜�빀�땲�떎. �쑀�슚�븷 寃쎌슦 �궗�슜�빀�땲�떎. �쑀�슚�븷 寃쎌슦 �궗�슜�빀�땲�떎.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password-input" class="essential">�뙣�뒪�썙�뱶</label>
+                            <input id="password-input" type="password" name="password" class="form-control" placeholder="�뙣�뒪�썙�뱶">
+                            <p class="feedback">鍮꾨��踰덊샇�뒗 �븘�닔�엯�땲�떎. �삉�븳 8�옄由� �씠�긽�씠�뼱�빞 �빀�땲�떎.</p>
+                            <ul class="info">
+                                <li>以묒슂�븳 �궡�슜�씠 �븘�슂�븷 寃쎌슦 �궗�슜�빀�땲�떎. 以묒슂�븳 �궡�슜�씠 �븘�슂�븷 寃쎌슦 �궗�슜�빀�땲�떎.</li>
+                                <li>以묒슂�븳 �궡�슜�씠 �븘�슂�븷 寃쎌슦 �궗�슜�빀�땲�떎. 以묒슂�븳 �궡�슜�씠 �븘�슂�븷 寃쎌슦 �궗�슜�빀�땲�떎.</li>
+                            </ul>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="amount-input">�썝, %</label>
+                            <div class="col">
+                                <input id="amount-input" type="text" class="form-control ipt-pd-r" placeholder="湲덉븸�쓣 �엯�젰�빐二쇱꽭�슂" inputmode="numeric"><!-- [D] �뒪�겕由쏀듃 inputmode="numeric" : �꽭�옄由� �닔留덈떎 肄ㅻ쭏 �쟻�슜  -->
+                                <span class="ipt-right amount">�썝</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="search-input">寃��깋</label>
+                            <div class="col">
+                                <input id="search-input" type="text" class="form-control ipt-pd-r" placeholder="�엯�젰�빐二쇱꽭�슂">
+                                <span class="ipt-right ico flex-row gap10"><button type="reset" class="btn btn-ipt-clear"><span class="sr-only">�궘�젣踰꾪듉</span></button><button type="button" class="btn btn-ipt-search"><span class="sr-only">寃��깋踰꾪듉</span></button></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Disabled">Disabled</label>
+                            <input id="Disabled" type="text" name="Disabled" class="form-control" placeholder="Disabled" disabled>
+                            <p class="feedback">�쑀�슚�븯吏� �븡�쓣 寃쎌슦 �궡�슜�씠 �뱾�뼱媛묐땲�떎.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Readonly">Readonly</label>
+                            <input id="Readonly" type="text" name="Readonly" class="form-control" placeholder="Readonly" readonly>
+                            <p class="feedback">�쑀�슚�븯吏� �븡�쓣 寃쎌슦 �궡�슜�씠 �뱾�뼱媛묐땲�떎.</p>
+                        </div>
+
+                        
+                        <section class="tit">
+                            Input flex
+                        </section>
+
+                        <div class="form-group user-invalid">
+                            <label for="rrn-first">二쇰�쇰벑濡앸쾲�샇 �엯�젰</label>
+                            <div class="flex-row gap5">
+                                <div class="col">
+                                    <input id="rrn-first" type="number" name="rrn-first" class="form-control" placeholder="" min="0" step="1"
+                                        oninput="this.value = this.value.slice(0, 6); if(this.value.length === 6) document.getElementById('rrn-second').focus();">
+                                </div>
+                                <div class="ipt-hyphen">-</div>
+                                <div class="col">
+                                    <!-- �몢 踰덉㎏ �엯�젰 �븘�뱶�뒗 �뒪�겕由� 由щ뜑瑜� �쐞�븳 aria-labelledby �궗�슜 -->
+                                    <input id="rrn-second" type="number" name="rrn-second" class="form-control" placeholder="�뿈" min="0" step="1"
+                                        oninput="this.value = this.value.slice(0, 1)" aria-labelledby="rrn-second">
+                                    <span class="id-mask">�뿈�뿈�뿈�뿈�뿈�뿈</span>
+                                </div>
+                            </div>
+                            <p class="feedback">�쑀�슚�븯吏� �븡��� 二쇰�쇰벑濡앸쾲�샇�엯�땲�떎. 二쇰�쇰벑濡앸쾲�샇瑜� �삱諛붾Ⅴ寃� �엯�젰�빐 二쇱꽭�슂.</p>
+                        </div>
+                        
+                        <section class="tit">
+                            UploadCustom
+                        </section>
+                        <div class="form-group">
+                            <label for="files">�뙆�씪 �뾽濡쒕뱶</label>
+                            <div class="col">
+                                <input class="form-control upload-text uploadInput" type="text" placeholder="�뙆�씪�쓣 泥⑤���븯�꽭�슂" tabindex="0" readonly>
+                                <label class="upload-label" for="files">
+                                    <input id="files" class="upload" name="files" type="file" />
+                                    <span class="sr-only fileLabel">�뙆�씪 �꽑�깮</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <section class="tit">
+                            selectCustom
+                        </section>
+                        
+                        <div class="form-group">
+                            <label for="selectCustom">����젆�듃 �꽑�깮</label>
+                            <div id="selectCustom" class="se-select" data-stove="select" data-uicase="slide">
+                                <div class="e-hidden-title">TITLE</div>
+                                <select required="" title="">
+                                    <option value="" hidden="">default</option>
+                                    <option value="0">option 00</option>
+                                    <option value="1">option 01</option>
+                                    <option value="2">option 02</option>
+                                    <option value="3" disabled="">option 03</option>
+                                    <option value="4" disabled="">option 04</option>
+                                    <option value="9">option 09</option>
+                                    <option value="10">option 10</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selectDisabled">����젆�듃 disabled</label>
+                            <div id="selectDisabled" class="se-select" data-stove="select" data-uicase="slide">
+                                <div class="e-hidden-title">TITLE</div>
+                                <select required="" title="" disabled><!--[D] disabled-->
+                                    <option value="" hidden="">disabled</option>
+                                    <option value="0">option 00</option>
+                                    <option value="1">option 01</option>
+                                    <option value="2">option 02</option>
+                                    <option value="3" disabled="">option 03</option>
+                                    <option value="4" disabled="">option 04</option>
+                                    <option value="9">option 09</option>
+                                    <option value="10">option 10</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selectReadonly">����젆�듃 readonly</label>
+                            <div id="selectReadonly" class="se-select" data-stove="select" data-uicase="slide">
+                                <div class="e-hidden-title">TITLE</div>
+                                <select required="" title="" readonly><!--[D] readonly-->
+                                    <option value="" hidden="">readonly</option>
+                                    <option value="0">option 00</option>
+                                    <option value="1">option 01</option>
+                                    <option value="2">option 02</option>
+                                    <option value="3" disabled="">option 03</option>
+                                    <option value="4" disabled="">option 04</option>
+                                    <option value="9">option 09</option>
+                                    <option value="10">option 10</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group user-invalid">
+                            <label for="phn-first">����젆�듃 �꽑�깮</label>
+                            <div class="flex-row gap5">
+                                <div class="col col-4">
+                                    <div id="phn-first" class="se-select" data-stove="select" data-uicase="slide">
+                                        <div class="e-hidden-title">TITLE</div>
+                                        <select required="" title="">
+                                            <option value="" hidden="">010</option>
+                                            <option value="0">010</option>
+                                            <option value="1">011</option>
+                                            <option value="2">016</option>
+                                            <option value="3">017</option>
+                                            <option value="4">018</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <input id="phn-second" type="number" name="phn-second" class="form-control" placeholder="" min="0" step="1" oninput="this.value = this.value.slice(0, 8)" aria-labelledby="phn-second">
+                                </div>
+                            </div>
+                            <p class="feedback">�쟾�솕踰덊샇 �뮮�옄由щ뒗 �븘�닔 �엯�젰 �빆紐⑹엯�땲�떎.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phn-second">����젆�듃 �꽑�깮</label>
+                            <div class="flex-row gap5">
+                                <div class="col col-4">
+                                    <div id="phn-second" class="se-select" data-stove="select" data-uicase="slide">
+                                        <div class="e-hidden-title">TITLE</div>
+                                        <select required="" title="">
+                                            <option value="" hidden="">010</option>
+                                            <option value="0">010</option>
+                                            <option value="1">011</option>
+                                            <option value="2">016</option>
+                                            <option value="3">017</option>
+                                            <option value="4">018</option>
+                                        </select>
+                                    <button type="button" class="se-btn btn-fake-slt"><span class="placeholder">010</span><span class="value"></span></button></div>
+                                </div>
+                                <div class="col">
+                                    <input id="phn-second_2" type="number" name="phn-second" class="form-control" placeholder="" min="0" step="1" oninput="this.value = this.value.slice(0, 8)" aria-labelledby="phn-second_2">
+                                    <span class="ipt-right">03:00</span><!--[D]: �씤利� �떆媛� -->
+                                </div>
+                                <!-- <div class="col col-4">
+                                    <button type="button" class="btn btn-primary">�씤利� 踰덊샇 �슂泥�</button>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <section class="tit">
+                            selectCustom.Ver2
+                        </section>
+                        <div class="form-group">
+                            <div id="select02" class="se-select bank-list bank-ico" data-stove="select" data-uicase="slide">
+                                <div class="e-hidden-title">����뻾�꽑�깮</div>
+                                <select required="" title="">
+                                    <option value="" hidden="">����뻾 �꽑�깮</option>
+                                    <option value="0">援�誘쇱���뻾</option>
+                                    <option value="1">IBK湲곗뾽����뻾</option>
+                                    <option value="2">NH�냽�삊</option>
+                                    <option value="3">�떊�븳����뻾</option>
+                                    <option value="4">�슦由ъ���뻾</option>
+                                    <option value="5">�븯�굹����뻾</option>
+                                    <option value="6">�쇅�솚����뻾</option>
+                                    <option value="7">�뵪�떚����뻾</option>
+                                    <option value="8">BNK遺��궛����뻾</option>
+                                    <option value="9">���援ъ���뻾</option>
+                                    <option value="10">耳��씠諭낇겕</option>
+                                    <option value="11">SC�젣�씪����뻾</option>
+                                    <option value="12">移댁뭅�삤諭낇겕</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <section class="tit">
+                            Textarea
+                        </section>
+
+                        <div class="form-group">
+                            <textarea type="text" id="ipt02" class="inp" name="" value="" placeholder="�궡�슜�쓣 �엯�젰�빐二쇱꽭�슂" maxlength=""></textarea>
+                        </div>
+
+                        <section class="tit">
+                            RangeCustom
+                        </section>
+
+                        <div class="form-group">
+                            <label for="range1">RangeCustom</label>
+							<div class="range-pack">
+								<!-- value -->
+								<div class="value">
+									<span class="range-val" id="lower1"></span>
+									<span class="sign">~</span>
+									<span class="range-val" id="upper1"></span>
+									留뚯썝 �씠�긽
+								</div>
+								<!-- range // �븯�떒�뿉 range �뒪�겕由쏀듃 �엳�쓬 -->
+								<div id="range1" class="se-range"></div>
+							</div>
+						</div>
+
+                    <!-- </form> -->
+                </div>
+            </div>
+            <!-- E:contentWrap -->
+
+            <!--S:btmWrap-->
+            <div class="btmWrap">
+
+                <div class="btm-btn-area">
+                    <button type="button" class="btn btn-primary">�젅�씠�븘�썐</button>
+                </div>
+
+                <!-- s:footerWrap -->
+                <div id="footerWrap">
+                    <script>
+                        $(document).ready(function () {
+                            $("#footerWrap").load("../include/inc_footer.html");
+                        });
+                    </script>
+                </div>
+                <!-- e:footerWrap-->
+
+            </div>
+            <!--E:btmWrap-->
+    </div>
+    <!-- E:wrap -->
+
+</body>
+
+<script>
+
+    function numberWithCommas(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // range js
+    var doubleSlider1 = document.querySelector('#range1');
+    noUiSlider.create(doubleSlider1, {
+        behaviour: 'tap-drag',
+        start: [0, 10000],
+        step: 1000,
+        connect: true,
+        range: {
+            'min': [0],
+            'max': [10000]
+        },
+    });
+
+    doubleSlider1.noUiSlider.on('update', function (values) {
+        document.getElementById('lower1').innerHTML = numberWithCommas(Math.floor(values[0]));
+        document.getElementById('upper1').innerHTML = numberWithCommas(Math.floor(values[1]));
+    });
+
+
+</script>
+
+
+</html>

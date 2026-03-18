@@ -1,0 +1,327 @@
+@charset "euc-kr";
+
+/*---------------------------------------------
+	select #셀렉트
+---------------------------------------------*/
+/*
+	reset
+*/
+/* .se-select {
+    display: inline-block;
+    width: 100%;
+}
+
+.se-select select {
+    display: inline-block;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    border: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.se-select select:focus {
+    outline: none;
+} */
+
+.se-select select::-ms-expand {
+    display: none;
+}
+
+/*
+    default
+*/
+.se-select select {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: var(--font-w-r);
+    border:1px solid var(--ipt-border);
+    background-color: var(--white);
+    padding: 20px 32px 20px 16px;
+    background-image: var(--ico-se-arrow);
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: right 8px center;
+    color:var(--ipt-txt);
+}
+
+.se-select select option {
+    color:var(--ipt-txt-active);
+}
+
+/* .se-select select:read-only,
+.se-select select[readonly=readonly] */
+
+.se-select select:disabled,
+.se-select select[disabled=disabled] {
+    opacity: 1;
+    border:1px solid var(--ipt-border-inactive);
+    background-color: var(--ipt-bg-inactive);
+    background-image: var(--ico-se-arrow);
+    color:var(--ipt-txt-inactive);
+}
+
+.form-group.user-invalid .se-select select:invalid {
+    color: var(--error);
+}
+
+.form-group.user-invalid .se-select select{
+    border:1px solid var(--error);
+}
+
+.se-select select:focus {
+    border-color:var(--ipt-border-active);
+}
+
+/*---------------------------------------------
+    select - stove custom #커스텀셀렉트
+---------------------------------------------*/
+.se-select[data-stove=select] select {
+    visibility: hidden;/* 커스텀 셀렉트 사용 안 할 경우 삭제 */
+}
+
+.se-select[data-stove=select] .btn-fake-slt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* */
+.se-select[data-stove=select] {
+    position: relative;
+}
+
+.se-select[data-stove=select] div.stove-dim {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background:var(--dim) ;
+}
+
+.se-select[data-stove=select] div.stove-dim.on {
+    display: block;
+}
+
+.se-select[data-stove=select] div.stove-option-layer {
+    position: fixed;
+    top: auto;
+    bottom: -100%;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    max-height: calc(100% - 55px);
+    padding-top: 60px;
+    background-color: var(--white);
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 30px 30px 0 0;
+    outline: none;
+    transition:bottom 0.2s ease-in-out;
+}
+.se-select[data-stove=select] div.stove-option-layer:focus-visible { outline: 1px solid var(--outline); outline-offset: -2px; }
+
+.se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    padding-bottom: 40px;
+    overflow-y: auto;
+}
+
+.se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options {
+    padding: 0 15px;
+}
+
+.se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option {
+    width: 100%;
+    min-height: 50px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 0;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border:1px solid var(--fk-se-inactive);
+    background-color: var(--white);
+    font-size: var(--font18);
+    text-align: left;
+}
+
+.se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option:focus-visible { outline:var(--outline); border:1px solid var(--outline); }
+.se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option.on,
+.se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option:hover {
+    background-color: var(--fk-se-ative);
+    border:1px solid var(--ipt-border-active);
+    font-weight: var(--font-w-b);
+    /* background-image: ; */
+    /* background-size: 24px; */
+    /* background-position: right top 12px; */
+    /* background-repeat: no-repeat; */
+}
+
+.se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option:disabled {
+    color: var(--ipt-txt-inactive);
+    cursor: default;
+}
+
+.se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option+button.stove-option {
+    margin-top: 0;
+}
+
+.se-select[data-stove=select] div.stove-option-layer div.stove-options-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: inline-block;
+    /* width: calc(100% - 55px); */
+    font-size: var(--font18);
+    font-weight: var(--font-w-b);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--fk-se-title);
+}
+
+.se-select[data-stove=select] div.stove-option-layer button.stove-btn-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    background-image: var(--ico-close);
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center center;
+    cursor: pointer;
+}
+
+.se-select[data-stove=select] div.stove-option-layer.on {
+    bottom: 0px;
+}
+
+.se-select[data-stove=select] div.stove-option-layer.va-upshow {
+    top: auto;
+    bottom: 100%;
+}
+
+.se-select[data-stove=select] .e-hidden-title {
+    display: none;
+}
+
+.se-select[data-stove=select].replace select {
+    display: none;
+}
+
+.se-select[data-stove=select].replace .select-design {
+    display: block;
+}
+
+/*
+    fake select
+*/
+.btn-fake-slt {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+    padding: 20px 36px 20px 16px;
+    font-weight: var(--font-w-r);
+    border:1px solid var(--ipt-border);
+    background-color: var(--white);
+    background-image: var(--ico-se-arrow);
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: right 8px center;
+    color:var(--ipt-txt);
+    outline: none;
+}
+
+.btn-fake-slt>* {
+    width: 100%;
+}
+
+.btn-fake-slt>*:not(.placeholder) {
+    display: none;
+}
+
+.btn-fake-slt .logo {
+    flex-shrink: 0;
+}
+
+.btn-fake-slt .placeholder {
+    color:var(--ipt-txt-placeholder);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn-fake-slt .value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn-fake-slt.selected .placeholder {
+    display: none;
+}
+
+.btn-fake-slt.selected>* {
+    display: block;
+}
+
+/* .btn-fake-slt.readonly  */
+.btn-fake-slt.disabled{
+    border:1px solid var(--ipt-border-inactive);
+    background-color: var(--ipt-bg-inactive);
+    background-image: var(--ico-se-arrow);
+    color:var(--ipt-txt-inactive);
+
+}
+.form-group.user-invalid .btn-fake-slt:invalid {
+    color: var(--error);
+}
+
+.form-group.user-invalid .btn-fake-slt {
+    border:1px solid var(--error);
+}
+
+.btn-fake-slt:focus:not(.disabled) {
+    border-color:var(--ipt-border-active);
+}
+
+/* layout */
+
+.se-select[data-stove=select] div.stove-dim {
+    z-index: 110;
+}
+
+.se-select[data-stove=select] div.stove-option-layer {
+    z-index: 110;
+}
+
+/* 은행선택 리스트 */
+.se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options { display:flex; flex-direction: row; justify-content: space-between; gap:10px; flex-wrap: wrap; width:100%; }
+.se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option+button.stove-option { margin-top:0; }
+.se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option { position: relative; width:48%; padding:10px 10px 10px 40px; border:none; }
+.se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option::before { content: ""; position: absolute; top:50%; left:6px; width:20px; height:20px; transform: translateY(-50%); }
+
+.se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option.on { background-color: var(--fk-se-ative); border:var(--white); }
+.se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option.on::after { content: ""; position: absolute; top:50%; right:10px; width:20px; height:20px; transform: translateY(-50%);  background-color: var(--active); mask-image: var(--ico-check); mask-position: center; mask-repeat: no-repeat; mask-size: auto 10px; --webkit-mask-image:var(--ico-check); --wekbit-mask-position: center; --webkit-mask-repeat:no-reepat; --webkit-mask-size:auto 10px;  }
+
+.se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option:focus-visible { border:1px solid var(--outline); }

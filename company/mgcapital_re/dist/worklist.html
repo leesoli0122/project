@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mobile UX/UI worklist</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="Mobile UX/UI" />
+	<meta name="description" content="" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+	<!-- 일반 Favicon 설정 -->
+	<link rel="icon" type="image/png" href="./assets/icons/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+	<link rel="shortcut icon" href="./assets/icons/favicon.ico" />
+	<!-- 애플 터치 아이콘 (iOS) -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png" />
+	<!-- 웹 앱 매니페스트 (PWA) -->
+	<link rel="manifest" href="./assets/icons/site.webmanifest" />
+
+	<link rel="stylesheet" type="text/css" href="./guide/css/pub-worklist.css"/>
+    <script src="./guide/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./guide/js/jquery.form.min.js"></script>
+	<style>
+	.header .etc { color:yellowgreen; }
+	.cont table {
+		display: none;
+	}
+
+	.cont .tit {
+		cursor: pointer;
+	}
+
+	.cont .tit.on ~ table {
+		display: table;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrapper pc">
+		<section class="ifr_view">
+			<iframe id="iframe" width="100%" height="100%" src="./button.html"></iframe>
+		</section>
+		<section class="container">
+
+			<div class="header">
+				<h1>Mobile UX/UI</h1>
+				<ul class="stateArea">
+					<li><strong>진행상테 :</strong></li>
+					<li class="typeCommon"><span>공통</span></li>
+					<li class="typeIng"><span>진행 중</span></li>
+					<li class="typeComp"><span>완료</span></li>
+					<li class="typeNon"><span>삭제</span></li>
+				</ul>
+				<ul class="stateCnt">
+					<li>총 <span id="totCnt"></span>개</li>
+					<li>작업중 <span id="progressCnt"></span>개</li>
+					<li>완료 <span id="compCnt"></span>개</li>
+				</ul>
+				<ul class="etc">
+					<li>테이블 열 진행 클래스(tr에 적용) : 완료 [comp], 비활성화 [non], 완료 [ing] <br>** ui-util.css, ui-utill.js 공통으로 들어갑니다.</li>
+				</ul>
+			</div>
+
+			<div class="cont guide">
+				<h3 class="tit on">example</h3>
+				<table>
+					<summary></summary>
+					<caption></caption>
+					<colgroup>
+						<col width="8%"><col width="8%"><col width="8%"><col width="6%">
+						<col width="6%"><col width="10%"><col width="8%"><col width="4%">
+						<col width="6%"><col width="*">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">depth1</th>
+							<th scope="col">depth2</th>
+							<th scope="col">depth3</th>
+							<th scope="col">depth4</th>
+							<th scope="col">depth5</th>
+							<th scope="col" class="fileName">화면ID</th>
+							<th scope="col">형태</th>
+							<th scope="col">담당</th>
+							<th scope="col">상태</th>
+							<th scope="col">비고</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="comp">
+							<td>[전체] 레이아웃</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/layout.html" target="_blank">layout.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: header.js, popup.js<br><br><b>*스크립트 클래스 :: <br>- headerOn</b></td>
+						</tr>
+						<tr class="">
+							<td>폰트</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="" target="_blank">font.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: font.css</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="cont page">
+				<h3 class="tit on">common</h3>
+				<table>
+					<summary></summary>
+					<caption></caption>
+					<colgroup>
+						<col width="8%"><col width="8%"><col width="8%"><col width="6%">
+						<col width="6%"><col width="10%"><col width="8%"><col width="4%">
+						<col width="6%"><col width="*">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">depth1</th>
+							<th scope="col">depth2</th>
+							<th scope="col">depth3</th>
+							<th scope="col">depth4</th>
+							<th scope="col">depth5</th>
+							<th scope="col" class="fileName">화면ID</th>
+							<th scope="col">형태</th>
+							<th scope="col">담당</th>
+							<th scope="col">상태</th>
+							<th scope="col">비고</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+						<tr class="comp">
+							<td>헤더</td>
+							<td>type.1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/header_1.html" target="_blank">header_1.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: header.js, popup.js, inc_header_1.html<br><br><b>*스크립트 클래스 :: <br>- headerOn, onclick</b></td>
+						</tr>
+						<tr class="ing">
+							<td>헤더</td>
+							<td>type.2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/header_2.html" target="_blank">header_2.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: </td>
+						</tr>
+						<tr class="comp">
+							<td>팝업</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/popup.html" target="_blank">popup.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: popup.js<br><br><b>*스크립트 클래스 :: <br>- onclick</b></td>
+						</tr>
+						<tr class="comp">
+							<td>팝업</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/fake_select.html" target="_blank">fake_select.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: select.css, select.js<br/><br><br>- 커스텀 셀렉트</td>
+						</tr>
+						<tr class="comp">
+							<td>인풋</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/input.html" target="_blank">input.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: input.css, input.js</td>
+						</tr>
+						<tr class="ing">
+							<td>데이터피커</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/datepicker.html" target="_blank">datepicker.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: datepicker.css, datepicker.js</td>
+						</tr>
+						<tr class="comp">
+							<td>버튼</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/button.html" target="_blank">button.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: button.css</td>
+						</tr>
+						<tr class="comp">
+							<td>약관</td>
+							<td>Type.1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/terms.html" target="_blank">terms.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: terms.css<br><br><b>** 개발자에게 드릴 때는 terms.js 및 html 디스크립션 빼고 전달해주세요.</b></td>
+						</tr>
+						<tr class="comp">
+							<td>약관</td>
+							<td>Type.2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/terms_2.html" target="_blank">terms_2.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: terms_2.css<br><br><b>** 개발자에게 드릴 때는 terms.js 및 html 디스크립션 빼고 전달해주세요.</b></td>
+						</tr>
+						<tr class="ing">
+							<td>테이블</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/table.html" target="_blank">table.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: table.css</td>
+						</tr>
+						<tr class="comp">
+							<td>아코디언</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/accordion.html" target="_blank">accordion.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: accordion.css, accordion.js<b><br><br>*스크립트 클래스 :: <br>- accordionToggle</b></td>
+						</tr>
+					
+						<tr class="comp">
+							<td>탭</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="fileName"><a href="./views/common/tab.html" target="_blank">tab.html</a></td>
+							<td></td>
+							<td></td>
+							<td class="state"></td>
+							<td>[사용 소스] :: tab.css, tab.js<b><br><br>*스크립트 클래스 :: <br>- jsTab, nestedJsTab</b></td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			/*---------------------------------------------
+				ready, load
+			---------------------------------------------*/
+			// 모든 리소스(이미지 등)가 로드된 후 fnPreload()를 호출하여 초기화
+			$(window).on('load', function(){
+				fnPreload();
+			});
+			
+			/*---------------------------------------------
+				preload, init
+			---------------------------------------------*/
+			/* preload */
+			function fnPreload(){
+				tableStateManager.init();
+			}
+
+			/*---------------------------------------------
+				tableStateManager 모듈 정의
+			---------------------------------------------*/
+			var tableStateManager = (function() {
+				// 날짜 관련 배열 (필요시 활용)
+				var fromDate = [],
+					toDate   = [],
+					dateGap  = [];
+
+				// 상태별 개수 변수
+				var progressCnt = 0,   // 진행 중 개수
+					compCnt     = 0,   // 완료 개수
+					delCnt      = 0;   // 삭제 개수
+
+				return {
+					// 테이블 각 행의 상태를 업데이트하는 함수
+					updateStates: function(){
+
+						// 호출 시마다 카운트 초기화
+						progressCnt = 0;
+						compCnt = 0;
+						delCnt = 0;
+						
+						$(".cont table tbody tr").each(function() {
+							var $row = $(this);
+							var $stateCell = $row.find(".state");
+							
+							if ($row.hasClass("non")) {
+								$stateCell.html("<span>삭제</span>");
+								delCnt++;
+							} else if ($row.hasClass("ing")) {
+								$stateCell.html("<span>진행 중</span>");
+								progressCnt++;
+							} else if ($row.hasClass("comp")) {
+								$stateCell.html("<span>완료</span>");
+								compCnt++;
+							} else {
+								$stateCell.text("");
+							}
+						});
+
+					},
+
+					// 상태별 카운트를 업데이트
+					updateCounts: function(){
+						var totCnt = $(".page table tbody tr").length; // 전체 행 개수
+						$("#compCnt").text(compCnt);
+						$("#totCnt").text(totCnt);
+						$("#progressCnt").text(progressCnt);
+					},
+					// 레이아웃(마진) 조정
+					adjustLayout: function(){
+						var headerH = $(".container .header").outerHeight();
+						$(".container .guide").css("margin-top", headerH + "px");
+					},
+				
+					// 전체 초기화: 상태 업데이트, 카운트 갱신, 레이아웃 조정 실행
+					init: function() {
+						// 반환된 객체의 메서드를 호출
+						this.updateStates();
+						this.updateCounts();
+						this.adjustLayout();
+					},
+					// 상태와 카운트만 갱신
+					update: function() {
+						this.updateStates();
+						this.updateCounts();
+					}
+				};
+			})();
+
+			/**
+			 * #테이블 토글
+			 **/
+			var tableListToggle = function(el) {
+				var $el = $(el);
+				return {
+					open: function() {
+						$el.addClass('on')
+					},
+					close: function() {
+						$el.removeClass('on')
+					},
+					toggle: function() {
+						if ($el.hasClass('on')) {
+							this.close();
+						} else {
+							this.open();
+						}
+					}
+				};
+			};
+
+			//event
+			$(document).on('click', '.cont .tit', function() {
+				tableListToggle(this).toggle();
+			});
+			
+
+		});
+		</script>
+		
+</body>
+</html>

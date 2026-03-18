@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+  <meta charset="euc-kr">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>샘플&gt;mg캐피탈</title>
+
+  <meta name="keywords" content="MG캐피탈">
+  <meta name="copyright" content="copyrights 2025 MG캐피탈">
+  <meta name="description" content="MG캐피탈 리스금융, 할부금융, 스탁론, 기업대출, 장기렌트카, PF대출 등 금융 서비스 제공.">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta property="og:image" content="http://gallery2gate.kr/resources/images/common/ui-maeta-img">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="Expires" content="-1">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="No-Cache">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.mgcap.co.kr/favicon.ico">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/lib/ui-lib.css">
+  <link rel="stylesheet" href="../../assets/css/ui/ui-util.css">
+
+  <script type="text/javascript" src="../../assets/js/lib/jquery-1.12.4.js"></script>
+  <script type="text/javascript" src="../../assets/js/lib/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/lib/ui_plugin.js"></script>
+  <script type="text/javascript" src="../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script type="module" src="../../assets/js/ui/com/ui-util.js"></script>
+  <script type="text/javascript" src="../../assets/js/ui/terms.js"></script>
+
+
+
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- S: header -->
+    <header id="headerWrap" class="headerOn"></header>
+
+    <main class="contentWrap">
+      <div id="container">
+
+        <section class="tab-container jsTab">
+
+              <div class="form-group">
+                <div id="authTabSelect" class="se-select" data-stove="select" data-uicase="slide">
+                    <div class="e-hidden-title">title</div>
+                    <select required="" title="">
+                        <option value="tab1">탭1</option>
+                        <option value="tab2">탭2</option>
+                        <option value="tab3">탭3</option>
+                    </select>
+                </div>
+            </div>
+                <div class="tab-content form-content border-b1">
+                    <div id="tab1" class="tab-panel active">
+                        준비중1
+                    </div>
+                    <div id="tab2" class="tab-panel">
+                        <p>준비중2</p>
+                    </div>
+                    <div id="tab3" class="tab-panel">
+                        <p>준비중3</p>
+                    </div>
+                </div><!--//tab-content-->
+  
+
+
+
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              // 래퍼(div) → 안의 select를 찾음
+              const wrapper = document.getElementById('authTabSelect');
+              const select = wrapper ? wrapper.querySelector('select') : null;
+              const panels = Array.from(document.querySelectorAll('.tab-panel'));
+            
+              if (!select) return; // select 못 찾으면 종료(안전장치)
+            
+              function activate(id) {
+                panels.forEach(p => {
+                  const on = (p.id === id);
+                  p.classList.toggle('active', on);
+                  p.hidden = !on; // 접근성: 보이지 않는 패널은 hidden
+                });
+              }
+            
+              // 초기 상태: .tab-panel.active 우선, 없으면 select의 값
+              const currentActive = document.querySelector('.tab-panel.active');
+              const initialId = currentActive ? currentActive.id : select.value;
+              select.value = initialId;
+              activate(initialId);
+            
+              // 셀렉트 변경 시 패널 전환
+              select.addEventListener('change', function (e) {
+                activate(e.target.value);
+                // 필요하면 해시 반영
+                // history.replaceState(null, '', '#' + e.target.value);
+              });
+            
+              // URL 해시로 진입한 경우(#tab2 등) 처리
+              if (location.hash) {
+                const hashId = location.hash.replace('#','');
+                if (document.getElementById(hashId)) {
+                  select.value = hashId;
+                  activate(hashId);
+                }
+              }
+            });
+            </script>
+            
+
+      </div>
+    </main>
+
+
+    <!-- S: footer -->
+    <footer id="footerWrap"></footer>
+
+  </div>
+
+
+</body>
+</html>

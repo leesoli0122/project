@@ -1,0 +1,248 @@
+/* sub1 */
+
+/* --- 전체 구조 및 간격 --- */
+.product-detail .content-block + .content-block {
+    margin-top: 72px; /* 큰 콘텐츠 블록 사이의 간격 */
+}
+.product-detail .content-block-inner + .content-block-inner {
+    margin-top: 72px; /* h3 아래의 작은 콘텐츠 블록 사이의 간격 */
+}
+.product-detail .info-content{
+    margin-top: 32px;
+}
+.product-detail .compliance-info {
+    margin-top: 24px;
+}
+
+.product-detail h3 {
+    font-size: var(--font28);
+    color: var(--color-3);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-weight: var(--font-w-b);
+    border-bottom: 1px solid var(--color-6, #666); 
+}
+
+.product-detail h4 {
+    margin-top: 38px;
+    /* margin-bottom: 20px; */
+    padding-bottom: 20px;
+    font-size: var(--font22); 
+    font-weight: var(--font-w-b);
+    /* border-bottom: 1px solid var(--color-d, #ddd); */
+}
+
+.product-detail p {
+    color: var(--color-75, #757575);
+    
+}
+
+/* 제목과 링크가 함께 있는 경우 */
+.product-detail .title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+.product-detail .title-wrap h4 {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+.product-detail a.link-more {
+    color: var(--color-75, #757575);
+    font-size: var(--font14);
+    text-decoration: none;
+}
+.product-detail a.link-more::after {
+    content: '';
+    display: inline-block;
+    width: 20px; 
+    height: 20px; 
+    margin-left: 6px;
+    margin-bottom: 3.6px;
+    vertical-align: middle; 
+    background-image: var(--ico-next); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /
+}
+
+
+/* --- 설명 목록 (dl) 스타일 --- */
+.product-detail .description-list dt {
+    font-weight: var(--font-w-b);
+    color: var(--color-45, #454545);
+    font-size: var(--font18);
+    margin-top: 24px;
+}
+.product-detail .description-list dt:first-of-type {
+    margin-top: 0;
+}
+.product-detail .description-list dd {
+    margin-top: 10px;
+    color: var(--color-6, #666);
+    font-size: var(--font18);
+    font-weight: 400;
+}
+
+
+/* --- 순서 목록 (ol) 스타일 --- */
+.product-detail .process-list {
+    margin-top: 24px;
+    list-style: none;
+}
+.product-detail .process-list li {
+    padding: 16px 0; 
+}
+.product-detail .process-list li strong {
+    display: block; 
+    font-size: var(--font18);
+    font-weight: var(--font-w-m);
+    margin-bottom: 8px; 
+    color: var(--color-45, #454545);
+}
+.product-detail .process-list li strong .num {
+    color: var(--primary, #0072BC); 
+}
+.product-detail .process-list li p {
+}
+
+/* --- 테이블 (table) 스타일 --- */
+
+.product-detail .data-table tbody th {
+    color: var(--color-2);
+    font-size: var(--font16);
+    background-color: #f8f8f8; 
+    font-weight: 700;
+}
+.product-detail .data-table thead th {
+    font-weight: 700;
+}
+
+/* infowrap */
+.info-wrap.style2 {
+    border: 1px solid #41C7F4;
+}
+.info-content > .info-wrap dt {
+    margin-bottom: 20px;
+    font-size: var(--font16);
+    font-weight: var(--font-w-b);
+    color: var(--color-3);
+    display: flex;
+    align-items: flex-end;
+}
+
+.info-content > .info-wrap dt::before {
+    content: "";
+    display: inline-block;
+    flex-shrink: 0; 
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; 
+    background-image: var(--ico-info);
+    background-repeat: no-repeat;
+    background-size: 18px;
+}
+
+.info-content > .info-wrap dd {
+    color: var(--color-75);
+    font-size: var(--font16);
+    font-weight: 400;
+    line-height: normal;
+    margin: 0; 
+}
+
+.compliance-info {
+    padding: 20px 30px;
+    background-color: #F4F6F7;
+    line-height: 1.7; /* 이걸로 간격조절 */   
+}
+.compliance-info p {
+    font-size: var(--font16);
+    color: var(--color-6);
+}
+
+
+/* 아코디언 */
+.accordion-item .tit .ic-arr {
+    display: none; 
+}
+.accordion-item .accordion-content {
+    display: block; 
+}
+
+/* 
+    모바일 반응형 스타일 (768px 이하)
+ */
+@media (max-width: 768px) {
+    .accordion-item .tit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding-bottom: 18px;
+    }
+    .accordion-item .accordion-content {
+        display: none; 
+    }
+    .accordion-item.on .accordion-content {
+        display: block;
+
+    }
+
+    .accordion-item .tit .ic-arr {
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        width: 27px;
+        height: 27px;
+        flex-shrink: 0;
+        border: 1px solid var(--color-d);
+        border-radius: 50%;
+        transition: transform 0.2s linear;
+    }
+
+    .accordion-item .tit .ic-arr::before {
+        content: '';
+        display: block;
+        width:15px;  
+        height: 15px;
+        background-color: var(--color-3); 
+        mask-image: var(--ico-se-arrow);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        -webkit-mask-image: var(--ico-se-arrow);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+    }
+        
+    .accordion-item.on .tit .ic-arr {
+        transform: rotate(180deg);
+    }
+    
+    .product-detail h4 {
+        border-bottom: none;
+        margin: 0;
+        padding: 0;
+    }
+    .product-detail .content-block-inner + .content-block-inner {
+        margin-top: 0;
+    }
+    
+    .product-detail .accordion-item + .content-block-inner {
+        margin-top: 60px;
+    }
+    
+    .product-detail .info-content .info-wrap {
+        padding: 24px 20px;
+    }
+    .product-detail .compliance-info {
+        padding: 24px 20px;
+    }
+    .product-detail a.link-more::after {
+        width: 10px;  
+        height: 10px; 
+        margin-bottom: 1px;
+    }
+}

@@ -1,0 +1,152 @@
+@charset "euc-kr";
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* 기본 폰트 사이즈 (pc) */
+
+  html {
+    font-size: 19px;
+  }
+  body {
+    line-height: 1.5;
+  }
+  /* --- 폰트 사이즈 그룹 --- */
+  .product-detail h3 { font-size: 1.556rem; }
+  .product-detail h4 { font-size: 1.222rem; }
+  .product-detail .description-list dt,
+  .product-detail .process-list li strong,
+  .table-tit h4 {
+    font-size: 1rem;
+  }
+  .product-detail .description-list dd,
+  .product-detail .process-list li p,
+  .info-content > .info-wrap dt,
+  .info-content > .info-wrap dd,
+  .compliance-info p {
+    font-size: 1rem;
+  }
+  .product-detail .data-table th,
+  .product-detail .data-table td {
+    font-size: 0.889rem;
+  }
+  .product-detail a.link-more { font-size: 0.778rem; }
+  .table-caption p { font-size: 0.667rem; }
+
+  .product-detail h3 { color: #333333; padding-bottom: 20px; margin-bottom: 20px; font-weight: 700; border-bottom: 1px solid #666666; }
+  .product-detail h4 { margin-top: 38px; padding-bottom: 20px; font-weight: 600; border-bottom: 1px solid #dddddd; }
+  .product-detail .title-wrap h4 { margin: 0; border: none; padding: 0; }
+  .product-detail p { color: #757575; }
+  .product-detail .title-wrap { display: -ms-flexbox; -ms-flex-pack: justify; -ms-flex-align: end; margin-bottom: 20px; }
+  .product-detail a.link-more { color: #757575; text-decoration: none; }
+  .product-detail a.link-more::after { content: ""; display: inline-block; width: 20px; height: 20px; margin-left: 6px; margin-bottom: 3.6px; vertical-align: middle; background: url(../../../images/com/svg/ico_next.svg) no-repeat center / cover; }
+  .product-detail .content-block + .content-block, .product-detail .content-block-inner + .content-block-inner { margin-top: 72px; }
+  .product-detail .info-content { margin-top: 32px; }
+  .product-detail .compliance-info { margin-top: 24px; }
+  .product-detail .description-list dt { font-weight: 700; color: #454545; margin-top: 24px; }
+  .product-detail .description-list dt:first-of-type { margin-top: 0; }
+  .product-detail .description-list dd { margin-top: 10px; color: #666666; font-weight: 400; }
+  .product-detail .process-list { margin-top: 24px; list-style: none; }
+  .product-detail .process-list li { padding: 16px 0; }
+  .product-detail .process-list li strong { display: block; font-weight: 500; margin-bottom: 8px; color: #454545; }
+  .product-detail .process-list li strong .num { color: #0072bc; }
+  table { table-layout: fixed; }
+  th, td { padding: 15px 20px; border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd; border-left: 1px solid #dddddd; font-weight: 500; }
+  thead tr th { background-color: #f4f6f7; color: #333333; }
+  tbody tr td { background-color: #ffffff; color: #666666; font-weight: 400; }
+  tbody tr th:first-child, tbody tr td:first-child { border-left: none; border-top: none; }
+  .product-detail .data-table tbody th { color: #222222; background-color: #f8f8f8; font-weight: 700; }
+  .product-detail .data-table thead th { font-weight: 700; }
+  .table-type1 { text-align: center; margin-bottom: 40px; }
+  .table-tit { padding: 0 0 16px 0; }
+  .table-tit h4 { font-weight: 500; text-align: left; color: #333333; }
+  .table-caption { padding-top: 12px; }
+  .table-caption p { text-align: right; font-weight: 400; color: #999999; }
+  .tbl-l { border-left: 1px solid #dddddd !important; }
+  .tbl-r { border-right: 1px solid #dddddd !important; }
+  .info-wrap.style2 { border: 1px solid #41c7f4; }
+  .info-content > .info-wrap dt { margin-bottom: 20px; font-weight: 700; color: #333333; display: -ms-flexbox; -ms-flex-align: end; }
+  .info-content > .info-wrap dt::before { content: ""; display: inline-block; -ms-flex-negative: 0; width: 30px; height: 30px; margin-right: 10px; background: url(../../../images/com/svg/ico_info.svg) no-repeat center / 18px; }
+  .info-content > .info-wrap dd { color: #757575; font-weight: 400; line-height: normal; margin: 0; }
+  .product-detail .accordion-item > .tit,
+  .product-detail .accordion-item > .cont {
+    border-bottom: 1px solid #dddddd;
+  }
+  .compliance-info { padding: 20px 30px; background-color: #f4f6f7; line-height: 1.7; }
+  .product-detail .accordion-item .tit .ic-arr { display: none; }
+  .product-detail .accordion-item .accordion-content { display: block; }
+}
+/* ================================ PC 스타일 끝 ================================ */
+
+/* ie11 전용 모바일 스타일 (768px 이하) */
+@media all and (max-width: 768px) and (-ms-high-contrast: none), (max-width: 768px) and (-ms-high-contrast: active) {
+  html {
+    font-size: 14px;
+  }
+
+  _:-ms-lang(x), .product-detail .accordion-item .tit {
+    display: -ms-flexbox;
+    -ms-flex-pack: justify;
+    -ms-flex-align: center;
+  }
+  _:-ms-lang(x), .product-detail .accordion-item .tit .ic-arr {
+    display: -ms-flexbox !important;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+  }
+
+  .product-detail .accordion-item .tit {
+    cursor: pointer;
+    padding-bottom: 18px;
+  }
+  .product-detail .accordion-item .accordion-content {
+    display: none;
+  }
+  .product-detail .accordion-item.on .accordion-content {
+    display: block;
+  }
+  .product-detail .accordion-item .tit .ic-arr {
+    width: 30px;
+    height: 30px;
+    -ms-flex-negative: 0;
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  .product-detail .accordion-item .tit .ic-arr::before {
+    content: "";
+    display: block;
+    width: 40px; 
+    height: 40px;
+    background: url(../../../images/com/svg/ico_se_arrow.svg) no-repeat center / contain;
+  }
+  .product-detail .accordion-item.on .tit .ic-arr {
+    transform: rotate(180deg);
+  }
+
+  .product-detail h4 {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+  }
+  .product-detail .content-block-inner + .content-block-inner {
+    margin-top: 0;
+  }
+  .product-detail .accordion-item + .content-block-inner {
+    margin-top: 60px;
+  }
+  .product-detail .info-content .info-wrap {
+    padding: 24px 20px;
+  }
+  .product-detail .compliance-info {
+    padding: 24px 20px;
+  }
+  .product-detail a.link-more::after {
+    width: 10px;
+    height: 10px;
+    margin-bottom: 1px;
+  }
+  .info-content > .info-wrap dt::before {
+    width: 20px;
+    height: 20px;
+    background-size: 16px;
+  }
+}

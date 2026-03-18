@@ -1,0 +1,505 @@
+@charset "UTF-8";
+/* 모바일 폰트 사이즈 기준 [html::18px], 짝수 단위입니다.[짝수 단위로 할 경우 소수점 최대 3자리로 떨어집니다.] */
+/* -------------------------------------------------
+   필요한 변수 기본값(없을 때만 적용)
+-------------------------------------------------- */
+/* ← 오타 ;f 제거 */
+/* -------------------------------------------------
+   레이아웃
+-------------------------------------------------- */
+.form-content > .form-wrap {
+  display: flex;
+  gap: 40px;
+  margin-top: 42px;
+}
+.form-content > .form-wrap:first-of-type {
+  margin-top: 0;
+}
+.form-content > .form-wrap > .form-group {
+  flex: 1;
+}
+.form-content > .form-wrap > .form-group:only-child {
+  flex: 0 0 50%;
+  padding-right: 20px;
+}
+
+.form-group {
+  position: relative;
+}
+.form-group > label {
+  display: block;
+  margin-bottom: 16px;
+  color: #222222;
+  font-size: 1.111rem;
+  font-weight: 500;
+}
+
+/* -------------------------------------------------
+   input / textarea (믹스인 없이 인라인)
+-------------------------------------------------- */
+input.form-control,
+textarea {
+  width: 100%;
+  padding: 20px 16px;
+  border: 1px solid #dddddd;
+  border-radius: 0;
+  background-color: #ffffff;
+  color: #222222;
+  font-size: 0.889rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+  /* 상태 (원래 input-states 믹스인 내용) */
+}
+input.form-control:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2392ff;
+  /* rgba()에 변수 사용 가능 (Sass) */
+}
+input.form-control:disabled,
+textarea:disabled {
+  background-color: #f8f8f8;
+  color: #ababab;
+  cursor: not-allowed;
+}
+input.form-control::placeholder,
+textarea::placeholder {
+  color: #999999;
+}
+input.form-control:valid:not(:focus),
+textarea:valid:not(:focus) {
+  border-color: #dddddd;
+}
+input.form-control:invalid:not(:focus),
+textarea:invalid:not(:focus) {
+  border-color: #cccccc;
+}
+
+/* textarea 추가 */
+textarea {
+  width: 100%;
+  height: 240px;
+  resize: none;
+  white-space: pre-line;
+}
+textarea:focus {
+  outline-color: #2392ff;
+}
+textarea:valid {
+  padding: 10px;
+}
+
+/* 숫자 입력 정렬 */
+input[inputmode=numeric]:not(:placeholder-shown) {
+  text-align: right;
+}
+
+/* -------------------------------------------------
+   유효성 검사
+-------------------------------------------------- */
+input.form-control:valid,
+.form-group.user-valid input.form-control {
+  color: #222222;
+}
+
+.form-group.user-invalid input.form-control,
+.form-group.user-invalid .btn-fake-slt,
+.form-group.user-invalid select {
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  background-color: #f8f8f8;
+}
+
+.form-group.user-valid .feedback {
+  display: block;
+  color: green;
+}
+.form-group.user-valid .feedback:before {
+  background-color: green;
+}
+.form-group.user-valid .valid {
+  display: inline-block;
+}
+
+.form-group.user-invalid .feedback {
+  display: block;
+}
+
+.valid {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 55%;
+  color: green;
+}
+
+.feedback {
+  position: relative;
+  display: none;
+  padding-left: 24px;
+  margin: 5px 0;
+  line-height: 20px;
+  font-size: 0.778rem;
+  color: #ff0000;
+}
+.feedback::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: #ff0000;
+  mask-image: var(--ico-info);
+  -webkit-mask-image: var(--ico-info);
+  mask-size: auto 18px;
+  -webkit-mask-size: auto 18px;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+/* -------------------------------------------------
+   라디오 / 체크박스
+-------------------------------------------------- */
+ul.radio-box,
+ul.check-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+ul.radio-box li,
+ul.check-box li {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+ul.radio-box li > label,
+ul.check-box li > label {
+  line-height: 30px;
+}
+ul.radio-box input[type=radio],
+ul.radio-box input[type=checkbox],
+ul.check-box input[type=radio],
+ul.check-box input[type=checkbox] {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+/* 라디오 */
+ul.radio-box input[type=radio] {
+  border: 7.5px solid #dddddd;
+  background: #ffffff;
+  border-radius: 50%;
+}
+ul.radio-box input[type=radio]:checked {
+  background: #ffffff;
+  border: 7.5px solid #41c7f4;
+}
+ul.radio-box input[type=radio]:disabled {
+  border-color: #cccccc;
+  background-color: #f5f5f5;
+}
+
+/* 체크박스 */
+ul.check-box input[type=checkbox] {
+  background: #dddddd; /* 기본 배경 */
+}
+ul.check-box input[type=checkbox]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 13px;
+  height: 10px;
+  background-color: #ffffff;
+  mask-image: var(--ico-check);
+  -webkit-mask-image: var(--ico-check);
+  mask-size: auto 10px;
+  -webkit-mask-size: auto 10px;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+ul.check-box input[type=checkbox]:checked {
+  background-color: #41c7f4;
+}
+ul.check-box input[type=checkbox]:checked::before {
+  background-color: #ffffff;
+}
+ul.check-box input[type=checkbox]:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+}
+ul.check-box input[type=checkbox]:disabled::before {
+  background-color: #f5f5f5;
+}
+
+/* 라벨 상태 색 */
+ul.radio-box input[type=radio] + label,
+ul.check-box input[type=checkbox] + label {
+  font-weight: 500;
+  color: #222222;
+}
+
+ul.radio-box input[type=radio]:checked + label,
+ul.check-box input[type=checkbox]:checked + label {
+  color: #2392ff;
+}
+
+ul.radio-box input[type=radio]:disabled + label,
+ul.check-box input[type=checkbox]:disabled + label {
+  color: #999999;
+}
+
+/* 포커스 링 */
+ul.radio-box input[type=radio]:focus-visible,
+ul.check-box input[type=checkbox] :focus-visible,
+div.toggle-box input[type=checkbox]:focus-visible {
+  outline: 1px solid #3ca7ff;
+}
+
+/* -------------------------------------------------
+   토글
+-------------------------------------------------- */
+div.toggle-box input[type=checkbox] {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  border-radius: 12px;
+  background: #f2f2f2;
+  transition: all 0.3s ease;
+}
+div.toggle-box input[type=checkbox]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(23, 4, 61, 0.2);
+}
+div.toggle-box input[type=checkbox]:checked {
+  background: #2392ff;
+}
+div.toggle-box input[type=checkbox]:checked::before {
+  left: auto;
+  right: 3px;
+}
+
+/* -------------------------------------------------
+   range (noUiSlider)
+-------------------------------------------------- */
+.se-range.noUi-target {
+  width: 100%;
+  height: 22px;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+.se-range .noUi-base {
+  position: relative;
+  width: calc(100% - 22px);
+  height: 100%;
+  margin: 0 auto;
+  font-size: 0;
+}
+.se-range .noUi-base::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+}
+.se-range .noUi-base::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: -11px;
+  transform: translateY(-50%);
+  width: calc(100% + 22px);
+  height: 4px;
+  border-radius: 4px;
+  background-color: #bad1ec;
+}
+.se-range .noUi-connects {
+  overflow: visible;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  height: 4px;
+}
+.se-range .noUi-connect {
+  background-color: #2392ff;
+}
+.se-range .noUi-handle {
+  outline: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  top: 0;
+  right: -11px;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border-radius: 22px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+.se-range .noUi-handle:focus-visible {
+  outline: 1px solid #3ca7ff;
+}
+.se-range .noUi-handle::before, .se-range .noUi-handle::after {
+  content: none;
+}
+
+.range-pack .value {
+  margin-bottom: 7px;
+  text-align: right;
+}
+.range-pack .value .sign {
+  padding: 0 3px;
+}
+
+/* -------------------------------------------------
+   업로드
+-------------------------------------------------- */
+.upload-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+}
+.upload-label::before {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #2392ff;
+  mask-image: var(--ico-file);
+  -webkit-mask-image: var(--ico-file);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 19px auto;
+  -webkit-mask-size: 19px auto;
+}
+
+.upload-text.up + .upload-label::before {
+  background-color: #2392ff;
+}
+
+.upload {
+  display: none;
+}
+
+/* -------------------------------------------------
+   Breakpoints
+-------------------------------------------------- */
+/* Mobile (≤ $sm-max) */
+@media (max-width: 767px) {
+  .form-content > .form-wrap {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .form-content > .form-wrap > .form-group:only-child {
+    flex: 1 1 auto;
+    padding-right: 0;
+  }
+  .form-group > label {
+    font-size: 0.889rem;
+  }
+  input.form-control,
+  textarea {
+    padding: 14px 12px;
+  }
+  textarea {
+    height: 180px;
+  }
+  ul.radio-box,
+  ul.check-box {
+    gap: 16px;
+  }
+  ul.radio-box li,
+  ul.check-box li {
+    column-gap: 6px;
+  }
+  ul.radio-box input[type=radio],
+  ul.radio-box input[type=checkbox],
+  ul.check-box input[type=radio],
+  ul.check-box input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+  }
+  ul.radio-box input[type=radio] {
+    border-width: 6px;
+  }
+  ul.check-box input[type=checkbox]::before {
+    width: 11px;
+    height: 8px;
+    mask-size: auto 8px;
+    -webkit-mask-size: auto 8px;
+  }
+  div.toggle-box input[type=checkbox] {
+    width: 36px;
+    height: 22px;
+  }
+  div.toggle-box input[type=checkbox]::before {
+    width: 16px;
+    height: 16px;
+  }
+  .se-range .noUi-handle {
+    width: 20px;
+    height: 20px;
+    right: -10px;
+  }
+  .upload-label::before {
+    right: 12px;
+    width: 18px;
+    height: 18px;
+    mask-size: 17px auto;
+    -webkit-mask-size: 17px auto;
+  }
+}
+/* Tablet (≥ $md-min and < $lg-min) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .form-content > .form-wrap {
+    gap: 24px;
+  }
+  .form-group > label {
+    font-size: 1rem;
+  }
+  ul.radio-box,
+  ul.check-box {
+    gap: 20px;
+  }
+  textarea {
+    height: 200px;
+  }
+}
+.form-content > .form-wrap > .form-group:only-child {
+  flex: 0 0 calc(50% + 157px);
+  padding-right: 0;
+}
+
+/* Desktop (≥ $lg-min) */
+@media (min-width: 1024px) {
+  .form-content > .form-wrap {
+    gap: 40px;
+  }
+}
+
+/*# sourceMappingURL=input.css.map */

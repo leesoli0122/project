@@ -18,5 +18,6 @@
     "liveSassCompile.settings.includeItems": [
         "/css/scss/ *.scss"
     ],
-    "files.insertFinalNewline": false
+    "files.insertFinalNewline": false,
+    "liveServer.settings.port": 5501
 }

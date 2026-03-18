@@ -1,0 +1,679 @@
+@charset "euc-kr";
+@use "./style.scss" as *;
+
+/* --------------------------------------------
+   기본 색/타이포 변수 (프로젝트 공통 변수 사용 가정)
+   - $color-*, $font*, $font-w-* 는 기존 파일에서 선언되어 있다고 가정
+--------------------------------------------- */
+
+/* --------------------------------------------
+   Mixin 정의
+--------------------------------------------- */
+@mixin input-base() {
+  width: 100%;
+  padding: 20px 16px;
+  border: 1px solid #000;
+  border-radius: 0;
+  background-color: $white;
+  color: $ipt-txt;
+  font-size: $font16;
+  font-weight: $font-w-m;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $ipt-border-active;
+    //box-shadow: 0 0 0 3px rgba($ipt-border-active, 0.1);
+  }
+
+  &:disabled {
+    background-color: $ipt-bg-inactive;
+    color: $ipt-txt-inactive;
+    cursor: not-allowed;
+  }
+
+  &::placeholder {
+    color: $ipt-txt-placeholder;
+  }
+}
+
+@mixin input-states() {
+  &:valid {
+    border-color: $ipt-border;
+  }
+
+  &:invalid {
+    border-color: $ipt-border-inactive;
+  }
+}
+
+/* --------------------------------------------
+   Map Deep Get 함수 정의
+--------------------------------------------- */
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+    @if $map == null {
+      @return null;
+    }
+  }
+  @return $map;
+}
+
+/* --------------------------------------------
+   인풋 전역 변수 (기존 변수 유지 + 맵 기반으로 사용)
+--------------------------------------------- */
+$ipt-label: $color-2;
+$ipt-txt: $color-2;
+$ipt-txt-placeholder: $color-9;
+$ipt-txt-active: $color-2;
+$ipt-txt-inactive: $color-ab;
+$ipt-border: $color-d;
+$ipt-border-active: $active;
+$ipt-border-inactive: $color-c;
+$ipt-bg-inactive: $color-f8;
+
+/* --------------------------------------------
+   상태 맵: input/textarea 전용
+--------------------------------------------- */
+$input-states: (
+  default: (
+    txt: $ipt-txt,
+    placeholder: $ipt-txt-placeholder,
+    border: $ipt-border,
+    bg: $white,
+    weight: $font-w-m,
+  ),
+  active: (
+    txt: $ipt-txt-active,
+    border: $ipt-border-active,
+    bg: $white,
+  ),
+  inactive: (
+    txt: $ipt-txt-inactive,
+    border: $ipt-border-inactive,
+    bg: $ipt-bg-inactive,
+  ),
+  error: (
+    txt: $error,
+    border: $error,
+    bg: $ipt-bg-inactive,
+  ),
+);
+
+/* 라디오/체크 상태 맵 */
+$rc-states: (
+  default: (
+    txt: $color-2,
+    txt-muted: $color-9,
+    txt-active: $active,
+    border: $color-d,
+    border-inactive: $color-c,
+    bg: $white,
+    bg-inactive: $color-f5,
+    mark: $white,
+    active: $primary-light,
+  ),
+);
+
+/* 토글 상태 맵 */
+$toggle-states: (
+  default: (
+    track: $color-f2,
+    knob: $white,
+    active: $active,
+    outline: $outline,
+  ),
+);
+
+/* range(noUiSlider) 맵 */
+$range-states: (
+  base-track: $secondary,
+  connect: $active,
+  handle-bg: $white,
+  handle-border: $color-9,
+  outline: $outline,
+);
+
+/* --------------------------------------------
+   레이아웃
+--------------------------------------------- */
+.form-content {
+  > .form-wrap {
+    display: flex;
+    gap: 40px;
+    margin-top: 42px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    > .form-group {
+      flex: 1;
+
+      &:only-child {
+        flex: 0 0 50%;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+.form-group {
+  position: relative;
+
+  > label {
+    display: block;
+    margin-bottom: 16px;
+    color: $ipt-label;
+    font-size: $font20;
+    font-weight: $font-w-m;
+  }
+}
+
+/* --------------------------------------------
+   input / textarea
+--------------------------------------------- */
+input.form-control,
+textarea {
+  @include input-base();
+  @include input-states();
+}
+
+textarea {
+  width: 100%;
+  height: 240px;
+  resize: none;
+  white-space: pre-line;
+
+  &:focus {
+    outline-color: map-deep-get($input-states, active, border);
+  }
+  &:valid {
+    padding: 10px;
+  }
+}
+
+/* 숫자 입력 정렬 */
+input[inputmode="numeric"]:not(:placeholder-shown) {
+  text-align: right;
+}
+
+/* --------------------------------------------
+   유효성 검사
+--------------------------------------------- */
+input.form-control:valid,
+.form-group.user-valid input.form-control {
+  color: map-deep-get($input-states, active, txt);
+}
+
+.form-group.user-invalid {
+  input.form-control,
+  .btn-fake-slt,
+  select {
+    color: map-deep-get($input-states, error, txt);
+    border: 1px solid map-deep-get($input-states, error, border);
+    background-color: map-deep-get($input-states, error, bg);
+  }
+}
+
+.form-group.user-valid {
+  .feedback {
+    display: block;
+    color: green;
+
+    &:before {
+      background-color: green;
+    }
+  }
+
+  .valid {
+    display: inline-block;
+  }
+}
+
+.form-group.user-invalid .feedback {
+  display: block;
+}
+
+.valid {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 55%;
+  color: green;
+}
+
+.feedback {
+  position: relative;
+  display: none;
+  padding-left: 24px;
+  margin: 5px 0;
+  line-height: 20px;
+  font-size: $font14;
+  color: $error;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-color: $error;
+    mask-image: var(--ico-info);
+    -webkit-mask-image: var(--ico-info);
+    mask-size: auto 18px;
+    -webkit-mask-size: auto 18px;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+  }
+}
+
+/* --------------------------------------------
+   라디오 / 체크박스
+--------------------------------------------- */
+ul.radio-box,
+ul.check-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+
+  li {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    > label {
+      line-height: 30px;
+    }
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* 라디오 */
+ul.radio-box {
+  input[type="radio"] {
+    border: 7.5px solid map-deep-get($rc-states, default, border);
+    background: map-deep-get($rc-states, default, bg);
+    border-radius: 50%;
+
+    &:checked {
+      background: map-deep-get($rc-states, default, bg);
+      border: 7.5px solid map-deep-get($rc-states, default, active);
+    }
+
+    &:disabled {
+      border-color: map-deep-get($rc-states, default, border-inactive);
+      background-color: map-deep-get($rc-states, default, bg-inactive);
+    }
+  }
+}
+
+/* 체크박스 */
+ul.check-box {
+  input[type="checkbox"] {
+    background: map-deep-get(
+      $rc-states,
+      default,
+      border
+    ); // 틸트감 있는 기본 배경
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 13px;
+      height: 10px;
+      background-color: map-deep-get($rc-states, default, mark);
+      mask-image: var(--ico-check);
+      -webkit-mask-image: var(--ico-check);
+      mask-size: auto 10px;
+      -webkit-mask-size: auto 10px;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+    }
+
+    &:checked {
+      background-color: map-deep-get($rc-states, default, active);
+
+      &::before {
+        background-color: map-deep-get($rc-states, default, mark);
+      }
+    }
+
+    &:disabled {
+      background-color: map-deep-get($rc-states, default, border-inactive);
+      border-color: map-deep-get($rc-states, default, border-inactive);
+
+      &::before {
+        background-color: map-deep-get($rc-states, default, bg-inactive);
+      }
+    }
+  }
+}
+
+/* 라벨 상태 색 */
+ul.radio-box input[type="radio"] + label,
+ul.check-box input[type="checkbox"] + label {
+  font-weight: $font-w-m;
+  color: map-deep-get($rc-states, default, txt);
+}
+
+ul.radio-box input[type="radio"]:checked + label,
+ul.check-box input[type="checkbox"]:checked + label {
+  color: map-deep-get($rc-states, default, txt-active);
+}
+
+ul.radio-box input[type="radio"]:disabled + label,
+ul.check-box input[type="checkbox"]:disabled + label {
+  color: map-deep-get($rc-states, default, txt-muted);
+}
+
+/* 포커스 링 */
+ul.radio-box input[type="radio"]:focus-visible,
+ul.check-box input[type="checkbox"]:focus-visible,
+div.toggle-box input[type="checkbox"]:focus-visible {
+  outline: 1px solid map-deep-get($toggle-states, default, outline);
+}
+
+/* --------------------------------------------
+   토글
+--------------------------------------------- */
+div.toggle-box input[type="checkbox"] {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  border-radius: 12px;
+  background: map-deep-get($toggle-states, default, track);
+  transition: all 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: map-deep-get($toggle-states, default, knob);
+    box-shadow: 0px 2px 5px rgba(23, 4, 61, 0.2);
+  }
+
+  &:checked {
+    background: map-deep-get($toggle-states, default, active);
+
+    &::before {
+      left: auto;
+      right: 3px;
+    }
+  }
+}
+
+/* --------------------------------------------
+   range (noUiSlider)
+--------------------------------------------- */
+.se-range {
+  &.noUi-target {
+    width: 100%;
+    height: 22px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .noUi-base {
+    position: relative;
+    width: calc(100% - 22px);
+    height: 100%;
+    margin: 0 auto;
+    font-size: 0;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 0;
+      height: 100%;
+    }
+
+    &::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: -11px;
+      transform: translateY(-50%);
+      width: calc(100% + 22px);
+      height: 4px;
+      border-radius: 4px;
+      background-color: map-deep-get($range-states, base-track);
+    }
+  }
+
+  .noUi-connects {
+    overflow: visible;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    height: 4px;
+  }
+
+  .noUi-connect {
+    background-color: map-deep-get($range-states, connect);
+  }
+
+  .noUi-handle {
+    outline: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    top: 0;
+    right: -11px;
+    background-color: map-deep-get($range-states, handle-bg);
+    border: 1px solid map-deep-get($range-states, handle-border);
+    border-radius: 22px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+
+    &:focus-visible {
+      outline: 1px solid map-deep-get($range-states, outline);
+    }
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.range-pack {
+  .value {
+    margin-bottom: 7px;
+    text-align: right;
+
+    .sign {
+      padding: 0 3px;
+    }
+  }
+}
+
+/* --------------------------------------------
+   업로드
+--------------------------------------------- */
+.upload-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: $active; // 파일 아이콘 색 (상태에 맞게 조정 가능)
+    mask-image: var(--ico-file);
+    -webkit-mask-image: var(--ico-file);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: 19px auto;
+    -webkit-mask-size: 19px auto;
+  }
+}
+
+.upload-text.up + .upload-label::before {
+  background-color: $active;
+}
+.upload {
+  display: none;
+}
+
+/* =========================================
+   Breakpoints & Mixins
+========================================= */
+$sm-max: 767px; // 모바일
+$md-min: 768px; // 태블릿+
+$lg-min: 1024px; // 데스크탑+
+
+@mixin mq-mobile {
+  @media (max-width: $sm-max) {
+    @content;
+  }
+}
+@mixin mq-tablet {
+  @media (min-width: $md-min) and (max-width: #{$lg-min - 1px}) {
+    @content;
+  }
+}
+@mixin mq-desktop {
+  @media (min-width: $lg-min) {
+    @content;
+  }
+}
+
+/* =========================================
+   Mobile (≤ $sm-max)
+========================================= */
+@include mq-mobile {
+  .form-content > .form-wrap {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+
+    > .form-group:only-child {
+      flex: 1 1 auto;
+      padding-right: 0;
+    }
+  }
+
+  .form-group > label {
+    font-size: $font16;
+  }
+
+  input.form-control,
+  textarea {
+    padding: 14px 12px;
+  }
+
+  textarea {
+    height: 180px;
+  }
+
+  ul.radio-box,
+  ul.check-box {
+    gap: 16px;
+
+    li {
+      column-gap: 6px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  ul.radio-box input[type="radio"] {
+    border-width: 6px;
+  }
+
+  ul.check-box input[type="checkbox"]::before {
+    width: 11px;
+    height: 8px;
+    mask-size: auto 8px;
+    -webkit-mask-size: auto 8px;
+  }
+
+  div.toggle-box input[type="checkbox"] {
+    width: 36px;
+    height: 22px;
+
+    &::before {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .se-range .noUi-handle {
+    width: 20px;
+    height: 20px;
+    right: -10px;
+  }
+
+  .upload-label::before {
+    right: 12px;
+    width: 18px;
+    height: 18px;
+    mask-size: 17px auto;
+    -webkit-mask-size: 17px auto;
+  }
+}
+
+/* =========================================
+   Tablet (≥ $md-min and < $lg-min)
+========================================= */
+@include mq-tablet {
+  .form-content > .form-wrap {
+    gap: 24px;
+  }
+  .form-group > label {
+    font-size: $font18;
+  }
+  ul.radio-box,
+  ul.check-box {
+    gap: 20px;
+  }
+  textarea {
+    height: 200px;
+  }
+}
+
+/* =========================================
+   Desktop (≥ $lg-min)
+========================================= */
+@include mq-desktop {
+  .form-content > .form-wrap {
+    gap: 40px;
+  }
+}

@@ -1,0 +1,46 @@
+header { position: fixed; width: 100%; top: 0; left: 0; z-index: 2; transition: background-color 300ms ease-out, color 300ms ease-out; background-color: #fff; }
+
+.header-top { display: flex; justify-content: flex-end; padding: 26px 0 13px 0; }
+.header-top > ul { display: flex; }
+.header-top > ul > li { font-size: 16px; font-weight: 400; color: #757575; }
+.header-top > ul > li + li { position: relative; padding-left: 16px; margin-left: 16px; }
+.header-top > ul > li + li::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 12px; background-color: #8A8D8F; }
+
+.header-main { padding: 28px 0; display: flex; align-items: center; justify-content: space-between; font-family: "MG KFCC L OTF"; font-size: 18px; font-weight: 700; }
+.header-main .logo a::before { display: block; content: ""; width: 154px; height: 42px; background-repeat: no-repeat; background-position: center; background-image: url("../images/logo/logo_color.png"); background-size: contain; }
+.main-right { display: flex; gap: 36px; align-items: center; color: #333; }
+.main-menu { display: flex; gap: 38px; }
+.header-icons { display: flex; gap: 12px; }
+.btn-search { width: 38px; height: 38px; background: url(../images/header/ico_search_black.svg) no-repeat center; }
+.btn-burger { width: 38px; height: 38px; background: url(../images/header/ico_burger_black.svg) no-repeat center; }
+.font-toggle { display: none; }
+
+/* 투명 버전 */
+#headerWrapper.no-bg > header { background-color: transparent; }
+#headerWrapper.no-bg > header > .container > .header-top > ul > li { color: #fff; }
+#headerWrapper.no-bg > header > .container > .header-top > ul > li + li::before { background-color: #4EA4F6; }
+#headerWrapper.no-bg > header > .container > .header-main .logo a::before { background-image: url("../images/logo/logo_white.png"); }
+#headerWrapper.no-bg > header > .container > .header-main > .main-right { color: #fff; }
+#headerWrapper.no-bg .btn-search { background: url(../images/header/ico_search_white.svg) no-repeat center; }
+#headerWrapper.no-bg .btn-burger { background: url(../images/header/ico_burger_white.svg) no-repeat center; }
+
+/* mo */
+@media screen and (max-width: 768px){
+    .header-top, .main-menu, .btn-search { display: none; }
+    .header-main { padding: 12px 14px 12px 22px; }
+    .header-main .logo a::before { width: 114px; height: 30px; aspect-ratio: 19/5; }
+    .header-icons { gap: 10px; align-items: center; }
+    .btn-burger { width: 30px; height: 30px; background-size: 100%; }
+
+/* 체크박스가 체크되면 변경 이벤트 */
+    .font-toggle { display: block; }
+    .toggle-switch { display: block; width: 48px; height: 20px; padding: 2px 4px; position: relative; border-radius: 20px; border: 1px solid #DDD; background-color: #fff; cursor: pointer; }
+    .toggle-switch .toggle-button { width: 18px; height: 18px; position: absolute; top: 50%; left: 4px; transform: translateY(-50%); border-radius: 20px; background: #aaa; }
+    .toggle-switch .toggle-text { position: absolute; right: 7px; font-family: "Noto Sans KR"; font-size: 14px; font-weight: 500; line-height: 150%; color: #aaa; }
+    .toggle-switch .toggle-text::before { content: "큰글"; }
+    .toggle-switch, .toggle-button, .toggle-text { transition: all 0.2s ease-in; }
+
+    #fontToggle:checked ~ .toggle-switch { border: 1px solid #2F65C0; }
+    #fontToggle:checked ~ .toggle-switch .toggle-button { left: calc(100% - 22px); background: #2F65C0; }
+    #fontToggle:checked ~ .toggle-switch .toggle-text { color: #2F65C0; right: calc(100% - 33px); }
+}

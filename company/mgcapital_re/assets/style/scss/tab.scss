@@ -1,0 +1,344 @@
+@charset "utf-8";
+@use "./style.scss" as *;
+
+// 1Depth
+$tab-active-bg: $primary-mg;
+$tab-active-color: $primary-mg;
+$tab-font: $font22;
+$tab-padding: 8px;
+$tab-margin-bottom: 42px;
+
+// 2Depth
+$tab2-bg-color: #f1f2f4;
+$tab2-active-color: $white;
+$tab2-active-bg: $active;
+$tab2-font: $font18;
+$tab2-padding: 12px 26px;
+$tab2-margin-right: 24px;
+
+// 3Depth
+$tab3-color: $color-9;
+$tab3-active-color: $primary-mg;
+$tab3-active-bg: $primary-mg;
+$tab3-font: $font18;
+$tab3-padding: 12px 26px;
+$tab3-margin-right: 24px;
+
+//active
+$tab-nested-bg: $color-f5;
+$tab-nested-padding: 8px 15px;
+$tab-nested-font-size: $font14;
+$tab-margin-right: 24px;
+
+$tab-transition: all 0.3s ease;
+
+$tab-bg-color: $color-fd;
+$tab-border-color: $border;
+$tab-hover-bg: $color-f5;
+
+// 스와이퍼 변수 (주석 닫지 말고 실제 값 유지!)
+$swiper-tab-gap: 10px;
+$swiper-tab-margin-bottom: 10px;
+$swiper-tab-padding: 10px 20px;
+$swiper-tab-font-size: $font16;
+$swiper-slide-padding: 0 20px 20px;
+$swiper-slide-first-margin-top: 30px;
+
+.tab-container {
+  // 모바일 select box 기본 숨김
+  .tab-select-mobile {
+    display: none;
+  }
+
+  .tab-list {
+    display: flex;
+    width: 100%;
+    margin-bottom: $tab-margin-bottom;
+
+    &.depth1 {
+      li.tab-item {
+        flex: 1;
+        button {
+          padding: $tab-padding;
+          width: 100%;
+          height: 73px;
+          color: $color-75;
+          font-size: $tab-font;
+          border: 1px solid $tab-border-color;
+          border-left: 0;
+          background: $tab-bg-color;
+          transition: $tab-transition;
+
+          &:first-of-type {
+            border-left: 1px solid $tab-border-color;
+          }
+        }
+        &.active {
+          border-top: 1px solid $active;
+          color: $active;
+
+          button {
+            color: $tab-active-color;
+            font-weight: $font-w-m;
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    &.depth2 {
+      flex-wrap: wrap;
+      gap: 24px;
+
+      li.tab-item {
+        display: inline-block;
+        button {
+          padding: $tab2-padding;
+          width: 100%;
+          border-radius: 20px;
+          $tab2-font: $font18;
+
+          background: $tab2-bg-color;
+          transition: $tab-transition;
+        }
+        &.active {
+          button {
+            color: $tab2-active-color;
+            background: $tab2-active-bg;
+          }
+        }
+      }
+    }
+
+    &.depth3 {
+      li.tab-item {
+        flex: 1;
+        button {
+          padding: $tab-padding;
+          width: 100%;
+          height: 73px;
+          color: $tab3-color;
+          font-size: $tab-font;
+          border: 1px solid $tab-border-color;
+          border-left: 0;
+          background: $tab-bg-color;
+          transition: $tab-transition;
+
+          &:first-of-type {
+            border-left: 1px solid $tab-border-color;
+          }
+        }
+        &.active {
+          button {
+            color: $tab-active-color;
+            font-weight: $font-w-m;
+            border: 1px solid $tab3-active-color;
+            color: $tab3-active-color;
+          }
+        }
+      }
+    }
+  }
+
+  // nested 탭도 동일 규칙 재사용
+  .nested-tab-container .nested-tab-item button {
+    padding: $tab-padding;
+    width: 100%;
+    border: 1px solid $tab-border-color;
+    border-bottom: none;
+    background: $tab-bg-color;
+    margin-right: $tab-margin-right;
+    transition: $tab-transition;
+  }
+
+  // hover는 버튼에 적용
+  .tab-item:hover button,
+  .nested-tab-container .nested-tab-item:hover button {
+    background: $tab-hover-bg;
+  }
+
+  // Swiper
+  .swiper-pagination-bullet {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+    opacity: 1;
+  }
+
+  .swiper-pager {
+    background: #fff;
+
+    &.tab-list {
+      gap: $swiper-tab-gap;
+      margin-bottom: $swiper-tab-margin-bottom;
+
+      li {
+        margin: 0;
+        padding: $swiper-tab-padding;
+        font-size: $swiper-tab-font-size;
+        border: 1px solid $tab-border-color;
+        background: $tab-nested-bg;
+
+        &.swiper-pagination-bullet-active {
+          border-color: $tab-active-bg;
+          background-color: $tab-active-bg;
+          font-weight: 700;
+          color: $tab-active-color;
+
+          a {
+            color: $tab-active-color;
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-slide {
+    > * {
+      padding: $swiper-slide-padding;
+
+      &:first-child {
+        margin-top: $swiper-slide-first-margin-top;
+      }
+    }
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    top: 0;
+  }
+
+  .swiper-horizontal
+    > .swiper-pagination-bullets
+    .swiper-pagination-bullet:last-child,
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet:last-child {
+    margin-right: 0;
+  }
+
+  /* 모바일(<=767px) */
+  @media (max-width: $sm-max) {
+    // depth1 탭을 모바일에서 select box로 교체
+    .tab-list.depth1 {
+      display: none; // 기존 탭 리스트 숨김
+    }
+
+    // depth1용 모바일 select box 스타일
+    .tab-select-mobile.depth1 {
+      display: block;
+      margin-bottom: $tab-margin-bottom;
+
+      select {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid $tab-border-color;
+        border-radius: 8px;
+        background: $tab-bg-color;
+        font-size: $tab-font;
+        color: $color-75;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+          border-color: $tab-active-color;
+          box-shadow: 0 0 0 3px rgba($tab-active-color, 0.1);
+        }
+      }
+    }
+
+    .tab-list {
+      display: flex;
+      width: 100%;
+      margin-bottom: $tab-margin-bottom;
+
+      &.depth1 {
+        li.tab-item {
+          button {
+            padding: $tab-padding;
+            width: 100%;
+            border: 1px solid $tab-border-color;
+            border-left: 0;
+            background: $tab-bg-color;
+            transition: $tab-transition;
+
+            &:first-of-type {
+              border-left: 1px solid $tab-border-color;
+            }
+          }
+          &.active {
+            border-top: 1px solid $active;
+            color: $active;
+
+            button {
+              color: $tab-active-color;
+              font-weight: $font-w-m;
+              border-bottom: none;
+            }
+          }
+        }
+      }
+
+      &.depth2 {
+        flex-wrap: nowrap;
+        gap: 24px;
+        overflow-x: auto;
+
+        li.tab-item {
+          display: inline-block;
+          button {
+            padding: $tab2-padding;
+            width: 100%;
+            border-radius: 20px;
+            $tab2-font: $font18;
+
+            background: $tab2-bg-color;
+            transition: $tab-transition;
+          }
+          &.active {
+            button {
+              color: $tab2-active-color;
+              background: $tab2-active-bg;
+            }
+          }
+        }
+      }
+
+      &.depth3 {
+        li.tab-item {
+          flex: 1;
+          button {
+            padding: $tab-padding;
+            width: 100%;
+            height: 73px;
+            color: $tab3-color;
+            font-size: $tab-font;
+            border: 1px solid $tab-border-color;
+            border-left: 0;
+            background: $tab-bg-color;
+            transition: $tab-transition;
+
+            &:first-of-type {
+              border-left: 1px solid $tab-border-color;
+            }
+          }
+          &.active {
+            button {
+              color: $tab-active-color;
+              font-weight: $font-w-m;
+              border: 1px solid $tab3-active-color;
+              color: $tab3-active-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

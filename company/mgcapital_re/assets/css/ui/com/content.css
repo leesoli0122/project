@@ -1,0 +1,12 @@
+@charset "euc-kr";
+
+/*---------------------------------------------
+	#상품안내
+---------------------------------------------*/
+.product-wrap > .cont > div,
+.product-wrap > .cont > p { padding:0 0 24px; }
+.product-wrap > .cont > div:last-child { padding-bottom:72px; }
+
+.product-wrap li { padding-bottom:24px; }
+.product-wrap li > h6 {  display:block; margin-bottom:10px; color:var(--color-6); font-size:1rem; font-weight:var(--font-w-b); }
+.product-wrap li > h6 em { color:var(--primary); }

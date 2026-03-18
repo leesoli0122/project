@@ -1,0 +1,109 @@
+@charset "UTF-8";
+@use "./style.scss" as *;
+/* pc */
+@media (min-width: 960px) {
+  /* 헤더*/
+  #headerWrap .top_menu,
+#headerWrap .btm_menu #gnbFull {
+    display: block;
+  }
+  #headerWrap .inner {
+    padding: 0;
+  }
+  #headerWrap .btm_menu {
+    height: auto;
+  }
+  #skipnavi {
+    display: block;
+  }
+  /* 팝업 */
+  .layerPopup.full,
+.layerPopup.full.allMenu {
+    display: none;
+  }
+  .layerPopup.full.on,
+.layerPopup.full.allMenu.on {
+    display: block;
+  }
+  .layerPopup.full.allMenu.on,
+.layerPopup.full.allMenu {
+    left: 100%;
+  }
+  .layerPopup > .pop-area > .pop-header {
+    border-radius: 10px 10px 0 0;
+  }
+  .layerPopup.full .pop-area,
+.layerPopup.full.allMenu .pop-area {
+    position: fixed;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+  /* 셀렉트 */
+  .se-select[data-stove=select] div.stove-dim.on,
+.se-select[data-stove=select] div.stove-option-layer div.stove-options-title,
+.stove-options-title {
+    display: none;
+  }
+  .se-select[data-stove=select] div.stove-option-layer {
+    position: absolute;
+    top: initial;
+    left: 0px;
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+    max-height: 200px;
+    height: initial;
+    border: 1px solid var(--ipt-border);
+    overflow: hidden;
+  }
+  .se-select[data-stove=select] div.stove-option-layer,
+.se-select[data-stove=select] div.stove-option-layer.on {
+    bottom: initial;
+  }
+  .se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll {
+    padding-bottom: 0;
+  }
+  .se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options {
+    padding: 0;
+  }
+  .se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option {
+    padding: 0 1rem;
+    min-height: 40px;
+    border: none;
+    border-radius: 0;
+  }
+  .se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option:hover,
+.se-select[data-stove=select] div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option.on {
+    border: 0;
+  }
+  /* 셀렉트_뱅크 */
+  .se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options {
+    display: flex;
+    flex-direction: column;
+  }
+  .se-select[data-stove=select].bank-list div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option {
+    width: 100%;
+    padding: 0px 16px 0px 56px;
+    min-height: 46px;
+  }
+  .se-select[data-stove=select].bank-list.bank-ico div.stove-option-layer div.stove-option-scroll div.stove-options button.stove-option::before {
+    left: 22px;
+  }
+  /* datepicker */
+  .ui-datepicker {
+    position: absolute;
+    margin-top: 6px;
+    border-radius: 10px;
+    bottom: initial !important;
+  }
+  .datepicker-container::before {
+    content: none;
+  }
+  /* .ui-state-default, .ui-widget-content .ui-state-default { max-width:auto; } */
+}
+
+/*# sourceMappingURL=media-quary.css.map */

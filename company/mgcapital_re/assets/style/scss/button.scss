@@ -1,0 +1,69 @@
+@charset "utf-8";
+@use "./style.scss" as *;
+
+
+// 버튼
+$btn-disabled: $color-d;
+$btn-txt-disabled: $color-75;
+$btn-primary: $color-2;
+$btn-primary-active: $primary-mg;
+$btn-txt: $white;
+$btn-secondary: $secondary;
+//form-button
+$form-btn-board: $color-9;
+$form-btn-txt: $color-75;
+//term
+$btn-terms-border: $color-e;
+$btn-terms-txt: $color-75;
+$btn-active: $color-2;
+
+
+// 버튼_하단
+$btm-btn-primary: #6a6a6a;
+$btm-btn-secondary: #dadfea;
+
+
+.btn-form { 
+    padding:20px 16px; width:100%; border:1px solid $form-btn-board; color: $form-btn-txt;
+
+    &:hover { border-color: $active; color: $active; }
+
+  }
+
+  .btn-content { 
+    padding:12px; width:170px; height:48px; line-height:14px; background:$btn-primary;color:$btn-txt; box-sizing:"border-box";
+
+    &:hover { background:$btn-primary-active; }
+
+    &:disabled { background:$btn-disabled; color:$btn-txt-disabled; }
+
+  }
+
+  .btn-terms-modal { 
+    padding:2px 10px 4px; border:1px solid $btn-terms-border; color:$btn-terms-txt;
+
+    &:hover { border-color:$btn-active; color:$btn-active; }
+
+  }
+
+
+  /* -------------------------------------------------
+   Breakpoints
+-------------------------------------------------- */
+
+/* Mobile (≤ $sm-max) */
+@media (max-width: $sm-max) {
+    
+    .btn-form { padding:14px 12px; }
+  
+}
+
+/* Tablet (≥ $md-min and < $lg-min) */
+@media (min-width: $md-min) and (max-width: #{$lg-min - 1px}) {
+  
+}
+
+/* Desktop (≥ $lg-min) */
+@media (min-width: $lg-min) {
+  
+}
