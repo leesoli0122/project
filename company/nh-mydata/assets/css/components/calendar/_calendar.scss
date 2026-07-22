@@ -1,0 +1,144 @@
+// =============================================================================
+// Calendar Field -- NDS Design Library v1.0
+// =============================================================================
+
+// calendar-day (single date)
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 428px;
+
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  &__field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 54px;
+    padding: 0 16px 0 20px;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color var(--transition-base);
+  }
+
+  &__text {
+    flex: 1;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #929292;
+
+    &.is-filled { color: #121212; }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--color-icon-secondary);
+  }
+
+  &__message {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #767676;
+  }
+
+  &--error {
+    .calendar-day__field   { border-color: #e24949; }
+    .calendar-day__message { color: #e24949; }
+  }
+
+  &--readonly {
+    .calendar-day__field { background: #f0f0f0; cursor: default; }
+  }
+
+  &--disabled {
+    .calendar-day__field { background: #f0f0f0; cursor: not-allowed; }
+  }
+}
+
+// calendar-period (date range)
+.calendar-period {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 428px;
+
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #505050;
+  }
+
+  &__field {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 54px;
+    padding: 0 16px 0 20px;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color var(--transition-base);
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.02em;
+    color: #929292;
+
+    &.is-filled { color: #121212; }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--color-icon-secondary);
+  }
+
+  &__sep {
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    color: #929292;
+    padding: 0 4px;
+  }
+
+  &__message {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #767676;
+  }
+
+  &--error {
+    .calendar-period__field   { border-color: #e24949; }
+    .calendar-period__message { color: #e24949; }
+  }
+
+  &--readonly {
+    .calendar-period__field { background: #f0f0f0; cursor: default; }
+  }
+
+  &--disabled {
+    .calendar-period__field { background: #f0f0f0; cursor: not-allowed; }
+  }
+}

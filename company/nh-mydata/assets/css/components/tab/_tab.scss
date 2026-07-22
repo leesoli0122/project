@@ -1,0 +1,235 @@
+// =============================================================================
+// Tab — NDS Design Library v1.0
+// =============================================================================
+// 1. tab-line — 라인형 (최상위 레벨 탭 / 상단 내비게이션 하단)
+// 2. tab-chip — 칩형 (2Depths 하위 레벨 탭 / 스와이프)
+// 3. tab-bar  — 바형 (세그먼트 컨트롤)
+// 4. tab-text — 텍스트형 (구분선 dash)
+// =============================================================================
+
+// ── 1. Line Tab ───────────────────────────────────────────────────────────────
+// Height: 48px (padding 12px 8px) / Bottom border: #E1E1E1 / Active indicator: #111111
+// Font Default : 16 / Regular / -0.32px / #505050 / Center
+// Font Active  : 16 / Semibold / -0.32px / #121212 / Center
+.tab-line {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #E1E1E1;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+
+  &__item {
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    height: 48px;
+    padding: 12px 8px;
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #505050;
+    text-align: center;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+
+    &:hover { color: #121212; }
+
+    &.is-active {
+      font-weight: var(--font-weight-semibold);
+      color: #121212;
+      border-bottom-color: #111111;
+    }
+
+    &:disabled,
+    &.is-disabled {
+      color: #B3B3B3;
+      pointer-events: none;
+    }
+  }
+
+  // Fixed: 아이템 균등 배분 (기본값과 동일, 하위호환용 modifier)
+  &--fixed &__item {
+    flex: 1;
+  }
+
+  // Flexible: 콘텐츠 너비 기반 + 우측 그라데이션 페이드
+  &--flex {
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+
+    .tab-line__item {
+      flex: 0 0 auto;
+      padding: 12px 16px;
+    }
+
+    // 우측 그라데이션 (overflow 힌트)
+    &::after {
+      content: '';
+      position: sticky;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 48px;
+      flex-shrink: 0;
+      background: linear-gradient(to right, rgba(255,255,255,0), #FFFFFF);
+      pointer-events: none;
+    }
+  }
+}
+
+// ── 2. Chip Tab ───────────────────────────────────────────────────────────────
+// Container padding 0 24px / gap 8px
+// BG Default #F6F6F6 (border #E1E1E1) / Active #111111 (no border)
+// Font Default : 14 / Regular / -0.28px / #505050 / Center
+// Font Active  : 14 / Medium  / -0.28px / #FFFFFF / Center
+.tab-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 24px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 32px;
+    padding: 5px 16px;
+    border-radius: 999px;
+    background-color: #F6F6F6;
+    border: 1px solid #E1E1E1;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+    &:hover { background-color: #E8E8E8; }
+
+    &.is-active {
+      background-color: #111111;
+      border-color: #111111;
+      color: #FFFFFF;
+      font-weight: var(--font-weight-medium);
+    }
+  }
+}
+
+// ── 3. Bar Tab (세그먼트 컨트롤) ───────────────────────────────────────────────
+// BG #F3F5F8 / Radius 12 / Padding 3px
+// Button Default: None / Active: #FFFFFF shadow(0 0 4px rgba(0,0,0,.1)) / Radius 10
+// Font Default : 14 / Regular / -0.28px / #505050 / Center
+// Font Active  : 14 / Medium  / -0.28px / #121212 / Center
+.tab-bar {
+  display: flex;
+  align-items: center;
+  background-color: #F3F5F8;
+  border-radius: 12px;
+  padding: 3px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__item {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 11px 12px;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover { color: #121212; }
+
+    &.is-active {
+      background-color: #FFFFFF;
+      color: #121212;
+      font-weight: var(--font-weight-medium);
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &:disabled,
+    &.is-disabled {
+      color: #B3B3B3;
+      pointer-events: none;
+    }
+  }
+}
+
+// ── 4. Text Tab ───────────────────────────────────────────────────────────────
+// 텍스트만으로 구성된 탭 / 아이템 사이 1px×12px dash 구분선
+// Font Default : 15 / Regular / -0.3px / #767676
+// Font Active  : 15 / Medium  / -0.3px / #121212
+.tab-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #767676;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color 0.15s ease;
+
+    &:hover { color: #121212; }
+
+    &.is-active {
+      font-weight: var(--font-weight-medium);
+      color: #121212;
+    }
+
+    &:disabled,
+    &.is-disabled {
+      color: #B3B3B3;
+      pointer-events: none;
+    }
+  }
+
+  // 구분선
+  &__dash {
+    width: 1px;
+    height: 12px;
+    background-color: #E1E1E1;
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,85 @@
+// =============================================================================
+// Bullet — NDS Design Library v1.0
+// =============================================================================
+
+.bullet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);   // 4px — 항목 간 세로 간격
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;               // 마커 ↔ 텍스트 가로 간격
+    line-height: var(--line-height-normal);
+    list-style: none;
+
+    // dot marker (1depth)
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      display: block;
+      width: 4px;
+      height: 4px;
+      background-color: #707070;
+      border-radius: var(--radius-full);
+      margin-top: 7px;
+    }
+  }
+
+  &__depth2 {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;               // depth2 항목 간 세로 간격
+    padding-left: 10px;     // 1depth 텍스트 시작점 기준 들여쓰기
+    margin-top: var(--spacing-2);
+    list-style: none;
+
+    // dash marker (2depth)
+    .bullet__item::before {
+      width: 6px;
+      height: 1px;
+      border-radius: 0;
+      margin-top: 11px;
+    }
+  }
+
+  &--body {
+    .bullet__item {
+      font-size: 15px;
+      line-height: 24px;
+      letter-spacing: -0.3px;
+      color: #505050;
+
+      &::before { margin-top: 10px; }
+    }
+  }
+
+  &--caption {
+    gap: var(--spacing-2);  // caption은 2px 간격
+
+    .bullet__item {
+      font-size: 13px;
+      line-height: 20px;
+      letter-spacing: -0.26px;
+      color: #767676;
+
+      &::before {
+        width: 3px;
+        height: 3px;
+        margin-top: 9px;
+      }
+    }
+  }
+
+  &--notice {
+    .bullet__item {
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: -0.28px;
+      color: #505050;
+
+      &::before { margin-top: 9px; }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+// =============================================================================
+// Attached File — NDS Design Library v1.0
+// =============================================================================
+// Thumbnail  : .attached-thumb  / 96×96 / Radius12 / Border #E1E1E1
+//              States: Default / Disabled (--disabled) / Filled (--filled)
+// List       : .attached-list   / H58 / Border #F0F0F0
+// =============================================================================
+
+// ── Thumbnail ─────────────────────────────────────────────────────────────────
+.attached-thumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  &__item {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    border: 1px solid #E1E1E1;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    // Disabled: 아이콘·카운트 모두 #929292
+    &--disabled {
+      .attached-thumb__icon { color: #929292; }
+      .attached-thumb__count { color: #929292; }
+    }
+
+    // Filled: 이미지 프리뷰 + 삭제 버튼
+    &--filled {
+      border: none;
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #505050;
+
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__count {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.24px;
+    color: #505050;
+    text-align: center;
+    line-height: 18px;
+  }
+
+  // Filled 내부 이미지
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  // Filled 삭제 버튼 (원형 fill 아이콘, 우상단 4px)
+  &__remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(17, 17, 17, 0.5);
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 0;
+    z-index: 1;
+
+    svg { width: 14px; height: 14px; }
+  }
+}
+
+// ── List ──────────────────────────────────────────────────────────────────────
+// Divider(#F0F0F0) 로 구분 / gap 16 / 파일명 14·Medium·#121212 + 삭제 아이콘 24
+.attached-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #F0F0F0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  &__name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #121212;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #B3B3B3;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 0;
+    flex-shrink: 0;
+
+    svg { width: 12px; height: 12px; }
+    &:hover { background-color: #929292; }
+  }
+}

@@ -1,0 +1,148 @@
+// =============================================================================
+// Chip -- NDS Design Library v1.0
+// =============================================================================
+
+// =============================================================================
+// Basic chip (.chip-basic) -- text + close button
+// =============================================================================
+.chip-basic {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 8px 0 12px;
+  gap: 4px;
+  background: #f6f6f6;
+  border-radius: 6px;
+  flex-shrink: 0;
+
+  &__text {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #505050;
+    white-space: nowrap;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #929292;
+    flex-shrink: 0;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+
+    &:hover { color: #505050; }
+  }
+}
+
+// =============================================================================
+// Single chip (.chip-single) -- pill shape, default / active
+// =============================================================================
+.chip-single {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  padding: 5px 12px;
+  background: #ffffff;
+  border: 1px solid #d3d3d3;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.26px;
+  line-height: 20px;
+  color: #121212;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+
+  &--active {
+    background: #111111;
+    border-color: #111111;
+    color: #ffffff;
+    font-weight: var(--font-weight-medium);
+  }
+}
+
+// =============================================================================
+// Accordion chip group (.chip-accordion)
+// 한 줄 pill 칩 목록 + 펼침/접힘 토글 버튼
+// =============================================================================
+.chip-accordion {
+  position: relative;
+  width: 100%;
+
+  &__chips {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 4px;
+    overflow: hidden;
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    background: #f6f6f6;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #121212;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 100%;
+      width: 24px;
+      height: 30px;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+      pointer-events: none;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+      transition: transform var(--transition-base);
+    }
+  }
+
+  // Open state: chips wrap onto multiple lines, toggle flows inline at end
+  &.is-open {
+    .chip-accordion__chips {
+      flex-wrap: wrap;
+    }
+
+    .chip-accordion__toggle {
+      position: static;
+      margin-left: auto;
+
+      &::before { display: none; }
+
+      svg { transform: rotate(180deg); }
+    }
+  }
+}

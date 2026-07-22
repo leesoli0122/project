@@ -1,0 +1,400 @@
+// =============================================================================
+// List — NDS Design Library v1.0
+// =============================================================================
+// Variants: list-card (lg/sm/xs) / list-page (lg/sm/xs) / list-account /
+//           list-continue / list-accordion
+// =============================================================================
+
+// ── 공통: 키-값 행 (타이틀 좌 / 데이터 우) ────────────────────────────────────
+.list-kv {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+
+  &__title {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    width: 108px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__tooltip {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    width: 24px;
+    height: 20px;
+    color: #707070;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+
+  &__data {
+    flex: 1;
+    min-width: 0;
+    text-align: right;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+  }
+}
+
+// ── Card: 카드 형태 그룹 (border 없이도 사용 가능한 wrapper) ──────────────────
+.list-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  background-color: #ffffff;
+
+  &__title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  // lg: 데이터 22px Semibold
+  &--lg {
+    .list-kv__title { width: 108px; }
+    .list-kv__data {
+      font-size: 22px;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: -0.44px;
+      line-height: 32px;
+    }
+  }
+
+  // sm: 데이터 15px Medium (기본 .list-kv 값과 동일)
+  &--sm {
+    .list-kv__title { width: 108px; }
+  }
+
+  // xs: 데이터 14px Regular (타이틀과 동일 색상)
+  &--xs {
+    .list-kv__title {
+      width: 108px;
+      font-size: 14px;
+      letter-spacing: -0.28px;
+      line-height: 22px;
+    }
+    .list-kv__data {
+      font-size: 14px;
+      font-weight: var(--font-weight-regular);
+      color: #505050;
+      letter-spacing: -0.28px;
+      line-height: 22px;
+    }
+  }
+}
+
+// ── Page: 페이지형 — 상/하단 구분선 포함 가능 ─────────────────────────────────
+.list-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  &__title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #f0f0f0;
+    flex-shrink: 0;
+  }
+
+  // lg: 데이터 22px Semibold
+  &--lg {
+    .list-kv__title { width: 108px; }
+    .list-kv__data {
+      font-size: 22px;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: -0.44px;
+      line-height: 32px;
+    }
+  }
+
+  // sm: 타이틀 124px, 데이터 15px Medium
+  &--sm {
+    .list-kv__title { width: 124px; }
+  }
+
+  // xs: 타이틀 124px, 데이터 14px Regular
+  &--xs {
+    .list-kv__title {
+      width: 124px;
+      font-size: 14px;
+      letter-spacing: -0.28px;
+      line-height: 22px;
+    }
+    .list-kv__data {
+      font-size: 14px;
+      font-weight: var(--font-weight-regular);
+      color: #505050;
+      letter-spacing: -0.28px;
+      line-height: 22px;
+    }
+  }
+}
+
+// ── Account: 계좌/금융상품 리스트 아이템 ──────────────────────────────────────
+.list-account {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+
+  &__logo {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    padding: 3px 0;
+
+    img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__number {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #767676;
+  }
+
+  &__price {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+
+    strong {
+      font-weight: var(--font-weight-medium);
+      color: #121212;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+    text-decoration: underline;
+  }
+
+  &__fav {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #707070;
+
+    svg { width: 24px; height: 24px; display: block; }
+
+    &--active { color: #f9a825; }
+  }
+}
+
+// ── Continue: 이어하기 카드 (텍스트 + 버튼 + 닫기) ────────────────────────────
+.list-continue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  padding: 13px 16px 13px 20px;
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 30px;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    background: #ffffff;
+    border: 1px solid #19973c;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #19973c;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  &__close {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111111;
+
+    svg { width: 24px; height: 24px; display: block; }
+  }
+}
+
+// ── Accordion: 상/하단 구분선 + 요약행 + 펼치기 토글 ──────────────────────────
+.list-accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #f0f0f0;
+    flex-shrink: 0;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+  }
+
+  &__title {
+    flex-shrink: 0;
+    width: 124px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__data {
+    flex: 1;
+    min-width: 0;
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.36px;
+    line-height: 26px;
+    color: #121212;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding-top: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+      transition: transform var(--transition-base);
+    }
+
+    &.is-open svg { transform: rotate(180deg); }
+  }
+}

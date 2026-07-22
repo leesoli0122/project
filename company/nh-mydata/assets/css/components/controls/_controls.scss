@@ -1,0 +1,138 @@
+// =============================================================================
+// Controls -- NDS Design Library v1.0
+// =============================================================================
+
+// =============================================================================
+// Stepper (.controls-stepper) -- [−] [value] [+]
+// =============================================================================
+.controls-stepper {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  background: #ffffff;
+  overflow: hidden;
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #121212;
+    flex-shrink: 0;
+    transition: background-color var(--transition-base);
+
+    svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    &:hover { background: #f6f6f6; }
+
+    &:disabled {
+      color: #d3d3d3;
+      background: #f0f0f0;
+      cursor: not-allowed;
+      &:hover { background: #f0f0f0; }
+    }
+  }
+
+  &__sep {
+    width: 1px;
+    height: 100%;
+    background: #d3d3d3;
+    flex-shrink: 0;
+  }
+
+  &__value {
+    flex: 1;
+    min-width: 36px;
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.32px;
+    color: #121212;
+    text-align: center;
+    padding: 0 4px;
+    border: none;
+    background: none;
+    outline: none;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button { -webkit-appearance: none; }
+  }
+
+  // Disabled state
+  &--disabled {
+    background: #f0f0f0;
+
+    .controls-stepper__btn {
+      color: #d3d3d3;
+      cursor: not-allowed;
+      &:hover { background: none; }
+    }
+    .controls-stepper__sep { background: #d3d3d3; }
+    .controls-stepper__value { color: #d3d3d3; }
+  }
+}
+
+// =============================================================================
+// Controller (.controls-controller) -- [‹] [label] [›]
+// =============================================================================
+.controls-controller {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 4px;
+  gap: 2px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #121212;
+    flex-shrink: 0;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    &:disabled {
+      color: #d3d3d3;
+      cursor: not-allowed;
+    }
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.02em;
+    color: #121212;
+    white-space: nowrap;
+    padding: 0 4px;
+  }
+
+  // Disabled state
+  &--disabled {
+    .controls-controller__btn  { color: #d3d3d3; cursor: not-allowed; }
+    .controls-controller__label { color: #d3d3d3; }
+  }
+}

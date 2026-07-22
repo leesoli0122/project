@@ -1,0 +1,76 @@
+// =============================================================================
+// Statusbar — NDS Design Library v1.0
+// =============================================================================
+// 모바일 OS 상태표시줄(시간 + 통신/와이파이/배터리 아이콘)
+// Variants : --aos (24px, Android) / --ios (44px, iOS)
+// =============================================================================
+
+.statusbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  // 시간 텍스트
+  &__time {
+    color: #121212;
+  }
+
+  // 아이콘 그룹 (우측 고정)
+  &__icons {
+    position: absolute;
+    right: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg { display: block; }
+  }
+
+  // ── AOS (Android) — height 24, time 좌측 14px ────────────────────────────
+  &--aos {
+    height: 24px;
+    padding: 0 12px 0 14px;
+    justify-content: flex-start;
+
+    .statusbar__time {
+      font-size: 14px;
+      font-weight: var(--font-weight-medium);
+      letter-spacing: -0.28px;
+      line-height: 1;
+    }
+
+    .statusbar__icons { gap: 6px; }
+    .statusbar__icon--cellular { width: 18px; height: 12px; }
+    .statusbar__icon--wifi { width: 16px; height: 12px; }
+    .statusbar__icon--battery { width: 24px; height: 12px; }
+  }
+
+  // ── iOS — height 44, time 중앙 정렬 ────────────────────────────────────
+  &--ios {
+    height: 44px;
+    padding: 0 14px;
+    justify-content: center;
+
+    .statusbar__time {
+      font-size: 15px;
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: -0.3px;
+      line-height: 1;
+    }
+
+    .statusbar__icons { gap: 4px; }
+    .statusbar__icon--cellular { width: 20px; height: 14px; }
+    .statusbar__icon--wifi { width: 16px; height: 14px; }
+    .statusbar__icon--battery { width: 25px; height: 14px; }
+  }
+}

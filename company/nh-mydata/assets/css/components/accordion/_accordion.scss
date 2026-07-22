@@ -1,0 +1,408 @@
+// =============================================================================
+// Accordion — NDS Design Library v1.0
+// =============================================================================
+// Variants
+//   1. accordion-notice    — 아이콘(①) + 타이틀 / 라인·박스 없음 / Divider 8px / H56
+//   2. accordion-line      — 타이틀 + 하단 Border 1px / H64
+//   3. accordion-box-text  — 카드(Radius12/Border#E1E1E1) / 타이틀+본문텍스트
+//   4. accordion-box-list  — 카드(Radius12/Border#E1E1E1) / 뱃지+타이틀+서브+리스트
+//   5. accordion-gray      — 카드(Radius12/BG#F6F6F6) / Basic(텍스트) or List
+// =============================================================================
+
+// ── 공통: 아코디언 콘텐츠 접기/펼치기 ────────────────────────────────────────
+// .open 클래스 토글 방식 (JS: toggleAccordion)
+.accordion-content {
+  display: none;
+  &.open { display: block; }
+}
+
+// ── 1. Notice ─────────────────────────────────────────────────────────────────
+// 라인·박스 없음 / ① 아이콘 + 타이틀 + 체브론 / Divider 8px / H56
+// Font: 16 / Semibold / -2% / #121212
+.accordion-notice {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    width: 100%;
+
+    // Divider 8px (#FFE1E1) — 각 아이템 상단에 위치
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 8px;
+      background-color: #FFE1E1;
+    }
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 16px 24px;
+  }
+
+  &__text {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: #111111;
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__title {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.32px;
+    color: #121212;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__arrow {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #111111;
+    transition: transform 0.2s ease;
+    svg { width: 24px; height: 24px; }
+
+    .accordion-notice__trigger[aria-expanded="true"] & { transform: rotate(180deg); }
+  }
+
+  &__body {
+    padding: 0 24px 16px 24px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #505050;
+    line-height: 1.6;
+  }
+}
+
+// ── 2. Line ───────────────────────────────────────────────────────────────────
+// 상단 Border 1px #F0F0F0 / Font: 16 / Semibold / -0.32px / #121212
+.accordion-line {
+  width: 100%;
+
+  &__item {
+    position: relative;
+    border-top: 1px solid #F0F0F0;
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  &__title {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #111111;
+    transition: transform 0.2s ease;
+    svg { width: 24px; height: 24px; }
+
+    .accordion-line__trigger[aria-expanded="true"] & { transform: rotate(180deg); }
+  }
+
+  &__body {
+    padding: 0 0 20px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #505050;
+    line-height: 1.6;
+  }
+}
+
+// ── 3. Box - Text / Box - List ─────────────────────────────────────────────────
+// Radius 12 / Border #E1E1E1 / 개별 카드
+// Title: 16 / Semibold / #121212 (letter -0.32px)   Body: 14 / Regular / #505050
+.accordion-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__item {
+    border: 1px solid #E1E1E1;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px 16px 20px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 12px;
+  }
+
+  &__title-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  // 타이틀 + 서브텍스트 인라인 행 (뱃지 아래)
+  &__title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  // 헤더 서브타이틀 — 타이틀과 같은 줄 / 13/Regular/#505050
+  &__sub {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #505050;
+  }
+
+  // 뱃지 — 테두리만, 배경 없음 / Radius 4 / Border #707070
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 8px 2px;
+    border-radius: 4px;
+    border: 1px solid #707070;
+    background-color: transparent;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    line-height: 15px;
+    color: #767676;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  &__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #111111;
+    transition: transform 0.2s ease;
+    svg { width: 24px; height: 24px; }
+
+    .accordion-box__trigger[aria-expanded="true"] & { transform: rotate(180deg); }
+  }
+
+  // 본문 (text 타입)
+  &__body {
+    padding: 0 16px 20px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+  }
+
+  // 리스트 행 (list 타입)
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px 20px 20px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__row-title {
+    width: 108px;
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+  }
+
+  &__row-data {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+    text-align: right;
+  }
+}
+
+// ── 4. Gray Box (Basic / List) ─────────────────────────────────────────────────
+// Radius 12 / BG #F6F6F6 / 카드 컴포넌트 내부 보조 역할
+// Title: 14 / Regular / #121212   Body: 14 / Regular / #505050
+.accordion-gray {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__item {
+    border-radius: 12px;
+    background-color: #F6F6F6;
+    overflow: hidden;
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 12px;
+  }
+
+  &__title {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #121212;
+  }
+
+  &__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #111111;
+    transition: transform 0.2s ease;
+    svg { width: 24px; height: 24px; }
+
+    .accordion-gray__trigger[aria-expanded="true"] & { transform: rotate(180deg); }
+  }
+
+  // Basic: 텍스트 본문
+  &__body {
+    padding: 0 12px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+  }
+
+  // List: 다운로드 아이콘 + 체브론 행
+  &__list {
+    padding: 0 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__row-text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #121212;
+  }
+
+  &__row-icons {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  &__row-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #767676;
+    flex-shrink: 0;
+    svg { width: 16px; height: 16px; }
+  }
+
+  &__row-chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #767676;
+    flex-shrink: 0;
+    svg { width: 16px; height: 16px; }
+  }
+}

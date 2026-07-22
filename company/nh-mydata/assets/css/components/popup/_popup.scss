@@ -1,0 +1,230 @@
+// =============================================================================
+// Popup (Modal / Dialog) — NDS Design Library v1.0
+// =============================================================================
+// Width: 312px / Radius: 16px (top: contents, bottom: footer)
+// Dimmed: #111111 30%
+// Contents: pt 40px / px 24px / pb 22px
+// Title: 16px / SemiBold / -0.32px / line24 / #121212
+// Body:  15px / Regular  / -0.3px  / line24 / #121212
+// Footer: pt 10px / pb 20px / px 24px / gap 8px
+// Variants: basic / error-accordion / push / login
+// =============================================================================
+
+.popup {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  &--open { pointer-events: auto; }
+
+  // ── Dimmed 오버레이 ──────────────────────────────────────────────────────────
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: #111111;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    .popup--open & { opacity: 0.3; }
+  }
+
+  // ── 컨테이너 ─────────────────────────────────────────────────────────────────
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 312px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    .popup--open & {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+}
+
+// ── 팝업 카드 (정적 프리뷰 + 실사용 겸용) ────────────────────────────────────
+.popup-basic {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 312px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+
+  // ── 콘텐츠 영역 ────────────────────────────────────────────────────────────
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    padding: 40px 24px 22px;
+    background-color: #ffffff;
+    border-radius: 16px 16px 0 0;
+  }
+
+  // ── 타이틀 ───────────────────────────────────────────────────────────────────
+  &__title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  // ── 본문 ─────────────────────────────────────────────────────────────────────
+  &__body {
+    width: 100%;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+
+    p { margin: 0; }
+  }
+
+  // ── 카운트다운 행 (Login variant) ─────────────────────────────────────────────
+  &__count {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    width: 100%;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #121212;
+  }
+
+  &__count-num {
+    display: inline-flex;
+    align-items: flex-end;
+
+    strong {
+      font-size: 18px;
+      font-weight: var(--font-weight-medium);
+      letter-spacing: -0.36px;
+      line-height: 26px;
+      color: #19973c;
+    }
+  }
+
+  // ── 오류코드 아코디언 박스 (Error variant) ───────────────────────────────────
+  &__accordion {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    padding: 12px;
+    background-color: #f6f6f6;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+
+    &-title {
+      flex: 1;
+      min-width: 0;
+      text-align: left;
+      font-size: 14px;
+      font-weight: var(--font-weight-regular);
+      letter-spacing: -0.28px;
+      line-height: 22px;
+      color: #121212;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      color: #707070;
+      transition: transform var(--transition-base);
+    }
+
+    &.is-open svg { transform: rotate(180deg); }
+  }
+
+  &__accordion-body {
+    display: none;
+    width: 100%;
+    padding: 12px 4px 0;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #d10f0f;
+
+    &.is-open { display: block; }
+  }
+
+  // ── 푸터 (버튼 영역) ──────────────────────────────────────────────────────────
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 24px 20px;
+    background-color: #ffffff;
+    border-radius: 0 0 16px 16px;
+  }
+
+  // ── 버튼 (기본: flex-1) ───────────────────────────────────────────────────────
+  &__btn {
+    flex: 1;
+    min-width: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #ffffff;
+
+    &--secondary {
+      border: 1px solid #19973c;
+      color: #19973c;
+    }
+
+    &--tertiary {
+      flex: none;
+      width: 100px;
+      border: 1px solid #d3d3d3;
+      color: #121212;
+    }
+
+    // Login variant: 좌우 버튼 모두 flex-1
+    &--tertiary.popup-basic__btn--flex {
+      flex: 1;
+      width: auto;
+    }
+  }
+}
+
+// 고객센터 안내 문구 (Error variant 하단, 필요 시 별도 사용)
+.popup-contact {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.26px;
+  line-height: 20px;
+  color: #767676;
+}

@@ -1,0 +1,225 @@
+// =============================================================================
+// Check -- NDS Design Library v1.0
+// =============================================================================
+
+@use '../../styles/mixins/mixins' as *;
+
+// =============================================================================
+// Box type (.check-box)
+// 상자 형태, 선택 시 테두리/텍스트 초록 강조
+// =============================================================================
+.check-box {
+  position: relative;
+  display: inline-flex;
+
+  &__input {
+    @include visually-hidden;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    padding: 13px 16px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color var(--transition-base), color var(--transition-base);
+    white-space: nowrap;
+  }
+
+  // Selected
+  &__input:checked + .check-box__label {
+    border-color: #19973c;
+    color: #19973c;
+  }
+
+  // Disabled
+  &__input:disabled + .check-box__label {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  // sm size
+  &--sm .check-box__label {
+    min-width: 72px;
+    padding: 7px 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+  }
+}
+
+// =============================================================================
+// Basic type (.check-basic)
+// 원형 체크 아이콘 + 텍스트
+// =============================================================================
+.check-basic {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    @include visually-hidden;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    border: 1px solid #707070;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-base), border-color var(--transition-base);
+
+    &::after {
+      content: '';
+      display: block;
+      width: 9px;
+      height: 7px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 7' fill='none'%3E%3Cpath d='M1 3.5L3.2 6L8 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+  }
+
+  &__label {
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.3px;
+    color: #121212;
+    line-height: 24px;
+  }
+
+  // Selected
+  &__input:checked + .check-basic__icon {
+    background: #19973c;
+    border-color: #19973c;
+
+    &::after { opacity: 1; }
+  }
+
+  // Disabled (unchecked)
+  &__input:disabled + .check-basic__icon {
+    background: #f6f6f6;
+    border-color: #e1e1e1;
+    cursor: not-allowed;
+  }
+
+  &__input:disabled ~ .check-basic__label {
+    color: #929292;
+  }
+
+  // Selected + Disabled
+  &__input:checked:disabled + .check-basic__icon {
+    background: #b3b3b3;
+    border-color: #b3b3b3;
+
+    &::after { opacity: 1; }
+  }
+
+  &__input:checked:disabled ~ .check-basic__label {
+    color: #121212;
+  }
+
+  // xs size
+  &--xs {
+    .check-basic__icon {
+      width: 18px;
+      height: 18px;
+    }
+    .check-basic__label {
+      font-size: 14px;
+      font-weight: var(--font-weight-regular);
+    }
+  }
+}
+
+// =============================================================================
+// Survey type (.check-survey)
+// 아이콘 + 텍스트 선택형 카드 (정답/오답 피드백 포함)
+// =============================================================================
+.check-survey {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 16px 16px 12px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: border-color var(--transition-base);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.3px;
+    line-height: 24px;
+    color: #505050;
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+  }
+
+  &__notice {
+    line-height: 20px;
+    color: #767676;
+  }
+
+  &__desc {
+    line-height: 20px;
+    color: #767676;
+  }
+
+  // Selected (정답) state
+  &--selected {
+    .check-survey__box { border-color: #19973c; }
+    .check-survey__notice { color: #19973c; }
+  }
+
+  // Error (오답) state
+  &--error {
+    .check-survey__box { border-color: #e24949; }
+    .check-survey__notice { color: #e24949; }
+  }
+}

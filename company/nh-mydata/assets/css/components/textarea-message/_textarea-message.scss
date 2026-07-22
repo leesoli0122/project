@@ -1,0 +1,143 @@
+// =============================================================================
+// Textarea — NDS Design Library v1.0
+// =============================================================================
+// 여러 줄 텍스트 입력 / 장문 입력 / 스크롤 지원
+// =============================================================================
+// Label       : 14 / Medium / -0.28px / line22 / #505050
+// Placeholder : 16 / Medium / -0.32px / line24 / #929292
+// Text        : 16 / Medium / -0.32px / line24 / #121212
+// Count       : 13 / Regular / -0.26px / line20 / 현재값 #19973C · "/최대값" #121212
+// Message     : 13 / Regular / -0.26px / line20 / #767676 (hint) / #E24949 (error)
+// Box         : Radius 10 / Padding 20px / Height 156px
+//
+// States  Border / BG
+//   Inactive : #E1E1E1 / #FFFFFF
+//   Focus    : #19973C / #FFFFFF
+//   Filled   : #E1E1E1 / #FFFFFF
+//   Error    : #E24949 / #FFFFFF
+// =============================================================================
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+
+  // ── 라벨 ────────────────────────────────────────────────────────────────────
+  &__label {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.28px;
+    line-height: 22px;
+    color: #505050;
+  }
+
+  // ── 인풋 래퍼 ───────────────────────────────────────────────────────────────
+  &__wrap {
+    position: relative;
+    width: 100%;
+    height: 156px;
+    border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    transition: border-color 0.15s ease;
+    box-sizing: border-box;
+  }
+
+  // ── 텍스트에어리어 ───────────────────────────────────────────────────────────
+  &__field {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.32px;
+    line-height: 24px;
+    color: #121212;
+    border: none;
+    outline: none;
+    resize: none;
+    background: transparent;
+    box-sizing: border-box;
+    font-family: inherit;
+
+    &::placeholder {
+      font-weight: var(--font-weight-medium);
+      color: #929292;
+    }
+  }
+
+  // ── Clear 버튼 (Focus 상태 우상단) ────────────────────────────────────────
+  &__clear {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: #B3B3B3;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 1;
+    padding: 0;
+    flex-shrink: 0;
+
+    &:hover { background-color: #929292; }
+  }
+
+  // ── 하단 푸터 (안내문구 + 글자수) ────────────────────────────────────────
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  // ── 안내/오류 메시지 ────────────────────────────────────────────────────────
+  &__msg {
+    flex: 1;
+    min-width: 0;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #767676;
+  }
+
+  // ── 글자수 카운터 ─────────────────────────────────────────────────────────
+  &__count {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: -0.26px;
+    line-height: 20px;
+    color: #121212;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    // 현재 입력 글자수 색상
+    &-current { color: #19973C; }
+    // 슬래시 및 최대값 색상
+    &-max { color: #121212; }
+  }
+
+  // ══ States ════════════════════════════════════════════════════════════════
+
+  // Focus
+  &--focus &__wrap,
+  &__wrap:focus-within {
+    border-color: #19973C;
+  }
+
+  // Filled (입력 후 포커스 해제)
+  &--filled &__wrap { border-color: #E1E1E1; }
+
+  // Error
+  &--error &__wrap   { border-color: #E24949; }
+  &--error &__msg    { color: #E24949; }
+}

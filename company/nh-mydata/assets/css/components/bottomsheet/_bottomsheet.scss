@@ -1,0 +1,118 @@
+// =============================================================================
+// Bottomsheet — NDS Design Library v1.0
+// =============================================================================
+
+@use '../../styles/mixins/mixins' as *;
+
+.bottomsheet {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  pointer-events: none;
+
+  &--open { pointer-events: auto; }
+
+  // Sheet container
+  &__container {
+    position: relative;
+    background-color: var(--color-bg-default);
+    border-radius: var(--radius-16) var(--radius-16) 0 0;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform var(--transition-slow), opacity var(--transition-slow);
+    box-shadow: var(--shadow-xl);
+	margin:0 auto;
+	max-width:450px;
+	min-width:320px;
+
+    .bottomsheet--open & { transform: translateY(0); opacity: 1; }
+  }
+
+  // Handle — 10px top clearance, drag bar centered
+  &__handle {
+    @include flex-center;
+    padding: 10px 0 0;
+    flex-shrink: 0;
+    cursor: grab;
+
+    &-bar {
+      width: 36px;
+      height: 4px;
+      background-color: var(--color-border-default);
+      border-radius: var(--radius-full);
+    }
+  }
+
+  // Header — height 50px (handle 10px → total Header area 60px)
+  &__header {
+    @include flex-between;
+    height: 50px;
+    padding: 0 var(--spacing-24);
+    border-bottom: 1px solid var(--color-border-subtle);
+    flex-shrink: 0;
+  }
+
+  // Title — 20px / SemiBold / -2% / #121212
+  &__title {
+    font-size: 20px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  &__close {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    color: var(--color-icon-secondary);
+    padding: var(--spacing-8);
+  }
+
+  // Body — 12px gap after header, 24px horizontal padding
+  // (None-Header: 22px top via padding-top override)
+  &__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-12) var(--spacing-24) 0;
+    @include scrollbar-hidden;
+
+    // Body text — 15px / Regular / -2% / #505050
+    p, span, div {
+      font-size: var(--type-body2-size); // 15px
+      font-weight: var(--font-weight-regular);
+      letter-spacing: var(--type-body2-ls); // -0.02em
+      color: var(--color-text-secondary); // #505050
+      line-height: var(--type-body2-lh);  // 24px
+    }
+  }
+
+  // None-Header variant — 22px top padding instead of 12px
+  &--no-header &__body {
+    padding-top: 22px;
+  }
+
+  // Footer — 32px above button, 32px safe-area bottom
+  &__footer {
+    padding: var(--spacing-32) var(--spacing-24);
+    padding-bottom: calc(var(--spacing-32) + env(safe-area-inset-bottom));
+    flex-shrink: 0;
+  }
+
+  // Backdrop — #111111 / Opacity 30%
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: #111111;
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+
+    .bottomsheet--open & { opacity: 0.30; }
+  }
+}
